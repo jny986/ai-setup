@@ -34,8 +34,6 @@ for cells in rows((SKILL / "SKILL.md").read_text().splitlines()):
         errors.append(f"router: {name} -> {path}/GUIDE.md missing")
 
 guides = sorted(p.parent.relative_to(SKILL).as_posix() for p in SKILL.rglob("GUIDE.md"))
-for g in sorted(set(guides) - set(router.values())):
-    errors.append(f"router: guide {g}/GUIDE.md not listed")
 
 # Name table: Marketing rows are name | path | source | aliases; Dev rows are name | path | source.
 sections, current = {}, None
@@ -62,6 +60,12 @@ for section, lines in sections.items():
             aliases[alias] = name
     if section == "Marketing":
         marketing_names = names
+
+for g in sorted(set(guides) - set(router.values())):
+    # A flat folder left in place until the contract step is fine once its alias target is routed.
+    if "/" not in g and aliases.get(g) in router:
+        continue
+    errors.append(f"router: guide {g}/GUIDE.md not listed")
 
 for alias, target in aliases.items():
     if alias in marketing_names and alias != target:
