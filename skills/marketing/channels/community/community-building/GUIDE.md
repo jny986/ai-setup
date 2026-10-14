@@ -3,6 +3,9 @@ name: community-building
 description: When the user wants to design, launch, or grow a community (Discord, Slack, Circle, forum, subreddit) and turn members into advocates. Also use when the user mentions "build a community," "community strategy," "Discord community," "Slack community," "community-led growth," "brand advocates," "user community," "community engagement," "grow our community," "ambassador program," or "community flywheel." For forum and subreddit promotion tactics (HN, Reddit, Indie Hackers), use community-forum.
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: community-marketing
 ---
 
 # Channels: Community Building

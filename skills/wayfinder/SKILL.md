@@ -7,7 +7,9 @@ metadata:
   version: "1.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: mattpocock/skills@v1.2.3 (MIT)
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.2.3(6acc160)
+  based_on_skill: wayfinder
 ---
 
 A loose idea has arrived, too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a **shared map** on the repo's issue tracker, then works its **decision tickets** (questions whose resolution is a decision, not slices of a build to execute) one at a time until the route is clear.

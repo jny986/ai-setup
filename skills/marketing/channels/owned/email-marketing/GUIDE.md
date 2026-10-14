@@ -3,6 +3,9 @@ name: email-marketing
 description: When the user wants to plan email marketing, EDM, newsletter strategy, email deliverability, or lifecycle email sequences. Also use when the user mentions "email marketing," "EDM," "newsletter," "SPF," "DKIM," "DMARC," "email deliverability," "email content strategy," "email campaigns," "newsletter strategy," "email automation," "cold email," "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome sequence," "re-engagement emails," "lifecycle emails," "trigger-based emails," "email cadence," or "what emails should I send." For signup UI, use `dev/references/components/conversion/newsletter-signup`.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: email-marketing, emails
 ---
 
 # Channels: Email Marketing

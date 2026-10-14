@@ -3,6 +3,9 @@ name: distribution-channels
 description: When the user wants to plan product distribution via marketplaces, app stores, or third-party platforms. Also use when the user mentions "distribution channels," "marketplace listing," "app store listing," "Figma plugin," "Chrome extension marketplace," "AWS Marketplace," "Shopify app," "GPTs store," "app distribution," or "third-party marketplace." For channel mix, use integrated-marketing.
 metadata:
   version: 1.1.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: distribution-channels
 ---
 
 # Channels: Distribution Channels

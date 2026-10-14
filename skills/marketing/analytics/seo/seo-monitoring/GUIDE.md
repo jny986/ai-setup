@@ -3,6 +3,9 @@ name: seo-monitoring
 description: When the user wants to build an SEO data analysis system, monitor indexing/traffic/keywords/backlinks, or set up benchmarks. Also use when the user mentions "SEO data analysis," "SEO monitoring," "article database," "traffic benchmark," "penalty recovery," "SEO work document," "SEO dashboard," "keyword tracking," "ranking monitoring," "indexing report," or "backlink monitoring." For GSC API, use google-search-console.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: seo-monitoring
 ---
 
 # Analytics: SEO Monitoring

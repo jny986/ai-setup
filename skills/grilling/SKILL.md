@@ -6,7 +6,9 @@ metadata:
   version: "1.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: mattpocock/skills@v1.2.3 (MIT)
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.2.3(6acc160)
+  based_on_skill: grilling
 ---
 
 Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.

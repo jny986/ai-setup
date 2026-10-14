@@ -3,6 +3,9 @@ name: paid-ads-strategy
 description: When the user wants to plan paid ads strategy, allocate ad budget, or choose paid channels. Also use when the user mentions "paid ads," "paid media," "PPC," "SEM," "web ads," "app ads," "TV ads," "CTV," "OOH," "banner ads," "ad network," "ad alliance," "Taaft ads," "Shopify App Store ads," "Google Ads," "Meta Ads," "PMF testing," "PMF validation," "test product-market fit with ads," "ad spend," "ad budget," "ROAS," "paid acquisition," "Quality Score," or "ad-to-page alignment." For Google Ads execution, use google-ads. For Meta Ads execution, use meta-ads. For landing page alignment, use `dev/references/pages/marketing/landing-page`.
 metadata:
   version: 1.7.0
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: paid-ads-strategy, ads
 ---
 
 # Strategies: Paid Ads

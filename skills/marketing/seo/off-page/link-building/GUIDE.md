@@ -3,6 +3,9 @@ name: link-building
 description: When the user wants to build backlinks, acquire links, or improve off-page SEO. Also use when the user mentions "link building," "backlinks," "off-page SEO," "link acquisition," "outreach," "guest posting," "broken link building," "link outreach," "acquire backlinks," "how to build backlinks," or "link building strategy." For profile audit, use backlink-analysis.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: link-building
 ---
 
 # SEO Off-Page: Link Building

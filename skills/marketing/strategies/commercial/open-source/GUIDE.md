@@ -3,6 +3,9 @@ name: open-source-strategy
 description: When the user wants open source strategy, OSS commercialization, or open source growth. Also use when the user mentions "open source strategy," "OSS strategy," "open source commercialization," "open source to paid," "open core," "COSS," "commercial open source," "GitHub stars strategy," "DevHunt," "open source marketing," "open source growth," "Llama," "Dify," "Cursor," "open source business model," or "developer tools directory." For GitHub tactics, use social (GitHub reference).
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: open-source-strategy
 ---
 
 # Strategies: Open Source

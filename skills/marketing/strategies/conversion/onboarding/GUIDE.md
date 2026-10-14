@@ -3,6 +3,9 @@ name: onboarding
 description: "Design post-signup onboarding that gets users to activation fast."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: onboarding
 ---
 
 # Onboarding CRO

@@ -3,6 +3,9 @@ name: paywalls
 description: "Design in-app paywalls, upgrade screens and feature gates that convert free users to paid."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: paywalls
 ---
 
 # Paywall and Upgrade Screen CRO
