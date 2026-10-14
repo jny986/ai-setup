@@ -16,7 +16,7 @@ Take the current work to an open GitHub PR. GitHub and `gh` only. Read the invoc
 
 2. **Base branch.** `gh repo view --json defaultBranchRef -q .defaultBranchRef.name`, unless the invocation names another base.
 
-3. **Commit and push.** Verify opt-in in effect (see Reference): run the repo's test, lint, and typecheck scripts now, abort on any failure, before doing anything below. Then call the `commit-it` skill: it resolves any ticket in context, switches to or creates the branch that ticket calls for (or a diff-summary branch if none), stages, commits, confirms, and pushes.
+3. **Commit and push.** Verify opt-in in effect (see Reference): run the repo's test, lint, and typecheck scripts now, abort on any failure, before doing anything below. Then follow `../commit-it/GUIDE.md`: it resolves any ticket in context, switches to or creates the branch that ticket calls for (or a diff-summary branch if none), stages, commits, confirms, and pushes.
 
 4. **Ticket reference for the PR.** If `commit-it` resolved a ticket, use it. Otherwise check specifically for a GitHub issue number (in the branch name or commit messages) since `commit-it` doesn't look for those. Note whether it's a GitHub issue number (allows `Closes #N`) or a non-GitHub ID (text only). None found is fine.
 
@@ -35,7 +35,7 @@ Take the current work to an open GitHub PR. GitHub and `gh` only. Read the invoc
 
 ## Reference
 
-**Invocation hints.** Freeform text after `/create-pr`, parsed for: draft flag, base branch, explicit title, reviewer names, verify opt-in ("verify", "run the checks"). No strict flags.
+**Invocation hints.** Freeform text after `/git create-pr`, parsed for: draft flag, base branch, explicit title, reviewer names, verify opt-in ("verify", "run the checks"). No strict flags.
 
 **Verify opt-in.** When asked, run the repo's test, lint, and typecheck scripts before step 3 and abort on any failure. Off otherwise.
 
