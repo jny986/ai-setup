@@ -144,7 +144,7 @@ Social-specific tells:
 - **Manufactured vulnerability**: "I'll be honest, I was terrified..." with no real story behind it.
 - **Emoji as bullets**: 🚀 ✅ 💡 leading every line.
 
-Keep fragments and lists of three to one per post. For the full blacklist, see [../copywriting/references/ai-tells.md](../../content/copywriting/references/ai-tells.md).
+Keep fragments and lists of three to one per post. For the full blacklist, see [ai-tells.md](../../content/copywriting/references/ai-tells.md).
 
 **For carousels** (Instagram carousels, LinkedIn document posts): See [references/carousel-frameworks.md](references/carousel-frameworks.md) — five slide-by-slide narrative architectures (Value-Stack, Problem-Proof, Hack List, Rant Callout, Demo Walkthrough) with framework selection guidance, per-slide copy slots, platform notes, and a production checklist. Pick the framework before writing slides.
 
