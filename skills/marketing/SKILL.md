@@ -7,7 +7,7 @@ metadata:
   version: "2.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: coreyhaines31/marketingskills@v2.11.27 (MIT), kostja94/marketing-skills (MIT), kostja94/pagina (MIT), kostja94/bricks (MIT)
+  based_on: coreyhaines31/marketingskills@v2.11.27 (MIT), kostja94/marketing-skills@8dd89c5 (MIT), kostja94/pagina@239cb67 (MIT), kostja94/bricks@fa7e1e0 (MIT)
 ---
 
 A router over the marketing guides. Each guide lives at `<category>/[<group>/]<name>/GUIDE.md` in this skill's folder, with its own `references/` and `assets/` beside it. [references/name-table.md](references/name-table.md) lists every final name, its path, its source and the old names that alias to it.

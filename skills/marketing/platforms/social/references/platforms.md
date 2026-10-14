@@ -96,4 +96,4 @@ Strategies for platforms without a reference of their own. LinkedIn, X, TikTok, 
 - The first line is the headline: it is what shows in the chat list preview
 - Compare topics on their own baselines: war and news channels reach the most (9-14% median), shopping, deals and betting channels the least (3-4%)
 
-**For buying posts in other channels** (vetting, ad networks, pricing per view): See [../../../influencer-marketing/references/telegram-channels.md](../../../influencer-marketing/references/telegram-channels.md)
+**For buying posts in other channels** (vetting, ad networks, pricing per view): See [../../../influencer-marketing/references/telegram-channels.md](../../../channels/partnerships/influencer-marketing/references/telegram-channels.md)

@@ -45,5 +45,5 @@ The room holds 200 people for 25 minutes; the recording works for years. Design 
 
 - **Before**: post the *why this topic now* angle; invite specific people to your session; make plans to meet the other speakers — speaker-to-speaker is the strongest networking lane at any event.
 - **During**: end with one clear, low-friction pointer (a memorable URL to the slides + a related asset — which doubles as a lead magnet, → **lead-magnets**). Q&A questions are content research; note every one.
-- **After**: publish the recording + a written version of the talk (→ **content-strategy**), clip the peak beats (→ **video**), follow up with everyone who asked a question or approached you — same 24–48h window as every event motion, and these are the warmest leads an event produces.
+- **After**: publish the recording + a written version of the talk (→ **content-strategy**), clip the peak beats (→ **video-marketing**), follow up with everyone who asked a question or approached you — same 24–48h window as every event motion, and these are the warmest leads an event produces.
 - Roll the talk forward: the same core talk, sharpened by each delivery's Q&A, can run a full conference season. Retire it when the Q&A stops surprising you.
