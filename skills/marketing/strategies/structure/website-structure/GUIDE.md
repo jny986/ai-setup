@@ -1,6 +1,6 @@
 ---
 name: website-structure
-description: When the user wants to plan website structure, decide which pages to build, or prioritize pages for a new or existing site. Also use when the user mentions "website structure," "site structure," "which pages do I need," "page planning," "sitemap planning," "Must Have pages," "website architecture," or "site hierarchy." For a specific page template (e.g. homepage), use homepage-generator or landing-page-generator as appropriate. Not for organic SEO roadmap alone; use seo-strategy.
+description: When the user wants to plan website structure, decide which pages to build, or prioritize pages for a new or existing site. Also use when the user mentions "website structure," "site structure," "which pages do I need," "page planning," "sitemap planning," "Must Have pages," "website architecture," or "site hierarchy." For a specific page template (e.g. homepage), use `dev/references/pages/brand/home` or `dev/references/pages/marketing/landing-page` as appropriate. Not for organic SEO roadmap alone; use seo-strategy.
 metadata:
   version: 1.5.0
 ---
@@ -25,7 +25,7 @@ Plan pages by priority for development scheduling. See the page guides in `dev/r
 
 | Priority | Pages | Notes |
 |----------|-------|-------|
-| **Must Have** | Home, Product/Features, Pricing, Blog, About, Privacy, Terms, Contact | Essential for trust and conversion; Pricing: public page in nav for self-serve; enterprise-only may use "Contact sales" instead; see **pricing-page-generator** (Visibility & Placement) |
+| **Must Have** | Home, Product/Features, Pricing, Blog, About, Privacy, Terms, Contact | Essential for trust and conversion; Pricing: public page in nav for self-serve; enterprise-only may use "Contact sales" instead; see `dev/references/pages/marketing/pricing` (Visibility & Placement) |
 | **Great to Have** | Testimonials, FAQ, Sitemap (HTML), 404, Refund/Returns | Support UX and SEO |
 | **Optional** | Search Results, News, Careers, Disclosure | Situational |
 | **Traffic-driven** | Category/Collection pages | For content-heavy or e-commerce; needs Category + Tags |
@@ -36,13 +36,13 @@ Applicable to SaaS, tools, and content sites. Adapt by removing unused nodes (e.
 
 | Section | Typical Paths | Page Skills |
 |---------|---------------|-------------|
-| **Root** | /, /features, /pricing, /demo, /contact | homepage-generator, features-page-generator, pricing-page-generator |
-| **Tools** | /tools, /free-tools; hub + per-tool pages | tools-page-generator; free tools for lead gen; often SPA; programmatic; see **programmatic-seo** |
-| **Resources** | /blog, /changelog, /glossary, /faq, /tutorials | blog-page-generator, changelog-page-generator, glossary-page-generator, faq-page-generator |
-| **Partnership** | /affiliate, /startups, /ambassadors | affiliate-page-generator, landing-page-generator |
-| **Legal** | /terms, /privacy, /careers | terms-page-generator, privacy-page-generator, careers-page-generator |
-| **Competitor** | /alternatives, /compare, /migrate | alternatives-page-generator, migration-page-generator |
-| **Standalone** | /dashboard, /login, /signup, /docs, /api, /status, /support | signup-login-page-generator, docs-page-generator, api-page-generator, status-page-generator |
+| **Root** | /, /features, /pricing, /demo, /contact | `dev/references/pages/brand/home`, `dev/references/pages/content/features`, `dev/references/pages/marketing/pricing` |
+| **Tools** | /tools, /free-tools; hub + per-tool pages | `dev/references/pages/content/tools`; free tools for lead gen; often SPA; programmatic; see **programmatic-seo** |
+| **Resources** | /blog, /changelog, /glossary, /faq, /tutorials | `dev/references/pages/content/blog`, `dev/references/pages/utility/changelog`, `dev/references/pages/content/documentation`, `dev/references/pages/content/faq` |
+| **Partnership** | /affiliate, /startups, /ambassadors | `dev/references/pages/marketing/program`, `dev/references/pages/marketing/landing-page` |
+| **Legal** | /terms, /privacy, /careers | `dev/references/pages/legal/legal-policy`, `dev/references/pages/legal/legal-policy`, `dev/references/pages/utility/careers` |
+| **Competitor** | /alternatives, /compare, /migrate | `dev/references/pages/marketing/alternatives`, `dev/references/pages/marketing/migration` |
+| **Standalone** | /dashboard, /login, /signup, /docs, /api, /status, /support | `dev/references/pages/utility/signup-login`, `dev/references/pages/content/documentation`, `dev/references/pages/content/product-interface`, `dev/references/pages/utility/status` |
 
 ## Growth Strategy → Structure Mapping
 
@@ -50,15 +50,15 @@ Structure reflects growth strategy. Subdirectories signal channels:
 
 | Goal | Path Example | Page/Channel |
 |------|--------------|--------------|
-| Affiliate conversion | /affiliate | affiliate-page-generator |
-| Education/student plan | /education, /startups, /student-discount | education-program, startups-page-generator |
+| Affiliate conversion | /affiliate | `dev/references/pages/marketing/program` |
+| Education/student plan | /education, /startups, /student-discount | education-program, `dev/references/pages/marketing/program` |
 | Multi-language | /zh-CN, /ja | localization-strategy |
-| Community | /ambassadors, /showcase | creator-program, landing-page-generator |
-| B2B / Enterprise | Solutions (industry-first), Use cases (scenario-first; can be sub-pages), Customer stories | solutions-page-generator, use-cases-page-generator, customer-stories-page-generator |
-| Developer product | /api, /docs, /status | api-page-generator, docs-page-generator, status-page-generator |
-| User feedback | Feedback, Roadmap | feedback-page-generator; External (Canny, FeatureBase) |
-| Plugins/Integrations | /integrations, /plugins | integrations-page-generator, category-page-generator |
-| Giveaway/Contest | /giveaway | contest-page-generator |
+| Community | /ambassadors, /showcase | creator-program, `dev/references/pages/marketing/landing-page` |
+| B2B / Enterprise | Solutions (industry-first), Use cases (scenario-first; can be sub-pages), Customer stories | `dev/references/pages/marketing/service-solution`, `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/customer-stories` |
+| Developer product | /api, /docs, /status | `dev/references/pages/content/product-interface`, `dev/references/pages/content/documentation`, `dev/references/pages/utility/status` |
+| User feedback | Feedback, Roadmap | `dev/references/pages/utility/feedback-disclosure`; External (Canny, FeatureBase) |
+| Plugins/Integrations | /integrations, /plugins | `dev/references/pages/marketing/integrations`, `dev/references/pages/marketing/commerce` |
+| Giveaway/Contest | /giveaway | `dev/references/pages/marketing/contest` |
 
 ## Domain Structure (Multiple Products)
 
@@ -82,13 +82,13 @@ When planning for multiple products or brands, see **domain-architecture** for s
 | **Early planning** | Plan structure before growth; can start right after domain purchase |
 | **Sitelinks** | Good structure + TOC + authoritative internal links → natural sitelinks in SERP (cannot be forced via schema); see **serp-features** |
 | **Orphan prevention** | Every page needs internal links; see **site-crawlability** and **internal-links** |
-| **Features vs Use cases** | /features = capability-first; /use-cases = scenario-first; differentiate content angle, link between, avoid overlap; see **features-page-generator**, **use-cases-page-generator** |
-| **Clear navigation** | Clear hierarchy and nav improve task completion; users find what they need faster; see **navigation-menu-generator** |
-| **Pricing placement** | Marketing site: /pricing in main nav for prospects; in-app: Settings → Billing in sidebar for logged-in users (subscription management). Enterprise-only: "Contact sales" may replace public pricing page; see **pricing-page-generator** |
+| **Features vs Use cases** | /features = capability-first; /use-cases = scenario-first; differentiate content angle, link between, avoid overlap; see `dev/references/pages/content/features`, `dev/references/pages/marketing/use-cases` |
+| **Clear navigation** | Clear hierarchy and nav improve task completion; users find what they need faster; see `dev/references/components/navigation/navigation-menu` |
+| **Pricing placement** | Marketing site: /pricing in main nav for prospects; in-app: Settings → Billing in sidebar for logged-in users (subscription management). Enterprise-only: "Contact sales" may replace public pricing page; see `dev/references/pages/marketing/pricing` |
 
 ## Homepage Module Reference
 
-See **homepage-generator** for common modules (Headline, Subheadline, CTA, Benefits, Social Proof, etc.), navigation options, and **hero-generator** for hero design.
+See `dev/references/pages/brand/home` for common modules (Headline, Subheadline, CTA, Benefits, Social Proof, etc.), navigation options, and `dev/references/components/branding/hero` for hero design.
 
 ## Output Format
 
@@ -290,8 +290,8 @@ Link types, rules, the hub-and-spoke model and the link audit checklist: see **i
 - **site-crawlability**: Crawlability, orphan pages, redirects; audit existing structure
 - **internal-links**: Link strategy, hub-spoke; implement after pages exist
 - **xml-sitemap**: Sitemap creation; include planned URLs
-- **breadcrumb-generator**: Breadcrumb for hierarchy; large sites, e-commerce
-- **navigation-menu-generator**: Nav design; primary, footer, mobile
+- `dev/references/components/navigation/breadcrumb`: Breadcrumb for hierarchy; large sites, e-commerce
+- `dev/references/components/navigation/navigation-menu`: Nav design; primary, footer, mobile
 - **content-strategy**: Content clusters, pillar pages; complements structure planning
 - **programmatic-seo**: For building SEO pages at scale with templates and data
 - **seo-audit**: For technical SEO, on-page optimization, and indexation issues

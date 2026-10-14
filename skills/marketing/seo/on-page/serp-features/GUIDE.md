@@ -112,17 +112,17 @@ AI-generated answer blocks at the top of search results. These are **SERP featur
 | Feature | Description |
 |---------|-------------|
 | **Related Searches** | Alternative queries at bottom |
-| **People Also Search For (PASF)** | Related queries after user bounces from result; 6-8 suggestions; different from PAA; comprehensive content reduces bounce. See **faq-page-generator** |
+| **People Also Search For (PASF)** | Related queries after user bounces from result; 6-8 suggestions; different from PAA; comprehensive content reduces bounce. See `dev/references/pages/content/faq` |
 
 ## Optimization by Feature
 
 | Feature | Key Actions |
 |---------|-------------|
 | **Featured Snippet** | Answer-first (40–60 words); H2/H3; semantic lists/tables. See **featured-snippet** |
-| **PAA** | FAQ content; FAQ schema; natural question phrasing; **faq-page-generator** |
+| **PAA** | FAQ content; FAQ schema; natural question phrasing; `dev/references/pages/content/faq` |
 | **Sitelinks** | Clear site structure; internal links; SearchAction; **website-structure** |
 | **Reviews** | AggregateRating schema; **schema-markup** |
-| **Breadcrumbs** | BreadcrumbList schema; **breadcrumb-generator** |
+| **Breadcrumbs** | BreadcrumbList schema; `dev/references/components/navigation/breadcrumb` |
 | **Video** | VideoObject schema; **video-optimization**; Google prioritizes YouTube |
 | **Image Pack** | Alt, captions, file names, responsive; see **image-optimization** |
 | **Local Pack** | Local SEO; GMB; NAP consistency |
@@ -189,8 +189,8 @@ Rich results do not directly boost rankings but can increase CTR by up to 35%. T
 
 - **schema-markup**: **Strongly related**—schema type maps to SERP feature; see mapping table above
 - **featured-snippet**: Featured Snippet / Position Zero optimization
-- **howto-section-generator**: HowTo step sections; list snippets; HowTo vs FAQ in SERP context
-- **faq-page-generator**: PAA optimization; FAQ format
+- `dev/references/components/content/howto-section`: HowTo step sections; list snippets; HowTo vs FAQ in SERP context
+- `dev/references/pages/content/faq`: PAA optimization; FAQ format
 - **keyword-research**: SERP features in keyword screening
 - **website-structure**: Sitelinks; site architecture
 - **generative-engine-optimization**: AI Overviews, Bing Copilot, Yandex AI; GEO strategy

@@ -108,7 +108,7 @@ Google does **not** simulate user clicks (tabs, carousels, "Load more"). Content
 - **generative-engine-optimization**: GEO; AI crawlers don't execute JS
 - **core-web-vitals**: LCP; SSR/SSG for above-fold; client-side hurts LCP
 - **mobile-friendly**: Mobile-first indexing; content parity
-- **tab-accordion**: Content in DOM at load; server-render tabs
+- `dev/references/components/content/tabs`, `dev/references/components/content/accordion`: Content in DOM at load; server-render tabs
 - **carousel**: Content in initial HTML; server-render slides
-- **hero-generator**: Hero in initial HTML; avoid JS-only
-- **navigation-menu-generator**: Nav in first paint; no JS-only menus
+- `dev/references/components/branding/hero`: Hero in initial HTML; avoid JS-only
+- `dev/references/components/navigation/navigation-menu`: Nav in first paint; no JS-only menus

@@ -12,7 +12,7 @@ Guides internal linking strategy for SEO: crawlability, link equity distribution
 ## Scope (On-Page SEO)
 
 - **Internal links**: Contextual links; descriptive anchor text; related posts; hub pages
-- **Breadcrumbs**: Implement for large sites (e.g. ecommerce); see **breadcrumb-generator**
+- **Breadcrumbs**: Implement for large sites (e.g. ecommerce); see `dev/references/components/navigation/breadcrumb`
 
 ## Initial Assessment
 
@@ -105,9 +105,9 @@ Each spoke links back to the hub. The hub links to all spokes. Spokes link to ea
 
 ## Related Skills
 
-- **article-page-generator**: Related posts, contextual links, end-of-article recommendations
+- `dev/references/pages/content/article`: Related posts, contextual links, end-of-article recommendations
 - **website-structure**: Plan page structure and hierarchy; informs internal linking
 - **site-crawlability**: Internal links enable crawling
 - **url-structure**: URL structure affects link patterns
 - **content-strategy**: Topic clusters inform link structure; pillar <-> cluster; cluster <-> cluster
-- **breadcrumb-generator**: Breadcrumbs are internal links; category hierarchy
+- `dev/references/components/navigation/breadcrumb`: Breadcrumbs are internal links; category hierarchy

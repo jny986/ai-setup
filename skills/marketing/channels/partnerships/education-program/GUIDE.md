@@ -1,6 +1,6 @@
 ---
 name: education-program
-description: When the user wants to plan, implement, or optimize student and education discount programs. Also use when the user mentions "student discount," "education discount," "student plan," "for students," ".edu discount," "academic pricing," "student verification," "SheerID," "UNiDAYS," or "education program." For startup pricing page, use startups-page-generator.
+description: When the user wants to plan, implement, or optimize student and education discount programs. Also use when the user mentions "student discount," "education discount," "student plan," "for students," ".edu discount," "academic pricing," "student verification," "SheerID," "UNiDAYS," or "education program." For startup pricing page, use `dev/references/pages/marketing/program`.
 metadata:
   version: 1.0.1
 ---
@@ -56,7 +56,7 @@ Identify:
 |----------|----------|---------|
 | **P0** | Registration / signup flow | User claims discount here; must show when discount applies at signup |
 | **P1** | Pricing page | Student tier or "Student discount" block; keeps single decision point |
-| **P1** | Homepage banner or CTA | "Students: 30% off today, 15% off ongoing"; top-banner-generator |
+| **P1** | Homepage banner or CTA | "Students: 30% off today, 15% off ongoing"; `dev/references/components/utility/top-banner` |
 | **P2** | Standalone page /student-discount | Optional; for "student discount" SEO or paid ad landing page |
 
 **Principle**: When discount applies at registration, core placement is registration flow. Pricing page and homepage support discovery. Standalone page only if needed for SEO or ads—avoid duplication when persona pages (e.g. "for students") already exist.
@@ -69,7 +69,7 @@ Identify:
 | **Registration only** | Discount claimed at signup; pricing page shows "Student discount available—verify at signup" |
 | **Standalone /student-discount** | "Student discount" search intent; paid ad landing; persona page would duplicate |
 
-See **startups-page-generator** for page structure when a standalone education page is needed; **pricing-page-generator** for Special programs section.
+See `dev/references/pages/marketing/program` for page structure when a standalone education page is needed; `dev/references/pages/marketing/pricing` for Special programs section.
 
 ## Implementation Flow
 
@@ -98,9 +98,9 @@ See **startups-page-generator** for page structure when a standalone education p
 
 - **discount-marketing-strategy**: Discount structure, financial guardrails; education is a campaign type
 - **pricing-strategy**: Base price; education discount applies on top
-- **pricing-page-generator**: Special programs section; Student tier or block; placement P1
-- **startups-page-generator**: Standalone education page when needed; same structure for startups + education
-- **top-banner-generator**: Homepage banner "Students: X% off"; placement P1
-- **landing-page-generator**: /student-discount landing page when used for SEO or ads
-- **signup-login-page-generator**: Signup is P0 for student discount; discount block, verification at registration
-- **use-cases-page-generator**: "For students" use case; avoid duplicate "for students" page
+- `dev/references/pages/marketing/pricing`: Special programs section; Student tier or block; placement P1
+- `dev/references/pages/marketing/program`: Standalone education page when needed; same structure for startups + education
+- `dev/references/components/utility/top-banner`: Homepage banner "Students: X% off"; placement P1
+- `dev/references/pages/marketing/landing-page`: /student-discount landing page when used for SEO or ads
+- `dev/references/pages/utility/signup-login`: Signup is P0 for student discount; discount block, verification at registration
+- `dev/references/pages/marketing/use-cases`: "For students" use case; avoid duplicate "for students" page

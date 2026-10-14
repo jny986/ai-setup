@@ -143,7 +143,7 @@ For the full profile module inventory, see [LinkedIn help: Add sections to your 
 - **Polls and document (PDF) posts**: Often strong for reach; pair with a clear takeaway
 - **Post frequency**: Weekly minimum is a common bar for company pages; individuals often **several times per week** if sustainable
 - **Alt text**: Add for accessibility
-- **B2B tone**: Professional and constructive; see **influencer-marketing** and **about-page-generator** for voice alignment with profile/brand
+- **B2B tone**: Professional and constructive; see **influencer-marketing** and `dev/references/pages/brand/about` for voice alignment with profile/brand
 
 ## Platform Tips
 
@@ -200,7 +200,7 @@ When generating LinkedIn copy, provide:
 - **entity-seo**: People/org **sameAs** and entity consistency
 - **generative-engine-optimization**: AI search / answer visibility (cross-platform; not only LinkedIn)
 - **influencer-marketing**: LinkedIn influencers for B2B
-- **about-page-generator**: Professional brand alignment
+- `dev/references/pages/brand/about`: Professional brand alignment
 - **visual-content**: Cross-channel visual planning; LinkedIn image specs in context
 
 ## Official references (index)

@@ -25,6 +25,8 @@ npx skills update
 ```
 .
 ├── skills/            # My skills — one folder per skill, each with a SKILL.md
+│   ├── marketing/     # Router skill: nested guides by category, plus references/name-table.md
+│   └── dev/           # Page and component build references (no SKILL.md), reached from marketing hand-offs
 ├── SKILLS.md          # Index of my skills
 ├── skills.html        # The same index, grouped by upstream source
 └── original-skills/   # Upstream skill repos, as git submodules
@@ -46,6 +48,14 @@ metadata:
   author-url: https://jny986.com
   based_on: mattpocock/skills@v1.2.3 (MIT)  # Only on skills adapted from an upstream skill
 ```
+
+#### Marketing router and dev references
+
+`skills/marketing/SKILL.md` is one router over every marketing guide. Guides are nested as `<category>/[<group>/]<name>/GUIDE.md`, and [`references/name-table.md`](skills/marketing/references/name-table.md) maps each final name to its path, source and the old flat names that alias to it. Run `/marketing <guide>` with a final name or an old one.
+
+`skills/dev/references/` holds the page and component build guides (`pages/`, `components/`). It is not a skill: marketing guides hand off to it by path, for example `dev/references/pages/marketing/pricing`. Marketing is based on [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina) and [kostja94/bricks](https://github.com/kostja94/bricks) (all MIT).
+
+Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat guides, unlisted guides, broken links and unresolved dev hand-offs.
 
 ### `original-skills/`
 
