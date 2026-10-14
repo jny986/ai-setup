@@ -61,8 +61,6 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `seo-audit` | Auditing or diagnosing technical and on-page SEO |
 | `ai-seo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
 | `site-architecture` | Page hierarchy, navigation, URLs, internal linking, sitemaps |
-| `directory-submissions` | Submitting to startup, SaaS, AI or review directories for backlinks |
-| `aso` | App Store or Google Play listing optimisation |
 | `free-tools` | Building a free tool (calculator, grader) for leads or SEO |
 | **SEO (nested)** | |
 | `competitor-research` `seo/content/competitor-research` | Analysing or profiling competitors (keywords, content, backlinks, positioning) from names or URLs |
@@ -101,20 +99,30 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `robots-txt` `seo/technical/robots` | robots.txt rules and crawler access |
 | `xml-sitemap` `seo/technical/sitemap` | XML sitemaps: structure, submission, segmentation |
 | **Channels** | |
-| `emails` | Lifecycle email sequences, drips, nurture and welcome flows |
 | `cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |
 | `prospecting` | Finding and qualifying prospects to build an outreach list |
-| `sms` | SMS, MMS or WhatsApp marketing |
 | `social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok |
 | `ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
 | `ad-creative` | Generating or iterating ad copy and creative at scale |
-| `community-marketing` | Building a community (Discord, Slack, forum) or advocates |
-| `influencer-marketing` | Creator, influencer or ambassador partnerships |
-| `co-marketing` | Partner marketing and joint campaigns |
-| `referrals` | Referral or affiliate programs, word of mouth |
-| `public-relations` | Press coverage, journalist pitches, media strategy |
-| `events` | Webinars, conferences, sponsorships, speaking, field events |
 | `lead-magnets` | Gated content, ebooks, checklists, templates for email capture |
+| **Channels (nested)** | |
+| `community-forum` `channels/community/community-forum` | Promoting via forums and communities (Hacker News, Reddit, Indie Hackers), inviting users to a community |
+| `community-building` `channels/community/community-building` | Building a community (Discord, Slack, forum) or advocates |
+| `directory-submission` `channels/community/directory-submission` | Submitting to startup, SaaS, AI or review directories for backlinks, with ready-to-paste copy |
+| `product-hunt-launch` `channels/community/product-hunt-launch` | Planning and running a Product Hunt launch |
+| `distribution-channels` `channels/distribution/distribution-channels` | Distribution via marketplaces, app stores and third-party platforms |
+| `aso` `channels/distribution/aso` | App Store or Google Play listing optimisation |
+| `email-marketing` `channels/owned/email-marketing` | Lifecycle email sequences, drips, nurture and welcome flows |
+| `employee-generated-content` `channels/owned/employee-generated-content` | Employee-led content and advocacy |
+| `sms` `channels/owned/sms` | SMS, MMS or WhatsApp marketing |
+| `affiliate-marketing` `channels/partnerships/affiliate-marketing` | Affiliate program strategy, commissions, recruitment |
+| `creator-program` `channels/partnerships/creator-program` | Running a creator program |
+| `education-program` `channels/partnerships/education-program` | Student, teacher and education programs |
+| `influencer-marketing` `channels/partnerships/influencer-marketing` | Creator, influencer or ambassador partnerships |
+| `public-relations` `channels/partnerships/public-relations` | Press coverage, journalist pitches, media strategy |
+| `referral-program` `channels/partnerships/referral-program` | Referral programs, word of mouth, reviews |
+| `co-marketing` `channels/partnerships/co-marketing` | Partner marketing and joint campaigns |
+| `events` `channels/events` | Webinars, conferences, sponsorships, speaking, field events |
 | **Measurement** | |
 | `analytics` | Tracking setup: GA4, GTM, events, UTMs, conversion tracking |
 | `attribution` | Which channels drive revenue, attribution models, MMM, incrementality |
