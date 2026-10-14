@@ -10,18 +10,20 @@ metadata:
   based_on: coreyhaines31/marketingskills@v2.11.27 (MIT)
 ---
 
-A router over 50 marketing guides. Each guide lives at `<guide>/GUIDE.md` in this skill's folder, with its own `references/` and `assets/` beside it.
+A router over the marketing guides. A guide lives at either a flat `<name>/GUIDE.md` or a nested `<category>/[<group>/]<name>/GUIDE.md` in this skill's folder, with its own `references/` and `assets/` beside it. Guides are moving from flat to nested one category at a time; [references/name-table.md](references/name-table.md) lists every final name, its nested path and the old names that alias to it.
 
 ## Steps
 
 1. **Load product context.** Read `docs/marketing/product-marketing.md` if it exists. Guides refer to it as "the product marketing context"; if it's missing and the task depends on it, offer the `product-marketing` guide first.
 2. **Pick the guide.**
-   - Argument names a guide: use it.
+   - Argument names a guide: first resolve it through the name table. An old name in the Aliases column becomes that row's final name.
+     - The guide table has a row with the final name: use it.
+     - It doesn't yet (its category hasn't moved): use the row of its alias, the flat guide it replaces. If it has no alias, pick by "Use when" below.
    - No argument and no task: show the table below and ask what they're working on.
    - Otherwise: pick the row whose "Use when" fits the task. When two fit equally, ask once.
-3. **Follow the guide.** Read `<guide>/GUIDE.md` and follow it as if it were the skill. Its relative links (`references/…`, `assets/…`) resolve against the guide's own folder.
+3. **Follow the guide.** Read `<path>/GUIDE.md`, where `<path>` is the second code span in its table row, or the name itself when the row has none (a flat guide). Follow it as if it were the skill. Its relative links (`references/…`, `assets/…`) resolve against the guide's own folder.
 
-When a guide hands off to another skill by name ("see cro", a **Related Skills** entry, "hand off to copywriting"), that skill is the guide of the same name here: open `<name>/GUIDE.md`.
+When a guide hands off to another skill by name ("see cro", a **Related Skills** entry, "hand off to copywriting"), that skill is the guide of the same name here, resolved through steps 2 and 3.
 
 ## Guides
 
