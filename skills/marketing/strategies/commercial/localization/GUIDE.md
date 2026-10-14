@@ -143,4 +143,4 @@ Do not create a new planning document when an existing project SSOT or implement
 - **keyword-research**: target-market search language and intent
 - **page-metadata**, **canonical-tag**, **url-structure**: specialist SEO and URL implementation
 - **pricing-strategy**, **gtm-strategy**: market economics and entry planning
-- **navigation-menu-generator**: language switcher and discoverable navigation
+- `dev/references/components/navigation/navigation-menu`: language switcher and discoverable navigation

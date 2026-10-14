@@ -1,6 +1,6 @@
 ---
 name: discount-marketing-strategy
-description: When the user wants to plan, implement, or optimize discount and promotional pricing strategy. Also use when the user mentions "discount strategy," "promo code," "coupon," "redeem code," "lifetime deal," "LTD," "AppSumo," "Black Friday," "Cyber Monday," "BFCM," "seasonal sale," or "promotional pricing." For pricing page, use pricing-page-generator.
+description: When the user wants to plan, implement, or optimize discount and promotional pricing strategy. Also use when the user mentions "discount strategy," "promo code," "coupon," "redeem code," "lifetime deal," "LTD," "AppSumo," "Black Friday," "Cyber Monday," "BFCM," "seasonal sale," or "promotional pricing." For pricing page, use `dev/references/pages/marketing/pricing`.
 metadata:
   version: 1.1.1
 ---
@@ -84,7 +84,7 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 - **Conditions**: Valid codes; minimum order; product eligibility
 - **Validation**: Automated at checkout
 - **Tracking**: Redemption data; attribution
-- **Placement**: Top banner (30–50% redemption lift when used well); popup; email; see **top-banner-generator**, **popup-generator**
+- **Placement**: Top banner (30–50% redemption lift when used well); popup; email; see `dev/references/components/utility/top-banner`, `dev/references/components/conversion/popup`
 
 ## Black Friday / Cyber Monday (BFCM)
 
@@ -111,8 +111,8 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 | **BFCM** | Seasonal; Nov | See BFCM section above |
 | **LTD** | Cold start; AppSumo | See LTD section |
 | **Referral reward** | Discount/credits for referrer and referee | **referral-program** |
-| **Contest / giveaway** | Prize = product, discount, cash | **contest-page-generator** |
-| **Startups / education** | Special pricing for segment | **education-program**, **startups-page-generator** |
+| **Contest / giveaway** | Prize = product, discount, cash | `dev/references/pages/marketing/contest` |
+| **Startups / education** | Special pricing for segment | **education-program**, `dev/references/pages/marketing/program` |
 | **Forum / community** | Discount codes in niche forums | **community-forum** |
 | **Affiliate** | Coupon sites; affiliate-specific codes | **affiliate-marketing** |
 
@@ -123,8 +123,8 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 | **Banner / poster** | Website, events; attract attention |
 | **Brochure** | Handout; company overview |
 | **Logo stickers** | Brand exposure |
-| **Website prep** | Promo landing page; banner for BFCM, seasonal; see **top-banner-generator** |
-| **Media kit** | For press, partners; see **media-kit-page-generator** |
+| **Website prep** | Promo landing page; banner for BFCM, seasonal; see `dev/references/components/utility/top-banner` |
+| **Media kit** | For press, partners; see `dev/references/pages/marketing/press` |
 
 **Corporate materials**: Company overview, annual report, product info—for investor/partner meetings; printable for events.
 
@@ -147,15 +147,15 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 ## Related Skills
 
 - **pricing-strategy**: Base price structure; pricing-strategy defines when discounts fit; discount-marketing-strategy defines how to execute
-- **pricing-page-generator**: Pricing page display; anchoring, annual discount presentation
+- `dev/references/pages/marketing/pricing`: Pricing page display; anchoring, annual discount presentation
 - **cold-start-strategy**: LTD as cold-start channel; full launch planning
 - **indie-hacker-strategy**: Indie hacker LTD use; monetize day one; cold start revenue
 - **referral-program**: Referral rewards (discounts, credits); 10–30% of price
-- **contest-page-generator**: Giveaway/contest; prize = discount
+- `dev/references/pages/marketing/contest`: Giveaway/contest; prize = discount
 - **education-program**: Student/education discount channel; verification, placement, discount structure
-- **startups-page-generator**: Startups/education program page; when standalone page needed
-- **top-banner-generator**: Promo banner; discount code display; 30–50% redemption lift
+- `dev/references/pages/marketing/program`: Startups/education program page; when standalone page needed
+- `dev/references/components/utility/top-banner`: Promo banner; discount code display; 30–50% redemption lift
 - **community-forum**: Forum promotion; discount codes in industry forums
 - **affiliate-marketing**: Coupon sites; affiliate-specific codes
-- **landing-page-generator**: Promo landing pages
+- `dev/references/pages/marketing/landing-page`: Promo landing pages
 - **directory-submission**: Promo code field for Product Hunt, deal platforms

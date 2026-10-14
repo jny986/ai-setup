@@ -26,7 +26,7 @@ Guides growth using the AARRR framework (Pirate Metrics)—five stages of the cu
 | Stage | Actions | Related skills |
 |-------|---------|----------------|
 | **Acquisition** | SEO, paid ads, content, partnerships, directories, marketplaces | cold-start-strategy, seo-strategy, paid-ads-strategy, directory-submission, distribution-channels |
-| **Activation** | Onboarding, use-case guidance, FAQ, case studies, free trials, trust signals | conversion-optimization, faq-page-generator, customer-stories-page-generator |
+| **Activation** | Onboarding, use-case guidance, FAQ, case studies, free trials, trust signals | conversion-optimization, `dev/references/pages/content/faq`, `dev/references/pages/marketing/customer-stories` |
 | **Retention** | Support, churn analysis, feedback, loyalty, dunning | retention-strategy, email-marketing |
 | **Referral** | Referral program, affiliate, case study sharing | referral-program, affiliate-marketing |
 | **Revenue** | Pricing, conversion optimization, CAC vs LTV analysis | pricing-strategy, conversion-optimization, paid-ads-strategy |

@@ -104,10 +104,10 @@ Open Graph and SEO metadata may use different copy because search and social fee
 
 ## Related Skills
 
-- **social-share-generator**: Share buttons use OG tags for rich previews when users share; OG must be set for share buttons to show proper cards
-- **article-page-generator**: Use og:type `article` for article/post pages; article-specific tags (published_time, author)
+- `dev/references/components/utility/social-share`: Share buttons use OG tags for rich previews when users share; OG must be set for share buttons to show proper cards
+- `dev/references/pages/content/article`: Use og:type `article` for article/post pages; article-specific tags (published_time, author)
 - **page-metadata**: Full lifecycle, source-of-truth implementation, and production validation
 - **title-tag**, **meta-description**: Search copy; may differ while preserving page identity
 - **twitter-cards**: Twitter uses OG as fallback; add Twitter-specific tags for best results
 - **canonical-tag**: og:url should match canonical URL
-- **og-image-generator**: Programmatic OG image generation — 6 visual styles (Terminal/CLI, Magazine Editorial, Swiss Minimal, Pixel Retro, Brutalist, Newspaper), Satori+resvg, Puppeteer, AI image generation tools, and Agent-Native content-aware workflow. This skill covers how to SET the image tag; og-image-generator covers how to CREATE the image.
+- **visual-content**: Creating OG images (social graphics, banners, AI generation). This guide covers how to SET the image tag; visual-content covers how to CREATE the image.

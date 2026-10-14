@@ -300,7 +300,7 @@ Before submitting to any directory:
 - [ ] **Logo / icon** per platform specs
 - [ ] **Category** selected correctly per directory taxonomy
 - [ ] **URL** correct and working
-- [ ] **Media kit** (for Product Hunt, press outreach) —see **media-kit-page-generator**
+- [ ] **Media kit** (for Product Hunt, press outreach) —see `dev/references/pages/marketing/press`
 - [ ] **Platform-specific copy** drafted (do not reuse identical text across directories)
 - [ ] **Taaft** (if applicable): Full field set--icon, main image, demo video, Primary/Secondary Tasks, features, models, built-with, modalities, pricing, legal URLs, pros/cons, socials, tracking links
 
@@ -453,7 +453,7 @@ One self-reported 2026 case (MCP server plus micro SaaS, ~35 directories) went f
 ## Related Skills
 
 - **branding**: Reusable brand strategy and voice method; use the product marketing context for project-specific truth
-- **media-kit-page-generator**: Press kit, screenshots, assets for launch; required for Product Hunt and directory submissions
+- `dev/references/pages/marketing/press`: Press kit, screenshots, assets for launch; required for Product Hunt and directory submissions
 - **link-building**: Directory and curated list backlinks contribute to link profile; this skill handles the submission workflow—see **link-building** for broader outreach, guest posting, broken link building
 - **github**: GitHub awesome lists as curated lists; create or submit to awesome-* repos
 - **open-source-strategy**: Open source commercialization; DevHunt, GitHub, Awesome lists for OSS projects
