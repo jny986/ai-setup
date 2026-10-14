@@ -113,7 +113,7 @@ The plan's Section 11 makes this thesis explicit by:
 
 | Tool | What it provides |
 |---|---|
-| **App Store Connect** | Conversion rate by listing variant, install funnel | Usually manual + `dev-browser` for screenshots |
+| **App Store Connect** | Conversion rate by listing variant, install funnel; usually manual + `dev-browser` for screenshots |
 | **GitHub MCP** | Mobile app repo for onboarding code edits |
 | **Figma / Pencil MCP** | Onboarding screen design + iteration |
 | **Customer.io MCP** | In-app messaging + lifecycle email coordination |

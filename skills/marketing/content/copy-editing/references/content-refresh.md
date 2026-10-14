@@ -31,7 +31,7 @@ A refresh aimed at a ranking page should start from the results page. The first 
    - **Uncovered** (0): the angle nobody has. Your best chance to be the result worth citing.
 5. **Match coverage.** Ignore competitors' word counts. Close the gaps that matter, and stop when the reader's question is answered.
 
-Present the gap grid and a proposed outline before rewriting. Mark each section **Keep**, **Revise**, or **New**, propose 2–3 title options (see [seo-audit's title-tags reference](../../../seo-audit/references/title-tags.md)), and wait for approval. Don't promise a ranking or traffic outcome.
+Present the gap grid and a proposed outline before rewriting. Mark each section **Keep**, **Revise**, or **New**, propose 2–3 title options (see [seo-audit's title-tags reference](../../../strategies/structure/seo-audit/references/title-tags.md)), and wait for approval. Don't promise a ranking or traffic outcome.
 
 ## Content Refresh Checklist
 

@@ -61,7 +61,7 @@ The signature moves are the real deliverable — someone can apply those five ru
 
 ## Step 4 — Review once, then execute
 
-Show the beat sheet before anyone edits anything — the same review-once gate as the ad-creative [creative review page](../../../ad-creative/references/creative-review-page.md). The reviewer checks two things:
+Show the beat sheet before anyone edits anything — the same review-once gate as the ad-creative [creative review page](../../../paid-ads/ad-creative/references/creative-review-page.md). The reviewer checks two things:
 
 - **The on-screen text says what you want** (mapped to your message, not the reference's)
 - **The scene changes land where you want them** (your footage's beats, not a blind copy of the reference's timing)

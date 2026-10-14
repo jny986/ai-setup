@@ -97,7 +97,7 @@ Rules of thumb: smart bidding needs ~30 conversions in 30 days per campaign to l
 
 ## Offline conversions
 
-The single highest-impact move in a B2B Google account: **import CRM outcomes** (SQL, opportunity, closed-won) back into Google via GCLID + offline conversion import or a native CRM integration, with real deal values. Until then, smart bidding optimizes to form-fills and buys you junk (see the optimize-to-quality trap in [b2b-paid-playbook.md](b2b-paid-playbook.md)). B2B clicks close in 60–180 days — in-platform conversion counts will never tell the truth on their own. Reconcile against the CRM monthly; the CRM wins.
+The single highest-impact move in a B2B Google account: **import CRM outcomes** (SQL, opportunity, closed-won) back into Google via GCLID + offline conversion import or a native CRM integration, with real deal values. Until then, smart bidding optimizes to form-fills and buys you junk (see the optimize-to-quality trap in [b2b-paid-playbook.md](../../../../strategies/commercial/paid-ads/references/b2b-paid-playbook.md)). B2B clicks close in 60–180 days — in-platform conversion counts will never tell the truth on their own. Reconcile against the CRM monthly; the CRM wins.
 
 ## Quality Score and landing pages
 
