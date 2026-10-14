@@ -67,7 +67,7 @@ For extensions, actions, integrations. See **distribution-channels** for marketp
 
 | Practice | Guideline |
 |----------|-----------|
-| **Build in Public** | Share progress, metrics, failures; attracts early adopters | **indie-hacker-strategy** |
+| **Build in Public** | Share progress, metrics, failures; attracts early adopters; see **indie-hacker-strategy** |
 | **Contributing** | CONTRIBUTING.md; clear contribution path |
 | **Transparency** | Roadmap, changelog; community involvement in planning |
 | **Commercialization** | Preserve goodwill; communicate early; keep investing in OSS |
