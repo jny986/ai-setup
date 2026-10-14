@@ -123,7 +123,18 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | **Channels** | |
 | `social` `platforms/social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok, Reddit, Pinterest, Medium, YouTube, GitHub, Grokipedia |
 | `paid-ads-strategy` `strategies/commercial/paid-ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
-| `ad-creative` | Generating or iterating ad copy and creative at scale |
+| `ad-creative` `paid-ads/ad-creative` | Generating or iterating ad copy and creative at scale: static templates, hooks, video ad formats, creative strategy |
+| `google-ads` `paid-ads/platforms/google-ads` | Setting up or optimising Google Ads: Search, Performance Max, RSAs, Quality Score, PMF testing with ads |
+| `linkedin-ads` `paid-ads/platforms/linkedin-ads` | LinkedIn Ads: Campaign Manager, Lead Gen Forms, Sponsored Messaging, B2B and ABM |
+| `meta-ads` `paid-ads/platforms/meta-ads` | Meta (Facebook/Instagram) Ads: Advantage+, Pixel and CAPI, lookalikes, Andromeda, kill/scale rules |
+| `reddit-ads` `paid-ads/platforms/reddit-ads` | Reddit Ads: promoted posts, subreddit targeting, native creative |
+| `tiktok-ads` `paid-ads/platforms/tiktok-ads` | TikTok Ads: In-Feed, TopView, Spark Ads, vertical creative |
+| `youtube-ads` `paid-ads/platforms/youtube-ads` | YouTube video ads: TrueView, Bumper, Discovery, format selection |
+| `app-ads` `paid-ads/formats/app-ads` | App install ads and user acquisition: Google App Campaigns, Apple Search Ads, CPI |
+| `ctv-ads` `paid-ads/formats/ctv-ads` | CTV, OTT and streaming TV ads |
+| `directory-listing-ads` `paid-ads/formats/directory-listing-ads` | Paid placements in directories and marketplaces (G2, Capterra, Shopify App Store) |
+| `display-ads` `paid-ads/formats/display-ads` | Display, banner and ad-network campaigns |
+| `native-ads` `paid-ads/formats/native-ads` | Native ads on Taboola, Outbrain and similar |
 | `lead-magnets` `content/lead-magnets` | Gated content, ebooks, checklists, templates for email capture |
 | **Channels (nested)** | |
 | `community-forum` `channels/community/community-forum` | Promoting via forums and communities (Hacker News, Reddit, Indie Hackers), inviting users to a community |
