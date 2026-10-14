@@ -7,7 +7,7 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.27(28e4a81)
+  based_on_version: v2.11.29(c7d7dfb)
   based_on_skill: offers
 ---
 
@@ -115,7 +115,7 @@ When the user says "my offer isn't converting" or "I want to improve my offer":
 4. **Audit the anatomy** — mark each of the six components present, weak or missing.
 5. **Pick one lever to fix this iteration** — usually the one scoring lowest. Change one component; leave the rest for the next iteration.
 6. **Draft the changed component** — new bonus, new guarantee, new scarcity, new name, new payment plan — using that component's reference from the library above. Done when the drafted component is written out in buyer-facing words.
-7. **Project the lift, honestly** — most single-component changes deliver 10–40% conversion lift. Anyone promising 5x is selling something. Two consecutive iterations on different levers can stack to 2–3x.
+7. **Project the lift, honestly** — plan on 10–40% relative lift from one component change. Multiply the lifts, don't add them: +20% then +30% = `1.20 × 1.30 = 1.56` (2% → 3.12%, +1.12 percentage points). Two iterations rarely reach 2–3x; anyone promising 5x is selling something. Confirm the combined offer with a test (see ab-testing).
 
 ---
 

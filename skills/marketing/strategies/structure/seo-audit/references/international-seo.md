@@ -12,11 +12,11 @@ Three equivalent placement methods: HTML `<link>` in `<head>`, HTTP `Link` heade
 - Self-referencing entry on every page (page must include itself in the hreflang set)
 - Reciprocal links (if A points to B, B must point back to A -- or both are ignored)
 - Valid codes: ISO 639-1 language + optional ISO 3166-1 Alpha 2 region (e.g., `en`, `en-GB` -- never `en-UK`)
-- `x-default` present, pointing to fallback page (language selector or default locale)
+- Consider `x-default` for unmatched language/region users, pointing to an appropriate fallback; it is recommended, not required for other valid annotations.
 - All target URLs return 200, are indexable, and match their canonical URL
 - No duplicate language-region codes pointing to different URLs
 
-**Common errors:** Missing self-referencing entry (all hreflang ignored). No return tag / one-directional (pair dropped). Invalid codes like `en-UK` (use `en-GB`). Hreflang target is non-canonical, 404, or blocked (cluster discarded). HTML and sitemap annotations disagree (conflicting pair dropped).
+**Common errors:** Missing self-referencing entries. No return tag / one-directional links. Invalid codes like `en-UK` (use `en-GB`). Non-canonical, 404, or blocked targets. Conflicting HTML and sitemap annotations. Report the affected URLs and relationships; do not infer that one broken annotation invalidates every other reciprocal pair. Google can still process valid bidirectional relationships. See [Google's localized-page guidance](https://developers.google.com/search/docs/specialty/international/localized-versions#guidelines-for-all-methods).
 
 **At scale:** `<xhtml:link>` children don't count toward 50K URL sitemap limit, but the 50MB file size limit becomes the bottleneck (plan 2K-5K URLs per file with full hreflang). Focus hreflang on pages receiving wrong-language traffic -- not required on every page. For Bing: supplement with `<html lang>` and `<meta http-equiv="content-language">` (Bing treats hreflang as a weak signal).
 
@@ -35,7 +35,7 @@ Three equivalent placement methods: HTML `<link>` in `<head>`, HTTP `Link` heade
 
 **Check for:**
 - `xmlns:xhtml` namespace on `<urlset>`, each `<url>` includes `<xhtml:link>` for all locales including itself
-- `x-default` alternate included; all URLs absolute (full protocol + domain)
+- If a fallback is needed, include an appropriate `x-default` alternate; all URLs absolute (full protocol + domain)
 - Sitemap index in Search Console and robots.txt; split by content type, not by locale
 
 **Next.js caveat:** `alternates.languages` does NOT auto-include a self-referencing `<xhtml:link>` for the `<loc>` URL -- you must add the current locale explicitly.
@@ -101,7 +101,9 @@ Every page must include itself (self-referencing) in the hreflang set. Missing s
 
 ### x-default
 
-Introduced April 2013. Designates the fallback page for users whose language/region matches no declared variant. Can point to the same URL as one of the language-specific alternates. Must be included in the complete set of annotations on every variant page.
+This is a recommended fallback for unmatched language/region users, not a mandatory condition for valid language annotations. Report its absence as a design recommendation when a fallback is useful, rather than declaring the whole hreflang implementation invalid.
+
+Introduced April 2013. Designates the fallback page for users whose language/region matches no declared variant. Can point to the same URL as one of the language-specific alternates. If used, include it consistently in the complete annotation set on each variant page.
 
 - [Google Blog: x-default hreflang](https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages)
 - [Google Blog: How x-default can help you (2023)](https://developers.google.com/search/blog/2023/05/x-default)

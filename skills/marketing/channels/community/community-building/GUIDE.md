@@ -4,7 +4,7 @@ description: When the user wants to design, launch, or grow a community (Discord
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.27(28e4a81)
+  based_on_version: v2.11.29(c7d7dfb)
   based_on_skill: community-marketing
 ---
 
