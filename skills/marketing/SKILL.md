@@ -30,38 +30,41 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | Guide | Use when |
 |---|---|
 | **Foundations** | |
-| `product-marketing` | Creating or updating the product marketing context doc (positioning, ICP, audience) |
-| `customer-research` | Interviews, surveys, reviews, transcripts, personas, JTBD, voice of customer |
-| `marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
+| `product-marketing` `strategies/brand/product-marketing` | Creating or updating the product marketing context doc (positioning, ICP, audience) |
+| `marketing-psychology` `strategies/brand/marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
 | **Strategy and planning** | |
-| `marketing-plan` | A full marketing, growth or GTM plan |
-| `marketing-ideas` | Brainstorming growth ideas or tactics when stuck |
-| `marketing-council` | Multiple expert perspectives or a simulated advisory board on a marketing question |
-| `marketing-loops` | A recurring, agent-run marketing workflow on a cadence |
-| `launch` | Product launches, feature announcements, changelogs and release notes, Product Hunt, waitlists, site go-live |
 | **Copy and creative** | |
-| `copywriting` | Writing or rewriting page copy: headlines, value props, CTAs |
-| `copy-editing` | Editing, proofreading or refreshing existing copy |
-| `image` | Generating or optimising marketing images, mockups, banners, OG images |
-| `video` | Producing video with AI tools or programmatic frameworks |
+| `copywriting` `content/copywriting` | Writing or rewriting page copy: headlines, value props, CTAs |
+| `copy-editing` `content/copy-editing` | Editing, proofreading or refreshing existing copy |
+| `visual-content` `content/visual-content` | Planning, generating or repurposing marketing images, social graphics, mockups, banners, OG images |
+| `video-marketing` `content/video` | Video strategy and scripts, hooks, and producing video with AI tools or programmatic frameworks |
+| `article-content` `content/article` | Writing article bodies: blog posts, guides, long-form pieces |
+| `podcast-marketing` `content/podcast` | Podcast strategy, episodes, show notes and repurposing |
+| `translation` `content/translation` | Translating, transcreating or maintaining multilingual content |
 | **Conversion (CRO)** | |
-| `cro` | Improving conversions on a marketing page or form |
-| `signup` | Signup, registration or trial-start flows |
-| `onboarding` | Post-signup activation, first-run experience, time to value |
-| `popups` | Popups, modals, slide-ins, exit intent, banners |
-| `paywalls` | In-app paywalls, upgrade screens, feature gates, upsells |
 | `ab-testing` | Designing A/B tests or running an experimentation program |
+| **Brand and commercial strategy** | |
+| `branding` `strategies/brand/branding` | Brand purpose, values, story, voice, narrative, brand guidelines |
+| `brand-visual` `strategies/brand/brand-visual` | Visual identity: typography, colours, design tokens, brand style guide |
+| `brand-monitoring` `strategies/brand/brand-monitoring` | Tracking brand mentions, sentiment and reputation |
+| `brand-protection` `strategies/brand/brand-protection` | Trademarks, impersonation, brand abuse and takedowns |
+| `integrated-marketing` `strategies/brand/integrated-marketing` | Coordinating channels with the PESO model and a consistent message |
+| `rebranding-strategy` `strategies/brand/rebranding` | Rebrand execution: domain change, redirects, migration, announcement |
+| `content-marketing` `strategies/brand/content-marketing` | Content types, formats, funnel mapping and repurposing across channels |
+| `domain-selection` `strategies/commercial/domain/domain-selection` | Choosing a domain name and TLD |
+| `domain-architecture` `strategies/commercial/domain/domain-architecture` | Subdomain, subfolder or separate domain decisions |
+| `multi-domain-brand-seo` `strategies/commercial/domain/multi-domain-brand-seo` | SEO and brand when several domains coexist |
+| `localization-strategy` `strategies/commercial/localization` | Market and locale selection, multilingual rollout, localisation architecture |
+| `open-source-strategy` `strategies/commercial/open-source` | Open source as a growth and commercialisation path |
+| `discount-marketing-strategy` `strategies/commercial/pricing/discount-marketing` | Promotional pricing: annual, lifetime deals, seasonal, startup and referral discounts |
 | **Pricing and revenue** | |
-| `pricing` | Pricing, packaging, tiers, freemium or trials |
-| `offers` | Designing the offer itself: bonuses, guarantees, urgency, naming |
-| `churn-prevention` | Churn, cancel flows, save offers, dunning, failed payments |
+| `pricing-strategy` `strategies/commercial/pricing/pricing-strategy` | Pricing, packaging, tiers, freemium or trials |
+| `offers` `strategies/commercial/pricing/offers` | Designing the offer itself: bonuses, guarantees, urgency, naming |
 | `revops` | Lead lifecycle, lead scoring, routing, marketing-to-sales handoff |
 | `sales-enablement` | Sales decks, one-pagers, objection handling, demo scripts |
 | **SEO and discoverability** | |
-| `seo-audit` | Auditing or diagnosing technical and on-page SEO |
-| `ai-seo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
-| `site-architecture` | Page hierarchy, navigation, URLs, internal linking, sitemaps |
-| `free-tools` | Building a free tool (calculator, grader) for leads or SEO |
+| `generative-engine-optimization` `strategies/commercial/geo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
+| `free-tools` `strategies/commercial/free-tools` | Building a free tool (calculator, grader) for leads or SEO |
 | **SEO (nested)** | |
 | `competitor-research` `seo/content/competitor-research` | Analysing or profiling competitors (keywords, content, backlinks, positioning) from names or URLs |
 | `comparison-pages` `seo/content/comparison-pages` | Strategy and content for comparison, "vs" and alternative pages |
@@ -98,13 +101,34 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `rendering-strategies` `seo/technical/rendering-strategies` | SSR, SSG, CSR and rendering for SEO |
 | `robots-txt` `seo/technical/robots` | robots.txt rules and crawler access |
 | `xml-sitemap` `seo/technical/sitemap` | XML sitemaps: structure, submission, segmentation |
+| **Strategies (nested)** | |
+| `conversion-optimization` `strategies/conversion/conversion-optimization` | Improving conversions on a marketing page, form or funnel: page analysis, CRO process, experiment prioritisation |
+| `signup` `strategies/conversion/signup` | Signup, registration or trial-start flows |
+| `onboarding` `strategies/conversion/onboarding` | Post-signup activation, first-run experience, time to value |
+| `popups` `strategies/conversion/popups` | Popups, modals, slide-ins, exit intent, banners |
+| `paywalls` `strategies/conversion/paywalls` | In-app paywalls, upgrade screens, feature gates, upsells |
+| `gtm-strategy` `strategies/launch/gtm` | A GTM strategy or a full 12-month marketing plan: GTM mode, ICP, market entry, repositioning, AARRR |
+| `product-launch` `strategies/launch/product-launch` | Product launches, feature announcements, changelogs and release notes, waitlists, site go-live |
+| `retention-strategy` `strategies/launch/retention` | Churn, retention, cancel flows, save offers, dunning, failed payments |
+| `customer-research` `strategies/launch/customer-research` | Interviews, surveys, reviews, transcripts, personas, JTBD, voice of customer |
+| `marketing-ideas` `strategies/launch/marketing-ideas` | Brainstorming growth ideas or tactics when stuck |
+| `cold-start-strategy` `strategies/launch/cold-start` | Getting first users with zero traction (0 to 1) |
+| `growth-funnel` `strategies/launch/growth-funnel` | AARRR growth funnel, bottlenecks, lifecycle actions |
+| `indie-hacker-strategy` `strategies/launch/indie-hacker` | Indie hacker and bootstrapped founder growth, build in public |
+| `pmf-strategy` `strategies/launch/pmf` | Validating or measuring product-market fit before scaling |
+| `research-sources` `strategies/launch/research-sources` | Information sources for content ideas, competitor monitoring, industry tracking |
+| `marketing-council` `strategies/operations/marketing-council` | Multiple expert perspectives or a simulated advisory board on a marketing question |
+| `marketing-loops` `strategies/operations/marketing-loops` | A recurring, agent-run marketing workflow on a cadence |
+| `seo-strategy` `strategies/structure/seo` | Organic SEO strategy, workflow order and prioritisation |
+| `seo-audit` `strategies/structure/seo-audit` | Auditing or diagnosing technical and on-page SEO |
+| `website-structure` `strategies/structure/website-structure` | Which pages to build, page hierarchy, navigation and site structure |
 | **Channels** | |
 | `cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |
 | `prospecting` | Finding and qualifying prospects to build an outreach list |
-| `social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok |
-| `ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
+| `social` `platforms/social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok, Reddit, Pinterest, Medium, YouTube, GitHub, Grokipedia |
+| `paid-ads-strategy` `strategies/commercial/paid-ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
 | `ad-creative` | Generating or iterating ad copy and creative at scale |
-| `lead-magnets` | Gated content, ebooks, checklists, templates for email capture |
+| `lead-magnets` `content/lead-magnets` | Gated content, ebooks, checklists, templates for email capture |
 | **Channels (nested)** | |
 | `community-forum` `channels/community/community-forum` | Promoting via forums and communities (Hacker News, Reddit, Indie Hackers), inviting users to a community |
 | `community-building` `channels/community/community-building` | Building a community (Discord, Slack, forum) or advocates |
