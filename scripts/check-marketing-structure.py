@@ -62,7 +62,7 @@ for section, lines in sections.items():
 
 for g in sorted(set(guides) - set(router.values())):
     # A flat folder left in place until the contract step is fine once its alias target is routed.
-    if "/" not in g and g in aliases:
+    if "/" not in g and aliases.get(g) in router:
         continue
     errors.append(f"router: guide {g}/GUIDE.md not listed")
 

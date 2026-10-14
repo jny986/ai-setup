@@ -36,6 +36,6 @@ As of 2026-10; item limits and pricing change, so confirm on the vendor's curren
 ## Choosing
 
 1. **Start with the site you already have.** If its CMS can hold the page count and supports the template logic, build there. The pages inherit the domain's authority and internal links.
-2. **If it can't, decide subpath or subdomain on effort.** Google doesn't rank one above the other. A reverse-proxied subpath keeps the set inside the main site's structure and links but adds proxy setup; a subdomain is simpler but needs its own internal links and sitemap. The `site-architecture` skill's platforms reference has the proxy checklist.
+2. **If it can't, decide subpath or subdomain on effort.** Google doesn't rank one above the other. A reverse-proxied subpath keeps the set inside the main site's structure and links but adds proxy setup; a subdomain is simpler but needs its own internal links and sitemap. The `website-structure` guide's platforms reference has the proxy checklist.
 3. **Size for the next year.** Pick the option whose item limits and publish times work at the page count you'll reach, with headroom for the variations you'll add.
 4. **Prove it on a small batch.** Launch the 20–50 strongest pages first, check they index and rank, then scale (see Pre-Launch and Post-Launch Checks in [GUIDE.md](../GUIDE.md)).
