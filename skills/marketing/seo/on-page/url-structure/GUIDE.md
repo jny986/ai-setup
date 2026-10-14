@@ -61,7 +61,7 @@ Identify:
 | **Static** | `/blog/seo-guide` | Direct file; best SEO; content stable |
 | **Dynamic** | `/product?id=123` | Program-generated; avoid for indexable content |
 | **Pseudo-static** | `/blog/seo-guide` (rewritten from `.php`) | Combines both; common in CMS |
-| **Rule** | Prefer static or pseudo-static; if dynamic, keep params ≤2; use **canonical-tag** and **robots-txt** (Clean-param) |
+| **Rule** | Prefer static or pseudo-static; if dynamic, keep params ≤2; use **canonical-tag** and **robots-txt** (Clean-param) | |
 
 ### File Extensions
 

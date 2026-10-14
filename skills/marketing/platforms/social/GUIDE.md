@@ -252,7 +252,7 @@ Extract "content atoms" — self-contained moments from any long-form content th
 1. Respond to all comments on your posts (5 min)
 2. Comment on 5-10 posts from target accounts (15 min)
 3. Share/repost with added insight (5 min)
-4. Send 2-3 DMs to new connections (5 min). For LinkedIn as an outbound channel (limits, sequences, connection and message copy), see [../cold-email/references/linkedin-outreach.md](../../cold-email/references/linkedin-outreach.md)
+4. Send 2-3 DMs to new connections (5 min). For LinkedIn as an outbound channel (limits, sequences, connection and message copy), see [../cold-email/references/linkedin-outreach.md](../../sales/cold-email/references/linkedin-outreach.md)
 
 **For surfacing *which* posts to comment on** (top-10 daily lists, brand/competitor monitoring, intent-signal triage), see [references/listening.md](references/listening.md). Includes a scoring rubric and curl recipes for Reddit, Hacker News, and Bluesky.
 
