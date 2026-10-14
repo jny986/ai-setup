@@ -14,15 +14,24 @@ SPAN = re.compile(r"`([^`]+)`")
 LINK = re.compile(r"\]\((?:\./)?((?:references|assets)/[^)\s#]*)|`(?:\./)?((?:references|assets)/[^`\s]*)`")
 
 # The 50 flat guide names before the restructure; each must alias to a final name.
+# ponytail: one-time migration list, drop it once upstream syncs no longer need the alias check.
 OLD_NAMES = """ab-testing ad-creative ads ai-seo analytics aso attribution churn-prevention co-marketing cold-email
 community-marketing competitor-profiling competitors content-strategy copy-editing copywriting cro customer-research
 directory-submissions emails events free-tools image influencer-marketing launch lead-magnets marketing-council
 marketing-ideas marketing-loops marketing-plan marketing-psychology offers onboarding paywalls popups pricing
 product-marketing programmatic-seo prospecting public-relations referrals revops sales-enablement schema seo-audit
 signup site-architecture sms social video""".split()
+BANNED = ("contextus", "When invoking")  # guides load the product marketing context and drop kostja's preamble
+MD_LINK = re.compile(r"\]\(([^)\s#]+)")
 HANDOFF = re.compile(r"dev/references/[A-Za-z0-9_./-]*[A-Za-z0-9_]")
 
 errors = []
+
+
+def check_banned(rel, text):
+    for bad in BANNED:
+        if bad.lower() in text.lower():
+            errors.append(f"{rel}: contains '{bad}'")
 
 
 def rows(lines):
@@ -107,10 +116,14 @@ for g in guides:
         # Placeholder paths like references/<name>.md are prose, not links.
         if not re.search(r"[<>*…{}]", target) and not (SKILL / g / target).exists():
             errors.append(f"{g}/GUIDE.md: broken link {target}")
-    # Guides load the product marketing context, not Contextus, and drop kostja's preamble.
-    for bad in ("contextus.md", "When invoking"):
-        if bad.lower() in text.lower():
-            errors.append(f"{g}/GUIDE.md: contains '{bad}'")
+    check_banned(f"{g}/GUIDE.md", text)
+
+# Every relative markdown link anywhere in marketing must resolve (placeholders and URLs are prose).
+for md in sorted(SKILL.rglob("*.md")):
+    for target in MD_LINK.findall(md.read_text()):
+        if "://" not in target and not re.search(r"[<>{}*]", target) and target.endswith(".md") \
+                and not (md.parent / target).exists():
+            errors.append(f"{md.relative_to(SKILL)}: broken link {target}")
 
 # Dev references: no router yet, so the name table's Dev section is the index.
 DEV = SKILL.parent / "dev"
@@ -124,12 +137,10 @@ for p in DEV.rglob("SKILL.md"):
     errors.append(f"dev: unexpected {p.relative_to(SKILL.parent)}")
 for md in sorted(DEV.rglob("*.md")):
     rel, text = md.relative_to(SKILL.parent), md.read_text()
-    for target in re.findall(r"\]\(([^)\s#]+)", text):
+    for target in MD_LINK.findall(text):
         if "://" not in target and not (md.parent / target).exists():
             errors.append(f"{rel}: broken link {target}")
-    for bad in ("contextus", "When invoking"):
-        if bad.lower() in text.lower():
-            errors.append(f"{rel}: contains '{bad}'")
+    check_banned(rel, text)
 
 # Marketing hand-offs to dev references must resolve to a guide folder or a reference file.
 handoffs = 0
@@ -141,6 +152,15 @@ for md in sorted(SKILL.rglob("*.md")):
         path = SKILL.parent / target
         if not ((path / "GUIDE.md").is_file() or path.is_file()):
             errors.append(f"{md.relative_to(SKILL)}: hand-off {target} does not resolve")
+
+# Prose cross-references must use final names: "<old> skill/guide" or a bolded "**<old>**" entry.
+stale = [o for o in OLD_NAMES if o not in marketing_names]
+STALE = re.compile(r"(?<![\w-])(?<!former )(?:%s)\s+(?:skill|guide)\b|\*\*(?:%s)\b(?:\s*/|\*\*)" % (("|".join(stale),) * 2))
+for md in sorted(SKILL.rglob("*.md")):
+    if md.name in ("name-table.md",) or md == SKILL / "SKILL.md":
+        continue
+    for m in STALE.finditer(md.read_text()):
+        errors.append(f"{md.relative_to(SKILL)}: old guide name in '{m.group(0)}'")
 
 for e in errors:
     print("FAIL", e)

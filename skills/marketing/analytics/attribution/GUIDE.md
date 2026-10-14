@@ -27,7 +27,7 @@ Most requests start with (A). Reach for (B) only when they control the surface a
 Hand these to the named guide:
 
 - **General event tracking, tracking plans, GA4/GTM** → **analytics-tracking**; **UTM setup** → **traffic-analysis**. Attribution *assumes tracking exists*. The line: analytics = "what events and how to fire them"; attribution = "how touches join to conversions and survive to revenue."
-- **Ad-platform pixels, CAPI, server-side conversion tracking** → **paid-ads-strategy** ([conversion-tracking.md](../../ads/references/conversion-tracking.md)). Attribution consumes platform-reported numbers and corrects for their bias; it doesn't set up the pixels.
+- **Ad-platform pixels, CAPI, server-side conversion tracking** → **paid-ads-strategy** ([conversion-tracking.md](../../strategies/commercial/paid-ads/references/conversion-tracking.md)). Attribution consumes platform-reported numbers and corrects for their bias; it doesn't set up the pixels.
 - **Pipeline stages, lead lifecycle, CRM revenue dashboards** → **revops**. Attribution feeds pipeline data; it doesn't define stages.
 - **Showing up in / measuring AI search** → **generative-engine-optimization**; tracking AI referrals → **ai-traffic-tracking**. Attribution names AI traffic as a blind spot only.
 

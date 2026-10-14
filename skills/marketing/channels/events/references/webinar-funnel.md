@@ -73,7 +73,7 @@ Segment by behavior, then sequence (→ **email-marketing** for craft):
 
 - **Replay strategy**: time-limited replay (72h–1 week) preserves urgency for the offer; evergreen replay converts the offer to a standing CTA and becomes a lead magnet (→ **lead-magnets**). Pick per goal — limited for launches/offers, evergreen for education-led capture.
 - **Cart/offer close**: if the offer had a deadline, run a real close sequence (deadline reminder → objection email → final hours). All urgency claims must be true.
-- **Recycle the asset**: transcript → recap post (→ **content-strategy**), clips (→ **video**), quotable stats for AI-citable content (→ **geo**). A monthly webinar run this way is a content engine with a lead-gen side effect.
+- **Recycle the asset**: transcript → recap post (→ **content-strategy**), clips (→ **video-marketing**), quotable stats for AI-citable content (→ **geo**). A monthly webinar run this way is a content engine with a lead-gen side effect.
 
 ## Metrics That Diagnose
 
