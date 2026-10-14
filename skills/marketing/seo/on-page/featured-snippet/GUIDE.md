@@ -3,6 +3,9 @@ name: featured-snippet
 description: When the user wants to optimize for Featured Snippets, Position Zero, or snippet extraction. Also use when the user mentions "featured snippet," "position zero," "snippet optimization," "answer box," "definition box," "list snippet," "table snippet," "paragraph snippet," "PAA optimization," or "win position zero." For schema, use schema-markup. For step-by-step HowTo sections (lists, copy), use `dev/references/components/content/howto-section`.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: featured-snippet
 ---
 
 # SEO On-Page: Featured Snippet

@@ -3,6 +3,9 @@ name: google-search-console
 description: When the user wants to analyze Google Search Console data, use the GSC API, or interpret search performance. Also use when the user mentions "GSC," "Search Console," "indexing report," "Core Web Vitals," "Enhancements," "Insights report," "search performance," "search queries," "search performance report," "URL inspection," "impressions," "CTR," "average position," "index coverage," "GSC data analysis," "Search Console API," or "searchanalytics.query." When the user wants to rewrite title tags (not only report on them), use title-tag. For meta description rewrites, use meta-description.
 metadata:
   version: 1.5.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: google-search-console
 ---
 
 # Analytics: Google Search Console

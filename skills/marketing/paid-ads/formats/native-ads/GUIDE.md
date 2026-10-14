@@ -3,6 +3,9 @@ name: native-ads
 description: When the user wants to run native ads on Taboola, Outbrain, or similar platforms. Also use when the user mentions "native ads," "Taboola," "Outbrain," "content recommendation," "sponsored content," or "in-feed ads." For strategy, use paid-ads-strategy.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: native-ads
 ---
 
 # Paid Ads: Native Ads

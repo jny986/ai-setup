@@ -3,6 +3,9 @@ name: public-relations
 description: When the user wants to plan PR, write a press release, or manage media relations. Also use when the user mentions "public relations," "PR," "press release," "media relations," "news release," "journalist," "media coverage," "product announcement," or "earned media." Also use when the user mentions "newsjacking," "pitch a journalist," "HARO," "Qwoted," "press requests," "press page," "newsroom," "podcast guest prep," "crisis communications," "data breach statement," "outage statement," or "story angle." For on-site "As Seen In" or logos page, use `dev/references/pages/marketing/press`.
 metadata:
   version: 1.1.0
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: public-relations, public-relations
 ---
 
 # Channels: Public Relations

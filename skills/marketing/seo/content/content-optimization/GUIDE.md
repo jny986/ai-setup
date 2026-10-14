@@ -3,6 +3,9 @@ name: content-optimization
 description: When the user wants to optimize content for SEO—word count, H2 keywords, keyword density, multimedia, tables, lists. Also use when the user mentions "content length," "word count," "keyword stuffing," "H2 keywords," "keyword density," "tables," "bullet points," or "content structure." For keywords, use keyword-research.
 metadata:
   version: 1.2.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: content-optimization
 ---
 
 # SEO Content: Content Optimization

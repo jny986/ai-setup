@@ -4,6 +4,9 @@ description: When the user wants to define, audit, or apply visual identity (typ
 license: MIT
 metadata:
   version: 1.4.0
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: brand-visual-generator
 ---
 
 # Components: Brand Visual Identity

@@ -3,6 +3,9 @@ name: indexnow
 description: When the user wants to implement IndexNow, notify search engines of new/updated URLs, or speed up Bing indexing. Also use when the user mentions "IndexNow," "Bing indexing," "URL notification," "instant indexing," "sitemap IndexNow sync," "share URL list with sitemap," or "IndexNow API." For sitemap SSOT, use xml-sitemap.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: indexnow
 ---
 
 # SEO Technical: IndexNow

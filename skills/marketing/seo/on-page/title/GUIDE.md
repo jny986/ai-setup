@@ -3,6 +3,9 @@ name: title-tag
 description: When the user wants to write, audit, or optimize an HTML title tag, SEO title, page title, SERP title, browser-tab title, duplicate title, or title rewrite issue. For a sitewide metadata lifecycle including implementation and production validation, use page-metadata.
 metadata:
   version: 2.0.0
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: title-tag
 ---
 
 # SEO On-Page: Title Tag

@@ -3,6 +3,9 @@ name: product-launch
 description: When the user wants to plan a product launch, execute launch channels, or create a launch checklist. Also use when the user mentions "product launch," "launch strategy," "product announcement," "launch channels," or "market launch." For GTM motion and positioning, use gtm-strategy. For cold start and first users, use cold-start-strategy. For Product Hunt day-of, use product-hunt-launch.
 metadata:
   version: 1.2.0
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: product-launch, launch
 ---
 
 # Strategies: Product Launch

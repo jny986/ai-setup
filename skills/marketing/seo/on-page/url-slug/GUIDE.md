@@ -3,6 +3,9 @@ name: url-slug
 description: When the user wants to create, optimize, or validate URL slugs for content pages. Also use when the user mentions "URL slug," "URL path," "blog URL," "article URL," "short URL," "clean slug," "permalink," "slug optimization," "URL structure," "SEO-friendly URL," "create URL slug," or "SEO slug." For site-wide URL policy, use url-structure.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: url-slug-generator
 ---
 
 # SEO On-Page: URL Slug

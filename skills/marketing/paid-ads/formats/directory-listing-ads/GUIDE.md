@@ -3,6 +3,9 @@ name: directory-listing-ads
 description: When the user wants to run paid ads within directories or marketplaces. Also use when the user mentions "Taaft ads," "Shopify App Store ads," "G2 sponsored," "Capterra ads," "directory ads," "marketplace ads," "paid listing," "sponsored listing," or "directory promotion." For organic listings, use directory-submission.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: directory-listing-ads
 ---
 
 # Paid Ads: Directory / Marketplace Listing Ads

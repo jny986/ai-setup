@@ -3,6 +3,9 @@ name: video-marketing
 description: When the user wants to plan video marketing, create video scripts, or optimize for short-form or long-form video. Also use when the user mentions "video marketing," "video script," "short-form video," "long-form video," "TikTok script," "Reels script," "YouTube script," "video hook," or "video content strategy." For on-site video SEO, use video-optimization.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: video-marketing, video
 ---
 
 # Content: Video Marketing
