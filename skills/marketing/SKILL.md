@@ -31,36 +31,22 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 |---|---|
 | **Foundations** | |
 | `product-marketing` | Creating or updating the product marketing context doc (positioning, ICP, audience) |
-| `customer-research` | Interviews, surveys, reviews, transcripts, personas, JTBD, voice of customer |
 | `marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
 | **Strategy and planning** | |
-| `marketing-plan` | A full marketing, growth or GTM plan |
-| `marketing-ideas` | Brainstorming growth ideas or tactics when stuck |
-| `marketing-council` | Multiple expert perspectives or a simulated advisory board on a marketing question |
-| `marketing-loops` | A recurring, agent-run marketing workflow on a cadence |
-| `launch` | Product launches, feature announcements, changelogs and release notes, Product Hunt, waitlists, site go-live |
 | **Copy and creative** | |
 | `copywriting` | Writing or rewriting page copy: headlines, value props, CTAs |
 | `copy-editing` | Editing, proofreading or refreshing existing copy |
 | `image` | Generating or optimising marketing images, mockups, banners, OG images |
 | `video` | Producing video with AI tools or programmatic frameworks |
 | **Conversion (CRO)** | |
-| `cro` | Improving conversions on a marketing page or form |
-| `signup` | Signup, registration or trial-start flows |
-| `onboarding` | Post-signup activation, first-run experience, time to value |
-| `popups` | Popups, modals, slide-ins, exit intent, banners |
-| `paywalls` | In-app paywalls, upgrade screens, feature gates, upsells |
 | `ab-testing` | Designing A/B tests or running an experimentation program |
 | **Pricing and revenue** | |
 | `pricing` | Pricing, packaging, tiers, freemium or trials |
 | `offers` | Designing the offer itself: bonuses, guarantees, urgency, naming |
-| `churn-prevention` | Churn, cancel flows, save offers, dunning, failed payments |
 | `revops` | Lead lifecycle, lead scoring, routing, marketing-to-sales handoff |
 | `sales-enablement` | Sales decks, one-pagers, objection handling, demo scripts |
 | **SEO and discoverability** | |
-| `seo-audit` | Auditing or diagnosing technical and on-page SEO |
 | `ai-seo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
-| `site-architecture` | Page hierarchy, navigation, URLs, internal linking, sitemaps |
 | `directory-submissions` | Submitting to startup, SaaS, AI or review directories for backlinks |
 | `aso` | App Store or Google Play listing optimisation |
 | `free-tools` | Building a free tool (calculator, grader) for leads or SEO |
@@ -100,6 +86,27 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `rendering-strategies` `seo/technical/rendering-strategies` | SSR, SSG, CSR and rendering for SEO |
 | `robots-txt` `seo/technical/robots` | robots.txt rules and crawler access |
 | `xml-sitemap` `seo/technical/sitemap` | XML sitemaps: structure, submission, segmentation |
+| **Strategies (nested)** | |
+| `conversion-optimization` `strategies/conversion/conversion-optimization` | Improving conversions on a marketing page, form or funnel: page analysis, CRO process, experiment prioritisation |
+| `signup` `strategies/conversion/signup` | Signup, registration or trial-start flows |
+| `onboarding` `strategies/conversion/onboarding` | Post-signup activation, first-run experience, time to value |
+| `popups` `strategies/conversion/popups` | Popups, modals, slide-ins, exit intent, banners |
+| `paywalls` `strategies/conversion/paywalls` | In-app paywalls, upgrade screens, feature gates, upsells |
+| `gtm-strategy` `strategies/launch/gtm` | A GTM strategy or a full 12-month marketing plan: GTM mode, ICP, market entry, repositioning, AARRR |
+| `product-launch` `strategies/launch/product-launch` | Product launches, feature announcements, changelogs and release notes, waitlists, site go-live |
+| `retention-strategy` `strategies/launch/retention` | Churn, retention, cancel flows, save offers, dunning, failed payments |
+| `customer-research` `strategies/launch/customer-research` | Interviews, surveys, reviews, transcripts, personas, JTBD, voice of customer |
+| `marketing-ideas` `strategies/launch/marketing-ideas` | Brainstorming growth ideas or tactics when stuck |
+| `cold-start-strategy` `strategies/launch/cold-start` | Getting first users with zero traction (0 to 1) |
+| `growth-funnel` `strategies/launch/growth-funnel` | AARRR growth funnel, bottlenecks, lifecycle actions |
+| `indie-hacker-strategy` `strategies/launch/indie-hacker` | Indie hacker and bootstrapped founder growth, build in public |
+| `pmf-strategy` `strategies/launch/pmf` | Validating or measuring product-market fit before scaling |
+| `research-sources` `strategies/launch/research-sources` | Information sources for content ideas, competitor monitoring, industry tracking |
+| `marketing-council` `strategies/operations/marketing-council` | Multiple expert perspectives or a simulated advisory board on a marketing question |
+| `marketing-loops` `strategies/operations/marketing-loops` | A recurring, agent-run marketing workflow on a cadence |
+| `seo-strategy` `strategies/structure/seo` | Organic SEO strategy, workflow order and prioritisation |
+| `seo-audit` `strategies/structure/seo-audit` | Auditing or diagnosing technical and on-page SEO |
+| `website-structure` `strategies/structure/website-structure` | Which pages to build, page hierarchy, navigation and site structure |
 | **Channels** | |
 | `emails` | Lifecycle email sequences, drips, nurture and welcome flows |
 | `cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |

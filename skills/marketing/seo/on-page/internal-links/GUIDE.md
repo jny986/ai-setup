@@ -51,6 +51,42 @@ Identify:
 | **Related/Recommended** | End-of-article links |
 | **Navigation** | Key site sections |
 
+## Link Types and Rules
+
+| Type | Purpose | Example |
+|------|---------|---------|
+| **Navigational** | Move between sections | Header, footer, sidebar links |
+| **Contextual** | Related content within text | "Learn more about [analytics](/features/analytics)" |
+| **Hub-and-spoke** | Connect cluster content to hub | Blog posts linking to pillar page |
+| **Cross-section** | Connect related pages across sections | Feature page linking to a related case study |
+
+- **Volume**: roughly 5-10 internal links per 1,000 words (approximate guideline)
+- **Priority pages**: link to the homepage, key feature pages and pricing more often
+- **Breadcrumbs**: free internal links on every page; they should mirror the URL hierarchy
+- **Related content**: add a "Related posts" or "You might also like" block at the bottom of articles
+
+### Hub-and-Spoke Model
+
+```
+Hub: /blog/seo-guide (comprehensive overview)
+├── Spoke: /blog/keyword-research (links back to hub)
+├── Spoke: /blog/on-page-seo (links back to hub)
+├── Spoke: /blog/technical-seo (links back to hub)
+└── Spoke: /blog/link-building (links back to hub)
+```
+
+Each spoke links back to the hub. The hub links to all spokes. Spokes link to each other where relevant.
+
+### Link Audit Checklist
+
+- [ ] Every page has at least one inbound internal link
+- [ ] No broken internal links (404s)
+- [ ] Anchor text is descriptive (not "click here" or "read more")
+- [ ] Important pages have the most inbound internal links
+- [ ] Breadcrumbs are implemented on all pages
+- [ ] Related content links exist on blog posts
+- [ ] Cross-section links connect features to case studies, and blog to product pages
+
 ## Common Issues
 
 | Issue | Fix |

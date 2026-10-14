@@ -247,6 +247,20 @@ curl -s https://example.com/sitemap.xml | head -5       # First lines must be XM
 | EN/ZH URL mismatch | Use unified data source; share same list when generating by locale |
 | **Sitemap returns HTML** | Catch-all route or i18n intercepting before sitemap handler; diagnose with `curl -I` + Googlebot UA; see §10 |
 
+## Visual Sitemap Planning
+
+When planning structure (see **website-structure**), draw the sitemap before building the XML one. Use Mermaid `graph TD` for the visual version, starting from a template in [references/mermaid-templates.md](references/mermaid-templates.md): Basic Hierarchy or Navigation Zones for most plans; Hub-and-Spoke, Internal Linking Flow, Before/After, and color-coding for restructures and linking plans.
+
+Pair it with a URL map so the planned URLs feed the XML sitemap's data source:
+
+| Page | URL | Parent | Nav Location | Priority |
+|------|-----|--------|-------------|----------|
+| Homepage | `/` | n/a | Header | High |
+| Features | `/features` | Homepage | Header | High |
+| Analytics | `/features/analytics` | Features | Header dropdown | Medium |
+| Pricing | `/pricing` | Homepage | Header | High |
+| Blog | `/blog` | Homepage | Header | Medium |
+
 ## References
 
 - [sitemaps.org](https://www.sitemaps.org/protocol.html)
