@@ -30,10 +30,10 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | Guide | Use when |
 |---|---|
 | **Foundations** | |
-| `product-marketing` `strategies/brand/product-marketing` | Creating | or updating the product marketing context doc (positioning, ICP, audience) |
+| `product-marketing` `strategies/brand/product-marketing` | Creating or updating the product marketing context doc (positioning, ICP, audience) |
 | `customer-research` | Interviews, surveys, reviews, transcripts, personas, JTBD, voice of customer |
 | `competitor-profiling` | Researching and profiling competitors from their URLs |
-| `marketing-psychology` `strategies/brand/marketing-psychology` | Applying | behavioural science, biases or mental models to marketing |
+| `marketing-psychology` `strategies/brand/marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
 | **Strategy and planning** | |
 | `marketing-plan` | A full marketing, growth or GTM plan |
 | `marketing-ideas` | Brainstorming growth ideas or tactics when stuck |
@@ -68,28 +68,28 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `open-source-strategy` `strategies/commercial/open-source` | Open source as a growth and commercialisation path |
 | `discount-marketing-strategy` `strategies/commercial/pricing/discount-marketing` | Promotional pricing: annual, lifetime deals, seasonal, startup and referral discounts |
 | **Pricing and revenue** | |
-| `pricing-strategy` `strategies/commercial/pricing/pricing-strategy` | Pricing, | packaging, tiers, freemium or trials |
-| `offers` `strategies/commercial/pricing/offers` | Designing | the offer itself: bonuses, guarantees, urgency, naming |
+| `pricing-strategy` `strategies/commercial/pricing/pricing-strategy` | Pricing, packaging, tiers, freemium or trials |
+| `offers` `strategies/commercial/pricing/offers` | Designing the offer itself: bonuses, guarantees, urgency, naming |
 | `churn-prevention` | Churn, cancel flows, save offers, dunning, failed payments |
 | `revops` | Lead lifecycle, lead scoring, routing, marketing-to-sales handoff |
 | `sales-enablement` | Sales decks, one-pagers, objection handling, demo scripts |
 | **SEO and discoverability** | |
 | `seo-audit` | Auditing or diagnosing technical and on-page SEO |
-| `generative-engine-optimization` `strategies/commercial/geo` | Getting | cited by AI search and LLMs (AEO, GEO, llms.txt) |
+| `generative-engine-optimization` `strategies/commercial/geo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
 | `schema` | Schema markup, structured data, JSON-LD |
 | `programmatic-seo` | Template-driven SEO pages at scale |
 | `site-architecture` | Page hierarchy, navigation, URLs, internal linking, sitemaps |
 | `competitors` | Comparison, "vs" and alternative pages |
 | `directory-submissions` | Submitting to startup, SaaS, AI or review directories for backlinks |
 | `aso` | App Store or Google Play listing optimisation |
-| `free-tools` `strategies/commercial/free-tools` | Building | a free tool (calculator, grader) for leads or SEO |
+| `free-tools` `strategies/commercial/free-tools` | Building a free tool (calculator, grader) for leads or SEO |
 | **Channels** | |
 | `emails` | Lifecycle email sequences, drips, nurture and welcome flows |
 | `cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |
 | `prospecting` | Finding and qualifying prospects to build an outreach list |
 | `sms` | SMS, MMS or WhatsApp marketing |
 | `social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok |
-| `paid-ads-strategy` `strategies/commercial/paid-ads` | Paid campaigns |: targeting, bidding, budgets, optimisation |
+| `paid-ads-strategy` `strategies/commercial/paid-ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
 | `ad-creative` | Generating or iterating ad copy and creative at scale |
 | `community-marketing` | Building a community (Discord, Slack, forum) or advocates |
 | `influencer-marketing` | Creator, influencer or ambassador partnerships |
