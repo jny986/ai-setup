@@ -2,7 +2,7 @@
 
 ## Shared Responsibility
 
-Documentation pages help users learn, complete tasks, understand concepts, and recover from problems. Pagina owns individual page contracts; a future Website Layer owns documentation-wide architecture, navigation, version policy, and publishing topology.
+Documentation pages help users learn, complete tasks, understand concepts, and recover from problems. The page guides own individual page contracts; a future Website Layer owns documentation-wide architecture, navigation, version policy, and publishing topology.
 
 ## Modes
 
@@ -20,7 +20,7 @@ The human-facing API introduction page remains `api`; endpoint-level material us
 
 Sidebar, Navigation, Breadcrumb, Table of Contents, Task Input or Search, Tabs, How-to, code surfaces supplied by the host project, feedback, and related links may apply. Verify source version, runnable examples, permissions, errors, deep links, search, navigation state, code overflow, copy actions, accessibility, indexing policy, stale notices, and version switching.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

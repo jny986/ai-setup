@@ -16,7 +16,7 @@ Build first-party by default and consume existing monitoring or incident data. A
 
 Announcement Banner, List, Card, Tabs, and Navigation may apply. Verify stale and unavailable data, partial outage, maintenance, time zones, refresh behavior, accessible non-color status, canonical origin, subscription truth, and failure of the status source itself.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

@@ -26,7 +26,7 @@ Comparison Table and CTA Section are common implementation candidates, not manda
 
 Test billing periods, currencies, plan availability, long feature names, mobile comparison, keyboard controls, checkout links, contact-sales behavior, legal qualifiers, analytics, and agreement with the live billing configuration.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

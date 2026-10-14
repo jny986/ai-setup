@@ -21,7 +21,7 @@ Core regions cover audience, benefits, eligibility, obligations, process, review
 
 Require approved benefits, eligibility, economics, regions, deadlines, terms and review process. Test application validation, confirmation, duplicate application, unavailable market, localization, disclosures, attribution where relevant, and links to binding terms.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

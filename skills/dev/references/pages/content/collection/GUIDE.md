@@ -26,7 +26,7 @@ List is the default capability; Grid, Card, Sidebar, disclosure, and announcemen
 
 Test large and empty datasets, loading and errors, query persistence, deep links, long values, permissions, bulk actions, destructive confirmation, keyboard use, responsive alternatives, pagination, and return-state restoration from detail pages.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

@@ -16,7 +16,7 @@ Use current, attributable competitor facts and distinguish measured evidence, of
 
 Comparison Table, Trust Signals, FAQ, CTA Section, and Tabs may apply. Verify source dates, plan and feature accuracy, trademark use, mobile tables, fair criteria, canonical metadata, and links to deeper migration or product pages.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

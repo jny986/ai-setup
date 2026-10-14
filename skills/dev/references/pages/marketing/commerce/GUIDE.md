@@ -18,7 +18,7 @@ Commerce pages help shoppers discover, evaluate, purchase, and follow the fulfil
 
 Navigation, Task Input, Grid, Card, Carousel, Tabs, Trust Signals, FAQ, Announcement Banner, Modal, and CTA Section may apply. Verify variant and inventory races, price and currency, tax, shipping, discounts, payment retries, idempotency, address validation, fraud and privacy boundaries, receipts, cancellation and returns, unavailable items, localization, structured data, accessibility, and small-screen purchase flow.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

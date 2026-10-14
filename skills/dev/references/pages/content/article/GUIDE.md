@@ -20,13 +20,13 @@ News emphasizes attribution, time, corrections, and recency. SaaS education may 
 
 ## Components
 
-Use Bricks [Article Content Layout](../../../components/content/article-content-layout/GUIDE.md) as a composition reference. Breadcrumb, Table of Contents, Author Bio, Social Share, FAQ, and Newsletter are optional according to content and publication policy.
+Use [Article Content Layout](../../../components/content/article-content-layout/GUIDE.md) as a composition reference. Breadcrumb, Table of Contents, Author Bio, Social Share, FAQ, and Newsletter are optional according to content and publication policy.
 
 ## Verify
 
 Test short and long articles, heading anchors, code and tables, media and embeds, missing optional metadata, dates, canonical and social metadata, structured data, keyboard navigation, mobile reading, references, and related-content relevance.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

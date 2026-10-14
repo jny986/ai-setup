@@ -16,7 +16,7 @@ Identify the customer and context, prior situation, constraints, implementation,
 
 Grid, Card, Hero, Author or Customer identity, Trust Signals, Testimonials, Comparison Table, Social Share, CTA Section, and related stories may apply. Verify publication permission, quote fidelity, metric definition and period, customer identity, sensitive information, links between Index and Detail, metadata, localization approval, and date-sensitive claims.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

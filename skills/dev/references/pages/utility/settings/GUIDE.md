@@ -26,7 +26,7 @@ Navigation, Sidebar, Tabs or Accordion, Modal, and Announcement Banner are commo
 
 Test permissions, inherited and overridden values, immediate and deferred saves, server errors, secrets, reauthentication, destructive confirmation, keyboard navigation, deep links, long labels, responsive grouping, audit events, and whether changes take effect where promised.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

@@ -16,7 +16,7 @@ Use the project's real identity provider, redirect contract, session model, and 
 
 Modal may be used only when route, focus, recovery, and deep-link behavior remain coherent. Verify keyboard and password-manager behavior, autofill, error privacy, rate limits, OAuth cancellation, redirects, invitation expiry, localization, and narrow screens.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

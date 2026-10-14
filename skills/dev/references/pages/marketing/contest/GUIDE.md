@@ -19,7 +19,7 @@ Design scheduled, active, ended, unavailable, capacity reached, and archived sta
 
 Hero, Announcement Banner, Task Input or Form, How-to, FAQ, Trust Signals, Modal, Social Share, and CTA Section may apply. Verify time zones, eligibility, consent, official rules, capacity, confirmation, calendar or access delivery, abuse controls, analytics, expired routes, redirects, localization, and regional restrictions.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

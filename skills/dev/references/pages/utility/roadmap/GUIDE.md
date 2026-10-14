@@ -10,13 +10,13 @@ A public Roadmap page communicates selected future direction and stage without e
 - **Common:** planned, in progress, shipped or recently shipped; feedback path.
 - **Conditional:** filters, voting, item detail, notifications, request submission.
 
-Use approved roadmap items and states. Pagina may add a lightweight data source and display; voting, deduplication, notifications, customer identity, and product planning require explicit supporting systems.
+Use approved roadmap items and states. The page guides may add a lightweight data source and display; voting, deduplication, notifications, customer identity, and product planning require explicit supporting systems.
 
 ## Components And Verification
 
 Grid, List, Card, Tabs, Announcement Banner, Modal, and CTA Section may apply. Verify stale items, status transitions, confidential exclusions, mobile columns, dates versus non-date commitments, feedback behavior, and Roadmap-to-Changelog links.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

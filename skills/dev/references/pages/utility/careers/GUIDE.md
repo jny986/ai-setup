@@ -13,7 +13,7 @@ Careers pages let candidates judge the employer and available work, while job de
 
 Hero, Grid or List, Card, Task Input, Tabs, FAQ, Testimonials, Trust Signals, and CTA Section may apply. Verify role freshness, ATS synchronization, filters, closed-role behavior, legal disclosures, salary and location accuracy, application consent, upload behavior, confirmation, accommodations, structured data, and localization.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

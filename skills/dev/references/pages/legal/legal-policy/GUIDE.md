@@ -2,7 +2,7 @@
 
 ## Responsibility
 
-A Legal Policy page presents one approved policy or agreement with stable identity, effective dates, readable structure, and access from relevant product surfaces. Pagina structures and renders legal content; it does not decide legal obligations or invent binding terms.
+A Legal Policy page presents one approved policy or agreement with stable identity, effective dates, readable structure, and access from relevant product surfaces. The page guides structure and render legal content; they do not decide legal obligations or invent binding terms.
 
 ## Modes
 
@@ -18,7 +18,7 @@ Privacy, Terms, Cookie, Acceptable Use, Refund, Shipping, Disclosure, and other 
 
 Table of Contents, Breadcrumb, Navigation, and Footer may apply. Verify approved text source, jurisdiction and market variants, dates, anchors, printable reading, consent links, localization review, canonical URL, indexing policy, and footer discovery. Flag content for human legal review when approval is absent.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

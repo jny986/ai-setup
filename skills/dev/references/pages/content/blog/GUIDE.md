@@ -20,13 +20,13 @@ Publications and news products emphasize editorial hierarchy and recency. SaaS b
 
 ## Components
 
-The Bricks Blog Index pattern can guide composition. Card, Grid, navigation, newsletter, and announcements remain subordinate to content discovery.
+Card, Grid, navigation, newsletter, and announcements remain subordinate to content discovery.
 
 ## Verify
 
 Test no posts, one post, large archives, missing images, long titles, disabled taxonomy, pagination, keyboard links, canonical and index metadata, article destinations, and duplicate featured/latest presentation.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

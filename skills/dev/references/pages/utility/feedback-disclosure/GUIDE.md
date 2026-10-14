@@ -17,7 +17,7 @@ Feedback is not a substitute for support, incident reporting, appeals, or legall
 
 Task Input or Form, Modal, FAQ, Announcement Banner, Breadcrumb, and Contact path may apply. Verify consent, privacy, moderation, abuse and sensitive data handling, receipts, routing, accessibility, effective dates, plain-language visibility, contextual placement, legal review requirements, metadata, and indexing policy.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

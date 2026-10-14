@@ -15,7 +15,7 @@ Press pages serve journalists, analysts, partners, and visitors who need attribu
 
 Hero, Navigation, Grid, List, Card, Logo, Trust Signals, Breadcrumb, Social Share, and downloads may apply. Verify dates, publication source, quote approval, trademarks, rights, file formats, asset resolution, download integrity, contact routing, sponsored-content disclosure, canonical links, metadata, and stale company facts.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 
