@@ -7,7 +7,7 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
-  based_on_version: v1.2.3(6acc160)
+  based_on_version: v1.3.1(49dd158)
   based_on_skill: research
 ---
 

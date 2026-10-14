@@ -7,7 +7,7 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
-  based_on_version: v1.2.3(6acc160)
+  based_on_version: v1.3.1(49dd158)
   based_on_skill: grilling
 ---
 
@@ -28,6 +28,8 @@ Format a round like so:
 
 ➡️ <your recommended answer>
 ```
+
+Word each question so "yes" accepts your recommended answer.
 
 Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
 
