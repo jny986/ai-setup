@@ -23,6 +23,9 @@ def rows(lines):
 
 # Router table: first span is the name, second (if any) the path; else flat.
 router = {}
+for line in (SKILL / "SKILL.md").read_text().splitlines():
+    if line.startswith("| `") and line.count("|") != 3:
+        errors.append(f"router: row has stray '|': {line[:60]}")
 for cells in rows((SKILL / "SKILL.md").read_text().splitlines()):
     spans = cells[0]
     name, path = spans[0], spans[1] if len(spans) > 1 else spans[0]
