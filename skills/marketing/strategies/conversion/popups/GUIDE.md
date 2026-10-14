@@ -361,3 +361,4 @@ When recommending tests, load [references/experiments.md](references/experiments
 - **conversion-optimization**: For the form inside the popup and the page around it
 - **email-marketing**: For what happens after popup conversion
 - **ab-testing**: For testing popup variations
+- `dev/references/components/conversion/popup`: For building the modal or popup component

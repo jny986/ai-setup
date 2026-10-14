@@ -1,6 +1,6 @@
 ---
 name: schema-markup
-description: When the user wants to add, fix, validate or optimize structured data (Schema.org, JSON-LD). Also use when the user mentions "schema," "structured data," "JSON-LD," "rich results," "rich snippets," "Google rich snippets," "featured snippet schema," "add schema to page," "missing structured data," "schema validation error," "Schema Markup Validator," "Google Rich Results Test," "FAQ schema," "Article schema," "Organization schema," "JobPosting," "HowTo," "Event," "SoftwareApplication," "BreadcrumbList," "WebSite," "Recipe," "Product," or "Dataset." For SERP feature types and zero-click patterns, use serp-features. For AI search visibility strategy (not markup), use generative-engine-optimization. For HowTo step sections (placement, copy, vs FAQ), use howto-section-generator.
+description: When the user wants to add, fix, validate or optimize structured data (Schema.org, JSON-LD). Also use when the user mentions "schema," "structured data," "JSON-LD," "rich results," "rich snippets," "Google rich snippets," "featured snippet schema," "add schema to page," "missing structured data," "schema validation error," "Schema Markup Validator," "Google Rich Results Test," "FAQ schema," "Article schema," "Organization schema," "JobPosting," "HowTo," "Event," "SoftwareApplication," "BreadcrumbList," "WebSite," "Recipe," "Product," or "Dataset." For SERP feature types and zero-click patterns, use serp-features. For AI search visibility strategy (not markup), use generative-engine-optimization. For HowTo step sections (placement, copy, vs FAQ), use `dev/references/components/content/howto-section`.
 metadata:
   version: 1.5.0
 ---
@@ -114,7 +114,7 @@ Identify:
 |-------|--------------|---------|-------|
 | **Homepage** | Minimum | Minimum | Add both Organization and WebSite to homepage at least. Organization describes the entity that owns the site; WebSite enables sitelinks searchbox and site identity. |
 | **Root layout / global** | Optimal | Optimal | Place in site-wide layout (e.g. `layout.tsx`, `_document`, global header/footer) so schema appears on every page. Google uses the first instance found; one instance per site is sufficient. |
-| **About page** | No | No | About page uses **AboutPage** schema (page-specific: headline, description, author, about). Organization is entity-level, not page-level—do not confine it to About. See **about-page-generator**. |
+| **About page** | No | No | About page uses **AboutPage** schema (page-specific: headline, description, author, about). Organization is entity-level, not page-level—do not confine it to About. See `dev/references/pages/brand/about`. |
 
 **Implementation**: JSON-LD in `<head>`; use `@id` (e.g. `https://example.com/#organization`) to link Organization ↔ WebSite ↔ WebPage for entity graph. See **entity-seo** for @id and Knowledge Panel.
 
@@ -180,11 +180,11 @@ Choose the **most specific** type that matches content:
 }
 ```
 
-Place in `<head>` via `<script type="application/ld+json">`. For article pages, use `og:type: article` with og:article:published_time, og:article:modified_time, og:article:author. See **article-page-generator**, **open-graph**.
+Place in `<head>` via `<script type="application/ld+json">`. For article pages, use `og:type: article` with og:article:published_time, og:article:modified_time, og:article:author. See `dev/references/pages/content/article`, **open-graph**.
 
 ### BreadcrumbList
 
-For breadcrumb navigation. Schema must match visible breadcrumbs exactly. See **breadcrumb-generator** for UI, placement, and semantic HTML.
+For breadcrumb navigation. Schema must match visible breadcrumbs exactly. See `dev/references/components/navigation/breadcrumb` for UI, placement, and semantic HTML.
 
 | Requirement | Guideline |
 |-------------|-----------|
@@ -353,15 +353,15 @@ Combine several types with `@graph`, linking entities by `@id`; see the example 
 
 ## Related Skills
 
-- **article-page-generator**: Article structure; Article/BlogPosting/NewsArticle schema; date display
+- `dev/references/pages/content/article`: Article structure; Article/BlogPosting/NewsArticle schema; date display
 - **serp-features**: **Strongly related**—schema maps to SERP features; see mapping table above
-- **faq-page-generator**: FAQPage schema; FAQ content structure
-- **howto-section-generator**: HowTo section component (steps, JSON-LD); HowTo vs FAQPage
-- **breadcrumb-generator**: BreadcrumbList schema implementation
+- `dev/references/pages/content/faq`: FAQPage schema; FAQ content structure
+- `dev/references/components/content/howto-section`: HowTo section component (steps, JSON-LD); HowTo vs FAQPage
+- `dev/references/components/navigation/breadcrumb`: BreadcrumbList schema implementation
 - **featured-snippet**: FAQPage, HowTo for snippets
 - **video-optimization**: VideoObject, video sitemap, thumbnail, key moments
 - **entity-seo**: Organization, Person for entity recognition; @id; Knowledge Panel
-- **homepage-generator**: Organization + WebSite schema on homepage or root layout
+- `dev/references/pages/brand/home`: Organization + WebSite schema on homepage or root layout
 - **indexing**: Google Indexing API for JobPosting, BroadcastEvent
 - **seo-audit**: Overall SEO including schema review
 - **generative-engine-optimization**: AI search optimization; schema helps AI understand content

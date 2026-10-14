@@ -53,7 +53,7 @@ For image production, also gather (ask if not provided):
 | **Case study** | Customer photo, results chart, logo | Repurpose to LinkedIn carousel, blog |
 | **Product update** | Screenshot, feature graphic | Changelog, email, social |
 | **Email** | Header image, inline graphics | Keep lightweight; many clients block images |
-| **Landing page** | Hero, trust badges, screenshots | See **hero-generator**, **image-optimization** |
+| **Landing page** | Hero, trust badges, screenshots | See `dev/references/components/branding/hero`, **image-optimization** |
 
 ## 2. Website vs Social vs Email
 
@@ -340,7 +340,7 @@ Formats, compression, lazy loading, alt text and dynamic OG images live in **ima
 
 - **image-optimization**: Web images (alt, captions, WebP, LCP, responsive); central skill for image SEO
 - **open-graph, twitter-cards**: Link preview images
-- **hero-generator**: Hero section visuals
+- `dev/references/components/branding/hero`: Hero section visuals
 
 ### Other
 

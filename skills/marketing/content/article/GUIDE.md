@@ -1,13 +1,13 @@
 ---
 name: article-content
-description: When the user wants to write, generate, or create article body content—blog post body, long-form content, how-to guide, listicle. Also use when the user mentions "write article," "article content," "blog post content," "article body," "long-form content creation," "generate article," "article draft," "how-to guide content," "listicle content," "information gain," or "content density." For single post page structure, schema, and SEO metadata, use article-page-generator. For blog index/listing page, use blog-page-generator. For short ad, landing, or email copy, use copywriting.
+description: When the user wants to write, generate, or create article body content—blog post body, long-form content, how-to guide, listicle. Also use when the user mentions "write article," "article content," "blog post content," "article body," "long-form content creation," "generate article," "article draft," "how-to guide content," "listicle content," "information gain," or "content density." For single post page structure, schema, and SEO metadata, use `dev/references/pages/content/article`. For blog index/listing page, use `dev/references/pages/content/blog`. For short ad, landing, or email copy, use copywriting.
 metadata:
   version: 1.1.1
 ---
 
 # Content: Article Content
 
-Guides creation of **article body content**—the actual text (intro, body, conclusion) for blog posts, guides, and long-form pieces. Focus on **what to write**. For **where it goes** (page structure, schema, metadata), see **article-page-generator**. For short conversion copy (ads, landing pages, CTAs), see **copywriting**.
+Guides creation of **article body content**—the actual text (intro, body, conclusion) for blog posts, guides, and long-form pieces. Focus on **what to write**. For **where it goes** (page structure, schema, metadata), see `dev/references/pages/content/article`. For short conversion copy (ads, landing pages, CTAs), see **copywriting**.
 
 ## Scope
 
@@ -39,7 +39,7 @@ Guides creation of **article body content**—the actual text (intro, body, conc
 
 ### Four Inputs
 
-Article content rests on **four inputs**. See **article-page-generator** for full workflow.
+Article content rests on **four inputs**. See `dev/references/pages/content/article` for full workflow.
 
 | Input | Purpose |
 |-------|---------|
@@ -164,7 +164,7 @@ When auditing or optimizing article content:
 | **Gaps** | What do top-ranking articles cover that this misses? |
 | **Information gain** | At least one of: counter-narrative, fresh data, SME perspective, proprietary data? Or consensus rehash? |
 
-See **competitor-research** for competitor analysis; **article-page-generator** for page structure and metadata.
+See **competitor-research** for competitor analysis; `dev/references/pages/content/article` for page structure and metadata.
 
 ## AI-Assisted Content
 
@@ -181,8 +181,8 @@ When content is AI-assisted: **human review** before publish; **verify facts** a
 
 ## Related Skills
 
-- **article-page-generator**: Page structure, schema, metadata, layout; content goes here
-- **howto-section-generator**: Dedicated HowTo step blocks (ordered steps, HowTo JSON-LD; vs FAQ)
+- `dev/references/pages/content/article`: Page structure, schema, metadata, layout; content goes here
+- `dev/references/components/content/howto-section`: Dedicated HowTo step blocks (ordered steps, HowTo JSON-LD; vs FAQ)
 - **copywriting**: Frameworks (PAS, AIDA, BAB); headline formulas; short conversion copy
 - **content-marketing**: Article Orientations; content types
 - **eeat-signals**: E-E-A-T; author bio; citations; citations format

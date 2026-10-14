@@ -97,9 +97,9 @@ Inspect the deployed initial HTML and test an actual share/preview workflow avai
 
 ## Related Skills
 
-- **social-share-generator**: Share buttons use Twitter Cards for X previews when users share; Cards must be set for share buttons to show proper previews
+- `dev/references/components/utility/social-share`: Share buttons use Twitter Cards for X previews when users share; Cards must be set for share buttons to show proper previews
 - **open-graph**: OG tags; Twitter falls back to OG if Twitter tags missing
 - **title-tag**, **meta-description**: Search copy; may differ while preserving page identity
 - **page-metadata**: Full lifecycle, source-of-truth implementation, and production validation
 - **twitter-x-posts**: X post copy and engagement (different from link previews)
-- **twitter-card-image-generator**: Programmatic Twitter Card image generation — 1200×675px, 2:1 ratio, player card posters, dark mode adaptations for ~40% of X users, timeline-safe zone design for mobile 1:1 crop, all 6 visual styles from og-image-generator. This skill covers how to SET the twitter:image tag; twitter-card-image-generator covers how to CREATE the image.
+- **visual-content**: Creating Twitter Card images (1200x675, 2:1; keep the subject inside the timeline-safe zone for the mobile 1:1 crop). This guide covers how to SET the twitter:image tag; visual-content covers how to CREATE the image.

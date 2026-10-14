@@ -31,15 +31,15 @@ Identify:
 
 | Type | Purpose | Funnel | Skills |
 |------|---------|--------|--------|
-| **How-to guides** | Educate; informational intent | Awareness, Consideration | content-strategy, article-content, article-page-generator |
-| **Comparisons** | "X vs Y"; commercial intent | Consideration | content-strategy, alternatives-page-generator |
-| **List posts** | "Top 10," "Best X" | Consideration | content-strategy, article-content, article-page-generator |
-| **Case studies** | Proof; customer success | Consideration, Decision | customer-stories-page-generator |
-| **Product updates** | Feature launches, release notes | Decision, Retention | changelog-page-generator |
-| **News / Trending** | Industry news, hot topics | Awareness | article-content, article-page-generator |
-| **Glossaries** | Definitions; internal link hub | Awareness | glossary-page-generator |
+| **How-to guides** | Educate; informational intent | Awareness, Consideration | content-strategy, article-content, `dev/references/pages/content/article` |
+| **Comparisons** | "X vs Y"; commercial intent | Consideration | content-strategy, `dev/references/pages/marketing/alternatives` |
+| **List posts** | "Top 10," "Best X" | Consideration | content-strategy, article-content, `dev/references/pages/content/article` |
+| **Case studies** | Proof; customer success | Consideration, Decision | `dev/references/pages/marketing/customer-stories` |
+| **Product updates** | Feature launches, release notes | Decision, Retention | `dev/references/pages/utility/changelog` |
+| **News / Trending** | Industry news, hot topics | Awareness | article-content, `dev/references/pages/content/article` |
+| **Glossaries** | Definitions; internal link hub | Awareness | `dev/references/pages/content/documentation` |
 | **Tools / calculators** | Linkable assets; engagement | Consideration | — |
-| **Funding / PR** | Funding, acquisitions | Brand | article-content, article-page-generator |
+| **Funding / PR** | Funding, acquisitions | Brand | article-content, `dev/references/pages/content/article` |
 | **Onboarding** | Welcome, first-use guidance | Retention | email-marketing |
 | **Campaign** | Promotions, limited-time | Decision | email-marketing |
 | **Newsletter** | Curated insights; nurture | Retention | email-marketing |
@@ -53,14 +53,14 @@ Identify:
 | **Maintenance guide** | Care, upkeep, best practices | Docs, blog |
 | **Troubleshooting** | Common issues, bugs, fixes | FAQ, docs, KB |
 
-**Use**: Blog, docs, or in-product; supports activation and retention. See **faq-page-generator**, **docs-page-generator**.
+**Use**: Blog, docs, or in-product; supports activation and retention. See `dev/references/pages/content/faq`, `dev/references/pages/content/documentation`.
 
 ## Content Formats (How It's Delivered)
 
 | Format | Use | Skills |
 |--------|-----|--------|
-| **Pages** | Homepage, about, features, pricing, landing | homepage-generator, about-page-generator, landing-page-generator |
-| **Articles** | Blog posts, guides, listicles | article-content, article-page-generator, blog-page-generator |
+| **Pages** | Homepage, about, features, pricing, landing | `dev/references/pages/brand/home`, `dev/references/pages/brand/about`, `dev/references/pages/marketing/landing-page` |
+| **Articles** | Blog posts, guides, listicles | article-content, `dev/references/pages/content/article`, `dev/references/pages/content/blog` |
 | **Email** | EDM, newsletter, sequences | email-marketing |
 | **Social posts** | X, LinkedIn, Reddit, TikTok | twitter-x-posts, linkedin-posts, reddit-posts, tiktok-captions; **visual-content** for post images |
 | **Video** | Short-form, long-form, webinar | video-marketing |
@@ -92,7 +92,7 @@ Identify:
 
 ## Article Orientations
 
-Article types by orientation—drives structure, SEO depth, and schema choice. See **article-page-generator** for page structure.
+Article types by orientation—drives structure, SEO depth, and schema choice. See `dev/references/pages/content/article` for page structure.
 
 | Orientation | Examples | Primary Goal | SEO Priority |
 |-------------|----------|--------------|--------------|
@@ -174,12 +174,12 @@ One exceptional piece, reformatted and repurposed across every channel, not a fr
 - **content-strategy**: SEO topic clusters, pillar-cluster, editorial calendar; SEO content planning
 - **integrated-marketing**: PESO model, channel mix; content as owned media
 - **article-content**: Article body creation; word count by type; writing frameworks
-- **howto-section-generator**: How-to step sections; guides vs FAQ
-- **article-page-generator**: Article page structure, orientations; blog content
+- `dev/references/components/content/howto-section`: How-to step sections; guides vs FAQ
+- `dev/references/pages/content/article`: Article page structure, orientations; blog content
 - **email-marketing**: Email content types (onboarding, campaign, newsletter)
 - **twitter-x-posts, linkedin-posts, reddit-posts, tiktok-captions**: Platform-specific post formats
 - **visual-content**: Visual content planning; images for social, infographics, repurposing; cross-channel specs
-- **landing-page-generator**: Landing page copy and structure
-- **customer-stories-page-generator**: Case study content
+- `dev/references/pages/marketing/landing-page`: Landing page copy and structure
+- `dev/references/pages/marketing/customer-stories`: Case study content
 - **branding**: Brand voice, storytelling; content consistency
 - **translation**: Translation workflow for multilingual content; glossary, style guide

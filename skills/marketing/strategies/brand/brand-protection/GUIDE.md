@@ -7,7 +7,7 @@ metadata:
 
 # Strategy: Brand Protection
 
-Guides discovery, reporting, and prevention of brand impersonation—fake websites, phishing sites, trademark infringement, and domain squatting. See **domain-selection** for defensive domain registration; **trust-badges** for official site verification signals; **about-page** for identity declaration.
+Guides discovery, reporting, and prevention of brand impersonation—fake websites, phishing sites, trademark infringement, and domain squatting. See **domain-selection** for defensive domain registration; `dev/references/components/conversion/trust-badges` for official site verification signals; `dev/references/pages/brand/about` for identity declaration.
 
 ## Initial Assessment
 
@@ -81,7 +81,7 @@ Place "Official website: [domain]" prominently:
 - **Footer**: "© [Brand]. Official site: [domain]"
 - **FAQ**: "How do I verify I'm on the official site?" → "The only official URL is [domain]. Any other domain is not affiliated."
 
-Use **trust-badges** for verification signals. See **about-page** for identity declaration.
+Use `dev/references/components/conversion/trust-badges` for verification signals. See `dev/references/pages/brand/about` for identity declaration.
 
 ### Customer Support (Payment Fraud)
 
@@ -122,7 +122,7 @@ When users report "can't use after payment" but no record exists—likely paid o
 
 **Short-term (1–2 weeks)**: Evidence collection; abuse reports to registrar and host; Google Safe Browsing report; DMCA if applicable; add "Official website" on site.
 
-**Medium-term**: Add impersonation guidance to domain-selection; official verification to trust-badges, about-page.
+**Medium-term**: Add impersonation guidance to domain-selection; official verification to `dev/references/components/conversion/trust-badges`, `dev/references/pages/brand/about`.
 
 **Long-term**: Periodic search (brand + variants); brand monitoring (BrandShield, Doppel); defensive registration of variants.
 
@@ -149,8 +149,8 @@ When users report "can't use after payment" but no record exists—likely paid o
 - **rebranding-strategy**: When rebranding, sync brand protection checks
 - **brand-monitoring**: Proactive monitoring setup; tool selection; this skill = reactive takedown
 - **branding**: Brand asset protection; consistency
-- **trust-badges**: Official site verification signals
-- **about-page**: Official identity and domain declaration
-- **homepage-generator**: "Official website" placement
+- `dev/references/components/conversion/trust-badges`: Official site verification signals
+- `dev/references/pages/brand/about`: Official identity and domain declaration
+- `dev/references/pages/brand/home`: "Official website" placement
 - **google-ads**, **paid-ads-strategy**: Brand search ads for traffic recovery
 - **schema-markup**, **title-tag**: SEO for branded queries
