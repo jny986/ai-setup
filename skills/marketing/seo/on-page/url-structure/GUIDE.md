@@ -86,6 +86,33 @@ Identify:
 | **Large site** | Dynamic URLs, params, multi-language — canonical + robots |
 | **SEO audit** | Check structure, params, canonical consistency |
 
+## URL Patterns by Page Type
+
+| Page Type | Pattern | Example |
+|-----------|---------|---------|
+| Homepage | `/` | `example.com` |
+| Feature page | `/features/{name}` | `/features/analytics` |
+| Pricing | `/pricing` | `/pricing` |
+| Blog post | `/blog/{slug}` | `/blog/seo-guide` |
+| Blog category | `/blog/category/{slug}` | `/blog/category/seo` |
+| Case study | `/customers/{slug}` | `/customers/acme-corp` |
+| Documentation | `/docs/{section}/{page}` | `/docs/api/authentication` |
+| Legal | `/{page}` | `/privacy`, `/terms` |
+| Landing page | `/{slug}` or `/lp/{slug}` | `/free-trial`, `/lp/webinar` |
+| Comparison | `/compare/{competitor}` or `/vs/{competitor}` | `/compare/competitor-name` |
+| Integration | `/integrations/{name}` | `/integrations/slack` |
+| Template | `/templates/{slug}` | `/templates/marketing-plan` |
+
+Pick one trailing-slash policy (with or without) and enforce it with redirects. Keep one parent per section: don't mix `/features/analytics` and `/product/automation`.
+
+### Common Mistakes
+
+- **Dates in blog URLs**: `/blog/2024/01/15/post-title` adds length and no value; use `/blog/post-title`
+- **Over-nesting**: `/products/category/subcategory/item/detail`; flatten where possible
+- **Changing URLs without redirects**: every old URL needs a 301 to its new URL, or backlink equity is lost and bookmarked links break
+- **IDs in URLs**: `/product/12345`; use slugs
+- **Query parameters for content**: `/blog?id=123` should be `/blog/post-title`
+
 ## Common Issues
 
 | Issue | Fix |
