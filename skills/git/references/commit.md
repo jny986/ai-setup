@@ -1,5 +1,5 @@
 ---
-name: commit-it
+name: commit
 description: Commit and push the current work, first making sure you're on the branch its ticket calls for. Resolves any ticket in context (explicit reference, one already discussed, or inferred from the branch name), switches to or creates its branch when it has one, stages everything, commits, and pushes to origin. Use when the user asks to commit and push, or another skill needs that done before continuing (e.g. create-pr).
 license: MIT
 metadata:

@@ -16,9 +16,9 @@ Take the current work to an open GitHub PR. GitHub and `gh` only. Read the invoc
 
 2. **Base branch.** `gh repo view --json defaultBranchRef -q .defaultBranchRef.name`, unless the invocation names another base.
 
-3. **Commit and push.** Verify opt-in in effect (see Reference): run the repo's test, lint, and typecheck scripts now, abort on any failure, before doing anything below. Then follow `../commit-it/GUIDE.md`: it resolves any ticket in context, switches to or creates the branch that ticket calls for (or a diff-summary branch if none), stages, commits, confirms, and pushes.
+3. **Commit and push.** Verify opt-in in effect (see Reference): run the repo's test, lint, and typecheck scripts now, abort on any failure, before doing anything below. Then follow `commit.md`: it resolves any ticket in context, switches to or creates the branch that ticket calls for (or a diff-summary branch if none), stages, commits, confirms, and pushes.
 
-4. **Ticket reference for the PR.** If `commit-it` resolved a ticket, use it. Otherwise check specifically for a GitHub issue number (in the branch name or commit messages) since `commit-it` doesn't look for those. Note whether it's a GitHub issue number (allows `Closes #N`) or a non-GitHub ID (text only). None found is fine.
+4. **Ticket reference for the PR.** If the `commit` guide resolved a ticket, use it. Otherwise check specifically for a GitHub issue number (in the branch name or commit messages) since the `commit` guide doesn't look for those. Note whether it's a GitHub issue number (allows `Closes #N`) or a non-GitHub ID (text only). None found is fine.
 
 5. **Something to PR.** No commits ahead of base: stop with "no changes relative to `<base>`".
 
