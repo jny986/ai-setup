@@ -1,0 +1,5 @@
+interface:
+  display_name: "Commit It"
+  short_description: "Commit and push current work on its ticket's branch"
+policy:
+  allow_implicit_invocation: true

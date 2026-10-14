@@ -1,0 +1,12 @@
+[submodule "original-skills/impeccable"]
+	path = original-skills/impeccable
+	url = https://github.com/pbakaus/impeccable.git
+[submodule "original-skills/marketingskills"]
+	path = original-skills/marketingskills
+	url = https://github.com/coreyhaines31/marketingskills.git
+[submodule "original-skills/matt-pocock-skills"]
+	path = original-skills/matt-pocock-skills
+	url = https://github.com/mattpocock/skills.git
+[submodule "original-skills/taste-skill"]
+	path = original-skills/taste-skill
+	url = https://github.com/Leonxlnx/taste-skill.git
