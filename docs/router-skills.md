@@ -34,11 +34,15 @@ A guide's own supporting files (`references/`, `assets/`) stay beside its `GUIDE
 7. **Indexes.** The five former skills were removed from `SKILLS.md` and `skills.html`, and one `git` row added.
 8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`.
 
+## Reference-only trees
+
+A tree of guides with no router yet (`skills/dev/references`) has no `SKILL.md` or `agents/openai.yaml`. Its index is the Dev section of the owning router's `references/name-table.md`, and `scripts/check-marketing-structure.py` checks it.
+
 ## Checklist
 
 - [ ] Every member is model-invocable
 - [ ] Members moved to `references/<guide>/GUIDE.md`, own references intact
 - [ ] No leftover Skill tool calls or `/<old-name>` mentions (`grep` the repo)
 - [ ] Router table links resolve
-- [ ] `agents/openai.yaml` on router and each guide
+- [ ] `agents/openai.yaml` on the router, and on each guide that had one (large nested trees like `marketing` skip it for guides that had none)
 - [ ] `SKILLS.md` and `skills.html` updated

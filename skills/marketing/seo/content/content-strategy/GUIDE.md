@@ -315,6 +315,10 @@ The counterintuitive read: **curating statistics earns ~5x the links of producin
 - **Update plan** for existing content
 - **Priority table**: keyword, volume, difficulty, buyer stage, content type, score (see Prioritizing Content Ideas)
 
+## Headless CMS
+
+Choosing, modelling and wiring a headless CMS for marketing content: [references/headless-cms.md](references/headless-cms.md).
+
 ## Related Skills
 
 - **content-marketing**: Content types, formats, channels, repurposing; SEO content is one channel

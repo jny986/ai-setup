@@ -119,7 +119,7 @@ Page types in this library live under `pages/{brand|content|legal|marketing|util
 
 | What it is | What to watch |
 |------------|----------------|
-| Quotes, reviews, showcase submissions, community templates—**per-user artifacts** with consent. | **Moderation**: spam, PII, competitor attacks; **consent** for name/logo use; **schema** (Review, CreativeWork) only when accurate. |
+| Quotes, reviews, showcase submissions, community templates—**per-user artifacts** with consent. | **Moderation**: spam, PII, competitor attacks; **consent** for name/logo use; **schema markup** (Review, CreativeWork) only when accurate. |
 | Strong when combined with **Tier 1** (e.g. “customer-built template” gallery). | **Volume without quality** → thin pages; cap or score submissions. |
 
 **AI here**: Summarize long reviews into bullets; **generate draft alt text** for images; **cluster** submissions into topic pages—always **human approve** before publish. Do not fabricate testimonials.

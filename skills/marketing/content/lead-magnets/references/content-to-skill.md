@@ -16,7 +16,7 @@ Establish:
 
 Work from the supplied material. If the archive is unavailable, produce an inventory and extraction plan; do not pretend to have processed it.
 
-**Choose another format when appropriate:** a short checklist may need only a document; a frequently changing product database may belong in a live retrieval integration; a general website discoverability task belongs in ai-seo. A skill fits reusable workflows and a curated knowledge library with a clear owner and update process.
+**Choose another format when appropriate:** a short checklist may need only a document; a frequently changing product database may belong in a live retrieval integration; a general website discoverability task belongs in generative-engine-optimization. A skill fits reusable workflows and a curated knowledge library with a clear owner and update process.
 
 ## Ship a Small Pilot First
 

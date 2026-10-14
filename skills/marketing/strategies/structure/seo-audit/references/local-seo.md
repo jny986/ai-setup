@@ -47,7 +47,7 @@ Citation cleanup should resolve conflicting identities and customer-facing infor
 
 ## Earn and Respond to Reviews
 
-Ask customers with genuine experiences for honest feedback through a neutral request and the correct location's review link. Do not select only happy customers, buy reviews, offer incentives, require particular wording, or promise removal of criticism. Google's rules differ from other review platforms (see the referrals skill's review programs reference); read the current [Maps review policy](https://support.google.com/contributionpolicy/answer/7400114?hl=en-GB).
+Ask customers with genuine experiences for honest feedback through a neutral request and the correct location's review link. Do not select only happy customers, buy reviews, offer incentives, require particular wording, or promise removal of criticism. Google's rules differ from other review platforms (see the referral-program guide's review programs reference); read the current [Maps review policy](https://support.google.com/contributionpolicy/answer/7400114?hl=en-GB).
 
 Example request: "Thanks for choosing [business]. If you'd like to share your experience, you can leave a review here: [location review link]. We welcome your honest feedback."
 

@@ -194,6 +194,8 @@ Cross-platform depth lives in references; for any operational decision on a live
 | Auditing a live account, grading account health, quoting benchmarks, recommending changes | [audit-guardrails.md](references/audit-guardrails.md) |
 | Agentic creative and competitive research: ad-library teardown, review-to-persona mapping | [creative-research-automation.md](references/creative-research-automation.md) |
 | Audience setup by platform | [audience-targeting.md](references/audience-targeting.md) |
+| Pixels, CAPI, server-side and offline conversion tracking per ad platform | [conversion-tracking.md](references/conversion-tracking.md) |
+| Launch setup checklists for Google, Meta and LinkedIn accounts | [platform-setup-checklists.md](references/platform-setup-checklists.md) |
 | Primary-text formulas, headline formulas, CTA sets | [ad-copy-templates.md](references/ad-copy-templates.md) |
 
 > **Source conflicts (kostja wins, ours flagged):** kostja raises budgets 20-30% at a time and says smart bidding needs 30+ conversions in 30 days. Our copy says never 30%+ in one move (it resets platform learning) and switches to automated bidding at 50+ conversions.
