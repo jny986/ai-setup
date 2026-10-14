@@ -3,6 +3,9 @@ name: website-structure
 description: When the user wants to plan website structure, decide which pages to build, or prioritize pages for a new or existing site. Also use when the user mentions "website structure," "site structure," "which pages do I need," "page planning," "sitemap planning," "Must Have pages," "website architecture," or "site hierarchy." For a specific page template (e.g. homepage), use `dev/references/pages/brand/home` or `dev/references/pages/marketing/landing-page` as appropriate. Not for organic SEO roadmap alone; use seo-strategy.
 metadata:
   version: 1.5.0
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: website-structure, site-architecture
 ---
 
 # Strategy: Website Structure

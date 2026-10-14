@@ -3,6 +3,9 @@ name: popups
 description: "Design popups, modals, slide-ins and banners that convert without annoying."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: popups
 ---
 
 # Popup CRO

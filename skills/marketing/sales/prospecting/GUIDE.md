@@ -3,6 +3,9 @@ name: prospecting
 description: "Build verified, scored prospect lists for B2B SaaS, general B2B, local SMB, or early-stage first-customer discovery."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: prospecting
 ---
 
 # Sales: Prospecting

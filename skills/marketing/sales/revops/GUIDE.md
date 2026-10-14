@@ -3,6 +3,9 @@ name: revops
 description: "Design lead lifecycle stages, scoring, routing, pipeline hygiene, CRM automation and deal desk processes that connect marketing to revenue."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: revops
 ---
 
 # Sales: RevOps

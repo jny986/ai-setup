@@ -3,6 +3,9 @@ name: seo-audit
 description: When the user wants to run an SEO audit, technical SEO audit, or site health check. Also use when the user mentions "SEO audit," "technical audit," "site audit," "crawl audit," "indexing audit," "SEO health," or "fix SEO issues." For prioritization and organic strategy, use seo-strategy. For GSC data analysis, use google-search-console.
 metadata:
   version: 1.1.0
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: seo-audit, seo-audit
 ---
 
 # Strategies: SEO Audit

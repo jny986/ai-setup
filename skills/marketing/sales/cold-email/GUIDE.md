@@ -3,6 +3,9 @@ name: cold-email
 description: "Write and run B2B cold outbound that gets replies, from first emails and follow-ups to sending setup, LinkedIn, multichannel cadences and reply handling."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: cold-email
 ---
 
 # Sales: Cold Email

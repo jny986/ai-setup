@@ -3,6 +3,9 @@ name: co-marketing
 description: Find and score co-marketing partners, brainstorm joint campaigns, and structure and measure the partnership. Use for 'co-marketing,' 'partner marketing,' 'joint campaign,' 'who should we partner with,' 'integration marketing,' 'cross-promotion,' 'partnership ideas,' or 'co-brand.'
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: co-marketing
 ---
 
 # Channels: Co-Marketing

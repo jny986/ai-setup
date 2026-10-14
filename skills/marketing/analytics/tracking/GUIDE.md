@@ -3,6 +3,9 @@ name: analytics-tracking
 description: When the user wants to set up, audit, or optimize analytics tracking (GA4, events, conversions). Also use when the user mentions "Google Analytics," "GA4," "event tracking," "conversions," "attribution model," "gtag," "data layer," "GA4 setup," "conversion tracking," "event setup," "User ID tracking," "CTA attribution," "tracking plan," "tag manager," "GTM," "Mixpanel," "Segment," "are my events firing," or "analytics isn't working." For traffic insights, use traffic-analysis. For choosing attribution models or reconciling conflicting numbers across tools, use attribution.
 metadata:
   version: 1.3.1
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: analytics-tracking, analytics
 ---
 
 # Analytics: Tracking

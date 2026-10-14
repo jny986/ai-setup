@@ -3,6 +3,9 @@ name: linkedin-ads
 description: When the user wants to set up, optimize, or manage LinkedIn Ads. Also use when the user mentions "LinkedIn Ads," "LinkedIn Campaign Manager," "Sponsored Content," "Lead Gen Forms," "Sponsored Messaging," "Message Ads," "Conversation Ads," "Accelerate," "Classic ad set," "Audience Network," "objective-based pricing," "Insight Tag," "job title targeting," "company targeting," "Matched Audiences," or "B2B paid ads." For organic posts, use social.
 metadata:
   version: 1.2.0
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: linkedin-ads, ads
 ---
 
 # Paid Ads: LinkedIn Ads

@@ -3,6 +3,9 @@ name: localization-strategy
 description: Plan, audit, implement, migrate, or validate localization for multilingual products and websites, including locale scope, market readiness, URL architecture, content coverage, hreflang coordination, rollout, and production verification. Use translation for the actual translation, glossary, and language review work.
 metadata:
   version: 2.0.0
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: localization-strategy
 ---
 
 # Localization Strategy
