@@ -1,0 +1,5 @@
+interface:
+  display_name: "Git"
+  short_description: "Commit, PR, review and conflict workflows"
+policy:
+  allow_implicit_invocation: true
