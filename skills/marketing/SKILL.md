@@ -30,8 +30,8 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | Guide | Use when |
 |---|---|
 | **Foundations** | |
-| `product-marketing` | Creating or updating the product marketing context doc (positioning, ICP, audience) |
-| `marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
+| `product-marketing` `strategies/brand/product-marketing` | Creating or updating the product marketing context doc (positioning, ICP, audience) |
+| `marketing-psychology` `strategies/brand/marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
 | **Strategy and planning** | |
 | **Copy and creative** | |
 | `copywriting` | Writing or rewriting page copy: headlines, value props, CTAs |
@@ -40,16 +40,30 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `video` | Producing video with AI tools or programmatic frameworks |
 | **Conversion (CRO)** | |
 | `ab-testing` | Designing A/B tests or running an experimentation program |
+| **Brand and commercial strategy** | |
+| `branding` `strategies/brand/branding` | Brand purpose, values, story, voice, narrative, brand guidelines |
+| `brand-visual` `strategies/brand/brand-visual` | Visual identity: typography, colours, design tokens, brand style guide |
+| `brand-monitoring` `strategies/brand/brand-monitoring` | Tracking brand mentions, sentiment and reputation |
+| `brand-protection` `strategies/brand/brand-protection` | Trademarks, impersonation, brand abuse and takedowns |
+| `integrated-marketing` `strategies/brand/integrated-marketing` | Coordinating channels with the PESO model and a consistent message |
+| `rebranding-strategy` `strategies/brand/rebranding` | Rebrand execution: domain change, redirects, migration, announcement |
+| `content-marketing` `strategies/brand/content-marketing` | Content types, formats, funnel mapping and repurposing across channels |
+| `domain-selection` `strategies/commercial/domain/domain-selection` | Choosing a domain name and TLD |
+| `domain-architecture` `strategies/commercial/domain/domain-architecture` | Subdomain, subfolder or separate domain decisions |
+| `multi-domain-brand-seo` `strategies/commercial/domain/multi-domain-brand-seo` | SEO and brand when several domains coexist |
+| `localization-strategy` `strategies/commercial/localization` | Market and locale selection, multilingual rollout, localisation architecture |
+| `open-source-strategy` `strategies/commercial/open-source` | Open source as a growth and commercialisation path |
+| `discount-marketing-strategy` `strategies/commercial/pricing/discount-marketing` | Promotional pricing: annual, lifetime deals, seasonal, startup and referral discounts |
 | **Pricing and revenue** | |
-| `pricing` | Pricing, packaging, tiers, freemium or trials |
-| `offers` | Designing the offer itself: bonuses, guarantees, urgency, naming |
+| `pricing-strategy` `strategies/commercial/pricing/pricing-strategy` | Pricing, packaging, tiers, freemium or trials |
+| `offers` `strategies/commercial/pricing/offers` | Designing the offer itself: bonuses, guarantees, urgency, naming |
 | `revops` | Lead lifecycle, lead scoring, routing, marketing-to-sales handoff |
 | `sales-enablement` | Sales decks, one-pagers, objection handling, demo scripts |
 | **SEO and discoverability** | |
-| `ai-seo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
+| `generative-engine-optimization` `strategies/commercial/geo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
 | `directory-submissions` | Submitting to startup, SaaS, AI or review directories for backlinks |
 | `aso` | App Store or Google Play listing optimisation |
-| `free-tools` | Building a free tool (calculator, grader) for leads or SEO |
+| `free-tools` `strategies/commercial/free-tools` | Building a free tool (calculator, grader) for leads or SEO |
 | **SEO (nested)** | |
 | `competitor-research` `seo/content/competitor-research` | Analysing or profiling competitors (keywords, content, backlinks, positioning) from names or URLs |
 | `comparison-pages` `seo/content/comparison-pages` | Strategy and content for comparison, "vs" and alternative pages |
@@ -113,7 +127,7 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `prospecting` | Finding and qualifying prospects to build an outreach list |
 | `sms` | SMS, MMS or WhatsApp marketing |
 | `social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok |
-| `ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
+| `paid-ads-strategy` `strategies/commercial/paid-ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
 | `ad-creative` | Generating or iterating ad copy and creative at scale |
 | `community-marketing` | Building a community (Discord, Slack, forum) or advocates |
 | `influencer-marketing` | Creator, influencer or ambassador partnerships |
