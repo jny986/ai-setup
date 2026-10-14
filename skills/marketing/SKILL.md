@@ -34,10 +34,13 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `marketing-psychology` `strategies/brand/marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
 | **Strategy and planning** | |
 | **Copy and creative** | |
-| `copywriting` | Writing or rewriting page copy: headlines, value props, CTAs |
-| `copy-editing` | Editing, proofreading or refreshing existing copy |
-| `image` | Generating or optimising marketing images, mockups, banners, OG images |
-| `video` | Producing video with AI tools or programmatic frameworks |
+| `copywriting` `content/copywriting` | Writing or rewriting page copy: headlines, value props, CTAs |
+| `copy-editing` `content/copy-editing` | Editing, proofreading or refreshing existing copy |
+| `visual-content` `content/visual-content` | Planning, generating or repurposing marketing images, social graphics, mockups, banners, OG images |
+| `video-marketing` `content/video` | Video strategy and scripts, hooks, and producing video with AI tools or programmatic frameworks |
+| `article-content` `content/article` | Writing article bodies: blog posts, guides, long-form pieces |
+| `podcast-marketing` `content/podcast` | Podcast strategy, episodes, show notes and repurposing |
+| `translation` `content/translation` | Translating, transcreating or maintaining multilingual content |
 | **Conversion (CRO)** | |
 | `ab-testing` | Designing A/B tests or running an experimentation program |
 | **Brand and commercial strategy** | |
@@ -126,7 +129,7 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |
 | `prospecting` | Finding and qualifying prospects to build an outreach list |
 | `sms` | SMS, MMS or WhatsApp marketing |
-| `social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok |
+| `social` `platforms/social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok, Reddit, Pinterest, Medium, YouTube, GitHub, Grokipedia |
 | `paid-ads-strategy` `strategies/commercial/paid-ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
 | `ad-creative` | Generating or iterating ad copy and creative at scale |
 | `community-marketing` | Building a community (Discord, Slack, forum) or advocates |
@@ -135,7 +138,7 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `referrals` | Referral or affiliate programs, word of mouth |
 | `public-relations` | Press coverage, journalist pitches, media strategy |
 | `events` | Webinars, conferences, sponsorships, speaking, field events |
-| `lead-magnets` | Gated content, ebooks, checklists, templates for email capture |
+| `lead-magnets` `content/lead-magnets` | Gated content, ebooks, checklists, templates for email capture |
 | **Measurement** | |
 | `analytics` | Tracking setup: GA4, GTM, events, UTMs, conversion tracking |
 | `attribution` | Which channels drive revenue, attribution models, MMM, incrementality |
