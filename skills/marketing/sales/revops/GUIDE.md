@@ -4,7 +4,7 @@ description: "Design lead lifecycle stages, scoring, routing, pipeline hygiene, 
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.27(28e4a81)
+  based_on_version: v2.11.29(c7d7dfb)
   based_on_skill: revops
 ---
 
@@ -106,11 +106,11 @@ Define response times and document them:
 ### Building a Scoring Model
 
 1. Define your ICP attributes and weight them
-2. Identify high-intent behavioral signals from closed-won data
+2. Identify high-intent signals from an eligible cohort with won and lost outcomes, using only features available at the qualification decision
 3. Set point values for each attribute and behavior
 4. Set MQL threshold (typically 50-80 points on a 100-point scale)
-5. Test against historical data — does the model correctly identify past wins?
-6. Launch, measure, and recalibrate quarterly
+5. Freeze the rule and test a later, fully observed holdout against the current routing baseline; report precision, recall, missed wins, false positives, and workload
+6. Pilot with monitoring and rollback; tune on development cohorts and preserve an untouched holdout for each promotion
 
 ### Common Scoring Mistakes
 
