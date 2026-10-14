@@ -42,7 +42,7 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `podcast-marketing` `content/podcast` | Podcast strategy, episodes, show notes and repurposing |
 | `translation` `content/translation` | Translating, transcreating or maintaining multilingual content |
 | **Conversion (CRO)** | |
-| `ab-testing` | Designing A/B tests or running an experimentation program |
+| `ab-testing` `analytics/ab-testing` | Designing A/B tests or running an experimentation program |
 | **Brand and commercial strategy** | |
 | `branding` `strategies/brand/branding` | Brand purpose, values, story, voice, narrative, brand guidelines |
 | `brand-visual` `strategies/brand/brand-visual` | Visual identity: typography, colours, design tokens, brand style guide |
@@ -148,5 +148,9 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `co-marketing` `channels/partnerships/co-marketing` | Partner marketing and joint campaigns |
 | `events` `channels/events` | Webinars, conferences, sponsorships, speaking, field events |
 | **Measurement** | |
-| `analytics` | Tracking setup: GA4, GTM, events, UTMs, conversion tracking |
-| `attribution` | Which channels drive revenue, attribution models, MMM, incrementality |
+| `analytics-tracking` `analytics/tracking` | Tracking setup: GA4, GTM, events, tracking plans, conversion tracking |
+| `traffic-analysis` `analytics/sources/traffic` | Traffic sources, dark traffic, UTM conventions, channel reporting |
+| `ai-traffic-tracking` `analytics/sources/ai-traffic` | Tracking AI search traffic and AI visibility in GA4 and Search Console |
+| `google-search-console` `analytics/seo/google-search-console` | Search Console performance, indexing and API analysis |
+| `seo-monitoring` `analytics/seo/seo-monitoring` | SEO data system: benchmarks, article database, indexing, traffic, keywords, backlinks |
+| `attribution` `analytics/attribution` | Which channels drive revenue, attribution models, MMM, incrementality, first-party attribution |
