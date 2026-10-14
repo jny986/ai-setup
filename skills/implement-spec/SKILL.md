@@ -34,4 +34,4 @@ Communication to and from subagents should be sparse. Communicate primarily thro
 
 7. Clean up all **implementer subagent** worktrees.
 
-8. Run `/finalise` without asking for approval — completing the prior steps is itself the go-ahead.
+8. Run `/git finalise` without asking for approval — completing the prior steps is itself the go-ahead.
