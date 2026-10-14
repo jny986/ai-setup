@@ -97,7 +97,7 @@ End with a one-line summary: total findings per axis, the worst issue _within ea
 
 ### 6. Offer PR inline comments
 
-If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. List them numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 7. Skip steps 6 and 7 when there's no PR.
+If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 7. Skip steps 6 and 7 when there's no PR.
 
 ### 7. Submit the review
 
