@@ -15,7 +15,7 @@ Run it in three passes: before the switch, at the switch, and in the first two w
 **Forms and conversions**
 - [ ] Submit every form with a test entry and confirm it reaches the inbox, CRM, or tool it should
 - [ ] Confirmation messages and redirects work, and spam protection doesn't block real submissions
-- [ ] Conversion tracking fires on the confirmed submission, not the button click (see `analytics-tracking`; for ad platforms, the [ads conversion-tracking reference](../../../../analytics/tracking/GUIDE.md))
+- [ ] Conversion tracking fires on the confirmed submission, not the button click (see `analytics-tracking`; for ad platforms, the [ads conversion-tracking reference](../../../commercial/paid-ads/references/conversion-tracking.md))
 - [ ] Analytics is installed once, on every page, with internal traffic filtered
 - [ ] Consent banner works and tags respect it
 
