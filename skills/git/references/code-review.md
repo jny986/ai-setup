@@ -18,6 +18,8 @@ Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 
 Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
 
+**Scope: only the changes in the branch or PR.** Review the diff, not the surrounding codebase. Don't flag pre-existing issues in untouched code; read it only for context.
+
 The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-matt-pocock-skills`.
 
 ## Process
@@ -34,7 +36,7 @@ Before going further, confirm the fixed point resolves (`git rev-parse <fixed-po
 
 Look for the originating spec, in this order:
 
-1. Issue references in the commit messages (`#123`, `Closes #45`, GitLab `!67`, etc.), fetched via the workflow in `docs/agents/issue-tracker.md`.
+1. Issue references or spec URLs in the commit messages, branch name, and PR description (`#123`, `Closes #45`, GitLab `!67`, ticket/wiki/doc links, etc.). Fetch issues via the workflow in `docs/agents/issue-tracker.md`. Fetch URLs and ticket references via an available MCP server where one fits (e.g. Kanopi for tickets and wikis), falling back to a plain web fetch.
 2. A path the user passed as an argument.
 3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
 4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
@@ -69,13 +71,13 @@ Issue both sub-agent calls together, in the foreground, and aggregate the report
 
 **Standards sub-agent prompt** should include:
 
-- The full diff command and commit list.
+- The full diff command and commit list, with the instruction to report only on lines changed in the diff.
 - The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it).
 - The brief: "Report, per file/hunk where relevant, (a) every place the diff violates a documented standard: cite the standard (file + the rule); and (b) any baseline smell you spot: name it and quote the hunk. Distinguish hard violations from judgement calls: documented-standard breaches can be hard, but baseline smells are always judgement calls, and a documented repo standard overrides the baseline. Skip anything tooling enforces. Under 400 words."
 
 **Spec sub-agent prompt** should include:
 
-- The diff command and commit list.
+- The diff command and commit list, with the instruction to judge only what the diff changes.
 - The path or fetched contents of the spec.
 - The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
 
@@ -86,6 +88,19 @@ If the spec is missing, skip the Spec sub-agent and note this in the final repor
 Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
 
 End with a one-line summary: total findings per axis, and the worst issue _within each axis_ (if any). Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
+
+### 6. Offer PR inline comments
+
+If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. List them numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 7. Skip steps 6 and 7 when there's no PR.
+
+### 7. Submit the review
+
+Recommend a verdict and let the user confirm or override it:
+
+- **Approve**: only minor issues, or none.
+- **Request changes**: issues that need to be looked at before merge.
+
+Ask what review comment they want to add (suggest a short draft based on the findings). Then submit one review on the PR with the confirmed verdict, the comment, and the inline comments picked in step 6 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`). Don't submit until the user has confirmed the verdict and comment.
 
 ## Why two axes
 
