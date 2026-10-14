@@ -1,0 +1,5 @@
+interface:
+  display_name: "Finalise"
+  short_description: "Review, fix, and open the PR"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skills</title>
+<style>
+body { font: 15px/1.5 system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+details { border: 1px solid #ddd; border-radius: 6px; margin-bottom: .75rem; }
+summary { cursor: pointer; padding: .75rem 1rem; font-weight: 600; font-size: 1.1rem; }
+summary span { color: #777; font-weight: normal; }
+summary a { font-size: .85rem; font-weight: normal; margin-left: .5rem; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; vertical-align: top; padding: .5rem 1rem; border-top: 1px solid #eee; }
+td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
+tr.sub td:first-child { padding-left: 2rem; }
+td.inv-yes, td.inv-no { white-space: nowrap; }
+td.inv-yes { color: #1a7f37; }
+td.inv-no { color: #b42318; }
+</style>
+</head>
+<body>
+<h1>Skills</h1>
+<details>
+<summary>Original <span>(4)</span></summary>
+<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="skills/agents-review">agents-review</a></td><td class="inv-no">No</td><td>Review agents files (AGENTS.md, CLAUDE.md) to follow progressive disclosure principles</td></tr>
+<tr><td><a href="skills/commit-it">commit-it</a></td><td class="inv-yes">Yes</td><td>Commit and push the current work, first making sure you&#x27;re on the branch its ticket calls for. Resolves any ticket in context (explicit reference, one already discussed, or inferred from the branch name), switches to or creates its branch when it has one, stages everything, commits, and pushes to origin. Use when the user asks to commit and push, or another skill needs that done before continuing (e.g. create-pr).</td></tr>
+<tr><td><a href="skills/create-pr">create-pr</a></td><td class="inv-yes">Yes</td><td>Create a GitHub pull request from the current branch: branch if needed, commit outstanding changes, push, and open the PR with gh. Use when the user asks to create/open/raise a PR or pull request.</td></tr>
+<tr><td><a href="skills/finalise">finalise</a></td><td class="inv-yes">Yes</td><td>Finalise a branch&#x27;s dev work — run code review, fix findings, then create the PR. Use when the user asks to finalise, finish, or wrap up a branch. Invoked as /finalise.</td></tr>
+</tbody></table>
+</details>
+<details>
+<summary>Based on coreyhaines31/marketingskills <span>(1)</span> <a href="https://github.com/coreyhaines31/marketingskills">https://github.com/coreyhaines31/marketingskills</a></summary>
+<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="skills/product-marketing">product-marketing</a></td><td class="inv-yes">Yes</td><td>When the user wants to create or update their product marketing context document. Also use when the user mentions &#x27;product context,&#x27; &#x27;marketing context,&#x27; &#x27;set up context,&#x27; &#x27;positioning,&#x27; &#x27;who is my target audience,&#x27; &#x27;describe my product,&#x27; &#x27;ICP,&#x27; &#x27;ideal customer profile,&#x27; or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills — it creates `docs/marketing/product-marketing.md` that all other skills reference for product, audience, and positioning context.</td></tr>
+</tbody></table>
+</details>
+<details>
+<summary>Based on mattpocock/skills <span>(33)</span> <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></summary>
+<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="skills/ask-matt">ask-matt</a></td><td class="inv-no">No</td><td>Ask which skill or flow fits your situation. A router over the skills in this repo.</td></tr>
+<tr><td><a href="skills/claude-handoff">claude-handoff</a></td><td class="inv-no">No</td><td>Hand the current conversation off to a fresh background agent that picks up the work immediately.</td></tr>
+<tr><td><a href="skills/code-review">code-review</a></td><td class="inv-yes">Yes</td><td>Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo&#x27;s documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to &quot;review since X&quot;.</td></tr>
+<tr><td><a href="skills/codebase-design">codebase-design</a></td><td class="inv-yes">Yes</td><td>Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module&#x27;s interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.</td></tr>
+<tr><td><a href="skills/diagnosing-bugs">diagnosing-bugs</a></td><td class="inv-yes">Yes</td><td>Diagnosis loop for hard bugs and performance regressions. Use when the user says &quot;diagnose&quot;/&quot;debug this&quot;, or reports something broken/throwing/failing/slow.</td></tr>
+<tr><td><a href="skills/domain-modeling">domain-modeling</a></td><td class="inv-yes">Yes</td><td>Build and sharpen a project&#x27;s domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, discusses codebase terminology, writes or edits a CONTEXT.md, records or edits an ADR, or when another skill needs to maintain the domain model.</td></tr>
+<tr><td><a href="skills/git-guardrails-claude-code">git-guardrails-claude-code</a></td><td class="inv-yes">Yes</td><td>Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code.</td></tr>
+<tr><td><a href="skills/grill-me">grill-me</a></td><td class="inv-no">No</td><td>A relentless interview to sharpen a plan or design.</td></tr>
+<tr><td><a href="skills/grill-with-docs">grill-with-docs</a></td><td class="inv-no">No</td><td>A relentless interview to sharpen a plan or design, which also creates docs (ADR&#x27;s and glossary) as we go.</td></tr>
+<tr><td><a href="skills/grilling">grilling</a></td><td class="inv-yes">Yes</td><td>Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any &#x27;grill&#x27; trigger phrases.</td></tr>
+<tr><td><a href="skills/handoff">handoff</a></td><td class="inv-no">No</td><td>Compact the current conversation into a handoff document for another agent to pick up.</td></tr>
+<tr><td><a href="skills/implement">implement</a></td><td class="inv-no">No</td><td>Implement a piece of work based on a spec or set of tickets.</td></tr>
+<tr><td><a href="skills/implement-spec">implement-spec</a></td><td class="inv-no">No</td><td>Implement a specification in code.</td></tr>
+<tr><td><a href="skills/improve-codebase-architecture">improve-codebase-architecture</a></td><td class="inv-no">No</td><td>Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.</td></tr>
+<tr><td><a href="skills/loop-me">loop-me</a></td><td class="inv-no">No</td><td>Grill me about specs for the workflows I want to build, within this workspace.</td></tr>
+<tr><td><a href="skills/prototype">prototype</a></td><td class="inv-yes">Yes</td><td>Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.</td></tr>
+<tr><td><a href="skills/research">research</a></td><td class="inv-yes">Yes</td><td>Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.</td></tr>
+<tr><td><a href="skills/resolving-merge-conflicts">resolving-merge-conflicts</a></td><td class="inv-yes">Yes</td><td>Use when you need to resolve an in-progress git merge/rebase conflict.</td></tr>
+<tr><td><a href="skills/setup-matt-pocock-skills">setup-matt-pocock-skills</a></td><td class="inv-no">No</td><td>Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.</td></tr>
+<tr><td><a href="skills/setup-pre-commit">setup-pre-commit</a></td><td class="inv-yes">Yes</td><td>Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.</td></tr>
+<tr><td><a href="skills/tdd">tdd</a></td><td class="inv-yes">Yes</td><td>Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions &quot;red-green-refactor&quot;, or wants integration tests.</td></tr>
+<tr><td><a href="skills/teach">teach</a></td><td class="inv-no">No</td><td>Teach the user a new skill or concept, within this workspace.</td></tr>
+<tr><td><a href="skills/to-questionnaire">to-questionnaire</a></td><td class="inv-no">No</td><td>Turn a decision you can&#x27;t fully answer into a questionnaire for someone else to fill in.</td></tr>
+<tr><td><a href="skills/to-spec">to-spec</a></td><td class="inv-no">No</td><td>Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you&#x27;ve already discussed.</td></tr>
+<tr><td><a href="skills/to-tickets">to-tickets</a></td><td class="inv-no">No</td><td>Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).</td></tr>
+<tr><td><a href="skills/triage">triage</a></td><td class="inv-no">No</td><td>Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.</td></tr>
+<tr><td><a href="skills/wait-what">wait-what</a></td><td class="inv-no">No</td><td>Stop. That last message did not land: re-pitch it.</td></tr>
+<tr><td><a href="skills/wayfinder">wayfinder</a></td><td class="inv-no">No</td><td>Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.</td></tr>
+<tr><td><a href="skills/wizard">wizard</a></td><td class="inv-yes">Yes</td><td>Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don&#x27;t invoke this for steps the agent can perform itself.</td></tr>
+<tr><td><a href="skills/writing-beats">writing-beats</a></td><td class="inv-no">No</td><td>Writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it.</td></tr>
+<tr><td><a href="skills/writing-for-agents">writing-for-agents</a></td><td class="inv-yes">Yes</td><td>Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.</td></tr>
+<tr><td><a href="skills/writing-fragments">writing-fragments</a></td><td class="inv-no">No</td><td>Writing, explore: mine raw fragments, no structure yet.</td></tr>
+<tr><td><a href="skills/writing-shape">writing-shape</a></td><td class="inv-no">No</td><td>Writing, exploit: shape raw material into an article, paragraph by paragraph.</td></tr>
+</tbody></table>
+</details>
+</body>
+</html>
