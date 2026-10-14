@@ -165,7 +165,7 @@ Best for: Active voice, clear next step
 
 ## Platform-Specific Copy Guidelines
 
-Character limits, placement notes and per-platform tone guidelines live in the ad-creative guide's [platform-specs.md](../../../../paid-ads/ad-creative/references/platform-specs.md). Check every line against it before delivering.
+Character limits, placement notes and per-platform tone guidelines live in the ad-creative guide's [platform-specs.md](../../../../ad-creative/references/platform-specs.md). Check every line against it before delivering.
 
 ---
 

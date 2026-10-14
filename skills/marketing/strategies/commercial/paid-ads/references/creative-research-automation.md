@@ -16,7 +16,7 @@ The core reframe: don't ask the agent to *replace* the strategist. Offload the *
 
 ## When to use this
 
-- You need a competitor's paid-creative mix (formats, partnership share, messaging) before briefing new ads — feeds the concept slate in [ad-creative](../../../../paid-ads/ad-creative/GUIDE.md).
+- You need a competitor's paid-creative mix (formats, partnership share, messaging) before briefing new ads — feeds the concept slate in [ad-creative](../../../../ad-creative/GUIDE.md).
 - You want personas grounded in real reviews, not assumptions — and the "who our ads *seem* to target vs. who actually buys" gap.
 - You're standing up a recurring competitive/creative report that should run itself and land in Slack.
 
@@ -98,6 +98,6 @@ Run it against your competitors, your *clients'* competitors, or brands you admi
 
 ## Where the outputs go
 
-- **Ad-library + format/partnership findings →** the concept slate and hook briefs in [ad-creative](../../../../paid-ads/ad-creative/GUIDE.md).
+- **Ad-library + format/partnership findings →** the concept slate and hook briefs in [ad-creative](../../../../ad-creative/GUIDE.md).
 - **Personas doc →** shared context for [customer-research](../../../../strategies/launch/customer-research/GUIDE.md), [copywriting](../../../../content/copywriting/GUIDE.md), and [product-marketing](../../../../strategies/brand/product-marketing/GUIDE.md).
 - **Organic teardown shortlist →** a full dossier in [competitor-research](../../../../seo/content/competitor-research/GUIDE.md).
