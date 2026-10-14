@@ -83,11 +83,17 @@ Issue both sub-agent calls together, in the foreground, and aggregate the report
 
 If the spec is missing, skip the Spec sub-agent and note this in the final report.
 
-### 5. Aggregate
+### 5. Check user comments
 
-Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+Look for review comments the user left on the PR (`gh pr view --json comments,reviews` and `gh api repos/{owner}/{repo}/pulls/<n>/comments` for inline ones) or in the issue. Skip resolved threads and bot comments. If none exist, say so and move on.
 
-End with a one-line summary: total findings per axis, and the worst issue _within each axis_ (if any). Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
+For each comment, check the current diff: has the issue it raises actually been fixed? Report each as fixed, not fixed, or partially fixed, quoting the comment and citing the file/lines that show it. Don't take a "done" reply or a resolved thread as proof.
+
+### 6. Aggregate
+
+Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned, then the step 5 results under `## Comments`. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+
+End with a one-line summary: total findings per axis, the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
 
 ### 6. Offer PR inline comments
 
