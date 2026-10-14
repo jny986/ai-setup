@@ -155,7 +155,7 @@ Rule of thumb: Ask for the minimum needed. Every extra field reduces conversion 
 - Reduce risk: "No spam. Unsubscribe anytime."
 
 **For form optimization**: See **conversion-optimization** skill
-**For popup implementation**: See **popups** skill
+**For popup implementation**: See `dev/references/components/conversion/popup`; for popup CRO see **popups**
 
 ---
 

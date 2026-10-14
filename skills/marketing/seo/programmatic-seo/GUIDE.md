@@ -1,6 +1,6 @@
 ---
 name: programmatic-seo
-description: When the user wants to create SEO pages at scale using templates and data—including AI-assisted, grounded copy for per-URL differentiation (vs rigid mail-merge templates). Also use when the user mentions "programmatic SEO," "programmatic SEO pages," "template pages," "scale content," "location pages," "city pages," "comparison pages at scale," "X vs Y pages," "integration pages," "pages from data," "automated landing pages," or "programmatic landing pages." Uses a playbook matrix aligned to skills under skills/pages. For user-facing template galleries or marketplaces (browse → use), use template-page-generator.
+description: When the user wants to create SEO pages at scale using templates and data—including AI-assisted, grounded copy for per-URL differentiation (vs rigid mail-merge templates). Also use when the user mentions "programmatic SEO," "programmatic SEO pages," "template pages," "scale content," "location pages," "city pages," "comparison pages at scale," "X vs Y pages," "integration pages," "pages from data," "automated landing pages," or "programmatic landing pages." Uses a playbook matrix aligned to skills under skills/pages. For user-facing template galleries or marketplaces (browse → use), use `dev/references/pages/content/template-page`.
 metadata:
   version: 1.4.1
 ---
@@ -41,24 +41,24 @@ Page types in this library live under `pages/{brand|content|legal|marketing|util
 
 | Playbook | Example intent / keyword pattern | Page skill (`name`) | Path (reference) |
 |----------|----------------------------------|---------------------|------------------|
-| **Alternatives / comparisons** | "[Competitor] alternatives", "X vs Y" | alternatives-page-generator | `pages/marketing/alternatives` |
-| **Integrations** | "[Product A] [Product B] integration" | integrations-page-generator | `pages/marketing/integrations` |
-| **Category / catalog** | Faceted listings, product grids | category-page-generator, products-page-generator | `pages/marketing/category-pages`, `products` |
-| **Glossary / definitions** | "what is [term]", term landings | glossary-page-generator | `pages/content/glossary` |
-| **FAQ / Q&A** | Question banks, PAA-style pages | faq-page-generator | `pages/content/faq` |
-| **How-to / procedures** | Step libraries, "[how to] [task]" blocks in templates | howto-section-generator | `components/content/howto-section` |
-| **Comparison matrix (blocks)** | Feature/criteria grids, "vs" cells from data feed | comparison-table-generator | `components/content/comparison-table` |
-| **Tools & lead magnets** | "free [x] tool/calculator" | tools-page-generator | `pages/content/tools` |
-| **Template gallery** | Browse → detail (your templates) | template-page-generator | `pages/content/template-page` |
-| **Resource hub** | Guides, hubs, download centers | resources-page-generator | `pages/content/resources` |
-| **Use cases / solutions** | "for [role]", "by industry" | use-cases-page-generator, solutions-page-generator | `pages/marketing/use-cases`, `solutions` |
-| **Migration / switching** | "migrate from [X]" | migration-page-generator | `pages/marketing/migration` |
-| **Campaign landing** | Paid/segment LPs | landing-page-generator | `pages/marketing/landing-page` |
-| **Blog / article** | Long-tail articles at scale | blog-page-generator, article-page-generator | `pages/content/blog`, `article` |
-| **Docs / features / API** | Scalable doc sections, feature landings, `/api` marketing | docs-page-generator, features-page-generator, api-page-generator | `pages/content/docs`, `features`, `api` |
-| **Social proof** | Logos, case studies, galleries | press-coverage-page-generator, customer-stories-page-generator, showcase-page-generator | `pages/marketing/press-coverage`, `customer-stories`, `showcase` |
-| **Programs & offers** | Startups/education, contests, downloads, affiliate, media kit | startups-page-generator, contest-page-generator, download-page-generator, affiliate-page-generator, media-kit-page-generator | `pages/marketing/*` |
-| **Pricing / services** | Plans, offerings (use sparingly for pSEO) | pricing-page-generator, services-page-generator | `pages/marketing/pricing`, `services` |
+| **Alternatives / comparisons** | "[Competitor] alternatives", "X vs Y" | `dev/references/pages/marketing/alternatives` | `pages/marketing/alternatives` |
+| **Integrations** | "[Product A] [Product B] integration" | `dev/references/pages/marketing/integrations` | `pages/marketing/integrations` |
+| **Category / catalog** | Faceted listings, product grids | `dev/references/pages/marketing/commerce`, `dev/references/pages/marketing/commerce` | `pages/marketing/category-pages`, `products` |
+| **Glossary / definitions** | "what is [term]", term landings | `dev/references/pages/content/documentation` | `pages/content/glossary` |
+| **FAQ / Q&A** | Question banks, PAA-style pages | `dev/references/pages/content/faq` | `pages/content/faq` |
+| **How-to / procedures** | Step libraries, "[how to] [task]" blocks in templates | `dev/references/components/content/howto-section` | `components/content/howto-section` |
+| **Comparison matrix (blocks)** | Feature/criteria grids, "vs" cells from data feed | `dev/references/components/content/comparison-table` | `components/content/comparison-table` |
+| **Tools & lead magnets** | "free [x] tool/calculator" | `dev/references/pages/content/tools` | `pages/content/tools` |
+| **Template gallery** | Browse → detail (your templates) | `dev/references/pages/content/template-page` | `pages/content/template-page` |
+| **Resource hub** | Guides, hubs, download centers | `dev/references/pages/content/resources` | `pages/content/resources` |
+| **Use cases / solutions** | "for [role]", "by industry" | `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/service-solution` | `pages/marketing/use-cases`, `solutions` |
+| **Migration / switching** | "migrate from [X]" | `dev/references/pages/marketing/migration` | `pages/marketing/migration` |
+| **Campaign landing** | Paid/segment LPs | `dev/references/pages/marketing/landing-page` | `pages/marketing/landing-page` |
+| **Blog / article** | Long-tail articles at scale | `dev/references/pages/content/blog`, `dev/references/pages/content/article` | `pages/content/blog`, `article` |
+| **Docs / features / API** | Scalable doc sections, feature landings, `/api` marketing | `dev/references/pages/content/documentation`, `dev/references/pages/content/features`, `dev/references/pages/content/product-interface` | `pages/content/docs`, `features`, `api` |
+| **Social proof** | Logos, case studies, galleries | `dev/references/pages/marketing/press`, `dev/references/pages/marketing/customer-stories`, `dev/references/pages/marketing/showcase` | `pages/marketing/press-coverage`, `customer-stories`, `showcase` |
+| **Programs & offers** | Startups/education, contests, downloads, affiliate, media kit | `dev/references/pages/marketing/program`, `dev/references/pages/marketing/contest`, `dev/references/pages/content/product-interface`, `dev/references/pages/marketing/program`, `dev/references/pages/marketing/press` | `pages/marketing/*` |
+| **Pricing / services** | Plans, offerings (use sparingly for pSEO) | `dev/references/pages/marketing/pricing`, `dev/references/pages/marketing/service-solution` | `pages/marketing/pricing`, `services` |
 
 **Usually not mass programmatic** (single primary URL or compliance-heavy): `pages/brand/*` (home, about, contact), `pages/legal/*`, most `pages/utility/*` (404, status, signup-login, etc.)—treat as one-off or policy-driven, not template×data scale.
 
@@ -66,19 +66,19 @@ Page types in this library live under `pages/{brand|content|legal|marketing|util
 
 | If you have… | Lean toward… | Open first… |
 |----------------|--------------|-------------|
-| Competitor list + positioning | Alternatives / comparisons | alternatives-page-generator |
-| Integration directory (your + partners') | Integrations matrix | integrations-page-generator |
-| Product catalog or SKUs | Category / product grids | category-page-generator, products-page-generator |
-| Term / definition database | Glossary | glossary-page-generator |
-| Support tickets / PAA mined questions | FAQ scale | faq-page-generator |
-| How-to step banks / procedure templates | HowTo sections in scaled pages | howto-section-generator |
-| Competitor/feature matrix from data | Comparison table blocks in scaled pages | comparison-table-generator (+ alternatives-page-generator for URL intent) |
-| Lead magnets, calculators | Tools hub + per-tool | tools-page-generator |
-| **Your own templates** (exports, gallery items) | Template marketplace | template-page-generator |
-| ICP × industry matrix | Use cases / solutions | use-cases-page-generator, solutions-page-generator |
-| Import paths from competitors | Migration | migration-page-generator |
-| Campaign or geo LPs | Landing pages | landing-page-generator |
-| Long-form SEO articles | Blog index + single post | blog-page-generator, article-page-generator |
+| Competitor list + positioning | Alternatives / comparisons | `dev/references/pages/marketing/alternatives` |
+| Integration directory (your + partners') | Integrations matrix | `dev/references/pages/marketing/integrations` |
+| Product catalog or SKUs | Category / product grids | `dev/references/pages/marketing/commerce`, `dev/references/pages/marketing/commerce` |
+| Term / definition database | Glossary | `dev/references/pages/content/documentation` |
+| Support tickets / PAA mined questions | FAQ scale | `dev/references/pages/content/faq` |
+| How-to step banks / procedure templates | HowTo sections in scaled pages | `dev/references/components/content/howto-section` |
+| Competitor/feature matrix from data | Comparison table blocks in scaled pages | `dev/references/components/content/comparison-table` (+ `dev/references/pages/marketing/alternatives` for URL intent) |
+| Lead magnets, calculators | Tools hub + per-tool | `dev/references/pages/content/tools` |
+| **Your own templates** (exports, gallery items) | Template marketplace | `dev/references/pages/content/template-page` |
+| ICP × industry matrix | Use cases / solutions | `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/service-solution` |
+| Import paths from competitors | Migration | `dev/references/pages/marketing/migration` |
+| Campaign or geo LPs | Landing pages | `dev/references/pages/marketing/landing-page` |
+| Long-form SEO articles | Blog index + single post | `dev/references/pages/content/blog`, `dev/references/pages/content/article` |
 
 ## Template Structure (Recommended)
 
@@ -104,7 +104,7 @@ Page types in this library live under `pages/{brand|content|legal|marketing|util
 | **4 — Licensed / partner** | Exclusive feeds, co-marketing datasets | Partner pricing tiers; licensed industry stats | Medium—contract and citation discipline |
 | **5 — Public / scraped** | Open web, directories, generic enrichment | Name/address fills; commodity facts | **Highest**—needs editorial layer, fact-checking, and a real **Evidence block** |
 
-**Why Tier 1 (templates & generated content) wins**: Pages built from **your** template system carry proprietary structure, variables, and brand-safe blocks—harder for competitors to copy verbatim and easier to prove uniqueness (embeds, downloads, IDs). Pair with **template-page-generator** when the UX is “browse gallery → use template.”
+**Why Tier 1 (templates & generated content) wins**: Pages built from **your** template system carry proprietary structure, variables, and brand-safe blocks—harder for competitors to copy verbatim and easier to prove uniqueness (embeds, downloads, IDs). Pair with `dev/references/pages/content/template-page` when the UX is “browse gallery → use template.”
 
 ### Tier 2 — Product-derived (practical)
 
@@ -174,7 +174,7 @@ For **which page-generator skill to use**, see **Page Playbook Matrix** above. G
 |----------|---------|
 | **Location-specific pages** | "Plumber in [city]," "Best restaurants in [neighborhood]" with real local data |
 | **Product comparison** | "[Product A] vs [Product B]" with structured specs |
-| **Alternatives pages** | "[Competitor] alternatives" at scale; 50+ competitors; see **alternatives-page-generator** |
+| **Alternatives pages** | "[Competitor] alternatives" at scale; 50+ competitors; see `dev/references/pages/marketing/alternatives` |
 | **Software integration** | "[App A] + [App B]" integration pages (e.g., Zapier 50K+ pages) |
 | **Free tools** | "[X] checker," "[Y] calculator," "[Z] generator" — standalone tool pages; toolkit hub; same ICP as main product; lead gen |
 | **Travel / destination** | City + attraction combinations with reviews, photos |
@@ -389,17 +389,17 @@ Watch for: Thin content warnings, Ranking drops, Manual actions, Crawl errors
 
 ## Related Skills
 
-- **template-page-generator**: Template structure; aggregation (gallery) + detail pages; **Tier 1 product-generated** template URLs
-- **landing-page-generator**: Conversion-focused programmatic pages; LP structure for campaign CTA
-- **tools-page-generator**: Free tools pages; toolkit hub; programmatic tool pages; lead gen
-- **alternatives-page-generator**: Alternatives/comparison pages at scale; competitor brand traffic
-- **category-page-generator**, **products-page-generator**: Category / catalog grids
-- **glossary-page-generator**, **faq-page-generator**, **howto-section-generator**, **comparison-table-generator**, **resources-page-generator**: Definitions, Q&A banks, HowTo step blocks, comparison matrices, content hubs
-- **use-cases-page-generator**, **solutions-page-generator**, **migration-page-generator**: ICP/industry matrix, migration SEO
-- **integrations-page-generator**: Integration pair pages at scale
-- **blog-page-generator**, **article-page-generator**, **docs-page-generator**, **features-page-generator**, **api-page-generator**: Long-form and product surface scale
-- **press-coverage-page-generator**, **customer-stories-page-generator**, **showcase-page-generator**: Proof at scale
-- **startups-page-generator**, **contest-page-generator**, **download-page-generator**, **affiliate-page-generator**, **media-kit-page-generator**, **pricing-page-generator**, **services-page-generator**: Programs and offers (use selectively for pSEO)
+- `dev/references/pages/content/template-page`: Template structure; aggregation (gallery) + detail pages; **Tier 1 product-generated** template URLs
+- `dev/references/pages/marketing/landing-page`: Conversion-focused programmatic pages; LP structure for campaign CTA
+- `dev/references/pages/content/tools`: Free tools pages; toolkit hub; programmatic tool pages; lead gen
+- `dev/references/pages/marketing/alternatives`: Alternatives/comparison pages at scale; competitor brand traffic
+- `dev/references/pages/marketing/commerce`, `dev/references/pages/marketing/commerce`: Category / catalog grids
+- `dev/references/pages/content/documentation`, `dev/references/pages/content/faq`, `dev/references/components/content/howto-section`, `dev/references/components/content/comparison-table`, `dev/references/pages/content/resources`: Definitions, Q&A banks, HowTo step blocks, comparison matrices, content hubs
+- `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/service-solution`, `dev/references/pages/marketing/migration`: ICP/industry matrix, migration SEO
+- `dev/references/pages/marketing/integrations`: Integration pair pages at scale
+- `dev/references/pages/content/blog`, `dev/references/pages/content/article`, `dev/references/pages/content/documentation`, `dev/references/pages/content/features`, `dev/references/pages/content/product-interface`: Long-form and product surface scale
+- `dev/references/pages/marketing/press`, `dev/references/pages/marketing/customer-stories`, `dev/references/pages/marketing/showcase`: Proof at scale
+- `dev/references/pages/marketing/program`, `dev/references/pages/marketing/contest`, `dev/references/pages/content/product-interface`, `dev/references/pages/marketing/program`, `dev/references/pages/marketing/press`, `dev/references/pages/marketing/pricing`, `dev/references/pages/marketing/service-solution`: Programs and offers (use selectively for pSEO)
 - **content-strategy**: Content clusters, pillar pages; programmatic pages as cluster nodes
 - **website-structure**: Site IA before scaling URL sets
 - **url-structure**, **domain-architecture**: Paths, subfolder strategy

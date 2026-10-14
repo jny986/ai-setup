@@ -7,7 +7,7 @@ metadata:
 
 # SEO On-Page: Image Optimization
 
-Guides image optimization for Google Search (text results, Image Pack, Google Images, Discover), Core Web Vitals (LCP), and accessibility. Consolidates image-related best practices from components (hero, trust-badges) and pages (landing-page). References: [Google Image SEO](https://developers.google.com/search/docs/appearance/google-images), [Semrush Image SEO](https://www.semrush.com/blog/image-seo/).
+Guides image optimization for Google Search (text results, Image Pack, Google Images, Discover), Core Web Vitals (LCP), and accessibility. Consolidates image-related best practices from components (hero, `dev/references/components/conversion/trust-badges`) and pages (landing-page). References: [Google Image SEO](https://developers.google.com/search/docs/appearance/google-images), [Semrush Image SEO](https://www.semrush.com/blog/image-seo/).
 
 ## Scope
 
@@ -205,10 +205,10 @@ Add structured data for rich results in Google Images (badges, extra info). Imag
 
 | Context | Priority | Notes |
 |---------|----------|-------|
-| **Hero** | LCP, alt, no lazy | See **hero-generator**; above-fold, fast load |
+| **Hero** | LCP, alt, no lazy | See `dev/references/components/branding/hero`; above-fold, fast load |
 | **Article / Blog hero** | 1200–1600px wide; proportional height; 1200×630 for og:image | Same image for Schema, Open Graph, Twitter Cards; under 200 KB; WebP preferred; descriptive alt; set width/height to prevent CLS; use srcset/sizes for responsive; articles with relevant images get ~94% more views |
-| **Trust badges** | Alt text | See **trust-badges-generator**; e.g. "Norton Secured" |
-| **Landing page** | All above | See **landing-page-generator** Pre-Delivery Checklist |
+| **Trust badges** | Alt text | See `dev/references/components/conversion/trust-badges`; e.g. "Norton Secured" |
+| **Landing page** | All above | See `dev/references/pages/marketing/landing-page` Pre-Delivery Checklist |
 | **OG / Twitter** | 1200×630, 1200×675 | See **open-graph**, **twitter-cards** |
 | **Platforms** | Per-platform | X, LinkedIn, Pinterest—see platform skills |
 

@@ -40,7 +40,7 @@ Guides competitor research for SEO, content, backlinks, and positioning. Use whe
 | **Keyword placement** | Primary keyword in title, H1, first 100 words |
 | **Format** | Lists, tables, FAQ; match or improve |
 
-**Use when**: Auditing or creating articles; see **article-page-generator** for Research Phase integration.
+**Use when**: Auditing or creating articles; see `dev/references/pages/content/article` for Research Phase integration.
 
 ### Competitor Article Fetch Workflow (for Article Analysis)
 
@@ -71,7 +71,7 @@ When analyzing or auditing a single article, use this lightweight workflow to ob
 | **Differentiation** | Value prop when price differs |
 | **Alternatives pages** | Who to include; how to position |
 
-See **pricing-strategy**, **alternatives-page-generator**.
+See **pricing-strategy**, `dev/references/pages/marketing/alternatives`.
 
 ## Data Sources
 
@@ -352,13 +352,13 @@ Profiles are snapshots. When updating:
 ## Related Skills
 
 - **keyword-research**: Competitor reverse; keyword discovery
-- **article-page-generator**: Competitor article analysis in Research Phase
+- `dev/references/pages/content/article`: Competitor article analysis in Research Phase
 - **content-strategy**: Competitor analysis for topic mapping
 - **content-optimization**: Competitor length and structure as reference
 - **backlink-analysis**: Competitor backlink comparison; link gap
 - **seo-monitoring**: Competitive comparison; organic vs competitors
-- **alternatives-page-generator**: Competitor selection; comparison framing
-- **migration-page-generator**: Competitor migration paths
+- `dev/references/pages/marketing/alternatives`: Competitor selection; comparison framing
+- `dev/references/pages/marketing/migration`: Competitor migration paths
 - **pricing-strategy**: Competitor pricing context
 - **affiliate-marketing**: Find affiliates promoting competitors
 - **directory-submission**: Competitor info for directory submissions

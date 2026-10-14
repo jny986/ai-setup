@@ -1,6 +1,6 @@
 ---
 name: paid-ads-strategy
-description: When the user wants to plan paid ads strategy, allocate ad budget, or choose paid channels. Also use when the user mentions "paid ads," "paid media," "PPC," "SEM," "web ads," "app ads," "TV ads," "CTV," "OOH," "banner ads," "ad network," "ad alliance," "Taaft ads," "Shopify App Store ads," "Google Ads," "Meta Ads," "PMF testing," "PMF validation," "test product-market fit with ads," "ad spend," "ad budget," "ROAS," "paid acquisition," "Quality Score," or "ad-to-page alignment." For Google Ads execution, use google-ads. For Meta Ads execution, use meta-ads. For landing page alignment, use landing-page-generator.
+description: When the user wants to plan paid ads strategy, allocate ad budget, or choose paid channels. Also use when the user mentions "paid ads," "paid media," "PPC," "SEM," "web ads," "app ads," "TV ads," "CTV," "OOH," "banner ads," "ad network," "ad alliance," "Taaft ads," "Shopify App Store ads," "Google Ads," "Meta Ads," "PMF testing," "PMF validation," "test product-market fit with ads," "ad spend," "ad budget," "ROAS," "paid acquisition," "Quality Score," or "ad-to-page alignment." For Google Ads execution, use google-ads. For Meta Ads execution, use meta-ads. For landing page alignment, use `dev/references/pages/marketing/landing-page`.
 metadata:
   version: 1.7.0
 ---
@@ -153,7 +153,7 @@ Treat Google Ads and Meta Ads as **complementary**, not competing. Google captur
 | **Quality Score** | Well-optimized LPs improve Google Quality Score → lower CPC |
 | **Mobile-first** | CTA above fold; thumb-reachable; fast load (&lt;3s) |
 
-See **landing-page-generator** for LP structure and conversion optimization.
+See `dev/references/pages/marketing/landing-page` for LP structure and conversion optimization.
 
 ## Common Mistakes to Avoid
 
@@ -174,13 +174,13 @@ See **landing-page-generator** for LP structure and conversion optimization.
 
 ## Affiliate Brand Bidding
 
-When running affiliate programs: prohibit affiliates from bidding on your brand terms in Google Ads. Monitor paid search; use brand monitoring tools. See **affiliate-page-generator**.
+When running affiliate programs: prohibit affiliates from bidding on your brand terms in Google Ads. Monitor paid search; use brand monitoring tools. See `dev/references/pages/marketing/program`.
 
 ## Competitor Brand Bidding
 
 **When**: Bid on "[Competitor] alternative," "[Competitor] vs [You]" to intercept high-intent traffic. Google allows competitor terms as keywords; ad copy cannot use competitor names without permission.
 
-**Landing page**: Use a **dedicated comparison/alternatives page**, not a blog. Users searching competitor brands expect direct alternatives; blog increases bounce. See **alternatives-page-generator**, **google-ads** Competitor Brand Keywords.
+**Landing page**: Use a **dedicated comparison/alternatives page**, not a blog. Users searching competitor brands expect direct alternatives; blog increases bounce. See `dev/references/pages/marketing/alternatives`, **google-ads** Competitor Brand Keywords.
 
 ## Reference Routing
 
@@ -453,8 +453,8 @@ Before auditing a live account, grading account health, quoting benchmarks, or r
 - **ctv-ads**: CTV, OTT, streaming ads
 - **display-ads**: Ad networks, banner ads, programmatic display
 - **directory-listing-ads**: Taaft, Shopify App Store, G2, Capterra paid placements
-- **landing-page-generator**: LP structure for paid traffic; ad-to-page alignment
-- **alternatives-page-generator**: Competitor brand keyword ads → dedicated LP (not blog); comparison page structure
+- `dev/references/pages/marketing/landing-page`: LP structure for paid traffic; ad-to-page alignment
+- `dev/references/pages/marketing/alternatives`: Competitor brand keyword ads → dedicated LP (not blog); comparison page structure
 - **cold-start-strategy**: When NOT to use paid ads
 - **pmf-strategy**: PMF validation; when to use PMF testing vs conversion-driven mode
 - **seo-strategy**: Organic vs paid

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Marketing"
+  short_description: "Marketing playbooks: SEO, CRO, content, ads, email, analytics, sales"
+policy:
+  allow_implicit_invocation: true

@@ -40,6 +40,6 @@ When republishing: Set canonical to your original URL in Medium settings. Preven
 ## Related Skills
 
 - **parasite-seo**: Parasite SEO strategy; Medium as platform
-- **article-page-generator**: Article structure for republish
+- `dev/references/pages/content/article`: Article structure for republish
 - **link-building**: Medium as backlink source
 - [Grokipedia](grokipedia.md): GEO; AI search visibility

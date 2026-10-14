@@ -1,6 +1,6 @@
 ---
 name: public-relations
-description: When the user wants to plan PR, write a press release, or manage media relations. Also use when the user mentions "public relations," "PR," "press release," "media relations," "news release," "journalist," "media coverage," "product announcement," or "earned media." Also use when the user mentions "newsjacking," "pitch a journalist," "HARO," "Qwoted," "press requests," "press page," "newsroom," "podcast guest prep," "crisis communications," "data breach statement," "outage statement," or "story angle." For on-site "As Seen In" or logos page, use press-coverage-page-generator.
+description: When the user wants to plan PR, write a press release, or manage media relations. Also use when the user mentions "public relations," "PR," "press release," "media relations," "news release," "journalist," "media coverage," "product announcement," or "earned media." Also use when the user mentions "newsjacking," "pitch a journalist," "HARO," "Qwoted," "press requests," "press page," "newsroom," "podcast guest prep," "crisis communications," "data breach statement," "outage statement," or "story angle." For on-site "As Seen In" or logos page, use `dev/references/pages/marketing/press`.
 metadata:
   version: 1.1.0
 ---
@@ -139,8 +139,8 @@ Ignore AVE (advertising value equivalency); it is a vanity metric.
 
 ## Related Skills
 
-- **media-kit-page-generator**: Media kit for press (assets)
-- **press-coverage-page-generator**: Aggregation of coverage; outcome of PR; "As Seen In"
+- `dev/references/pages/marketing/press`: Media kit for press (assets)
+- `dev/references/pages/marketing/press`: Aggregation of coverage; outcome of PR; "As Seen In"
 - **branding**: Brand voice for PR copy
 - **cold-start-strategy**: Product Hunt, launch channels
 - **product-launch**: GTM; PR as launch channel

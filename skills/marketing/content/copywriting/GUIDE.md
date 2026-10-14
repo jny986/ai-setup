@@ -221,10 +221,10 @@ Puns and wit make copy memorable when they fit the brand and don't cost clarity.
 | Context | Focus | Skills |
 |---------|-------|--------|
 | **Ad copy** | Hook, benefit, CTA; platform limits | paid-ads-strategy, google-ads, meta-ads |
-| **Landing page** | Headline, value prop, CTA; above fold | landing-page-generator, hero-generator |
+| **Landing page** | Headline, value prop, CTA; above fold | `dev/references/pages/marketing/landing-page`, `dev/references/components/branding/hero` |
 | **Email** | Subject line, preview, body, CTA | email-marketing |
-| **CTA** | Value-focused; action verb; avoid "Submit" | cta-generator |
-| **Article / blog** | Headline formulas, CTA copy; body → **article-content** | article-content, article-page-generator |
+| **CTA** | Value-focused; action verb; avoid "Submit" | `dev/references/components/conversion/cta` |
+| **Article / blog** | Headline formulas, CTA copy; body → **article-content** | article-content, `dev/references/pages/content/article` |
 
 ## Ad copy vs Landing page copy
 
@@ -343,9 +343,9 @@ For headlines and CTAs, provide 2-3 options:
 ## Related Skills
 
 - **article-content**: Article body creation; applies PAS, AIDA, BAB to long-form; headline formulas for article titles
-- **landing-page-generator**: Landing page copy and structure
-- **hero-generator**: Hero headline, subheadline, CTA
-- **cta-generator**: CTA design and copy
+- `dev/references/pages/marketing/landing-page`: Landing page copy and structure
+- `dev/references/components/branding/hero`: Hero headline, subheadline, CTA
+- `dev/references/components/conversion/cta`: CTA design and copy
 - **paid-ads-strategy**: Ad copy frameworks (PAS, BAB, Social Proof)
 - **email-marketing**: Email subject lines, body copy and email copywriting
 - **branding**: Brand voice, tone consistency

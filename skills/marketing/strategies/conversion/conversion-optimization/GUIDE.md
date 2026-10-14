@@ -240,8 +240,8 @@ When enrichment controls the next step after a lead form, use the [revops inboun
 
 ## Related Skills
 
-- **landing-page-generator**: Landing page structure and copy
-- **cta-generator**: CTA design and placement
+- `dev/references/pages/marketing/landing-page`: Landing page structure and copy
+- `dev/references/components/conversion/cta`: CTA design and placement
 - **analytics-tracking**: GA4, events, conversion tracking
 - **traffic-analysis**: Attribution, funnel analysis
 - **copywriting**: Headline, CTA copy for tests
