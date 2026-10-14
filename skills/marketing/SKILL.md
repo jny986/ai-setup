@@ -60,8 +60,6 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | **Pricing and revenue** | |
 | `pricing-strategy` `strategies/commercial/pricing/pricing-strategy` | Pricing, packaging, tiers, freemium or trials |
 | `offers` `strategies/commercial/pricing/offers` | Designing the offer itself: bonuses, guarantees, urgency, naming |
-| `revops` | Lead lifecycle, lead scoring, routing, marketing-to-sales handoff |
-| `sales-enablement` | Sales decks, one-pagers, objection handling, demo scripts |
 | **SEO and discoverability** | |
 | `generative-engine-optimization` `strategies/commercial/geo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
 | `free-tools` `strategies/commercial/free-tools` | Building a free tool (calculator, grader) for leads or SEO |
@@ -123,8 +121,6 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `seo-audit` `strategies/structure/seo-audit` | Auditing or diagnosing technical and on-page SEO |
 | `website-structure` `strategies/structure/website-structure` | Which pages to build, page hierarchy, navigation and site structure |
 | **Channels** | |
-| `cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |
-| `prospecting` | Finding and qualifying prospects to build an outreach list |
 | `social` `platforms/social` | Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok, Reddit, Pinterest, Medium, YouTube, GitHub, Grokipedia |
 | `paid-ads-strategy` `strategies/commercial/paid-ads` | Paid campaigns: targeting, bidding, budgets, optimisation |
 | `ad-creative` | Generating or iterating ad copy and creative at scale |
@@ -147,6 +143,11 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | `referral-program` `channels/partnerships/referral-program` | Referral programs, word of mouth, reviews |
 | `co-marketing` `channels/partnerships/co-marketing` | Partner marketing and joint campaigns |
 | `events` `channels/events` | Webinars, conferences, sponsorships, speaking, field events |
+| **Sales (nested)** | |
+| `revops` `sales/revops` | Lead lifecycle, lead scoring, routing, marketing-to-sales handoff |
+| `sales-enablement` `sales/sales-enablement` | Sales decks, one-pagers, objection handling, demo scripts |
+| `prospecting` `sales/prospecting` | Finding and qualifying prospects to build an outreach list |
+| `cold-email` `sales/cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |
 | **Measurement** | |
 | `analytics` | Tracking setup: GA4, GTM, events, UTMs, conversion tracking |
 | `attribution` | Which channels drive revenue, attribution models, MMM, incrementality |
