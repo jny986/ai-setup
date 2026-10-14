@@ -1,0 +1,94 @@
+{
+    "agentPushNotifEnabled": true,
+    "attribution": {
+      "commit": "",
+      "pr": "",
+      "sessionUrl": false
+    },
+    "autoMemoryEnabled": false,
+    "awaySummaryEnabled": false,
+    "disableArtifact": true,
+    "disableBundledSkills": true,
+    "disableClaudeAiConnectors": true,
+    "disableRemoteControl": true,
+    "disableWorkflows": true,
+    "editorMode": "normal",
+    "effortLevel": "medium",
+    "enabledPlugins": {
+      "context-mode@context-mode": true
+    },
+    "extraKnownMarketplaces": {
+      "context-mode": {
+        "source": {
+          "repo": "mksglu/context-mode",
+          "source": "github"
+        }
+      }
+    },
+    "hooks": {
+      "PreToolUse": [
+        {
+          "hooks": [
+            {
+              "command": "\"/Users/jny986/.claude-personal/hooks/prefer-pnpm.sh\"",
+              "type": "command"
+            },
+            {
+              "command": "\"/Users/jny986/.claude-personal/hooks/ask-destructive-git.sh\"",
+              "type": "command"
+            },
+            {
+              "command": "\"/Users/jny986/.claude-personal/hooks/block-disable-commit-signing.sh\"",
+              "type": "command"
+            }
+          ],
+          "matcher": "Bash"
+        }
+      ],
+      "SessionStart": [
+        {
+          "hooks": [
+            {
+              "command": "\"/Users/jny986/.claude-personal/hooks/context-mode-cache-heal.mjs\"",
+              "type": "command"
+            }
+          ]
+        }
+      ]
+    },
+    "includeCoAuthoredBy": false,
+    "inputNeededNotifEnabled": true,
+    "model": "sonnet",
+    "modelSettings": {},
+    "permissions": {
+      "allow": [
+        "Bash(git commit:*)",
+        "Bash(git push:*)",
+        "Bash(gh pr create:*)"
+      ],
+      "defaultMode": "auto",
+      "deny": [
+        "EnterPlanMode",
+        "ExitPlanMode",
+        "DesignSync",
+        "NotebookEdit",
+        "SendMessage",
+        "PushNotification",
+        "RemoteTrigger",
+        "ReportFindings",
+        "ScheduleWakeup",
+        "AskUserQuestion",
+        "CronCreate",
+        "CronDelete",
+        "CronList"
+      ]
+    },
+    "promptSuggestionEnabled": false,
+    "statusLine": {
+      "command": "bash pnpx ccstatusline",
+      "type": "command"
+    },
+    "theme": "dark",
+    "tui": "fullscreen",
+    "workflowKeywordTriggerEnabled": false
+  }
