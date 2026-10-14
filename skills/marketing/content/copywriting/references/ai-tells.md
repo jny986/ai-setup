@@ -258,4 +258,4 @@ Patterns and evidence drawn from, and rewritten in our own words:
 - Blake Stockton, [Don't write like AI: negation](https://www.blakestockton.com/p/dont-write-like-ai-1-101-negation)
 - Counter-view: [A case for the defense](https://robotsatemyhomework.substack.com/p/ai-writing-patterns) (devices are fine when chosen, not defaulted)
 
-For a broader word-level list used in content audits, see [seo-audit's ai-writing-detection reference](../../../seo-audit/references/ai-writing-detection.md).
+For a broader word-level list used in content audits, see [seo-audit's ai-writing-detection reference](../../../strategies/structure/seo-audit/references/ai-writing-detection.md).

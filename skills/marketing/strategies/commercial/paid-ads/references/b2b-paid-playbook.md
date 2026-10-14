@@ -1,6 +1,6 @@
 # B2B Paid Playbook
 
-Cross-platform operating rules for B2B paid acquisition — where sales cycles run 2–24 months, in-platform conversions mislead, and lead *quality* matters more than lead cost. Use this alongside the platform playbooks ([Meta decision system](meta-decision-system.md), [LinkedIn](linkedin-b2b-playbook.md), [Google Search](google-search-playbook.md), [ABM](abm-playbook.md)).
+Cross-platform operating rules for B2B paid acquisition — where sales cycles run 2–24 months, in-platform conversions mislead, and lead *quality* matters more than lead cost. Use this alongside the platform playbooks ([Meta decision system](../../../../paid-ads/platforms/meta-ads/references/meta-decision-system.md), [LinkedIn](../../../../paid-ads/platforms/linkedin-ads/references/linkedin-b2b-playbook.md), [Google Search](../../../../paid-ads/platforms/google-ads/references/google-search-playbook.md), [ABM](abm-playbook.md)).
 
 ## Contents
 
@@ -66,7 +66,7 @@ Two hard rules that remove emotion from pausing decisions:
 - **Non-performer rule** (new ads, any time): pause once an ad has spent **2–3× target CPL with zero conversions**. Target CPL $300 → kill at $600–900 spent, no conversions.
 - **Maintenance rule** (ads past ~7–14 days): pause when an ad's CPL runs **1.5–2× over target**. Target $300 → kill at $450–600 CPL.
 
-These aren't statistically rigorous — they're repeatable, cheap to apply, and better than deciding by mood. Never pause a producer without a replacement staged (see the swap rules in the [Meta decision system](meta-decision-system.md)).
+These aren't statistically rigorous — they're repeatable, cheap to apply, and better than deciding by mood. Never pause a producer without a replacement staged (see the swap rules in the [Meta decision system](../../../../paid-ads/platforms/meta-ads/references/meta-decision-system.md)).
 
 ## The optimize-to-quality trap (and the offline conversion loop)
 

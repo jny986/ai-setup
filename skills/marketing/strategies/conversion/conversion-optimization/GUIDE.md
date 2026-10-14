@@ -236,7 +236,7 @@ For key elements (headlines, CTAs), provide 2-3 alternatives with rationale.
 
 ### Form Enrichment
 
-When enrichment controls the next step after a lead form, use the [revops inbound-routing playbook](../../../revops/references/inbound-routing.md): preserve valid submissions, bound the lookup wait, and provide a useful fallback when qualification is unknown.
+When enrichment controls the next step after a lead form, use the [revops inbound-routing playbook](../../../sales/revops/references/inbound-routing.md): preserve valid submissions, bound the lookup wait, and provide a useful fallback when qualification is unknown.
 
 ## Related Skills
 
