@@ -4,7 +4,7 @@ description: When the user wants to run an SEO audit, technical SEO audit, or si
 metadata:
   version: 1.1.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
   based_on_skill: seo-audit, seo-audit
 ---
 
@@ -380,7 +380,7 @@ When the site serves multiple languages or regions, read [international-seo.md](
 - Canonical conflicting with hreflang (cross-locale canonical suppresses indexing)
 - Thin locale pages dragging down site-wide quality signal
 - Only boilerplate translated, main content identical across locales
-- No x-default fallback declared
+- Unmatched locale users lack an intentional fallback (consider `x-default`; absence alone is not invalid hreflang)
 - Sitemap missing hreflang alternates or missing reciprocal entries
 - IP-based redirects hiding content from Googlebot
 - Framework locale mode hiding locale from URLs

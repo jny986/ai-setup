@@ -4,7 +4,7 @@ description: When the user wants to plan, design, or implement an A/B test or ex
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.27(28e4a81)
+  based_on_version: v2.11.29(c7d7dfb)
   based_on_skill: ab-testing
 ---
 

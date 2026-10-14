@@ -8,7 +8,7 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
-  based_on_version: v1.2.3(6acc160)
+  based_on_version: v1.3.1(49dd158)
   based_on_skill: setup-matt-pocock-skills
 ---
 
@@ -108,6 +108,8 @@ The block:
 ```
 
 Include the `### Triage labels` sub-block, and write `docs/agents/triage-labels.md`, only when `triage` is installed and Section B ran. When it isn't, both are omitted.
+
+When Section B ran on GitHub or GitLab, create each configured label the tracker lacks (`gh label create` / `glab label create`).
 
 Then write the docs files using the seed templates in this skill folder as a starting point:
 

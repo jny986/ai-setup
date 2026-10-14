@@ -9,11 +9,11 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
-  based_on_version: v1.2.3(6acc160)
+  based_on_version: v1.3.1(49dd158)
   based_on_skill: handoff
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS - not the current workspace.
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS (`$TMPDIR`, else `/tmp`; `%TEMP%` on Windows) - not the current workspace.
 
 Include a "suggested skills" section in the document, naming which skills the next agent should call the Skill tool for.
 
