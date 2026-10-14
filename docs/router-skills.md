@@ -32,7 +32,7 @@ A guide's own supporting files (`references/`, `assets/`) stay beside its `GUIDE
 5. **Cross-references rewritten.** Guides that called each other with the Skill tool now say "follow `../code-review/GUIDE.md`". Mentions elsewhere (`ask-matt`, `implement-spec`, `tdd`) became `/git <guide>`.
 6. **Agents metadata.** The router has `agents/openai.yaml` with `allow_implicit_invocation: true`. Each guide keeps its original yaml; `create-pr` had none, so it got one in the same format (`interface.display_name`, `short_description`).
 7. **Indexes.** The five former skills were removed from `SKILLS.md` and `skills.html`, and one `git` row added.
-8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`.
+8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`. Guides adapted from upstream also carry `based_on_repo`, `based_on_version` and `based_on_skill`.
 
 ## Reference-only trees
 
