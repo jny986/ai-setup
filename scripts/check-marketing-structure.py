@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Check that the marketing router, its guides and the name table resolve.
 
-Hand-offs to Pagina/Bricks/dev paths are not checked yet. Exits 1 on any failure.
+Also checks the dev references against the name table. Hand-offs from marketing to dev paths are not checked yet.
+Exits 1 on any failure.
 """
 import re
 import sys
@@ -88,8 +89,28 @@ for g in guides:
             if bad.lower() in text.lower():
                 errors.append(f"{g}/GUIDE.md: contains '{bad}'")
 
+# Dev references: no router yet, so the name table's Dev section is the index.
+DEV = SKILL.parent / "dev"
+dev_paths = {cells[1][0] for cells in rows(sections.get("Dev", []))}
+dev_guides = {p.parent.relative_to(SKILL.parent).as_posix() for p in DEV.rglob("GUIDE.md")}
+for p in sorted(dev_paths - dev_guides):
+    errors.append(f"name table (Dev): {p}/GUIDE.md missing")
+for g in sorted(dev_guides - dev_paths):
+    errors.append(f"name table (Dev): guide {g}/GUIDE.md not listed")
+for p in DEV.rglob("SKILL.md"):
+    errors.append(f"dev: unexpected {p.relative_to(SKILL.parent)}")
+for md in sorted(DEV.rglob("*.md")):
+    rel, text = md.relative_to(SKILL.parent), md.read_text()
+    for target in re.findall(r"\]\(([^)\s#]+)", text):
+        if "://" not in target and not (md.parent / target).exists():
+            errors.append(f"{rel}: broken link {target}")
+    for bad in ("contextus", "When invoking"):
+        if bad.lower() in text.lower():
+            errors.append(f"{rel}: contains '{bad}'")
+
 for e in errors:
     print("FAIL", e)
-print(f"{len(guides)} guides, {len(router)} router rows, {len(marketing_names)} final names, {len(aliases)} aliases: "
+print(f"{len(guides)} guides, {len(router)} router rows, {len(marketing_names)} final names, {len(aliases)} aliases, "
+      f"{len(dev_guides)} dev guides: "
       + (f"{len(errors)} failure(s)" if errors else "ok"))
 sys.exit(1 if errors else 0)
