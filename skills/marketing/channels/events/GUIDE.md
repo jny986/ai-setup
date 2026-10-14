@@ -117,7 +117,7 @@ Events produce your highest-proof content: capture it deliberately:
 
 ## Related Skills
 
-- **launch**: the event is a launch moment (announcement, Product Hunt, go-live)
+- **product-launch**: the event is a launch moment (announcement, Product Hunt, go-live)
 - **co-marketing**: joint webinars and partner summits: partnership mechanics live there, event execution here
 - **community-building**: ongoing community programs; events can seed or serve one
 - **public-relations**: podcast guesting and press at events

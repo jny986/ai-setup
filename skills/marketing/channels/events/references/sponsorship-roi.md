@@ -47,7 +47,7 @@ The highest-leverage move in field marketing: skip or downgrade the booth, and *
   - **Warm** (conversation, no commitment): personal note + one relevant asset matched to what they said.
   - **Scan-only**: one light "we were both at [event]" touch or nothing. Never dump scans into a sales sequence — it burns domain reputation and brand on people who don't remember you (→ **revops** for routing/scoring).
 - Whoever worked the booth writes or reviews the follow-up — the context lives in their heads and their notes.
-- Sequence the not-nows into nurture with event source tags (→ **emails**).
+- Sequence the not-nows into nurture with event source tags (→ **email-marketing**).
 
 ## Measuring the Sponsorship
 

@@ -9,7 +9,6 @@ metadata:
 
 Guides submitting products, tools, or apps to directories and launch platforms.
 
-**On each invocation**: On **first use** in the conversation, output the complete response (Introduction, Importance, Methods, Collaboration Channels, Rules, Avoid, Action). On **subsequent use** or when the user asks to skip (e.g., "just do it", "skip intro", "I already know"), go directly to Action.
 
 Directory submission is a core channel for cold start—see **cold-start-strategy** for full launch planning. Directories offer more than listings: free/paid listings, ad placements, newsletter features, social promotion, and marketing campaigns. Platform types: AI tools (e.g. Taaft), product launch (e.g. Product Hunt), review platforms (e.g. G2), app stores, niche directories.
 
@@ -321,7 +320,6 @@ Before submitting to any directory:
 
 ## Output Format
 
-**On each invocation**: On **first use**, output the complete response (Introduction, Importance, Methods, Collaboration Channels, Rules, Avoid, Action). On **subsequent use** or when the user asks to skip, go directly to Action. Search the web for missing product info.
 
 ### Required Output Structure (in order)
 
@@ -463,7 +461,7 @@ One self-reported 2026 case (MCP server plus micro SaaS, ~35 directories) went f
 - **generative-engine-optimization**: GEO strategy; varied directory copy improves AI citation diversity; directory submission complements AI search visibility
 - **affiliate-marketing**: Different channel; directories complement affiliate
 - **product-hunt-launch**: Product Hunt anchor event; 3-week prep and launch-day execution
-- **launch**: Broader launch moment, ORB framework, five-phase approach
+- **product-launch**: Broader launch moment, ORB framework, five-phase approach
 - **programmatic-seo**: Destination pages (alternatives, integrations, templates) that backlinks flow into
 - **comparison-pages**: `/alternatives/[tool]` page pattern
 - **content-strategy**: Editorial content that attracts "best of" listicle inclusions

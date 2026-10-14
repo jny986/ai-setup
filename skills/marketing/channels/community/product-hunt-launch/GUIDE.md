@@ -109,7 +109,7 @@ Honest pros/cons, the before/during/after playbook and the SavvyCal and Reform c
 ## Related Skills
 
 - **directory-submission**: Taaft, G2, curated lists; Product Hunt is one directory—see for multi-platform submission
-- **launch**: Broader launch plan (ORB framework, five-phase approach); Product Hunt is one step in it
+- **product-launch**: Broader launch plan (ORB framework, five-phase approach); Product Hunt is one step in it
 - **cold-start-strategy**: Full launch plan; Product Hunt as channel
 - **indie-hacker-strategy**: Indie hacker Product Hunt, first 100 users
 - **media-kit-page-generator**: Press kit, screenshots for launch
