@@ -1,6 +1,6 @@
 # Name table
 
-Every final guide name, its nested path, where its content comes from, and the old names that alias to it. Before picking a guide, look up an old name in the Aliases column and use the final name on that row.
+Every final guide name, its nested path, where its content comes from, and the old names that alias to it.
 
 Source: `kostja` = kostja94/marketing-skills (path under its `skills/`), `ours` = the flat guide in this router, `both` = kostja base with ours merged in. `+x` marks extra material pulled from another guide.
 
@@ -137,7 +137,7 @@ Paths are relative to this skill's folder; each holds a `GUIDE.md`.
 
 ## Dev
 
-References only, no router yet; old names don't alias here. Paths are relative to `skills/`. Pages come from kostja94/pagina `page-builder/references/pages/`, components from kostja94/bricks `component-builder/references/components/`; the Source column names the reference and the kostja stubs it replaces.
+References only, no router yet; dev names resolve directly, without aliases. Paths are relative to `skills/`. Pages come from kostja94/pagina `page-builder/references/pages/`, components from kostja94/bricks `component-builder/references/components/`; the Source column names the reference and the kostja stubs it replaces.
 
 | Name | Path | Source |
 |---|---|---|

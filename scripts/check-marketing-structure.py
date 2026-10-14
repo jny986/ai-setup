@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Check that the marketing router, its guides and the name table resolve.
 
-One-off check for the flat-to-nested migration (issue #1). Hand-offs to
-Pagina/Bricks/dev paths are not checked yet. Exits 1 on any failure.
+Hand-offs to Pagina/Bricks/dev paths are not checked yet. Exits 1 on any failure.
 """
 import re
 import sys
@@ -45,7 +44,7 @@ for line in (SKILL / "references" / "name-table.md").read_text().splitlines():
     elif current is not None:
         current.append(line)
 
-aliases = {}
+aliases, marketing_names, seen = {}, {}, {}
 for section, lines in sections.items():
     names = {}
     for cells in rows(lines):
@@ -53,20 +52,23 @@ for section, lines in sections.items():
         if name in names:
             errors.append(f"name table ({section}): duplicate name {name}")
         names[name] = path
+        if name in seen and seen[name] != section:
+            errors.append(f"name table: {name} in both {seen[name]} and {section}")
+        seen[name] = section
         for alias in cells[3] if len(cells) > 3 else []:
             if alias in aliases:
                 errors.append(f"name table: alias {alias} -> {aliases[alias]} and {name}")
             aliases[alias] = name
     if section == "Marketing":
-        final = names
+        marketing_names = names
 
 for alias, target in aliases.items():
-    if alias in final and alias != target:
+    if alias in marketing_names and alias != target:
         errors.append(f"name table: alias {alias} -> {target} shadows final name {alias}")
 for name, path in router.items():
-    if name not in final and name not in aliases:
+    if name not in marketing_names and name not in aliases:
         errors.append(f"router: {name} is neither a final name nor an alias")
-    elif "/" in path and final.get(aliases.get(name, name)) != path:
+    elif "/" in path and marketing_names.get(aliases.get(name, name)) != path:
         errors.append(f"router: {name} -> {path} disagrees with name table")
 for g in guides:
     if "/" not in g and g not in aliases:
@@ -77,8 +79,10 @@ for g in guides:
     text = (SKILL / g / "GUIDE.md").read_text()
     for m in LINK.finditer(text):
         target = m.group(1) or m.group(2)
+        # Placeholder paths like references/<name>.md are prose, not links.
         if not re.search(r"[<>*…{}]", target) and not (SKILL / g / target).exists():
             errors.append(f"{g}/GUIDE.md: broken link {target}")
+    # Migrated guides load the product marketing context, not Contextus, and drop kostja's preamble.
     if "/" in g:
         for bad in ("contextus.md", "When invoking"):
             if bad.lower() in text.lower():
@@ -86,6 +90,6 @@ for g in guides:
 
 for e in errors:
     print("FAIL", e)
-print(f"{len(guides)} guides, {len(router)} router rows, {len(final)} final names, {len(aliases)} aliases: "
+print(f"{len(guides)} guides, {len(router)} router rows, {len(marketing_names)} final names, {len(aliases)} aliases: "
       + (f"{len(errors)} failure(s)" if errors else "ok"))
 sys.exit(1 if errors else 0)
