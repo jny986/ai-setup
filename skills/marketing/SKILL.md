@@ -32,14 +32,12 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | **Foundations** | |
 | `product-marketing` `strategies/brand/product-marketing` | Creating or updating the product marketing context doc (positioning, ICP, audience) |
 | `customer-research` | Interviews, surveys, reviews, transcripts, personas, JTBD, voice of customer |
-| `competitor-profiling` | Researching and profiling competitors from their URLs |
 | `marketing-psychology` `strategies/brand/marketing-psychology` | Applying behavioural science, biases or mental models to marketing |
 | **Strategy and planning** | |
 | `marketing-plan` | A full marketing, growth or GTM plan |
 | `marketing-ideas` | Brainstorming growth ideas or tactics when stuck |
 | `marketing-council` | Multiple expert perspectives or a simulated advisory board on a marketing question |
 | `marketing-loops` | A recurring, agent-run marketing workflow on a cadence |
-| `content-strategy` | Deciding what content to create, topic clusters, editorial calendar |
 | `launch` | Product launches, feature announcements, changelogs and release notes, Product Hunt, waitlists, site go-live |
 | **Copy and creative** | |
 | `copywriting` | Writing or rewriting page copy: headlines, value props, CTAs |
@@ -76,13 +74,46 @@ When a guide hands off to another skill by name ("see cro", a **Related Skills**
 | **SEO and discoverability** | |
 | `seo-audit` | Auditing or diagnosing technical and on-page SEO |
 | `generative-engine-optimization` `strategies/commercial/geo` | Getting cited by AI search and LLMs (AEO, GEO, llms.txt) |
-| `schema` | Schema markup, structured data, JSON-LD |
-| `programmatic-seo` | Template-driven SEO pages at scale |
 | `site-architecture` | Page hierarchy, navigation, URLs, internal linking, sitemaps |
-| `competitors` | Comparison, "vs" and alternative pages |
 | `directory-submissions` | Submitting to startup, SaaS, AI or review directories for backlinks |
 | `aso` | App Store or Google Play listing optimisation |
 | `free-tools` `strategies/commercial/free-tools` | Building a free tool (calculator, grader) for leads or SEO |
+| **SEO (nested)** | |
+| `competitor-research` `seo/content/competitor-research` | Analysing or profiling competitors (keywords, content, backlinks, positioning) from names or URLs |
+| `comparison-pages` `seo/content/comparison-pages` | Strategy and content for comparison, "vs" and alternative pages |
+| `content-strategy` `seo/content/content-strategy` | SEO content plans: topic clusters, pillar pages, editorial calendar, content prioritisation |
+| `content-optimization` `seo/content/content-optimization` | Optimising an article: length, headings, keyword placement, multimedia |
+| `eeat-signals` `seo/content/eeat-signals` | E-E-A-T, author and trust signals |
+| `keyword-research` `seo/content/keyword-research` | Keyword discovery, intent, clustering |
+| `entity-seo` `seo/entity-seo` | Entities, Knowledge Panel, @id and sameAs |
+| `local-seo` `seo/local` | Local search, Google Business Profile, NAP |
+| `backlink-analysis` `seo/off-page/backlink-analysis` | Analysing backlink profiles and link gaps |
+| `link-building` `seo/off-page/link-building` | Earning backlinks and outreach |
+| `meta-description` `seo/on-page/description` | Writing or auditing meta descriptions |
+| `featured-snippet` `seo/on-page/featured-snippet` | Winning featured snippets and position zero |
+| `heading-structure` `seo/on-page/heading` | H1-H6 structure and hierarchy |
+| `image-optimization` `seo/on-page/image-optimization` | Image SEO: alt text, formats, lazy loading, image sitemaps, OG images |
+| `internal-links` `seo/on-page/internal-links` | Internal linking and anchor text |
+| `page-metadata` `seo/on-page/metadata` | Sitewide metadata audit, implementation and release checks |
+| `open-graph` `seo/on-page/open-graph` | Open Graph tags and social previews |
+| `schema-markup` `seo/on-page/schema` | Schema markup, structured data, JSON-LD |
+| `serp-features` `seo/on-page/serp-features` | SERP features, rich results, zero-click patterns |
+| `title-tag` `seo/on-page/title` | Writing or auditing title tags |
+| `twitter-cards` `seo/on-page/twitter-cards` | Twitter/X card tags |
+| `url-structure` `seo/on-page/url-structure` | Site-wide URL structure and hierarchy |
+| `url-slug` `seo/on-page/url-slug` | Creating or validating URL slugs for content pages |
+| `video-optimization` `seo/on-page/video-optimization` | Video SEO: VideoObject, video sitemaps, key moments |
+| `parasite-seo` `seo/parasite-seo` | Ranking through third-party high-authority platforms |
+| `programmatic-seo` `seo/programmatic-seo` | Template-driven SEO pages at scale |
+| `canonical-tag` `seo/technical/canonical` | Canonical tags and duplicate content |
+| `core-web-vitals` `seo/technical/core-web-vitals` | LCP, INP, CLS and page speed |
+| `site-crawlability` `seo/technical/crawlability` | Crawlability, crawl budget, site structure for bots |
+| `indexing` `seo/technical/indexing` | Getting pages indexed; indexing problems |
+| `indexnow` `seo/technical/indexnow` | IndexNow instant URL submission |
+| `mobile-friendly` `seo/technical/mobile-friendly` | Mobile-friendliness and mobile-first indexing |
+| `rendering-strategies` `seo/technical/rendering-strategies` | SSR, SSG, CSR and rendering for SEO |
+| `robots-txt` `seo/technical/robots` | robots.txt rules and crawler access |
+| `xml-sitemap` `seo/technical/sitemap` | XML sitemaps: structure, submission, segmentation |
 | **Channels** | |
 | `emails` | Lifecycle email sequences, drips, nurture and welcome flows |
 | `cold-email` | Cold outbound emails, follow-ups, sending setup, multichannel cadences |
