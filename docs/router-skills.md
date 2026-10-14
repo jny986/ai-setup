@@ -1,6 +1,6 @@
 # Router skills
 
-A router skill is one `SKILL.md` that picks among a group of related guides, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `finalise`, `code-review` and `resolving-merge-conflicts`.
+A router skill is one `SKILL.md` that picks among a group of related guides, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `finalise`, `code-review`, `review-prs` and `resolving-merge-conflicts`.
 
 ## When to build one
 
@@ -16,7 +16,7 @@ skills/git/
   agents/openai.yaml               # router metadata
   references/
     commit.md                      # the former SKILL.md
-    create-pr.md finalise.md code-review.md resolving-merge-conflicts.md
+    create-pr.md finalise.md code-review.md review-prs.md resolving-merge-conflicts.md
 ```
 
 A guide with its own supporting files (`references/`, `assets/`) keeps a folder instead, `references/<guide>/GUIDE.md`, so relative links still resolve.
