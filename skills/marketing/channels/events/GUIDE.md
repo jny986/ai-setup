@@ -3,6 +3,9 @@ name: events
 description: "Event marketing across hosting, sponsoring, speaking and attending: event selection, webinar funnels, follow-up, and pipeline measurement. Use for 'event marketing,' 'field marketing,' 'run a webinar,' 'sponsor a conference,' 'trade show booth,' 'event ROI,' 'speaking slot,' 'CFP,' 'host a dinner,' 'user conference,' or 'virtual summit.'"
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: events
 ---
 
 # Channels: Events

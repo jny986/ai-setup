@@ -3,6 +3,9 @@ name: brand-monitoring
 description: When the user wants to monitor brand mentions, detect trademark infringement, or set up brand monitoring. Also use when the user mentions "brand monitoring," "brand watch," "trademark watch," "brand mentions," "impersonation detection," "counterfeit detection," or "brand abuse monitoring." For enforcement, use brand-protection.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: brand-monitoring
 ---
 
 # Strategies: Brand Monitoring

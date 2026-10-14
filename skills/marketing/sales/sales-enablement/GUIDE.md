@@ -3,6 +3,9 @@ name: sales-enablement
 description: "Sales collateral that reps use: decks, one-pagers, objection handling, battle cards, win-loss analysis, ROI calculators, demo and cold call scripts, proposals and playbooks."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: sales-enablement
 ---
 
 # Sales: Sales Enablement

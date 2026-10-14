@@ -3,6 +3,9 @@ name: aso
 description: When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions "ASO audit," "app store optimization," "optimize my app listing," "improve app visibility," "app store ranking," "audit my listing," "why aren't people downloading my app," "improve my app conversion," "keyword optimization for app," or "compare my app to competitors," or shares an App Store or Google Play URL. For paid app install campaigns, use app-ads.
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: aso
 ---
 
 # Channels: App Store Optimization (ASO)

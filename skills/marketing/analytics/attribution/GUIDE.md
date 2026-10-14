@@ -3,6 +3,9 @@ name: attribution
 description: When the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools. Also use when the user mentions "attribution," "attribution model," "first-touch vs last-touch," "multi-touch," "which channel drives revenue," "what's my real CAC," "my dashboards disagree," "Google/Meta says X but GA says Y," "media mix model," "MMM," "incrementality," "geo lift," "holdout test," "how did you hear about us," "self-reported attribution," "dark social," or wants to instrument attribution themselves ("stitch my bookings to their source," "SavvyCal/Calendly attribution," "close the identify gap," "first-party attribution"). For event tracking setup and UTMs, use analytics-tracking and traffic-analysis. For ad-platform pixels and CAPI, use paid-ads-strategy. For pipeline and CRM revenue reporting, use revops. For the AI-search attribution blind spot, use ai-traffic-tracking.
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: attribution
 ---
 
 # Analytics: Attribution

@@ -8,7 +8,9 @@ metadata:
   version: "1.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: mattpocock/skills@v1.2.3 (MIT)
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.2.3(6acc160)
+  based_on_skill: teach
 ---
 
 The user has asked you to teach them something. This is a stateful request - they intend to learn the topic over multiple sessions.

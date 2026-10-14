@@ -3,6 +3,9 @@ name: customer-research
 description: "Analyze existing research, mine online sources, and run interviews and surveys to produce VOC, personas and JTBD grounded in what customers actually say."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: customer-research
 ---
 
 # Customer Research

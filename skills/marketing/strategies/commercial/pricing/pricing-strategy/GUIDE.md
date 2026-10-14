@@ -3,6 +3,9 @@ name: pricing-strategy
 description: When the user wants to plan, design, or optimize pricing strategy and structure. Also use when the user mentions "pricing strategy," "pricing model," "pricing tiers," "freemium," "value-based pricing," "anchoring," "price structure," or "monetization strategy." For pricing page, use `dev/references/pages/marketing/pricing`.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: pricing-strategy, pricing
 ---
 
 # Strategies: Pricing

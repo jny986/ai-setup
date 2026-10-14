@@ -3,6 +3,9 @@ name: marketing-council
 description: "A simulated board of legendary marketers that gives grounded takes on a marketing question, maps where they disagree, and synthesizes a recommendation."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: marketing-council
 ---
 
 # Marketing Council

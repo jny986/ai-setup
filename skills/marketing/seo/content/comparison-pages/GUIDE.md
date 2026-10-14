@@ -3,6 +3,9 @@ name: comparison-pages
 description: When the user wants to plan or write competitor comparison and alternative pages for SEO and sales enablement. Also use when the user mentions "alternative page," "vs page," "competitor comparison," "comparison page," "[Product] vs [Product]," "[Product] alternative," "competitive landing pages," "how do we compare to X," "battle card," "competitor teardown," or "competitive asset audit." For the page build (layout, components), hand off to `dev/references/pages/marketing/alternatives`. For researching the competitor first, use competitor-research.
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: competitors
 ---
 
 # SEO Content: Comparison Pages

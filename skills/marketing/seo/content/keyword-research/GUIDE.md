@@ -3,6 +3,9 @@ name: keyword-research
 description: When the user wants to research keywords, find target keywords, or analyze search intent. Also use when the user mentions "keyword research," "keyword tool," "target keywords," "search volume," "search intent," "keyword difficulty," "topical map," "keyword clustering," "People Also Ask," "Google autocomplete," "autocomplete keywords," or "alphabet method." For clusters, use content-strategy.
 metadata:
   version: 1.3.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: keyword-research
 ---
 
 # SEO Content: Keyword Research

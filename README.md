@@ -46,7 +46,10 @@ These are the skills that `npx skills` installs. Each one's `SKILL.md` frontmatt
 metadata:
   author: jny986
   author-url: https://jny986.com
-  based_on: mattpocock/skills@v1.2.3 (MIT)  # Only on skills adapted from an upstream skill
+  # Only on skills adapted from an upstream skill; multiple sources are comma-separated, aligned by position
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.2.3(6acc160)  # latest tag(short commit hash)
+  based_on_skill: implement
 ```
 
 #### Marketing router and dev references
@@ -82,4 +85,4 @@ git submodule update --remote
 
 ## License
 
-[Apache 2.0](LICENSE). Skills adapted from upstream repos keep their original licence, which is noted in each skill's `based_on` field.
+[Apache 2.0](LICENSE). Skills adapted from upstream repos keep their original licence. The source is recorded in each skill's `based_on_repo`, `based_on_version` and `based_on_skill` fields.

@@ -7,7 +7,9 @@ metadata:
   version: "1.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: mattpocock/skills@v1.2.3 (MIT)
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.2.3(6acc160)
+  based_on_skill: implement
 ---
 
 You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.

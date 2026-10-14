@@ -3,6 +3,9 @@ name: marketing-ideas
 description: "A library of 139 SaaS marketing ideas, filtered by stage, budget and goal into 3-5 fitted recommendations."
 metadata:
   version: 1.0.0
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: marketing-ideas
 ---
 
 # Marketing Ideas for SaaS

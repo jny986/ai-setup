@@ -3,6 +3,9 @@ name: podcast-marketing
 description: When the user wants to plan, create, or market a podcast. Also use when the user mentions "podcast," "podcast strategy," "podcast SEO," "show notes," "podcast distribution," "Spotify podcast," "Apple Podcasts," "podcast discoverability," "PodcastEpisode schema," or "podcast repurposing." For show notes, use article-content.
 metadata:
   version: 1.0.1
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: podcast-marketing
 ---
 
 # Content: Podcast

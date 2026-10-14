@@ -8,7 +8,9 @@ metadata:
   version: "1.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: mattpocock/skills@v1.2.3 (MIT)
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.2.3(6acc160)
+  based_on_skill: claude-handoff
 ---
 
 Write a handoff summary of the current conversation so a fresh agent can continue the work. Instead of saving it, launch a background agent seeded with the summary as its prompt: `claude --bg --name "<descriptive name>" "<handoff summary>"`. It starts in the current working directory and returns immediately; the user manages it with `claude agents`.

@@ -6,7 +6,9 @@ metadata:
   version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: coreyhaines31/marketingskills@v2.11.27 (MIT)
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.27(28e4a81)
+  based_on_skill: free-tools
 ---
 
 # Strategies: Free Tools

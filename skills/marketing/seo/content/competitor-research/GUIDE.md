@@ -3,6 +3,9 @@ name: competitor-research
 description: When the user wants to analyze or profile competitors for SEO, content, backlinks, or positioning, including from a list of competitor URLs. Also use when the user mentions "competitor analysis," "competitor research," "competitor keywords," "competitor backlinks," "link gap," "content gap," "competitor content," "competitive analysis," or "competitor comparison," "competitor profile," "profile this competitor," "competitor dossier," "competitor deep dive," For content roadmap, use content-strategy.
 metadata:
   version: 1.2.1
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.27(28e4a81)
+  based_on_skill: competitor-research, competitor-profiling
 ---
 
 # SEO Content: Competitor Research
