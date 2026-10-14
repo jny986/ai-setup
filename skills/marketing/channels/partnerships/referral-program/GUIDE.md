@@ -193,7 +193,7 @@ Reviews are the other half of customer advocacy. For review-request programs, re
 - **discount-marketing-strategy**: Referral rewards (discounts, credits); 10–30% benchmark; campaign design
 - **affiliate-marketing**: Different audience; can run both
 - **influencer-marketing**: Brand building vs. user-driven growth
-- **launch**: Launching the referral program
+- **product-launch**: Launching the referral program
 - **email-marketing**: Referral nurture campaigns
 - **marketing-psychology**: Understanding referral motivation
 - **directory-submission**: Directory submission for discovery; referral for user-driven growth

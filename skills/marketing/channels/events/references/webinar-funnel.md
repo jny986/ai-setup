@@ -32,10 +32,10 @@ The topic does the targeting and most of the selling:
 
 **The promo plan** — start 2 weeks out, not 6 (urgency compresses better than it stretches):
 
-- **Email list** — 3 sends: announcement, value-add reminder (share a preview insight), last-call day-of (→ **emails**)
+- **Email list** — 3 sends: announcement, value-add reminder (share a preview insight), last-call day-of (→ **email-marketing**)
 - **Social** — founder/host personal posts outperform brand posts; share the *why this topic now* angle (→ **social**)
 - **Partners** — a co-hosted webinar doubles reach for free; partnership mechanics → **co-marketing**, but note: co-hosted registrant lists need explicit consent handling for both parties
-- **Paid** — only after the topic is proven organically; retargeting warm traffic to a reg page works, cold-to-webinar ads are an expensive way to buy no-shows (→ **ads**)
+- **Paid** — only after the topic is proven organically; retargeting warm traffic to a reg page works, cold-to-webinar ads are an expensive way to buy no-shows (→ **paid-ads**)
 - **Speakers' own audiences** — for panels/summits, every speaker promotes; make it effortless (pre-written posts, custom links)
 
 ## Stage 2: Show-Up (the hardest metric)
@@ -62,7 +62,7 @@ Hold-rate mechanics throughout: deliver on a specific promise made in minute 1 a
 
 ## Stage 4: Post-Webinar (half the revenue is here)
 
-Segment by behavior, then sequence (→ **emails** for craft):
+Segment by behavior, then sequence (→ **email-marketing** for craft):
 
 | Segment | Play |
 |---|---|
@@ -73,7 +73,7 @@ Segment by behavior, then sequence (→ **emails** for craft):
 
 - **Replay strategy**: time-limited replay (72h–1 week) preserves urgency for the offer; evergreen replay converts the offer to a standing CTA and becomes a lead magnet (→ **lead-magnets**). Pick per goal — limited for launches/offers, evergreen for education-led capture.
 - **Cart/offer close**: if the offer had a deadline, run a real close sequence (deadline reminder → objection email → final hours). All urgency claims must be true.
-- **Recycle the asset**: transcript → recap post (→ **content-strategy**), clips (→ **video**), quotable stats for AI-citable content (→ **ai-seo**). A monthly webinar run this way is a content engine with a lead-gen side effect.
+- **Recycle the asset**: transcript → recap post (→ **content-strategy**), clips (→ **video**), quotable stats for AI-citable content (→ **geo**). A monthly webinar run this way is a content engine with a lead-gen side effect.
 
 ## Metrics That Diagnose
 

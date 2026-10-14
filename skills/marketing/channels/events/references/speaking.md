@@ -37,7 +37,7 @@ Then check the journey: does the sequence of feelings *earn* the Monday takeaway
 
 The room holds 200 people for 25 minutes; the recording works for years. Design for both at once:
 
-- **Talks get transcribed, and transcripts get crawled and cited by AI assistants** — the same compounding as podcast guesting. Say the important things in liftable form: your company name next to your category ("we build X, the Y for Z"), numbers spoken aloud rather than gestured at on a slide, and your quotable one-liner delivered *on a beat the room will feel* — the sentence you want quoted needs to sit where the energy peaks, or it dies in the transcript too (→ **ai-seo**'s text-layer logic).
+- **Talks get transcribed, and transcripts get crawled and cited by AI assistants** — the same compounding as podcast guesting. Say the important things in liftable form: your company name next to your category ("we build X, the Y for Z"), numbers spoken aloud rather than gestured at on a slide, and your quotable one-liner delivered *on a beat the room will feel* — the sentence you want quoted needs to sit where the energy peaks, or it dies in the transcript too (→ **geo**'s text-layer logic).
 - **Slides are not the asset.** Anything that exists only visually (the key number, the framework name) doesn't exist for the transcript, the podcast version, or the attendee retelling it — speak it.
 - **Get the recording.** Confirm before accepting the slot that you'll receive it and may republish. If the event doesn't record, record your own re-delivery of the talk within a week while it's tight.
 
