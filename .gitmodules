@@ -10,3 +10,12 @@
 [submodule "original-skills/taste-skill"]
 	path = original-skills/taste-skill
 	url = https://github.com/Leonxlnx/taste-skill.git
+[submodule "original-skills/marketing-skills"]
+	path = original-skills/marketing-skills
+	url = https://github.com/kostja94/marketing-skills.git
+[submodule "original-skills/pagina"]
+	path = original-skills/pagina
+	url = https://github.com/kostja94/pagina.git
+[submodule "original-skills/bricks"]
+	path = original-skills/bricks
+	url = https://github.com/kostja94/bricks.git
