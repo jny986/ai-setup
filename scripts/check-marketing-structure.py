@@ -33,8 +33,19 @@ for cells in rows((SKILL / "SKILL.md").read_text().splitlines()):
         errors.append(f"router: {name} -> {path}/GUIDE.md missing")
 
 guides = sorted(p.parent.relative_to(SKILL).as_posix() for p in SKILL.rglob("GUIDE.md"))
+
+def superseded(g):
+    """Old flat guide kept until the contract ticket, whose aliased nested guide is routed."""
+    for line in (SKILL / "references" / "name-table.md").read_text().splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if line.startswith("| `") and len(cells) > 3 and f"`{g}`" in cells[3]:
+            return cells[1].strip("`") in router.values()
+    return False
+
+
 for g in sorted(set(guides) - set(router.values())):
-    errors.append(f"router: guide {g}/GUIDE.md not listed")
+    if "/" in g or not superseded(g):
+        errors.append(f"router: guide {g}/GUIDE.md not listed")
 
 # Name table: Marketing rows are name | path | source | aliases; Dev rows are name | path | source.
 sections, current = {}, None
