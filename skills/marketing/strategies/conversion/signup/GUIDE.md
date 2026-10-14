@@ -268,7 +268,7 @@ When recommending tests, load [references/experiments.md](references/experiments
 
 ## Enrichment and Sales-Assisted Routing
 
-If a signup needs enriched company data for a sales-assist handoff, use the [revops inbound-routing playbook](../../../revops/references/inbound-routing.md). Keep account creation separate from enrichment availability; a timeout or ambiguous company match must not become an implicit signup rejection.
+If a signup needs enriched company data for a sales-assist handoff, use the [revops inbound-routing playbook](../../../sales/revops/references/inbound-routing.md). Keep account creation separate from enrichment availability; a timeout or ambiguous company match must not become an implicit signup rejection.
 
 ## Related Skills
 
