@@ -28,7 +28,7 @@ Hero and CTA Section are common candidates; trust, testimonials, FAQ, comparison
 
 Check source-to-page message match, one clear primary action, form and success states, mobile reading order, evidence quality, metadata and campaign parameters, loading performance, analytics, and absence of unsupported claims.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

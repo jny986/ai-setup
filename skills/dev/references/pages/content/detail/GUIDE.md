@@ -26,7 +26,7 @@ Breadcrumb, Tabs or Accordion, Sidebar, Card, List, Modal, and Announcement Bann
 
 Test missing or deleted objects, stale data, permissions, long values, related-record failures, deep links to sections or tabs, actions and confirmations, unsaved transitions, keyboard operation, responsive hierarchy, and return navigation.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

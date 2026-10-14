@@ -16,7 +16,7 @@ Use real inboxes, forms, SLAs, regions, and support boundaries. Add the smallest
 
 Tabs or Accordion, Card, CTA Section, and trust cues may organize channels. Verify delivery, recipient routing, keyboard and screen-reader labels, privacy disclosure, attachments, rate limits, confirmation, localization, and that unavailable support is not promised.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

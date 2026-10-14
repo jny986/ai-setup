@@ -17,7 +17,7 @@ A Tool page performs work. A Feature page explains a product capability, and a R
 
 Task Input, Agent Workspace, How-to, FAQ, Announcement Banner, Modal, related-tool Cards, and CTA Section may apply. Verify validation, loading, failure, limits, privacy, data retention, accessibility, mobile input, deterministic or AI uncertainty, result export, abuse controls, authentication gates, analytics, metadata, and truthful conversion claims.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

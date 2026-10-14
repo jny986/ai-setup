@@ -19,7 +19,7 @@ A Product page describes an offer a customer can adopt. A Feature page describes
 
 Hero, Navigation, Grid, Card, Tabs, How-to, Comparison Table, Trust Signals, FAQ, and CTA Section may apply. Verify names, availability by plan or platform, screenshots and demos, limitations, dependencies, release state, links to pricing and documentation, claims, metadata, and mobile behavior.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

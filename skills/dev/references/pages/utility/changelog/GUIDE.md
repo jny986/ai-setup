@@ -16,7 +16,7 @@ Explain one shipped change with release date, affected users, availability, limi
 
 List, Card, Tabs or Accordion, Announcement Banner, Breadcrumb, Social Share, and CTA Section may apply. Use a real release content source. Verify ordering, draft exclusion, dates and time zones, categories, pagination, canonical URLs, feeds when present, media, product availability, and links from Index to Entry.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

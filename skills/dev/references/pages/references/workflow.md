@@ -28,7 +28,7 @@ Add only the smallest page-local API, adapter, schema, content source, or submis
 
 ## 6. Report Durable Context
 
-List durable discoveries in the completion report, separating explicit user-confirmed facts from agent observations. Keep code and maintained project documents as the source of truth for detailed operational data. Do not create `project-context.md`, a Pagina archive, or another maintained memory format.
+List durable discoveries in the completion report, separating explicit user-confirmed facts from agent observations. Keep code and maintained project documents as the source of truth for detailed operational data. Do not create `project-context.md`, a page archive, or another maintained memory format.
 
 ## 7. Verify In Context
 

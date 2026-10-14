@@ -26,7 +26,7 @@ Grid, Card, List, Sidebar, Navigation, and Announcement Banner are candidates. C
 
 Test fresh, stale, loading, empty, partial, error, and permission-restricted data; metric definitions; time zones; alerts; keyboard navigation; responsive layout; drill-down links; and whether users can identify the next action without scanning every panel.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

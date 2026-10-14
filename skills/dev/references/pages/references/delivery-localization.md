@@ -1,12 +1,12 @@
 # Delivery And Localization Context
 
-Pagina builds the page within the delivery topology and release scope already chosen for the product. It does not decide whole-site architecture.
+Build the page within the delivery topology and release scope already chosen for the product. Do not decide whole-site architecture.
 
 ## Delivery Context
 
 Identify the surface role (`marketing`, `app`, `dashboard`, `docs`, `status`, `community`, `developer`, or `api-service`), placement (`path`, `subdomain`, or `separate-origin`), and implementation (`first-party`, `first-party-separate-deployment`, or an explicitly selected third-party option).
 
-`api-service` describes machine endpoints and is not a page. Pagina may build the human-facing API page, developer console surface, or documentation entry around it.
+`api-service` describes machine endpoints and is not a page. The page guides may build the human-facing API page, developer console surface, or documentation entry around it.
 
 Default to first-party page construction. Third-party products are recommendations only when their operational systems materially outperform the available project capability; do not configure a third-party service unless the user explicitly chooses it.
 
@@ -14,7 +14,7 @@ A subdomain does not imply third-party ownership. Check canonical origin, base p
 
 ## Minimal Supporting Capability
 
-Pagina may add a page-local route handler, adapter, schema, content file, query, cache, or submission endpoint when the page cannot perform its real task without it. Reuse existing infrastructure first. Do not expand a page task into a monitoring, search, notification, identity, moderation, or publishing platform.
+The page guides may add a page-local route handler, adapter, schema, content file, query, cache, or submission endpoint when the page cannot perform its real task without it. Reuse existing infrastructure first. Do not expand a page task into a monitoring, search, notification, identity, moderation, or publishing platform.
 
 Declare unavailable system dependencies and never use static sample data to imply a live capability.
 

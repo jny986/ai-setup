@@ -1,8 +1,11 @@
 ---
 name: page-builder
 description: Build a new individual page inside an existing product or application. Use for page types such as home, product, feature, landing, pricing, tool, documentation, campaign, article, dashboard, settings, and error pages when the task includes page purpose, structure, content, components, implementation, and verification. Do not use for whole-site information architecture, site-wide navigation planning, or isolated component construction.
+license: MIT
 metadata:
-  version: 0.2.0
+  version: "0.2.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on: kostja94/pagina@239cb67 (MIT)
 ---
 
@@ -43,7 +46,7 @@ Use the page's product contexts to adapt priorities without inventing a new page
 
 ## Boundaries
 
-- Pagina owns one page at a time, including its content structure and component composition.
+- The page guides own one page at a time, including its content structure and component composition.
 - Build only new pages. Do not use this skill to audit, optimize, patch, or reconstruct an existing page.
 - Page references express durable decisions and acceptance criteria, not fixed visual templates.
 - Reusable component behavior belongs in the target design system or a [component guide](../components/GUIDE.md).

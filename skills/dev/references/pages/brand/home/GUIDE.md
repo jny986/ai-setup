@@ -32,7 +32,7 @@ Use the component recommendations below as candidates. Navigation and footer sup
 
 Check first-viewport identity, major destinations, long and missing content, mobile hierarchy, keyboard navigation, metadata, social preview, performance, and whether every prominent claim has real support.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

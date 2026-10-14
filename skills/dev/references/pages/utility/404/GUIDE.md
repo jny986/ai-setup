@@ -26,7 +26,7 @@ Navigation and CTA Section are common; Task Input, Card, or Footer are condition
 
 Check the actual HTTP or framework not-found behavior, arbitrary unknown paths, deleted content, authenticated and unauthenticated states, localization, keyboard operation, mobile layout, recovery links, analytics without sensitive URLs, and absence of soft-404 behavior.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

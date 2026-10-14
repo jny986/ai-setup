@@ -26,7 +26,7 @@ Tabs, Sidebar, Modal, Announcement Banner, and CMS Editor Workspace are candidat
 
 Test new and existing values where the shared form supports both, required and invalid fields, server errors, autosave interruption, stale revisions, uploads, permissions, cancellation, destructive actions, keyboard and composition input, mobile constraints, and the post-save destination.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

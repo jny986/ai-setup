@@ -11,13 +11,13 @@ Template pages let users discover, evaluate, preview, and use reusable starting 
 
 ## Boundaries
 
-A Template is a reusable starting artifact. It is not automatically a programmatic SEO page, a generic Resource, or a marketing Landing page. If templates are generated from data at scale, the publishing system remains an upstream concern while Pagina owns each resulting page contract.
+A Template is a reusable starting artifact. It is not automatically a programmatic SEO page, a generic Resource, or a marketing Landing page. If templates are generated from data at scale, the publishing system remains an upstream concern while the page guides own each resulting page contract.
 
 ## Components And Verification
 
 Grid, Card, Task Input, Carousel, Tabs, How-to, FAQ, Breadcrumb, CTA Section, and previews may apply. Verify filters, previews, source files, compatibility, licenses, pricing, versioning, copy/customize/download behavior, authentication transitions, empty states, related templates, metadata, and duplicate or thin variants.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

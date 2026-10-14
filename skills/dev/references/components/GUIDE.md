@@ -1,8 +1,11 @@
 ---
 name: component-builder
 description: Build new interface components and bounded composition patterns inside an existing project. Use for named components, interface blocks, and workspaces. Preserve the target project's design system and stack; for a complete new page with page-level structure and multiple sections, use the page-builder guide (`dev/references/pages`) instead. Do not use to audit or reconstruct an existing component, plan a whole product or website, or handle purely editorial copy requests.
+license: MIT
 metadata:
-  version: 0.2.0
+  version: "0.2.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on: kostja94/bricks@fa7e1e0 (MIT)
 ---
 
@@ -45,7 +48,7 @@ Find the component in [Component Guides](#component-guides), then read only its 
 - One component concept has one maintained reference. Role, placement, visual variant, and runtime state do not create new catalog entries.
 - Established independent terminology and discovery intent may justify separate entries that share a model, as with Grid, List, and Masonry.
 - A component reference is guidance, not a fixed code template.
-- Bounded composition patterns may coordinate catalog components. Complete page construction belongs to Pagina; whole-site information architecture and product planning remain outside both component construction and this skill.
+- Bounded composition patterns may coordinate catalog components. Complete page construction belongs to the [page guides](../pages/GUIDE.md); whole-site information architecture and product planning remain outside both component construction and this skill.
 - Stop and report the scope mismatch when the named component already exists and the request is primarily an audit, optimization, or reconstruction.
 - Do not add dependencies without a concrete implementation benefit.
 - Do not claim compliance, performance, or conversion outcomes that were not tested.
@@ -59,7 +62,7 @@ Report what changed, which project conventions were reused, how the component wa
 
 **Branding:**
 
-- [Components: Favicon](branding/favicon/GUIDE.md)
+- [Favicon](branding/favicon/GUIDE.md)
 - [Hero](branding/hero/GUIDE.md)
 - [Logo](branding/logo/GUIDE.md)
 

@@ -2,7 +2,7 @@
 
 ## Shared Responsibility
 
-Resource pages help users discover, evaluate, and obtain maintained educational or practical assets. Content strategy decides what resources exist; Pagina builds their website surfaces.
+Resource pages help users discover, evaluate, and obtain maintained educational or practical assets. Content strategy decides what resources exist; the page guides build their website surfaces.
 
 ## Modes
 
@@ -15,7 +15,7 @@ Resource pages help users discover, evaluate, and obtain maintained educational 
 
 Navigation, Grid, List, Card, Tabs, Newsletter, CTA Section, Modal, and Trust Signals may apply. Verify taxonomy, deduplication, empty and large collections, access and download links, asset version, form delivery, consent, repeat requests, localization, metadata, indexing, and expired or withdrawn resources.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

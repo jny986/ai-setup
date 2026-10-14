@@ -21,7 +21,7 @@ Core regions cover interface identity, supported environment, capabilities, acqu
 
 Verify real versions, links, package names, signatures, permissions, commands, code examples, regional availability, installation failure, authentication, update paths, uninstall or revocation, metadata, and handoff to documentation or the product.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 

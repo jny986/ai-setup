@@ -19,7 +19,7 @@ Services describe work delivered for or with a customer. Solutions package produ
 
 Hero, Navigation, Grid, Card, How-to, Comparison Table, Testimonials, Trust Signals, FAQ, Contact path, and CTA Section may apply. Verify scope, qualifications, geographic availability, process ownership, timelines, unsupported outcome claims, lead routing, consent, proof attribution, and links to related use cases and case studies.
 
-## Bricks Components
+## Components
 
 Catalog recommendations; links go to the component guides in this tree.
 
