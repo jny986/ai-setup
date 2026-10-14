@@ -29,11 +29,18 @@ npx skills update
 │   └── dev/           # Page and component build references (no SKILL.md), reached from marketing hand-offs
 ├── SKILLS.md          # Index of my skills
 ├── skills.html        # The same index, grouped by upstream source
+├── CONTEXT.md         # Glossary of this repo's terms
+├── docs/              # Agent config docs (agents/) and the router-skill guide
+├── scripts/           # Structure and frontmatter checks, run in CI
+├── templates/         # Starter AGENTS.md and CLAUDE.md
 └── original-skills/   # Upstream skill repos, as git submodules
     ├── impeccable/
     ├── marketingskills/
     ├── matt-pocock-skills/
     ├── taste-skill/
+    ├── marketing-skills/
+    ├── pagina/
+    ├── bricks/
     ├── SKILLS.md      # Index of every upstream skill
     └── skills.html    # The same index, grouped by repo
 ```
@@ -58,7 +65,7 @@ metadata:
 
 `skills/dev/references/` holds the page and component build guides (`pages/`, `components/`). It is not a skill: marketing guides hand off to it by path, for example `dev/references/pages/marketing/pricing`. Marketing is based on [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina) and [kostja94/bricks](https://github.com/kostja94/bricks) (all MIT).
 
-Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat guides, unlisted guides, broken links and unresolved dev hand-offs.
+Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat guides, unlisted guides, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint.
 
 ### `original-skills/`
 
@@ -70,6 +77,9 @@ The upstream repos my skills are based on or sit alongside. They're kept as subm
 | [marketingskills](https://github.com/coreyhaines31/marketingskills) | Corey Haines |
 | [skills](https://github.com/mattpocock/skills) | Matt Pocock |
 | [taste-skill](https://github.com/Leonxlnx/taste-skill) | Leonxlnx |
+| [marketing-skills](https://github.com/kostja94/marketing-skills) | kostja94 |
+| [pagina](https://github.com/kostja94/pagina) | kostja94 |
+| [bricks](https://github.com/kostja94/bricks) | kostja94 |
 
 Fetch or update the submodules:
 
