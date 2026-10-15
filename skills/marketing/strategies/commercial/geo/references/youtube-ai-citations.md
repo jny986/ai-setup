@@ -59,7 +59,7 @@ Engagement isn't read directly by LLMs, but it drives the watch signals that lif
 ## Related
 
 - The same "models read the text layer" logic applies to podcasts: episodes get transcribed and show notes get published, so podcast guesting is earned media that compounds in AI answers — see the `public-relations` skill's podcast guest prep reference.
-- For producing the videos themselves, see the `video-marketing` skill.
+- For producing the videos themselves, see the `video` skill.
 
 ---
 

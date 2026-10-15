@@ -1,0 +1,16 @@
+name: Upstream drift
+
+# Reminder, not a gate: goes red when a skill's recorded upstream version lags the pinned submodule,
+# or a submodule lags its upstream default branch.
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Provenance drift
+        run: python3 scripts/check-provenance.py --remote
