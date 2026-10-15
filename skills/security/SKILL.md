@@ -31,4 +31,4 @@ Start here. Pick by situation.
 
 ## How they nest
 
-`build-securely` and `harden-deployment` end at `release-gate`. `review-code` hands infrastructure findings to `harden-deployment`.
+`security build-securely` and `security harden-deployment` end at `security release-gate`. `security review-code` hands infrastructure findings to `security harden-deployment`.

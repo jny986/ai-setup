@@ -33,4 +33,4 @@ Secure the path from commit to running service. Work the sections that match the
 
 3. **Secrets.** They come from the environment or a cloud secrets manager; `.env.example` carries placeholders; real `.env*` files are gitignored; grep the staged diff before each commit. A secret that reached a remote is compromised: **rotate it first**, then purge history. See [secrets management](references/hardening-patterns.md#secrets-management).
 
-4. **Verify.** Done when the surface's own checklist is fully ticked and `release-gate` passes. Check the change against the [red flags](references/red-flags.md).
+4. **Verify.** Done when the surface's own checklist is fully ticked and `security release-gate` passes. Check the change against the [red flags](references/red-flags.md).

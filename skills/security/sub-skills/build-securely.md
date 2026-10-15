@@ -49,7 +49,7 @@ Build the feature with its controls in place from the start. Threat model first:
 
 3. **Ask first.** Stop and get human approval before: a new auth flow or change to auth logic, a new category of sensitive data, a new external integration, a CORS change, a file-upload handler, a rate-limit change, elevated permissions.
 
-4. **Prove it.** Done when the abuse case from step 1 has a passing test ([security tests](references/security-testing.md)) and `release-gate` passes. Check the feature against the [red flags](references/red-flags.md) before declaring it safe.
+4. **Prove it.** Done when the abuse case from step 1 has a passing test ([security tests](references/security-testing.md)) and `security release-gate` passes. Check the feature against the [red flags](references/red-flags.md) before declaring it safe.
 
 ## Always
 
