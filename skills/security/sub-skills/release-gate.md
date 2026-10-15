@@ -34,4 +34,4 @@ The gate before merge or deploy. Every item gets a checkable answer: pass, fail,
    | Personal data | Classified, minimized, has retention and a deletion path |
    | Cloud and CI/CD | Passes [the cloud pre-deployment list](references/infrastructure/cloud.md#pre-deployment-cloud-security-checklist) when infra changed |
 
-2. **Report.** Done when every row has an answer. Open with the failures, each pointing to the control in `build-securely` or `harden-deployment` that fixes it. Full list: [security checklist](references/security-checklist.md).
+2. **Report.** Done when every row has an answer. Open with the failures, each pointing to the control in `security build-securely` or `security harden-deployment` that fixes it. Full list: [security checklist](references/security-checklist.md).

@@ -8,7 +8,7 @@ metadata:
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
   based_on_version: v1.3.1(49dd158)
-  based_on_skill: code-review
+  based_on_skill: code-review, retro
 ---
 
 Two-axis review of the diff between `HEAD` and a fixed point, defaulted when the user supplies none:
@@ -50,6 +50,8 @@ Look for the originating spec, in this order:
 
 Search the repo for every file that documents how code should be written. When `CODING_STANDARDS.md` or `CONTRIBUTING.md` exists, it must be on the list.
 
+Then list the repo's automated checks: lint, typecheck and test scripts (`package.json` or the build tool), the CI workflow, and pre-commit hooks. These define "tooling already enforces". A repo with no pre-commit hook and no CI job running its lint/typecheck/test command has no guardrail; report that in the Standards section.
+
 On top of whatever the repo documents, the Standards axis always carries the **smell baseline** below: a fixed set of Fowler code smells (_Refactoring_, ch.3) that applies even when a repo documents nothing. Two rules bind it:
 
 - **The repo overrides.** A documented repo standard always wins; where it endorses something the baseline would flag, suppress the smell.
@@ -77,8 +79,8 @@ Issue both sub-agent calls together, in the foreground, and aggregate the report
 **Standards sub-agent prompt** should include:
 
 - The full diff command and commit list, with the instruction to report only on lines changed in the diff.
-- The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it).
-- The brief: "Report, per file/hunk where relevant, (a) every place the diff violates a documented standard: cite the standard (file + the rule); and (b) any baseline smell you spot: name it and quote the hunk. Distinguish hard violations from judgement calls: documented-standard breaches can be hard, but baseline smells are always judgement calls, and a documented repo standard overrides the baseline. Skip anything tooling enforces. Under 400 words."
+- The list of standards-source files and the automated checks you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it).
+- The brief: "Report, per file/hunk where relevant, (a) every place the diff violates a documented standard: cite the standard (file + the rule); and (b) any baseline smell you spot: name it and quote the hunk. Distinguish hard violations from judgement calls: documented-standard breaches can be hard, but baseline smells are always judgement calls, and a documented repo standard overrides the baseline. Skip anything the listed automated checks enforce. Tag each hard breach that is a fixed syntactic pattern, banned API, import shape or file-location rule as mechanical (a lint rule or hook could catch it); leave judgement calls untagged. After the findings, add a separate Notes list of documented standards you found vague, contradictory or stale while applying them, and say if no CODING_STANDARDS.md exists; Notes are not findings. Under 400 words."
 
 **Spec sub-agent prompt** should include:
 
@@ -94,15 +96,17 @@ Look for review comments the user left on the PR (`gh pr view --json comments,re
 
 For each comment, check the current diff: has the issue it raises actually been fixed? Report each as fixed, not fixed, or partially fixed, quoting the comment and citing the file/lines that show it. Don't take a "done" reply or a resolved thread as proof.
 
+When a comment matches a pattern that recurs across the PR's comments, record it as a note for step 6: a standard or automated check could cover it.
+
 ### 6. Aggregate
 
-Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned, then the step 5 results under `## Comments`. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned, then the step 5 results under `## Comments`. Close with `## Notes`: the Standards sub-agent's Notes and step 5's recurring-pattern notes, each as a suggestion to add, clarify or remove a standard or automated check. Notes are additional comments, not findings. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
 
-End with a one-line summary: total findings per axis, the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
+End with a one-line summary: total findings per axis (Notes excluded), the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
 
 ### 7. Offer PR inline comments
 
-If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 8. Skip steps 7 and 8 when there's no PR.
+If the review is of a PR, ask the user which findings (if any, Notes excluded) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 8. Skip steps 7 and 8 when there's no PR.
 
 ### 8. Submit the review
 

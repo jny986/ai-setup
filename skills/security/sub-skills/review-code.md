@@ -35,7 +35,7 @@ Audit the code you were given. Report only what you can trace to an attacker.
    | Python | [python](references/languages/python.md) |
    | JavaScript, TypeScript | [javascript](references/languages/javascript.md) |
    | Dockerfile | [docker](references/infrastructure/docker.md) |
-   | Cloud, CI/CD, IAM config | Switch to `harden-deployment` |
+   | Cloud, CI/CD, IAM config | Switch to `security harden-deployment` |
 
 3. **Trace.** For each suspect pattern, follow the value from its source to the sink. A finding needs an **attacker-controlled** source: request params, body, headers, cookies, path segments, uploads, other users' data, WebSocket messages. Settings, env vars, constants and signed session data are server-controlled, so they are not findings ([full source table](references/do-not-flag.md#attacker-controlled-vs-server-controlled)). Look for validation, sanitization, middleware and framework protection along the way. [Flag patterns](references/flag-patterns.md) lists the sinks that are findings on sight and the ones that need their source checked first.
 
