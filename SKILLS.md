@@ -5,6 +5,7 @@
 | [agents-review](skills/agents-review) | — | No | 1.0.0 | jny986 | Refactor an AGENTS.md or CLAUDE.md into a minimal root file plus linked docs, following progressive disclosure. |
 | [claude-handoff](skills/claude-handoff) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | 1.0.0 | jny986 | Hand the current conversation off to a fresh background agent that picks up the work immediately. |
 | [codebase-design](skills/codebase-design) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary. |
+| [design](skills/design) | [ArnavPuri/designskills](https://github.com/ArnavPuri/designskills), [CosmoBlk/email-design](https://github.com/CosmoBlk/email-design), [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Yes | 1.0.0 | jny986 | Router for visual design work. Use to design or build app UI, dashboards, landing pages, design systems, brand identity, graphics, AI-generated images, slide decks or HTML email, or to critique or redesign an existing interface. Sub-skill: brandkit; plus reference guides per surface. |
 | [diagnosing-bugs](skills/diagnosing-bugs) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
 | [domain-modeling](skills/domain-modeling) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, discusses codebase terminology, writes or edits a CONTEXT.md, records or edits an ADR, or when another skill needs to maintain the domain model. |
 | [git](skills/git) | — | Yes | 1.0.0 | jny986 | Router for git and PR workflows. Use for any commit, push, pull request, branch wrap-up, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, finalise, code-review, review-prs, resolving-merge-conflicts. |
@@ -209,3 +210,9 @@
 - [release-gate](skills/security/sub-skills/release-gate.md) (v1.0.0, jny986): Final check before merging or deploying
 - [review-code](skills/security/sub-skills/review-code.md) (v1.0.0, jny986): Audit existing code or a diff for vulnerabilities
 <!-- security-sub-skills:end -->
+
+<!-- design-sub-skills:start -->
+## Design sub-skills
+
+- [brandkit](skills/design/sub-skills/brandkit.md) (v1.0.0, jny986): Generate a brand-kit board: logo directions, identity system, palette, type, applications
+<!-- design-sub-skills:end -->

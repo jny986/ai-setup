@@ -28,3 +28,15 @@
 [submodule "source-skills/ecc"]
 	path = source-skills/affaan-m-ECC
 	url = https://github.com/affaan-m/ECC.git
+[submodule "source-skills/ArnavPuri-designskills"]
+	path = source-skills/ArnavPuri-designskills
+	url = https://github.com/ArnavPuri/designskills.git
+[submodule "source-skills/jamditis-claude-skills-journalism"]
+	path = source-skills/jamditis-claude-skills-journalism
+	url = https://github.com/jamditis/claude-skills-journalism.git
+[submodule "source-skills/CosmoBlk-email-design"]
+	path = source-skills/CosmoBlk-email-design
+	url = https://github.com/CosmoBlk/email-design.git
+[submodule "source-skills/vercel-labs-web-interface-guidelines"]
+	path = source-skills/vercel-labs-web-interface-guidelines
+	url = https://github.com/vercel-labs/web-interface-guidelines.git
