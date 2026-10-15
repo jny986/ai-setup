@@ -6,134 +6,132 @@ Source: `kostja` = kostja94/marketing-skills (path under its `skills/`), `ours` 
 
 ## Marketing
 
-Paths are relative to this skill's folder; each holds a `GUIDE.md`.
+Paths are relative to this skill's folder; each is a guide file.
 
 | Name | Path | Source | Aliases |
 |---|---|---|---|
-| `analytics-tracking` | `analytics/tracking` | both: kostja `analytics/tracking`, ours `analytics` | `analytics` |
-| `traffic-analysis` | `analytics/sources/traffic` | kostja `analytics/sources/traffic` +UTM detail from ours `analytics` | |
-| `ai-traffic-tracking` | `analytics/sources/ai-traffic` | kostja `analytics/sources/ai-traffic` +tracking from ours `ai-seo` | |
-| `google-search-console` | `analytics/seo/google-search-console` | kostja | |
-| `seo-monitoring` | `analytics/seo/seo-monitoring` | kostja | |
-| `ab-testing` | `analytics/ab-testing` | ours `ab-testing` | `ab-testing` |
-| `attribution` | `analytics/attribution` | ours `attribution` | `attribution` |
-| `community-forum` | `channels/community/community-forum` | kostja | |
-| `community-building` | `channels/community/community-building` | ours `community-marketing` | `community-marketing` |
-| `directory-submission` | `channels/community/directory-submission` | both: kostja, ours `directory-submissions` | `directory-submissions` |
-| `product-hunt-launch` | `channels/community/product-hunt-launch` | kostja +Product Hunt part of ours `launch` | |
-| `distribution-channels` | `channels/distribution/distribution-channels` | kostja | |
-| `aso` | `channels/distribution/aso` | ours `aso` | `aso` |
-| `email-marketing` | `channels/owned/email-marketing` | both: kostja, ours `emails` | `emails` |
-| `employee-generated-content` | `channels/owned/employee-generated-content` | kostja | |
-| `sms` | `channels/owned/sms` | ours `sms` | `sms` |
-| `affiliate-marketing` | `channels/partnerships/affiliate-marketing` | kostja +affiliate detail from ours `referrals` | |
-| `creator-program` | `channels/partnerships/creator-program` | kostja | |
-| `education-program` | `channels/partnerships/education-program` | kostja | |
-| `influencer-marketing` | `channels/partnerships/influencer-marketing` | both: kostja, ours `influencer-marketing` | `influencer-marketing` |
-| `public-relations` | `channels/partnerships/public-relations` | both: kostja, ours `public-relations` | `public-relations` |
-| `referral-program` | `channels/partnerships/referral-program` | both: kostja, ours `referrals` | `referrals` |
-| `co-marketing` | `channels/partnerships/co-marketing` | ours `co-marketing` | `co-marketing` |
-| `events` | `channels/events` | ours `events` | `events` |
-| `copywriting` | `content/copywriting` | both: kostja, ours `copywriting` | `copywriting` |
-| `copy-editing` | `content/copy-editing` | ours `copy-editing` | `copy-editing` |
-| `lead-magnets` | `content/lead-magnets` | ours `lead-magnets` | `lead-magnets` |
-| `article-content` | `content/article` | kostja | |
-| `podcast-marketing` | `content/podcast` | kostja | |
-| `translation` | `content/translation` | kostja | |
-| `video-marketing` | `content/video` | both: kostja, ours `video` | `video` |
-| `visual-content` | `content/visual-content` | both: kostja, ours `image` | `image` |
-| `ad-creative` | `paid-ads/ad-creative` | ours `ad-creative` | `ad-creative` |
-| `app-ads` | `paid-ads/formats/app-ads` | kostja | |
-| `ctv-ads` | `paid-ads/formats/ctv-ads` | kostja | |
-| `directory-listing-ads` | `paid-ads/formats/directory-listing-ads` | kostja | |
-| `display-ads` | `paid-ads/formats/display-ads` | kostja | |
-| `native-ads` | `paid-ads/formats/native-ads` | kostja | |
-| `google-ads` | `paid-ads/platforms/google-ads` | kostja +platform specifics from ours `ads` | |
-| `linkedin-ads` | `paid-ads/platforms/linkedin-ads` | kostja +platform specifics from ours `ads` | |
-| `meta-ads` | `paid-ads/platforms/meta-ads` | kostja +platform specifics from ours `ads` | |
-| `reddit-ads` | `paid-ads/platforms/reddit-ads` | kostja +platform specifics from ours `ads` | |
-| `tiktok-ads` | `paid-ads/platforms/tiktok-ads` | kostja +platform specifics from ours `ads` | |
-| `youtube-ads` | `paid-ads/platforms/youtube-ads` | kostja +platform specifics from ours `ads` | |
-| `social` | `platforms/social` | ours `social`; kostja `platforms/{linkedin,x,tiktok,reddit,pinterest,medium,youtube,github,grokipedia}` become its `references/` | `social` |
-| `revops` | `sales/revops` | ours `revops` | `revops` |
-| `sales-enablement` | `sales/sales-enablement` | ours `sales-enablement` | `sales-enablement` |
-| `prospecting` | `sales/prospecting` | ours `prospecting` | `prospecting` |
-| `cold-email` | `sales/cold-email` | ours `cold-email` | `cold-email` |
-| `competitor-research` | `seo/content/competitor-research` | both: kostja, ours `competitor-profiling` | `competitor-profiling` |
-| `comparison-pages` | `seo/content/comparison-pages` | ours `competitors` | `competitors` |
-| `content-optimization` | `seo/content/content-optimization` | kostja | |
-| `content-strategy` | `seo/content/content-strategy` | both: kostja, SEO parts of ours `content-strategy` | `content-strategy` |
-| `eeat-signals` | `seo/content/eeat-signals` | kostja | |
-| `keyword-research` | `seo/content/keyword-research` | kostja | |
-| `entity-seo` | `seo/entity-seo` | kostja | |
-| `local-seo` | `seo/local` | kostja | |
-| `backlink-analysis` | `seo/off-page/backlink-analysis` | kostja | |
-| `link-building` | `seo/off-page/link-building` | kostja | |
-| `meta-description` | `seo/on-page/description` | kostja | |
-| `featured-snippet` | `seo/on-page/featured-snippet` | kostja | |
-| `heading-structure` | `seo/on-page/heading` | kostja | |
-| `image-optimization` | `seo/on-page/image-optimization` | kostja +image optimisation from ours `image` | |
-| `internal-links` | `seo/on-page/internal-links` | kostja +internal-link detail from ours `site-architecture` | |
-| `page-metadata` | `seo/on-page/metadata` | kostja | |
-| `open-graph` | `seo/on-page/open-graph` | kostja | |
-| `schema-markup` | `seo/on-page/schema` | both: kostja, ours `schema` | `schema` |
-| `serp-features` | `seo/on-page/serp-features` | kostja | |
-| `title-tag` | `seo/on-page/title` | kostja | |
-| `twitter-cards` | `seo/on-page/twitter-cards` | kostja | |
-| `url-structure` | `seo/on-page/url-structure` | kostja +URL detail from ours `site-architecture` | |
-| `url-slug` | `seo/on-page/url-slug` | kostja `components/utility/url-slug` (`url-slug-generator`) | |
-| `video-optimization` | `seo/on-page/video-optimization` | kostja | |
-| `parasite-seo` | `seo/parasite-seo` | kostja | |
-| `programmatic-seo` | `seo/programmatic-seo` | both: kostja, ours `programmatic-seo` | `programmatic-seo` |
-| `canonical-tag` | `seo/technical/canonical` | kostja | |
-| `core-web-vitals` | `seo/technical/core-web-vitals` | kostja | |
-| `site-crawlability` | `seo/technical/crawlability` | kostja | |
-| `indexing` | `seo/technical/indexing` | kostja | |
-| `indexnow` | `seo/technical/indexnow` | kostja | |
-| `mobile-friendly` | `seo/technical/mobile-friendly` | kostja | |
-| `rendering-strategies` | `seo/technical/rendering-strategies` | kostja | |
-| `robots-txt` | `seo/technical/robots` | kostja | |
-| `xml-sitemap` | `seo/technical/sitemap` | kostja +sitemap detail from ours `site-architecture` | |
-| `brand-monitoring` | `strategies/brand/brand-monitoring` | kostja | |
-| `brand-protection` | `strategies/brand/brand-protection` | kostja | |
-| `branding` | `strategies/brand/branding` | kostja | |
-| `content-marketing` | `strategies/brand/content-marketing` | kostja +cross-channel parts of ours `content-strategy` | |
-| `integrated-marketing` | `strategies/brand/integrated-marketing` | kostja | |
-| `rebranding-strategy` | `strategies/brand/rebranding` | kostja | |
-| `brand-visual` | `strategies/brand/brand-visual` | kostja `components/branding/brand-visual` (`brand-visual-generator`) | |
-| `marketing-psychology` | `strategies/brand/marketing-psychology` | ours `marketing-psychology` | `marketing-psychology` |
-| `product-marketing` | `strategies/brand/product-marketing` | ours `product-marketing` | `product-marketing` |
-| `domain-architecture` | `strategies/commercial/domain/domain-architecture` | kostja | |
-| `domain-selection` | `strategies/commercial/domain/domain-selection` | kostja | |
-| `multi-domain-brand-seo` | `strategies/commercial/domain/multi-domain-brand-seo` | kostja | |
-| `generative-engine-optimization` | `strategies/commercial/geo` | both: kostja, ours `ai-seo` | `ai-seo` |
-| `localization-strategy` | `strategies/commercial/localization` | kostja | |
-| `open-source-strategy` | `strategies/commercial/open-source` | kostja | |
-| `paid-ads-strategy` | `strategies/commercial/paid-ads` | both: kostja, ours `ads` | `ads` |
-| `free-tools` | `strategies/commercial/free-tools` | ours `free-tools` | `free-tools` |
-| `pricing-strategy` | `strategies/commercial/pricing/pricing-strategy` | both: kostja, ours `pricing` | `pricing` |
-| `discount-marketing-strategy` | `strategies/commercial/pricing/discount-marketing` | kostja | |
-| `offers` | `strategies/commercial/pricing/offers` | ours `offers` | `offers` |
-| `conversion-optimization` | `strategies/conversion/conversion-optimization` | both: kostja `strategies/launch/conversion`, ours `cro` | `cro` |
-| `signup` | `strategies/conversion/signup` | ours `signup` | `signup` |
-| `onboarding` | `strategies/conversion/onboarding` | ours `onboarding` | `onboarding` |
-| `popups` | `strategies/conversion/popups` | ours `popups` | `popups` |
-| `paywalls` | `strategies/conversion/paywalls` | ours `paywalls` | `paywalls` |
-| `gtm-strategy` | `strategies/launch/gtm` | both: kostja, ours `marketing-plan` | `marketing-plan` |
-| `product-launch` | `strategies/launch/product-launch` | both: kostja, ours `launch` | `launch` |
-| `retention-strategy` | `strategies/launch/retention` | both: kostja, ours `churn-prevention` | `churn-prevention` |
-| `customer-research` | `strategies/launch/customer-research` | ours `customer-research` | `customer-research` |
-| `marketing-ideas` | `strategies/launch/marketing-ideas` | ours `marketing-ideas` | `marketing-ideas` |
-| `cold-start-strategy` | `strategies/launch/cold-start` | kostja | |
-| `growth-funnel` | `strategies/launch/growth-funnel` | kostja | |
-| `indie-hacker-strategy` | `strategies/launch/indie-hacker` | kostja | |
-| `pmf-strategy` | `strategies/launch/pmf` | kostja | |
-| `research-sources` | `strategies/launch/research-sources` | kostja | |
-| `marketing-council` | `strategies/operations/marketing-council` | ours `marketing-council` | `marketing-council` |
-| `marketing-loops` | `strategies/operations/marketing-loops` | ours `marketing-loops` | `marketing-loops` |
-| `seo-strategy` | `strategies/structure/seo` | kostja | |
-| `seo-audit` | `strategies/structure/seo-audit` | both: kostja, ours `seo-audit` | `seo-audit` |
-| `website-structure` | `strategies/structure/website-structure` | both: kostja, ours `site-architecture` | `site-architecture` |
+| `analytics-tracking` | `references/analytics/tracking.md` | both: kostja `analytics/tracking`, ours `analytics` | `analytics` |
+| `traffic-analysis` | `references/analytics/traffic.md` | kostja `analytics/sources/traffic` +UTM detail from ours `analytics`; `ai-traffic-tracking` folded in as `references/analytics/references/ai-traffic.md` (kostja `analytics/sources/ai-traffic` +tracking from ours `ai-seo`) | `ai-traffic-tracking` |
+| `seo-analytics` | `references/analytics/seo.md` | kostja `google-search-console` + `seo-monitoring`, as `references/` | `google-search-console`, `seo-monitoring` |
+| `ab-testing` | `references/analytics/ab-testing.md` | ours `ab-testing` | `ab-testing` |
+| `attribution` | `references/analytics/attribution.md` | ours `attribution` | `attribution` |
+| `community-forum` | `references/channels/community/community-forum.md` | kostja | |
+| `community-building` | `references/channels/community/community-building.md` | ours `community-marketing` | `community-marketing` |
+| `directory-submission` | `references/channels/community/directory-submission.md` | both: kostja, ours `directory-submissions` | `directory-submissions` |
+| `product-hunt-launch` | `references/channels/community/product-hunt-launch.md` | kostja +Product Hunt part of ours `launch` | |
+| `distribution-channels` | `references/channels/distribution/distribution-channels.md` | kostja | |
+| `aso` | `references/channels/distribution/aso.md` | ours `aso` | `aso` |
+| `email-marketing` | `references/channels/owned/email-marketing.md` | both: kostja, ours `emails` | `emails` |
+| `employee-generated-content` | `references/channels/owned/employee-generated-content.md` | kostja | |
+| `sms` | `references/channels/owned/sms.md` | ours `sms` | `sms` |
+| `affiliate-marketing` | `references/channels/partnerships/affiliate-marketing.md` | kostja +affiliate detail from ours `referrals` | |
+| `creator-program` | `references/channels/partnerships/creator-program.md` | kostja | |
+| `education-program` | `references/channels/partnerships/education-program.md` | kostja | |
+| `influencer-marketing` | `references/channels/partnerships/influencer-marketing.md` | both: kostja, ours `influencer-marketing` | `influencer-marketing` |
+| `public-relations` | `references/channels/partnerships/public-relations.md` | both: kostja, ours `public-relations` | `public-relations` |
+| `referral-program` | `references/channels/partnerships/referral-program.md` | both: kostja, ours `referrals` | `referrals` |
+| `co-marketing` | `references/channels/partnerships/co-marketing.md` | ours `co-marketing` | `co-marketing` |
+| `events` | `references/channels/events/events.md` | ours `events` | `events` |
+| `copywriting` | `references/content/copywriting.md` | both: kostja, ours `copywriting` | `copywriting` |
+| `copy-editing` | `references/content/copy-editing.md` | ours `copy-editing` | `copy-editing` |
+| `lead-magnets` | `references/content/lead-magnets.md` | ours `lead-magnets` | `lead-magnets` |
+| `article-content` | `references/content/article.md` | kostja | |
+| `podcast-marketing` | `references/content/podcast.md` | kostja | |
+| `translation` | `references/content/translation.md` | kostja | |
+| `video-marketing` | `references/content/video.md` | both: kostja, ours `video` | `video` |
+| `visual-content` | `references/content/visual-content.md` | both: kostja, ours `image` | `image` |
+| `ad-creative` | `references/paid-ads/ad-creative.md` | ours `ad-creative` | `ad-creative` |
+| `app-ads` | `references/paid-ads/formats/app-ads.md` | kostja | |
+| `ctv-ads` | `references/paid-ads/formats/ctv-ads.md` | kostja | |
+| `directory-listing-ads` | `references/paid-ads/formats/directory-listing-ads.md` | kostja | |
+| `display-ads` | `references/paid-ads/formats/display-ads.md` | kostja | |
+| `native-ads` | `references/paid-ads/formats/native-ads.md` | kostja | |
+| `google-ads` | `references/paid-ads/platforms/google-ads.md` | kostja +platform specifics from ours `ads` | |
+| `linkedin-ads` | `references/paid-ads/platforms/linkedin-ads.md` | kostja +platform specifics from ours `ads` | |
+| `meta-ads` | `references/paid-ads/platforms/meta-ads.md` | kostja +platform specifics from ours `ads` | |
+| `reddit-ads` | `references/paid-ads/platforms/reddit-ads.md` | kostja +platform specifics from ours `ads` | |
+| `tiktok-ads` | `references/paid-ads/platforms/tiktok-ads.md` | kostja +platform specifics from ours `ads` | |
+| `youtube-ads` | `references/paid-ads/platforms/youtube-ads.md` | kostja +platform specifics from ours `ads` | |
+| `social` | `references/platforms/social.md` | ours `social`; kostja `platforms/{linkedin,x,tiktok,reddit,pinterest,medium,youtube,github,grokipedia}` become its `references/` | `social` |
+| `revops` | `references/sales/revops.md` | ours `revops` | `revops` |
+| `sales-enablement` | `references/sales/sales-enablement.md` | ours `sales-enablement` | `sales-enablement` |
+| `prospecting` | `references/sales/prospecting.md` | ours `prospecting` | `prospecting` |
+| `cold-email` | `references/sales/cold-email.md` | ours `cold-email` | `cold-email` |
+| `competitor-research` | `references/seo/content/competitor-research.md` | both: kostja, ours `competitor-profiling` | `competitor-profiling` |
+| `comparison-pages` | `references/seo/content/comparison-pages.md` | ours `competitors` | `competitors` |
+| `content-optimization` | `references/seo/content/content-optimization.md` | kostja | |
+| `content-strategy` | `references/seo/content/content-strategy.md` | both: kostja, SEO parts of ours `content-strategy` | `content-strategy` |
+| `eeat-signals` | `references/seo/content/eeat-signals.md` | kostja | |
+| `keyword-research` | `references/seo/content/keyword-research.md` | kostja | |
+| `entity-seo` | `references/seo/entity-seo.md` | kostja | |
+| `local-seo` | `references/seo/local.md` | kostja | |
+| `backlink-analysis` | `references/seo/off-page/backlink-analysis.md` | kostja | |
+| `link-building` | `references/seo/off-page/link-building.md` | kostja | |
+| `meta-description` | `references/seo/on-page/description.md` | kostja | |
+| `featured-snippet` | `references/seo/on-page/featured-snippet.md` | kostja | |
+| `heading-structure` | `references/seo/on-page/heading.md` | kostja | |
+| `image-optimization` | `references/seo/on-page/image-optimization.md` | kostja +image optimisation from ours `image` | |
+| `internal-links` | `references/seo/on-page/internal-links.md` | kostja +internal-link detail from ours `site-architecture` | |
+| `page-metadata` | `references/seo/on-page/metadata.md` | kostja | |
+| `open-graph` | `references/seo/on-page/open-graph.md` | kostja | |
+| `schema-markup` | `references/seo/on-page/schema.md` | both: kostja, ours `schema` | `schema` |
+| `serp-features` | `references/seo/on-page/serp-features.md` | kostja | |
+| `title-tag` | `references/seo/on-page/title.md` | kostja | |
+| `twitter-cards` | `references/seo/on-page/twitter-cards.md` | kostja | |
+| `url-structure` | `references/seo/on-page/url-structure.md` | kostja +URL detail from ours `site-architecture` | |
+| `url-slug` | `references/seo/on-page/url-slug.md` | kostja `components/utility/url-slug` (`url-slug-generator`) | |
+| `video-optimization` | `references/seo/on-page/video-optimization.md` | kostja | |
+| `parasite-seo` | `references/seo/parasite-seo.md` | kostja | |
+| `programmatic-seo` | `references/seo/programmatic-seo.md` | both: kostja, ours `programmatic-seo` | `programmatic-seo` |
+| `canonical-tag` | `references/seo/technical/canonical.md` | kostja | |
+| `core-web-vitals` | `references/seo/technical/core-web-vitals.md` | kostja | |
+| `site-crawlability` | `references/seo/technical/crawlability.md` | kostja | |
+| `indexing` | `references/seo/technical/indexing.md` | kostja | |
+| `indexnow` | `references/seo/technical/indexnow.md` | kostja | |
+| `mobile-friendly` | `references/seo/technical/mobile-friendly.md` | kostja | |
+| `rendering-strategies` | `references/seo/technical/rendering-strategies.md` | kostja | |
+| `robots-txt` | `references/seo/technical/robots.md` | kostja | |
+| `xml-sitemap` | `references/seo/technical/sitemap.md` | kostja +sitemap detail from ours `site-architecture` | |
+| `brand-monitoring` | `references/strategies/brand/brand-monitoring.md` | kostja | |
+| `brand-protection` | `references/strategies/brand/brand-protection.md` | kostja | |
+| `branding` | `references/strategies/brand/branding.md` | kostja | |
+| `content-marketing` | `references/strategies/brand/content-marketing.md` | kostja +cross-channel parts of ours `content-strategy` | |
+| `integrated-marketing` | `references/strategies/brand/integrated-marketing.md` | kostja | |
+| `rebranding-strategy` | `references/strategies/brand/rebranding.md` | kostja | |
+| `brand-visual` | `references/strategies/brand/brand-visual.md` | kostja `components/branding/brand-visual` (`brand-visual-generator`) | |
+| `marketing-psychology` | `references/strategies/brand/marketing-psychology.md` | ours `marketing-psychology` | `marketing-psychology` |
+| `product-marketing` | `references/strategies/brand/product-marketing.md` | ours `product-marketing` | `product-marketing` |
+| `domain-architecture` | `references/strategies/commercial/domain/domain-architecture.md` | kostja | |
+| `domain-selection` | `references/strategies/commercial/domain/domain-selection.md` | kostja | |
+| `multi-domain-brand-seo` | `references/strategies/commercial/domain/multi-domain-brand-seo.md` | kostja | |
+| `generative-engine-optimization` | `references/strategies/commercial/geo.md` | both: kostja, ours `ai-seo` | `ai-seo` |
+| `localization-strategy` | `references/strategies/commercial/localization.md` | kostja | |
+| `open-source-strategy` | `references/strategies/commercial/open-source.md` | kostja | |
+| `paid-ads-strategy` | `references/strategies/commercial/paid-ads.md` | both: kostja, ours `ads` | `ads` |
+| `free-tools` | `references/strategies/commercial/free-tools.md` | ours `free-tools` | `free-tools` |
+| `pricing-strategy` | `references/strategies/commercial/pricing/pricing-strategy.md` | both: kostja, ours `pricing` | `pricing` |
+| `discount-marketing-strategy` | `references/strategies/commercial/pricing/discount-marketing.md` | kostja | |
+| `offers` | `references/strategies/commercial/pricing/offers.md` | ours `offers` | `offers` |
+| `conversion-optimization` | `references/strategies/conversion/conversion-optimization.md` | both: kostja `strategies/launch/conversion`, ours `cro` | `cro` |
+| `signup` | `references/strategies/conversion/signup.md` | ours `signup` | `signup` |
+| `onboarding` | `references/strategies/conversion/onboarding.md` | ours `onboarding` | `onboarding` |
+| `popups` | `references/strategies/conversion/popups.md` | ours `popups` | `popups` |
+| `paywalls` | `references/strategies/conversion/paywalls.md` | ours `paywalls` | `paywalls` |
+| `gtm-strategy` | `references/strategies/launch/gtm.md` | both: kostja, ours `marketing-plan` | `marketing-plan` |
+| `product-launch` | `references/strategies/launch/product-launch.md` | both: kostja, ours `launch` | `launch` |
+| `retention-strategy` | `references/strategies/launch/retention.md` | both: kostja, ours `churn-prevention` | `churn-prevention` |
+| `customer-research` | `references/strategies/launch/customer-research.md` | ours `customer-research` | `customer-research` |
+| `marketing-ideas` | `references/strategies/launch/marketing-ideas.md` | ours `marketing-ideas` | `marketing-ideas` |
+| `cold-start-strategy` | `references/strategies/launch/cold-start.md` | kostja | |
+| `growth-funnel` | `references/strategies/launch/growth-funnel.md` | kostja | |
+| `indie-hacker-strategy` | `references/strategies/launch/indie-hacker.md` | kostja | |
+| `pmf-strategy` | `references/strategies/launch/pmf.md` | kostja | |
+| `research-sources` | `references/strategies/launch/research-sources.md` | kostja | |
+| `marketing-council` | `references/strategies/operations/marketing-council.md` | ours `marketing-council` | `marketing-council` |
+| `marketing-loops` | `references/strategies/operations/marketing-loops.md` | ours `marketing-loops` | `marketing-loops` |
+| `seo-strategy` | `references/strategies/structure/seo.md` | kostja | |
+| `seo-audit` | `references/strategies/structure/seo-audit.md` | both: kostja, ours `seo-audit` | `seo-audit` |
+| `website-structure` | `references/strategies/structure/website-structure.md` | both: kostja, ours `site-architecture` | `site-architecture` |
 
 ## Dev
 

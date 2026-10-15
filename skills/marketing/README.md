@@ -31,21 +31,21 @@ Most guides read `docs/marketing/product-marketing.md` in your project for posit
 |---|---|
 | [`SKILL.md`](SKILL.md) | The router: loads the product context, picks a guide and follows it. Its tables list every guide with a "Use when" line. |
 | [`references/name-table.md`](references/name-table.md) | Every guide's name and path, where its content came from (kostja94/marketing-skills, this repo, or both), and the old names that alias to it. |
-| `<category>/[<group>/]<name>/GUIDE.md` | One guide. Its own `references/` and `assets/` folders sit beside it. |
+| `references/<category>/[<group>/]<name>.md` | One guide. Supporting `references/` and `assets/` folders sit beside it, shared by the guides in the same folder. |
 | [`agents/openai.yaml`](agents/openai.yaml) | Display metadata for OpenAI and Codex agents. |
 
-The top-level category folders are:
+The category folders, all under `references/`, are:
 
 | Folder | Covers |
 |---|---|
-| `analytics/` | Tracking, attribution, A/B tests, traffic sources, SEO monitoring |
-| `channels/` | Communities, directories, app stores, events, email, SMS, partnerships, PR, referrals |
-| `content/` | Copywriting, copy editing, articles, lead magnets, podcasts, video, images, translation |
-| `paid-ads/` | Ad creative, ad formats, and Google, Meta, LinkedIn, Reddit, TikTok and YouTube ads |
-| `platforms/` | Organic social |
-| `sales/` | Cold email, prospecting, RevOps, sales enablement |
-| `seo/` | Keyword and competitor research, content strategy, on-page, technical, off-page, local, entity, parasite and programmatic SEO |
-| `strategies/` | Brand, pricing and offers, domains, GEO, localisation, free tools, open source, paid ads strategy, conversion, launch and growth, marketing operations, site structure |
+| `references/analytics/` | Tracking, attribution, A/B tests, traffic sources, SEO monitoring |
+| `references/channels/` | Communities, directories, app stores, events, email, SMS, partnerships, PR, referrals |
+| `references/content/` | Copywriting, copy editing, articles, lead magnets, podcasts, video, images, translation |
+| `references/paid-ads/` | Ad creative, ad formats, and Google, Meta, LinkedIn, Reddit, TikTok and YouTube ads |
+| `references/platforms/` | Organic social |
+| `references/sales/` | Cold email, prospecting, RevOps, sales enablement |
+| `references/seo/` | Keyword and competitor research, content strategy, on-page, technical, off-page, local, entity, parasite and programmatic SEO |
+| `references/strategies/` | Brand, pricing and offers, domains, GEO, localisation, free tools, open source, paid ads strategy, conversion, launch and growth, marketing operations, site structure |
 
 ## Hand-offs
 

@@ -19,7 +19,7 @@ skills/git/
     create-pr.md finalise.md code-review.md review-prs.md resolving-merge-conflicts.md
 ```
 
-A guide with its own supporting files (`references/`, `assets/`) keeps a folder instead, `references/<guide>/GUIDE.md`, so relative links still resolve.
+A guide with supporting files (`references/`, `assets/`) keeps them in a `references/` or `assets/` folder beside it, shared with the other guides in that folder, so relative links still resolve.
 
 ## How `git` was built
 
@@ -27,7 +27,7 @@ A guide with its own supporting files (`references/`, `assets/`) keeps a folder 
 2. **Router `SKILL.md` stays thin:** steps, a `Guide | Use when` table linking each guide, and a short "How they nest" note. No guide content.
 3. **Steps:** argument names a guide, use it; otherwise match the "Use when" row, asking once on a tie; then read the guide and follow it as if it were the skill.
 4. **Description** names the task types and lists the guide names, so the model triggers on any of them.
-5. **Cross-references rewritten.** Guides that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`ask-matt`, `implement-spec`, `tdd`) became `/git <guide>`.
+5. **Cross-references rewritten.** Guides that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`ask-matt`, `implement-ticket`, `tdd`) became `/git <guide>`.
 6. **Agents metadata.** The router has `agents/openai.yaml` with `allow_implicit_invocation: true`. Guides carry no yaml: they aren't skills, so nothing reads it.
 7. **Indexes.** The five former skills were removed from `SKILLS.md` and `skills.html`, and one `git` row added.
 8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`. Guides adapted from upstream also carry `based_on_repo`, `based_on_version` and `based_on_skill`.
@@ -39,7 +39,7 @@ A tree of guides with no router yet (`skills/dev/references`) has no `SKILL.md` 
 ## Checklist
 
 - [ ] Every member is model-invocable
-- [ ] Members moved to `references/<guide>.md` (or `references/<guide>/GUIDE.md` when they have supporting files), own references intact
+- [ ] Members moved to `references/<guide>.md` (supporting files in a `references/` folder beside it), own references intact
 - [ ] No leftover Skill tool calls or `/<old-name>` mentions (`grep` the repo)
 - [ ] Router table links resolve
 - [ ] `agents/openai.yaml` on the router

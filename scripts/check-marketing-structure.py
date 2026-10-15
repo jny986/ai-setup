@@ -41,6 +41,11 @@ def rows(lines):
             yield [SPAN.findall(cell) for cell in line.strip().strip("|").split("|")]
 
 
+def guide_file(path):
+    """Router paths point straight at the guide file."""
+    return SKILL / path
+
+
 # Router table rows: | `name` | `path` | use when |.
 router = {}
 for line in (SKILL / "SKILL.md").read_text().splitlines():
@@ -56,10 +61,14 @@ for cells in rows((SKILL / "SKILL.md").read_text().splitlines()):
     if name in router:
         errors.append(f"router: duplicate name {name}")
     router[name] = path
-    if not (SKILL / path / "GUIDE.md").is_file():
-        errors.append(f"router: {name} -> {path}/GUIDE.md missing")
+    if not guide_file(path).is_file():
+        errors.append(f"router: {name} -> {guide_file(path).relative_to(SKILL)} missing")
 
-guides = sorted(p.parent.relative_to(SKILL).as_posix() for p in SKILL.rglob("GUIDE.md"))
+# Guide files: every .md under references/<category>/ outside a nested references/ or assets/ folder.
+guides = sorted(
+    p.relative_to(SKILL).as_posix() for p in (SKILL / "references").rglob("*.md")
+    if p.name != "name-table.md" and not {"references", "assets"} & set(p.relative_to(SKILL / "references").parts[:-1])
+)
 
 # Name table: Marketing rows are name | path | source | aliases; Dev rows are name | path | source.
 sections, current = {}, None
@@ -88,14 +97,14 @@ for section, lines in sections.items():
         marketing_names = names
 
 for g in sorted(set(guides) - set(router.values())):
-    errors.append(f"router: guide {g}/GUIDE.md not listed")
+    errors.append(f"router: guide {g} not listed")
 for name in sorted(set(marketing_names) - set(router)):
     errors.append(f"router: final name {name} not listed")
 for old in OLD_NAMES:
     if old not in aliases:
         errors.append(f"name table: old name {old} has no alias")
 for d in sorted(p for p in SKILL.iterdir() if p.is_dir() and p.name != "references"):
-    if (d / "GUIDE.md").is_file() or (d / "references").is_dir() or (d / "assets").is_dir():
+    if (d / "references").is_dir() or (d / "assets").is_dir():
         errors.append(f"flat guide folder left: {d.name}")
 
 for alias, target in aliases.items():
@@ -105,18 +114,19 @@ for name, path in router.items():
     if marketing_names.get(name) != path:
         errors.append(f"router: {name} -> {path} disagrees with name table")
 for g in guides:
-    if "/" not in g:
-        errors.append(f"flat guide {g}/GUIDE.md")
+    if g.count("/") < 2:
+        errors.append(f"flat guide {g}")
 
 # Guide bodies.
 for g in guides:
-    text = (SKILL / g / "GUIDE.md").read_text()
+    gf = guide_file(g)
+    text = gf.read_text()
     for m in LINK.finditer(text):
         target = m.group(1) or m.group(2)
         # Placeholder paths like references/<name>.md are prose, not links.
-        if not re.search(r"[<>*…{}]", target) and not (SKILL / g / target).exists():
-            errors.append(f"{g}/GUIDE.md: broken link {target}")
-    check_banned(f"{g}/GUIDE.md", text)
+        if not re.search(r"[<>*…{}]", target) and not (gf.parent / target).exists():
+            errors.append(f"{g}: broken link {target}")
+    check_banned(g, text)
 
 # Every relative markdown link anywhere in marketing must resolve (placeholders and URLs are prose).
 for md in sorted(SKILL.rglob("*.md")):
