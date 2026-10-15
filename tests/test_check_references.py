@@ -30,7 +30,7 @@ def test_unknown_named_skill(repo):
 
 
 def test_marketing_guide_names_resolve(repo):
-    write(repo, "skills/marketing/references/name-table.md", "| `video` | `content/video` | ours | |\n")
+    write(repo, "skills/marketing/sub-skills/name-table.md", "| `video` | `content/video` | ours | |\n")
     write(repo, "skills/alpha/notes.md", "Use the `video` skill.\n")
     assert check(repo).errors == []
 

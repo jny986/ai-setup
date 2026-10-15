@@ -25,8 +25,8 @@ npx skills update
 ```
 .
 ├── skills/            # My skills — one folder per skill, each with a SKILL.md
-│   ├── marketing/     # Router skill: nested guides by category under references/, plus references/name-table.md
-│   └── dev/           # Page and component build references (no SKILL.md), reached from marketing hand-offs
+│   ├── marketing/     # Router skill: nested sub-skills by category under sub-skills/, plus sub-skills/name-table.md
+│   └── dev/           # Page and component build guides (no SKILL.md), reached from marketing hand-offs
 ├── SKILLS.md          # Index of my skills
 ├── skills.html        # The same index, grouped by upstream source
 ├── CONTEXT.md         # Glossary of this repo's terms
@@ -62,11 +62,11 @@ metadata:
 
 #### Marketing router and dev references
 
-`skills/marketing/SKILL.md` is one router over every marketing guide. Guides are nested as `references/<category>/[<group>/]<name>.md`, and [`references/name-table.md`](skills/marketing/references/name-table.md) maps each final name to its path, source and the old flat names that alias to it. Run `/marketing <guide>` with a final name or an old one.
+`skills/marketing/SKILL.md` is one router over every marketing sub-skill. Sub-skills are nested as `sub-skills/<category>/[<group>/]<name>.md`, and [`sub-skills/name-table.md`](skills/marketing/sub-skills/name-table.md) maps each final name to its path, source and the old flat names that alias to it. Run `/marketing <sub-skill>` with a final name or an old one.
 
-`skills/dev/references/` holds the page and component build guides (`pages/`, `components/`). It is not a skill: marketing guides hand off to it by path, for example `dev/references/pages/marketing/pricing`. Marketing is based on [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina) and [kostja94/bricks](https://github.com/kostja94/bricks) (all MIT).
+`skills/dev/references/` holds the page and component build guides (`pages/`, `components/`). It is not a skill: marketing sub-skills hand off to it by path, for example `dev/references/pages/marketing/pricing`. Marketing is based on [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina) and [kostja94/bricks](https://github.com/kostja94/bricks) (all MIT).
 
-Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat guides, unlisted guides, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint. After adding, moving or renaming a marketing guide, run `python3 scripts/build-marketing-index.py` to rebuild `skills.html` from the `SKILLS.md` table and refresh the guide tree in `SKILLS.md`.
+Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat sub-skills, unlisted sub-skills, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint. After adding, moving or renaming a marketing sub-skill, run `python3 scripts/build-marketing-index.py` to rebuild `skills.html` from the `SKILLS.md` table and refresh the sub-skill tree in `SKILLS.md`.
 
 ### `original-skills/`
 

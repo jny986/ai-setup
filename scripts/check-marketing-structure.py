@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Check that the marketing router, its guides and the name table resolve.
+"""Check that the marketing router, its sub-skills and the name table resolve.
 
-Strict: no flat guides, router rows are final names with nested paths, every old name aliases to a final name,
+Strict: no flat sub-skills, router rows are final names with nested paths, every old name aliases to a final name,
 and every `dev/references/...` hand-off in marketing resolves. Also checks the dev references against the name table.
 Exits 1 on any failure.
 """
@@ -13,7 +13,7 @@ SKILL = Path(__file__).resolve().parent.parent / "skills" / "marketing"
 SPAN = re.compile(r"`([^`]+)`")
 LINK = re.compile(r"\]\((?:\./)?((?:references|assets)/[^)\s#]*)|`(?:\./)?((?:references|assets)/[^`\s]*)`")
 
-# The 50 flat guide names before the restructure; each must alias to a final name.
+# The 50 flat sub-skill names before the restructure; each must alias to a final name.
 # ponytail: one-time migration list, drop it once upstream syncs no longer need the alias check.
 OLD_NAMES = """ab-testing ad-creative ads ai-seo analytics aso attribution churn-prevention co-marketing cold-email
 community-marketing competitor-profiling competitors content-strategy copy-editing copywriting cro customer-research
@@ -21,7 +21,7 @@ directory-submissions emails events free-tools image influencer-marketing launch
 marketing-ideas marketing-loops marketing-plan marketing-psychology offers onboarding paywalls popups pricing
 product-marketing programmatic-seo prospecting public-relations referrals revops sales-enablement schema seo-audit
 signup site-architecture sms social video""".split()
-BANNED = ("contextus", "When invoking")  # guides load the product marketing context and drop kostja's preamble
+BANNED = ("contextus", "When invoking")  # sub-skills load the product marketing context and drop kostja's preamble
 MD_LINK = re.compile(r"\]\(([^)\s#]+)")
 HANDOFF = re.compile(r"dev/references/[A-Za-z0-9_./-]*[A-Za-z0-9_]")
 
@@ -41,8 +41,8 @@ def rows(lines):
             yield [SPAN.findall(cell) for cell in line.strip().strip("|").split("|")]
 
 
-def guide_file(path):
-    """Router paths point straight at the guide file."""
+def sub_skill_file(path):
+    """Router paths point straight at the sub-skill file."""
     return SKILL / path
 
 
@@ -61,18 +61,18 @@ for cells in rows((SKILL / "SKILL.md").read_text().splitlines()):
     if name in router:
         errors.append(f"router: duplicate name {name}")
     router[name] = path
-    if not guide_file(path).is_file():
-        errors.append(f"router: {name} -> {guide_file(path).relative_to(SKILL)} missing")
+    if not sub_skill_file(path).is_file():
+        errors.append(f"router: {name} -> {sub_skill_file(path).relative_to(SKILL)} missing")
 
-# Guide files: every .md under references/<category>/ outside a nested references/ or assets/ folder.
-guides = sorted(
-    p.relative_to(SKILL).as_posix() for p in (SKILL / "references").rglob("*.md")
-    if p.name != "name-table.md" and not {"references", "assets"} & set(p.relative_to(SKILL / "references").parts[:-1])
+# Sub-skill files: every .md under sub-skills/<category>/ outside a nested references/ or assets/ folder.
+sub_skills = sorted(
+    p.relative_to(SKILL).as_posix() for p in (SKILL / "sub-skills").rglob("*.md")
+    if p.name != "name-table.md" and not {"references", "assets"} & set(p.relative_to(SKILL / "sub-skills").parts[:-1])
 )
 
 # Name table: Marketing rows are name | path | source | aliases; Dev rows are name | path | source.
 sections, current = {}, None
-for line in (SKILL / "references" / "name-table.md").read_text().splitlines():
+for line in (SKILL / "sub-skills" / "name-table.md").read_text().splitlines():
     if line.startswith("## "):
         current = sections.setdefault(line[3:].strip(), [])
     elif current is not None:
@@ -96,16 +96,16 @@ for section, lines in sections.items():
     if section == "Marketing":
         marketing_names = names
 
-for g in sorted(set(guides) - set(router.values())):
-    errors.append(f"router: guide {g} not listed")
+for g in sorted(set(sub_skills) - set(router.values())):
+    errors.append(f"router: sub-skill {g} not listed")
 for name in sorted(set(marketing_names) - set(router)):
     errors.append(f"router: final name {name} not listed")
 for old in OLD_NAMES:
     if old not in aliases:
         errors.append(f"name table: old name {old} has no alias")
-for d in sorted(p for p in SKILL.iterdir() if p.is_dir() and p.name != "references"):
+for d in sorted(p for p in SKILL.iterdir() if p.is_dir() and p.name != "sub-skills"):
     if (d / "references").is_dir() or (d / "assets").is_dir():
-        errors.append(f"flat guide folder left: {d.name}")
+        errors.append(f"flat sub-skill folder left: {d.name}")
 
 for alias, target in aliases.items():
     if alias in marketing_names and alias != target:
@@ -113,13 +113,13 @@ for alias, target in aliases.items():
 for name, path in router.items():
     if marketing_names.get(name) != path:
         errors.append(f"router: {name} -> {path} disagrees with name table")
-for g in guides:
+for g in sub_skills:
     if g.count("/") < 2:
-        errors.append(f"flat guide {g}")
+        errors.append(f"flat sub-skill {g}")
 
-# Guide bodies.
-for g in guides:
-    gf = guide_file(g)
+# Sub-skill bodies.
+for g in sub_skills:
+    gf = sub_skill_file(g)
     text = gf.read_text()
     for m in LINK.finditer(text):
         target = m.group(1) or m.group(2)
@@ -135,7 +135,7 @@ for md in sorted(SKILL.rglob("*.md")):
                 and not (md.parent / target).exists():
             errors.append(f"{md.relative_to(SKILL)}: broken link {target}")
 
-# Dev references: no router yet, so the name table's Dev section is the index.
+# Dev sub-skills: no router yet, so the name table's Dev section is the index.
 DEV = SKILL.parent / "dev"
 dev_paths = {cells[1][0] for cells in rows(sections.get("Dev", []))}
 dev_guides = {p.parent.relative_to(SKILL.parent).as_posix() for p in DEV.rglob("GUIDE.md")}
@@ -163,18 +163,18 @@ for md in sorted(SKILL.rglob("*.md")):
         if not ((path / "GUIDE.md").is_file() or path.is_file()):
             errors.append(f"{md.relative_to(SKILL)}: hand-off {target} does not resolve")
 
-# Prose cross-references must use final names: "<old> skill/guide" or a bolded "**<old>**" entry.
+# Prose cross-references must use final names: "<old> skill/guide/sub-skill" or a bolded "**<old>**" entry.
 stale = [o for o in OLD_NAMES if o not in marketing_names]
-STALE = re.compile(r"(?<![\w-])(?<!former )(?:%s)\s+(?:skill|guide)\b|\*\*(?:%s)\b(?:\s*/|\*\*)" % (("|".join(stale),) * 2))
+STALE = re.compile(r"(?<![\w-])(?<!former )(?:%s)\s+(?:skill|guide|sub-skill)\b|\*\*(?:%s)\b(?:\s*/|\*\*)" % (("|".join(stale),) * 2))
 for md in sorted(SKILL.rglob("*.md")):
     if md.name in ("name-table.md",) or md == SKILL / "SKILL.md":
         continue
     for m in STALE.finditer(md.read_text()):
-        errors.append(f"{md.relative_to(SKILL)}: old guide name in '{m.group(0)}'")
+        errors.append(f"{md.relative_to(SKILL)}: old sub-skill name in '{m.group(0)}'")
 
 for e in errors:
     print("FAIL", e)
-print(f"{len(guides)} guides, {len(router)} router rows, {len(marketing_names)} final names, {len(aliases)} aliases, "
-      f"{len(dev_guides)} dev guides, {handoffs} dev hand-offs: "
+print(f"{len(sub_skills)} sub-skills, {len(router)} router rows, {len(marketing_names)} final names, {len(aliases)} aliases, "
+      f"{len(dev_guides)} dev references, {handoffs} dev hand-offs: "
       + (f"{len(errors)} failure(s)" if errors else "ok"))
 sys.exit(1 if errors else 0)
