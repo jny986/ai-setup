@@ -9,7 +9,7 @@ How the engineering skills should consume this repo's domain documentation when 
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
 
-Ignore the submodules under `original-skills/` (`impeccable/`, `marketingskills/`, `matt-pocock-skills/`, `taste-skill/`; see `.gitmodules`). They're upstream repos, not part of this repo's domain: don't read their docs as this repo's context, and don't edit them. The index files beside them (`original-skills/SKILLS.md`, `original-skills/skills.html`) belong to this repo.
+Ignore the submodules under `source-skills/` (named `<owner>-<repo>/`; see `.gitmodules`). They're upstream repos, not part of this repo's domain: don't read their docs as this repo's context, and don't edit them. The index files beside them (`source-skills/SKILLS.md`, `source-skills/skills.html`) belong to this repo.
 
 ## File structure
 
@@ -20,7 +20,7 @@ Ignore the submodules under `original-skills/` (`impeccable/`, `marketingskills/
 │   ├── 0001-example-decision.md
 │   └── 0002-another-decision.md
 ├── skills/                            ← this repo's skills
-└── original-skills/
+└── source-skills/
     ├── <submodule>/                   ← upstream, ignore
     ├── SKILLS.md
     └── skills.html

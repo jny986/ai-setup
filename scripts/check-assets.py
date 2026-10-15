@@ -12,7 +12,7 @@ from pathlib import Path
 
 from skilllib import Report, run
 
-SKIP = {"original-skills", ".git", "node_modules"}
+SKIP = {"source-skills", ".git", "node_modules"}
 
 
 def strip_jsonc(text):
