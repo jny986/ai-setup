@@ -11,7 +11,7 @@ metadata:
   based_on_skill: code-review
 ---
 
-Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
+Two-axis review of the diff between `HEAD` and a fixed point, defaulted when the user supplies none:
 
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
@@ -24,9 +24,14 @@ The issue tracker should have been provided to you. If `docs/agents/issue-tracke
 
 ## Process
 
-### 1. Pin the fixed point
+### 1. Determine what to review
 
-Whatever the user said is the fixed point (a commit SHA, branch name, PR target branch, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, use the open PR's target branch (`gh pr view --json baseRefName -q .baseRefName`, then compare against `origin/<base>`). Ask only if there's no PR.
+**Target.** Name what's under review:
+
+- **A branch or PR** the user named: check it out and bring it up to date with its remote (`gh pr checkout <n>` for a PR, otherwise `git checkout <branch>`; then `git fetch` and `git pull --ff-only`). Review is of the *current* branch at its latest commit. Stop and tell the user if the tree is dirty or the pull can't fast-forward.
+- **Nothing named**: review the local branch as it stands, with no checkout or pull.
+
+**Fixed point.** Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, default to the target branch of the PR (`gh pr view --json baseRefName -q .baseRefName`, then compare against `origin/<base>`). With no PR, default to the branch the review target was cut from, else the repo's default branch. Ask only if none of these resolves.
 
 Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
 
