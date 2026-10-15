@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Russell Brunson (b. 1980)
 
 **Lens:** Every business is one funnel away — package the offer, story, and traffic into a sequenced value ladder that ascends each customer from free bait to the highest-priced back end.

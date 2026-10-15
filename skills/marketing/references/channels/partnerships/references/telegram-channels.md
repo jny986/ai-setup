@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: influencer-marketing
+---
+
 # Telegram Channel Ads
 
 Buying a post in a Telegram channel is influencer marketing with a different measurement model. There is no likes-based engagement rate, no ranking feed, and the slot is usually sold by the channel's admin rather than by a creator persona. Use this reference when the user wants to advertise in Telegram channels, vet a channel before paying, or price a post.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: programmatic-seo
+---
+
 # Implementation Platforms for Pages at Scale
 
 Where programmatic pages get built and how the data reaches them. Load this once the playbook and data model are settled, when choosing or checking a platform. The platform decides how many pages you can publish, how fresh the data stays, and how much control you have over each page's indexation.

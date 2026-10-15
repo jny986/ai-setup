@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: video
+---
+
 # AI Video Prompting Guide
 
 How to write effective prompts for AI video generation models (Veo, Runway, Kling, Pika).

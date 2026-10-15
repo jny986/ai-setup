@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: emails
+---
+
 # Email Copy Guidelines
 
 Structure, formatting, tone, length and CTA rules live in the guide (`GUIDE.md` → Email Copy Guidelines). This file covers the rest.

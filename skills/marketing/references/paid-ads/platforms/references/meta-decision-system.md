@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ads
+---
+
 # Meta Decision System (B2B)
 
 A quantified kill/keep/scale engine for Meta ads. Every threshold derives from one anchor number, so decisions become arithmetic instead of vibes. Pairs with the strategy-level [Meta Andromeda playbook](meta-andromeda-playbook.md) (creative-as-targeting, creative volume) — this file is the *operating* layer.

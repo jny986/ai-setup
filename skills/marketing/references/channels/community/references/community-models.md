@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: community-marketing
+---
+
 # Community Models & Scaling Phases
 
 The named model taxonomy, the flagship benchmark, and how the community-owner role changes as the community grows. Pair this with the goal playbooks and health metrics in [../GUIDE.md](../community-building.md) — this file adds the *shape* of the community, not the tactics.

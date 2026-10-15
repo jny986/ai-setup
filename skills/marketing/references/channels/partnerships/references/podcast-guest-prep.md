@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: public-relations
+---
+
 # Podcast Guest Prep
 
 Build a prep brief before the user appears on a podcast as a guest. The goal: walk in knowing what's top of mind for the show, how it has evolved, who the hosts are, and which of the user's stories map onto what the show cares about *right now*.

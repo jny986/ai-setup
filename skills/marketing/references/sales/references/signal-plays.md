@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: prospecting
+---
+
 # Signal Plays
 
 A list tells you who could buy. A signal tells you who might buy now. This reference turns signals into outbound plays: which signals to trust, how fresh they need to be, what to do when one fires, and how much effort each account deserves.

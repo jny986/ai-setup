@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: events
+---
+
 # Speaking — Get Booked, Design the Talk, Compound the Recording
 
 Speaking is the highest-leverage event role per dollar: stage time confers borrowed authority no booth can buy, and the recording compounds for years — including in AI answers. Treat it as three separate jobs: getting booked, designing a talk that lands, and harvesting the asset.

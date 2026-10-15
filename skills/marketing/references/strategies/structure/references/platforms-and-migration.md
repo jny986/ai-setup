@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: site-architecture
+---
+
 # Platforms and Migration
 
 Where the site gets built, how new pages join an existing site, and how to move platforms without losing search traffic. Load this when the user asks which builder or CMS to use, wants to add a section or landing pages to an existing site, or is planning a migration.

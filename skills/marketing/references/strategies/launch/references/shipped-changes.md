@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: launch
+---
+
 # From Shipped Code to Marketing
 
 Most product updates never get marketed because nobody translates them. The engineers wrote the PR description for each other, and by the time marketing hears about it, the moment has passed. An agent with access to the repo can close that gap every week: read what shipped, decide what's worth telling, and draft it in customer language.

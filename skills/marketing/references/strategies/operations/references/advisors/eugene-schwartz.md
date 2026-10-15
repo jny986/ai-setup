@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Eugene Schwartz (1927–1995)
 
 **Lens:** Copy cannot create desire — it can only channel the mass desire already existing in millions of hearts onto a particular product. The market, not the writer, writes the ad.

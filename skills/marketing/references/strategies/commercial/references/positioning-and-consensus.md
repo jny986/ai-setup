@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ai-seo
+---
+
 # Positioning and Consensus in AI Answers
 
 LLMs don't just retrieve pages. They hold an association between your brand and a category, a segment, and a set of strengths and weaknesses, built from everything written about you. This reference covers how to shape that association, and why it moves slowly.

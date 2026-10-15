@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: pinterest
+---
+
 # Platforms: Pinterest
 
 Guides Pinterest Pin creation and optimization. Pinterest users search differently than Google; long-tail keywords like "easy fall dinner recipes" perform better than broad terms. Use this skill when creating Pins, optimizing boards, or planning Pinterest content.

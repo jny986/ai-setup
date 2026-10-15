@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-ideas
+---
+
 # Guerrilla Marketing (#121)
 
 Unconventional stunts that earn attention in unexpected places — then get turned into repeatable strategy. The point isn't the one-off spectacle. It's finding a memorable, low-cost way to break through, proving it works small, and running it again.

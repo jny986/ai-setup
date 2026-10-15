@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: seo-audit
+---
+
 # Title Tags
 
 How to write and audit titles for both rankings and clicks. The title is the strongest on-page relevance signal you control and the first thing a searcher reads, so it has two jobs. It has to match the query, and it has to win the click against nine other results.

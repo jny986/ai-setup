@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: copy-editing
+---
+
 # Copy Editing Checklist
 
 Use this checklist alongside the Seven Sweeps Framework (see GUIDE.md) as a final QA pass before delivering edited copy.

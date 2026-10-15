@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: offers
+---
+
 # Offer Formats by Business Type
 
 The right offer format depends on what you sell. The same six components (core, bonuses, guarantee, scarcity, name, price) get assembled differently by business type.

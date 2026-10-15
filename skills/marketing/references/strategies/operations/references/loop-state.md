@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-loops
+---
+
 # Loop State & Run Logging
 
 Idempotency is only real if the loop can remember what it already did between runs. This reference defines where that state lives and how to log runs — so loops don't double-act, re-nag the same people, or re-alert the same issue.

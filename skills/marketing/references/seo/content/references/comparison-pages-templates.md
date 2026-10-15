@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: competitors
+---
+
 # Section Templates for Competitor Pages
 
 Ready-to-use templates for each section of competitor comparison pages.

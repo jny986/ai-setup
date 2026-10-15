@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: referrals
+---
+
 # Review Programs
 
 Use this reference when the user wants more customer reviews, a review-request program, help responding to a review, reputation triage, or permission to reuse testimonials. Reviews are customer advocacy, so they live alongside referral and affiliate programs.

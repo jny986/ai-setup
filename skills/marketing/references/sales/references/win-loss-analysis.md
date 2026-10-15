@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: sales-enablement
+---
+
 # Win-Loss Analysis
 
 How to turn deal outcomes into evidence about why you win and lose, and against whom.

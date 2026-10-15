@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: grokipedia
+---
+
 # Platforms: Grokipedia
 
 Guides adding recommendations, links, or content to Grokipedia. Grokipedia is a high-authority platform for parasite SEO and GEO (AI citation visibility). See **parasite-seo** for parasite SEO strategy. Grokipedia is xAI's AI-generated encyclopedia; ChatGPT, Perplexity, and other AI tools cite it.

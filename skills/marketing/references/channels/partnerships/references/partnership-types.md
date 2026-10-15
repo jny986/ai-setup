@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: co-marketing
+---
+
 # Partnership Types
 
 Adapted from Corey Haines's *Founding Marketing*, Ch. 11 — "Partnerships tap into existing audiences." The fastest way to reach customers is through companies that already have their attention.

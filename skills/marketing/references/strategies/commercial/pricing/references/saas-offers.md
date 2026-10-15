@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: offers
+---
+
 # SaaS Offers — the discount trap + worked examples
 
 The rest of the offers library skews services, courses, and coaching. This reference covers the SaaS case specifically: why discounting is the wrong acquisition lever, and four worked offers that stack risk-reversal, bonuses, and scarcity for a software business.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Rory Sutherland
 
 **Lens:** Most marketing problems are perception problems, not reality problems — humans run on "psycho-logic," not economic logic, so the highest-leverage move changes how something is framed, felt, or signaled rather than what it objectively is.

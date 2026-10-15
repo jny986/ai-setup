@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: events
+---
+
 # Sponsorship & Exhibiting — Evaluate, Negotiate, Work the Floor, Follow Up
 
 Sponsorships are the most expensive way to do event marketing and the easiest to waste. The discipline: treat every sponsorship as a paid-acquisition channel with a cost-per-qualified-meeting, and make it beat your alternatives or don't buy it.

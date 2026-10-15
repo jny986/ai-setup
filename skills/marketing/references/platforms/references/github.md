@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: github
+---
+
 # Platforms: GitHub
 
 Guides GitHub for parasite SEO, GEO (AI citation), and curated list creation. GitHub is a Tier 2 Technical Authority platform—high domain authority, fast indexing, very high AI citation probability. Use for repos, README, GitHub Pages, gists, and Awesome-style navigation lists.

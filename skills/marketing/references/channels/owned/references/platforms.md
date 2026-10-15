@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: sms
+---
+
 # SMS Platform Reference
 
 Deep-dive on the major SMS marketing platforms — features, pricing, A2P 10DLC support, and integration paths.

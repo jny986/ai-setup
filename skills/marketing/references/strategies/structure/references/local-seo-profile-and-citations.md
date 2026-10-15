@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: seo-audit
+---
+
 # Profiles and Citations
 
 Use this for profile eligibility, field changes, and name/address/phone cleanup. Verify facts with the owner and the current [business representation guidelines](https://support.google.com/business/answer/3038177).

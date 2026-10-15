@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Alex Hormozi
 
 **Lens:** Marketing problems are math problems — value delivered vs. friction imposed, inputs vs. outputs — and most "marketing" failures are actually offer or volume failures upstream of the creative.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: influencer-marketing
+---
+
 # Volume UGC Creator Programs ("Tech UGC")
 
 A scaled version of the paid-influencer model where **content volume, not any creator's audience, is the asset**: an in-house network of creators posting native short-form from dedicated brand-affiliated accounts, at test volume. 10 creators posting 3×/day ≈ 900 organic tests in a 30-day campaign — against ~30 for a brand account posting daily. The economics claim from the program this is distilled from: ~$3.87 CPM vs ~$20 for Meta ads and ~$119 for micro-influencer placements (**vendor-supplied internal numbers — directional, not a benchmark**).

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: content-strategy
+---
+
 # Content Distribution Spine
 
 The "distribute" half of content strategy. Creating a great piece is table stakes; the leverage is in getting it seen. This reference expands the **Create Once, Distribute Twice** section of the [guide](../content-marketing.md).

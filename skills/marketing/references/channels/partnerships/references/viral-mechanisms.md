@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: referrals
+---
+
 # Viral Mechanisms
 
 Virality can be **engineered through product design**, not just bought with reward programs. But don't force it — decide *whether* virality fits your product before building anything.

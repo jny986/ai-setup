@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Ann Handley
 
 **Lens:** Every marketing problem is at bottom a writing-and-empathy problem — the brand that sounds the most human, to one specific reader, wins.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: offers
+---
+
 # Guarantee Design
 
 A guarantee directly raises *perceived likelihood of achievement* (the buyer thinks: "they'll only offer this if they're confident") and lowers *effort & sacrifice* (less emotional risk). It's one of the highest-leverage levers in offer design.

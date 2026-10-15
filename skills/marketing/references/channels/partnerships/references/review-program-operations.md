@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: referrals
+---
+
 # Review Program Operations
 
 Use for a repeatable invitation or reputation-triage program. Start with the smallest useful cohort and the user's existing tools; avoid building a sending system for a one-off request.

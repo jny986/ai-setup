@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: referrals
+---
+
 # Review Platform Rules
 
 Read this reference for incentives, invitation cohorts, moderation, or reuse of platform assets. Policies can change; confirm the selected platform's current official rules before execution. A platform's permission is not a guarantee that local law, reviewer-employer rules, or the user's contract permits the same action.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: seo-monitoring
+---
+
 # Analytics: SEO Monitoring
 
 Guides building a holistic SEO data analysis system. Covers four core metrics (indexing, traffic, keywords, backlinks), benchmark setup, article database, tool selection, traffic diversification, penalty recovery, and work document management.

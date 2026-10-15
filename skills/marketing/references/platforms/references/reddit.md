@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: reddit
+---
+
 # Platforms: Reddit
 
 Guides Reddit post and comment creation. Use for generating publish-ready posts that follow subreddit norms. Suitable for copy agents. Design agents can use for image post context.

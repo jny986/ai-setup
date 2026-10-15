@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: video
+---
+
 # Reverse-Engineering an Edit (The Beat Sheet)
 
 A viral short-form video usually isn't winning on the footage — it's winning on the *edit*: the cut rhythm, the caption style, the punch-ins, the on-screen text landing on the exact word, the b-roll cutaways, the sound design. This reference turns a reference edit you admire into a **reusable edit spec** — a beat sheet you (or an editing tool) can execute against your own footage — without copying a single frame of theirs.

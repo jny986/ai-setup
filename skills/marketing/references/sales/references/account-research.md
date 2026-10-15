@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: prospecting
+---
+
 # Account Research for Outreach
 
 Research before outreach has one job: find a true, specific reason this account should care right now, and the person who owns that problem. Dossiers on companies you compete with belong to the competitor-research guide.

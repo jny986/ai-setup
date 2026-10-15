@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ad-creative
+---
+
 # The Hook System
 
 The first three seconds decide whether the rest of the ad exists. Hooks are the highest-leverage unit of paid creative work — and hook *diversity* is what earns incremental learning: distinct hooks reach distinct pockets of the audience, while near-identical openings mostly re-test what you already know about the same one. This reference is a complete system for generating, diagnosing, and iterating hooks — not a list of one-liners.

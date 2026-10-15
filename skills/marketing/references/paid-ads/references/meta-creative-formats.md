@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ad-creative
+---
+
 # Meta Creative Format Taxonomy — Which Format to Make Next
 
 A prioritized S→F catalog of ~51 Meta ad creative formats, built as a **decision aid for "which format do I make next,"** not an encyclopedia. Use it to pick a format before you brief it, and to stop pouring hours into formats that structurally can't do the job you need.

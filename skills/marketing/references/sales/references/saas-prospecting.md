@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: prospecting
+---
+
 # SaaS Prospecting Reference
 
 For when the user sells SaaS or digital services to other SaaS companies / digital businesses.

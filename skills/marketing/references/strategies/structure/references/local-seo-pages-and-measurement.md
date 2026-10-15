@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: seo-audit
+---
+
 # Location Pages and Measurement
 
 Use this when the request includes local pages, schema, or performance reporting.

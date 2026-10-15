@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Gary Halbert (1938–2007)
 
 **Lens:** Markets beat copy — find a "starving crowd" whose demonstrated buying behavior proves hunger, then reach them with a message that feels personal and impossible to ignore.

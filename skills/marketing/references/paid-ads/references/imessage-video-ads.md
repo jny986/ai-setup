@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ad-creative
+---
+
 # iOS-Native Reveal Video Ads (iMessage, ChatGPT, Apple Notes, AirDrop)
 
 A family of 9:16 social-native video formats that recreate a familiar iOS surface in real time and let the brand emerge inside it. The flagship is the **iMessage chat reveal** — someone sends a screenshot of a result or product, a friend reacts and asks what it is, and the conversation reveals the brand, usually with a promo code. Message bubbles pop in over ~15–22 seconds with authentic send/receive sounds, then a static brand end card lands the CTA. The same architecture powers **ChatGPT reveals**, **Apple Notes reveals**, and **AirDrop reveals** — covered in [Other iOS-Native Reveal Surfaces](#other-ios-native-reveal-surfaces) below.

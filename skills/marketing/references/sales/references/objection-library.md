@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: sales-enablement
+---
+
 # Objection Library
 
 Common B2B SaaS objections with response frameworks. Organized by category for quick reference.

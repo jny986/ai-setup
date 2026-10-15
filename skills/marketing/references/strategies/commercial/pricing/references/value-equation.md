@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: offers
+---
+
 # The Value Equation
 
 The single most useful frame for offer design. Originated in Alex Hormozi's *$100M Offers*; the underlying idea (multiply benefits, divide costs) is much older — direct-response copywriters have been doing it for a century.

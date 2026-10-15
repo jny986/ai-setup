@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-loops
+---
+
 # The Outbound Operator
 
 A recipe for handing an agent day-to-day outbound for one business: finding accounts as signals fire, staging outreach, triaging replies, protecting sending infrastructure, and reporting what works. Like the SEO operator, it bundles catalog loops under one shared memory and one set of rules.

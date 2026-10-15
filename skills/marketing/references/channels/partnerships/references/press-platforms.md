@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: public-relations
+---
+
 # Press Request Platforms — Inbound PR
 
 Journalists posting "I need a source for X" — you respond, sometimes you get quoted, sometimes you don't. The cheapest PR play available, but only if you treat it seriously.

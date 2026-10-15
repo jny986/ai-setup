@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: churn-prevention
+---
+
 # Dunning Playbook
 
 Complete guide to recovering failed payments and reducing involuntary churn.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: events
+---
+
 # The Webinar Funnel — Registration → Show-Up → Live-to-Close → Nurture
 
 The webinar is the flagship hosted format because it's the whole event arc in miniature, repeatable monthly, and every stage is measurable. Work the four stages in order — each stage's conversion rate is a separate lever with separate fixes.

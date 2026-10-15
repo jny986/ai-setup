@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_skill: tiktok, social
+---
+
 # Platforms: TikTok
 
 Guides TikTok caption and video script creation. Use for generating publish-ready captions and video specs. Suitable for copy agents, video agents (format, length), and design agents (thumbnail).

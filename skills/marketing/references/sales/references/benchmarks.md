@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: cold-email
+---
+
 # Benchmarks, Data & Expert Methods
 
 ## Core Performance Metrics

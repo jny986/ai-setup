@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: onboarding
+---
+
 # Activation Models
 
 The activation model is *how* you let a user experience value before they pay. It shapes signup volume, conversion, and the entire onboarding path. Pick the model before you design the flow.

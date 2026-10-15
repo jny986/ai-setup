@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: prospecting
+---
+
 # Waterfall Enrichment and Cache Reuse
 
 Load this when a prospect list needs multiple data providers, repeated lookups, or a credit budget. Keep the prospecting skill's ICP, source lineage, contact verification, and compliance rules. This is a workflow design, not a new API or a promise of coverage.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: cold-email
+---
+
 # LinkedIn Outreach
 
 LinkedIn is the second channel in most B2B outbound and the first for some audiences: people who ignore cold email often accept a relevant connection request. It also has the tightest limits and the highest account risk of any channel. This reference covers the profile, the limits, the sequence, the copy, and the automation decision.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: referrals
+---
+
 # Operating an Affiliate Program
 
 Load this for recruiting and managing commission-based partners, rather than a customer refer-a-friend loop. Tracking and tool selection live in [affiliate-programs.md](affiliate-programs.md); creator sponsorship and audience/content vetting belong to influencer-marketing. Recruit suitable partners through prospecting, then use this playbook for economics, activation, terms, and reconciliation.

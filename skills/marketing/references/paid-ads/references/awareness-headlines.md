@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ad-creative
+---
+
 # Awareness-Based Headline Creative
 
 Use for text-led static concepts, especially B2B feed ads. These are compact treatments within the existing angle and template workflow; they do not replace audience research, the hook system, or platform specs.

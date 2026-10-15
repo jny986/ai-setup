@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: pricing
+---
+
 # Pricing Models
 
 The eight core ways to structure *how* you charge. This is distinct from the value metric (what unit you charge on) and the tier structure (how you package). Most real products **combine** two or more of these.

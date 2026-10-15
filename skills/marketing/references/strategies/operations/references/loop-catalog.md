@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-loops
+---
+
 # Marketing Loop Catalog
 
 A library of repeatable marketing loops with thorough coverage across the funnel. Each is a complete, adaptable spec. Pick the closest match, then tune the cadence, thresholds, state handling, and human checkpoints to the user's product, stage, and tooling.

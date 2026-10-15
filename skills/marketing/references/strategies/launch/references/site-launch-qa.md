@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: launch
+---
+
 # Site Launch QA
 
 The checks to run before and right after a website goes live: a new site, a redesign, a platform migration, or a big new section. Product launches fail quietly when the site underneath them breaks, and most of these failures are invisible from the homepage.

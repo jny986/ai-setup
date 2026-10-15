@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: social
+---
+
 # Short-Form Video: Hooks, Scripts & Strategy
 
 Detailed reference for creating short-form video content on TikTok, Instagram Reels, and YouTube Shorts.

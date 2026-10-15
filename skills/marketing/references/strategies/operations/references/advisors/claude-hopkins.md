@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Claude Hopkins (1866–1932)
 
 **Lens:** Advertising is salesmanship multiplied and measured — every claim, headline, and dollar must justify itself with traceable response data.

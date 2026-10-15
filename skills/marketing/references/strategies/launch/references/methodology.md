@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-plan
+---
+
 # Methodology — How a Marketing Plan Gets Made
 
 The three-phase workflow that produces a comprehensive marketing plan. GUIDE.md is the orchestration layer; this is the operational detail.

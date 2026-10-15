@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ai-seo
+---
+
 # YouTube Videos That Get Cited by AI
 
 YouTube is one of the most-cited third-party surfaces in AI answers — Google AI Overviews and Gemini cite it heavily, and ChatGPT/Perplexity lift from it for how-to queries. The core insight that changes how you produce for it:

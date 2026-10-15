@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-loops
+---
+
 # The SEO Operator
 
 A recipe for handing an agent the whole SEO job for one site, run from the site's own repo on a schedule. It doesn't add new mechanics. It bundles the SEO loops from the catalog, gives them one shared memory, and sets the rules that keep an always-on agent useful instead of busy.

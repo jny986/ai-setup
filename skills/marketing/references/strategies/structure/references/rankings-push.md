@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: seo-audit
+---
+
 # Rankings Push
 
 Audits find what's broken. This reference covers the next step: moving pages that already rank onto page one, and shipping new pages so they start strong. Both are cheaper than winning a query from nothing, because Google has already decided the site is relevant.

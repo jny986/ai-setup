@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Seth Godin
 
 **Lens:** Marketing is the generous act of helping someone become who they want to be — done by earning attention and trust from the smallest group that matters, never by stealing attention at scale.

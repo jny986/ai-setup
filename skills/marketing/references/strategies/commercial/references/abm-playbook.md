@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ads
+---
+
 # ABM Playbook (Paid)
 
 Account-based marketing with ads: targeting named accounts on LinkedIn and Meta, accelerating open pipeline, and stitching channels together. ABM ads are a *pipeline influence* motion, not a lead-gen motion — measure accordingly.

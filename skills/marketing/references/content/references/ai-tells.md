@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: copywriting
+---
+
 # AI Tells: The Copy Blacklist
 
 Patterns that make marketing copy read as machine-written. Clients and buyers spot these fast, and a reader who decides a page was generated starts doubting its claims too.

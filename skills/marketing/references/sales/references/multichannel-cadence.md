@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: cold-email
+---
+
 # Multichannel Cadence
 
 Most buyers need to see a name a few times, in more than one place, before they respond. A cadence coordinates email, LinkedIn, phone, and the occasional video or package so each touch builds on the last and nobody gets hit on four channels in one afternoon.

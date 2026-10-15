@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: youtube
+---
+
 # Platforms: YouTube SEO
 
 Guides YouTube video and channel optimization for search and discovery. **Google now prioritizes YouTube video results** in search; YouTube + Reddit comprise ~78% of social media citations in AI Overviews. Title, description, and thumbnail form an interconnected system; channels using systematic keyword strategies see 156% longer view durations, 89% better CTR, and 312% higher search discovery. Use this skill when optimizing videos for YouTube search, Google search, and AI citation. For website-embedded video SEO, see **video-optimization**.

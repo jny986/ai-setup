@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
+  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_skill: x, social
+---
+
 # Platforms: X (Twitter)
 
 Guides X post copy creation and optimization. Use for generating publish-ready posts, threads, and content that performs on X. Suitable for copy agents, design agents (image specs), and video agents (video post specs).

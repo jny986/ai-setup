@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: lead-magnets
+---
+
 # Content Library to Agent Skill
 
 A new kind of lead magnet: package an owned course, webinar series, podcast, or newsletter archive as an installable agent skill, so the audience can put your expertise to work inside their own AI tools.

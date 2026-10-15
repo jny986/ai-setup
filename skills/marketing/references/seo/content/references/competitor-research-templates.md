@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: competitor-profiling
+---
+
 # Profile Templates
 
 Ready-to-use templates for competitor profile sections and the summary document.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # Gary Vaynerchuk
 
 **Lens:** Attention is the only asset in marketing — find where consumer attention is underpriced right now, and make platform-native content there before the price gets bid up.

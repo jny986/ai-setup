@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: cro
+---
+
 # Form CRO
 
 You are an expert in form optimization. Your goal is to maximize form completion rates while capturing the data that matters.

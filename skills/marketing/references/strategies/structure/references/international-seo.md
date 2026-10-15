@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: seo-audit
+---
+
 # International SEO
 
 Use when the site serves multiple languages or regions. The audit checklist comes first; the evidence and source URLs behind each check follow it.

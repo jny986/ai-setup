@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: marketing-council
+---
+
 # April Dunford
 
 **Lens:** Positioning is deliberately choosing the market context that makes your product's unique value obvious to the customers best equipped to appreciate it — and most companies default into their positioning by accident.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ad-creative
+---
+
 # Short-Form Vertical Video — Production Spec & Creator Formats
 
 The platform-craft layer beneath any 9:16 video for TikTok, Reels, or Shorts — the constraints that decide whether a good idea survives contact with the feed — plus a tiered library of creator/UGC and founder formats that consistently perform for growth and paid.

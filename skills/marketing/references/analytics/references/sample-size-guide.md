@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ab-testing
+---
+
 # Sample Size Guide
 
 Reference for calculating sample sizes and test duration.

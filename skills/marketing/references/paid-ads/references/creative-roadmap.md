@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ad-creative
+---
+
 # The Creative Strategy Loop
 
 Generation (Modes 1–3) answers "make me ads." This reference answers the question that comes first: **which ads are worth making, in what order, at what production cost** — and the retro that turns each month's results into next month's plan. It's the standing operating loop of a creative strategist, run by an agent with a human deciding.

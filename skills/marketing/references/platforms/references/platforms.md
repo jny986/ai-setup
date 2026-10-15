@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: social
+---
+
 # Platform-Specific Strategy Guide
 
 Strategies for platforms without a reference of their own. LinkedIn, X, TikTok, Reddit, Pinterest, Medium, YouTube, GitHub and Grokipedia each have one beside this file ([linkedin.md](linkedin.md), [x.md](x.md), [tiktok.md](tiktok.md), [reddit.md](reddit.md), [pinterest.md](pinterest.md), [medium.md](medium.md), [youtube.md](youtube.md), [github.md](github.md), [grokipedia.md](grokipedia.md)).

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ads
+---
+
 # B2B Paid Playbook
 
 Cross-platform operating rules for B2B paid acquisition — where sales cycles run 2–24 months, in-platform conversions mislead, and lead *quality* matters more than lead cost. Use this alongside the platform playbooks ([Meta decision system](../../../paid-ads/platforms/references/meta-decision-system.md), [LinkedIn](../../../paid-ads/platforms/references/linkedin-b2b-playbook.md), [Google Search](../../../paid-ads/platforms/references/google-search-playbook.md), [ABM](abm-playbook.md)).

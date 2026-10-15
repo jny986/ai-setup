@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: cold-email
+---
+
 # Outbound Plays
 
 A play is a repeatable outbound motion: a trigger, an offer, a sequence, and a definition of success. Plays keep outbound from becoming a pile of one-off emails. This reference covers four that work in 2026, with the conditions each needs.

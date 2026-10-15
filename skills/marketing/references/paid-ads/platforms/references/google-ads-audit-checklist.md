@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ads
+---
+
 # Google Ads Audit Checklist (Ecommerce)
 
 An itemized, ecommerce-oriented audit of a live Google Ads + Merchant Center account: 32 checks across 11 categories, built to find wasted spend, uncover prospecting opportunities, and surface incremental revenue before scaling.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: events
+---
+
 # Event Portfolio Strategy — Which Events, Why, and the Economics
 
 The layer that sits *above* role and tactics. Events are the most expensive, riskiest, hardest-to-measure channel you can run — so the leverage is in **selection and portfolio design**, not execution. The single most common failure is treating "events" as one channel: attend two bad conferences, get few leads, and write the whole channel off — the same mistake as running Google Ads once, seeing poor results, and concluding all paid media is broken. **Each event is its own ecosystem.** Judge them individually.

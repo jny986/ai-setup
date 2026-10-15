@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ads
+---
+
 # Account Audits, Scoring & Recommendation Guardrails
 
 Load this before auditing a live ad account, grading account health, quoting benchmarks, or recommending changes to a running campaign. It exists to prevent the classic AI-audit failure mode: **confidently grading things you never saw, and turning folklore heuristics into verdicts.**

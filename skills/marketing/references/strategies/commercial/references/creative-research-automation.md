@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ads
+---
+
 # Creative Research Automation
 
 An agentic workflow for running the creative-strategy *research* that usually eats most of a strategist's time — ad-library teardowns, review→persona mapping, and organic competitor analysis — as repeatable agent runs instead of monthly manual reports. Adapted from Dara Denney's Claude Cowork practice ($100M+ Meta spend).

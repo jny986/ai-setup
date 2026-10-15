@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: ads
+---
+
 # Reading Google Ads Data Without False Conclusions
 
 Load this before analyzing, auditing, or reporting on a Google Ads account, or before deciding whether to pause, keep, or scale anything in one. [audit-guardrails.md](audit-guardrails.md) covers how to *grade* what you find. This file covers how the data *misleads* you before you get that far.

@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: cold-email
+---
+
 # Handling Replies
 
 The sequence's job ends when someone replies. What happens in the next hour decides whether that reply becomes a meeting. This reference covers classifying replies, responding to each type, speed, booking, and what an agent can handle on its own.

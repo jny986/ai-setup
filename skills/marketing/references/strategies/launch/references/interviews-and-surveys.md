@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: coreyhaines31/marketingskills
+  based_on_version: v2.11.29(c7d7dfb)
+  based_on_skill: customer-research
+---
+
 # Customer Research — Interviews & Surveys (Primary Research)
 
 Going to the source. Mode 2 mines what customers already said in public; this is Mode 3 — you *ask*. Customer research is your marketing cheat code, and the highest-signal version is talking to customers directly.

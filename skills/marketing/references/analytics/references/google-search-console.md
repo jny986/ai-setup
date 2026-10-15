@@ -1,3 +1,10 @@
+---
+metadata:
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: google-search-console
+---
+
 # Analytics: Google Search Console
 
 Guides analysis of Google Search Console (GSC) data: performance metrics, indexing, sitemaps, Core Web Vitals, and rich results. Covers best practices for monthly monitoring and actionable insights.
