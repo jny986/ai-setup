@@ -4,7 +4,7 @@ from conftest import errors, load
 
 check = load("check-provenance").check
 
-GITMODULES = '[submodule "up"]\n\tpath = original-skills/up\n\turl = https://github.com/owner/up.git\n'
+GITMODULES = '[submodule "up"]\n\tpath = source-skills/up\n\turl = https://github.com/owner/up.git\n'
 
 
 def git(repo, *args):
@@ -19,10 +19,10 @@ def based_on(repo, repo_name, version):
 
 
 def pin_submodule(repo):
-    """Commit a gitlink for original-skills/up and return its sha."""
+    """Commit a gitlink for source-skills/up and return its sha."""
     git(repo, "init", "-q")
     sha = "a" * 40
-    git(repo, "update-index", "--add", "--cacheinfo", f"160000,{sha},original-skills/up")
+    git(repo, "update-index", "--add", "--cacheinfo", f"160000,{sha},source-skills/up")
     (repo / ".gitmodules").write_text(GITMODULES)
     git(repo, "add", ".gitmodules")
     git(repo, "commit", "-qm", "pin")

@@ -1,21 +1,30 @@
-[submodule "original-skills/impeccable"]
-	path = original-skills/impeccable
+[submodule "source-skills/impeccable"]
+	path = source-skills/pbakaus-impeccable
 	url = https://github.com/pbakaus/impeccable.git
-[submodule "original-skills/marketingskills"]
-	path = original-skills/marketingskills
+[submodule "source-skills/marketingskills"]
+	path = source-skills/coreyhaines31-marketingskills
 	url = https://github.com/coreyhaines31/marketingskills.git
-[submodule "original-skills/matt-pocock-skills"]
-	path = original-skills/matt-pocock-skills
+[submodule "source-skills/matt-pocock-skills"]
+	path = source-skills/mattpocock-skills
 	url = https://github.com/mattpocock/skills.git
-[submodule "original-skills/taste-skill"]
-	path = original-skills/taste-skill
+[submodule "source-skills/taste-skill"]
+	path = source-skills/Leonxlnx-taste-skill
 	url = https://github.com/Leonxlnx/taste-skill.git
-[submodule "original-skills/marketing-skills"]
-	path = original-skills/marketing-skills
+[submodule "source-skills/marketing-skills"]
+	path = source-skills/kostja94-marketing-skills
 	url = https://github.com/kostja94/marketing-skills.git
-[submodule "original-skills/pagina"]
-	path = original-skills/pagina
+[submodule "source-skills/pagina"]
+	path = source-skills/kostja94-pagina
 	url = https://github.com/kostja94/pagina.git
-[submodule "original-skills/bricks"]
-	path = original-skills/bricks
+[submodule "source-skills/bricks"]
+	path = source-skills/kostja94-bricks
 	url = https://github.com/kostja94/bricks.git
+[submodule "source-skills/sentry-skills"]
+	path = source-skills/getsentry-skills
+	url = https://github.com/getsentry/skills.git
+[submodule "source-skills/agent-skills"]
+	path = source-skills/addyosmani-agent-skills
+	url = https://github.com/addyosmani/agent-skills.git
+[submodule "source-skills/ecc"]
+	path = source-skills/affaan-m-ECC
+	url = https://github.com/affaan-m/ECC.git

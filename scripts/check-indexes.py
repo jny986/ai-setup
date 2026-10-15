@@ -34,9 +34,9 @@ def check_submodules(root, report):
     if not gitmodules.exists() or not readme.exists():
         return
     tree = readme.read_text()
-    for path in re.findall(r"^\s*path = original-skills/(\S+)", gitmodules.read_text(), re.M):
+    for path in re.findall(r"^\s*path = source-skills/(\S+)", gitmodules.read_text(), re.M):
         if f"{path}/" not in tree:
-            report.fail(f"README.md: submodule original-skills/{path} missing from the structure tree")
+            report.fail(f"README.md: submodule source-skills/{path} missing from the structure tree")
 
 
 def check(root):

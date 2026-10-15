@@ -35,6 +35,12 @@ td.inv-no { color: #b42318; }
 </tbody></table>
 </details>
 <details>
+<summary>Based on getsentry/skills, addyosmani/agent-skills, affaan-m/ECC <span>(1)</span> <a href="https://github.com/getsentry/skills">https://github.com/getsentry/skills</a> <a href="https://github.com/addyosmani/agent-skills">https://github.com/addyosmani/agent-skills</a> <a href="https://github.com/affaan-m/ECC">https://github.com/affaan-m/ECC</a></summary>
+<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="skills/security">security</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Router for security work. Use to review code for vulnerabilities, build a feature securely, harden Docker, CI/CD, cloud or dependencies, or gate a release. Sub-skills: review-code, build-securely, harden-deployment, release-gate.</td></tr>
+</tbody></table>
+</details>
+<details>
 <summary>Based on mattpocock/skills <span>(29)</span> <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></summary>
 <table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
 <tr><td><a href="skills/claude-handoff">claude-handoff</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Hand the current conversation off to a fresh background agent that picks up the work immediately.</td></tr>
@@ -306,6 +312,15 @@ td.inv-no { color: #b42318; }
 <tr><td><a href="skills/git/sub-skills/finalise.md">finalise</a></td><td>1.0.0</td><td>jny986</td><td>The user explicitly asks to finalise a branch whose dev work is done: review, fix findings, then open the PR</td></tr>
 <tr><td><a href="skills/git/sub-skills/resolving-merge-conflicts.md">resolving-merge-conflicts</a></td><td>1.0.0</td><td>jny986</td><td>A merge or rebase is in progress with conflicts</td></tr>
 <tr><td><a href="skills/git/sub-skills/review-prs.md">review-prs</a></td><td>1.0.0</td><td>jny986</td><td>Review the open PRs awaiting the user&#x27;s review, asking continue or skip for each</td></tr>
+</tbody></table>
+</details>
+<details>
+<summary>Security sub-skills <span class="count">(4)</span></summary>
+<table><thead><tr><th>Sub-skill</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
+<tr><td><a href="skills/security/sub-skills/build-securely.md">build-securely</a></td><td>1.0.0</td><td>jny986</td><td>Design or write a feature that handles input, auth, data, external calls, LLMs or personal data</td></tr>
+<tr><td><a href="skills/security/sub-skills/harden-deployment.md">harden-deployment</a></td><td>1.0.0</td><td>jny986</td><td>Secure Dockerfiles, CI/CD, cloud, secrets or dependencies</td></tr>
+<tr><td><a href="skills/security/sub-skills/release-gate.md">release-gate</a></td><td>1.0.0</td><td>jny986</td><td>Final check before merging or deploying</td></tr>
+<tr><td><a href="skills/security/sub-skills/review-code.md">review-code</a></td><td>1.0.0</td><td>jny986</td><td>Audit existing code or a diff for vulnerabilities</td></tr>
 </tbody></table>
 </details>
 </body>

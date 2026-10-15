@@ -19,12 +19,14 @@ skills/git/
     create-pr.md finalise.md code-review.md review-prs.md resolving-merge-conflicts.md
 ```
 
-A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `references/` or `assets/` folder beside it, shared with the other sub-skills in that folder, so relative links still resolve.
+A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `references/` or `assets/` folder beside it, shared with the other sub-skills in that folder, so relative links still resolve. References can nest (`security` has `references/languages/` and `references/infrastructure/`).
+
+`security` is a second worked example. Its router table reads `| situation | [`name`](sub-skills/x.md) |`, and content adapted from several upstream skills is merged into the sub-skills, with long sections moved into references. Every adapted file keeps `based_on_*` metadata for its source.
 
 ## How `git` was built
 
 1. **Sub-skills are not skills.** Each member moved to `sub-skills/<sub-skill>.md`. The standalone slash commands (`/finalise`, `/create-pr`, ...) are gone; the user runs `/git finalise`.
-2. **Router `SKILL.md` stays thin:** steps, a `Sub-skill | Use when` table linking each sub-skill, and a short "How they nest" note. No sub-skill content.
+2. **Router `SKILL.md` stays thin:** steps, a `Sub-skill | Use when` table linking each sub-skill (`security` flips the columns to `Situation | Sub-skill`), and a short "How they nest" note. No sub-skill content.
 3. **Steps:** argument names a sub-skill, use it; otherwise match the "Use when" row, asking once on a tie; then read the sub-skill and follow it as if it were the skill.
 4. **Description** names the task types and lists the sub-skill names, so the model triggers on any of them.
 5. **Cross-references rewritten.** Sub-skills that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`what-to-use`, `implement-ticket`, `tdd`) became `/git <sub-skill>`.

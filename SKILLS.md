@@ -19,6 +19,7 @@
 | [marketing](skills/marketing) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina), [kostja94/bricks](https://github.com/kostja94/bricks) | Yes | 1.0.0 | jny986 | Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the dev references. |
 | [prototype](skills/prototype) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like. |
 | [research](skills/research) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent. |
+| [security](skills/security) | [getsentry/skills](https://github.com/getsentry/skills), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills), [affaan-m/ECC](https://github.com/affaan-m/ECC) | Yes | 1.0.0 | jny986 | Router for security work. Use to review code for vulnerabilities, build a feature securely, harden Docker, CI/CD, cloud or dependencies, or gate a release. Sub-skills: review-code, build-securely, harden-deployment, release-gate. |
 | [setup-matt-pocock-skills](skills/setup-matt-pocock-skills) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | 1.0.0 | jny986 | Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills. |
 | [tdd](skills/tdd) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests. |
 | [teach](skills/teach) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | 1.0.0 | jny986 | Teach the user a new skill or concept, within this workspace. |
@@ -199,3 +200,12 @@
 - [resolving-merge-conflicts](skills/git/sub-skills/resolving-merge-conflicts.md) (v1.0.0, jny986): A merge or rebase is in progress with conflicts
 - [review-prs](skills/git/sub-skills/review-prs.md) (v1.0.0, jny986): Review the open PRs awaiting the user's review, asking continue or skip for each
 <!-- git-sub-skills:end -->
+
+<!-- security-sub-skills:start -->
+## Security sub-skills
+
+- [build-securely](skills/security/sub-skills/build-securely.md) (v1.0.0, jny986): Design or write a feature that handles input, auth, data, external calls, LLMs or personal data
+- [harden-deployment](skills/security/sub-skills/harden-deployment.md) (v1.0.0, jny986): Secure Dockerfiles, CI/CD, cloud, secrets or dependencies
+- [release-gate](skills/security/sub-skills/release-gate.md) (v1.0.0, jny986): Final check before merging or deploying
+- [review-code](skills/security/sub-skills/review-code.md) (v1.0.0, jny986): Audit existing code or a diff for vulnerabilities
+<!-- security-sub-skills:end -->

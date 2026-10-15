@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build skills.html and the marketing and git sub-skill lists in SKILLS.md.
+"""Build skills.html and the marketing, git and security sub-skill lists in SKILLS.md.
 
-skills.html is generated from the SKILLS.md skills table plus the marketing and git router tables in their SKILL.md.
+skills.html is generated from the SKILLS.md skills table plus the marketing, git and security router tables in their SKILL.md.
 SKILLS.md gets the Version and Author cells of its skills table and the spans between its `marketing-sub-skills` and
-`git-sub-skills` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
+`git-sub-skills` and `security-sub-skills` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
 moving or renaming a skill or router sub-skill, or bumping a version.
 """
 import html
@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ROUTER = ROOT / "skills" / "marketing" / "SKILL.md"
 GIT_ROUTER = ROOT / "skills" / "git" / "SKILL.md"
+SECURITY_ROUTER = ROOT / "skills" / "security" / "SKILL.md"
 
 
 def meta(path):
@@ -36,13 +37,23 @@ def sub_skills():
     return out
 
 
-def git_sub_skills():
-    """Same shape as sub_skills(), for the git router's `[`name`](sub-skills/x.md)` rows."""
+def linked_sub_skills(router):
+    """Same shape as sub_skills(), for a router's `| [`name`](sub-skills/x.md) | use when |` rows."""
     out = []
-    for line in GIT_ROUTER.read_text().splitlines():
+    for line in router.read_text().splitlines():
         m = re.match(r"\| \[`([^`]+)`\]\((sub-skills/[^)]+\.md)\) \| (.*) \|$", line)
         if m:
             out.append(m.groups())
+    return out
+
+
+def situation_sub_skills(router):
+    """Same shape as sub_skills(), for a router whose rows read `| situation | [`name`](sub-skills/x.md) |`."""
+    out = []
+    for line in router.read_text().splitlines():
+        m = re.match(r"\| (.*) \| \[`([^`]+)`\]\((sub-skills/[^)]+\.md)\) \|$", line)
+        if m:
+            out.append((m[2], m[3], m[1]))
     return out
 
 
@@ -159,9 +170,11 @@ def skills_page(rows, trees):
 
 
 root = tree(sub_skills())
-git_root = tree(git_sub_skills(), "git")
+git_root = tree(linked_sub_skills(GIT_ROUTER), "git")
+security_root = tree(situation_sub_skills(SECURITY_ROUTER), "security")
 comment = lambda m: f"<!-- {m} -->"
 splice(ROOT / "SKILLS.md", "## Marketing sub-skills\n\n" + "\n".join(markdown(root)), comment, "marketing-sub-skills")
 splice(ROOT / "SKILLS.md", "## Git sub-skills\n\n" + "\n".join(markdown(git_root)), comment, "git-sub-skills")
-(ROOT / "skills.html").write_text(skills_page(skills(), {"marketing": root, "git": git_root}))
-print(f"{count(root)} marketing sub-skills, {count(git_root)} git sub-skills")
+splice(ROOT / "SKILLS.md", "## Security sub-skills\n\n" + "\n".join(markdown(security_root)), comment, "security-sub-skills")
+(ROOT / "skills.html").write_text(skills_page(skills(), {"marketing": root, "git": git_root, "security": security_root}))
+print(f"{count(root)} marketing, {count(git_root)} git, {count(security_root)} security sub-skills")
