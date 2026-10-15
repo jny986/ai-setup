@@ -1,4 +1,10 @@
 source-skills/
 graphify-out/
-! source-skills/skills.html
-! source-skills/SKILLS.md
+**/openai.yaml
+**/openai.yml
+docs
+.*
+skills.html
+tests/
+scripts/
+templates/
