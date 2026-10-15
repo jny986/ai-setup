@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "A workflow to design, or nothing to go find one"
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills

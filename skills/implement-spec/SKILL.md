@@ -1,10 +1,10 @@
 ---
 name: implement-spec
-description: "Implement a specification in code."
+description: "Implement a spec and its tickets on a single integration branch using parallel subagents."
 disable-model-invocation: true
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
@@ -43,7 +43,7 @@ Communication to and from subagents should be sparse. Communicate primarily thro
 
 7. Review each completed implementation against its ticket's requirements. If any requirement is unmet, return to step 4 to implement the missing requirements.
 
-8. Call the Skill tool with `code-review` on the integration branch. Fix all issues raised by the code review in a single **implementer subagent**.
+8. Run `/git code-review` on the integration branch. Fix all issues raised by the code review in a single **implementer subagent**.
 
 9. Clean up all **implementer subagent** worktrees.
 

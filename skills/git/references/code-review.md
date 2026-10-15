@@ -3,7 +3,7 @@ name: code-review
 description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
@@ -95,18 +95,18 @@ Present the two reports under `## Standards` and `## Spec` headings, verbatim or
 
 End with a one-line summary: total findings per axis, the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
 
-### 6. Offer PR inline comments
+### 7. Offer PR inline comments
 
-If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 7. Skip steps 6 and 7 when there's no PR.
+If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 8. Skip steps 7 and 8 when there's no PR.
 
-### 7. Submit the review
+### 8. Submit the review
 
 Recommend a verdict and let the user confirm or override it:
 
 - **Approve**: only minor issues, or none.
 - **Request changes**: issues that need to be looked at before merge.
 
-Ask what review comment they want to add (suggest a short draft based on the findings). Then submit one review on the PR with the confirmed verdict, the comment, and the inline comments picked in step 6 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`). Don't submit until the user has confirmed the verdict and comment.
+Ask what review comment they want to add (suggest a short draft based on the findings). Then submit one review on the PR with the confirmed verdict, the comment, and the inline comments picked in step 7 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`). Don't submit until the user has confirmed the verdict and comment.
 
 ## Why two axes
 

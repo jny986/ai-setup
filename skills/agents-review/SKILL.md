@@ -1,34 +1,39 @@
 ---
 name: agents-review
-description: Review agents files (AGENTS.md, CLAUDE.md) to follow progressive disclosure principles
+description: Refactor an AGENTS.md or CLAUDE.md into a minimal root file plus linked docs, following progressive disclosure.
+argument-hint: "Path to the file, defaults to AGENTS.md or CLAUDE.md in the repo root"
 disable-model-invocation: true
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
 ---
 
-I want you to refactor my AGENTS.md or CLAUDE.md file to follow progressive disclosure principles.
+Refactor the user's AGENTS.md or CLAUDE.md to follow progressive disclosure. Use the file named in the arguments, else the one in the repo root. If both exist and one is only an `@AGENTS.md` import, treat AGENTS.md as the source.
 
-using subagents do the follow these steps:
+Subagents cannot ask the user questions, so they report back and you ask.
 
-1. **Find contradictions**: Identify any instructions that conflict with each other. For each contradiction, ask me which version I want to keep.
+## Steps
 
-2. **Identify the essentials**: Extract only what belongs in the root AGENTS.md:
+1. **Find contradictions.** Have a subagent list instructions that conflict, including with imported files and linked docs. Ask the user which version to keep for each, then apply their answers to every later step.
+
+2. **Identify the essentials.** Keep only what belongs in the root file:
    - One-sentence project description
    - Package manager (if not npm)
-   - Non-standard build/typecheck commands
-   - Anything truly relevant to every single task
+   - Non-standard build, test or typecheck commands
+   - Anything relevant to every single task
 
-3. **Group the rest**: Organize remaining instructions into logical categories (e.g., TypeScript conventions, testing patterns, API design, Git workflow). For each group, create a separate markdown file.
+3. **Group the rest.** Sort remaining instructions into logical categories (TypeScript conventions, testing patterns, API design, Git workflow). Each group becomes its own markdown file.
 
-4. **Create the file structure**: Output:
-   - A minimal root AGENTS.md with markdown links to the separate files
-   - Each separate file with its relevant instructions
-   - A suggested docs/ folder structure
+4. **Create the file structure.** Output:
+   - A minimal root file linking to each separate file, with a one-line "read when" cue per link
+   - Each separate file with its instructions
+   - A suggested `docs/` layout
 
-5. **Flag for deletion**: Identify any instructions that are:
+5. **Flag for deletion.** List instructions that are:
    - Redundant (the agent already knows this)
-   - Too vague to be actionable
-   - Overly obvious (like "write clean code")
+   - Too vague to act on
+   - Obvious (like "write clean code")
+
+Show the proposed structure and deletions before writing files. Keep the root file's imports (such as `@AGENTS.md`) working.
