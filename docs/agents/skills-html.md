@@ -42,7 +42,7 @@ The script exits with "markers missing" if either pair is gone.
 
 ## Give another skill sub-skills
 
-1. Add a router-table parser beside `sub-skills()` / `git_guides()` in `scripts/build-marketing-index.py`.
+1. Add a router-table parser beside `sub_skills()` / `git_sub_skills()` in `scripts/build-marketing-index.py`.
 2. Build its tree with `tree(rows, "<skill>")`.
 3. Add it to the `trees` dict passed to `skills_page`, and add a `splice(...)` call plus a new marker pair in `SKILLS.md`.
 
