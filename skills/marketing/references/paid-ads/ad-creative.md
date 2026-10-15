@@ -1,6 +1,6 @@
 ---
 name: ad-creative
-description: When the user wants to generate, iterate, or scale ad creative: headlines, descriptions, primary text, or full ad variations for any paid advertising platform. Also use when the user mentions "ad copy variations," "ad creative," "generate headlines," "RSA headlines," "bulk ad copy," "ad iterations," "creative testing," "static ads," "ad templates," "iMessage ad," "creative strategy," "creative roadmap," "hook writing," "creative review page," "motion video ad," "UGC ad," or "Meta ad format tier list." For campaign strategy and targeting, use paid-ads-strategy.
+description: "When the user wants to generate, iterate, or scale ad creative: headlines, descriptions, primary text, or full ad variations for any paid advertising platform. Also use when the user mentions \"ad copy variations,\" \"ad creative,\" \"generate headlines,\" \"RSA headlines,\" \"bulk ad copy,\" \"ad iterations,\" \"creative testing,\" \"static ads,\" \"ad templates,\" \"iMessage ad,\" \"creative strategy,\" \"creative roadmap,\" \"hook writing,\" \"creative review page,\" \"motion video ad,\" \"UGC ad,\" or \"Meta ad format tier list.\" For campaign strategy and targeting, use paid-ads-strategy."
 license: MIT
 metadata:
   version: "1.0.0"
