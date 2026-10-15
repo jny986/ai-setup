@@ -3,7 +3,7 @@ name: domain-modeling
 description: Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, discusses codebase terminology, writes or edits a CONTEXT.md, records or edits an ADR, or when another skill needs to maintain the domain model.
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills

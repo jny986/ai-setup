@@ -2,7 +2,7 @@
 
 | Name | Based on | Agent invokable | Description |
 |------|----------|-----------------|-------------|
-| [agents-review](skills/agents-review) | — | No | Review agents files (AGENTS.md, CLAUDE.md) to follow progressive disclosure principles |
+| [agents-review](skills/agents-review) | — | No | Refactor an AGENTS.md or CLAUDE.md into a minimal root file plus linked docs, following progressive disclosure. |
 | [git](skills/git) | — | Yes | Router for git and PR workflows. Use for any commit, push, pull request, branch wrap-up, diff review, or merge/rebase conflict task. |
 | [marketing](skills/marketing) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina), [kostja94/bricks](https://github.com/kostja94/bricks) | Yes | Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the dev references. |
 | [ask-matt](skills/ask-matt) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | Ask which skill or flow fits your situation. A router over the skills in this repo. |
@@ -15,7 +15,7 @@
 | [grilling](skills/grilling) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases. |
 | [handoff](skills/handoff) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | Compact the current conversation into a handoff document for another agent to pick up. |
 | [implement](skills/implement) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | Implement a piece of work based on a spec or set of tickets. |
-| [implement-spec](skills/implement-spec) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | Implement a specification in code. |
+| [implement-spec](skills/implement-spec) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | Implement a spec and its tickets on a single integration branch using parallel subagents. |
 | [improve-codebase-architecture](skills/improve-codebase-architecture) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick. |
 | [loop-me](skills/loop-me) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | Grill me about specs for the workflows I want to build, within this workspace. |
 | [prototype](skills/prototype) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like. |

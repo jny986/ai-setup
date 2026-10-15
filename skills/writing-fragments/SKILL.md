@@ -4,7 +4,7 @@ description: "Writing, explore: mine raw fragments, no structure yet."
 disable-model-invocation: true
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills

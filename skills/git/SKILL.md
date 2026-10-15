@@ -4,7 +4,7 @@ description: "Router for git and PR workflows. Use for any commit, push, pull re
 argument-hint: "[guide] [task]"
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
 ---

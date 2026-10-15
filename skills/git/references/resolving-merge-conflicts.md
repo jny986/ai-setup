@@ -3,10 +3,12 @@ name: resolving-merge-conflicts
 description: "Use when you need to resolve an in-progress git merge/rebase conflict."
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: mattpocock/skills@v1.2.3 (MIT)
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.3.1(49dd158)
+  based_on_skill: resolving-merge-conflicts
 ---
 
 1. **See the current state** of the merge/rebase. Check git history, and the conflicting files.
