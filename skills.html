@@ -5,109 +5,72 @@
 <title>Skills</title>
 <style>
 body { font: 15px/1.5 system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #222; }
-details { border: 1px solid #ddd; border-radius: 6px; margin-bottom: .5rem; }
-summary { cursor: pointer; padding: .6rem 1rem; font-weight: 600; }
+details { border: 1px solid #ddd; border-radius: 6px; margin-bottom: .75rem; }
+summary { cursor: pointer; padding: .75rem 1rem; font-weight: 600; font-size: 1.1rem; }
 summary span { color: #777; font-weight: normal; }
-summary .inv-yes, summary .inv-no { float: right; font-size: .85rem; font-weight: normal; }
-summary .inv-yes { color: #1a7f37; }
-summary .inv-no { color: #b42318; }
-details > p, details > ul { margin: .25rem 1rem .75rem; }
+summary a { font-size: .85rem; font-weight: normal; margin-left: .5rem; }
 details details { margin: .5rem 1rem; }
-table { border-collapse: collapse; width: calc(100% - 2rem); margin: 0 1rem .75rem; }
+details details summary { font-size: 1rem; }
+table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; vertical-align: top; padding: .5rem 1rem; border-top: 1px solid #eee; }
 td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
+td.inv-yes, td.inv-no { white-space: nowrap; }
+td.inv-yes { color: #1a7f37; }
+td.inv-no { color: #b42318; }
 </style>
 </head>
 <body>
 <h1>Skills</h1>
-<details><summary><a href="skills/agents-review">agents-review</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Review agents files (AGENTS.md, CLAUDE.md) to follow progressive disclosure principles</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Original</p>
-</details>
-<details><summary><a href="skills/ask-matt">ask-matt</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Ask which skill or flow fits your situation. A router over the skills in this repo.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/claude-handoff">claude-handoff</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Hand the current conversation off to a fresh background agent that picks up the work immediately.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/codebase-design">codebase-design</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module&#x27;s interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/diagnosing-bugs">diagnosing-bugs</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Diagnosis loop for hard bugs and performance regressions. Use when the user says &quot;diagnose&quot;/&quot;debug this&quot;, or reports something broken/throwing/failing/slow.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/domain-modeling">domain-modeling</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Build and sharpen a project&#x27;s domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, discusses codebase terminology, writes or edits a CONTEXT.md, records or edits an ADR, or when another skill needs to maintain the domain model.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/git">git</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Router for git and PR workflows. Use for any commit, push, pull request, branch wrap-up, diff review, or merge/rebase conflict task.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Original</p>
-<table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
-<tr><td><a href="skills/git/references/code-review.md">code-review</a></td><td>1.0</td><td>jny986</td><td>Review changes since a commit, branch, tag or merge-base, against repo standards and the spec</td></tr>
-<tr><td><a href="skills/git/references/commit.md">commit</a></td><td>1.0</td><td>jny986</td><td>Commit and push the current work, on the branch its ticket calls for</td></tr>
-<tr><td><a href="skills/git/references/create-pr.md">create-pr</a></td><td>1.0</td><td>jny986</td><td>Open a GitHub PR from the current branch (commits and pushes first if needed)</td></tr>
-<tr><td><a href="skills/git/references/finalise.md">finalise</a></td><td>1.0</td><td>jny986</td><td>The user explicitly asks to finalise a branch whose dev work is done: review, fix findings, then open the PR</td></tr>
-<tr><td><a href="skills/git/references/resolving-merge-conflicts.md">resolving-merge-conflicts</a></td><td>1.0</td><td>jny986</td><td>A merge or rebase is in progress with conflicts</td></tr>
-<tr><td><a href="skills/git/references/review-prs.md">review-prs</a></td><td>1.0</td><td>jny986</td><td>Review the open PRs awaiting the user&#x27;s review, asking continue or skip for each</td></tr>
+<details>
+<summary>Original <span>(2)</span></summary>
+<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="skills/agents-review">agents-review</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Refactor an AGENTS.md or CLAUDE.md into a minimal root file plus linked docs, following progressive disclosure.</td></tr>
+<tr><td><a href="skills/git">git</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Router for git and PR workflows. Use for any commit, push, pull request, branch wrap-up, diff review, or merge/rebase conflict task. Guides: commit, create-pr, finalise, code-review, review-prs, resolving-merge-conflicts.</td></tr>
 </tbody></table>
 </details>
-<details><summary><a href="skills/grill-me">grill-me</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>A relentless interview to sharpen a plan or design.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
+<details>
+<summary>Based on coreyhaines31/marketingskills, kostja94/marketing-skills, kostja94/pagina, kostja94/bricks <span>(1)</span> <a href="https://github.com/coreyhaines31/marketingskills">https://github.com/coreyhaines31/marketingskills</a> <a href="https://github.com/kostja94/marketing-skills">https://github.com/kostja94/marketing-skills</a> <a href="https://github.com/kostja94/pagina">https://github.com/kostja94/pagina</a> <a href="https://github.com/kostja94/bricks">https://github.com/kostja94/bricks</a></summary>
+<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="skills/marketing">marketing</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the dev references.</td></tr>
+</tbody></table>
 </details>
-<details><summary><a href="skills/grill-with-docs">grill-with-docs</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>A relentless interview to sharpen a plan or design, which also creates docs (ADR&#x27;s and glossary) as we go.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
+<details>
+<summary>Based on mattpocock/skills <span>(29)</span> <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></summary>
+<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="skills/claude-handoff">claude-handoff</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Hand the current conversation off to a fresh background agent that picks up the work immediately.</td></tr>
+<tr><td><a href="skills/codebase-design">codebase-design</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module&#x27;s interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.</td></tr>
+<tr><td><a href="skills/diagnosing-bugs">diagnosing-bugs</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Diagnosis loop for hard bugs and performance regressions. Use when the user says &quot;diagnose&quot;/&quot;debug this&quot;, or reports something broken/throwing/failing/slow.</td></tr>
+<tr><td><a href="skills/domain-modeling">domain-modeling</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Build and sharpen a project&#x27;s domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, discusses codebase terminology, writes or edits a CONTEXT.md, records or edits an ADR, or when another skill needs to maintain the domain model.</td></tr>
+<tr><td><a href="skills/grill-me">grill-me</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>A relentless interview to sharpen a plan or design.</td></tr>
+<tr><td><a href="skills/grill-with-docs">grill-with-docs</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>A relentless interview to sharpen a plan or design, which also creates docs (ADR&#x27;s and glossary) as we go.</td></tr>
+<tr><td><a href="skills/grilling">grilling</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any &#x27;grill&#x27; trigger phrases.</td></tr>
+<tr><td><a href="skills/handoff">handoff</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Compact the current conversation into a handoff document for another agent to pick up.</td></tr>
+<tr><td><a href="skills/implement">implement</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Implement a piece of work based on a spec or set of tickets.</td></tr>
+<tr><td><a href="skills/implement-ticket">implement-ticket</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Implement a spec and its tickets on a single integration branch using parallel subagents.</td></tr>
+<tr><td><a href="skills/improve-codebase-architecture">improve-codebase-architecture</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.</td></tr>
+<tr><td><a href="skills/loop-me">loop-me</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Grill me about specs for the workflows I want to build, within this workspace.</td></tr>
+<tr><td><a href="skills/prototype">prototype</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.</td></tr>
+<tr><td><a href="skills/research">research</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.</td></tr>
+<tr><td><a href="skills/setup-matt-pocock-skills">setup-matt-pocock-skills</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.</td></tr>
+<tr><td><a href="skills/tdd">tdd</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions &quot;red-green-refactor&quot;, or wants integration tests.</td></tr>
+<tr><td><a href="skills/teach">teach</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Teach the user a new skill or concept, within this workspace.</td></tr>
+<tr><td><a href="skills/to-questionnaire">to-questionnaire</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Turn a decision you can&#x27;t fully answer into a questionnaire for someone else to fill in.</td></tr>
+<tr><td><a href="skills/to-spec">to-spec</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you&#x27;ve already discussed.</td></tr>
+<tr><td><a href="skills/to-tickets">to-tickets</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).</td></tr>
+<tr><td><a href="skills/triage">triage</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.</td></tr>
+<tr><td><a href="skills/wait-what">wait-what</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Stop. That last message did not land: re-pitch it.</td></tr>
+<tr><td><a href="skills/wayfinder">wayfinder</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.</td></tr>
+<tr><td><a href="skills/what-to-use">what-to-use</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Ask which skill or flow fits your situation. A router over every skill in this repo, and any other skill available.</td></tr>
+<tr><td><a href="skills/wizard">wizard</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don&#x27;t invoke this for steps the agent can perform itself.</td></tr>
+<tr><td><a href="skills/writing-beats">writing-beats</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it.</td></tr>
+<tr><td><a href="skills/writing-for-agents">writing-for-agents</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.</td></tr>
+<tr><td><a href="skills/writing-fragments">writing-fragments</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Writing, explore: mine raw fragments, no structure yet.</td></tr>
+<tr><td><a href="skills/writing-shape">writing-shape</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Writing, exploit: shape raw material into an article, paragraph by paragraph.</td></tr>
+</tbody></table>
 </details>
-<details><summary><a href="skills/grilling">grilling</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any &#x27;grill&#x27; trigger phrases.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/handoff">handoff</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Compact the current conversation into a handoff document for another agent to pick up.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/implement">implement</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Implement a piece of work based on a spec or set of tickets.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/implement-ticket">implement-ticket</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Implement a specification in code.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/improve-codebase-architecture">improve-codebase-architecture</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/loop-me">loop-me</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Grill me about specs for the workflows I want to build, within this workspace.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/marketing">marketing</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the dev references.</p>
-<p>Version: 2.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a>, <a href="https://github.com/kostja94/marketing-skills">kostja94/marketing-skills</a>, <a href="https://github.com/kostja94/pagina">kostja94/pagina</a>, <a href="https://github.com/kostja94/bricks">kostja94/bricks</a></p>
-<details><summary>analytics <span>(5)</span></summary>
+<details>
+<summary>Marketing guides <span class="count">(122)</span></summary>
+<details><summary>analytics <span class="count">(5)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/analytics/ab-testing.md">ab-testing</a></td><td>1.0.0</td><td>—</td><td>Designing A/B tests or running an experimentation program</td></tr>
 <tr><td><a href="skills/marketing/references/analytics/tracking.md">analytics-tracking</a></td><td>1.3.1</td><td>—</td><td>Tracking setup: GA4, GTM, events, tracking plans, conversion tracking</td></tr>
@@ -116,8 +79,8 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/analytics/traffic.md">traffic-analysis</a></td><td>1.2.0</td><td>—</td><td>Traffic sources, dark traffic, UTM conventions, channel reporting, AI search traffic in GA4</td></tr>
 </tbody></table>
 </details>
-<details><summary>channels <span>(17)</span></summary>
-<details><summary>community <span>(4)</span></summary>
+<details><summary>channels <span class="count">(17)</span></summary>
+<details><summary>community <span class="count">(4)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/channels/community/community-building.md">community-building</a></td><td>1.0.0</td><td>—</td><td>Building a community (Discord, Slack, forum) or advocates</td></tr>
 <tr><td><a href="skills/marketing/references/channels/community/community-forum.md">community-forum</a></td><td>1.1.1</td><td>—</td><td>Promoting via forums and communities (Hacker News, Reddit, Indie Hackers), inviting users to a community</td></tr>
@@ -125,25 +88,25 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/channels/community/product-hunt-launch.md">product-hunt-launch</a></td><td>1.1.0</td><td>—</td><td>Planning and running a Product Hunt launch</td></tr>
 </tbody></table>
 </details>
-<details><summary>distribution <span>(2)</span></summary>
+<details><summary>distribution <span class="count">(2)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/channels/distribution/aso.md">aso</a></td><td>1.0.0</td><td>—</td><td>App Store or Google Play listing optimisation</td></tr>
 <tr><td><a href="skills/marketing/references/channels/distribution/distribution-channels.md">distribution-channels</a></td><td>1.1.1</td><td>—</td><td>Distribution via marketplaces, app stores and third-party platforms</td></tr>
 </tbody></table>
 </details>
-<details><summary>events <span>(1)</span></summary>
+<details><summary>events <span class="count">(1)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/channels/events/events.md">events</a></td><td>1.0.0</td><td>—</td><td>Webinars, conferences, sponsorships, speaking, field events</td></tr>
 </tbody></table>
 </details>
-<details><summary>owned <span>(3)</span></summary>
+<details><summary>owned <span class="count">(3)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/channels/owned/email-marketing.md">email-marketing</a></td><td>1.0.1</td><td>—</td><td>Lifecycle email sequences, drips, nurture and welcome flows</td></tr>
 <tr><td><a href="skills/marketing/references/channels/owned/employee-generated-content.md">employee-generated-content</a></td><td>1.0.1</td><td>—</td><td>Employee-led content and advocacy</td></tr>
 <tr><td><a href="skills/marketing/references/channels/owned/sms.md">sms</a></td><td>1.0.0</td><td>—</td><td>SMS, MMS or WhatsApp marketing</td></tr>
 </tbody></table>
 </details>
-<details><summary>partnerships <span>(7)</span></summary>
+<details><summary>partnerships <span class="count">(7)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/channels/partnerships/affiliate-marketing.md">affiliate-marketing</a></td><td>1.0.1</td><td>—</td><td>Affiliate program strategy, commissions, recruitment</td></tr>
 <tr><td><a href="skills/marketing/references/channels/partnerships/co-marketing.md">co-marketing</a></td><td>1.0.0</td><td>—</td><td>Partner marketing and joint campaigns</td></tr>
@@ -155,7 +118,7 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 </tbody></table>
 </details>
 </details>
-<details><summary>content <span>(8)</span></summary>
+<details><summary>content <span class="count">(8)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/content/article.md">article-content</a></td><td>1.1.1</td><td>—</td><td>Writing article bodies: blog posts, guides, long-form pieces</td></tr>
 <tr><td><a href="skills/marketing/references/content/copy-editing.md">copy-editing</a></td><td>1.0.0</td><td>jny986</td><td>Editing, proofreading or refreshing existing copy</td></tr>
@@ -167,8 +130,8 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/content/visual-content.md">visual-content</a></td><td>1.0.1</td><td>—</td><td>Planning, generating or repurposing marketing images, social graphics, mockups, banners, OG images</td></tr>
 </tbody></table>
 </details>
-<details><summary>paid-ads <span>(12)</span></summary>
-<details><summary>formats <span>(5)</span></summary>
+<details><summary>paid-ads <span class="count">(12)</span></summary>
+<details><summary>formats <span class="count">(5)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/paid-ads/formats/app-ads.md">app-ads</a></td><td>1.0.1</td><td>—</td><td>App install ads and user acquisition: Google App Campaigns, Apple Search Ads, CPI</td></tr>
 <tr><td><a href="skills/marketing/references/paid-ads/formats/ctv-ads.md">ctv-ads</a></td><td>1.0.1</td><td>—</td><td>CTV, OTT and streaming TV ads</td></tr>
@@ -177,7 +140,7 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/paid-ads/formats/native-ads.md">native-ads</a></td><td>1.0.1</td><td>—</td><td>Native ads on Taboola, Outbrain and similar</td></tr>
 </tbody></table>
 </details>
-<details><summary>platforms <span>(6)</span></summary>
+<details><summary>platforms <span class="count">(6)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/paid-ads/platforms/google-ads.md">google-ads</a></td><td>1.4.1</td><td>—</td><td>Setting up or optimising Google Ads: Search, Performance Max, RSAs, Quality Score, PMF testing with ads</td></tr>
 <tr><td><a href="skills/marketing/references/paid-ads/platforms/linkedin-ads.md">linkedin-ads</a></td><td>1.2.0</td><td>—</td><td>LinkedIn Ads: Campaign Manager, Lead Gen Forms, Sponsored Messaging, B2B and ABM</td></tr>
@@ -191,12 +154,12 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/paid-ads/ad-creative.md">ad-creative</a></td><td>1.0.0</td><td>jny986</td><td>Generating or iterating ad copy and creative at scale: static templates, hooks, video ad formats, creative strategy</td></tr>
 </tbody></table>
 </details>
-<details><summary>platforms <span>(1)</span></summary>
+<details><summary>platforms <span class="count">(1)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/platforms/social.md">social</a></td><td>1.0.0</td><td>jny986</td><td>Social content, scheduling and listening on LinkedIn, X, Instagram, TikTok, Reddit, Pinterest, Medium, YouTube, GitHub, Grokipedia</td></tr>
 </tbody></table>
 </details>
-<details><summary>sales <span>(4)</span></summary>
+<details><summary>sales <span class="count">(4)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/sales/cold-email.md">cold-email</a></td><td>1.0.0</td><td>—</td><td>Cold outbound emails, follow-ups, sending setup, multichannel cadences</td></tr>
 <tr><td><a href="skills/marketing/references/sales/prospecting.md">prospecting</a></td><td>1.0.0</td><td>—</td><td>Finding and qualifying prospects to build an outreach list</td></tr>
@@ -204,8 +167,8 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/sales/sales-enablement.md">sales-enablement</a></td><td>1.0.0</td><td>—</td><td>Sales decks, one-pagers, objection handling, demo scripts</td></tr>
 </tbody></table>
 </details>
-<details><summary>seo <span>(35)</span></summary>
-<details><summary>content <span>(6)</span></summary>
+<details><summary>seo <span class="count">(35)</span></summary>
+<details><summary>content <span class="count">(6)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/seo/content/comparison-pages.md">comparison-pages</a></td><td>1.0.0</td><td>—</td><td>Strategy and content for comparison, &quot;vs&quot; and alternative pages</td></tr>
 <tr><td><a href="skills/marketing/references/seo/content/competitor-research.md">competitor-research</a></td><td>1.2.1</td><td>—</td><td>Analysing or profiling competitors (keywords, content, backlinks, positioning) from names or URLs</td></tr>
@@ -215,13 +178,13 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/seo/content/keyword-research.md">keyword-research</a></td><td>1.3.1</td><td>—</td><td>Keyword discovery, intent, clustering</td></tr>
 </tbody></table>
 </details>
-<details><summary>off-page <span>(2)</span></summary>
+<details><summary>off-page <span class="count">(2)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/seo/off-page/backlink-analysis.md">backlink-analysis</a></td><td>1.0.1</td><td>—</td><td>Analysing backlink profiles and link gaps</td></tr>
 <tr><td><a href="skills/marketing/references/seo/off-page/link-building.md">link-building</a></td><td>1.0.1</td><td>—</td><td>Earning backlinks and outreach</td></tr>
 </tbody></table>
 </details>
-<details><summary>on-page <span>(14)</span></summary>
+<details><summary>on-page <span class="count">(14)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/seo/on-page/featured-snippet.md">featured-snippet</a></td><td>1.0.1</td><td>—</td><td>Winning featured snippets and position zero</td></tr>
 <tr><td><a href="skills/marketing/references/seo/on-page/heading.md">heading-structure</a></td><td>2.0.0</td><td>—</td><td>H1-H6 structure and hierarchy</td></tr>
@@ -239,7 +202,7 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/seo/on-page/video-optimization.md">video-optimization</a></td><td>1.0.1</td><td>—</td><td>Video SEO: VideoObject, video sitemaps, key moments</td></tr>
 </tbody></table>
 </details>
-<details><summary>technical <span>(9)</span></summary>
+<details><summary>technical <span class="count">(9)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/seo/technical/canonical.md">canonical-tag</a></td><td>1.0.1</td><td>—</td><td>Canonical tags and duplicate content</td></tr>
 <tr><td><a href="skills/marketing/references/seo/technical/core-web-vitals.md">core-web-vitals</a></td><td>1.0.2</td><td>—</td><td>LCP, INP, CLS and page speed</td></tr>
@@ -259,8 +222,8 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/seo/programmatic-seo.md">programmatic-seo</a></td><td>1.4.1</td><td>—</td><td>Template-driven SEO pages at scale</td></tr>
 </tbody></table>
 </details>
-<details><summary>strategies <span>(40)</span></summary>
-<details><summary>brand <span>(9)</span></summary>
+<details><summary>strategies <span class="count">(40)</span></summary>
+<details><summary>brand <span class="count">(9)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/strategies/brand/brand-monitoring.md">brand-monitoring</a></td><td>1.0.1</td><td>—</td><td>Tracking brand mentions, sentiment and reputation</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/brand/brand-protection.md">brand-protection</a></td><td>1.0.1</td><td>—</td><td>Trademarks, impersonation, brand abuse and takedowns</td></tr>
@@ -273,15 +236,15 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/strategies/brand/rebranding.md">rebranding-strategy</a></td><td>1.0.1</td><td>—</td><td>Rebrand execution: domain change, redirects, migration, announcement</td></tr>
 </tbody></table>
 </details>
-<details><summary>commercial <span>(11)</span></summary>
-<details><summary>domain <span>(3)</span></summary>
+<details><summary>commercial <span class="count">(11)</span></summary>
+<details><summary>domain <span class="count">(3)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/strategies/commercial/domain/domain-architecture.md">domain-architecture</a></td><td>1.0.1</td><td>—</td><td>Subdomain, subfolder or separate domain decisions</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/commercial/domain/domain-selection.md">domain-selection</a></td><td>1.0.1</td><td>—</td><td>Choosing a domain name and TLD</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/commercial/domain/multi-domain-brand-seo.md">multi-domain-brand-seo</a></td><td>1.0.1</td><td>—</td><td>SEO and brand when several domains coexist</td></tr>
 </tbody></table>
 </details>
-<details><summary>pricing <span>(3)</span></summary>
+<details><summary>pricing <span class="count">(3)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/strategies/commercial/pricing/discount-marketing.md">discount-marketing-strategy</a></td><td>1.1.1</td><td>—</td><td>Promotional pricing: annual, lifetime deals, seasonal, startup and referral discounts</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/commercial/pricing/offers.md">offers</a></td><td>1.0.0</td><td>jny986</td><td>Designing the offer itself: bonuses, guarantees, urgency, naming</td></tr>
@@ -296,7 +259,7 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/strategies/commercial/paid-ads.md">paid-ads-strategy</a></td><td>1.7.0</td><td>—</td><td>Paid campaigns: targeting, bidding, budgets, optimisation</td></tr>
 </tbody></table>
 </details>
-<details><summary>conversion <span>(5)</span></summary>
+<details><summary>conversion <span class="count">(5)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/strategies/conversion/conversion-optimization.md">conversion-optimization</a></td><td>1.1.1</td><td>—</td><td>Improving conversions on a marketing page, form or funnel: page analysis, CRO process, experiment prioritisation</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/conversion/onboarding.md">onboarding</a></td><td>1.0.0</td><td>—</td><td>Post-signup activation, first-run experience, time to value</td></tr>
@@ -305,7 +268,7 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/strategies/conversion/signup.md">signup</a></td><td>1.0.0</td><td>—</td><td>Signup, registration or trial-start flows</td></tr>
 </tbody></table>
 </details>
-<details><summary>launch <span>(10)</span></summary>
+<details><summary>launch <span class="count">(10)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/strategies/launch/cold-start.md">cold-start-strategy</a></td><td>1.3.0</td><td>—</td><td>Getting first users with zero traction (0 to 1)</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/launch/customer-research.md">customer-research</a></td><td>1.0.0</td><td>—</td><td>Interviews, surveys, reviews, transcripts, personas, JTBD, voice of customer</td></tr>
@@ -319,13 +282,13 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 <tr><td><a href="skills/marketing/references/strategies/launch/retention.md">retention-strategy</a></td><td>1.1.1</td><td>—</td><td>Churn, retention, cancel flows, save offers, dunning, failed payments</td></tr>
 </tbody></table>
 </details>
-<details><summary>operations <span>(2)</span></summary>
+<details><summary>operations <span class="count">(2)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/strategies/operations/marketing-council.md">marketing-council</a></td><td>1.0.0</td><td>—</td><td>Multiple expert perspectives or a simulated advisory board on a marketing question</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/operations/marketing-loops.md">marketing-loops</a></td><td>1.0.0</td><td>—</td><td>A recurring, agent-run marketing workflow on a cadence</td></tr>
 </tbody></table>
 </details>
-<details><summary>structure <span>(3)</span></summary>
+<details><summary>structure <span class="count">(3)</span></summary>
 <table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/marketing/references/strategies/structure/seo-audit.md">seo-audit</a></td><td>1.1.0</td><td>—</td><td>Auditing or diagnosing technical and on-page SEO</td></tr>
 <tr><td><a href="skills/marketing/references/strategies/structure/seo.md">seo-strategy</a></td><td>1.3.0</td><td>—</td><td>Organic SEO strategy, workflow order and prioritisation</td></tr>
@@ -334,85 +297,16 @@ td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
 </details>
 </details>
 </details>
-<details><summary><a href="skills/prototype">prototype</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/research">research</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/setup-matt-pocock-skills">setup-matt-pocock-skills</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/tdd">tdd</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions &quot;red-green-refactor&quot;, or wants integration tests.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/teach">teach</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Teach the user a new skill or concept, within this workspace.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/to-questionnaire">to-questionnaire</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Turn a decision you can&#x27;t fully answer into a questionnaire for someone else to fill in.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/to-spec">to-spec</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you&#x27;ve already discussed.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/to-tickets">to-tickets</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/triage">triage</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/wait-what">wait-what</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Stop. That last message did not land: re-pitch it.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/wayfinder">wayfinder</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/wizard">wizard</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don&#x27;t invoke this for steps the agent can perform itself.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/writing-beats">writing-beats</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/writing-for-agents">writing-for-agents</a><span class="inv-yes">Agent invokable: Yes</span></summary>
-<p>Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/writing-fragments">writing-fragments</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Writing, explore: mine raw fragments, no structure yet.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
-</details>
-<details><summary><a href="skills/writing-shape">writing-shape</a><span class="inv-no">Agent invokable: No</span></summary>
-<p>Writing, exploit: shape raw material into an article, paragraph by paragraph.</p>
-<p>Version: 1.0 · Author: jny986</p>
-<p>Based on: <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></p>
+<details>
+<summary>Git guides <span class="count">(6)</span></summary>
+<table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
+<tr><td><a href="skills/git/references/code-review.md">code-review</a></td><td>1.0.0</td><td>jny986</td><td>Review changes since a commit, branch, tag or merge-base, against repo standards and the spec</td></tr>
+<tr><td><a href="skills/git/references/commit.md">commit</a></td><td>1.0.0</td><td>jny986</td><td>Commit and push the current work, on the branch its ticket calls for</td></tr>
+<tr><td><a href="skills/git/references/create-pr.md">create-pr</a></td><td>1.0.0</td><td>jny986</td><td>Open a GitHub PR from the current branch (commits and pushes first if needed)</td></tr>
+<tr><td><a href="skills/git/references/finalise.md">finalise</a></td><td>1.0.0</td><td>jny986</td><td>The user explicitly asks to finalise a branch whose dev work is done: review, fix findings, then open the PR</td></tr>
+<tr><td><a href="skills/git/references/resolving-merge-conflicts.md">resolving-merge-conflicts</a></td><td>1.0.0</td><td>jny986</td><td>A merge or rebase is in progress with conflicts</td></tr>
+<tr><td><a href="skills/git/references/review-prs.md">review-prs</a></td><td>1.0.0</td><td>jny986</td><td>Review the open PRs awaiting the user&#x27;s review, asking continue or skip for each</td></tr>
+</tbody></table>
 </details>
 </body>
 </html>

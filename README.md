@@ -31,7 +31,8 @@ npx skills update
 ├── skills.html        # The same index, grouped by upstream source
 ├── CONTEXT.md         # Glossary of this repo's terms
 ├── docs/              # Agent config docs (agents/) and the router-skill guide
-├── scripts/           # Structure and frontmatter checks, run in CI
+├── scripts/           # Repo checks run in CI; `scripts/check-all.sh` runs them all locally
+├── tests/             # pytest fixtures for the checks (`pip install -r tests/requirements.txt`)
 ├── templates/         # Starter AGENTS.md and CLAUDE.md
 └── original-skills/   # Upstream skill repos, as git submodules
     ├── impeccable/

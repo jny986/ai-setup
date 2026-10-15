@@ -4,7 +4,7 @@ description: "Marketing playbooks for SaaS and software products. Use for any ma
 argument-hint: "[guide] [task]"
 license: MIT
 metadata:
-  version: "2.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
 ---

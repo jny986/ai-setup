@@ -1,10 +1,10 @@
 ---
-name: ask-matt
-description: Ask which skill or flow fits your situation. A router over the skills in this repo.
+name: what-to-use
+description: Ask which skill or flow fits your situation. A router over every skill in this repo, and any other skill available.
 disable-model-invocation: true
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
@@ -12,11 +12,13 @@ metadata:
   based_on_skill: ask-matt
 ---
 
-# Ask Matt
+# What To Use
 
 You don't remember every skill, so ask.
 
 Before stating what a skill does or recommending a step be skipped, read that skill's SKILL.md: the summaries here are for orientation only.
+
+The map below covers the engineering flows. Anything it doesn't cover, [Beyond the map](#beyond-the-map) resolves against every other skill available.
 
 A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone, or a vocabulary layer that runs underneath.
 
@@ -35,7 +37,7 @@ The route most work travels. You have an idea and want it built.
      - **`/implement-ticket`** for the whole spec in one run. It reads the tickets as a **task graph**, runs implementer subagents across the ready **frontier** in parallel, and lands everything on one **integration branch**. Reach for it when you'd rather orchestrate the build than drive each ticket yourself.
    - **No** → **`/implement`** right here, in the same context window.
 
-   Either way, the code gets built by driving **`/tdd`** (one red-green slice at a time) and closes out with **`/git code-review`**, a two-axis review (Standards + Spec) of the diff. `/implement` runs both per ticket; `/implement-ticket`'s implementers each drive `/tdd`, and it runs one `/git code-review` over the integration branch. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/code-review`** on its own whenever you want to review a branch or PR against a fixed point.
+   Either way, the code gets built by driving **`/tdd`** (one red-green slice at a time) and closes out with **`/git code-review`**, a two-axis review (Standards + Spec) of the diff. `/implement` drives `/tdd` per ticket; `/implement-ticket`'s implementers each drive `/tdd`, and it runs one `/git code-review` over the integration branch. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/git code-review`** on its own whenever you want to review a branch or PR against a fixed point.
 
 ### Context hygiene
 
@@ -96,6 +98,20 @@ Off the main flow entirely.
 - **`/wait-what`** is the corrective for a message that didn't land. Use it mid-conversation, inside any other skill, and the agent re-pitches what it just said with the context you were missing, in plain English, using the `CONTEXT.md` vocabulary. It works after the fact; `/grill-with-docs` is the upfront cure, because a shared language agreed early is what stops the jargon arriving at all.
 - **`/teach`**: learn a concept over multiple sessions, using the current directory as a stateful workspace.
 - **`/writing-for-agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs.
+
+## Beyond the map
+
+When the situation fits no flow above (marketing, writing, a repo-config chore, anything), search every skill available instead of forcing it onto the map:
+
+1. Match the situation against the descriptions in [`SKILLS.md`](../../SKILLS.md), the index of this repo's skills, and the available-skills list in context, which also holds skills from outside the repo.
+2. Read the best candidate's SKILL.md before recommending it.
+3. Recommend it by name with the one-line reason it fits. A skill marked agent-invokable in `SKILLS.md` can fire without the user; the rest only run when the user types the name.
+
+Three shapes to know:
+
+- **Routers** (`/git`, `/marketing`) hold guides, not skills. Recommend `/git <guide>` or `/marketing <guide>`, picking the guide from the router's table.
+- **Reference-only trees** (`skills/dev/references`, page and component builds) have no slash command. Reach them through a `/marketing` hand-off, or read the guide directly.
+- **Writing** is a sequence, not three alternatives: `/writing-fragments` (explore), then `/writing-shape` (an article) or `/writing-beats` (a journey of beats).
 
 ## Precondition
 

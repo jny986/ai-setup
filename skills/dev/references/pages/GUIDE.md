@@ -3,7 +3,7 @@ name: page-builder
 description: Build a new individual page inside an existing product or application. Use for page types such as home, product, feature, landing, pricing, tool, documentation, campaign, article, dashboard, settings, and error pages when the task includes page purpose, structure, content, components, implementation, and verification. Do not use for whole-site information architecture, site-wide navigation planning, or isolated component construction.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on: kostja94/pagina@239cb67 (MIT)

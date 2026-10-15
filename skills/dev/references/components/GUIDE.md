@@ -3,7 +3,7 @@ name: component-builder
 description: Build new interface components and bounded composition patterns inside an existing project. Use for named components, interface blocks, and workspaces. Preserve the target project's design system and stack; for a complete new page with page-level structure and multiple sections, use the page-builder guide (`dev/references/pages`) instead. Do not use to audit or reconstruct an existing component, plan a whole product or website, or handle purely editorial copy requests.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on: kostja94/bricks@fa7e1e0 (MIT)

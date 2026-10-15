@@ -73,7 +73,7 @@ def markdown(node, depth=0):
 def page(node):
     out = []
     for name, sub in sorted(node["dirs"].items()):
-        out.append(f"<details><summary>{html.escape(name)} <span>({count(sub)})</span></summary>")
+        out.append(f'<details><summary>{html.escape(name)} <span class="count">({count(sub)})</span></summary>')
         out.extend(page(sub))
         out.append("</details>")
     if node["guides"]:
@@ -95,17 +95,18 @@ def splice(path, body, comment, marker):
 
 
 STYLE = """body { font: 15px/1.5 system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: #222; }
-details { border: 1px solid #ddd; border-radius: 6px; margin-bottom: .5rem; }
-summary { cursor: pointer; padding: .6rem 1rem; font-weight: 600; }
+details { border: 1px solid #ddd; border-radius: 6px; margin-bottom: .75rem; }
+summary { cursor: pointer; padding: .75rem 1rem; font-weight: 600; font-size: 1.1rem; }
 summary span { color: #777; font-weight: normal; }
-summary .inv-yes, summary .inv-no { float: right; font-size: .85rem; font-weight: normal; }
-summary .inv-yes { color: #1a7f37; }
-summary .inv-no { color: #b42318; }
-details > p, details > ul { margin: .25rem 1rem .75rem; }
+summary a { font-size: .85rem; font-weight: normal; margin-left: .5rem; }
 details details { margin: .5rem 1rem; }
-table { border-collapse: collapse; width: calc(100% - 2rem); margin: 0 1rem .75rem; }
+details details summary { font-size: 1rem; }
+table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; vertical-align: top; padding: .5rem 1rem; border-top: 1px solid #eee; }
-td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }"""
+td:first-child { white-space: nowrap; font-family: ui-monospace, monospace; }
+td.inv-yes, td.inv-no { white-space: nowrap; }
+td.inv-yes { color: #1a7f37; }
+td.inv-no { color: #b42318; }"""
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
 
@@ -128,20 +129,30 @@ def skills():
 
 
 def skills_page(rows, trees):
+    """Skills grouped by upstream (Original first), then one section per router's guide tree.
+
+    scripts/check-indexes.py reads the skill rows and the `<span>(N)</span>` group counts, so keep both shapes.
+    """
+    groups = {}
+    for row in rows:
+        groups.setdefault(tuple(row[2]), []).append(row)
+    ordered = sorted(groups.items(), key=lambda kv: (bool(kv[0]), [t for t, _ in kv[0]]))
     out = ["<!doctype html>", '<html lang="en">', "<head>", '<meta charset="utf-8">', "<title>Skills</title>",
            f"<style>\n{STYLE}\n</style>", "</head>", "<body>", "<h1>Skills</h1>"]
-    for name, path, based, invokable, version, author, desc in rows:
-        out.append(f'<details><summary><a href="{html.escape(path)}">{html.escape(name)}</a>'
-                   f'<span class="inv-{invokable.lower()}">Agent invokable: {html.escape(invokable)}</span></summary>')
-        out.append(f"<p>{html.escape(desc)}</p>")
-        out.append(f"<p>Version: {html.escape(version)} · Author: {html.escape(author)}</p>")
-        if based:
-            links = ", ".join(f'<a href="{html.escape(u)}">{html.escape(t)}</a>' for t, u in based)
-            out.append(f"<p>Based on: {links}</p>")
-        else:
-            out.append("<p>Original</p>")
-        if name in trees:
-            out.extend(page(trees[name]))
+    for based, members in ordered:
+        label = "Original" if not based else "Based on " + ", ".join(html.escape(t) for t, _ in based)
+        links = "".join(f' <a href="{html.escape(u)}">{html.escape(u)}</a>' for _, u in based)
+        out.append(f'<details>\n<summary>{label} <span>({len(members)})</span>{links}</summary>')
+        out.append("<table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th>"
+                   "<th>Description</th></tr></thead><tbody>")
+        for name, path, _, invokable, version, author, desc in sorted(members):
+            out.append(f'<tr><td><a href="{html.escape(path)}">{html.escape(name)}</a></td>'
+                       f'<td class="inv-{invokable.lower()}">{html.escape(invokable)}</td><td>{html.escape(version)}</td>'
+                       f"<td>{html.escape(author)}</td><td>{html.escape(desc)}</td></tr>")
+        out += ["</tbody></table>", "</details>"]
+    for name, tree_root in trees.items():
+        out.append(f'<details>\n<summary>{html.escape(name.capitalize())} guides <span class="count">({count(tree_root)})</span></summary>')
+        out.extend(page(tree_root))
         out.append("</details>")
     out += ["</body>", "</html>", ""]
     return "\n".join(out)

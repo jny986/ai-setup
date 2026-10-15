@@ -3,7 +3,7 @@ name: finalise
 description: Finalise a branch's dev work — run code review, fix findings, then create the PR. Use when the user asks to finalise, finish, or wrap up a branch. Invoked as /git finalise.
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
 ---
@@ -15,7 +15,7 @@ Take a branch from "dev work done" to "PR open" by running code review, fixing w
 1. **Diff base.** Determine what this branch's changes should be measured against:
    - If the current branch tracks an upstream, use `git merge-base @{u} HEAD`.
    - Else if the branch was forked from a traceable parent (`git merge-base --fork-point <default-branch> HEAD` succeeds), use that.
-   - Else fall back to the repo's default branch (`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`) merge-based with `HEAD`.
+   - Else fall back to the repo's default branch (`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`) merge-base with `HEAD`.
    - If none of these resolve confidently, ask the user which fixed point to use.
 
 2. **Review.** Follow `code-review.md`, passing the fixed point from step 1. No findings on either axis: skip straight to step 6.

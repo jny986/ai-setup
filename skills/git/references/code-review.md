@@ -3,7 +3,7 @@ name: code-review
 description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills
@@ -11,7 +11,7 @@ metadata:
   based_on_skill: code-review
 ---
 
-Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
+Two-axis review of the diff between `HEAD` and a fixed point, defaulted when the user supplies none:
 
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
@@ -24,9 +24,14 @@ The issue tracker should have been provided to you. If `docs/agents/issue-tracke
 
 ## Process
 
-### 1. Pin the fixed point
+### 1. Determine what to review
 
-Whatever the user said is the fixed point (a commit SHA, branch name, PR target branch, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, use the open PR's target branch (`gh pr view --json baseRefName -q .baseRefName`, then compare against `origin/<base>`). Ask only if there's no PR.
+**Target.** Name what's under review:
+
+- **A branch or PR** the user named: check it out and bring it up to date with its remote (`gh pr checkout <n>` for a PR, otherwise `git checkout <branch>`; then `git fetch` and `git pull --ff-only`). Review is of the *current* branch at its latest commit. Stop and tell the user if the tree is dirty or the pull can't fast-forward.
+- **Nothing named**: review the local branch as it stands, with no checkout or pull.
+
+**Fixed point.** Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, default to the target branch of the PR (`gh pr view --json baseRefName -q .baseRefName`, then compare against `origin/<base>`). With no PR, default to the branch the review target was cut from, else the repo's default branch. Ask only if none of these resolves.
 
 Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
 
@@ -95,18 +100,18 @@ Present the two reports under `## Standards` and `## Spec` headings, verbatim or
 
 End with a one-line summary: total findings per axis, the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
 
-### 6. Offer PR inline comments
+### 7. Offer PR inline comments
 
-If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 7. Skip steps 6 and 7 when there's no PR.
+If the review is of a PR, ask the user which findings (if any) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 8. Skip steps 7 and 8 when there's no PR.
 
-### 7. Submit the review
+### 8. Submit the review
 
 Recommend a verdict and let the user confirm or override it:
 
 - **Approve**: only minor issues, or none.
 - **Request changes**: issues that need to be looked at before merge.
 
-Ask what review comment they want to add (suggest a short draft based on the findings). Then submit one review on the PR with the confirmed verdict, the comment, and the inline comments picked in step 6 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`). Don't submit until the user has confirmed the verdict and comment.
+Ask what review comment they want to add (suggest a short draft based on the findings). Then submit one review on the PR with the confirmed verdict, the comment, and the inline comments picked in step 7 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`). Don't submit until the user has confirmed the verdict and comment.
 
 ## Why two axes
 
