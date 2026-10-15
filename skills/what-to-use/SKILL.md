@@ -109,7 +109,7 @@ When the situation fits no flow above (marketing, writing, a repo-config chore, 
 
 Three shapes to know:
 
-- **Routers** (`/git`, `/marketing`) hold guides, not skills. Recommend `/git <guide>` or `/marketing <guide>`, picking the guide from the router's table.
+- **Routers** (`/git`, `/marketing`) hold sub-skills, not skills. Recommend `/git <sub-skill>` or `/marketing <sub-skill>`, picking the sub-skill from the router's table.
 - **Reference-only trees** (`skills/dev/references`, page and component builds) have no slash command. Reach them through a `/marketing` hand-off, or read the guide directly.
 - **Writing** is a sequence, not three alternatives: `/writing-fragments` (explore), then `/writing-shape` (an article) or `/writing-beats` (a journey of beats).
 

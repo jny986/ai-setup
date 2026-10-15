@@ -11,27 +11,27 @@ A folder with a `SKILL.md` that an agent loads for a particular kind of task, in
 _Avoid_: Plugin, command, prompt
 
 **Router skill**:
-A skill that picks among a group of related guides so the user needs one entry point instead of many names.
+A skill that picks among a group of related sub-skills so the user needs one entry point instead of many names.
 _Avoid_: Meta-skill, umbrella skill, dispatcher
 
-**Guide**:
+**Sub-skill**:
 A member of a router skill's group. It is not itself a skill and is run through its router.
-_Avoid_: Sub-skill, child skill
+_Avoid_: Guide, child skill
 
 **Reference-only tree**:
-A set of guides with no router skill, reached by hand-off from guides elsewhere.
+A set of sub-skills with no router skill, reached by hand-off from sub-skills elsewhere.
 _Avoid_: Hidden skill, library
 
-**Hand-off (between guides)**:
-A guide naming another guide, in the same or a different tree, as the next step.
+**Hand-off (between sub-skills)**:
+A sub-skill naming another sub-skill, in the same or a different tree, as the next step.
 _Avoid_: Link, redirect
 
 **Name table**:
-The index mapping each guide's final name to its location, source and old aliases.
+The index mapping each sub-skill's final name to its location, source and old aliases.
 _Avoid_: Registry, manifest
 
 **Alias**:
-An old name for a guide that still resolves to its current name.
+An old name for a sub-skill that still resolves to its current name.
 _Avoid_: Redirect, legacy name
 
 **Mod**:

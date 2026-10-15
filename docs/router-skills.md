@@ -1,6 +1,6 @@
 # Router skills
 
-A router skill is one `SKILL.md` that picks among a group of related guides, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `finalise`, `code-review`, `review-prs` and `resolving-merge-conflicts`.
+A router skill is one `SKILL.md` that picks among a group of related sub-skills, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `finalise`, `code-review`, `review-prs` and `resolving-merge-conflicts`.
 
 ## When to build one
 
@@ -12,34 +12,34 @@ A router skill is one `SKILL.md` that picks among a group of related guides, so 
 
 ```
 skills/git/
-  SKILL.md                         # router: steps + guide table
+  SKILL.md                         # router: steps + sub-skill table
   agents/openai.yaml               # router metadata
-  references/
+  sub-skills/
     commit.md                      # the former SKILL.md
     create-pr.md finalise.md code-review.md review-prs.md resolving-merge-conflicts.md
 ```
 
-A guide with supporting files (`references/`, `assets/`) keeps them in a `references/` or `assets/` folder beside it, shared with the other guides in that folder, so relative links still resolve.
+A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `references/` or `assets/` folder beside it, shared with the other sub-skills in that folder, so relative links still resolve.
 
 ## How `git` was built
 
-1. **Guides are not skills.** Each member moved to `references/<guide>.md`. The standalone slash commands (`/finalise`, `/create-pr`, ...) are gone; the user runs `/git finalise`.
-2. **Router `SKILL.md` stays thin:** steps, a `Guide | Use when` table linking each guide, and a short "How they nest" note. No guide content.
-3. **Steps:** argument names a guide, use it; otherwise match the "Use when" row, asking once on a tie; then read the guide and follow it as if it were the skill.
-4. **Description** names the task types and lists the guide names, so the model triggers on any of them.
-5. **Cross-references rewritten.** Guides that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`what-to-use`, `implement-ticket`, `tdd`) became `/git <guide>`.
-6. **Agents metadata.** The router has `agents/openai.yaml` with `allow_implicit_invocation: true`. Guides carry no yaml: they aren't skills, so nothing reads it.
+1. **Sub-skills are not skills.** Each member moved to `sub-skills/<sub-skill>.md`. The standalone slash commands (`/finalise`, `/create-pr`, ...) are gone; the user runs `/git finalise`.
+2. **Router `SKILL.md` stays thin:** steps, a `Sub-skill | Use when` table linking each sub-skill, and a short "How they nest" note. No sub-skill content.
+3. **Steps:** argument names a sub-skill, use it; otherwise match the "Use when" row, asking once on a tie; then read the sub-skill and follow it as if it were the skill.
+4. **Description** names the task types and lists the sub-skill names, so the model triggers on any of them.
+5. **Cross-references rewritten.** Sub-skills that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`what-to-use`, `implement-ticket`, `tdd`) became `/git <sub-skill>`.
+6. **Agents metadata.** The router has `agents/openai.yaml` with `allow_implicit_invocation: true`. Sub-skills carry no yaml: they aren't skills, so nothing reads it.
 7. **Indexes.** The five former skills were removed from `SKILLS.md` and `skills.html`, and one `git` row added.
-8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`. Guides adapted from upstream also carry `based_on_repo`, `based_on_version` and `based_on_skill`.
+8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`. Sub-skills adapted from upstream also carry `based_on_repo`, `based_on_version` and `based_on_skill`.
 
 ## Reference-only trees
 
-A tree of guides with no router yet (`skills/dev/references`) has no `SKILL.md` or `agents/openai.yaml`. Its index is the Dev section of the owning router's `references/name-table.md`, and `scripts/check-marketing-structure.py` checks it.
+A tree of guides with no router yet (`skills/dev/references`) has no `SKILL.md` or `agents/openai.yaml`. Its index is the Dev section of the owning router's `sub-skills/name-table.md`, and `scripts/check-marketing-structure.py` checks it.
 
 ## Checklist
 
 - [ ] Every member is model-invocable
-- [ ] Members moved to `references/<guide>.md` (supporting files in a `references/` folder beside it), own references intact
+- [ ] Members moved to `sub-skills/<sub-skill>.md` (supporting files in a `references/` folder beside it), own references intact
 - [ ] No leftover Skill tool calls or `/<old-name>` mentions (`grep` the repo)
 - [ ] Router table links resolve
 - [ ] `agents/openai.yaml` on the router

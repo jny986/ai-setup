@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Build skills.html and the marketing and git guide lists in SKILLS.md.
+"""Build skills.html and the marketing and git sub-skill lists in SKILLS.md.
 
 skills.html is generated from the SKILLS.md skills table plus the marketing and git router tables in their SKILL.md.
-SKILLS.md gets the Version and Author cells of its skills table and the spans between its `marketing-references` and
-`git-references` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
-moving or renaming a skill or router guide, or bumping a version.
+SKILLS.md gets the Version and Author cells of its skills table and the spans between its `marketing-sub-skills` and
+`git-sub-skills` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
+moving or renaming a skill or router sub-skill, or bumping a version.
 """
 import html
 import re
@@ -26,38 +26,38 @@ def meta(path):
     return tuple(found)
 
 
-def guides():
-    """(name, path, use when) for each router row that points at a marketing guide file."""
+def sub_skills():
+    """(name, path, use when) for each router row that points at a marketing sub-skill file."""
     out = []
     for line in ROUTER.read_text().splitlines():
-        m = re.match(r"\| `([^`]+)` \| `(references/[^`]+\.md)` \| (.*) \|$", line)
+        m = re.match(r"\| `([^`]+)` \| `(sub-skills/[^`]+\.md)` \| (.*) \|$", line)
         if m:
             out.append(m.groups())
     return out
 
 
-def git_guides():
-    """Same shape as guides(), for the git router's `[`name`](references/x.md)` rows."""
+def git_sub_skills():
+    """Same shape as sub_skills(), for the git router's `[`name`](sub-skills/x.md)` rows."""
     out = []
     for line in GIT_ROUTER.read_text().splitlines():
-        m = re.match(r"\| \[`([^`]+)`\]\((references/[^)]+\.md)\) \| (.*) \|$", line)
+        m = re.match(r"\| \[`([^`]+)`\]\((sub-skills/[^)]+\.md)\) \| (.*) \|$", line)
         if m:
             out.append(m.groups())
     return out
 
 
 def tree(rows, skill="marketing"):
-    root = {"dirs": {}, "guides": []}
+    root = {"dirs": {}, "sub_skills": []}
     for name, path, use in rows:
         node = root
         for part in Path(path).parts[1:-1]:
-            node = node["dirs"].setdefault(part, {"dirs": {}, "guides": []})
-        node["guides"].append((name, f"skills/{skill}/{path}", use, *meta(ROOT / "skills" / skill / path)))
+            node = node["dirs"].setdefault(part, {"dirs": {}, "sub_skills": []})
+        node["sub_skills"].append((name, f"skills/{skill}/{path}", use, *meta(ROOT / "skills" / skill / path)))
     return root
 
 
 def count(node):
-    return len(node["guides"]) + sum(count(d) for d in node["dirs"].values())
+    return len(node["sub_skills"]) + sum(count(d) for d in node["dirs"].values())
 
 
 def markdown(node, depth=0):
@@ -66,7 +66,7 @@ def markdown(node, depth=0):
     for name, sub in sorted(node["dirs"].items()):
         out.append(f"{pad}- **{name}** ({count(sub)})")
         out.extend(markdown(sub, depth + 1))
-    out.extend(f"{pad}- [{n}]({p}) (v{v}, {a}): {u}" for n, p, u, v, a in sorted(node["guides"]))
+    out.extend(f"{pad}- [{n}]({p}) (v{v}, {a}): {u}" for n, p, u, v, a in sorted(node["sub_skills"]))
     return out
 
 
@@ -76,10 +76,10 @@ def page(node):
         out.append(f'<details><summary>{html.escape(name)} <span class="count">({count(sub)})</span></summary>')
         out.extend(page(sub))
         out.append("</details>")
-    if node["guides"]:
-        out.append("<table><thead><tr><th>Guide</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>")
+    if node["sub_skills"]:
+        out.append("<table><thead><tr><th>Sub-skill</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>")
         out.extend(f'<tr><td><a href="{html.escape(p)}">{html.escape(n)}</a></td><td>{html.escape(v)}</td>'
-                   f'<td>{html.escape(a)}</td><td>{html.escape(u)}</td></tr>' for n, p, u, v, a in sorted(node["guides"]))
+                   f'<td>{html.escape(a)}</td><td>{html.escape(u)}</td></tr>' for n, p, u, v, a in sorted(node["sub_skills"]))
         out.append("</tbody></table>")
     return out
 
@@ -129,7 +129,7 @@ def skills():
 
 
 def skills_page(rows, trees):
-    """Skills grouped by upstream (Original first), then one section per router's guide tree.
+    """Skills grouped by upstream (Original first), then one section per router's sub-skill tree.
 
     scripts/check-indexes.py reads the skill rows and the `<span>(N)</span>` group counts, so keep both shapes.
     """
@@ -151,17 +151,17 @@ def skills_page(rows, trees):
                        f"<td>{html.escape(author)}</td><td>{html.escape(desc)}</td></tr>")
         out += ["</tbody></table>", "</details>"]
     for name, tree_root in trees.items():
-        out.append(f'<details>\n<summary>{html.escape(name.capitalize())} guides <span class="count">({count(tree_root)})</span></summary>')
+        out.append(f'<details>\n<summary>{html.escape(name.capitalize())} sub-skills <span class="count">({count(tree_root)})</span></summary>')
         out.extend(page(tree_root))
         out.append("</details>")
     out += ["</body>", "</html>", ""]
     return "\n".join(out)
 
 
-root = tree(guides())
-git_root = tree(git_guides(), "git")
+root = tree(sub_skills())
+git_root = tree(git_sub_skills(), "git")
 comment = lambda m: f"<!-- {m} -->"
-splice(ROOT / "SKILLS.md", "## Marketing references\n\n" + "\n".join(markdown(root)), comment, "marketing-references")
-splice(ROOT / "SKILLS.md", "## Git references\n\n" + "\n".join(markdown(git_root)), comment, "git-references")
+splice(ROOT / "SKILLS.md", "## Marketing sub-skills\n\n" + "\n".join(markdown(root)), comment, "marketing-sub-skills")
+splice(ROOT / "SKILLS.md", "## Git sub-skills\n\n" + "\n".join(markdown(git_root)), comment, "git-sub-skills")
 (ROOT / "skills.html").write_text(skills_page(skills(), {"marketing": root, "git": git_root}))
-print(f"{count(root)} marketing guides, {count(git_root)} git guides")
+print(f"{count(root)} marketing sub-skills, {count(git_root)} git sub-skills")

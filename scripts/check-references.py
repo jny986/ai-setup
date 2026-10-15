@@ -3,7 +3,7 @@
 
 - Non-Markdown asset paths (`references/x.csv`, `scripts/x.sh`, ...) resolve from the file or an ancestor folder.
 - `docs/agents/<file>.md` mentions resolve against this repo's docs/agents.
-- Skill names (`/name`, `` `name` skill``, `skill: name`) in skills, templates and docs name a skill or marketing guide that exists.
+- Skill names (`/name`, `` `name` skill``, `skill: name`) in skills, templates and docs name a skill or marketing sub-skill that exists.
 - Retired skill names appear nowhere outside frontmatter.
 
 Slash mentions are only checked outside skills/marketing and skills/dev, where `/blog`-style URL paths are common.
@@ -25,9 +25,9 @@ RETIRED = {"ask-matt"}
 
 
 def known_names(root):
-    """Skill names plus every guide name (and alias) in the marketing name table."""
+    """Skill names plus every sub-skill name (and alias) in the marketing name table."""
     names = set(skill_dirs(root))
-    table = root / "skills" / "marketing" / "references" / "name-table.md"
+    table = root / "skills" / "marketing" / "sub-skills" / "name-table.md"
     if table.exists():
         for line in table.read_text().splitlines():
             if line.startswith("|"):
@@ -62,7 +62,7 @@ def check(root):
         if not in_loose_tree:
             for name in SLASH.findall(text):
                 if name not in names and name not in BUILTIN:
-                    report.fail(f"{rel}: `/{name}` is not a skill or guide")
+                    report.fail(f"{rel}: `/{name}` is not a skill or sub-skill")
         for groups in NAMED.findall(text):
             name = next(g for g in groups if g)
             if name not in names:
