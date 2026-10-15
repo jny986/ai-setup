@@ -14,5 +14,26 @@ jobs:
         run: python3 scripts/check-marketing-structure.py
       - name: Skill frontmatter and links
         run: python3 scripts/check-skills.py
+      - name: Index sync
+        run: python3 scripts/check-indexes.py
+      - name: Agent yaml
+        run: python3 scripts/check-agent-yaml.py
+      - name: References
+        run: python3 scripts/check-references.py
+      - name: Assets
+        run: python3 scripts/check-assets.py
+      - name: Provenance
+        run: python3 scripts/check-provenance.py
+      - name: YAML lint
+        run: pipx run yamllint -c .yamllint.yaml skills/*/agents .github
       - name: Markdown lint
         uses: DavidAnson/markdownlint-cli2-action@v19
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pytest
+        run: python3 -m pip install -r tests/requirements.txt
+      - name: Checker tests
+        run: python3 -m pytest -q tests

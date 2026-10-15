@@ -29,7 +29,7 @@ Run one before and after any agent-readiness work — the score is a shareable a
 
 ### 3. Parseability — once there, can the agent tell what the page is?
 
-- **Valid, substantive structured data** (JSON-LD — see the `schema-markup` skill).
+- **Valid, substantive structured data** (JSON-LD — see the `schema` skill).
 - **A Markdown representation of the page.** This is the newest technique in the stack, two implementations:
   - **Content negotiation**: serve compact Markdown at the *same canonical URL* when the request asks for `Accept: text/markdown`, with a `Vary` header keeping the HTML and Markdown cache entries separate. (This is how Is Agentic serves its own reports — agents get Markdown, browsers get HTML, one URL.)
   - **Link header**: an HTTP `Link` header on the HTML page pointing to a parallel Markdown version — discoverable without guessing URLs.
