@@ -14,6 +14,11 @@ Default canonical labels: `needs-triage`, `needs-info`, `ready-for-agent`, `read
 
 Single-context: one root `CONTEXT.md` plus `docs/adr/`; ignore the upstream submodules in `source-skills/`. See `docs/agents/domain.md`.
 
+## Shell commands
+
+- Run one command per call. Chains (`&&`, `;`, `|`) can be rejected as a whole.
+- If a chained command is rejected, rerun its parts separately before telling the user.
+
 ## Plan Mode
 
 - Make the plan extremely concise. Sacrifice grammar for the sake of concision.
