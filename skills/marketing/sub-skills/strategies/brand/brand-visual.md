@@ -194,8 +194,8 @@ Ensure consistency across touchpoints. Include:
 ## Related Skills
 
 - **branding**: Brand strategy; visual identity strategy; this skill implements typography, colors, spacing
-- `dev/references/components/branding/logo`: Logo placement, clear space; brand visual defines logo rules
-- `dev/references/components/branding/favicon`: Favicon aligns with brand mark and colors
-- `dev/references/pages/marketing/press`: Media kit hosts brand guidelines document; links to logo, favicon
-- `dev/references/components/branding/hero`: Hero uses brand typography, colors, spacing
-- `dev/references/pages/utility/404`: Error pages maintain brand consistency
+- `implement/sub-skills/references/components/branding/logo.md`: Logo placement, clear space; brand visual defines logo rules
+- `implement/sub-skills/references/components/branding/favicon.md`: Favicon aligns with brand mark and colors
+- `implement/sub-skills/references/pages/marketing/press.md`: Media kit hosts brand guidelines document; links to logo, favicon
+- `implement/sub-skills/references/components/branding/hero.md`: Hero uses brand typography, colors, spacing
+- `implement/sub-skills/references/pages/utility/404.md`: Error pages maintain brand consistency

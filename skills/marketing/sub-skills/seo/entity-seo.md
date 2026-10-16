@@ -115,4 +115,4 @@ See **generative-engine-optimization** for full GEO strategy.
 - **generative-engine-optimization**: GEO; entity signals for AI citation
 - **serp-features**: Knowledge Panel, Knowledge Card; SERP context
 - **multi-domain-brand-seo**: Entity & Knowledge Panel; Hub-Spoke consistency
-- `dev/references/pages/brand/about`: Entity Home; authoritative brand reference
+- `implement/sub-skills/references/pages/brand/about.md`: Entity Home; authoritative brand reference

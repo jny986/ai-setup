@@ -1,6 +1,6 @@
 ---
 name: programmatic-seo
-description: When the user wants to create SEO pages at scale using templates and data—including AI-assisted, grounded copy for per-URL differentiation (vs rigid mail-merge templates). Also use when the user mentions "programmatic SEO," "programmatic SEO pages," "template pages," "scale content," "location pages," "city pages," "comparison pages at scale," "X vs Y pages," "integration pages," "pages from data," "automated landing pages," or "programmatic landing pages." Uses a playbook matrix aligned to skills under skills/pages. For user-facing template galleries or marketplaces (browse → use), use `dev/references/pages/content/template-page`.
+description: When the user wants to create SEO pages at scale using templates and data—including AI-assisted, grounded copy for per-URL differentiation (vs rigid mail-merge templates). Also use when the user mentions "programmatic SEO," "programmatic SEO pages," "template pages," "scale content," "location pages," "city pages," "comparison pages at scale," "X vs Y pages," "integration pages," "pages from data," "automated landing pages," or "programmatic landing pages." Uses a playbook matrix aligned to skills under skills/pages. For user-facing template galleries or marketplaces (browse → use), use `implement/sub-skills/references/pages/content/template-page.md`.
 metadata:
   version: 1.4.1
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
@@ -44,24 +44,24 @@ Page types in this library live under `pages/{brand|content|legal|marketing|util
 
 | Playbook | Example intent / keyword pattern | Page skill (`name`) | Path (reference) |
 |----------|----------------------------------|---------------------|------------------|
-| **Alternatives / comparisons** | "[Competitor] alternatives", "X vs Y" | `dev/references/pages/marketing/alternatives` | `pages/marketing/alternatives` |
-| **Integrations** | "[Product A] [Product B] integration" | `dev/references/pages/marketing/integrations` | `pages/marketing/integrations` |
-| **Category / catalog** | Faceted listings, product grids | `dev/references/pages/marketing/commerce`, `dev/references/pages/marketing/commerce` | `pages/marketing/category-pages`, `products` |
-| **Glossary / definitions** | "what is [term]", term landings | `dev/references/pages/content/documentation` | `pages/content/glossary` |
-| **FAQ / Q&A** | Question banks, PAA-style pages | `dev/references/pages/content/faq` | `pages/content/faq` |
-| **How-to / procedures** | Step libraries, "[how to] [task]" blocks in templates | `dev/references/components/content/howto-section` | `components/content/howto-section` |
-| **Comparison matrix (blocks)** | Feature/criteria grids, "vs" cells from data feed | `dev/references/components/content/comparison-table` | `components/content/comparison-table` |
-| **Tools & lead magnets** | "free [x] tool/calculator" | `dev/references/pages/content/tools` | `pages/content/tools` |
-| **Template gallery** | Browse → detail (your templates) | `dev/references/pages/content/template-page` | `pages/content/template-page` |
-| **Resource hub** | Guides, hubs, download centers | `dev/references/pages/content/resources` | `pages/content/resources` |
-| **Use cases / solutions** | "for [role]", "by industry" | `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/service-solution` | `pages/marketing/use-cases`, `solutions` |
-| **Migration / switching** | "migrate from [X]" | `dev/references/pages/marketing/migration` | `pages/marketing/migration` |
-| **Campaign landing** | Paid/segment LPs | `dev/references/pages/marketing/landing-page` | `pages/marketing/landing-page` |
-| **Blog / article** | Long-tail articles at scale | `dev/references/pages/content/blog`, `dev/references/pages/content/article` | `pages/content/blog`, `article` |
-| **Docs / features / API** | Scalable doc sections, feature landings, `/api` marketing | `dev/references/pages/content/documentation`, `dev/references/pages/content/features`, `dev/references/pages/content/product-interface` | `pages/content/docs`, `features`, `api` |
-| **Social proof** | Logos, case studies, galleries | `dev/references/pages/marketing/press`, `dev/references/pages/marketing/customer-stories`, `dev/references/pages/marketing/showcase` | `pages/marketing/press-coverage`, `customer-stories`, `showcase` |
-| **Programs & offers** | Startups/education, contests, downloads, affiliate, media kit | `dev/references/pages/marketing/program`, `dev/references/pages/marketing/contest`, `dev/references/pages/content/product-interface`, `dev/references/pages/marketing/program`, `dev/references/pages/marketing/press` | `pages/marketing/*` |
-| **Pricing / services** | Plans, offerings (use sparingly for pSEO) | `dev/references/pages/marketing/pricing`, `dev/references/pages/marketing/service-solution` | `pages/marketing/pricing`, `services` |
+| **Alternatives / comparisons** | "[Competitor] alternatives", "X vs Y" | `implement/sub-skills/references/pages/marketing/alternatives.md` | `pages/marketing/alternatives` |
+| **Integrations** | "[Product A] [Product B] integration" | `implement/sub-skills/references/pages/marketing/integrations.md` | `pages/marketing/integrations` |
+| **Category / catalog** | Faceted listings, product grids | `implement/sub-skills/references/pages/marketing/commerce.md`, `implement/sub-skills/references/pages/marketing/commerce.md` | `pages/marketing/category-pages`, `products` |
+| **Glossary / definitions** | "what is [term]", term landings | `implement/sub-skills/references/pages/content/documentation.md` | `pages/content/glossary` |
+| **FAQ / Q&A** | Question banks, PAA-style pages | `implement/sub-skills/references/pages/content/faq.md` | `pages/content/faq` |
+| **How-to / procedures** | Step libraries, "[how to] [task]" blocks in templates | `implement/sub-skills/references/components/content/howto-section.md` | `components/content/howto-section` |
+| **Comparison matrix (blocks)** | Feature/criteria grids, "vs" cells from data feed | `implement/sub-skills/references/components/content/comparison-table.md` | `components/content/comparison-table` |
+| **Tools & lead magnets** | "free [x] tool/calculator" | `implement/sub-skills/references/pages/content/tools.md` | `pages/content/tools` |
+| **Template gallery** | Browse → detail (your templates) | `implement/sub-skills/references/pages/content/template-page.md` | `pages/content/template-page` |
+| **Resource hub** | Guides, hubs, download centers | `implement/sub-skills/references/pages/content/resources.md` | `pages/content/resources` |
+| **Use cases / solutions** | "for [role]", "by industry" | `implement/sub-skills/references/pages/marketing/use-cases.md`, `implement/sub-skills/references/pages/marketing/service-solution.md` | `pages/marketing/use-cases`, `solutions` |
+| **Migration / switching** | "migrate from [X]" | `implement/sub-skills/references/pages/marketing/migration.md` | `pages/marketing/migration` |
+| **Campaign landing** | Paid/segment LPs | `implement/sub-skills/references/pages/marketing/landing-page.md` | `pages/marketing/landing-page` |
+| **Blog / article** | Long-tail articles at scale | `implement/sub-skills/references/pages/content/blog.md`, `implement/sub-skills/references/pages/content/article.md` | `pages/content/blog`, `article` |
+| **Docs / features / API** | Scalable doc sections, feature landings, `/api` marketing | `implement/sub-skills/references/pages/content/documentation.md`, `implement/sub-skills/references/pages/content/features.md`, `implement/sub-skills/references/pages/content/product-interface.md` | `pages/content/docs`, `features`, `api` |
+| **Social proof** | Logos, case studies, galleries | `implement/sub-skills/references/pages/marketing/press.md`, `implement/sub-skills/references/pages/marketing/customer-stories.md`, `implement/sub-skills/references/pages/marketing/showcase.md` | `pages/marketing/press-coverage`, `customer-stories`, `showcase` |
+| **Programs & offers** | Startups/education, contests, downloads, affiliate, media kit | `implement/sub-skills/references/pages/marketing/program.md`, `implement/sub-skills/references/pages/marketing/contest.md`, `implement/sub-skills/references/pages/content/product-interface.md`, `implement/sub-skills/references/pages/marketing/program.md`, `implement/sub-skills/references/pages/marketing/press.md` | `pages/marketing/*` |
+| **Pricing / services** | Plans, offerings (use sparingly for pSEO) | `implement/sub-skills/references/pages/marketing/pricing.md`, `implement/sub-skills/references/pages/marketing/service-solution.md` | `pages/marketing/pricing`, `services` |
 
 **Usually not mass programmatic** (single primary URL or compliance-heavy): `pages/brand/*` (home, about, contact), `pages/legal/*`, most `pages/utility/*` (404, status, signup-login, etc.)—treat as one-off or policy-driven, not template×data scale.
 
@@ -69,19 +69,19 @@ Page types in this library live under `pages/{brand|content|legal|marketing|util
 
 | If you have… | Lean toward… | Open first… |
 |----------------|--------------|-------------|
-| Competitor list + positioning | Alternatives / comparisons | `dev/references/pages/marketing/alternatives` |
-| Integration directory (your + partners') | Integrations matrix | `dev/references/pages/marketing/integrations` |
-| Product catalog or SKUs | Category / product grids | `dev/references/pages/marketing/commerce`, `dev/references/pages/marketing/commerce` |
-| Term / definition database | Glossary | `dev/references/pages/content/documentation` |
-| Support tickets / PAA mined questions | FAQ scale | `dev/references/pages/content/faq` |
-| How-to step banks / procedure templates | HowTo sections in scaled pages | `dev/references/components/content/howto-section` |
-| Competitor/feature matrix from data | Comparison table blocks in scaled pages | `dev/references/components/content/comparison-table` (+ `dev/references/pages/marketing/alternatives` for URL intent) |
-| Lead magnets, calculators | Tools hub + per-tool | `dev/references/pages/content/tools` |
-| **Your own templates** (exports, gallery items) | Template marketplace | `dev/references/pages/content/template-page` |
-| ICP × industry matrix | Use cases / solutions | `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/service-solution` |
-| Import paths from competitors | Migration | `dev/references/pages/marketing/migration` |
-| Campaign or geo LPs | Landing pages | `dev/references/pages/marketing/landing-page` |
-| Long-form SEO articles | Blog index + single post | `dev/references/pages/content/blog`, `dev/references/pages/content/article` |
+| Competitor list + positioning | Alternatives / comparisons | `implement/sub-skills/references/pages/marketing/alternatives.md` |
+| Integration directory (your + partners') | Integrations matrix | `implement/sub-skills/references/pages/marketing/integrations.md` |
+| Product catalog or SKUs | Category / product grids | `implement/sub-skills/references/pages/marketing/commerce.md`, `implement/sub-skills/references/pages/marketing/commerce.md` |
+| Term / definition database | Glossary | `implement/sub-skills/references/pages/content/documentation.md` |
+| Support tickets / PAA mined questions | FAQ scale | `implement/sub-skills/references/pages/content/faq.md` |
+| How-to step banks / procedure templates | HowTo sections in scaled pages | `implement/sub-skills/references/components/content/howto-section.md` |
+| Competitor/feature matrix from data | Comparison table blocks in scaled pages | `implement/sub-skills/references/components/content/comparison-table.md` (+ `implement/sub-skills/references/pages/marketing/alternatives.md` for URL intent) |
+| Lead magnets, calculators | Tools hub + per-tool | `implement/sub-skills/references/pages/content/tools.md` |
+| **Your own templates** (exports, gallery items) | Template marketplace | `implement/sub-skills/references/pages/content/template-page.md` |
+| ICP × industry matrix | Use cases / solutions | `implement/sub-skills/references/pages/marketing/use-cases.md`, `implement/sub-skills/references/pages/marketing/service-solution.md` |
+| Import paths from competitors | Migration | `implement/sub-skills/references/pages/marketing/migration.md` |
+| Campaign or geo LPs | Landing pages | `implement/sub-skills/references/pages/marketing/landing-page.md` |
+| Long-form SEO articles | Blog index + single post | `implement/sub-skills/references/pages/content/blog.md`, `implement/sub-skills/references/pages/content/article.md` |
 
 ## Template Structure (Recommended)
 
@@ -107,7 +107,7 @@ Page types in this library live under `pages/{brand|content|legal|marketing|util
 | **4 — Licensed / partner** | Exclusive feeds, co-marketing datasets | Partner pricing tiers; licensed industry stats | Medium—contract and citation discipline |
 | **5 — Public / scraped** | Open web, directories, generic enrichment | Name/address fills; commodity facts | **Highest**—needs editorial layer, fact-checking, and a real **Evidence block** |
 
-**Why Tier 1 (templates & generated content) wins**: Pages built from **your** template system carry proprietary structure, variables, and brand-safe blocks—harder for competitors to copy verbatim and easier to prove uniqueness (embeds, downloads, IDs). Pair with `dev/references/pages/content/template-page` when the UX is “browse gallery → use template.”
+**Why Tier 1 (templates & generated content) wins**: Pages built from **your** template system carry proprietary structure, variables, and brand-safe blocks—harder for competitors to copy verbatim and easier to prove uniqueness (embeds, downloads, IDs). Pair with `implement/sub-skills/references/pages/content/template-page.md` when the UX is “browse gallery → use template.”
 
 ### Tier 2 — Product-derived (practical)
 
@@ -177,7 +177,7 @@ For **which page-generator skill to use**, see **Page Playbook Matrix** above. G
 |----------|---------|
 | **Location-specific pages** | "Plumber in [city]," "Best restaurants in [neighborhood]" with real local data |
 | **Product comparison** | "[Product A] vs [Product B]" with structured specs |
-| **Alternatives pages** | "[Competitor] alternatives" at scale; 50+ competitors; see `dev/references/pages/marketing/alternatives` |
+| **Alternatives pages** | "[Competitor] alternatives" at scale; 50+ competitors; see `implement/sub-skills/references/pages/marketing/alternatives.md` |
 | **Software integration** | "[App A] + [App B]" integration pages (e.g., Zapier 50K+ pages) |
 | **Free tools** | "[X] checker," "[Y] calculator," "[Z] generator" — standalone tool pages; toolkit hub; same ICP as main product; lead gen |
 | **Travel / destination** | City + attraction combinations with reviews, photos |
@@ -392,17 +392,17 @@ Watch for: Thin content warnings, Ranking drops, Manual actions, Crawl errors
 
 ## Related Skills
 
-- `dev/references/pages/content/template-page`: Template structure; aggregation (gallery) + detail pages; **Tier 1 product-generated** template URLs
-- `dev/references/pages/marketing/landing-page`: Conversion-focused programmatic pages; LP structure for campaign CTA
-- `dev/references/pages/content/tools`: Free tools pages; toolkit hub; programmatic tool pages; lead gen
-- `dev/references/pages/marketing/alternatives`: Alternatives/comparison pages at scale; competitor brand traffic
-- `dev/references/pages/marketing/commerce`, `dev/references/pages/marketing/commerce`: Category / catalog grids
-- `dev/references/pages/content/documentation`, `dev/references/pages/content/faq`, `dev/references/components/content/howto-section`, `dev/references/components/content/comparison-table`, `dev/references/pages/content/resources`: Definitions, Q&A banks, HowTo step blocks, comparison matrices, content hubs
-- `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/service-solution`, `dev/references/pages/marketing/migration`: ICP/industry matrix, migration SEO
-- `dev/references/pages/marketing/integrations`: Integration pair pages at scale
-- `dev/references/pages/content/blog`, `dev/references/pages/content/article`, `dev/references/pages/content/documentation`, `dev/references/pages/content/features`, `dev/references/pages/content/product-interface`: Long-form and product surface scale
-- `dev/references/pages/marketing/press`, `dev/references/pages/marketing/customer-stories`, `dev/references/pages/marketing/showcase`: Proof at scale
-- `dev/references/pages/marketing/program`, `dev/references/pages/marketing/contest`, `dev/references/pages/content/product-interface`, `dev/references/pages/marketing/program`, `dev/references/pages/marketing/press`, `dev/references/pages/marketing/pricing`, `dev/references/pages/marketing/service-solution`: Programs and offers (use selectively for pSEO)
+- `implement/sub-skills/references/pages/content/template-page.md`: Template structure; aggregation (gallery) + detail pages; **Tier 1 product-generated** template URLs
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: Conversion-focused programmatic pages; LP structure for campaign CTA
+- `implement/sub-skills/references/pages/content/tools.md`: Free tools pages; toolkit hub; programmatic tool pages; lead gen
+- `implement/sub-skills/references/pages/marketing/alternatives.md`: Alternatives/comparison pages at scale; competitor brand traffic
+- `implement/sub-skills/references/pages/marketing/commerce.md`, `implement/sub-skills/references/pages/marketing/commerce.md`: Category / catalog grids
+- `implement/sub-skills/references/pages/content/documentation.md`, `implement/sub-skills/references/pages/content/faq.md`, `implement/sub-skills/references/components/content/howto-section.md`, `implement/sub-skills/references/components/content/comparison-table.md`, `implement/sub-skills/references/pages/content/resources.md`: Definitions, Q&A banks, HowTo step blocks, comparison matrices, content hubs
+- `implement/sub-skills/references/pages/marketing/use-cases.md`, `implement/sub-skills/references/pages/marketing/service-solution.md`, `implement/sub-skills/references/pages/marketing/migration.md`: ICP/industry matrix, migration SEO
+- `implement/sub-skills/references/pages/marketing/integrations.md`: Integration pair pages at scale
+- `implement/sub-skills/references/pages/content/blog.md`, `implement/sub-skills/references/pages/content/article.md`, `implement/sub-skills/references/pages/content/documentation.md`, `implement/sub-skills/references/pages/content/features.md`, `implement/sub-skills/references/pages/content/product-interface.md`: Long-form and product surface scale
+- `implement/sub-skills/references/pages/marketing/press.md`, `implement/sub-skills/references/pages/marketing/customer-stories.md`, `implement/sub-skills/references/pages/marketing/showcase.md`: Proof at scale
+- `implement/sub-skills/references/pages/marketing/program.md`, `implement/sub-skills/references/pages/marketing/contest.md`, `implement/sub-skills/references/pages/content/product-interface.md`, `implement/sub-skills/references/pages/marketing/program.md`, `implement/sub-skills/references/pages/marketing/press.md`, `implement/sub-skills/references/pages/marketing/pricing.md`, `implement/sub-skills/references/pages/marketing/service-solution.md`: Programs and offers (use selectively for pSEO)
 - **content-strategy**: Content clusters, pillar pages; programmatic pages as cluster nodes
 - **website-structure**: Site IA before scaling URL sets
 - **url-structure**, **domain-architecture**: Paths, subfolder strategy

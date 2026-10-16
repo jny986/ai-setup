@@ -2,7 +2,7 @@
 """Check that the marketing router, its sub-skills and the name table resolve.
 
 Strict: no flat sub-skills, router rows are final names with nested paths, every old name aliases to a final name,
-and every `dev/references/...` hand-off in marketing resolves. Also checks the dev references against the name table.
+and every `implement/sub-skills/references/...` hand-off in marketing resolves. Also checks the implement build guides against the name table.
 Exits 1 on any failure.
 """
 import re
@@ -23,7 +23,7 @@ product-marketing programmatic-seo prospecting public-relations referrals revops
 signup site-architecture sms social video""".split()
 BANNED = ("contextus", "When invoking")  # sub-skills load the product marketing context and drop kostja's preamble
 MD_LINK = re.compile(r"\]\(([^)\s#]+)")
-HANDOFF = re.compile(r"dev/references/[A-Za-z0-9_./-]*[A-Za-z0-9_]")
+HANDOFF = re.compile(r"implement/sub-skills/references/[A-Za-z0-9_./-]*[A-Za-z0-9_]")
 
 errors = []
 
@@ -70,7 +70,7 @@ sub_skills = sorted(
     if p.name != "name-table.md" and not {"references", "assets"} & set(p.relative_to(SKILL / "sub-skills").parts[:-1])
 )
 
-# Name table: Marketing rows are name | path | source | aliases; Dev rows are name | path | source.
+# Name table: Marketing rows are name | path | source | aliases; Build-guide rows are name | path | source.
 sections, current = {}, None
 for line in (SKILL / "sub-skills" / "name-table.md").read_text().splitlines():
     if line.startswith("## "):
@@ -135,24 +135,28 @@ for md in sorted(SKILL.rglob("*.md")):
                 and not (md.parent / target).exists():
             errors.append(f"{md.relative_to(SKILL)}: broken link {target}")
 
-# Dev sub-skills: no router yet, so the name table's Dev section is the index.
-DEV = SKILL.parent / "dev"
-dev_paths = {cells[1][0] for cells in rows(sections.get("Dev", []))}
-dev_guides = {p.parent.relative_to(SKILL.parent).as_posix() for p in DEV.rglob("GUIDE.md")}
+# Build guides belong to the implement router and its name table.
+BUILD = SKILL.parent / "implement" / "sub-skills" / "references"
+build_table = SKILL.parent / "implement" / "sub-skills" / "name-table.md"
+dev_paths = {cells[1][0] for cells in rows(build_table.read_text().splitlines())}
+dev_guides = {
+    p.relative_to(SKILL.parent).as_posix() for p in BUILD.rglob("*.md")
+    if "references" not in p.relative_to(BUILD).parts[:-1]
+}
 for p in sorted(dev_paths - dev_guides):
-    errors.append(f"name table (Dev): {p}/GUIDE.md missing")
+    errors.append(f"name table (Implement): {p} missing")
 for g in sorted(dev_guides - dev_paths):
-    errors.append(f"name table (Dev): guide {g}/GUIDE.md not listed")
-for p in DEV.rglob("SKILL.md"):
+    errors.append(f"name table (Implement): reference {g} not listed")
+for p in BUILD.rglob("SKILL.md"):
     errors.append(f"dev: unexpected {p.relative_to(SKILL.parent)}")
-for md in sorted(DEV.rglob("*.md")):
+for md in sorted(BUILD.rglob("*.md")):
     rel, text = md.relative_to(SKILL.parent), md.read_text()
     for target in MD_LINK.findall(text):
         if "://" not in target and not (md.parent / target).exists():
             errors.append(f"{rel}: broken link {target}")
     check_banned(rel, text)
 
-# Marketing hand-offs to dev references must resolve to a guide folder or a reference file.
+# Marketing hand-offs to implement build guides must resolve directly to a reference file.
 handoffs = 0
 for md in sorted(SKILL.rglob("*.md")):
     if md.name == "name-table.md":
@@ -160,7 +164,7 @@ for md in sorted(SKILL.rglob("*.md")):
     for target in HANDOFF.findall(md.read_text()):
         handoffs += 1
         path = SKILL.parent / target
-        if not ((path / "GUIDE.md").is_file() or path.is_file()):
+        if not path.is_file():
             errors.append(f"{md.relative_to(SKILL)}: hand-off {target} does not resolve")
 
 # Prose cross-references must use final names: "<old> skill/guide/sub-skill" or a bolded "**<old>**" entry.
@@ -175,6 +179,6 @@ for md in sorted(SKILL.rglob("*.md")):
 for e in errors:
     print("FAIL", e)
 print(f"{len(sub_skills)} sub-skills, {len(router)} router rows, {len(marketing_names)} final names, {len(aliases)} aliases, "
-      f"{len(dev_guides)} dev references, {handoffs} dev hand-offs: "
+      f"{len(dev_guides)} implement build guides, {handoffs} implement hand-offs: "
       + (f"{len(errors)} failure(s)" if errors else "ok"))
 sys.exit(1 if errors else 0)

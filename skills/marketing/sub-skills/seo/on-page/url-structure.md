@@ -139,8 +139,8 @@ Pick one trailing-slash policy (with or without) and enforce it with redirects. 
 
 - **canonical-tag**: HTTPS, www, trailing slash — handles duplicate URL variants
 - **url-slug**: Slug creation for content pages; length, keywords, format
-- `dev/references/pages/marketing/commerce`: E-commerce category URL hierarchy, faceted URLs
-- `dev/references/pages/marketing/commerce`: Product URL hierarchy
-- `dev/references/pages/marketing/service-solution`: Service URL hierarchy
+- `implement/sub-skills/references/pages/marketing/commerce.md`: E-commerce category URL hierarchy, faceted URLs
+- `implement/sub-skills/references/pages/marketing/commerce.md`: Product URL hierarchy
+- `implement/sub-skills/references/pages/marketing/service-solution.md`: Service URL hierarchy
 - **robots-txt**: Clean-param for query params
 - **internal-links**: URL structure affects link patterns

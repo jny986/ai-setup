@@ -89,5 +89,5 @@ Identify:
 - **affiliate-marketing**: Can run both; different goals
 - **influencer-marketing**: Influencers can join creator program
 - **employee-generated-content**: Employee content; creator program is external
-- `dev/references/pages/marketing/program`: If creator program has commission component
-- `dev/references/pages/marketing/landing-page`: Creator program signup page; apply landing page structure
+- `implement/sub-skills/references/pages/marketing/program.md`: If creator program has commission component
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: Creator program signup page; apply landing page structure

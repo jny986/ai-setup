@@ -3,10 +3,10 @@
 
 - Non-Markdown asset paths (`references/x.csv`, `scripts/x.sh`, ...) resolve from the file or an ancestor folder.
 - `docs/agents/<file>.md` mentions resolve against this repo's docs/agents.
-- Skill names (`/name`, `` `name` skill``, `skill: name`) in skills, templates and docs name a skill or marketing sub-skill that exists.
+- Skill names (`/name`, `` `name` skill``, `skill: name`) in skills, templates and docs name a skill or indexed sub-skill that exists.
 - Retired skill names appear nowhere outside frontmatter.
 
-Slash mentions are only checked outside skills/marketing and skills/dev, where `/blog`-style URL paths are common.
+Slash mentions are only checked outside marketing and implementation build guides, where `/blog`-style URL paths are common.
 Exits 1 on any failure.
 """
 import re
@@ -25,10 +25,10 @@ RETIRED = {"ask-matt"}
 
 
 def known_names(root):
-    """Skill names plus every sub-skill name (and alias) in the marketing name table."""
+    """Skill names plus every sub-skill name (and alias) in router name tables."""
     names = set(skill_dirs(root))
-    table = root / "skills" / "marketing" / "sub-skills" / "name-table.md"
-    if table.exists():
+    tables = (root / "skills").glob("*/sub-skills/name-table.md")
+    for table in tables:
         for line in table.read_text().splitlines():
             if line.startswith("|"):
                 names |= {n for cell in line.split("|")[1:] for n in re.findall(r"`([a-z][a-z0-9-]*)`", cell)}
@@ -49,7 +49,7 @@ def check(root):
     for md in files:
         rel = md.relative_to(root)
         text = body(md)
-        in_loose_tree = len(rel.parts) > 1 and rel.parts[0] == "skills" and rel.parts[1] in ("marketing", "dev")
+        in_loose_tree = rel.parts[:2] == ("skills", "marketing") or rel.parts[:4] == ("skills", "implement", "sub-skills", "references")
         for target in ASSET.findall(text):
             if re.search(r"[<>*…{}]", target):
                 continue

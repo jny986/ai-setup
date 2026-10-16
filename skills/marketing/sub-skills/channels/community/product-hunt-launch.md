@@ -115,5 +115,5 @@ Honest pros/cons, the before/during/after playbook and the SavvyCal and Reform c
 - **product-launch**: Broader launch plan (ORB framework, five-phase approach); Product Hunt is one step in it
 - **cold-start-strategy**: Full launch plan; Product Hunt as channel
 - **indie-hacker-strategy**: Indie hacker Product Hunt, first 100 users
-- `dev/references/pages/marketing/press`: Press kit, screenshots for launch
+- `implement/sub-skills/references/pages/marketing/press.md`: Press kit, screenshots for launch
 - **analytics-tracking**: UTM for Product Hunt traffic attribution

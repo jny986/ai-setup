@@ -35,6 +35,19 @@ def test_marketing_guide_names_resolve(repo):
     assert check(repo).errors == []
 
 
+def test_implement_build_guide_names_resolve(repo):
+    write(repo, "skills/implement/sub-skills/name-table.md", "| `page` | `implement/sub-skills/references/pages.md` | pagina |\n")
+    write(repo, "skills/alpha/notes.md", "Use the `page` skill.\n")
+    assert check(repo).errors == []
+
+
+def test_slash_paths_ignored_only_in_implement_build_guides(repo):
+    write(repo, "skills/implement/sub-skills/references/pages.md", "Build `/pricing`.\n")
+    assert check(repo).errors == []
+    write(repo, "skills/implement/SKILL.md", "Run `/nope`.\n")
+    assert "`/nope` is not a skill" in errors(check(repo))
+
+
 def test_missing_asset(repo):
     write(repo, "skills/alpha/notes.md", "Run `scripts/run.sh`.\n")
     assert "missing asset scripts/run.sh" in errors(check(repo))

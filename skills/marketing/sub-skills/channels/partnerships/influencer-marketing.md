@@ -196,7 +196,7 @@ For pulling a creator's recent posts to vet them, use `social-fetch`; for analyz
 - **affiliate-marketing**: Influencers can be affiliates (hybrid model); commission tracking and payouts
 - **creator-program**: Long-term creator partnerships
 - **employee-generated-content**: Internal employee content; influencer is external
-- `dev/references/pages/marketing/program`: Commission structure if hybrid
+- `implement/sub-skills/references/pages/marketing/program.md`: Commission structure if hybrid
 - **community-building**: Community-led advocacy and the unpaid advocate program
 - **ad-creative**: Repurpose creator content into paid ads (whitelisting)
 - **cold-email**: Creator outreach

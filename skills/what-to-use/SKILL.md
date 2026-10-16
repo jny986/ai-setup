@@ -33,15 +33,15 @@ The route most work travels. You have an idea and want it built.
    - **`/handoff`** back what you learned, and reference it from the original idea thread.
 3. **Branch: is this a multi-session build?**
    - **Yes** → **`/to-spec`** (turn the thread into a spec), then **`/to-tickets`** to split it into tracer-bullet tickets, each declaring its **blocking edges**. Then work the tickets one of two ways:
-     - **`/implement`** per ticket, **`/clear`ing context between each one**. On a local tracker that's one file per ticket under `.scratch/<feature>/issues/`, worked blockers-first by hand; on a real tracker the edges become native blocking links, so any ticket whose blockers are done can be grabbed. Each ticket is self-contained, so the last one's context is disposable.
-     - **`/implement-ticket`** for the whole spec in one run. It reads the tickets as a **task graph**, runs implementer subagents across the ready **frontier** in parallel, and lands everything on one **integration branch**. Reach for it when you'd rather orchestrate the build than drive each ticket yourself.
+     - **`/implement ticket`** per ticket, **`/clear`ing context between each one**. On a local tracker that's one file per ticket under `.scratch/<feature>/issues/`, worked blockers-first by hand; on a real tracker the edges become native blocking links, so any ticket whose blockers are done can be grabbed. Each ticket is self-contained, so the last one's context is disposable.
+     - **`/implement spec`** for the whole spec in one run. It reads the tickets as a **task graph**, runs implementer subagents across the ready **frontier** in parallel, and lands everything on one **integration branch**. Reach for it when you'd rather orchestrate the build than drive each ticket yourself.
    - **No** → **`/implement`** right here, in the same context window.
 
-   Either way, the code gets built by driving **`/tdd`** (one red-green slice at a time) and closes out with **`/git code-review`**, a two-axis review (Standards + Spec) of the diff. `/implement` drives `/tdd` per ticket; `/implement-ticket`'s implementers each drive `/tdd`, and it runs one `/git code-review` over the integration branch. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/git code-review`** on its own whenever you want to review a branch or PR against a fixed point.
+   `/implement` uses **`/tdd`** for behavior suited to test-first development and verifies the acceptance criteria across affected layers. For a spec with tickets, **`/implement spec`** also runs **`/git code-review`**, a two-axis review (Standards + Spec), over the integration branch. Reach for **`/tdd`** on its own when you want to build a concrete behavior test-first, and **`/git code-review`** whenever you want to review a branch or PR against a fixed point.
 
 ### Context hygiene
 
-Keep steps 1–3 in **one unbroken context window** (don't compact or clear until after `/to-tickets`) so the grilling, spec, and tickets all build on the same thinking. Each `/implement` then starts fresh, working from the ticket.
+Keep steps 1–3 in **one unbroken context window** (don't compact or clear until after `/to-tickets`) so the grilling, spec, and tickets all build on the same thinking. Each `/implement ticket` then starts fresh, working from the ticket.
 
 The limit on this is the **[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)**: the window (~150k tokens on state-of-the-art models) within which the model still reasons sharply. If a session approaches it before `/to-tickets`, don't push on degraded; `/compact` at the nearest phase boundary and carry on (see Phase boundaries).
 
@@ -109,8 +109,8 @@ When the situation fits no flow above (marketing, writing, a repo-config chore, 
 
 Three shapes to know:
 
-- **Routers** (`/git`, `/marketing`) hold sub-skills, not skills. Recommend `/git <sub-skill>` or `/marketing <sub-skill>`, picking the sub-skill from the router's table.
-- **Reference-only trees** (`skills/dev/references`, page and component builds) have no slash command. Reach them through a `/marketing` hand-off, or read the guide directly.
+- **Routers** (`/git`, `/marketing`, `/implement`) hold sub-skills, not skills. Recommend `/git <sub-skill>` or `/marketing <sub-skill>`, picking the sub-skill from the router's table.
+- **Page and component builds** use `/implement page`, `/implement component`, or a build-guide name from the implement name table. Marketing hands off to the same guides.
 - **Writing** is a sequence, not three alternatives: `/writing-fragments` (explore), then `/writing-shape` (an article) or `/writing-beats` (a journey of beats).
 
 ## Precondition

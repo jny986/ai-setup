@@ -1,6 +1,6 @@
 ---
 name: marketing
-description: "Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the dev references."
+description: "Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the implement router’s build guides."
 argument-hint: "[sub-skill] [task]"
 license: MIT
 metadata:
@@ -22,7 +22,7 @@ A router over the marketing sub-skills. Each sub-skill is a file at `sub-skills/
 
 When a sub-skill hands off to another sub-skill by name ("see cro", a **Related Skills** entry), that sub-skill is the row of the same name here, resolved through steps 2 and 3.
 
-A hand-off written as `dev/references/...` is a page or component build guide, not a marketing sub-skill. The path resolves against the `skills/` folder, a sibling of this skill: read `skills/<path>/GUIDE.md` (`dev/references/pages` and `dev/references/components` are the indexes).
+A hand-off written as `implement/sub-skills/references/...` identifies a page or component build guide. Resolve the path against the `skills/` folder and read `skills/<path>` directly. Follow the implement router’s page or component workflow with that reference and the requirements already gathered (`implement/sub-skills/references/pages.md` and `implement/sub-skills/references/components.md` are the indexes).
 
 ## Sub-skills
 

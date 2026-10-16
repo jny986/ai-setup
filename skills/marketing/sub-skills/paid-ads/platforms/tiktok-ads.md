@@ -74,5 +74,5 @@ For ad copy and creative at volume, hand off to **ad-creative**; vertical video 
 
 - **social**: Organic TikTok content; Spark Ads boost organic posts; video specs (9:16, captions) align
 - **paid-ads-strategy**: Channel selection; creative frameworks; budget allocation
-- **dev/references/pages/marketing/landing-page**: LP for paid traffic
+- **implement/sub-skills/references/pages/marketing/landing-page.md**: LP for paid traffic
 - **analytics-tracking**: Conversion tracking; ROAS

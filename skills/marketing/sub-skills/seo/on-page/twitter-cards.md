@@ -100,7 +100,7 @@ Inspect the deployed initial HTML and test an actual share/preview workflow avai
 
 ## Related Skills
 
-- `dev/references/components/utility/social-share`: Share buttons use Twitter Cards for X previews when users share; Cards must be set for share buttons to show proper previews
+- `implement/sub-skills/references/components/utility/social-share.md`: Share buttons use Twitter Cards for X previews when users share; Cards must be set for share buttons to show proper previews
 - **open-graph**: OG tags; Twitter falls back to OG if Twitter tags missing
 - **title-tag**, **meta-description**: Search copy; may differ while preserving page identity
 - **page-metadata**: Full lifecycle, source-of-truth implementation, and production validation

@@ -95,12 +95,12 @@ When content is AI-assisted: **human review** before publish; **verify facts** a
 
 ## Related Skills
 
-- `dev/references/pages/content/article`: Article page structure; author bio placement
+- `implement/sub-skills/references/pages/content/article.md`: Article page structure; author bio placement
 - **article-content**: Article body creation; citations, references format
 - **content-optimization**: Original images, content quality; E-E-A-T complements
 - **link-building**: Digital PR, E-E-A-T; backlinks signal authority
 - **featured-snippet**: E-A-T in snippet algorithm; correctness, authority
 - **backlink-analysis**: Authority assessment; E-E-A-T context
-- `dev/references/pages/marketing/customer-stories`: Case studies as experience signal
-- `dev/references/components/conversion/testimonials`: User quotes as trust signal
+- `implement/sub-skills/references/pages/marketing/customer-stories.md`: Case studies as experience signal
+- `implement/sub-skills/references/components/conversion/testimonials.md`: User quotes as trust signal
 - **entity-seo**: Entity signals; Organization, Person schema; Knowledge Panel; E-E-A-T alignment

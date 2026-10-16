@@ -37,7 +37,7 @@ td.inv-no { color: #b42318; }
 <details>
 <summary>Based on coreyhaines31/marketingskills, kostja94/marketing-skills, kostja94/pagina, kostja94/bricks <span>(1)</span> <a href="https://github.com/coreyhaines31/marketingskills">https://github.com/coreyhaines31/marketingskills</a> <a href="https://github.com/kostja94/marketing-skills">https://github.com/kostja94/marketing-skills</a> <a href="https://github.com/kostja94/pagina">https://github.com/kostja94/pagina</a> <a href="https://github.com/kostja94/bricks">https://github.com/kostja94/bricks</a></summary>
 <table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
-<tr><td><a href="skills/marketing">marketing</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the dev references.</td></tr>
+<tr><td><a href="skills/marketing">marketing</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Marketing playbooks for SaaS and software products. Use for any marketing, growth, or go-to-market task: copywriting and copy editing, CRO (landing pages, signup, onboarding, popups, paywalls), SEO (audits, AI search, schema, programmatic pages, site architecture), content and social, email, SMS and cold outreach, paid ads and ad creative, analytics, attribution and A/B tests, pricing and offers, launches, PR, events, partnerships, referrals and influencers, churn and retention, sales enablement, RevOps, prospecting, competitor and customer research, positioning and product marketing context, app store optimisation, and marketing images or video. Page and component builds hand off to the implement router’s build guides.</td></tr>
 </tbody></table>
 </details>
 <details>
@@ -47,7 +47,7 @@ td.inv-no { color: #b42318; }
 </tbody></table>
 </details>
 <details>
-<summary>Based on mattpocock/skills <span>(30)</span> <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></summary>
+<summary>Based on mattpocock/skills <span>(29)</span> <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></summary>
 <table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
 <tr><td><a href="skills/claude-handoff">claude-handoff</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Hand the current conversation off to a fresh background agent that picks up the work immediately.</td></tr>
 <tr><td><a href="skills/codebase-design">codebase-design</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module&#x27;s interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.</td></tr>
@@ -57,8 +57,7 @@ td.inv-no { color: #b42318; }
 <tr><td><a href="skills/grill-with-docs">grill-with-docs</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>A relentless interview to sharpen a plan or design, which also creates docs (ADR&#x27;s and glossary) as we go.</td></tr>
 <tr><td><a href="skills/grilling">grilling</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any &#x27;grill&#x27; trigger phrases.</td></tr>
 <tr><td><a href="skills/handoff">handoff</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Compact the current conversation into a handoff document for another agent to pick up.</td></tr>
-<tr><td><a href="skills/implement">implement</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Implement a piece of work based on a spec or set of tickets.</td></tr>
-<tr><td><a href="skills/implement-ticket">implement-ticket</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Implement a spec and its tickets on a single integration branch using parallel subagents.</td></tr>
+<tr><td><a href="skills/implement">implement</a></td><td class="inv-yes">Yes</td><td>2.0.0</td><td>jny986</td><td>Implement features, changes, specs and tickets with automatic context and page/component workflow selection.</td></tr>
 <tr><td><a href="skills/improve-codebase-architecture">improve-codebase-architecture</a></td><td class="inv-no">No</td><td>1.0.1</td><td>jny986</td><td>Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.</td></tr>
 <tr><td><a href="skills/loop-me">loop-me</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Grill me about specs for the workflows I want to build, within this workspace.</td></tr>
 <tr><td><a href="skills/prototype">prototype</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.</td></tr>
@@ -341,6 +340,15 @@ td.inv-no { color: #b42318; }
 <tr><td><a href="skills/design/sub-skills/refine.md">refine</a></td><td>1.0.0</td><td>jny986</td><td>Improve an existing interface&#x27;s hierarchy, density, typography, color, layout, motion, or final finish</td></tr>
 <tr><td><a href="skills/design/sub-skills/shape.md">shape</a></td><td>1.0.0</td><td>jny986</td><td>Plan a UI surface or feature before implementation: task, hierarchy, interactions, states, and direction</td></tr>
 <tr><td><a href="skills/design/sub-skills/systematize.md">systematize</a></td><td>1.0.0</td><td>jny986</td><td>Consolidate repeated UI patterns into shared tokens and components, migrate consumers, and verify parity</td></tr>
+</tbody></table>
+</details>
+<details>
+<summary>Implement sub-skills <span class="count">(4)</span></summary>
+<table><thead><tr><th>Sub-skill</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
+<tr><td><a href="skills/implement/sub-skills/component.md">component</a></td><td>1.0.0</td><td>jny986</td><td>Build or change a bounded interface component or composition and its behavior</td></tr>
+<tr><td><a href="skills/implement/sub-skills/page.md">page</a></td><td>1.0.0</td><td>jny986</td><td>Build or change page-level hierarchy, routing, content, data, metadata, or states</td></tr>
+<tr><td><a href="skills/implement/sub-skills/spec.md">spec</a></td><td>1.0.0</td><td>jny986</td><td>Complete a spec, coordinating its ticket graph when tickets exist</td></tr>
+<tr><td><a href="skills/implement/sub-skills/ticket.md">ticket</a></td><td>1.0.0</td><td>jny986</td><td>Resolve and implement one ticket against its acceptance criteria and parent-spec constraints</td></tr>
 </tbody></table>
 </details>
 </body>

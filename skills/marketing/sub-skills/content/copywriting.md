@@ -224,10 +224,10 @@ Puns and wit make copy memorable when they fit the brand and don't cost clarity.
 | Context | Focus | Skills |
 |---------|-------|--------|
 | **Ad copy** | Hook, benefit, CTA; platform limits | paid-ads-strategy, google-ads, meta-ads |
-| **Landing page** | Headline, value prop, CTA; above fold | `dev/references/pages/marketing/landing-page`, `dev/references/components/branding/hero` |
+| **Landing page** | Headline, value prop, CTA; above fold | `implement/sub-skills/references/pages/marketing/landing-page.md`, `implement/sub-skills/references/components/branding/hero.md` |
 | **Email** | Subject line, preview, body, CTA | email-marketing |
-| **CTA** | Value-focused; action verb; avoid "Submit" | `dev/references/components/conversion/cta` |
-| **Article / blog** | Headline formulas, CTA copy; body → **article-content** | article-content, `dev/references/pages/content/article` |
+| **CTA** | Value-focused; action verb; avoid "Submit" | `implement/sub-skills/references/components/conversion/cta.md` |
+| **Article / blog** | Headline formulas, CTA copy; body → **article-content** | article-content, `implement/sub-skills/references/pages/content/article.md` |
 
 ## Ad copy vs Landing page copy
 
@@ -346,9 +346,9 @@ For headlines and CTAs, provide 2-3 options:
 ## Related Skills
 
 - **article-content**: Article body creation; applies PAS, AIDA, BAB to long-form; headline formulas for article titles
-- `dev/references/pages/marketing/landing-page`: Landing page copy and structure
-- `dev/references/components/branding/hero`: Hero headline, subheadline, CTA
-- `dev/references/components/conversion/cta`: CTA design and copy
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: Landing page copy and structure
+- `implement/sub-skills/references/components/branding/hero.md`: Hero headline, subheadline, CTA
+- `implement/sub-skills/references/components/conversion/cta.md`: CTA design and copy
 - **paid-ads-strategy**: Ad copy frameworks (PAS, BAB, Social Proof)
 - **email-marketing**: Email subject lines, body copy and email copywriting
 - **branding**: Brand voice, tone consistency

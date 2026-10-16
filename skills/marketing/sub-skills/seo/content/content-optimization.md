@@ -158,7 +158,7 @@ For **article** content audit (hook, QAE, product connection, CTA, references, g
 - **content-strategy**: Topic clusters, pillar + cluster
 - **keyword-research**: Target keywords inform placement
 - **featured-snippet**: Snippet formats, structure; answer-first
-- `dev/references/components/content/howto-section`: How-to step sections; `<ol>` lists; HowTo vs FAQ
+- `implement/sub-skills/references/components/content/howto-section.md`: How-to step sections; `<ol>` lists; HowTo vs FAQ
 - **eeat-signals**: E-E-A-T; original images, trust
 - **image-optimization**: Alt, captions, format, LCP, responsive, image sitemap
 - **video-optimization**: Video SEO; VideoObject; video sitemap

@@ -1,6 +1,6 @@
 ---
 name: meta-ads
-description: When the user wants to set up, optimize, or manage Meta (Facebook/Instagram) Ads. Also use when the user mentions "Meta Ads," "Facebook Ads," "Instagram Ads," "Meta Pixel," "Conversions API," "Advantage+," "lookalike audience," or "Meta retargeting." For landing pages, use dev/references/pages/marketing/landing-page.
+description: When the user wants to set up, optimize, or manage Meta (Facebook/Instagram) Ads. Also use when the user mentions "Meta Ads," "Facebook Ads," "Instagram Ads," "Meta Pixel," "Conversions API," "Advantage+," "lookalike audience," or "Meta retargeting." For landing pages, use implement/sub-skills/references/pages/marketing/landing-page.md.
 metadata:
   version: 1.1.1
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
@@ -123,5 +123,5 @@ Run 20-40 headlines as ad variations, then mirror the winning headline verbatim 
 ## Related Skills
 
 - **paid-ads-strategy**: Channel selection; creative frameworks; budget allocation
-- **dev/references/pages/marketing/landing-page**: LP for paid traffic
+- **implement/sub-skills/references/pages/marketing/landing-page.md**: LP for paid traffic
 - **analytics-tracking**: Conversion tracking; ROAS

@@ -10,7 +10,7 @@ metadata:
 
 # Strategy: Brand Protection
 
-Guides discovery, reporting, and prevention of brand impersonation—fake websites, phishing sites, trademark infringement, and domain squatting. See **domain-selection** for defensive domain registration; `dev/references/components/conversion/trust-badges` for official site verification signals; `dev/references/pages/brand/about` for identity declaration.
+Guides discovery, reporting, and prevention of brand impersonation—fake websites, phishing sites, trademark infringement, and domain squatting. See **domain-selection** for defensive domain registration; `implement/sub-skills/references/components/conversion/trust-badges.md` for official site verification signals; `implement/sub-skills/references/pages/brand/about.md` for identity declaration.
 
 ## Initial Assessment
 
@@ -84,7 +84,7 @@ Place "Official website: [domain]" prominently:
 - **Footer**: "© [Brand]. Official site: [domain]"
 - **FAQ**: "How do I verify I'm on the official site?" → "The only official URL is [domain]. Any other domain is not affiliated."
 
-Use `dev/references/components/conversion/trust-badges` for verification signals. See `dev/references/pages/brand/about` for identity declaration.
+Use `implement/sub-skills/references/components/conversion/trust-badges.md` for verification signals. See `implement/sub-skills/references/pages/brand/about.md` for identity declaration.
 
 ### Customer Support (Payment Fraud)
 
@@ -125,7 +125,7 @@ When users report "can't use after payment" but no record exists—likely paid o
 
 **Short-term (1–2 weeks)**: Evidence collection; abuse reports to registrar and host; Google Safe Browsing report; DMCA if applicable; add "Official website" on site.
 
-**Medium-term**: Add impersonation guidance to domain-selection; official verification to `dev/references/components/conversion/trust-badges`, `dev/references/pages/brand/about`.
+**Medium-term**: Add impersonation guidance to domain-selection; official verification to `implement/sub-skills/references/components/conversion/trust-badges.md`, `implement/sub-skills/references/pages/brand/about.md`.
 
 **Long-term**: Periodic search (brand + variants); brand monitoring (BrandShield, Doppel); defensive registration of variants.
 
@@ -152,8 +152,8 @@ When users report "can't use after payment" but no record exists—likely paid o
 - **rebranding-strategy**: When rebranding, sync brand protection checks
 - **brand-monitoring**: Proactive monitoring setup; tool selection; this skill = reactive takedown
 - **branding**: Brand asset protection; consistency
-- `dev/references/components/conversion/trust-badges`: Official site verification signals
-- `dev/references/pages/brand/about`: Official identity and domain declaration
-- `dev/references/pages/brand/home`: "Official website" placement
+- `implement/sub-skills/references/components/conversion/trust-badges.md`: Official site verification signals
+- `implement/sub-skills/references/pages/brand/about.md`: Official identity and domain declaration
+- `implement/sub-skills/references/pages/brand/home.md`: "Official website" placement
 - **google-ads**, **paid-ads-strategy**: Brand search ads for traffic recovery
 - **schema-markup**, **title-tag**: SEO for branded queries

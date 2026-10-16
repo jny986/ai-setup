@@ -1,6 +1,6 @@
 ---
 name: website-structure
-description: When the user wants to plan website structure, decide which pages to build, or prioritize pages for a new or existing site. Also use when the user mentions "website structure," "site structure," "which pages do I need," "page planning," "sitemap planning," "Must Have pages," "website architecture," or "site hierarchy." For a specific page template (e.g. homepage), use `dev/references/pages/brand/home` or `dev/references/pages/marketing/landing-page` as appropriate. Not for organic SEO roadmap alone; use seo-strategy.
+description: When the user wants to plan website structure, decide which pages to build, or prioritize pages for a new or existing site. Also use when the user mentions "website structure," "site structure," "which pages do I need," "page planning," "sitemap planning," "Must Have pages," "website architecture," or "site hierarchy." For a specific page template (e.g. homepage), use `implement/sub-skills/references/pages/brand/home.md` or `implement/sub-skills/references/pages/marketing/landing-page.md` as appropriate. Not for organic SEO roadmap alone; use seo-strategy.
 metadata:
   version: 1.5.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
@@ -24,11 +24,11 @@ Identify:
 
 ## Page Priority Framework
 
-Plan pages by priority for development scheduling. See the page guides in `dev/references/pages` for full page types and website-type mapping.
+Plan pages by priority for development scheduling. See the page guides in `implement/sub-skills/references/pages.md` for full page types and website-type mapping.
 
 | Priority | Pages | Notes |
 |----------|-------|-------|
-| **Must Have** | Home, Product/Features, Pricing, Blog, About, Privacy, Terms, Contact | Essential for trust and conversion; Pricing: public page in nav for self-serve; enterprise-only may use "Contact sales" instead; see `dev/references/pages/marketing/pricing` (Visibility & Placement) |
+| **Must Have** | Home, Product/Features, Pricing, Blog, About, Privacy, Terms, Contact | Essential for trust and conversion; Pricing: public page in nav for self-serve; enterprise-only may use "Contact sales" instead; see `implement/sub-skills/references/pages/marketing/pricing.md` (Visibility & Placement) |
 | **Great to Have** | Testimonials, FAQ, Sitemap (HTML), 404, Refund/Returns | Support UX and SEO |
 | **Optional** | Search Results, News, Careers, Disclosure | Situational |
 | **Traffic-driven** | Category/Collection pages | For content-heavy or e-commerce; needs Category + Tags |
@@ -39,13 +39,13 @@ Applicable to SaaS, tools, and content sites. Adapt by removing unused nodes (e.
 
 | Section | Typical Paths | Page Skills |
 |---------|---------------|-------------|
-| **Root** | /, /features, /pricing, /demo, /contact | `dev/references/pages/brand/home`, `dev/references/pages/content/features`, `dev/references/pages/marketing/pricing` |
-| **Tools** | /tools, /free-tools; hub + per-tool pages | `dev/references/pages/content/tools`; free tools for lead gen; often SPA; programmatic; see **programmatic-seo** |
-| **Resources** | /blog, /changelog, /glossary, /faq, /tutorials | `dev/references/pages/content/blog`, `dev/references/pages/utility/changelog`, `dev/references/pages/content/documentation`, `dev/references/pages/content/faq` |
-| **Partnership** | /affiliate, /startups, /ambassadors | `dev/references/pages/marketing/program`, `dev/references/pages/marketing/landing-page` |
-| **Legal** | /terms, /privacy, /careers | `dev/references/pages/legal/legal-policy`, `dev/references/pages/legal/legal-policy`, `dev/references/pages/utility/careers` |
-| **Competitor** | /alternatives, /compare, /migrate | `dev/references/pages/marketing/alternatives`, `dev/references/pages/marketing/migration` |
-| **Standalone** | /dashboard, /login, /signup, /docs, /api, /status, /support | `dev/references/pages/utility/signup-login`, `dev/references/pages/content/documentation`, `dev/references/pages/content/product-interface`, `dev/references/pages/utility/status` |
+| **Root** | /, /features, /pricing, /demo, /contact | `implement/sub-skills/references/pages/brand/home.md`, `implement/sub-skills/references/pages/content/features.md`, `implement/sub-skills/references/pages/marketing/pricing.md` |
+| **Tools** | /tools, /free-tools; hub + per-tool pages | `implement/sub-skills/references/pages/content/tools.md`; free tools for lead gen; often SPA; programmatic; see **programmatic-seo** |
+| **Resources** | /blog, /changelog, /glossary, /faq, /tutorials | `implement/sub-skills/references/pages/content/blog.md`, `implement/sub-skills/references/pages/utility/changelog.md`, `implement/sub-skills/references/pages/content/documentation.md`, `implement/sub-skills/references/pages/content/faq.md` |
+| **Partnership** | /affiliate, /startups, /ambassadors | `implement/sub-skills/references/pages/marketing/program.md`, `implement/sub-skills/references/pages/marketing/landing-page.md` |
+| **Legal** | /terms, /privacy, /careers | `implement/sub-skills/references/pages/legal/legal-policy.md`, `implement/sub-skills/references/pages/legal/legal-policy.md`, `implement/sub-skills/references/pages/utility/careers.md` |
+| **Competitor** | /alternatives, /compare, /migrate | `implement/sub-skills/references/pages/marketing/alternatives.md`, `implement/sub-skills/references/pages/marketing/migration.md` |
+| **Standalone** | /dashboard, /login, /signup, /docs, /api, /status, /support | `implement/sub-skills/references/pages/utility/signup-login.md`, `implement/sub-skills/references/pages/content/documentation.md`, `implement/sub-skills/references/pages/content/product-interface.md`, `implement/sub-skills/references/pages/utility/status.md` |
 
 ## Growth Strategy → Structure Mapping
 
@@ -53,15 +53,15 @@ Structure reflects growth strategy. Subdirectories signal channels:
 
 | Goal | Path Example | Page/Channel |
 |------|--------------|--------------|
-| Affiliate conversion | /affiliate | `dev/references/pages/marketing/program` |
-| Education/student plan | /education, /startups, /student-discount | education-program, `dev/references/pages/marketing/program` |
+| Affiliate conversion | /affiliate | `implement/sub-skills/references/pages/marketing/program.md` |
+| Education/student plan | /education, /startups, /student-discount | education-program, `implement/sub-skills/references/pages/marketing/program.md` |
 | Multi-language | /zh-CN, /ja | localization-strategy |
-| Community | /ambassadors, /showcase | creator-program, `dev/references/pages/marketing/landing-page` |
-| B2B / Enterprise | Solutions (industry-first), Use cases (scenario-first; can be sub-pages), Customer stories | `dev/references/pages/marketing/service-solution`, `dev/references/pages/marketing/use-cases`, `dev/references/pages/marketing/customer-stories` |
-| Developer product | /api, /docs, /status | `dev/references/pages/content/product-interface`, `dev/references/pages/content/documentation`, `dev/references/pages/utility/status` |
-| User feedback | Feedback, Roadmap | `dev/references/pages/utility/feedback-disclosure`; External (Canny, FeatureBase) |
-| Plugins/Integrations | /integrations, /plugins | `dev/references/pages/marketing/integrations`, `dev/references/pages/marketing/commerce` |
-| Giveaway/Contest | /giveaway | `dev/references/pages/marketing/contest` |
+| Community | /ambassadors, /showcase | creator-program, `implement/sub-skills/references/pages/marketing/landing-page.md` |
+| B2B / Enterprise | Solutions (industry-first), Use cases (scenario-first; can be sub-pages), Customer stories | `implement/sub-skills/references/pages/marketing/service-solution.md`, `implement/sub-skills/references/pages/marketing/use-cases.md`, `implement/sub-skills/references/pages/marketing/customer-stories.md` |
+| Developer product | /api, /docs, /status | `implement/sub-skills/references/pages/content/product-interface.md`, `implement/sub-skills/references/pages/content/documentation.md`, `implement/sub-skills/references/pages/utility/status.md` |
+| User feedback | Feedback, Roadmap | `implement/sub-skills/references/pages/utility/feedback-disclosure.md`; External (Canny, FeatureBase) |
+| Plugins/Integrations | /integrations, /plugins | `implement/sub-skills/references/pages/marketing/integrations.md`, `implement/sub-skills/references/pages/marketing/commerce.md` |
+| Giveaway/Contest | /giveaway | `implement/sub-skills/references/pages/marketing/contest.md` |
 
 ## Domain Structure (Multiple Products)
 
@@ -69,7 +69,7 @@ When planning for multiple products or brands, see **domain-architecture** for s
 
 ## Planning Workflow
 
-1. **Choose template**: Start from generic structure; map to the page guides in `dev/references/pages` website types
+1. **Choose template**: Start from generic structure; map to the page guides in `implement/sub-skills/references/pages.md` website types
 2. **Trim modules**: Remove irrelevant nodes (e.g. no API → drop /api, /docs)
 3. **Add specifics**: Industry pages, region, product variants
 4. **Assign URLs**: Per node; follow **url-structure** (lowercase, hyphens, short, keyword-rich)
@@ -85,19 +85,19 @@ When planning for multiple products or brands, see **domain-architecture** for s
 | **Early planning** | Plan structure before growth; can start right after domain purchase |
 | **Sitelinks** | Good structure + TOC + authoritative internal links → natural sitelinks in SERP (cannot be forced via schema); see **serp-features** |
 | **Orphan prevention** | Every page needs internal links; see **site-crawlability** and **internal-links** |
-| **Features vs Use cases** | /features = capability-first; /use-cases = scenario-first; differentiate content angle, link between, avoid overlap; see `dev/references/pages/content/features`, `dev/references/pages/marketing/use-cases` |
-| **Clear navigation** | Clear hierarchy and nav improve task completion; users find what they need faster; see `dev/references/components/navigation/navigation-menu` |
-| **Pricing placement** | Marketing site: /pricing in main nav for prospects; in-app: Settings → Billing in sidebar for logged-in users (subscription management). Enterprise-only: "Contact sales" may replace public pricing page; see `dev/references/pages/marketing/pricing` |
+| **Features vs Use cases** | /features = capability-first; /use-cases = scenario-first; differentiate content angle, link between, avoid overlap; see `implement/sub-skills/references/pages/content/features.md`, `implement/sub-skills/references/pages/marketing/use-cases.md` |
+| **Clear navigation** | Clear hierarchy and nav improve task completion; users find what they need faster; see `implement/sub-skills/references/components/navigation/navigation-menu.md` |
+| **Pricing placement** | Marketing site: /pricing in main nav for prospects; in-app: Settings → Billing in sidebar for logged-in users (subscription management). Enterprise-only: "Contact sales" may replace public pricing page; see `implement/sub-skills/references/pages/marketing/pricing.md` |
 
 ## Homepage Module Reference
 
-See `dev/references/pages/brand/home` for common modules (Headline, Subheadline, CTA, Benefits, Social Proof, etc.), navigation options, and `dev/references/components/branding/hero` for hero design.
+See `implement/sub-skills/references/pages/brand/home.md` for common modules (Headline, Subheadline, CTA, Benefits, Social Proof, etc.), navigation options, and `implement/sub-skills/references/components/branding/hero.md` for hero design.
 
 ## Output Format
 
 - **Page list** with priority (Must Have / Great to Have / Optional)
 - **URL structure** (paths per section)
-- **Website-type fit** (which pages apply, per the page guides in `dev/references/pages`)
+- **Website-type fit** (which pages apply, per the page guides in `implement/sub-skills/references/pages.md`)
 - **Growth mapping** (which paths support which channels)
 - **Next steps**: url-structure for URL rules; xml-sitemap for submission; site-crawlability for audit
 
@@ -293,8 +293,8 @@ Link types, rules, the hub-and-spoke model and the link audit checklist: see **i
 - **site-crawlability**: Crawlability, orphan pages, redirects; audit existing structure
 - **internal-links**: Link strategy, hub-spoke; implement after pages exist
 - **xml-sitemap**: Sitemap creation; include planned URLs
-- `dev/references/components/navigation/breadcrumb`: Breadcrumb for hierarchy; large sites, e-commerce
-- `dev/references/components/navigation/navigation-menu`: Nav design; primary, footer, mobile
+- `implement/sub-skills/references/components/navigation/breadcrumb.md`: Breadcrumb for hierarchy; large sites, e-commerce
+- `implement/sub-skills/references/components/navigation/navigation-menu.md`: Nav design; primary, footer, mobile
 - **content-strategy**: Content clusters, pillar pages; complements structure planning
 - **programmatic-seo**: For building SEO pages at scale with templates and data
 - **seo-audit**: For technical SEO, on-page optimization, and indexation issues
