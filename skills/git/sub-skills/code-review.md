@@ -106,11 +106,13 @@ End with a one-line summary: total findings per axis (Notes excluded), the worst
 
 ### 7. Select PR inline comments
 
-If the review is of a PR, recommend inline comments for findings (Notes excluded). Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. Present the remaining recommendations as a numbered list, each with its file, changed line, and proposed comment text. Say when there are none. Ask which numbers, if any, the user wants to add. Wait for their answer before step 8; keep only the selected comments, anchored to changed lines. Skip steps 7–10 when there's no PR.
+If the review is of a PR, start the suggested-comments presentation with a prominent verdict heading: `## Suggested review result: APPROVE` or `## Suggested review result: REQUEST CHANGES`, using the criteria in step 8. Follow it with one sentence explaining the recommendation, then `### Suggested inline comments`. Show the verdict even when there are no suggested comments.
+
+Recommend inline comments for findings (Notes excluded). Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. Present the remaining recommendations as a numbered list, each with its file, changed line, and proposed comment text. Say when there are none. Ask which numbers, if any, the user wants to add. Wait for their answer before step 8; keep only the selected comments, anchored to changed lines. Skip steps 7–10 when there's no PR.
 
 ### 8. Choose the review result
 
-After the inline-comment selection, recommend a result and ask the user which result to apply:
+After the inline-comment selection, repeat the suggested review result prominently and ask the user which result to apply. Use these criteria for the recommendation:
 
 - **Approve**: only minor issues, or none.
 - **Request changes**: issues that need to be looked at before merge.
@@ -119,7 +121,7 @@ Wait for their answer before step 9.
 
 ### 9. Choose the review comment
 
-After the review result, ask what review-level comment, if any, the user wants to add; suggest a short draft based on the findings. Wait for their answer before step 10. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to approve a short summary or supply their own text.
+Once the user has selected the review result in step 8, generate and show a short review-level comment under `## Suggested review comment`, based on the findings and their chosen result. Generate this draft only after their selection, including when it differs from the recommended result. Ask whether to use the draft, edit it, or omit the review-level comment. Wait for their answer before step 10. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to approve a short summary or supply their own text.
 
 ### 10. Submit the review
 
