@@ -14,11 +14,23 @@ npx skills add jny986/ai-setup
 npx skills add jny986/ai-setup --list
 
 # Install specific skills globally
-npx skills add jny986/ai-setup -g --skill tdd --skill code-review
+npx skills add jny986/ai-setup -g --skill tdd --skill git
 
 # Update installed skills
 npx skills update
 ```
+
+## Set up a project
+
+Install the setup skill for your agent:
+
+```sh
+npx skills add jny986/ai-setup --skill setup
+```
+
+In the target project, run `/setup` to configure project instructions and engineering workflows for the skills already available, migrate domain glossaries, and check readiness. Describe any narrower setup request in plain language, or ask for a read-only readiness check. Setup asks for unresolved project details and shows proposed file changes for approval before applying them. Existing conventions and configuration are preserved on repeat runs.
+
+The skill configures the issue tracker, optional triage labels and domain doc rules. `/setup-matt-pocock-skills` remains a compatibility entry point and requires the `setup` skill to be installed.
 
 ## Structure
 
@@ -31,7 +43,7 @@ npx skills update
 │   └── dev/           # Page and component build guides (no SKILL.md), reached from marketing hand-offs
 ├── SKILLS.md          # Index of my skills
 ├── skills.html        # The same index, grouped by upstream source
-├── CONTEXT.md         # Glossary of this repo's terms
+├── GLOSSARY.md         # Glossary of this repo's terms
 ├── docs/              # Agent config docs (agents/) and the router-skill guide
 ├── scripts/           # Repo checks run in CI; `scripts/check-all.sh` runs them all locally
 ├── tests/             # pytest fixtures for the checks (`pip install -r tests/requirements.txt`)

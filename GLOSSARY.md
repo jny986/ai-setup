@@ -101,7 +101,7 @@ _Avoid_: Status, priority
 ### Domain model
 
 **Glossary**:
-The `CONTEXT.md` list of the project's terms, each with the words to avoid.
+The `GLOSSARY.md` list of the project's terms, each with the words to avoid.
 _Avoid_: Dictionary, wiki
 
 **ADR (architecture decision record)**:

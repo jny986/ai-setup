@@ -20,7 +20,7 @@ Both axes run as **parallel sub-agents** so they don't pollute each other's cont
 
 **Scope: only the changes in the branch or PR.** Review the diff, not the surrounding codebase. Don't flag pre-existing issues in untouched code; read it only for context.
 
-The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-matt-pocock-skills`.
+The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup`.
 
 ## Process
 

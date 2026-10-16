@@ -13,7 +13,7 @@ metadata:
 
 # Product context
 
-Write `PRODUCT.md` at the project root unless the user specifies another location. It records durable product truth for future design work. Keep a domain glossary such as `CONTEXT.md` in its existing role; link to it for shared terminology rather than copying it.
+Write `PRODUCT.md` at the project root unless the user specifies another location. It records durable product truth for future design work. Keep a domain glossary such as `GLOSSARY.md` in its existing role; link to it for shared terminology rather than copying it.
 
 ## Workflow
 
