@@ -25,7 +25,7 @@ A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `re
 
 ## How `git` was built
 
-1. **Sub-skills are not skills.** Each member moved to `sub-skills/<sub-skill>.md`. The standalone slash commands (`/finalise`, `/create-pr`, ...) are gone; the user runs `/git finalise`.
+1. **Sub-skills are not skills.** Each member moved to `sub-skills/<sub-skill>.md`. The user invokes each sub-skill through its router, for example `/git finalise` or `/git create-pr`.
 2. **Router `SKILL.md` stays thin:** steps, a `Sub-skill | Use when` table linking each sub-skill (`security` flips the columns to `Situation | Sub-skill`), and a short "How they nest" note. No sub-skill content.
 3. **Steps:** argument names a sub-skill, use it; otherwise match the "Use when" row, asking once on a tie; then read the sub-skill and follow it as if it were the skill.
 4. **Description** names the task types and lists the sub-skill names, so the model triggers on any of them.

@@ -46,5 +46,5 @@ Pick the outermost sub-skill that matches what you want. `git finalise` already 
 
 - `git` with an `origin` remote.
 - `gh`, authenticated, for `git create-pr`, `git finalise` and the PR side of `git code-review`.
-- `git code-review` reads `docs/agents/issue-tracker.md` to fetch specs. Run `/setup-matt-pocock-skills` to create it if missing.
+- `git code-review` reads `docs/agents/issue-tracker.md` to fetch specs. Run `/setup` to create it if missing.
 - Optional: a ticket MCP server such as Kanopi, used to resolve tickets and branch names.

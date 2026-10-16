@@ -1,0 +1,5 @@
+interface:
+  display_name: "Setup"
+  short_description: "Prepare projects for this skill collection"
+policy:
+  allow_implicit_invocation: true

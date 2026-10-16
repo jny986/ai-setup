@@ -45,7 +45,7 @@ Take the current work to an open GitHub PR. GitHub and `gh` only. Read the invoc
 **Guardrails.** The user's git hooks (destructive-git prompt, commit-signing) stay in force. Never pass `--no-verify`, never disable signing, expect a hook prompt mid-run.
 
 **Body writing.** Optimise for review speed, whichever template is in use. Adapted from Dex Horthy's [show-me](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md) skill (Humanlayer) via mattpocock's `pr`.
-- No preamble; brief prose in the project's domain language (`CONTEXT.md` or `GLOSSARY.md`, if present).
+- No preamble; brief prose in the project's domain language (`GLOSSARY.md`, if present).
 - Summary: show the change's shape in the smallest view that makes the key point (pseudocode, tree, diagram or diff). One is usually enough.
 - Evidence: only when the change produced something visible; otherwise omit the section. Reference each file by its local path in the body, e.g. `![alt](path/to/shot.png)`, and pass it with `--attach` on `gh pr create` (or `gh pr edit` for an existing PR): `gh` uploads it and rewrites the path to the hosted URL. Needs push access. `--attach` takes images and videos only, so render a PDF or other document to an image first. Evidence that still can't be uploaded (unsupported type, no push access): tell the user and give the file's path so they can upload it manually. Keep evidence files out of the commit.
 - Merge Danger: state **Door** (one-way if destructive or hard to reverse, else two-way) and **Blast Radius** in one word (e.g. layout shift, consumer breakage, mobile), with a line of ramifications only when non-obvious.
