@@ -12,7 +12,7 @@ Default canonical labels: `needs-triage`, `needs-info`, `ready-for-agent`, `read
 
 ### Domain docs
 
-Single-context: one root `CONTEXT.md` plus `docs/adr/`; ignore the upstream submodules in `source-skills/`. See `docs/agents/domain.md`.
+Single-context: one root `GLOSSARY.md` plus `docs/adr/`; ignore the upstream submodules in `source-skills/`. See `docs/agents/domain.md`.
 
 ## Shell commands
 

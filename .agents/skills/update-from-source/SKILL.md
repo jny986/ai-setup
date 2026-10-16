@@ -31,7 +31,7 @@ Read `CHANGELOG.md` in the upstream repo when present, for the reason behind eac
 
 ## 3. Port
 
-Three-way: base is upstream before, the local skill is upstream plus our adaptations, target is upstream after. Apply each upstream change unless it conflicts with an adaptation (house style, renamed terms from `CONTEXT.md`, router structure). Ask the user on any conflict where intent is unclear.
+Three-way: base is upstream before, the local skill is upstream plus our adaptations, target is upstream after. Apply each upstream change unless it conflicts with an adaptation (house style, renamed terms from `GLOSSARY.md`, router structure). Ask the user on any conflict where intent is unclear.
 
 Done when every hunk in the upstream diff is ported, deliberately skipped, or raised with the user, and you can list which.
 
