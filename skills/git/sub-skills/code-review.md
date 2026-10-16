@@ -100,22 +100,30 @@ When a comment matches a pattern that recurs across the PR's comments, record it
 
 ### 6. Aggregate
 
-Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned, then the step 5 results under `## Comments`. Close with `## Notes`: the Standards sub-agent's Notes and step 5's recurring-pattern notes, each as a suggestion to add, clarify or remove a standard or automated check. Notes are additional comments, not findings. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned, then the step 5 results under `## Comments`. Format `## Comments` as a Markdown table with `Comment | Status | Evidence` columns: one row per comment, with its quote, fixed/not fixed/partially fixed status, and file/line citations. If there are no comments, say so under the heading. Close with `## Notes`: the Standards sub-agent's Notes and step 5's recurring-pattern notes, each as a suggestion to add, clarify or remove a standard or automated check. Notes are additional comments, not findings. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
 
 End with a one-line summary: total findings per axis (Notes excluded), the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
 
-### 7. Offer PR inline comments
+### 7. Select PR inline comments
 
-If the review is of a PR, ask the user which findings (if any, Notes excluded) they want posted as inline comments on it. Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. List the rest numbered with file and line. Collect only the ones they pick, anchored to the changed lines; they're submitted with the review in step 8. Skip steps 7 and 8 when there's no PR.
+If the review is of a PR, recommend inline comments for findings (Notes excluded). Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. Present the remaining recommendations as a numbered list, each with its file, changed line, and proposed comment text. Say when there are none. Ask which numbers, if any, the user wants to add. Wait for their answer before step 8; keep only the selected comments, anchored to changed lines. Skip steps 7–10 when there's no PR.
 
-### 8. Submit the review
+### 8. Choose the review result
 
-Recommend a verdict and let the user confirm or override it:
+After the inline-comment selection, recommend a result and ask the user which result to apply:
 
 - **Approve**: only minor issues, or none.
 - **Request changes**: issues that need to be looked at before merge.
 
-Ask what review comment they want to add (suggest a short draft based on the findings). Then submit one review on the PR with the confirmed verdict, the comment, and the inline comments picked in step 7 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`). Don't submit until the user has confirmed the verdict and comment.
+Wait for their answer before step 9.
+
+### 9. Choose the review comment
+
+After the review result, ask what review-level comment, if any, the user wants to add; suggest a short draft based on the findings. Wait for their answer before step 10. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to approve a short summary or supply their own text.
+
+### 10. Submit the review
+
+Once the user has answered each question, submit one review on the PR with the chosen result, review comment (if any), and inline comments selected in step 7 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`).
 
 ## Why two axes
 
