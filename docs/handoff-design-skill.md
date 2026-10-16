@@ -1,5 +1,7 @@
 # Handoff: design skill curation
 
+Historical snapshot from an earlier curation session. The branch, work status, and open items below describe that session. Current workflows and references are indexed in [the design README](../skills/design/README.md).
+
 Branch `bronze-whale`. All changes are uncommitted; see `git status` and `git diff`.
 
 ## Done

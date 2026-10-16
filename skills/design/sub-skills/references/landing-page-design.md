@@ -1,6 +1,10 @@
 ---
+name: landing-page-design
+description: "Design landing pages around the audience, offer, evidence, conversion action, and responsive composition."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: landing-page-design
@@ -10,7 +14,7 @@ metadata:
 
 Full multi-section marketing and conversion pages: section order, CTA strategy, page-level performance. The hero block is in [hero-section](hero-section.md); individual cards in [card-design](card-design.md); general components in [ui-design](ui-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. Settle the product, the audience, and the single desired action first. Use the context's tone for copy and its style archetype to pick the hero pattern and section backgrounds.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. Settle the product, the audience, and the single desired action first. Use `PRODUCT.md` and the brand kit for voice, and `DESIGN.md` for the visual direction of the hero and section backgrounds.
 
 ## Section Framework
 

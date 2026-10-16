@@ -1,6 +1,10 @@
 ---
+name: hero-section
+description: "Design a page opening that communicates the offer, presents relevant evidence, and makes the next action clear."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: hero-section
@@ -10,7 +14,7 @@ metadata:
 
 Above-the-fold hero patterns (centered, split, video, minimal type), backgrounds, and LCP performance. Full multi-section pages are in [landing-page-design](landing-page-design.md); static hero images or banner graphics in [banner-design](banner-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. Settle the product and primary CTA first. Let the style archetype pick the pattern: Minimal or Corporate: centered or split; Bold or Playful: gradient backgrounds; Luxurious: minimal typography on a dark surface.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. Settle the product and primary CTA first. Let the style archetype pick the pattern: Minimal or Corporate: centered or split; Bold or Playful: gradient backgrounds; Luxurious: minimal typography on a dark surface.
 
 ## Headline Hierarchy
 

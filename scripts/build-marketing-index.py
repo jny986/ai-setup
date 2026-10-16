@@ -3,7 +3,7 @@
 
 skills.html is generated from the SKILLS.md skills table plus the marketing, git, security and design router tables in their SKILL.md.
 SKILLS.md gets the Version and Author cells of its skills table and the spans between its `marketing-sub-skills` and
-`git-sub-skills` and `security-sub-skills` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
+`git-sub-skills`, `security-sub-skills` and `design-sub-skills` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
 moving or renaming a skill or router sub-skill, or bumping a version.
 """
 import html

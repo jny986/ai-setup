@@ -1,6 +1,10 @@
 ---
+name: poster-design
+description: "Design posters and flyers with clear hierarchy, viewing-distance readability, and appropriate print or digital delivery."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: poster-design
@@ -10,7 +14,7 @@ metadata:
 
 Event posters, flyers, and announcements for print or screen. Default to an image-generation tool for visual-led pieces; use HTML/CSS/SVG when copy is dense or must stay editable, then render to PNG/PDF.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Posters allow more creative freedom than most formats, but brand colors and fonts still anchor the design.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Posters allow more creative freedom than most formats, but brand colors and fonts still anchor the design.
 
 ## Image-generation path
 

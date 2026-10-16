@@ -1,6 +1,10 @@
 ---
+name: infographic
+description: "Turn information into an understandable visual narrative with accurate data, hierarchy, and readable labels."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: infographic
@@ -10,7 +14,7 @@ metadata:
 
 Standalone graphics that explain data, processes, comparisons, and timelines. Interactive app dashboards: [dashboard-design](dashboard-design.md). Single stat posts for feeds: [social-media-graphic](social-media-graphic.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. A consistent color system for data categories matters most here.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. A consistent color system for data categories matters most here.
 
 ## Choosing the path
 

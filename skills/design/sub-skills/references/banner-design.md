@@ -1,6 +1,10 @@
 ---
+name: banner-design
+description: "Design banners for web, advertising, and physical placements with readable messaging and format-appropriate composition."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: banner-design
@@ -10,7 +14,7 @@ metadata:
 
 Website banners, email headers, event banners, and announcement bars for owned channels. Paid display/IAB ads: [ad-creative-design](ad-creative-design.md). Coded above-the-fold sections: [hero-section](hero-section.md). Full email templates: [email-design](email-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Banners are high-visibility touchpoints: follow brand guidelines strictly.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Banners are high-visibility touchpoints: follow brand guidelines strictly.
 
 ## Image-generation path
 

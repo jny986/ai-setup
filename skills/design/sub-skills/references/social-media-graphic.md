@@ -1,6 +1,10 @@
 ---
+name: social-media-graphic
+description: "Design social graphics with platform-specific formats, safe areas, readable messaging, and coherent variants."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: social-media-graphic
@@ -10,7 +14,7 @@ metadata:
 
 Organic feed graphics (posts, stories, carousels, covers) sized for Instagram, X, LinkedIn, Facebook, Pinterest, TikTok, with platform safe zones. For paid ads see [ad-creative-design](ad-creative-design.md); for website/email banners [banner-design](banner-design.md); for YouTube thumbnails and OG images [thumbnail-design](thumbnail-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Social graphics must be strongly on-brand: consistency builds recognition.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Social graphics must be strongly on-brand: consistency builds recognition.
 
 Default output is an AI-generated image cropped to exact platform pixels. Use HTML/CSS for multi-slide carousels with shared templates or copy-heavy posts.
 
@@ -293,7 +297,7 @@ For carousels or copy-heavy posts, output a self-contained HTML file with:
 
 1. Exact `width` and `height` on the canvas element
 2. Web fonts loaded via `<link>`
-3. All colors from design-context, as CSS custom properties
+3. All colors from the approved brand palette, as CSS custom properties
 4. Comments marking editable sections (text, colors, images)
 
 Render at the exact canvas size with body margin 0 and view the result as you would an AI output.

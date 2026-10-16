@@ -1,6 +1,10 @@
 ---
+name: card-design
+description: "Design UI cards with coherent anatomy, hierarchy, states, and responsive behavior."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: card-design
@@ -10,7 +14,7 @@ metadata:
 
 Individual cards and card grids: anatomy, layouts, hover effects, ready patterns, skeletons. General component rules live in [ui-design](ui-design.md); KPI tiles in [dashboard-design](dashboard-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Use the context's radius and shadow style on every card. Settle what content the card holds and the single action it leads to before designing.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Use the documented radius and shadow rules for cards. Settle what content the card holds and the single action it leads to before designing.
 
 ## Anatomy
 

@@ -1,6 +1,10 @@
 ---
+name: ad-creative-design
+description: "Design static advertising creative with a clear offer, visual hierarchy, format constraints, and usable variants."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: ad-creative-design
@@ -10,7 +14,7 @@ metadata:
 
 Paid creative: IAB display banners, Google Display/Performance Max assets, and paid social ads. Output is an image cropped to exact size, or HTML/CSS (optionally animated) when copy must be pixel-sharp at small sizes. Organic posts: [social-media-graphic](social-media-graphic.md). On-site and email banners: [banner-design](banner-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Ads are often the first brand touchpoint: stay strictly on-brand.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Ads are often the first brand touchpoint: stay strictly on-brand.
 
 ## Image-generation path
 

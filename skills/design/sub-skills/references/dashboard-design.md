@@ -1,6 +1,10 @@
 ---
+name: dashboard-design
+description: "Design task-focused dashboards with clear data hierarchy, navigation, tables, charts, and interaction states."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: dashboard-design
@@ -10,7 +14,7 @@ metadata:
 
 Information-dense admin and analytics UI: app shell, KPI tiles, charts, tables, status badges, real-time indicators, responsive behavior. Base rules (states, forms, accessibility, breakpoints) are in [ui-design](ui-design.md); marketing feature cards in [card-design](card-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. Map success, warning, and error tokens to status badges; derive chart colors from primary, secondary, and accent. Settle what data is shown, who uses it, and what actions they take before laying out.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. Map success, warning, and error tokens to status badges; derive chart colors from primary, secondary, and accent. Settle what data is shown, who uses it, and what actions they take before laying out.
 
 ## Layout
 

@@ -1,6 +1,10 @@
 ---
+name: icon-design
+description: "Create and apply a coherent icon system with consistent geometry, weight, accessibility, and export formats."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: icon-design
@@ -10,7 +14,7 @@ metadata:
 
 Consistent, accessible SVG icon systems: grids, stroke rules, optical corrections, styles, alignment, animation and markup.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Its Brand Marks "Icon Style" field (for example "Outlined, 2px stroke, rounded caps") sets fill, stroke width and cap/join for every icon you draw. Use the status scales (`--success-*`, `--error-*`) from [color-palette](color-palette.md). If the project already uses an icon library (Lucide, Heroicons, Phosphor, Material Symbols), match its grid and stroke and prefer its icons over drawing new ones. For a logo mark see [brand-identity](brand-identity.md).
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Use the brand kit or `DESIGN.md` icon rules (for example, outlined, 2px stroke, rounded caps) to set fill, stroke width, and cap/join. Use the status scales (`--success-*`, `--error-*`) from [color-palette](color-palette.md). If the project already uses an icon library (Lucide, Heroicons, Phosphor, Material Symbols), match its grid and stroke and prefer its icons over drawing new ones. For a logo mark see [brand-identity](brand-identity.md).
 
 ## SVG base
 

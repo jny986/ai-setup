@@ -1,6 +1,10 @@
 ---
+name: layout-composition
+description: "Arrange pages and screens using content-driven grids, hierarchy, grouping, spacing, and responsive layout."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: layout-composition
@@ -10,7 +14,9 @@ metadata:
 
 Grid systems, visual hierarchy, whitespace and modern CSS layout patterns for pages and screens.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Use its Spacing System, Border Radius, style archetype and platform priority. Spacing tokens follow the [design-system](design-system.md) scale (`--space-N` = N x 4px); colors use the `--brand-*` and `--gray-*` primitives from [color-palette](color-palette.md). Pick patterns by content type (text-heavy, media-heavy, dashboard, marketing). For slide layouts see [presentation-design](presentation-design.md).
+The grids, spacing values, and breakpoints below are examples; retain an established project system and choose reflow from actual content. For adapting an existing surface to a new device, window, or input method, use [adapt](adapt.md).
+
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Use documented spacing, radius, visual character, and platform constraints. Spacing tokens follow the [design-system](design-system.md) scale (`--space-N` = N x 4px); colors use the `--brand-*` and `--gray-*` primitives from [color-palette](color-palette.md). Pick patterns by content type (text-heavy, media-heavy, dashboard, marketing). For slide layouts see [presentation-design](presentation-design.md).
 
 ## CSS Grid
 

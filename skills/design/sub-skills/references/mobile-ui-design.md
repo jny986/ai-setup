@@ -1,27 +1,31 @@
 ---
+name: mobile-ui-design
+description: "Design mobile websites and PWAs for touch, navigation, safe areas, gestures, forms, and responsive content."
 metadata:
   version: "1.0.0"
-  based_on_repo: ArnavPuri/designskills
-  based_on_version: main(c787301)
-  based_on_skill: mobile-ui-design
+  author: jny986
+  author-url: https://jny986.com
+  based_on_repo: ArnavPuri/designskills, pbakaus/impeccable, pbakaus/impeccable, pbakaus/impeccable, pbakaus/impeccable
+  based_on_version: main(c787301), main(2f98774), main(2f98774), main(2f98774), main(2f98774)
+  based_on_skill: mobile-ui-design, adapt, adapt.native, ios, android
 ---
 
 # Mobile UI Design
 
-Touch-first UI for native-feeling web apps, PWAs, and React Native or Flutter screens: targets, bottom nav, gestures, safe areas, thumb zones, sheets, forms, motion. Desktop-first responsive rules are in [ui-design](ui-design.md); device mockups in [product-mockup](product-mockup.md).
+Touch-first UI for mobile websites and PWAs: targets, navigation, gestures, safe areas, sheets, forms, and motion. For native iOS, Android, React Native, Expo, or Flutter apps, read [native-platforms](native-platforms.md). For a change of device, window size, input, or platform, read [adapt](adapt.md). General web patterns are in [ui-design](ui-design.md); device mockups in [product-mockup](product-mockup.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. For native apps (React Native, Flutter), map tokens into the theme object instead of CSS variables.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes below are placeholders for primary and neutral tokens. The code examples below are web implementations. Preserve the project's navigation, sizing, and motion conventions; the example dimensions and patterns are fallbacks where those are missing.
 
 ## Touch Targets
 
 | Source | Minimum | Notes |
 |--------|---------|-------|
-| Apple HIG | 44x44pt | Equals 44x44 CSS px on the web |
-| Material Design | 48x48dp | About 48x48 CSS px; the visual icon can be 24dp |
-| WCAG 2.2 SC 2.5.8 (AA) | 24x24 CSS px | Legal floor, not a design target |
+| Apple HIG | 44x44pt | Native logical points; a useful web sizing reference, not a unit conversion |
+| Material Design | 48x48dp | Native logical units; the visual icon can be smaller than its hit area |
+| WCAG 2.2 SC 2.5.8 (AA) | 24x24 CSS px | Web accessibility criterion; includes exceptions |
 | WCAG 2.2 SC 2.5.5 (AAA) | 44x44 CSS px | |
 
-Rule: 44x44px minimum for every touch target (48x48 on Android-styled UIs). Keep at least 8px between tappable elements, preferably 12px+.
+For mobile web, aim for comfortable hit areas around 44–48 CSS px with enough separation to prevent accidental taps. Check the actual target and spacing; native point and dp values belong to their platform frameworks.
 
 Expand small visuals with a pseudo-element:
 
@@ -40,7 +44,7 @@ Expand small visuals with a pseudo-element:
 
 ## Bottom Navigation
 
-Primary navigation goes at the bottom, where the thumb reaches.
+Bottom navigation suits a small set of frequently used peer destinations. Choose navigation from the task and existing information architecture; a content site may need a different structure.
 
 ```html
 <nav aria-label="Main" class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200
@@ -62,10 +66,10 @@ Primary navigation goes at the bottom, where the thumb reaches.
 </nav>
 ```
 
-- Max 5 tabs; 3-4 is ideal.
+- Keep the set small enough for readable labels and comfortable targets; use the existing navigation model where it works.
 - Active: filled icon plus primary color. Inactive: outline icon plus gray.
 - Labels required; icon-only tabs are hard to discover.
-- Never replace a tab bar with a hamburger menu.
+- Preserve discoverability when changing navigation; choose a drawer only when it suits the destination structure.
 - Account for the bottom safe area.
 
 ## Safe Areas
@@ -127,26 +131,13 @@ Pull-to-refresh: indicator appears as the user pulls, refresh triggers around 80
 
 `touch-action: manipulation` on buttons and links removes the double-tap-zoom delay; it does not enable custom pinch handling. Every gesture needs a visible single-tap alternative (button or menu item), for WCAG 2.5.1 and discoverability.
 
-## iOS vs Android
+## Native platforms
 
-| Element | iOS (HIG) | Android (Material) |
-|---------|-----------|--------------------|
-| Navigation | Tab bar at bottom | Bottom navigation bar |
-| Back | Swipe from left edge / text "Back" | Arrow icon top-left |
-| Titles | Large title that collapses | Centered or left-aligned |
-| Buttons | Rounded rect, no elevation | Rounded, with elevation |
-| Switches | Green/white toggle | Track and thumb with ripple |
-| Sheets | Rounded top, drag handle | Full-width, drag handle |
-| Typography | SF Pro | Roboto |
-| Margins | 16px | 16px |
-
-For both platforms, lean on iOS patterns for polish and Material for interaction feedback. Use the design-context body font if set, else the platform font:
-
-```css
-font-family: var(--font-body, system-ui), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-```
+Native navigation, controls, scalable typography, and system gestures are covered by [native-platforms](native-platforms.md). Use the shipped OS's conventions and the project's intentional cross-platform system. The web examples here do not establish native runtime behavior.
 
 ## Mobile Type Scale
+
+This example follows an iOS-like hierarchy for web styling. Use existing project roles where present; native text styles and scaling belong to [native-platforms](native-platforms.md).
 
 | Role | Size | Weight | Line height |
 |------|------|--------|-------------|
@@ -180,10 +171,10 @@ See [typography](typography.md) for general scale and pairing rules.
 +-----------------------------+
 ```
 
-- Primary actions (CTA, submit, nav) at the bottom.
+- Keep frequent actions reachable and associated with their content; a persistent bottom action is useful when the task warrants it.
 - Consider bottom search bars (as iOS Safari).
 - FAB: bottom-right, 56px, with shadow.
-- Destructive actions at the top: harder to reach, harder to trigger by accident.
+- Make destructive actions explicit and recoverable or appropriately confirmed; placement alone does not prevent accidental activation.
 
 ```html
 <div class="fixed bottom-0 inset-x-0 px-4 pt-12 pb-safe-4 bg-gradient-to-t from-white via-white to-transparent">
@@ -224,8 +215,8 @@ Variants: peek sheet (30% visible, drag to expand), action sheet (iOS-style opti
 Rules:
 
 - Drag handle: 40px wide, 4px tall, centered, rounded.
-- Max height 85% of viewport; scroll internally.
-- Dismiss by swipe down, backdrop tap, or explicit close button.
+- Size the sheet to its content and available viewport; use internal scrolling when needed.
+- Provide explicit close or completion and keyboard dismissal; enable backdrop or swipe dismissal when it safely preserves work.
 - Snap points: collapsed, half, expanded.
 
 ## Mobile Forms
@@ -234,7 +225,7 @@ Rules:
 2. Full-width inputs.
 3. Smart keyboards via `inputmode`.
 4. Sticky submit button at the bottom.
-5. Single column; never side-by-side fields.
+5. Prefer a single column on narrow screens; group related short fields only when labels and content still fit.
 
 ```html
 <input type="tel" inputmode="tel" />
@@ -255,7 +246,7 @@ Rules:
 </div>
 ```
 
-## Native-Feeling Motion
+## Mobile Web Motion
 
 ```css
 :root {
@@ -291,8 +282,8 @@ Rules:
 }
 ```
 
-- Keep animations under 400ms; 200-300ms feels snappy.
-- Animate `transform` and `opacity` only.
+- Keep routine feedback prompt; choose duration from distance, consequence, and established motion tokens.
+- Prefer `transform` and `opacity` for cheap motion; measure other effects as described in [motion-design](motion-design.md).
 - Use `will-change: transform` sparingly.
 - Haptics for important actions (native only).
 
@@ -304,14 +295,14 @@ Render at 320px, 390px, and landscape and view each. Fixed bars must clear safe 
 
 ## Checklist
 
-- [ ] Tap targets 44x44px+ (48x48 for Material), never below 24x24
-- [ ] Bottom navigation with 3-5 labelled tabs
+- [ ] Comfortable web hit areas and separation; applicable accessibility target-size criterion checked
+- [ ] Navigation matches the task; any bottom destinations have clear labels and usable targets
 - [ ] Safe areas respected (top, bottom, sides)
 - [ ] Body text 16px+; inputs 16px+ (no iOS zoom)
 - [ ] Primary actions in the thumb zone
 - [ ] Forms use correct `inputmode`
 - [ ] Sheets have drag handles, dismiss gestures, dialog semantics and focus management
-- [ ] Animations under 400ms, GPU-friendly properties
+- [ ] Motion uses established timing, remains responsive, and respects interruption
 - [ ] `viewport-fit=cover` set; zoom not disabled
 - [ ] Full-height layouts use `dvh` or `svh`, not `100vh`
 - [ ] Every gesture has a tap alternative

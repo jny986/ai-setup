@@ -1,16 +1,28 @@
 ---
+name: image-generation
+description: "Create and refine bitmap images using prompts, reference assets, composition, and placement-specific verification."
 metadata:
   version: "1.0.0"
-  based_on_repo: ArnavPuri/designskills
-  based_on_version: main(c787301)
-  based_on_skill: image-generation
+  author: jny986
+  author-url: https://jny986.com
+  based_on_repo: ArnavPuri/designskills, pbakaus/impeccable, pbakaus/impeccable
+  based_on_version: main(c787301), main(2f98774), main(2f98774)
+  based_on_skill: image-generation, visualize, region-map
 ---
 
 # Image Generation
 
 Tool-agnostic craft for AI-generated images: prompts, references, refinement, aspect ratios, text limits, review. Other graphics references ([graphic-design](graphic-design.md), [social-media-graphic](social-media-graphic.md), [thumbnail-design](thumbnail-design.md), [product-mockup](product-mockup.md), [poster-design](poster-design.md), [ad-creative-design](ad-creative-design.md), [banner-design](banner-design.md), [infographic](infographic.md)) add format rules on top of this and link here instead of repeating it.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Pull hex colors, style archetype, and type description into the prompt. Say when output is not brand-matched.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Pull hex colors, style archetype, and type description into the prompt. Say when output is not brand-matched.
+
+## Concept images and production assets
+
+A whole-page concept image explores composition; it does not supply working controls or prove that a layout is usable. For implementing a selected mockup, follow [reference-to-ui](reference-to-ui.md). Separate independently changing content from frames and decoration, and keep functional UI text and controls live.
+
+Produce assets at the resolution and crop their actual placement needs. For cutouts, request native transparency, preserve fine edges and intentional white areas, and inspect the alpha on both light and dark grounds. Use [image-treatment](image-treatment.md) for delivery and placement.
+
+Keep the exact generation prompt, reference roles, and source or origin alongside an asset when it supports later editing, reproducibility, or handoff. Use existing project metadata conventions; embedding metadata or adding a tool-specific sidecar is optional. Distinguish illustrative material from product evidence and confirmed claims.
 
 ## Generation modes
 

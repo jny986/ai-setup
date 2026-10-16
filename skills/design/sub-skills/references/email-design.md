@@ -1,16 +1,20 @@
 ---
+name: email-design
+description: "Design HTML email with clear messaging, responsive layouts, client compatibility, and accessible delivery."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills, CosmoBlk/email-design
   based_on_version: main(c787301), main(c56bfe0)
-  based_on_skill: email-design
+  based_on_skill: email-design, email-design
 ---
 
 # Email Design
 
 Coded HTML email that renders across Outlook, Gmail, Apple Mail, and mobile: table layout, fluid-hybrid responsiveness, bulletproof buttons, email dark mode, size limits. Web dark themes are in [dark-mode](dark-mode.md); web pages in [landing-page-design](landing-page-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing brand values. Email clients don't support CSS variables, so inline the hex values: primary for buttons and links, neutral 900/800/500 for headings, body, and muted text, neutral 50/100 for the outer background, brand fonts first in each stack. The `#4F46E5`-style values below are placeholders. Settle the email type (welcome, newsletter, promotional, transactional) and the ESP (it may need its own merge tags and template syntax).
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect existing brand values. Email clients don't support CSS variables, so inline the hex values: primary for buttons and links, neutral 900/800/500 for headings, body, and muted text, neutral 50/100 for the outer background, brand fonts first in each stack. The `#4F46E5`-style values below are placeholders. Settle the email type (welcome, newsletter, promotional, transactional) and the ESP (it may need its own merge tags and template syntax).
 
 ## Design Direction
 
@@ -67,7 +71,7 @@ Style: 12-13px, tinted neutral at 60-70% of body contrast, no extra spacer above
 
 Before composing, settle a brief: name, subject, preheader, archetype, colour strategy, primary and secondary hex, voice descriptors, ordered sections (header, hero, headline, body, CTA, secondary body, footer), image slots, footer content. Then:
 
-- **Context first.** Read brand state from the ESP or project files (`BRAND.md`, `PRODUCT.md`, prior templates) and mark each field known, inferable, or missing. Ask at most three questions in one message (email purpose, tone register, primary colour; mission line and socials/address only if the footer would be incomplete); otherwise infer and note defaults.
+- **Context first.** Read brand state from the ESP, project brand kit, `PRODUCT.md`, `DESIGN.md`, and prior templates as relevant; mark each field known, inferable, or missing. Ask at most three questions in one message (email purpose, tone register, primary colour; mission line and socials/address only if the footer would be incomplete); otherwise infer and note defaults.
 - **Image slots.** Resolve each to a real URL or an explicit user prompt, in order: brand assets already in the ESP, the brand site (`og:image`, homepage hero, `/press`, `/about`; prefer 1200px or wider), brand social profiles, then ask the user once.
 - **Send.** Dry-run first and show the preview before any real send. Offer a test send to the account's `from_email` or an address the user names.
 
@@ -256,7 +260,7 @@ Works without media queries in clients that don't support them.
 
 ## Typography
 
-Put the design-context font first, then a web-safe stack:
+Put the approved brand font first, then a web-safe stack:
 
 - Sans: `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`
 - Serif: `Georgia, 'Times New Roman', Times, serif`

@@ -1,6 +1,10 @@
 ---
+name: ui-design
+description: "Design web UI components and screens with coherent hierarchy, states, navigation, forms, accessibility, and responsive behavior."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: ui-design
@@ -10,11 +14,13 @@ metadata:
 
 Core patterns for components and app screens: tokens, hierarchy, states, forms, navigation, feedback, accessibility, responsive rules. The other UI references build on this one.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes in examples are placeholders for the project's primary and neutral tokens. The style archetype sets radius, shadow depth, and how much of the trends section applies (Minimal and Corporate use none).
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. The `indigo-*` / `gray-*` classes in examples are placeholders for the project's primary and neutral tokens. The style archetype sets radius, shadow depth, and how much of the trends section applies (Minimal and Corporate use none).
+
+For adapting an existing interface to another context, read [adapt](adapt.md). Native apps follow [native-platforms](native-platforms.md); the HTML/CSS below applies to web UI. Choose hierarchy and expression using [surface-purpose](surface-purpose.md). Existing project conventions take precedence over the example scales, dimensions, counts, and layouts in this guide; use those as fallbacks and verify them against real content.
 
 ## Component Design Principles (Atomic Design)
 
-Build in layers; never start with a full page.
+Use these layers to locate responsibilities. Start at the layer the task needs and reuse existing components.
 
 1. **Tokens**: colors, spacing, radii, shadows, type scale.
 2. **Atoms**: button, input, badge, avatar, icon.
@@ -47,7 +53,7 @@ Rules:
 }
 ```
 
-**Spacing scale (all UI references):** 4px base: 4, 8, 12, 16, 24, 32, 48, 64px (Tailwind `1, 2, 3, 4, 6, 8, 12, 16`). No off-scale values.
+**Fallback spacing scale:** a 4px base offers 4, 8, 12, 16, 24, 32, 48, 64px (Tailwind `1, 2, 3, 4, 6, 8, 12, 16`). Preserve an established scale and justified optical or content-driven exceptions.
 
 ## Visual Hierarchy
 
@@ -174,9 +180,9 @@ Icon or illustration, explanation, primary action.
 ## Forms
 
 1. Labels above inputs, always visible (not floating, not inline).
-2. One column; multi-column forms reduce completion.
+2. Prefer one column for a linear task; use related short fields side by side when labels, content, and reading order support it.
 3. Group related fields with subtle dividers.
-4. Validate on blur, not every keystroke.
+4. Choose validation timing by field and consequence; give correction feedback when useful without interrupting incomplete input.
 5. Error messages below the field, red, with specific guidance.
 6. Primary action left-aligned at the bottom; secondary as a text link.
 
@@ -244,7 +250,7 @@ A design constraint from the start, not a final pass.
 
 ## Responsive Breakpoints
 
-Tailwind defaults, canonical for all UI references:
+Tailwind defaults provide examples when a project has no established breakpoints. Choose actual transitions where content or interaction needs restructuring:
 
 | Name | Width | Target |
 |------|-------|--------|
@@ -257,9 +263,9 @@ Tailwind defaults, canonical for all UI references:
 Mobile-first:
 
 - Design the mobile layout first; add complexity at larger breakpoints.
-- Stack columns on mobile, side-by-side from `md`.
-- Hamburger nav below `md`.
-- Scale type up: `text-2xl md:text-4xl lg:text-5xl`.
+- Reflow columns when the content needs more space.
+- Choose compact navigation from destination structure and discoverability.
+- Scale display type where useful; keep dense UI roles stable and readable.
 
 Container queries, for components that depend on their container, not the viewport:
 
@@ -384,7 +390,7 @@ Render at 390px and 1440px wide and view both. Check: no horizontal scroll or cl
 - [ ] Focus order is logical
 - [ ] Responsive from 320px to 1920px
 - [ ] Loading, empty, and error states designed
-- [ ] Spacing on the 4px scale (4, 8, 12, 16, 24, 32, 48, 64)
-- [ ] Type scale limited to 4-6 sizes (see [typography](typography.md))
+- [ ] Spacing follows the established scale, with deliberate exceptions
+- [ ] Type roles are consistent and distinguishable (see [typography](typography.md))
 - [ ] Motion respects `prefers-reduced-motion`
 - [ ] Semantic HTML (landmarks, headings, button vs. link)

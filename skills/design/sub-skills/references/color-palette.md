@@ -1,6 +1,10 @@
 ---
+name: color-palette
+description: "Build and apply role-based color palettes, accessible combinations, and theme-ready scales."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: color-palette
@@ -10,7 +14,7 @@ metadata:
 
 Accessible, production-ready color systems from any starting point: OKLCH shade scales, tinted neutrals, semantic colors, contrast, dark remaps, gradients, CSS and Tailwind output.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. If the context has a Color System, its hex values are the source of truth: extend, do not replace. Variable naming is defined in design-context; token layering in [design-system](design-system.md). Full dark themes (elevation, images, toggles): [dark-mode](dark-mode.md).
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. If `DESIGN.md` has colors, extend its normative values rather than replacing them. Variable naming guidance is in design-context; token layering in [design-system](design-system.md). Full dark themes (elevation, images, toggles): [dark-mode](dark-mode.md).
 
 ## Color theory
 
@@ -306,9 +310,9 @@ Primitives (`--brand-*`, `--gray-*`, status scales) feed semantic tokens, which 
 
 Render a swatch sheet (HTML) showing each scale as labeled swatches (token, hex, contrast on white and black) plus sample text and button pairings in light and dark. View it at actual size. Check that steps are evenly spaced, none is muddy or neon, and neutrals read as neutral.
 
-To write back to `.agents/design-context.md`, update only changed Color System rows, show a before/after diff and ask first. Mapping:
+To write back to `DESIGN.md`, update only changed color tokens and usage rules, then show a before/after diff. Mapping:
 
-| Context role | Take from |
+| UI role | Take from |
 |--------------|-----------|
 | Primary | `--brand-500` (600 if 500 fails 4.5:1 with white text) |
 | Primary Light / Dark | `--brand-400` / `--brand-700` |

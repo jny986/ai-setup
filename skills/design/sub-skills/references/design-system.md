@@ -1,6 +1,10 @@
 ---
+name: design-system
+description: "Structure UI tokens, components, variants, themes, and documentation within the established project system."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: design-system
@@ -10,7 +14,9 @@ metadata:
 
 Tokens, components and theming architecture for a coded design system.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Color scales come from [color-palette](color-palette.md), the type scale from [typography](typography.md). Do not re-derive them. Identify the framework (React, Vue, Svelte, vanilla) to pick component patterns.
+For extracting and migrating existing patterns, follow [systematize](../systematize.md). The names, scales, variants, and CSS structures below are starting examples when a project lacks conventions; preserve an established system and deliberate exceptions. Native apps map these roles through [native-platforms](native-platforms.md).
+
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Color scales come from [color-palette](color-palette.md), the type scale from [typography](typography.md). Do not re-derive them. Identify the framework (React, Vue, Svelte, vanilla) to pick component patterns.
 
 ## Token hierarchy
 
@@ -18,12 +24,12 @@ Three layers.
 
 ### Primitive tokens (what it is)
 
-Raw values in `:root`, never used directly in components. Colors in oklch.
+Raw values in `:root`, never used directly in components. Preserve the project's established color notation; OKLCH is useful when generating a new scale.
 
 - Colors: `--brand-50` to `--brand-950`, `--gray-50` to `--gray-950`, `--success-*`, `--warning-*`, `--error-*`, `--info-*`.
 - Spacing: `--space-N` = N x 4px in rem (see Spacing scale).
 - Font sizes: `--text-xs` to `--text-5xl`, generated from Base Size x Scale Ratio. Do not hard-code a separate scale.
-- Radii: none, sm 0.25rem, md 0.5rem, lg 0.75rem, xl 1rem, 2xl 1.5rem, full 9999px. Set md to the context Border Radius.
+- Radii: none, sm 0.25rem, md 0.5rem, lg 0.75rem, xl 1rem, 2xl 1.5rem, full 9999px. Align the scale with the radius recorded in `DESIGN.md`.
 
 ### Semantic tokens (what it does)
 
@@ -108,7 +114,7 @@ For Style Dictionary, Tokens Studio or Figma variables, also emit `tokens.json` 
 
 ## Component API
 
-Use one API across components.
+Use consistent role names across components where their behavior agrees. The following API illustrates common variants; expose only those needed by actual consumers.
 
 | Property | Options |
 |----------|---------|
@@ -136,7 +142,7 @@ Component tokens `--input-height`, `--input-border`, `--input-radius`, `--input-
 
 ## Spacing scale
 
-4px base: `--space-N` = N x 4px. Every value is a multiple of 4 except the 2px hairline. If the context says "8px base grid", keep the scale but limit layout spacing to even steps (2, 4, 6, 8...). [layout-composition](layout-composition.md) uses the same scale.
+With no established scale, a 4px base (`--space-N` = N x 4px) is a useful starting point. Preserve an existing scale and optical or content-driven exceptions. [layout-composition](layout-composition.md) covers grouping and rhythm.
 
 | Token | px | rem | Use |
 |-------|----|-----|-----|
@@ -217,4 +223,4 @@ Per component: description and when to use it; variants; sizes; states; anatomy 
 6. Text and button pairs pass contrast in both themes.
 7. Shadow, motion and reduced-motion tokens defined.
 8. Every component documented.
-9. If primitives changed, offer to write them back to `.agents/design-context.md`, updating only those fields.
+9. If primitives changed within the task, update the corresponding `DESIGN.md` tokens and explain the change.

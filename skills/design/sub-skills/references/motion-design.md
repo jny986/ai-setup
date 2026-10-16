@@ -1,21 +1,27 @@
 ---
+name: motion-design
+description: "Design purposeful UI motion with clear feedback, continuity, interruption handling, accessibility, and measured performance."
 metadata:
   version: "1.0.0"
-  based_on_repo: ArnavPuri/designskills
-  based_on_version: main(c787301)
-  based_on_skill: motion-design
+  author: jny986
+  author-url: https://jny986.com
+  based_on_repo: ArnavPuri/designskills, pbakaus/impeccable, pbakaus/impeccable, pbakaus/impeccable
+  based_on_version: main(c787301), main(2f98774), main(2f98774), main(2f98774)
+  based_on_skill: motion-design, animate, delight, overdrive
 ---
 
 # Motion Design
 
 Purposeful UI animation and micro-interactions in CSS and JS: duration and easing, feedback, transitions, scroll reveals, loaders, staggering, reduced motion and performance. Not for video or animated image generation.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. The style archetype sets motion character: Minimal and Corporate are short with no overshoot; Playful allows springs; Luxurious is slower with smooth ease-out. Use the project's transition tokens if it has them; the `--duration-*` and `--ease-*` names below match [design-system](design-system.md). Always respect `prefers-reduced-motion`.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. The style archetype sets motion character: Minimal and Corporate are short with no overshoot; Playful allows springs; Luxurious is slower with smooth ease-out. Use the project's transition tokens if it has them; the `--duration-*` and `--ease-*` names below match [design-system](design-system.md). Always respect `prefers-reduced-motion`.
+
+For task tools, reading, persuasion, and showcase decisions, use [surface-purpose](surface-purpose.md). Native implementations follow [native-platforms](native-platforms.md) and the platform's animation preferences.
 
 ## Principles
 
 1. Every animation has a purpose: guide attention, give feedback, show relationships or convey state change.
-2. Faster is almost always better: 100-500ms.
+2. Keep routine feedback prompt; tune duration to distance, consequence, and the established motion language. The ranges below are starting points.
 3. Animate only what changes.
 
 | Action | Duration |
@@ -43,6 +49,15 @@ Exits run 20-30% shorter than the matching entrance (modal in 250ms, out 200ms).
 ```
 
 Ease-out for entrances, ease-in for exits, ease-in-out for moves, spring for playful feedback.
+
+## Plan and control motion
+
+Identify the state, relationship, or meaningful moment the motion explains. Choose one coherent treatment for that job; supporting feedback should stay predictable during repeated use. An expressive showcase can justify choreography that would delay routine work in a tool.
+
+- Keep content visible and usable if scripts or animation fail.
+- Define what happens when a user reverses, interrupts, repeats, navigates away, or changes motion preferences during the effect. Cancel or retarget from the current state rather than leaving stale classes, timers, or input locks.
+- Stop nonessential loops when offscreen or the document is hidden. Resume only if the effect still belongs to the current state.
+- Use existing CSS, Web Animations API, or the project's motion library according to the sequencing and interruption needed; add a dependency only when the task warrants it.
 
 ## Micro-interactions
 
@@ -217,7 +232,7 @@ Also: no flashing more than 3 times per second (WCAG 2.3.1); auto-playing motion
 
 ## Performance
 
-Animate only `transform` and `opacity`: GPU-composited, no layout or paint.
+Prefer `transform` and `opacity` for inexpensive motion, then confirm actual compositing in the target runtime. Masks, clipping, filters, shadows, color, canvas, or shaders can serve the intended effect when scoped and measured. FLIP-style transforms can preserve continuity across layout changes. Large surfaces, layer count, rasterization, and device limits still affect cost.
 
 | Property | Layout | Paint | Composite | Cost |
 |----------|--------|-------|-----------|------|
@@ -257,4 +272,5 @@ Judge motion by running it, not reading code.
 
 1. Capture the element mid-animation and at rest (after duration + 50ms). Confirm start and end states are correct and nothing jumps or overflows.
 2. Emulate `prefers-reduced-motion: reduce` and confirm content is visible and static immediately.
-3. Profile the animation. Long frames or layout work mean switching to `transform` and `opacity`.
+3. Profile in the target runtime. For long frames, reduce the measured layout, paint, or compositing cost; simplify the effect or use transforms where they preserve the intended meaning.
+4. Interrupt, reverse, repeat, scroll away, and return. Confirm state remains correct, loops stop while hidden, and changing motion preference gives an intentional alternative. Record which device or emulation produced the evidence.

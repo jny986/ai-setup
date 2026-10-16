@@ -1,6 +1,10 @@
 ---
+name: product-mockup
+description: "Present products in coherent mockups using accurate assets, purposeful scenes, and suitable image composition."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: product-mockup
@@ -10,7 +14,7 @@ metadata:
 
 Presenting a product or UI itself. For a marketing graphic that merely includes a product, see [graphic-design](graphic-design.md), [social-media-graphic](social-media-graphic.md), or [ad-creative-design](ad-creative-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Match the mockup's stage and background to the brand style.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Match the mockup's stage and background to the brand style.
 
 ## Choosing a path
 

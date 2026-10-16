@@ -1,16 +1,28 @@
 ---
+name: typography
+description: "Choose and implement type roles, scales, pairing, reading measure, font delivery, and accessible text behavior."
 metadata:
   version: "1.0.0"
-  based_on_repo: ArnavPuri/designskills
-  based_on_version: main(c787301)
-  based_on_skill: typography
+  author: jny986
+  author-url: https://jny986.com
+  based_on_repo: ArnavPuri/designskills, pbakaus/impeccable, pbakaus/impeccable
+  based_on_version: main(c787301), main(2f98774), main(2f98774)
+  based_on_skill: typography, typeset, operate
 ---
 
 # Typography
 
 Type scales, font pairing, heading hierarchy, readable body text, fluid sizing, variable fonts and font loading for web and UI.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Use the context's fonts, base size, scale ratio and weights unless the user is changing them. The default scale in design-context (12/14/16/18/20/24/30/36/48/60/72) is Tailwind's hand-tuned scale, not a strict 1.25 progression. If the project already uses it, keep it; for new work generate a true modular scale from the saved ratio and say which you used. Token layering: [design-system](design-system.md).
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Use the documented fonts, base size, scale ratio, and weights unless the user is changing them. If the project uses Tailwind's hand-tuned scale (12/14/16/18/20/24/30/36/48/60/72), keep it; for new work generate a modular scale from the established ratio and say which you used. Token layering: [design-system](design-system.md).
+
+## Choose roles for the surface
+
+Read [surface-purpose](surface-purpose.md) when expression and task efficiency need different treatment. A task tool can use one well-tuned family and stable rem-based roles for controls, labels, and data. Prose needs comfortable measure and rhythm. A marketing or showcase composition may benefit from expressive display type and fluid scale. Apply [native-platforms](native-platforms.md) for native text styles and system scaling.
+
+Keep repeated roles consistent. Add a family or weight for a job it actually improves, rather than to satisfy a pairing recipe. Tune line height, tracking, and weight to the actual face, language, measure, and background. Use tabular numerals for aligned changing values and appropriate code or numeric features where the content benefits.
+
+The ratios, counts, and sizes below are starting examples when a project lacks a system; preserve established roles and test readability with real content.
 
 ## Type scale ratio
 
@@ -57,7 +69,7 @@ Strategies:
 Avoid:
 
 - Two fonts of the same category with similar proportions (two geometric sans).
-- More than 2 typefaces per page (3 if one is monospace for code).
+- Additional families without a distinct role; one family often covers a product UI, while an editorial system may justify more.
 - Decorative or display fonts for body text.
 
 ### Pairings
@@ -165,6 +177,8 @@ body {
 ```
 
 ## Fluid typography with clamp()
+
+Use fluid sizing where the composition benefits. Keep controls and dense product roles predictable; a static rem scale remains appropriate there.
 
 ```text
 clamp(min, preferred, max)
@@ -330,15 +344,15 @@ body { font-family: 'Inter', 'Inter Fallback', sans-serif; }
 
 ## Checklist
 
-1. Scale ratio fits the project; max 2 typefaces (3 with mono).
+1. Text roles and scale fit the surface; each family and weight has a clear job.
 2. Body 16-18px, line-height 1.5-1.75, line length 45-75 characters.
-3. `clamp()` for fluid sizing, with a `rem` term.
-4. Negative letter-spacing on large headings, positive on uppercase.
+3. Static rem roles or fluid sizing chosen deliberately; fluid values include a `rem` term and work with zoom.
+4. Tracking tuned to the face, size, language, and case; repeated roles stay consistent.
 5. Critical fonts preloaded, `font-display: swap`, system fallback with metric overrides.
 6. `text-wrap: balance` on headings, `text-wrap: pretty` on paragraphs.
 
 ## Verifying
 
-Render a type specimen with the real fonts: h1-h6, a body paragraph (about 3 lines at real width), caption, label, code, and a long unbroken heading. View it at 375px and 1280px wide. Check that fonts actually loaded (not fallback), each level is a clear step from the next, body line length is 45-75 characters, and no heading is wider than the viewport.
+Render a type specimen with the real fonts: h1-h6, a body paragraph (about 3 lines at real width), caption, label, code, and a long unbroken heading. View it at 375px and 1280px wide. Check that intended fonts loaded, roles are distinguishable, prose measure is comfortable, and headings fit. Exercise long translations, fallback fonts, missing weights, zoom, and text scaling. Check delivery for invisible text and disruptive reflow. Record measured or rendered evidence and any unavailable states.
 
-To write back to `.agents/design-context.md`, update only changed Typography fields (as full font stacks), show the diff and ask first.
+To write back to `DESIGN.md`, update only changed typography tokens and rules (including full font stacks), then show the diff.

@@ -1,6 +1,10 @@
 ---
+name: image-treatment
+description: "Apply image treatments and responsive delivery through filters, masks, overlays, cropping, and export workflows."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: image-treatment
@@ -10,7 +14,7 @@ metadata:
 
 Treat existing images in code: filters, blend modes, duotone, masks, overlays, collages, SVG filters, responsive delivery. To create new images see [image-generation](image-generation.md). For treatments that must be baked into the file (social images, email, OG images), apply them in an image editor or script instead of CSS.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Duotone and overlay colors should come from the color system. Examples use `--brand-*` variables. Identify the mood first: editorial, product, marketing, artistic.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Duotone and overlay colors should come from the color system. Examples use `--brand-*` variables. Identify the mood first: editorial, product, marketing, artistic.
 
 ## CSS filters
 

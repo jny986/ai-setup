@@ -26,7 +26,7 @@ npx skills update
 .
 ├── skills/            # My skills — one folder per skill, each with a SKILL.md
 │   ├── marketing/     # Router skill: nested sub-skills by category under sub-skills/, plus sub-skills/name-table.md
-│   ├── design/        # Router skill: sub-skills being curated
+│   ├── design/        # Router skill: eight design workflows plus references by surface
 │   ├── security/      # Router skill: four sub-skills (review-code, build-securely, harden-deployment, release-gate) over sub-skills/references/
 │   └── dev/           # Page and component build guides (no SKILL.md), reached from marketing hand-offs
 ├── SKILLS.md          # Index of my skills
@@ -83,7 +83,7 @@ Check the layout with `python3 scripts/check-marketing-structure.py`: it fails o
 
 #### Design router
 
-`skills/design/SKILL.md` is a router whose sub-skills are still being curated. Candidate sources: [ArnavPuri/designskills](https://github.com/ArnavPuri/designskills), [CosmoBlk/email-design](https://github.com/CosmoBlk/email-design) and [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (all MIT).
+`skills/design/SKILL.md` routes product context, design briefs, visual-system documentation, brand kits, interface audits, task flows, UI consolidation, and refinement through eight sub-skills. Its 37 references cover design surfaces, native platforms, adaptation, visual-reference implementation, and verification. Content is adapted from [ArnavPuri/designskills](https://github.com/ArnavPuri/designskills), [CosmoBlk/email-design](https://github.com/CosmoBlk/email-design), [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (MIT), and [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (Apache-2.0). Each adapted document records its source in frontmatter.
 
 ### `source-skills/`
 

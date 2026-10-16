@@ -1,6 +1,10 @@
 ---
+name: presentation-design
+description: "Design slide decks with a coherent narrative, readable layouts, visual evidence, and presentation-ready delivery."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: presentation-design
@@ -10,7 +14,7 @@ metadata:
 
 Slide decks as HTML/CSS (custom or reveal.js): layouts on a fixed 16:9 canvas, typography, charts, builds, speaker notes, PDF export. For native .pptx files use a PowerPoint-specific tool.
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Map them to the `--slide-*` variables below and use the shared `--brand-*` / `--gray-*` scales from [color-palette](color-palette.md).
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Map them to the `--slide-*` variables below and use the shared `--brand-*` / `--gray-*` scales from [color-palette](color-palette.md).
 
 Before designing, settle the audience, purpose, length, and whether the deck is projected, screen-shared, or sent as a PDF. For photographic backgrounds or illustrations, generate them at 16:9 (see [image-generation](image-generation.md)) and keep text on a solid or overlaid area, not on busy image regions.
 

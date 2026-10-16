@@ -1,6 +1,10 @@
 ---
+name: brand-identity
+description: "Create or extend a brand identity through logos, color, typography, imagery, and production assets."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: brand-identity
@@ -10,7 +14,7 @@ metadata:
 
 A complete visual identity: logo mark and variations (SVG), color roles, fonts, patterns, favicons/app icons, avatars, and a guidelines page. For only a palette see [color-palette](color-palette.md); only fonts, [typography](typography.md); UI tokens and components, [design-system](design-system.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. When refreshing an existing brand, change only what the user wants changed.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. When refreshing an existing brand, change only what the user wants changed.
 
 Start by defining the brand's industry, audience, and 3-5 personality adjectives. Generate full shade scales with [color-palette](color-palette.md); the `--brand-100` ... `--brand-500` variables below are that shared scale.
 
@@ -73,7 +77,7 @@ A brand color system is more than a palette.
 }
 ```
 
-Convert every final color to hex for the guidelines page and design-context, and verify each text/background pair for contrast.
+Record approved brand colors in the brand kit using precise values and verify each text/background pair for contrast. Preserve the implemented UI color notation in `DESIGN.md`.
 
 ## Typography
 
@@ -245,7 +249,7 @@ Use the brand Primary hex (and Primary Light for dark mode) instead of the examp
 
 Render one sheet and view it before delivering: every logo variation on light, dark, and brand-color backgrounds; the icon mark at 16, 32, 48, and 180px; the favicon in a mock browser tab; the avatar inside a circle crop. Check that the mark is still recognizable at 16px, no strokes vanish, contrast holds on every background, and nothing touches the circular crop.
 
-When the brand is final, record it in `.agents/design-context.md`, updating only changed fields: brand name/tagline, color rows (hex), typography, style archetype, and brand marks (logo description, icon style). Show the diff and ask before saving.
+When the brand is final, record its identity and assets in the brand kit. Update affected UI tokens and rules in `DESIGN.md`, or document an intentional difference. Show the changes for review.
 
 ## Checklist
 
@@ -259,4 +263,4 @@ When the brand is final, record it in `.agents/design-context.md`, updating only
 8. Build favicons and app icons.
 9. Create the social avatar.
 10. Document everything in a guidelines page.
-11. Render a proof sheet, inspect it, and save the brand to design-context.
+11. Render a proof sheet, inspect it, and save approved brand identity to the brand kit and affected UI rules to `DESIGN.md`.

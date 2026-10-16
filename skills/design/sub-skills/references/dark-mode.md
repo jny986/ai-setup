@@ -1,6 +1,10 @@
 ---
+name: dark-mode
+description: "Design dark appearance through semantic colors, surface hierarchy, readable contrast, and theme behavior."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: dark-mode
@@ -10,7 +14,7 @@ metadata:
 
 Dark themes for web UI: surface elevation, desaturated brand colors, text and border tokens, `color-scheme`, system-preference detection, a no-flash toggle, Tailwind dark variants. Palette construction is in [color-palette](color-palette.md); dark mode in HTML email is in [email-design](email-design.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Context colors are the light theme. Derive dark values from them (raise lightness, lower chroma) rather than inventing a new palette. Settle whether this is dark-first or dark added to an existing light UI.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Use the documented light theme values when present. Derive dark values from them (raise lightness, lower chroma) rather than inventing a new palette. Settle whether this is dark-first or dark added to an existing light UI.
 
 ## Core Rule: Don't Just Invert
 
@@ -332,7 +336,7 @@ Toggle button. `applyTheme()` keeps `aria-pressed` in sync; the accessible name 
 
 ## Token System
 
-Shared by the UI references ([dashboard-design](dashboard-design.md) reuses these). Derive `--color-primary` and status colors from the design-context values per the saturation rules; the oklch values below are the defaults for primary `#2563EB`.
+Shared by the UI references ([dashboard-design](dashboard-design.md) reuses these). Derive `--color-primary` and status colors from the `DESIGN.md` values per the saturation rules; the oklch values below are the defaults for primary `#2563EB`.
 
 ```css
 [data-theme="dark"] {

@@ -1,6 +1,10 @@
 ---
+name: graphic-design
+description: "Compose graphics using purposeful hierarchy, typography, color, imagery, and delivery constraints."
 metadata:
   version: "1.0.0"
+  author: jny986
+  author-url: https://jny986.com
   based_on_repo: ArnavPuri/designskills
   based_on_version: main(c787301)
   based_on_skill: graphic-design
@@ -10,7 +14,7 @@ metadata:
 
 Core guidance for one-off visuals. Two output paths: AI image generation (default for social posts, posters, ads, rich visuals) or HTML/CSS/SVG code (editable, animated, or long/exact copy). Format-specific rules live in [social-media-graphic](social-media-graphic.md), [poster-design](poster-design.md), [thumbnail-design](thumbnail-design.md), [ad-creative-design](ad-creative-design.md), [banner-design](banner-design.md), [product-mockup](product-mockup.md), and [infographic](infographic.md).
 
-Tokens come from `.agents/design-context.md` (see [design-context](design-context.md)); with none, extend the project's existing CSS variables or Tailwind theme. Extract primary, secondary, accent colors, heading and body fonts, and style archetype.
+Read `DESIGN.md` for UI tokens and the project brand kit for approved brand primitives (see [design-context](design-context.md)); when absent, inspect the project's existing CSS variables or Tailwind theme. Extract primary, secondary, accent colors, heading and body fonts, and style archetype.
 
 ## Brief analysis
 
@@ -99,7 +103,7 @@ More layout theory: [layout-composition](layout-composition.md).
 
 ## Color
 
-Start from the design-context palette. Apply 60-30-10: 60% dominant, 30% secondary, 10% accent. Pair a primary with its complement for maximum contrast. Palette building: [color-palette](color-palette.md).
+Start from the approved brand palette, or `DESIGN.md` when creating UI-adjacent graphics. Apply 60-30-10: 60% dominant, 30% secondary, 10% accent. Pair a primary with its complement for maximum contrast. Palette building: [color-palette](color-palette.md).
 
 ### Gradients
 
@@ -293,7 +297,7 @@ Code-path starting points; for AI generation, translate the same cues into the p
 
 ## Quality checklist
 
-- [ ] Colors match the design-context palette
+- [ ] Colors match the approved brand or UI palette
 - [ ] Specified fonts used (loaded if web fonts)
 - [ ] Clear hierarchy: the eye knows where to look first
 - [ ] Contrast meets WCAG 2.x: 4.5:1 normal text, 3:1 large text (>=24px, or >=18.66px bold) and UI shapes such as CTA buttons
