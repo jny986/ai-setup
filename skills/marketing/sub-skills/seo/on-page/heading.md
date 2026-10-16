@@ -79,7 +79,7 @@ H1 (page title)
 - **featured-snippet**: H2/H3 for snippet extraction; semantic HTML for list/table snippets
 - **page-metadata**: Checks and reports title/H1/body alignment; routes actual heading edits here
 - **content-optimization**: H2 keyword placement, quantity, tables, lists; complements heading structure
-- `dev/references/pages/content/article`: Article page H1-H3 structure, intro/body/conclusion
+- `implement/sub-skills/references/pages/content/article.md`: Article page H1-H3 structure, intro/body/conclusion
 - **title-tag**: H1 and title share page intent but may use different natural variants
 - **schema-markup**: Article schema uses headline (often H1)
 - **content-strategy**: Content outline informs headings

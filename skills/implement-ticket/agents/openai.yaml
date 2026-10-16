@@ -1,5 +1,0 @@
-interface:
-  display_name: "Implement Ticket"
-  short_description: "Implement a specification in code"
-policy:
-  allow_implicit_invocation: false

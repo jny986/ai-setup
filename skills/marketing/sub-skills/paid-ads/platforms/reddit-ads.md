@@ -69,5 +69,5 @@ Target by subreddit, then let creative carry the audience knowledge: write in th
 
 - **social**: Organic Reddit content; native ad creative should align with post style and subreddit norms
 - **paid-ads-strategy**: Channel selection; when Reddit fits
-- **dev/references/pages/marketing/landing-page**: LP for paid traffic
+- **implement/sub-skills/references/pages/marketing/landing-page.md**: LP for paid traffic
 - **analytics-tracking**: Conversion tracking; ROAS

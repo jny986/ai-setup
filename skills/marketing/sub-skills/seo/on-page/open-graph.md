@@ -107,8 +107,8 @@ Open Graph and SEO metadata may use different copy because search and social fee
 
 ## Related Skills
 
-- `dev/references/components/utility/social-share`: Share buttons use OG tags for rich previews when users share; OG must be set for share buttons to show proper cards
-- `dev/references/pages/content/article`: Use og:type `article` for article/post pages; article-specific tags (published_time, author)
+- `implement/sub-skills/references/components/utility/social-share.md`: Share buttons use OG tags for rich previews when users share; OG must be set for share buttons to show proper cards
+- `implement/sub-skills/references/pages/content/article.md`: Use og:type `article` for article/post pages; article-specific tags (published_time, author)
 - **page-metadata**: Full lifecycle, source-of-truth implementation, and production validation
 - **title-tag**, **meta-description**: Search copy; may differ while preserving page identity
 - **twitter-cards**: Twitter uses OG as fallback; add Twitter-specific tags for best results

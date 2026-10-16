@@ -107,7 +107,7 @@ For blog posts and articles, structure content for AI citation. Studies find con
 | **Answer blocks** | 100–200 words per section; direct answer + context + evidence + nuance |
 | **Structured formats** | Lists, tables, numbered steps increase citation rate |
 
-See **article-content** for content creation; `dev/references/pages/content/article` for page structure.
+See **article-content** for content creation; `implement/sub-skills/references/pages/content/article.md` for page structure.
 
 ## Parasite SEO & High-Authority Platforms
 
@@ -536,9 +536,9 @@ ChatGPT traffic converts at significantly higher rates than Google search—stud
 - **featured-snippet**: Snippet optimization; overlaps with AI Overviews
 - **entity-seo**: Entity signals; Organization, Person schema; GEO citation
 - **article-content**: Article body creation; TL;DR, Key Takeaways, QAE pattern
-- `dev/references/pages/content/article`: Article page structure; schema; layout
-- `dev/references/pages/content/faq`: FAQ structure for GEO; citable Q&A blocks; content in initial HTML
-- `dev/references/components/content/howto-section`: HowTo step sections; citable ordered procedures; HowTo JSON-LD
+- `implement/sub-skills/references/pages/content/article.md`: Article page structure; schema; layout
+- `implement/sub-skills/references/pages/content/faq.md`: FAQ structure for GEO; citable Q&A blocks; content in initial HTML
+- `implement/sub-skills/references/components/content/howto-section.md`: HowTo step sections; citable ordered procedures; HowTo JSON-LD
 - **traffic-analysis**: AI referral and citation measurement
 - **seo-audit**: Traditional technical and on-page SEO audits
 - **schema-markup**: Structured data that helps AI understand your content

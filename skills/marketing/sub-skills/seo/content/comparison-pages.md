@@ -1,6 +1,6 @@
 ---
 name: comparison-pages
-description: When the user wants to plan or write competitor comparison and alternative pages for SEO and sales enablement. Also use when the user mentions "alternative page," "vs page," "competitor comparison," "comparison page," "[Product] vs [Product]," "[Product] alternative," "competitive landing pages," "how do we compare to X," "battle card," "competitor teardown," or "competitive asset audit." For the page build (layout, components), hand off to `dev/references/pages/marketing/alternatives`. For researching the competitor first, use competitor-research.
+description: When the user wants to plan or write competitor comparison and alternative pages for SEO and sales enablement. Also use when the user mentions "alternative page," "vs page," "competitor comparison," "comparison page," "[Product] vs [Product]," "[Product] alternative," "competitive landing pages," "how do we compare to X," "battle card," "competitor teardown," or "competitive asset audit." For the page build (layout, components), hand off to `implement/sub-skills/references/pages/marketing/alternatives.md`. For researching the competitor first, use competitor-research.
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
@@ -240,7 +240,7 @@ Claims checked per asset, status counts (current / changed / unverifiable / over
 ## Related Skills
 
 - **competitor-research**: Researching the competitor first; profiling from URLs
-- `dev/references/pages/marketing/alternatives`: Building the page (layout, sections, components) once strategy and content are set
+- `implement/sub-skills/references/pages/marketing/alternatives.md`: Building the page (layout, sections, components) once strategy and content are set
 - **programmatic-seo**: Building comparison pages at scale
 - **copywriting**: Writing compelling comparison copy
 - **seo-audit**: Optimizing competitor pages

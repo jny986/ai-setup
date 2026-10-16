@@ -158,5 +158,5 @@ Split brand from non-brand before evaluating or optimising anything. Branded que
 - **comparison-pages**: Competitor brand keyword ads → dedicated LP (not blog); comparison page structure
 - **keyword-research**: Keyword list, clusters, intent; support terms for negative keywords; PPC data feeds back SEO priority
 - **traffic-analysis**: UTM for attribution; paid–organic cannibalization audit
-- **dev/references/pages/marketing/landing-page**: LP structure for paid traffic; PAA → FAQ
+- **implement/sub-skills/references/pages/marketing/landing-page.md**: LP structure for paid traffic; PAA → FAQ
 - **analytics-tracking**: Conversion tracking; ROAS measurement

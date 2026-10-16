@@ -148,7 +148,7 @@ LinkedIn is 40% creative, **60% targeting filters**: job title, company and indu
 
 - **social**: Organic formats and copy; align Sponsored with same patterns
 - **paid-ads-strategy**: Channel mix; B2B vs B2C; budget allocation
-- **dev/references/pages/marketing/landing-page**: Web LPs for non–Lead Gen Form flows
+- **implement/sub-skills/references/pages/marketing/landing-page.md**: Web LPs for non–Lead Gen Form flows
 - **analytics-tracking**: Attribution, ROAS, pipeline
 
 ## Official link index

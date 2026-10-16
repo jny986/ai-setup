@@ -1,6 +1,6 @@
 ---
 name: discount-marketing-strategy
-description: When the user wants to plan, implement, or optimize discount and promotional pricing strategy. Also use when the user mentions "discount strategy," "promo code," "coupon," "redeem code," "lifetime deal," "LTD," "AppSumo," "Black Friday," "Cyber Monday," "BFCM," "seasonal sale," or "promotional pricing." For pricing page, use `dev/references/pages/marketing/pricing`.
+description: When the user wants to plan, implement, or optimize discount and promotional pricing strategy. Also use when the user mentions "discount strategy," "promo code," "coupon," "redeem code," "lifetime deal," "LTD," "AppSumo," "Black Friday," "Cyber Monday," "BFCM," "seasonal sale," or "promotional pricing." For pricing page, use `implement/sub-skills/references/pages/marketing/pricing.md`.
 metadata:
   version: 1.1.1
   based_on_repo: kostja94/marketing-skills
@@ -87,7 +87,7 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 - **Conditions**: Valid codes; minimum order; product eligibility
 - **Validation**: Automated at checkout
 - **Tracking**: Redemption data; attribution
-- **Placement**: Top banner (30–50% redemption lift when used well); popup; email; see `dev/references/components/utility/top-banner`, `dev/references/components/conversion/popup`
+- **Placement**: Top banner (30–50% redemption lift when used well); popup; email; see `implement/sub-skills/references/components/utility/top-banner.md`, `implement/sub-skills/references/components/conversion/popup.md`
 
 ## Black Friday / Cyber Monday (BFCM)
 
@@ -114,8 +114,8 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 | **BFCM** | Seasonal; Nov | See BFCM section above |
 | **LTD** | Cold start; AppSumo | See LTD section |
 | **Referral reward** | Discount/credits for referrer and referee | **referral-program** |
-| **Contest / giveaway** | Prize = product, discount, cash | `dev/references/pages/marketing/contest` |
-| **Startups / education** | Special pricing for segment | **education-program**, `dev/references/pages/marketing/program` |
+| **Contest / giveaway** | Prize = product, discount, cash | `implement/sub-skills/references/pages/marketing/contest.md` |
+| **Startups / education** | Special pricing for segment | **education-program**, `implement/sub-skills/references/pages/marketing/program.md` |
 | **Forum / community** | Discount codes in niche forums | **community-forum** |
 | **Affiliate** | Coupon sites; affiliate-specific codes | **affiliate-marketing** |
 
@@ -126,8 +126,8 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 | **Banner / poster** | Website, events; attract attention |
 | **Brochure** | Handout; company overview |
 | **Logo stickers** | Brand exposure |
-| **Website prep** | Promo landing page; banner for BFCM, seasonal; see `dev/references/components/utility/top-banner` |
-| **Media kit** | For press, partners; see `dev/references/pages/marketing/press` |
+| **Website prep** | Promo landing page; banner for BFCM, seasonal; see `implement/sub-skills/references/components/utility/top-banner.md` |
+| **Media kit** | For press, partners; see `implement/sub-skills/references/pages/marketing/press.md` |
 
 **Corporate materials**: Company overview, annual report, product info—for investor/partner meetings; printable for events.
 
@@ -150,15 +150,15 @@ LTD = one-time payment for lifelong access instead of recurring subscription. Co
 ## Related Skills
 
 - **pricing-strategy**: Base price structure; pricing-strategy defines when discounts fit; discount-marketing-strategy defines how to execute
-- `dev/references/pages/marketing/pricing`: Pricing page display; anchoring, annual discount presentation
+- `implement/sub-skills/references/pages/marketing/pricing.md`: Pricing page display; anchoring, annual discount presentation
 - **cold-start-strategy**: LTD as cold-start channel; full launch planning
 - **indie-hacker-strategy**: Indie hacker LTD use; monetize day one; cold start revenue
 - **referral-program**: Referral rewards (discounts, credits); 10–30% of price
-- `dev/references/pages/marketing/contest`: Giveaway/contest; prize = discount
+- `implement/sub-skills/references/pages/marketing/contest.md`: Giveaway/contest; prize = discount
 - **education-program**: Student/education discount channel; verification, placement, discount structure
-- `dev/references/pages/marketing/program`: Startups/education program page; when standalone page needed
-- `dev/references/components/utility/top-banner`: Promo banner; discount code display; 30–50% redemption lift
+- `implement/sub-skills/references/pages/marketing/program.md`: Startups/education program page; when standalone page needed
+- `implement/sub-skills/references/components/utility/top-banner.md`: Promo banner; discount code display; 30–50% redemption lift
 - **community-forum**: Forum promotion; discount codes in industry forums
 - **affiliate-marketing**: Coupon sites; affiliate-specific codes
-- `dev/references/pages/marketing/landing-page`: Promo landing pages
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: Promo landing pages
 - **directory-submission**: Promo code field for Product Hunt, deal platforms

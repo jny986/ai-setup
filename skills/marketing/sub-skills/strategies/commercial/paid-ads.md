@@ -1,6 +1,6 @@
 ---
 name: paid-ads-strategy
-description: When the user wants to plan paid ads strategy, allocate ad budget, or choose paid channels. Also use when the user mentions "paid ads," "paid media," "PPC," "SEM," "web ads," "app ads," "TV ads," "CTV," "OOH," "banner ads," "ad network," "ad alliance," "Taaft ads," "Shopify App Store ads," "Google Ads," "Meta Ads," "PMF testing," "PMF validation," "test product-market fit with ads," "ad spend," "ad budget," "ROAS," "paid acquisition," "Quality Score," or "ad-to-page alignment." For Google Ads execution, use google-ads. For Meta Ads execution, use meta-ads. For landing page alignment, use `dev/references/pages/marketing/landing-page`.
+description: When the user wants to plan paid ads strategy, allocate ad budget, or choose paid channels. Also use when the user mentions "paid ads," "paid media," "PPC," "SEM," "web ads," "app ads," "TV ads," "CTV," "OOH," "banner ads," "ad network," "ad alliance," "Taaft ads," "Shopify App Store ads," "Google Ads," "Meta Ads," "PMF testing," "PMF validation," "test product-market fit with ads," "ad spend," "ad budget," "ROAS," "paid acquisition," "Quality Score," or "ad-to-page alignment." For Google Ads execution, use google-ads. For Meta Ads execution, use meta-ads. For landing page alignment, use `implement/sub-skills/references/pages/marketing/landing-page.md`.
 metadata:
   version: 1.7.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
@@ -156,7 +156,7 @@ Treat Google Ads and Meta Ads as **complementary**, not competing. Google captur
 | **Quality Score** | Well-optimized LPs improve Google Quality Score → lower CPC |
 | **Mobile-first** | CTA above fold; thumb-reachable; fast load (&lt;3s) |
 
-See `dev/references/pages/marketing/landing-page` for LP structure and conversion optimization.
+See `implement/sub-skills/references/pages/marketing/landing-page.md` for LP structure and conversion optimization.
 
 ## Common Mistakes to Avoid
 
@@ -177,13 +177,13 @@ See `dev/references/pages/marketing/landing-page` for LP structure and conversio
 
 ## Affiliate Brand Bidding
 
-When running affiliate programs: prohibit affiliates from bidding on your brand terms in Google Ads. Monitor paid search; use brand monitoring tools. See `dev/references/pages/marketing/program`.
+When running affiliate programs: prohibit affiliates from bidding on your brand terms in Google Ads. Monitor paid search; use brand monitoring tools. See `implement/sub-skills/references/pages/marketing/program.md`.
 
 ## Competitor Brand Bidding
 
 **When**: Bid on "[Competitor] alternative," "[Competitor] vs [You]" to intercept high-intent traffic. Google allows competitor terms as keywords; ad copy cannot use competitor names without permission.
 
-**Landing page**: Use a **dedicated comparison/alternatives page**, not a blog. Users searching competitor brands expect direct alternatives; blog increases bounce. See `dev/references/pages/marketing/alternatives`, **google-ads** Competitor Brand Keywords.
+**Landing page**: Use a **dedicated comparison/alternatives page**, not a blog. Users searching competitor brands expect direct alternatives; blog increases bounce. See `implement/sub-skills/references/pages/marketing/alternatives.md`, **google-ads** Competitor Brand Keywords.
 
 ## Reference Routing
 
@@ -462,8 +462,8 @@ Before auditing a live account, grading account health, quoting benchmarks, or r
 - **ctv-ads**: CTV, OTT, streaming ads
 - **display-ads**: Ad networks, banner ads, programmatic display
 - **directory-listing-ads**: Taaft, Shopify App Store, G2, Capterra paid placements
-- `dev/references/pages/marketing/landing-page`: LP structure for paid traffic; ad-to-page alignment
-- `dev/references/pages/marketing/alternatives`: Competitor brand keyword ads → dedicated LP (not blog); comparison page structure
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: LP structure for paid traffic; ad-to-page alignment
+- `implement/sub-skills/references/pages/marketing/alternatives.md`: Competitor brand keyword ads → dedicated LP (not blog); comparison page structure
 - **cold-start-strategy**: When NOT to use paid ads
 - **pmf-strategy**: PMF validation; when to use PMF testing vs conversion-driven mode
 - **seo-strategy**: Organic vs paid

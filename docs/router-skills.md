@@ -5,7 +5,7 @@ A router skill is one `SKILL.md` that picks among a group of related sub-skills,
 ## When to build one
 
 - The group has 5+ members, or members nest. In `git`, `finalise` runs `code-review` then `create-pr`, which commits via `commit`.
-- Every member is model-invocable. A router can't dispatch to skills with `disable-model-invocation: true`, which is why `git-guardrails-claude-code` and `setup-pre-commit` stayed out of it.
+- Members become plain Markdown files read by the router. A member previously marked `disable-model-invocation: true` can be included by converting it to a sub-skill and removing its standalone invocation metadata.
 - Skip it when each skill already has a sharp trigger description. A router adds nothing then.
 
 ## Layout
@@ -29,18 +29,18 @@ A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `re
 2. **Router `SKILL.md` stays thin:** steps, a `Sub-skill | Use when` table linking each sub-skill (`security` flips the columns to `Situation | Sub-skill`), and a short "How they nest" note. No sub-skill content.
 3. **Steps:** argument names a sub-skill, use it; otherwise match the "Use when" row, asking once on a tie; then read the sub-skill and follow it as if it were the skill.
 4. **Description** names the task types and lists the sub-skill names, so the model triggers on any of them.
-5. **Cross-references rewritten.** Sub-skills that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`what-to-use`, `implement-ticket`, `tdd`) became `/git <sub-skill>`.
+5. **Cross-references rewritten.** Sub-skills that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`what-to-use`, `ticket`, `tdd`) became `/git <sub-skill>`.
 6. **Agents metadata.** The router has `agents/openai.yaml` with `allow_implicit_invocation: true`. Sub-skills carry no yaml: they aren't skills, so nothing reads it.
 7. **Indexes.** The five former skills were removed from `SKILLS.md` and `skills.html`, and one `git` row added.
 8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`. Sub-skills adapted from upstream also carry `based_on_repo`, `based_on_version` and `based_on_skill`.
 
 ## Reference-only trees
 
-A tree of guides with no router yet (`skills/dev/references`) has no `SKILL.md` or `agents/openai.yaml`. Its index is the Dev section of the owning router's `sub-skills/name-table.md`, and `scripts/check-marketing-structure.py` checks it.
+The former dev reference tree now lives at `skills/implement/sub-skills/references`, inside the implement router package. Its build-guide index is `skills/implement/sub-skills/name-table.md`; `scripts/check-marketing-structure.py` checks that every guide is listed and marketing hand-offs resolve.
 
 ## Checklist
 
-- [ ] Every member is model-invocable
+- [ ] Every member is a plain sub-skill file reachable from the router
 - [ ] Members moved to `sub-skills/<sub-skill>.md` (supporting files in a `references/` folder beside it), own references intact
 - [ ] No leftover Skill tool calls or `/<old-name>` mentions (`grep` the repo)
 - [ ] Router table links resolve

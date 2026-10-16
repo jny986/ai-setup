@@ -119,5 +119,5 @@ Coordinated launch across channels yields 5–6× more users than single-channel
 - **community-forum**: Indie Hackers, HN, Reddit—forum/community as cold-start channel
 - **reddit-posts**: Reddit post copy for cold-start posts
 - **integrated-marketing**: Channel mix; cold start is early-stage channel strategy
-- `dev/references/pages/marketing/press`: Assets required for Product Hunt and directory submissions
+- `implement/sub-skills/references/pages/marketing/press.md`: Assets required for Product Hunt and directory submissions
 - **indie-hacker-strategy**: Indie hacker first 100 users; Build in Public; Pieter Levels tactics; channel fit; this skill = generic cold start; indie-hacker = indie-specific

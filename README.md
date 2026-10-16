@@ -28,7 +28,7 @@ npx skills update
 │   ├── marketing/     # Router skill: nested sub-skills by category under sub-skills/, plus sub-skills/name-table.md
 │   ├── design/        # Router skill: eight design workflows plus references by surface
 │   ├── security/      # Router skill: four sub-skills (review-code, build-securely, harden-deployment, release-gate) over sub-skills/references/
-│   └── dev/           # Page and component build guides (no SKILL.md), reached from marketing hand-offs
+│   └── implement/     # Router: direct changes, tickets, specs, plus page and component build guides
 ├── SKILLS.md          # Index of my skills
 ├── skills.html        # The same index, grouped by upstream source
 ├── CONTEXT.md         # Glossary of this repo's terms
@@ -69,17 +69,17 @@ metadata:
   based_on_skill: implement
 ```
 
-#### Marketing router and dev references
+#### Marketing and implementation routers
 
 `skills/marketing/SKILL.md` is one router over every marketing sub-skill. Sub-skills are nested as `sub-skills/<category>/[<group>/]<name>.md`, and [`sub-skills/name-table.md`](skills/marketing/sub-skills/name-table.md) maps each final name to its path, source and the old flat names that alias to it. Run `/marketing <sub-skill>` with a final name or an old one.
 
-`skills/dev/references/` holds the page and component build guides (`pages/`, `components/`). It is not a skill: marketing sub-skills hand off to it by path, for example `dev/references/pages/marketing/pricing`. Marketing is based on [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina) and [kostja94/bricks](https://github.com/kostja94/bricks) (all MIT).
+`skills/implement/sub-skills/references/` holds the page and component build guides (`pages/`, `components/`). The implement router selects a direct-change, single-ticket, or whole-spec workflow, then uses page and component workflows for new or existing UI alongside required non-UI changes. `/implement <feature or change>` selects the relevant context and references automatically. Use `/implement ticket`, `/implement spec`, `/implement page`, `/implement component`, or a build-guide name from its [name table](skills/implement/sub-skills/name-table.md). Marketing sub-skills hand off to the build guides by path, for example `implement/sub-skills/references/pages/marketing/pricing.md`. Marketing is based on [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), [kostja94/marketing-skills](https://github.com/kostja94/marketing-skills), [kostja94/pagina](https://github.com/kostja94/pagina) and [kostja94/bricks](https://github.com/kostja94/bricks) (all MIT).
 
 #### Security router
 
 `skills/security/SKILL.md` routes to four sub-skills by situation: `review-code`, `build-securely`, `harden-deployment` and `release-gate`. Their depth lives in `sub-skills/references/` (topic guides, `languages/`, `infrastructure/`, review rules and report template, hardening controls, privacy, LLM, dependency and Solana guides). The content is adapted from [getsentry/skills](https://github.com/getsentry/skills) (Apache-2.0), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) and [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT); each adapted file's `based_on_*` metadata records its source, and nothing in `skills/security/` links into `source-skills/`.
 
-Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat sub-skills, unlisted sub-skills, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint. After adding, moving or renaming a marketing sub-skill, run `python3 scripts/build-marketing-index.py` to rebuild `skills.html` from the `SKILLS.md` table and refresh the marketing, git, security and design sub-skill lists in `SKILLS.md`.
+Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat sub-skills, unlisted sub-skills, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint. After adding, moving or renaming a marketing sub-skill, run `python3 scripts/build-marketing-index.py` to rebuild `skills.html` from the `SKILLS.md` table and refresh the marketing, git, security, design and implement sub-skill lists in `SKILLS.md`.
 
 #### Design router
 

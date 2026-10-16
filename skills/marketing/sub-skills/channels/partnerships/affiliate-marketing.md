@@ -1,6 +1,6 @@
 ---
 name: affiliate-marketing
-description: When the user wants to plan, implement, or optimize affiliate marketing strategy. Also use when the user mentions "affiliate marketing," "affiliate program strategy," "CPS model," "affiliate recruitment," "commission structure," "affiliate partners," "affiliate network," "affiliate tracking," "affiliate commission," or "partner marketing." Also use when the user mentions "affiliate program design," "cookie duration," "recurring commissions," "super affiliates," "buyout clause," "affiliate reconciliation," "affiliate incrementality," "Rewardful," "Tolt," "PartnerStack," or "partner program." For customer referral programs, use referral-program. For affiliate page, use `dev/references/pages/marketing/program`.
+description: When the user wants to plan, implement, or optimize affiliate marketing strategy. Also use when the user mentions "affiliate marketing," "affiliate program strategy," "CPS model," "affiliate recruitment," "commission structure," "affiliate partners," "affiliate network," "affiliate tracking," "affiliate commission," or "partner marketing." Also use when the user mentions "affiliate program design," "cookie duration," "recurring commissions," "super affiliates," "buyout clause," "affiliate reconciliation," "affiliate incrementality," "Rewardful," "Tolt," "PartnerStack," or "partner program." For customer referral programs, use referral-program. For affiliate page, use `implement/sub-skills/references/pages/marketing/program.md`.
 metadata:
   version: 1.0.1
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
@@ -124,8 +124,8 @@ Detail is in [../referral-program/references/viral-mechanisms.md](references/vir
 
 - **paid-ads-strategy**: Paid ads context; brand bidding monitoring; when affiliates bid on brand terms
 - **discount-marketing-strategy**: Affiliate-specific promo codes; coupon sites; code strategy
-- `dev/references/pages/marketing/program`: Landing page for affiliate signup; apply `dev/references/pages/marketing/landing-page` principles
-- `dev/references/pages/marketing/landing-page`: Generic landing page structure, CTA, conversion; applies to affiliate signup pages
+- `implement/sub-skills/references/pages/marketing/program.md`: Landing page for affiliate signup; apply `implement/sub-skills/references/pages/marketing/landing-page.md` principles
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: Generic landing page structure, CTA, conversion; applies to affiliate signup pages
 - **influencer-marketing**: Often paired; influencers can be affiliates
 - **referral-program**: User-driven referral vs. affiliate-driven; virality mechanics and review programs
 - **directory-submission**: Directory submission complements affiliate; both drive backlinks and traffic

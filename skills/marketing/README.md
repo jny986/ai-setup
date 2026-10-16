@@ -49,7 +49,7 @@ The category folders, all under `sub-skills/`, are:
 
 ## Hand-offs
 
-Sub-skills hand off to each other by name, for example "see cro", and the router resolves that name the same way it resolves yours. A hand-off written as `dev/references/...` points to the page and component build guides in `skills/dev/references/`, a reference-only tree in this repo with no router skill of its own.
+Sub-skills hand off to each other by name, for example "see cro", and the router resolves that name the same way it resolves yours. A hand-off written as `implement/sub-skills/references/...` points to the page and component build guides packaged with the implement router. Install `implement` alongside `marketing` for these build hand-offs.
 
 ## Sources
 

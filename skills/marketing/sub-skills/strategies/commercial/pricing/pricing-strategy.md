@@ -1,6 +1,6 @@
 ---
 name: pricing-strategy
-description: When the user wants to plan, design, or optimize pricing strategy and structure. Also use when the user mentions "pricing strategy," "pricing model," "pricing tiers," "freemium," "value-based pricing," "anchoring," "price structure," or "monetization strategy." For pricing page, use `dev/references/pages/marketing/pricing`.
+description: When the user wants to plan, design, or optimize pricing strategy and structure. Also use when the user mentions "pricing strategy," "pricing model," "pricing tiers," "freemium," "value-based pricing," "anchoring," "price structure," or "monetization strategy." For pricing page, use `implement/sub-skills/references/pages/marketing/pricing.md`.
 metadata:
   version: 1.0.1
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
@@ -10,7 +10,7 @@ metadata:
 
 # Strategies: Pricing
 
-Guides pricing strategy and structure for SaaS, tools, and products. Covers pricing models, tier design, anchoring, and when to apply discounts. For pricing **page** content and layout, see `dev/references/pages/marketing/pricing`. For **discount** and promotional pricing, see **discount-marketing-strategy**.
+Guides pricing strategy and structure for SaaS, tools, and products. Covers pricing models, tier design, anchoring, and when to apply discounts. For pricing **page** content and layout, see `implement/sub-skills/references/pages/marketing/pricing.md`. For **discount** and promotional pricing, see **discount-marketing-strategy**.
 
 ## Initial Assessment
 
@@ -235,7 +235,7 @@ Expect — and accept — some churn. The customers most likely to leave over a 
 
 ## Pricing Page Best Practices
 
-For page construction, see `dev/references/pages/marketing/pricing`.
+For page construction, see `implement/sub-skills/references/pages/marketing/pricing.md`.
 
 ### Above the Fold
 - Clear tier comparison table
@@ -288,13 +288,13 @@ When someone wants to audit an existing pricing *page* for **clarity, transparen
 - **Tier structure** (plans, features, price points)
 - **Anchoring** approach
 - **Discount** fit (when to use; reference discount-marketing-strategy)
-- `dev/references/pages/marketing/pricing` (page execution)
+- `implement/sub-skills/references/pages/marketing/pricing.md` (page execution)
 
 ## Related Skills
 
 - **discount-marketing-strategy**: Promotional pricing; when and how to discount
-- `dev/references/pages/marketing/pricing`: Pricing page content, structure, conversion
-- `dev/references/pages/marketing/landing-page`: Click-through to pricing
+- `implement/sub-skills/references/pages/marketing/pricing.md`: Pricing page content, structure, conversion
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: Click-through to pricing
 - **localization-strategy**: Pricing by market (true localization vs cosmetic); see Pricing Strategies section
 - **retention-strategy**: Cancel flows, save offers, and reducing revenue churn
 - **conversion-optimization**: Optimizing pricing page conversion

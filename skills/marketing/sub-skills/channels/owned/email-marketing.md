@@ -1,6 +1,6 @@
 ---
 name: email-marketing
-description: When the user wants to plan email marketing, EDM, newsletter strategy, email deliverability, or lifecycle email sequences. Also use when the user mentions "email marketing," "EDM," "newsletter," "SPF," "DKIM," "DMARC," "email deliverability," "email content strategy," "email campaigns," "newsletter strategy," "email automation," "cold email," "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome sequence," "re-engagement emails," "lifecycle emails," "trigger-based emails," "email cadence," or "what emails should I send." For signup UI, use `dev/references/components/conversion/newsletter-signup`.
+description: When the user wants to plan email marketing, EDM, newsletter strategy, email deliverability, or lifecycle email sequences. Also use when the user mentions "email marketing," "EDM," "newsletter," "SPF," "DKIM," "DMARC," "email deliverability," "email content strategy," "email campaigns," "newsletter strategy," "email automation," "cold email," "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome sequence," "re-engagement emails," "lifecycle emails," "trigger-based emails," "email cadence," or "what emails should I send." For signup UI, use `implement/sub-skills/references/components/conversion/newsletter-signup.md`.
 metadata:
   version: 1.0.1
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
@@ -198,7 +198,7 @@ For implementation, see the [tools registry](https://github.com/coreyhaines31/ma
 ## Related Skills
 
 - **content-marketing**: Content types, formats; email as channel in repurposing matrix
-- `dev/references/components/conversion/newsletter-signup`: Signup form design
+- `implement/sub-skills/references/components/conversion/newsletter-signup.md`: Signup form design
 - **traffic-analysis**: Email source attribution, UTM
 - **analytics-tracking**: Email click tracking
 - **content-strategy**: Article selection for email delivery

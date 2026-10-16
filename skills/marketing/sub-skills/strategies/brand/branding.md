@@ -20,7 +20,7 @@ Guides brand strategy: purpose, values, positioning, storytelling, voice, and vi
 - **Brand strategy**: Purpose, values, positioning, differentiation, target audience
 - **Brand storytelling**: Origin story, hero's journey, narrative arc, brand archetypes
 - **Brand voice & tone**: Voice, tone, avoid terms, preferred wording
-- **Brand visual identity**: Colors, typography, logo rules—strategy layer; implementation in **brand-visual**, `dev/references/components/branding/logo`
+- **Brand visual identity**: Colors, typography, logo rules—strategy layer; implementation in **brand-visual**, `implement/sub-skills/references/components/branding/logo.md`
 
 ## Initial Assessment
 
@@ -102,11 +102,11 @@ Align archetype to customer personality; strengthens storytelling.
 |---------|----------|-----------------|
 | **Colors** | Primary, secondary, CTA; industry mapping | **brand-visual** |
 | **Typography** | Display + body; hierarchy; pairing | **brand-visual** |
-| **Logo** | Variants, clear space, minimum size | `dev/references/components/branding/logo` |
+| **Logo** | Variants, clear space, minimum size | `implement/sub-skills/references/components/branding/logo.md` |
 | **Imagery** | Tone, subject matter, visual mood | Brand guidelines |
 | **Consistency** | Same identity across web, social, product | All touchpoints |
 
-For full visual specs (fonts, HEX, spacing), see **brand-visual**. For logo placement and implementation, see `dev/references/components/branding/logo`.
+For full visual specs (fonts, HEX, spacing), see **brand-visual**. For logo placement and implementation, see `implement/sub-skills/references/components/branding/logo.md`.
 
 ## Brand Guidelines Structure
 
@@ -153,11 +153,11 @@ If the user **pastes an existing brand PDF or bullet list**, extract and normali
 
 ## Related Skills
 
-- `dev/references/pages/brand/about`: About page implements brand story, mission, values
-- `dev/references/pages/brand/home`: Homepage implements value prop, differentiation, brand voice
-- `dev/references/components/branding/logo`: Logo placement, implementation; branding defines logo rules
+- `implement/sub-skills/references/pages/brand/about.md`: About page implements brand story, mission, values
+- `implement/sub-skills/references/pages/brand/home.md`: Homepage implements value prop, differentiation, brand voice
+- `implement/sub-skills/references/components/branding/logo.md`: Logo placement, implementation; branding defines logo rules
 - **brand-visual**: Typography, colors, spacing; branding defines visual strategy
-- `dev/references/pages/marketing/press`: Media kit hosts brand guidelines
+- `implement/sub-skills/references/pages/marketing/press.md`: Media kit hosts brand guidelines
 - **directory-submission**: Directory copy uses brand voice; Section 8 Brand & Voice
 - **title-tag, meta-description**: Metadata uses brand voice
 - **integrated-marketing**: Brand awareness across PESO

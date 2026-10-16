@@ -61,5 +61,5 @@ Target high-intent users in consideration and conversion stages; avoid one-size-
 
 - **display-ads**: Display vs native; programmatic
 - **copywriting**: Headline, ad copy
-- **dev/references/pages/marketing/landing-page**: Landing page for native traffic
+- **implement/sub-skills/references/pages/marketing/landing-page.md**: Landing page for native traffic
 - **paid-ads-strategy**: Channel selection

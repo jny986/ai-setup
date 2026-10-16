@@ -1,6 +1,6 @@
 ---
 name: education-program
-description: When the user wants to plan, implement, or optimize student and education discount programs. Also use when the user mentions "student discount," "education discount," "student plan," "for students," ".edu discount," "academic pricing," "student verification," "SheerID," "UNiDAYS," or "education program." For startup pricing page, use `dev/references/pages/marketing/program`.
+description: When the user wants to plan, implement, or optimize student and education discount programs. Also use when the user mentions "student discount," "education discount," "student plan," "for students," ".edu discount," "academic pricing," "student verification," "SheerID," "UNiDAYS," or "education program." For startup pricing page, use `implement/sub-skills/references/pages/marketing/program.md`.
 metadata:
   version: 1.0.1
   based_on_repo: kostja94/marketing-skills
@@ -59,7 +59,7 @@ Identify:
 |----------|----------|---------|
 | **P0** | Registration / signup flow | User claims discount here; must show when discount applies at signup |
 | **P1** | Pricing page | Student tier or "Student discount" block; keeps single decision point |
-| **P1** | Homepage banner or CTA | "Students: 30% off today, 15% off ongoing"; `dev/references/components/utility/top-banner` |
+| **P1** | Homepage banner or CTA | "Students: 30% off today, 15% off ongoing"; `implement/sub-skills/references/components/utility/top-banner.md` |
 | **P2** | Standalone page /student-discount | Optional; for "student discount" SEO or paid ad landing page |
 
 **Principle**: When discount applies at registration, core placement is registration flow. Pricing page and homepage support discovery. Standalone page only if needed for SEO or ads—avoid duplication when persona pages (e.g. "for students") already exist.
@@ -72,7 +72,7 @@ Identify:
 | **Registration only** | Discount claimed at signup; pricing page shows "Student discount available—verify at signup" |
 | **Standalone /student-discount** | "Student discount" search intent; paid ad landing; persona page would duplicate |
 
-See `dev/references/pages/marketing/program` for page structure when a standalone education page is needed; `dev/references/pages/marketing/pricing` for Special programs section.
+See `implement/sub-skills/references/pages/marketing/program.md` for page structure when a standalone education page is needed; `implement/sub-skills/references/pages/marketing/pricing.md` for Special programs section.
 
 ## Implementation Flow
 
@@ -101,9 +101,9 @@ See `dev/references/pages/marketing/program` for page structure when a standalon
 
 - **discount-marketing-strategy**: Discount structure, financial guardrails; education is a campaign type
 - **pricing-strategy**: Base price; education discount applies on top
-- `dev/references/pages/marketing/pricing`: Special programs section; Student tier or block; placement P1
-- `dev/references/pages/marketing/program`: Standalone education page when needed; same structure for startups + education
-- `dev/references/components/utility/top-banner`: Homepage banner "Students: X% off"; placement P1
-- `dev/references/pages/marketing/landing-page`: /student-discount landing page when used for SEO or ads
-- `dev/references/pages/utility/signup-login`: Signup is P0 for student discount; discount block, verification at registration
-- `dev/references/pages/marketing/use-cases`: "For students" use case; avoid duplicate "for students" page
+- `implement/sub-skills/references/pages/marketing/pricing.md`: Special programs section; Student tier or block; placement P1
+- `implement/sub-skills/references/pages/marketing/program.md`: Standalone education page when needed; same structure for startups + education
+- `implement/sub-skills/references/components/utility/top-banner.md`: Homepage banner "Students: X% off"; placement P1
+- `implement/sub-skills/references/pages/marketing/landing-page.md`: /student-discount landing page when used for SEO or ads
+- `implement/sub-skills/references/pages/utility/signup-login.md`: Signup is P0 for student discount; discount block, verification at registration
+- `implement/sub-skills/references/pages/marketing/use-cases.md`: "For students" use case; avoid duplicate "for students" page

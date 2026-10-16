@@ -65,6 +65,6 @@ Guides product distribution via third-party marketplaces and app stores. Distinc
 ## Related Skills
 
 - **directory-submission**: Curated lists (Taaft, Product Hunt, G2)—different from marketplaces; both are distribution
-- `dev/references/pages/marketing/integrations`: Integrations page content; marketplace listing drives discovery
+- `implement/sub-skills/references/pages/marketing/integrations.md`: Integrations page content; marketplace listing drives discovery
 - **cold-start-strategy**: Distribution as cold-start channel
 - **localization-strategy**: Regional marketplaces by locale

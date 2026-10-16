@@ -94,10 +94,10 @@ When creating or auditing a slug:
 
 - **url-structure**: URL hierarchy, site structure; references this skill for slug conventions
 - **canonical-tag**: When changing slugs, set up 301 redirects
-- `dev/references/pages/content/article`: Article URL slugs
-- `dev/references/pages/content/blog`: Blog post URL slugs
-- `dev/references/pages/content/documentation`: Glossary term slugs
-- `dev/references/pages/marketing/commerce`: Product page slugs
-- `dev/references/pages/marketing/customer-stories`: Case study page slugs
-- `dev/references/pages/content/resources`: Resource page slugs
-- `dev/references/pages/content/features`: Per-feature page slugs
+- `implement/sub-skills/references/pages/content/article.md`: Article URL slugs
+- `implement/sub-skills/references/pages/content/blog.md`: Blog post URL slugs
+- `implement/sub-skills/references/pages/content/documentation.md`: Glossary term slugs
+- `implement/sub-skills/references/pages/marketing/commerce.md`: Product page slugs
+- `implement/sub-skills/references/pages/marketing/customer-stories.md`: Case study page slugs
+- `implement/sub-skills/references/pages/content/resources.md`: Resource page slugs
+- `implement/sub-skills/references/pages/content/features.md`: Per-feature page slugs

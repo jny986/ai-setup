@@ -125,6 +125,6 @@ For full Indie Hackers tactics, Build in Public content framework (40/30/20/10),
 - **indie-hacker-strategy**: Indie hacker first 100 users; Build in Public; Indie Hackers tactics; this skill = forum/community tactics; indie-hacker = strategy + context
 - **directory-submission**: Product Hunt, Taaft; different from forum community
 - **affiliate-marketing**: Communities as recruitment channel
-- **`dev/references/components/utility/top-banner`, `dev/references/components/conversion/popup`**: Homepage CTA, banner
-- `dev/references/components/conversion/newsletter-signup`: EDM, welcome email
+- **`implement/sub-skills/references/components/utility/top-banner.md`, `implement/sub-skills/references/components/conversion/popup.md`**: Homepage CTA, banner
+- `implement/sub-skills/references/components/conversion/newsletter-signup.md`: EDM, welcome email
 - **localization-strategy**: Regional markets (local platforms by locale)
