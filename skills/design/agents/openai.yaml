@@ -1,0 +1,5 @@
+interface:
+  display_name: "Design"
+  short_description: "UI, page, brand, graphic and email design"
+policy:
+  allow_implicit_invocation: true

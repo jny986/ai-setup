@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build skills.html and the marketing, git and security sub-skill lists in SKILLS.md.
+"""Build skills.html and the marketing, git, security and design sub-skill lists in SKILLS.md.
 
-skills.html is generated from the SKILLS.md skills table plus the marketing, git and security router tables in their SKILL.md.
+skills.html is generated from the SKILLS.md skills table plus the marketing, git, security and design router tables in their SKILL.md.
 SKILLS.md gets the Version and Author cells of its skills table and the spans between its `marketing-sub-skills` and
-`git-sub-skills` and `security-sub-skills` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
+`git-sub-skills`, `security-sub-skills` and `design-sub-skills` markers rewritten; version and author come from each file's `metadata` frontmatter. Run after adding,
 moving or renaming a skill or router sub-skill, or bumping a version.
 """
 import html
@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ROUTER = ROOT / "skills" / "marketing" / "SKILL.md"
 GIT_ROUTER = ROOT / "skills" / "git" / "SKILL.md"
 SECURITY_ROUTER = ROOT / "skills" / "security" / "SKILL.md"
+DESIGN_ROUTER = ROOT / "skills" / "design" / "SKILL.md"
 
 
 def meta(path):
@@ -172,9 +173,11 @@ def skills_page(rows, trees):
 root = tree(sub_skills())
 git_root = tree(linked_sub_skills(GIT_ROUTER), "git")
 security_root = tree(situation_sub_skills(SECURITY_ROUTER), "security")
+design_root = tree(situation_sub_skills(DESIGN_ROUTER), "design")
 comment = lambda m: f"<!-- {m} -->"
 splice(ROOT / "SKILLS.md", "## Marketing sub-skills\n\n" + "\n".join(markdown(root)), comment, "marketing-sub-skills")
 splice(ROOT / "SKILLS.md", "## Git sub-skills\n\n" + "\n".join(markdown(git_root)), comment, "git-sub-skills")
 splice(ROOT / "SKILLS.md", "## Security sub-skills\n\n" + "\n".join(markdown(security_root)), comment, "security-sub-skills")
-(ROOT / "skills.html").write_text(skills_page(skills(), {"marketing": root, "git": git_root, "security": security_root}))
-print(f"{count(root)} marketing, {count(git_root)} git, {count(security_root)} security sub-skills")
+splice(ROOT / "SKILLS.md", "## Design sub-skills\n\n" + "\n".join(markdown(design_root)), comment, "design-sub-skills")
+(ROOT / "skills.html").write_text(skills_page(skills(), {"marketing": root, "git": git_root, "security": security_root, "design": design_root}))
+print(f"{count(root)} marketing, {count(git_root)} git, {count(security_root)} security, {count(design_root)} design sub-skills")
