@@ -22,7 +22,7 @@ A router over the marketing sub-skills. Each sub-skill is a file at `sub-skills/
 
 When a sub-skill hands off to another sub-skill by name ("see cro", a **Related Skills** entry), that sub-skill is the row of the same name here, resolved through steps 2 and 3.
 
-A hand-off written as `implement/sub-skills/references/...` is a page or component build guide, not a marketing sub-skill. The path resolves against the `skills/` folder, a sibling of this skill: read `skills/<path>/GUIDE.md` (`implement/sub-skills/references/pages.md` and `implement/sub-skills/references/components.md` are the indexes).
+A hand-off written as `implement/sub-skills/references/...` identifies a page or component build guide. Resolve the path against the `skills/` folder and read `skills/<path>` directly. Follow the implement router’s page or component workflow with that reference and the requirements already gathered (`implement/sub-skills/references/pages.md` and `implement/sub-skills/references/components.md` are the indexes).
 
 ## Sub-skills
 
