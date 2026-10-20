@@ -30,7 +30,7 @@ npx skills add jny986/ai-setup --skill setup
 
 In the target project, run `/setup` to configure project instructions and engineering workflows for the skills already available, migrate domain glossaries, and check readiness. Describe any narrower setup request in plain language, or ask for a read-only readiness check. Setup asks for unresolved project details and shows proposed file changes for approval before applying them. Existing conventions and configuration are preserved on repeat runs.
 
-The skill configures the issue tracker, optional triage labels and domain doc rules. `/setup-matt-pocock-skills` remains a compatibility entry point and requires the `setup` skill to be installed.
+The skill configures the issue tracker, optional triage labels and domain doc rules.
 
 ## Structure
 

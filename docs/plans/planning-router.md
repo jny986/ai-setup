@@ -40,4 +40,4 @@ Status: router implemented; setup's active modeling reference remains an externa
 
 The docs route expects the installed setup skill's `references/modeling.md` (repository source: `skills/setup/references/modeling.md`). It is still absent. The route reports that dependency, records unresolved modeling questions in the plan, and continues the interview and planning work; glossary and ADR work remains blocked. It uses neither the consumer-only `references/domain.md` nor a standalone domain-modeling fallback.
 
-Moving the existing domain-modeling procedure into setup remains a separate migration. The router handles its absence explicitly.
+The standalone domain-modeling skill has been removed. Restoring its procedure in setup remains a separate migration; the former implementation is available in git history. The router handles its absence explicitly.
