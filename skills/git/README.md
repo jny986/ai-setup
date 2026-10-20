@@ -29,7 +29,7 @@ npx skills add jny986/ai-setup --skill git
 | [`SKILL.md`](SKILL.md) | The router: chooses a sub-skill and loads it. |
 | [`sub-skills/commit.md`](sub-skills/commit.md) | Resolves the ticket in context, switches to the branch it calls for (a Kanopi `branch_name` is used verbatim), makes one conventional commit and pushes. Never force-pushes. |
 | [`sub-skills/create-pr.md`](sub-skills/create-pr.md) | Commits and pushes via `git commit`, opens a GitHub PR with `gh` (using the repo's PR template if one exists), then watches CI and fixes failures. Hints: draft, base, title, reviewers, "verify" to run tests, lint and typecheck first. |
-| [`sub-skills/finalise.md`](sub-skills/finalise.md) | Runs `git code-review` and `security review-code` on the same diff, fixes their findings in one new commit, re-reviews once if needed, then runs `git create-pr`. Only runs when you ask for it explicitly. |
+| [`sub-skills/finalise.md`](sub-skills/finalise.md) | Runs `git code-review`, fixes its findings and re-reviews once if needed, then runs `security review-code` against the same base. Security review allows two automatic fix passes for straightforward issues and asks for instructions on unresolved findings before `git create-pr`. Only runs when you ask for it explicitly. |
 | [`sub-skills/code-review.md`](sub-skills/code-review.md) | Reviews the diff since a fixed point on two axes, repo standards and the originating spec, using parallel sub-agents, and checks whether your existing PR comments were addressed. On a PR, it can submit a review with the inline comments you pick, after you confirm the verdict. |
 | [`sub-skills/resolving-merge-conflicts.md`](sub-skills/resolving-merge-conflicts.md) | Resolves each conflict hunk from the intent of both sides, runs the project's checks and completes the merge or rebase. |
 | [`agents/openai.yaml`](agents/openai.yaml) | Display metadata for OpenAI and Codex agents. |
@@ -37,7 +37,7 @@ npx skills add jny986/ai-setup --skill git
 ## How the sub-skills nest
 
 ```
-finalise ─▶ code-review + security review-code ─▶ (fixes) ─▶ create-pr ─▶ commit
+finalise ─▶ code-review ─▶ (fixes) ─▶ security review-code ─▶ (fix/review loop or user instructions) ─▶ create-pr ─▶ commit
 ```
 
 Pick the outermost sub-skill that matches what you want. `git finalise` runs these nested workflows, so you don't need to call them first.

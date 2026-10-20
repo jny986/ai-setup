@@ -31,4 +31,4 @@ A router over six git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in t
 
 ## How they nest
 
-`git finalise` runs `git code-review` and `security review-code`, fixes findings, then hands off to `git create-pr`, which commits and pushes via `git commit`. Pick the outermost one that matches the intent.
+`git finalise` runs `git code-review` and fixes its findings, then runs `security review-code` with a fix/review loop and user instructions for unresolved issues. It hands off to `git create-pr`, which commits and pushes via `git commit`. Pick the outermost one that matches the intent.

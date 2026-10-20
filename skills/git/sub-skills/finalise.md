@@ -18,14 +18,19 @@ Take a branch from "dev work done" to "PR open" by running code and security rev
    - Else fall back to the repo's default branch (`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`) merge-base with `HEAD`.
    - If none of these resolve confidently, ask the user which fixed point to use.
 
-2. **Review.** Follow `git code-review`, passing the fixed point from step 1. Then follow `security review-code` on the same diff (`git diff <fixed-point>...HEAD`), reporting vulnerabilities introduced by the branch and reading surrounding code for context. Keep its findings and needs-verification items separate from Standards and Spec. If the security skill is unavailable, report the missing dependency and stop before creating the PR. No findings or needs-verification items from either review: skip straight to step 6.
+2. **Code review.** Follow `git code-review`, passing the fixed point from step 1. No Standards or Spec findings: skip straight to step 6.
 
-3. **Fix findings.** Fix every Standards, Spec and confirmed security finding directly. Investigate security needs-verification items; fix any confirmed vulnerabilities and record anything still unverified. Keep the list of what was fixed.
+3. **Fix code review findings.** Fix every Standards and Spec finding directly. Keep the list of what was fixed.
 
 4. **Commit the fixes.** If step 3 changed files, make one new commit for everything fixed, e.g. `fix: address review findings`. Never amend or fold into existing commits.
 
-5. **Re-review.** If every fix in step 3 was purely cosmetic (formatting, naming, comments, dead-code removal — no behavioral change), skip re-review. Otherwise run both reviews from step 2 again against the same fixed point, once, to check the fixes and confirm nothing new was introduced. Don't loop further regardless of outcome.
+5. **Re-review code.** If every fix in step 3 was purely cosmetic (formatting, naming, comments, dead-code removal — no behavioral change), skip re-review. Otherwise follow `git code-review` again against the same fixed point, once, to check the fixes and confirm nothing new was introduced. Then continue to step 6 regardless of outcome.
 
-6. **Summarise.** Tell the user what was fixed (or "no issues found"), including the security review result and any remaining findings or unverified items, then proceed to step 7 without waiting for a response.
+6. **Security review.** Follow `security review-code` on the updated branch diff (`git diff <fixed-point>...HEAD`), using the fixed point from step 1. Report vulnerabilities introduced by the branch, reading surrounding code for context. If the security skill is unavailable, report the missing dependency and stop before creating the PR.
+   - Fix straightforward, confirmed vulnerabilities whose remediation is clear and stays within the task's scope. Run relevant checks and commit each pass's fixes in a new commit before reviewing the updated diff again against the same fixed point. Allow at most two automatic fix passes, each followed by a security review.
+   - Investigate needs-verification items before treating them as confirmed findings. For findings requiring a product, architecture or compatibility decision, or anything still unresolved after the automatic passes, show the severity, evidence, impact and recommended options. Ask the user how to proceed and wait for instructions before continuing to PR creation. Apply their instructions, then re-review any resulting fixes; a new unresolved decision requires further instructions.
+   - Continue when there are no remaining findings or verification items, or the user has explicitly instructed how to handle each remaining item. Keep security results separate from Standards and Spec.
 
-7. **Create the PR.** Follow `git create-pr`. The `finalise` invocation is itself the user's go-ahead: commit, push, and PR creation (and anything `git create-pr` delegates to `git commit`) proceed without a separate confirmation step.
+7. **Summarise.** Tell the user what was fixed (or "no issues found"), including the security review result and any remaining findings or unverified items with the user's instructions for handling them, then proceed to step 8 without waiting for a response.
+
+8. **Create the PR.** Follow `git create-pr`. The `finalise` invocation is itself the user's go-ahead: commit, push, and PR creation (and anything `git create-pr` delegates to `git commit`) proceed without a separate confirmation step once step 6's completion criterion is met.
