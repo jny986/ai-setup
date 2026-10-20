@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along three axes: Standards (does the code follow this repo's documented coding standards?), Spec (does the code match what the originating issue/spec asked for?), and Security (does the diff introduce exploitable vulnerabilities?). Runs Standards and Spec in parallel sub-agents, follows security review with a fix/review loop, and reports each axis separately. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
 license: MIT
 metadata:
   version: "1.0.0"
@@ -11,12 +11,13 @@ metadata:
   based_on_skill: code-review, retro
 ---
 
-Two-axis review of the diff between `HEAD` and a fixed point, defaulted when the user supplies none:
+Three-axis review of the diff between `HEAD` and a fixed point, defaulted when the user supplies none:
 
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
+- **Security**: does the diff introduce exploitable vulnerabilities?
 
-Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
+Standards and Spec run as **parallel sub-agents** so they don't pollute each other's context. Security follows through `security review-code`, including remediation and verification, before this skill aggregates all three results.
 
 **Scope: only the changes in the branch or PR.** Review the diff, not the surrounding codebase. Don't flag pre-existing issues in untouched code; read it only for context.
 
@@ -96,42 +97,52 @@ Look for review comments the user left on the PR (`gh pr view --json comments,re
 
 For each comment, check the current diff: has the issue it raises actually been fixed? Report each as fixed, not fixed, or partially fixed, quoting the comment and citing the file/lines that show it. Don't take a "done" reply or a resolved thread as proof.
 
-When a comment matches a pattern that recurs across the PR's comments, record it as a note for step 6: a standard or automated check could cover it.
+When a comment matches a pattern that recurs across the PR's comments, record it as a note for step 7: a standard or automated check could cover it.
 
-### 6. Aggregate
+### 6. Security review
 
-Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned, then the step 5 results under `## Comments`. Format `## Comments` as a Markdown table with `Comment | Status | Evidence` columns: one row per comment, with its quote, fixed/not fixed/partially fixed status, and file/line citations. If there are no comments, say so under the heading. Close with `## Notes`: the Standards sub-agent's Notes and step 5's recurring-pattern notes, each as a suggestion to add, clarify or remove a standard or automated check. Notes are additional comments, not findings. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+Follow `security review-code` on the updated branch diff (`git diff <fixed-point>...HEAD`), using the fixed point determined in step 1. Report vulnerabilities introduced by the branch, reading surrounding code for context. If the security skill is unavailable, report the missing dependency and stop before completing the review.
 
-End with a one-line summary: total findings per axis (Notes excluded), the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
+- Fix straightforward, confirmed vulnerabilities whose remediation is clear and stays within the task's scope. Run relevant checks and commit each pass's fixes in a new commit before reviewing the updated diff again against the same fixed point. Repeat this fix-and-review loop until every item is fixed or explicitly ignored by the user. A fix counts as complete only after re-review confirms it is resolved.
+- Investigate needs-verification items before treating them as confirmed findings. For findings requiring a product, architecture or compatibility decision, or when a fix attempt makes no progress, show the severity, evidence, impact and recommended options. Ask the user how to proceed and wait for instructions before completing the review. Apply their instructions, then re-review any resulting fixes. Instructions to attempt a fix leave the item open until verified as fixed or explicitly ignored. Record each ignored item and the user's decision; reopen it if later changes invalidate that decision.
+- Continue only when every finding and needs-verification item is verified as resolved or explicitly ignored by the user. Newly discovered items enter the same loop. Keep security results separate from Standards and Spec.
 
-### 7. Select PR inline comments
+### 7. Aggregate
 
-If the review is of a PR, start the suggested-comments presentation with a prominent verdict heading: `## Suggested review result: APPROVE` or `## Suggested review result: REQUEST CHANGES`, using the criteria in step 8. Follow it with one sentence explaining the recommendation, then `### Suggested inline comments`. Show the verdict even when there are no suggested comments.
+Present the Standards and Spec reports under `## Standards` and `## Spec`, verbatim or lightly cleaned. Add `## Security` with the vulnerabilities found, fixes verified, and any findings or needs-verification items explicitly ignored by the user, including their decisions. Security fixes may change the reviewed diff: refresh the diff and repeat Standards, Spec and comment checks for affected hunks before aggregating. Then present the step 5 results under `## Comments`. Format `## Comments` as a Markdown table with `Comment | Status | Evidence` columns: one row per comment, with its quote, fixed/not fixed/partially fixed status, and file/line citations. If there are no comments, say so under the heading. Close with `## Notes`: the Standards sub-agent's Notes and step 5's recurring-pattern notes, each as a suggestion to add, clarify or remove a standard or automated check. Notes are additional comments, not findings. Do **not** merge or rerank findings, because the three axes are deliberately separate (see _Why separate axes_).
 
-Recommend inline comments for findings (Notes excluded). Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. Present the remaining recommendations as a numbered list, each with its file, changed line, and proposed comment text. Say when there are none. Ask which numbers, if any, the user wants to add. Wait for their answer before step 8; keep only the selected comments, anchored to changed lines. Skip steps 7–10 when there's no PR.
+End with a one-line summary: total findings per axis (Notes excluded; distinguish resolved and explicitly ignored security items), the worst issue _within each axis_ (if any), and how many user comments remain unfixed. Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
 
-### 8. Choose the review result
+### 8. Select PR inline comments
+
+If the review is of a PR, start the suggested-comments presentation with a prominent verdict heading: `## Suggested review result: APPROVE` or `## Suggested review result: REQUEST CHANGES`, using the criteria in step 9. Follow it with one sentence explaining the recommendation, then `### Suggested inline comments`. Show the verdict even when there are no suggested comments.
+
+Recommend inline comments for findings still present in the current diff (Notes and verified fixes excluded). Leave out any finding that an existing PR comment already raises, whether fixed or not, from any author (users, bots, and resolved threads included; step 5's filters don't apply here): don't create it again. Present the remaining recommendations as a numbered list, each with its file, changed line, and proposed comment text. Say when there are none. Ask which numbers, if any, the user wants to add. Wait for their answer before step 9; keep only the selected comments, anchored to changed lines. Skip steps 8–11 when there's no PR.
+
+### 9. Choose the review result
 
 After the inline-comment selection, repeat the suggested review result prominently and ask the user which result to apply. Use these criteria for the recommendation:
 
 - **Approve**: only minor issues, or none.
 - **Request changes**: issues that need to be looked at before merge.
 
-Wait for their answer before step 9.
+Wait for their answer before step 10.
 
-### 9. Choose the review comment
+### 10. Choose the review comment
 
-Once the user has selected the review result in step 8, generate and show a short review-level comment under `## Suggested review comment`, based on the findings and their chosen result. Generate this draft only after their selection, including when it differs from the recommended result. Ask whether to use the draft, edit it, or omit the review-level comment. Wait for their answer before step 10. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to approve a short summary or supply their own text.
+Once the user has selected the review result in step 9, generate and show a short review-level comment under `## Suggested review comment`, based on the findings and their chosen result. Generate this draft only after their selection, including when it differs from the recommended result. Ask whether to use the draft, edit it, or omit the review-level comment. Wait for their answer before step 11. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to approve a short summary or supply their own text.
 
-### 10. Submit the review
+### 11. Submit the review
 
-Once the user has answered each question, submit one review on the PR with the chosen result, review comment (if any), and inline comments selected in step 7 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`).
+Once the user has answered each question, submit one review on the PR with the chosen result, review comment (if any), and inline comments selected in step 8 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`).
 
-## Why two axes
+## Why separate axes
 
-A change can pass one axis and fail the other:
+A change can pass one axis and fail another:
 
 - Code that follows every standard but implements the wrong thing → **Standards pass, Spec fail.**
 - Code that does exactly what the issue asked but breaks the project's conventions → **Spec pass, Standards fail.**
 
-Reporting them separately stops one axis from masking the other.
+- Code that follows the standards and spec but introduces an exploitable vulnerability → **Security fail.**
+
+Reporting them separately stops one axis from masking another.
