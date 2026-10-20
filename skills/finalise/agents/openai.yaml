@@ -1,0 +1,5 @@
+interface:
+  display_name: "Finalise"
+  short_description: "Review a branch, fix findings and open a PR"
+policy:
+  allow_implicit_invocation: false

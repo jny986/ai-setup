@@ -1,6 +1,7 @@
 ---
 name: finalise
-description: Finalise a branch's dev work — run code review (including security), fix findings, then create the PR. Use when the user asks to finalise, finish, or wrap up a branch. Invoked as /git finalise.
+description: Finalise a branch's dev work — run code and security reviews, fix findings, then create the PR.
+disable-model-invocation: true
 license: MIT
 metadata:
   version: "1.0.0"
@@ -8,7 +9,9 @@ metadata:
   author-url: https://jny986.com
 ---
 
-Take a branch from "dev work done" to "PR open" by running `git code-review` (including security), fixing its findings, and handing off to `git create-pr`. Work the steps in order.
+Run only when the user explicitly invokes `/finalise` or `$finalise`.
+
+Take a branch from "dev work done" to "PR open" by running `git code-review` (including security), fixing its findings, and handing off to `git create-pr`. Requires the `git` and `security` skills. Read the `git` skill's `sub-skills/code-review.md`, `sub-skills/commit.md`, and `sub-skills/create-pr.md` when following those workflows. Work the steps in order.
 
 ## Steps
 

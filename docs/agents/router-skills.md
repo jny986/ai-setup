@@ -1,11 +1,11 @@
 # Router skills
 
-A router skill is one `SKILL.md` that picks among a group of related sub-skills, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `finalise`, `code-review`, `review-prs` and `resolving-merge-conflicts`.
+A router skill is one `SKILL.md` that picks among a group of related sub-skills, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `code-review`, `review-prs` and `resolving-merge-conflicts`.
 
 ## When to build one
 
-- The group has 5+ members, or members nest. In `git`, `finalise` runs `code-review` then `create-pr`, which commits via `commit`.
-- Members become plain Markdown files read by the router. A member previously marked `disable-model-invocation: true` can be included by converting it to a sub-skill and removing its standalone invocation metadata.
+- The group has 5+ members, or members nest. In `git`, `create-pr` commits via `commit`.
+- Members become plain Markdown files read by the router. Keep user-only workflows as standalone skills with `disable-model-invocation: true` and `allow_implicit_invocation: false`; an implicitly invoked router must not invoke them.
 - Skip it when each skill already has a sharp trigger description. A router adds nothing then.
 
 ## Layout
@@ -16,7 +16,7 @@ skills/git/
   agents/openai.yaml               # router metadata
   sub-skills/
     commit.md                      # the former SKILL.md
-    create-pr.md finalise.md code-review.md review-prs.md resolving-merge-conflicts.md
+    create-pr.md code-review.md review-prs.md resolving-merge-conflicts.md
 ```
 
 A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `references/` or `assets/` folder beside it, shared with the other sub-skills in that folder, so relative links still resolve. References can nest (`security` has `references/languages/` and `references/infrastructure/`).
@@ -25,7 +25,7 @@ A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `re
 
 ## How `git` was built
 
-1. **Sub-skills are not skills.** Each member moved to `sub-skills/<sub-skill>.md`. The user invokes each sub-skill through its router, for example `/git finalise` or `/git create-pr`.
+1. **Sub-skills are not skills.** Each member moved to `sub-skills/<sub-skill>.md`. The user invokes each sub-skill through its router, for example `/git code-review` or `/git create-pr`.
 2. **Router `SKILL.md` stays thin:** steps, a `Sub-skill | Use when` table linking each sub-skill (`security` flips the columns to `Situation | Sub-skill`), and a short "How they nest" note. No sub-skill content.
 3. **Steps:** argument names a sub-skill, use it; otherwise match the "Use when" row, asking once on a tie; then read the sub-skill and follow it as if it were the skill.
 4. **Description** names the task types and lists the sub-skill names, so the model triggers on any of them.
