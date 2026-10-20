@@ -47,15 +47,13 @@ td.inv-no { color: #b42318; }
 </tbody></table>
 </details>
 <details>
-<summary>Based on mattpocock/skills <span>(29)</span> <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></summary>
+<summary>Based on mattpocock/skills <span>(25)</span> <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></summary>
 <table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
 <tr><td><a href="skills/claude-handoff">claude-handoff</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Hand the current conversation off to a fresh background agent that picks up the work immediately.</td></tr>
 <tr><td><a href="skills/codebase-design">codebase-design</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module&#x27;s interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.</td></tr>
 <tr><td><a href="skills/diagnosing-bugs">diagnosing-bugs</a></td><td class="inv-yes">Yes</td><td>1.0.1</td><td>jny986</td><td>Diagnosis loop for hard bugs and performance regressions. Use when the user says &quot;diagnose&quot;/&quot;debug this&quot;, or reports something broken/throwing/failing/slow.</td></tr>
+<tr><td><a href="skills/docs">docs</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Sharpen ideas through grilling, maintain planning docs, synthesize specs, and draft dependency-linked tickets. Sub-skills: me, docs, spec, tickets.</td></tr>
 <tr><td><a href="skills/domain-modeling">domain-modeling</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Build and sharpen a project&#x27;s domain model. Use when discussing codebase terminology, writing or editing a GLOSSARY.md, or recording or editing an ADR.</td></tr>
-<tr><td><a href="skills/grill-me">grill-me</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>A relentless interview to sharpen a plan or design.</td></tr>
-<tr><td><a href="skills/grill-with-docs">grill-with-docs</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>A relentless interview to sharpen a plan or design, which also creates docs (ADR&#x27;s and glossary) as we go.</td></tr>
-<tr><td><a href="skills/grilling">grilling</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any &#x27;grill&#x27; trigger phrases.</td></tr>
 <tr><td><a href="skills/handoff">handoff</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Compact the current conversation into a handoff document for another agent to pick up.</td></tr>
 <tr><td><a href="skills/implement">implement</a></td><td class="inv-yes">Yes</td><td>2.0.0</td><td>jny986</td><td>Implement features, changes, specs and tickets with automatic context and page/component workflow selection.</td></tr>
 <tr><td><a href="skills/improve-codebase-architecture">improve-codebase-architecture</a></td><td class="inv-no">No</td><td>1.0.1</td><td>jny986</td><td>Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.</td></tr>
@@ -67,8 +65,6 @@ td.inv-no { color: #b42318; }
 <tr><td><a href="skills/tdd">tdd</a></td><td class="inv-yes">Yes</td><td>1.0.1</td><td>jny986</td><td>Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions &quot;red-green-refactor&quot;, or wants integration tests.</td></tr>
 <tr><td><a href="skills/teach">teach</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Teach the user a new skill or concept, within this workspace.</td></tr>
 <tr><td><a href="skills/to-questionnaire">to-questionnaire</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Turn a decision you can&#x27;t fully answer into a questionnaire for someone else to fill in.</td></tr>
-<tr><td><a href="skills/to-spec">to-spec</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you&#x27;ve already discussed.</td></tr>
-<tr><td><a href="skills/to-tickets">to-tickets</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).</td></tr>
 <tr><td><a href="skills/triage">triage</a></td><td class="inv-no">No</td><td>1.0.1</td><td>jny986</td><td>Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.</td></tr>
 <tr><td><a href="skills/wait-what">wait-what</a></td><td class="inv-no">No</td><td>1.0.1</td><td>jny986</td><td>Stop. That last message did not land: re-pitch it.</td></tr>
 <tr><td><a href="skills/wayfinder">wayfinder</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.</td></tr>
@@ -349,6 +345,15 @@ td.inv-no { color: #b42318; }
 <tr><td><a href="skills/implement/sub-skills/page.md">page</a></td><td>1.0.0</td><td>jny986</td><td>Build or change page-level hierarchy, routing, content, data, metadata, or states</td></tr>
 <tr><td><a href="skills/implement/sub-skills/spec.md">spec</a></td><td>1.0.0</td><td>jny986</td><td>Complete a spec, coordinating its ticket graph when tickets exist</td></tr>
 <tr><td><a href="skills/implement/sub-skills/ticket.md">ticket</a></td><td>1.0.0</td><td>jny986</td><td>Resolve and implement one ticket against its acceptance criteria and parent-spec constraints</td></tr>
+</tbody></table>
+</details>
+<details>
+<summary>Docs sub-skills <span class="count">(4)</span></summary>
+<table><thead><tr><th>Sub-skill</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
+<tr><td><a href="skills/docs/sub-skills/docs.md">docs</a></td><td>1.0.0</td><td>jny986</td><td>Interview while maintaining a plan, terminology, and decisions</td></tr>
+<tr><td><a href="skills/docs/sub-skills/me.md">me</a></td><td>1.0.0</td><td>jny986</td><td>Interview and stress-test an idea without writing documents</td></tr>
+<tr><td><a href="skills/docs/sub-skills/spec.md">spec</a></td><td>1.0.0</td><td>jny986</td><td>Synthesize existing context into a spec for the configured tracker</td></tr>
+<tr><td><a href="skills/docs/sub-skills/tickets.md">tickets</a></td><td>1.0.0</td><td>jny986</td><td>Break a plan, spec, or conversation into dependency-linked tickets</td></tr>
 </tbody></table>
 </details>
 </body>

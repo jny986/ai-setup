@@ -1,7 +1,6 @@
 ---
-name: to-tickets
+name: tickets
 description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).
-disable-model-invocation: true
 license: MIT
 metadata:
   version: "1.0.0"
@@ -16,7 +15,9 @@ metadata:
 
 Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
-The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/setup`.
+Use the root's project-context discovery and read the project's configured tracker and triage vocabulary. If publication configuration is missing, prepare the draft and report that `/setup` is needed before publishing. Preserve explicit draft-only or local-output requests.
+
+Reuse the current interview, plan, or spec without requiring another route first. Keep unresolved requirements visible; a ticket blocked on an unanswered decision must expose that prerequisite.
 
 ## Process
 
@@ -65,12 +66,12 @@ Iterate until the user approves the breakdown.
 
 ### 5. Publish the tickets to the configured tracker
 
-Publish the approved tickets. **How** depends on the tracker `/setup` configured; the tickets are the same either way, only the shape of the blocking edges changes:
+For a draft-only request, stop after the approved draft and return it without publishing. Otherwise publish the approved tickets. **How** depends on the tracker `/setup` configured; the tickets are the same either way, only the shape of the blocking edges changes:
 
 - **Local files** → write one file per ticket under `.scratch/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01` in dependency order (blockers first). Each file's "Blocked by" lists the numbers/titles it depends on. Use the per-ticket file template below: one ticket per file, never a single combined file.
 - **A real issue tracker (GitHub, Linear, …)** → publish one issue per ticket in dependency order (blockers first) so each ticket's blocking edges can reference real identifiers. Use the platform's native blocking relationship where it has one; otherwise set each ticket's "Blocked by" to the blocking issues. If the source was an existing issue, make each ticket its sub-issue (tracker doc's operation). Apply the `ready-for-agent` triage label unless instructed otherwise; the tickets are agent-grabbable by construction.
 
-Work the **frontier**: any ticket whose blockers are all done. For a purely linear chain that means top to bottom.
+Verify the published graph matches the approved breakdown and has no missing or cyclic blocking edges. Return ticket identifiers or paths and the ready **frontier**: tickets with no unfinished blockers. If publication partially fails, report what was created and what remains; inspect existing results before retrying to avoid duplicates.
 
 Do NOT close or modify any parent issue.
 

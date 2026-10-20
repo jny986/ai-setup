@@ -8,7 +8,7 @@ Root `skills.html` is generated. Never hand-edit it; the next build overwrites t
 python3 scripts/build-marketing-index.py
 ```
 
-Run after adding, moving, renaming or re-describing a skill, or after changing a sub-skill row in the marketing, git, security or design router. The same run rewrites the marked spans in `SKILLS.md`.
+Run after adding, moving, renaming or re-describing a skill, or after changing a sub-skill row in the marketing, git, security, design, implement or docs router. The same run rewrites the marked spans in `SKILLS.md`.
 
 ## Sources
 
@@ -17,6 +17,8 @@ Run after adding, moving, renaming or re-describing a skill, or after changing a
 | `SKILLS.md` skills table (rows starting with `\| [`) | One table row per skill, grouped by upstream: name, "Agent invokable", version, author, description |
 | `skills/marketing/SKILL.md` router table | Marketing sub-skill tree, built from the table rows that point at `sub-skills/…md` |
 | `skills/git/SKILL.md` Sub-skills table | Git sub-skill table, built from the rows linking `sub-skills/x.md` |
+| `skills/docs/SKILL.md` Sub-skills table | Docs sub-skill table, built from the rows linking `sub-skills/x.md` |
+| `skills/implement/SKILL.md` Sub-skills table | Implement sub-skill table, built from the rows linking `sub-skills/x.md` |
 | `skills/design/SKILL.md` Sub-skills table | Design sub-skill table, parsed from situation rows linking `sub-skills/x.md`; reference bullets stay outside the sub-skill index |
 | `skills/security/SKILL.md` Sub-skills table | Security sub-skill table, built from `\| situation \| [`name`](sub-skills/x.md) \|` rows |
 
@@ -27,7 +29,7 @@ Row order in `SKILLS.md` is page order; keep the table alphabetical by name.
 ## Structure
 
 - Skills sit in one `<details>` group per upstream, `Original` first: a `Name | Agent invokable | Version | Author | Description` table whose summary carries the count, e.g. `<span>(29)</span>`.
-- After the groups, one top-level `<details>` per router lists its sub-skills ("Marketing sub-skills", "Git sub-skills", "Security sub-skills", "Design sub-skills").
+- After the groups, one top-level `<details>` per router lists its sub-skills (marketing, git, security, design, implement and docs).
 - A router with subfolders under `sub-skills/` nests one `<details>` per folder, with the sub-skill count in `<span class="count">`. Each leaf folder holds a `Sub-skill | Version | Author | Use when` table.
 - A router with no subfolders is a single sub-skill table.
 - Sub-skill links point at the files under `skills/<skill>/sub-skills/`.
@@ -41,6 +43,8 @@ The script rewrites only the text between these markers, so don't edit between t
 - `<!-- git-sub-skills:start -->` … `<!-- git-sub-skills:end -->`
 - `<!-- security-sub-skills:start -->` … `<!-- security-sub-skills:end -->`
 - `<!-- design-sub-skills:start -->` … `<!-- design-sub-skills:end -->`
+- `<!-- implement-sub-skills:start -->` … `<!-- implement-sub-skills:end -->`
+- `<!-- docs-sub-skills:start -->` … `<!-- docs-sub-skills:end -->`
 
 The script exits with "markers missing" if any pair is gone.
 

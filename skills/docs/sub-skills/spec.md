@@ -1,7 +1,6 @@
 ---
-name: to-spec
+name: spec
 description: "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."
-disable-model-invocation: true
 license: MIT
 metadata:
   version: "1.0.0"
@@ -12,9 +11,9 @@ metadata:
   based_on_skill: to-spec
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
+Synthesize the current conversation, supplied sources, and existing plans into a spec. Enter directly with the context available; an earlier interview is optional. Preserve unresolved questions explicitly, and ask only for gaps that prevent a coherent spec rather than repeating settled design work.
 
-The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/setup`.
+Use the root's project-context discovery and read the project's configured tracker and triage vocabulary. If publication configuration is missing, prepare the draft and report that `/setup` is needed before publishing. Preserve explicit draft-only or local-output requests.
 
 ## Process
 
@@ -22,9 +21,9 @@ The issue tracker and triage label vocabulary should have been provided to you. 
 
 2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
 
-Check with the user that these seams match their expectations.
+Reuse testing seams already agreed in the source context. Check proposed or changed seams with the user before publication.
 
-3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
+3. Write the spec using the template below, then publish it to the project issue tracker using its configured operation and location. Reuse a supplied spec as the update target when requested; otherwise create one spec and return its identifier or path. For draft-only work, use the requested destination or show the draft in the conversation. Apply the `ready-for-agent` triage label - no need for additional triage.
 
 <spec-template>
 
