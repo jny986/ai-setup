@@ -194,7 +194,7 @@
 <!-- git-sub-skills:start -->
 ## Git sub-skills
 
-- [code-review](skills/git/sub-skills/code-review.md) (v1.0.0, jny986): Review changes since a commit, branch, tag or merge-base, against repo standards and the spec
+- [code-review](skills/git/sub-skills/code-review.md) (v1.0.0, jny986): Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security
 - [commit](skills/git/sub-skills/commit.md) (v1.0.0, jny986): Commit and push the current work, on the branch its ticket calls for
 - [create-pr](skills/git/sub-skills/create-pr.md) (v1.0.0, jny986): Open a GitHub PR from the current branch (commits and pushes first if needed)
 - [finalise](skills/git/sub-skills/finalise.md) (v1.0.0, jny986): The user explicitly asks to finalise a branch whose dev work is done: review, fix findings, then open the PR

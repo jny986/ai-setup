@@ -25,10 +25,10 @@ A router over six git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in t
 | [`commit`](sub-skills/commit.md) | Commit and push the current work, on the branch its ticket calls for |
 | [`create-pr`](sub-skills/create-pr.md) | Open a GitHub PR from the current branch (commits and pushes first if needed) |
 | [`finalise`](sub-skills/finalise.md) | The user explicitly asks to finalise a branch whose dev work is done: review, fix findings, then open the PR |
-| [`code-review`](sub-skills/code-review.md) | Review changes since a commit, branch, tag or merge-base, against repo standards and the spec |
+| [`code-review`](sub-skills/code-review.md) | Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security |
 | [`review-prs`](sub-skills/review-prs.md) | Review the open PRs awaiting the user's review, asking continue or skip for each |
 | [`resolving-merge-conflicts`](sub-skills/resolving-merge-conflicts.md) | A merge or rebase is in progress with conflicts |
 
 ## How they nest
 
-`git finalise` runs `git code-review` and fixes its findings, then runs `security review-code` with a fix/review loop and user instructions for unresolved issues. It hands off to `git create-pr`, which commits and pushes via `git commit`. Pick the outermost one that matches the intent.
+`git finalise` runs `git code-review` and fixes its findings. Code review includes `security review-code` with a fix/review loop and user instructions for unresolved issues. It hands off to `git create-pr`, which commits and pushes via `git commit`. Pick the outermost one that matches the intent.
