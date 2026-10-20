@@ -22,10 +22,11 @@ td.inv-no { color: #b42318; }
 <body>
 <h1>Skills</h1>
 <details>
-<summary>Original <span>(2)</span></summary>
+<summary>Original <span>(3)</span></summary>
 <table><thead><tr><th>Name</th><th>Agent invokable</th><th>Version</th><th>Author</th><th>Description</th></tr></thead><tbody>
 <tr><td><a href="skills/agents-review">agents-review</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Refactor an AGENTS.md or CLAUDE.md into a minimal root file plus linked docs, following progressive disclosure.</td></tr>
-<tr><td><a href="skills/git">git</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Router for git and PR workflows. Use for any commit, push, pull request, branch wrap-up, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, finalise, code-review, review-prs, resolving-merge-conflicts.</td></tr>
+<tr><td><a href="skills/finalise">finalise</a></td><td class="inv-no">No</td><td>1.0.0</td><td>jny986</td><td>Finalise a branch&#x27;s dev work — run code and security reviews, fix findings, then create the PR.</td></tr>
+<tr><td><a href="skills/git">git</a></td><td class="inv-yes">Yes</td><td>1.0.0</td><td>jny986</td><td>Router for git and PR workflows. Use for any commit, push, pull request, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, code-review, review-prs, resolving-merge-conflicts.</td></tr>
 </tbody></table>
 </details>
 <details>
@@ -304,12 +305,11 @@ td.inv-no { color: #b42318; }
 </details>
 </details>
 <details>
-<summary>Git sub-skills <span class="count">(6)</span></summary>
+<summary>Git sub-skills <span class="count">(5)</span></summary>
 <table><thead><tr><th>Sub-skill</th><th>Version</th><th>Author</th><th>Use when</th></tr></thead><tbody>
 <tr><td><a href="skills/git/sub-skills/code-review.md">code-review</a></td><td>1.0.0</td><td>jny986</td><td>Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security</td></tr>
 <tr><td><a href="skills/git/sub-skills/commit.md">commit</a></td><td>1.0.0</td><td>jny986</td><td>Commit and push the current work, on the branch its ticket calls for</td></tr>
 <tr><td><a href="skills/git/sub-skills/create-pr.md">create-pr</a></td><td>1.0.0</td><td>jny986</td><td>Open a GitHub PR from the current branch (commits and pushes first if needed)</td></tr>
-<tr><td><a href="skills/git/sub-skills/finalise.md">finalise</a></td><td>1.0.0</td><td>jny986</td><td>The user explicitly asks to finalise a branch whose dev work is done: review, fix findings, then open the PR</td></tr>
 <tr><td><a href="skills/git/sub-skills/resolving-merge-conflicts.md">resolving-merge-conflicts</a></td><td>1.0.0</td><td>jny986</td><td>A merge or rebase is in progress with conflicts</td></tr>
 <tr><td><a href="skills/git/sub-skills/review-prs.md">review-prs</a></td><td>1.0.0</td><td>jny986</td><td>Review the open PRs awaiting the user&#x27;s review, asking continue or skip for each</td></tr>
 </tbody></table>
