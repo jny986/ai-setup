@@ -86,11 +86,12 @@ def check_chains(skills, report):
     """Fail on a `gh`/`git` command that chains with `&&`, `;` or `|`; agents run one command per call."""
     for md in sorted(skills.rglob("*.md")):
         for span in CODE_SPAN.findall(md.read_text()):
-            span = span.strip("`").strip()
-            if not span.startswith(("gh ", "git ")):
-                continue
-            if CHAIN.search(QUOTED.sub("''", span)):
-                report.fail(f"{md.relative_to(skills)}: chained command `{span}`, split into one command per call")
+            # A fence holds one command per line (after the info string); an inline span is one command.
+            lines = span.split("\n")[1:-1] if span.startswith("```") else [span.strip("`")]
+            for line in lines:
+                line = line.strip()
+                if line.startswith(("gh ", "git ")) and CHAIN.search(QUOTED.sub("''", line)):
+                    report.fail(f"{md.relative_to(skills)}: chained command `{line}`, split into one command per call")
 
 
 def check(root):

@@ -63,6 +63,11 @@ def test_chained_command_fails(repo):
     assert "chained command" in errors(check(repo))
 
 
+def test_chained_command_in_fenced_block_fails(repo):
+    (repo / "skills" / "alpha" / "doc.md").write_text("```bash\ngit diff | grep x\n```\n")
+    assert "chained command" in errors(check(repo))
+
+
 def test_pipe_inside_quotes_passes(repo):
     (repo / "skills" / "alpha" / "doc.md").write_text("Run `gh api x --jq '.[] | .id'`.\n")
     assert check(repo).errors == []
