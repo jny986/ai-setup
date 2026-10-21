@@ -173,3 +173,30 @@ def test_chained_command_in_fenced_block_fails(repo):
 def test_pipe_inside_quotes_passes(repo):
     (repo / "skills" / "alpha" / "doc.md").write_text("Run `gh api x --jq '.[] | .id'`.\n")
     assert check(repo).errors == []
+
+
+def test_version_defaults_to_1_0_0_without_tags(repo):
+    edit(repo, "alpha", "author: jny986", "author: jny986\n  version: \"1.0.0\"")
+    assert check(repo).errors == []
+
+
+def test_version_must_match_latest_tag(repo, monkeypatch):
+    monkeypatch.setattr(module, "latest_tag", lambda root: "v2.0.0")
+    edit(repo, "alpha", "author: jny986", "author: jny986\n  version: \"1.0.0\"")
+    assert "!= latest git tag 'v2.0.0'" in errors(check(repo))
+
+
+def test_version_ignores_tag_v_prefix(repo, monkeypatch):
+    monkeypatch.setattr(module, "latest_tag", lambda root: "v2.0.0")
+    edit(repo, "alpha", "author: jny986", "author: jny986\n  version: \"2.0.0\"")
+    assert check(repo).errors == []
+
+
+def test_version_not_enforced_for_other_authors(repo, monkeypatch):
+    monkeypatch.setattr(module, "latest_tag", lambda root: "v2.0.0")
+    edit(repo, "alpha", "author: jny986", "author: someone\n  version: \"1.0.0\"")
+    assert check(repo).errors == []
+
+
+def test_latest_tag_defaults_outside_a_repo(tmp_path):
+    assert module.latest_tag(tmp_path) == "1.0.0"

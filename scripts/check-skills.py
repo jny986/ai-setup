@@ -25,7 +25,7 @@ VERSION = re.compile(r"^v?\d+(\.\d+)*(\([0-9a-f]{7,40}\))?$")
 SUB_VERSION = re.compile(r"^[\w.-]+\([0-9a-f]{7,40}\)$")
 OWN_AUTHOR = "jny986"  # files by this author must carry the latest git tag as metadata.version
 DEFAULT_VERSION = "1.0.0"  # expected version while the repo has no tags
-NO_FRONTMATTER ={"name-table.md"}  # index files in a sub-skills folder, not sub-skills
+NO_FRONTMATTER = {"name-table.md"}  # index files in a sub-skills folder, not sub-skills
 # References written here with no upstream, so with no `based_on_*`; paths relative to skills/.
 ORIGINAL_REFERENCES = {"git/sub-skills/references/gh-review.md"}
 URL_VIEWED = re.compile(r"^https://\S+ \(\d{4}-\d{2}-\d{2}\)$")  # page and the date it was viewed
@@ -148,21 +148,24 @@ def latest_tag(root):
     return tags[0] if tags else DEFAULT_VERSION
 
 
+def read_meta(path):
+    """The `metadata` mapping from a file's frontmatter, or {} when absent."""
+    m = FRONTMATTER.match(path.read_text()) if path.exists() else None
+    meta = parse_mapping(m.group(1)).get("metadata") if m else None
+    return meta if isinstance(meta, dict) else {}
+
+
 def check_versions(root, skills, report):
     """Files authored by OWN_AUTHOR must carry the repo's latest git tag as metadata.version; a sub-skill or reference inherits its router's author."""
     tag = latest_tag(root)
     for md in sorted(skills.rglob("*.md")):
         rel = md.relative_to(skills)
-        m = FRONTMATTER.match(md.read_text())
-        meta = parse_mapping(m.group(1)).get("metadata") if m else None
-        if not isinstance(meta, dict) or "version" not in meta:
+        meta = read_meta(md)
+        if "version" not in meta:
             continue
         author = meta.get("author")
         if not author and len(rel.parts) > 1:
-            router = skills / rel.parts[0] / "SKILL.md"
-            rm = FRONTMATTER.match(router.read_text()) if router.exists() else None
-            rmeta = parse_mapping(rm.group(1)).get("metadata") if rm else None
-            author = rmeta.get("author") if isinstance(rmeta, dict) else None
+            author = read_meta(skills / rel.parts[0] / "SKILL.md").get("author")
         if author == OWN_AUTHOR and meta["version"].lstrip("v") != tag.lstrip("v"):
             report.fail(f"{rel}: metadata.version '{meta['version']}' != latest git tag '{tag}' (author {OWN_AUTHOR})")
 

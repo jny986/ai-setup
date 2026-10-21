@@ -57,7 +57,7 @@ Rules:
 ## Modify a skill
 
 1. Edit the file. Change behaviour in one place; if a meaning lives in two files, fix both.
-2. Version: when `metadata.author` is `jny986`, `metadata.version` is always the latest git tag on this repo (`git describe --tags --abbrev=0`, without the `v` prefix if the existing files omit it). Never bump it for an edit; it changes only when a new tag is created. Other authors bump `metadata.version` for behaviour changes. The indexes read it, so rebuild them.
+2. Version: when `metadata.author` is `jny986`, `metadata.version` is always the latest git tag on this repo (`git describe --tags --abbrev=0`; a leading `v` is ignored when comparing). Never bump it for an edit; it changes only when a new tag is created. Other authors bump `metadata.version` for behaviour changes. The indexes read it, so rebuild them.
 3. Renaming or moving: update the folder or file name, `name`, router table rows, links, and any `/<skill>` mentions; `grep` the repo for the old name.
 4. Adding content from another upstream: append to each `based_on_*` key, keeping the lists aligned.
 5. Run the rebuild and `scripts/check-all.sh` as above.
