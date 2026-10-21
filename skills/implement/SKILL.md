@@ -3,7 +3,7 @@ name: implement
 description: "Implement a feature, change, spec, or ticket. Select the scope workflow, relevant project context, and page or component workflows for new or existing UI, alongside any required non-UI work. Sub-skills: ticket, spec, page, component."
 license: MIT
 metadata:
-  version: "2.0.0"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills

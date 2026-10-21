@@ -2,9 +2,9 @@
 name: analytics-tracking
 description: When the user wants to set up, audit, or optimize analytics tracking (GA4, events, conversions). Also use when the user mentions "Google Analytics," "GA4," "event tracking," "conversions," "attribution model," "gtag," "data layer," "GA4 setup," "conversion tracking," "event setup," "User ID tracking," "CTA attribution," "tracking plan," "tag manager," "GTM," "Mixpanel," "Segment," "are my events firing," or "analytics isn't working." For traffic insights, use traffic-analysis. For choosing attribution models or reconciling conflicting numbers across tools, use attribution.
 metadata:
-  version: 1.3.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: analytics-tracking, analytics
 ---
 
@@ -270,6 +270,7 @@ For implementation, see the [tools registry](https://github.com/coreyhaines31/ma
 
 - **traffic-analysis**: UTM, source attribution, AI traffic in GA4; attribution for channel optimization
 - **seo-analytics**: GSC analysis (correlate with GA4); article database, benchmark, SEO monitoring
+- **conversion-tracking**: Getting conversions (including GA4 key events from forms and bookings) to ad platforms and GA4, and verifying they arrive
 - **attribution**: Attribution models, multi-touch/MMM/incrementality, reconciling conflicting numbers (once tracking is live)
 - **ab-testing**: Experiment tracking
 - **conversion-optimization**: Conversion optimization (uses this data)

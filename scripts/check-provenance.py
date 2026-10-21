@@ -32,6 +32,7 @@ def check(root, fail_on_drift=False, remote=False):
     modules = {repo_slug(url): path for path, url in SUBMODULE.findall(gitmodules.read_text())} if gitmodules.exists() else {}
     drift = report.fail if fail_on_drift or remote else report.warn
     pinned = {}
+    drifted = {}
 
     def pin(repo):
         if repo not in pinned:
@@ -39,9 +40,11 @@ def check(root, fail_on_drift=False, remote=False):
             pinned[repo] = out[2] if len(out) >= 3 and out[1] == "commit" else None
         return pinned[repo]
 
-    for name, folder in skill_dirs(root).items():
-        meta = (frontmatter(folder / "SKILL.md") or {}).get("metadata", {})
-        if not meta.get("based_on_repo"):
+    # Every skill file: SKILL.md, sub-skills and references each record their own upstream.
+    files = {str(md.relative_to(root / "skills")): md for folder in skill_dirs(root).values() for md in sorted(folder.rglob("*.md"))}
+    for name, md in files.items():
+        meta = (frontmatter(md) or {}).get("metadata", {})
+        if not isinstance(meta, dict) or not meta.get("based_on_repo"):
             continue
         repos = [r.strip() for r in meta["based_on_repo"].split(",")]
         versions = [v.strip() for v in meta.get("based_on_version", "").split(",")]
@@ -51,7 +54,12 @@ def check(root, fail_on_drift=False, remote=False):
                 continue
             sha, recorded = pin(repo), re.search(r"\(([0-9a-f]+)\)", version)
             if sha and recorded and not sha.startswith(recorded.group(1)):
-                drift(f"{name}: based_on_version {version} but {modules[repo]} is pinned at {sha[:7]}")
+                drifted.setdefault((repo, version), []).append(name)
+
+    # One line per stale (repo, version), not per file: hundreds of files can share one upstream bump.
+    for (repo, version), names in drifted.items():
+        shown = ", ".join(names[:3]) + (", ..." if len(names) > 3 else "")
+        drift(f"{len(names)} file(s) record based_on_version {version} but {modules[repo]} is pinned at {pin(repo)[:7]}: {shown}")
 
     if remote:
         for repo, path in modules.items():

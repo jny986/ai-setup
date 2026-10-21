@@ -2,7 +2,7 @@
 name: robots-txt
 description: When the user wants to configure, audit, or optimize robots.txt. Also use when the user mentions "robots.txt," "crawler rules," "block crawlers," "AI crawlers," "GPTBot," "allow/disallow," "disallow path," "crawl directives," "user-agent," "block Googlebot," "fix robots.txt," "robots.txt blocking," or "search engine crawling." For indexing, use indexing.
 metadata:
-  version: 1.2.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: robots-txt

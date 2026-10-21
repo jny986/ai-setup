@@ -4,7 +4,7 @@ description: "Pick, adapt and schedule recurring marketing workflows that an age
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: marketing-loops
 ---
 
@@ -88,7 +88,7 @@ Default to time-of-day cron for review-style loops (weekly review, ranking watch
 
 ## The Catalog
 
-`references/loop-catalog.md` holds the full library — 52 marketing loops with thorough funnel coverage: SEO & Content, Paid, Earned/Social/Partnerships, Outbound, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Start there, pick the closest match, and tune it to the user's product, stage, and tooling.
+`references/loop-catalog.md` holds the full library — 58 marketing loops with thorough funnel coverage: SEO & Content, Paid, Earned/Social/Partnerships, Outbound, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Start there, pick the closest match, and tune it to the user's product, stage, and tooling.
 
 ## Running a whole channel: the SEO operator
 

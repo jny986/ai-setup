@@ -5,7 +5,7 @@ Root `skills.html` is generated. Never hand-edit it; the next build overwrites t
 ## Update
 
 ```sh
-python3 scripts/build-marketing-index.py
+python3 scripts/build-index.py
 ```
 
 Run after adding, moving, renaming or re-describing a skill, or after changing a sub-skill row in the marketing, git, security, design, implement or docs router. The same run rewrites the marked spans in `SKILLS.md`.
@@ -50,7 +50,7 @@ The script exits with "markers missing" if any pair is gone.
 
 ## Give another skill sub-skills
 
-1. Add a router-table parser beside `sub_skills()`, `linked_sub_skills()` and `situation_sub_skills()` in `scripts/build-marketing-index.py`.
+1. Add a router-table parser beside `sub_skills()`, `linked_sub_skills()` and `situation_sub_skills()` in `scripts/build-index.py`.
 2. Build its tree with `tree(rows, "<skill>")`.
 3. Add it to the `trees` dict passed to `skills_page`, and add a `splice(...)` call plus a new marker pair in `SKILLS.md`.
 

@@ -6,7 +6,9 @@ metadata:
   version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: kostja94/bricks@fa7e1e0 (MIT)
+  based_on_repo: kostja94/bricks
+  based_on_version: main(fa7e1e0)
+  based_on_skill: component-builder
 ---
 
 Build or change a component or bounded composition within the coordinating workflow's requirements. Page-level hierarchy, routing, and metadata belong to [page](page.md). Existing component contracts remain authoritative outside the requested change.

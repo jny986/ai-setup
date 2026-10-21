@@ -2,9 +2,9 @@
 name: public-relations
 description: When the user wants to plan PR, write a press release, or manage media relations. Also use when the user mentions "public relations," "PR," "press release," "media relations," "news release," "journalist," "media coverage," "product announcement," or "earned media." Also use when the user mentions "newsjacking," "pitch a journalist," "HARO," "Qwoted," "press requests," "press page," "newsroom," "podcast guest prep," "crisis communications," "data breach statement," "outage statement," or "story angle." For on-site "As Seen In" or logos page, use `implement/sub-skills/references/pages/marketing/press.md`.
 metadata:
-  version: 1.1.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: public-relations, public-relations
 ---
 
@@ -131,6 +131,7 @@ Ignore AVE (advertising value equivalency); it is a vanity metric.
 - **No news / story angle**: [story-angles.md](references/story-angles.md); a milestone alone isn't a story, a milestone with narrative is.
 - **Respond to a HARO query**: [press-platforms.md](references/press-platforms.md); use the template, under 200 words.
 - **Podcast prep**: [podcast-guest-prep.md](references/podcast-guest-prep.md); research the show, extract recurring threads and host profiles, map your stories onto them.
+- **Get us more backlinks**: PR earns the highest-ceiling links but takes the most effort. For reclamation, partner pages, best-X lists, and the rest of a link program, use the **link-building** skill and treat PR as one of its tactics.
 
 ## Output Format
 

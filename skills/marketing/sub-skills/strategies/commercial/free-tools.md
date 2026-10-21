@@ -7,7 +7,7 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: free-tools
 ---
 
@@ -33,7 +33,7 @@ Before designing a tool strategy, have an answer for each of these (take busines
 
 ## Core Principles
 
-**"Your product is my marketing opportunity."** Bezos said "your margin is my opportunity." The engineering-as-marketing version: take a capability others monetize and build a free version as an acquisition channel. Unsplash gave away the stock photos Getty sold — and Getty acquired it.
+**"Your product is my marketing opportunity."** Bezos said "your margin is my opportunity." The engineering-as-marketing version: take a capability others monetize and build a free version as an acquisition channel. Unsplash gave away the stock photos Getty sold — and Getty acquired it. See [references/tool-benchmarks.md](references/tool-benchmarks.md) for sourced cases and measurement limits.
 
 ### 1. Solve a Real Problem
 - Solves a problem your audience actually has
@@ -67,7 +67,7 @@ Before designing a tool strategy, have an answer for each of these (take busines
 
 **When picking a type or brainstorming concepts by industry**: See [references/tool-types.md](references/tool-types.md) for examples and implementation tips per type.
 
-**When setting expectations or justifying the build**: See [references/tool-benchmarks.md](references/tool-benchmarks.md) for named cases (Unsplash, HubSpot Website Grader, Moz, Buffer, Shopify) with conversion numbers.
+**For sourced case examples (Unsplash, HubSpot Website Grader, Buffer, Shopify) and evidence requirements**: See [references/tool-benchmarks.md](references/tool-benchmarks.md)
 
 ---
 
@@ -173,15 +173,16 @@ Rate each factor 1-5 (max 40):
 
 ## Common Pitfalls
 
-- **Over-engineering** — Shipping a bloated tool when the winning cases were tiny (Unsplash: 3 hrs; Website Grader: 2 engineers, 2 weeks). Scope to the one job.
-- **Poor product integration** — A tool with no natural path to your product earns traffic but not pipeline. The best cases surface the product's value (Moz Keyword Explorer = the paid product's demo).
+- **Over-engineering** — Shipping a bloated tool before validating demand. Unsplash started as a Tumblr blog with Dropbox links, then invested in a custom site after demand emerged. Scope to one useful job and test it with your audience.
+- **Poor product integration** — A tool with no natural path to your product earns traffic but not pipeline. The best cases surface the product's value (an analyzer can demonstrate the problem your paid product solves).
 - **Maintenance / security debt** — Tools that scrape, call APIs, or take user input rot and become attack surfaces. Budget for upkeep before you build.
-- **Vanity metrics** — Visitors and usage feel good but don't pay. Track leads, qualification rate, and trial/signup conversion — the numbers the case library reports.
+- **Vanity metrics** — Visitors and usage feel good but don't pay. Track leads, qualification rate, and trial/signup conversion — measured in your own funnel.
 
 ## Related Skills
 
 - **lead-magnets**: For downloadable content lead magnets (ebooks, checklists, templates)
 - **conversion-optimization**: For optimizing the tool's landing page
 - **seo-audit**: For SEO-optimizing the tool
+- **link-building**: For promoting the tool to sites that link to resources like it
 - **analytics-tracking**: For measuring tool usage
 - **email-marketing**: For nurturing leads from the tool

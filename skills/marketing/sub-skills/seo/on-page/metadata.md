@@ -2,7 +2,7 @@
 name: page-metadata
 description: When the user wants a full-page metadata audit or implementation across discovery, search intent, title, description, canonical, robots, hreflang, Open Graph, Twitter Cards, code or CMS changes, build validation, rendered HTML, production verification, localization, or post-release observation. Also use for "metadata audit," "sitewide meta optimization," "metadata implementation," "meta robots," "hreflang," "viewport," or "charset." For an isolated title, description, heading, Open Graph, or Twitter Card task, use its specialist skill directly.
 metadata:
-  version: 2.0.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: page-metadata

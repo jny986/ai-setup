@@ -1,7 +1,7 @@
 ---
 metadata:
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: ai-seo
 ---
 
@@ -54,6 +54,8 @@ Practical today: make sure your highest-intent actions (signup, pricing, demo bo
 - **Have a coding agent do it** in the site's repo, with the same scoping: a few actions, existing logic, a test for each.
 
 Whichever path, test that each tool rejects bad input, that submissions land where the normal form's do (CRM, inbox, conversion tracking), and that nothing bypasses consent or rate limits.
+
+For products an agent installs mid-task (developer tools, APIs, infrastructure), the next step past acting on your site is being the vendor the agent picks in the first place. See [agent-defaults.md](agent-defaults.md).
 
 ## Citation-source volatility (why you diversify)
 

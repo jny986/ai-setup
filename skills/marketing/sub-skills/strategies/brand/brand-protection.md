@@ -2,7 +2,7 @@
 name: brand-protection
 description: When the user faces brand impersonation, fake websites, phishing sites, or trademark infringement. Also use when the user mentions "fake site," "impersonation," "phishing site," "trademark infringement," "domain squatting," or "brand abuse." For monitoring, use brand-monitoring.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: brand-protection

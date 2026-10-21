@@ -2,7 +2,7 @@
 name: rebranding-strategy
 description: When the user wants to plan or execute a rebrand—domain change, 301 redirects, migration, or announcement. Also use when the user mentions "rebranding," "rebrand," "domain change," "domain migration," "301 redirect," "change domain name," "rebrand announcement," "social media rebrand," "brand launch," or "domain redirect." For domain choice, use domain-selection.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: rebranding-strategy

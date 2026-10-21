@@ -2,7 +2,7 @@
 name: heading-structure
 description: When the user wants to write or optimize H1-H6, fix heading hierarchy, improve content structure, rewrite an H1, or align headings with page intent. This skill owns actual heading changes; page-metadata may only check and report metadata-to-heading alignment.
 metadata:
-  version: 2.0.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: heading-structure

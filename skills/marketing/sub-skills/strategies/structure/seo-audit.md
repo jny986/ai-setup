@@ -2,9 +2,9 @@
 name: seo-audit
 description: When the user wants to run an SEO audit, technical SEO audit, or site health check. Also use when the user mentions "SEO audit," "technical audit," "site audit," "crawl audit," "indexing audit," "SEO health," or "fix SEO issues." For prioritization and organic strategy, use seo-strategy. For GSC data analysis, use seo-analytics.
 metadata:
-  version: 1.1.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: seo-audit, seo-audit
 ---
 
@@ -455,6 +455,7 @@ Same format as above
 - **indexing**: Indexing issues, noindex, Search Console
 - **core-web-vitals**: LCP, INP, CLS optimization
 - **generative-engine-optimization**: For optimizing content for AI search engines (AEO, GEO, LLMO)
+- **link-building**: For closing an authority gap with earned links and mentions
 - **programmatic-seo**: For building SEO pages at scale
 - **website-structure**: For page hierarchy, navigation design, and URL structure
 - **schema-markup**: For implementing structured data

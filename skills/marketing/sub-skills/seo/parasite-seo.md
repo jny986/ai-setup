@@ -2,7 +2,7 @@
 name: parasite-seo
 description: When the user wants to choose or execute third-party platform SEO (high-authority sites for rankings or backlinks). Also use when the user mentions "parasite SEO," "parasitic SEO," "barnacle SEO," "hosted content," "third-party publishing," "Medium SEO," "Reddit SEO," "GitHub parasite SEO," "LinkedIn Pulse SEO," "high-authority platforms," "distributed authority," "borrow domain authority," or "rank without own website." For GitHub-specific playbooks, use github. For Medium.com posts, use medium-posts. For Grokipedia, use grokipedia-recommendations. For AI answer-engine visibility (not platform selection), use generative-engine-optimization.
 metadata:
-  version: 1.1.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: parasite-seo

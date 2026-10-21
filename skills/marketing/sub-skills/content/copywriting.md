@@ -1,10 +1,10 @@
 ---
 name: copywriting
-description: When the user wants to write or optimize short-form marketing copy—headlines, CTAs, ad copy, landing page copy, email copy. Also use when the user mentions "copywriting," "headline," "CTA copy," "ad copy," "landing page copy," "sales copy," "conversion copy," "PAS," "AIDA," "BAB," "copy formula," or "differentiation." For long-form article bodies (blog posts, guides), use article-content.
+description: When the user wants to write or optimize short-form marketing copy—headlines, CTAs, ad copy, landing page copy, email copy. Also use when the user mentions "copywriting," "headline," "CTA copy," "ad copy," "landing page copy," "sales copy," "conversion copy," "PAS," "AIDA," "BAB," "copy formula," or "differentiation." For long-form article bodies (blog posts, guides), use article-content. Diagnoses the input first (blank brief, real voice, or point edit) and changes only what it calls for.
 metadata:
-  version: 1.2.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: copywriting, copywriting
 ---
 
@@ -15,6 +15,7 @@ Guides **short-form marketing copy**—ads, landing pages, email, CTAs. Copywrit
 ## Initial Assessment
 
 **Project context:** Read the product marketing context when present. Without it, use available project material or user-provided facts and ask for missing information.
+Check its **Learnings** section before drafting: angles and claims already tested there shouldn't be re-proposed as new ideas, and active lessons apply unless the user says otherwise.
 
 Identify:
 1. **Context**: Ad, landing page, email, CTA, or general
@@ -86,6 +87,43 @@ For page copy, also gather (take what the product marketing context already cove
 **Rules**: Front-load keywords; keep under 60 chars for SERP; avoid clickbait; match ad-to-page alignment.
 
 **Information gain (differentiation)**: Copy that restates what competitors say adds zero value. Lead with unique angle, proprietary data, or contrarian insight. "What does this headline/promise add that others don't?" See **article-content** for full information gain strategy in long-form.
+
+## Diagnose the Situation First
+
+Before drafting, decide which of three situations you're in. Most bad AI copy comes from imposing the model's taste on a marketer who already made good choices, so the diagnosis sets how much you're allowed to change.
+
+| Situation | What you were given | Your job |
+|---|---|---|
+| **A. Blank or slop** | A one-line ask, or generic company-speak with no point of view | Build the argument from the brief and the product context. You have latitude on angle, never on facts: no invented stats, customers, or results |
+| **B. Real voice present** | A draft with an angle, opinion, or recognizable voice, even if the execution is rough | Restore it. Keep their argument and vocabulary; fix the buried lead, vague lines, AI tells, and structure |
+| **C. Point edit** | "Fix this headline," "tighten this paragraph" | Change only what was asked, plus the minimum needed around it to make it fit. Return the rest untouched |
+
+State the diagnosis in one line with the evidence ("B: the draft argues against agencies in the founder's voice, uses 'ship' and 'stuff'") before writing.
+
+**Read taste out of the input (B and C).** What they gave you is evidence of their judgment:
+- **Vocabulary is a voice choice.** If they write "stuff" and "ship," don't upgrade to "solutions" and "deploy."
+- **Where they spent words is a priority choice.** Keep the emphasis.
+- **What they left out is a scope choice.** Don't add sections they didn't ask for.
+- **Their angle is the positioning.** Deepen it; don't replace it with one you like better.
+
+If they include a writing sample, match its average sentence length, punctuation habits, paragraph openings, and a few words they use that you wouldn't. A sample beats the default voice when the two conflict.
+
+## Drafting Protocol
+
+**Decompose and lock.** Don't write the page in one pass. Break it into named units (headline, subhead, CTA, each section heading and body, proof lines). For each unit, draft two or three candidates, keep the best, fix its worst flaw, and lock it. Assemble and read the whole page once for flow. In Situation B, lines that already work are locked from the start.
+
+**The three-question gate.** Run every line you write or keep through three questions:
+1. **Can the reader picture it?** A specific image, scene, or object beats an abstraction.
+2. **Can it be proven true or false?** A falsifiable claim is a claim; "best-in-class" is decoration.
+3. **Could a competitor write this exact sentence?** If yes, it fails (the swap test).
+
+Three passes, keep it. Two, sharpen the weak one. One or none, rewrite it from the facts or flag what's missing with `[NEED: ...]`.
+
+**Ration the punch.** Most lines should be plain, specific, and declarative. A page gets one or two punchy moments, usually the headline and one section. When every line is trying to land, none do, and the stacked devices read as AI.
+
+**The leave-it-alone test.** Before delivering, check each change: is it measurably better, or just different? Revert changes you can't give a reason for. This matters most in Situations B and C.
+
+*Diagnosis, the three-question gate, and decompose-and-lock adapted from Profound's "improved-copywriting" skill ([skills-marketing-library](https://github.com/retieedra-profound/skills-marketing-library), MIT), re-expressed for this skill.*
 
 ## Copywriting Principles
 
@@ -159,6 +197,8 @@ Clients and buyers reject copy that reads as AI-written, and a reader who spots 
 ### Check before delivering
 
 Before handing over any draft, run the self-check in [references/ai-tells.md](references/ai-tells.md#the-self-check) (the full blacklist with examples and rewrites). Done when every self-check step passes. Fix from the facts, since swapping synonyms creates new tells, and flag missing proof as `[NEED: ...]` rather than inventing it.
+
+Removing tells leaves copy clean but flat. For a full rewrite, build a writer first (who's writing, what they know cold, what they'd cut, what they think) and check for second-generation tells such as wisdom-shaped sentences and tidy closers. See [references/ai-tells.md](references/ai-tells.md#build-a-writer).
 
 ## Best Practices
 
@@ -312,6 +352,8 @@ Maintain consistency, but adjust intensity:
 - CTAs should be action-oriented
 
 ## Output Format
+
+For a point edit (Situation C), return only the changed lines with a one-line reason each. Skip the annotations and alternatives below unless asked.
 
 - **Framework** (PAS, AIDA, BAB) recommendation
 - **Headline** options (2–3 variants)

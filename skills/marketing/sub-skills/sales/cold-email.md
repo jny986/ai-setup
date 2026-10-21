@@ -4,7 +4,7 @@ description: "Write and run B2B cold outbound that gets replies, from first emai
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: cold-email
 ---
 

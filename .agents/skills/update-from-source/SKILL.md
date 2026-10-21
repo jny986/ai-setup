@@ -39,7 +39,7 @@ Done when every hunk in the upstream diff is ported, deliberately skipped, or ra
 
 - Set `based_on_version` to `<tag>(<short hash>)` of the target: `git -C source-skills/<owner>-<repo> describe --tags --always`, with the hash in parentheses.
 - Bump the skill's own `metadata.version`.
-- Run `python3 scripts/build-marketing-index.py` when a description or router row changed.
+- Run `python3 scripts/build-index.py` when a description or router row changed.
 - Run `scripts/check-all.sh`; done when it is green with `check-provenance.py --fail-on-drift` clean for the touched skills.
 
 Leave the submodule bump and skill edits uncommitted for the user to review.

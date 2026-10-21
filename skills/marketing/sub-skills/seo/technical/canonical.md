@@ -2,7 +2,7 @@
 name: canonical-tag
 description: When the user wants to configure canonical URLs, fix duplicate content, or consolidate URL signals. Also use when the user mentions "canonical," "canonical URL," "duplicate content," "duplicate content fix," "preferred URL," or "URL consolidation." For GSC duplicates, use seo-analytics.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: canonical-tag

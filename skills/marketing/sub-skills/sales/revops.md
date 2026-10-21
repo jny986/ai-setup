@@ -4,7 +4,7 @@ description: "Design lead lifecycle stages, scoring, routing, pipeline hygiene, 
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: revops
 ---
 

@@ -1,7 +1,7 @@
 ---
 metadata:
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: analytics
 ---
 
@@ -218,8 +218,8 @@ referrer: "https://google.com"
 ```
 source: "google"
 medium: "cpc"
-campaign: "spring_sale"
-content: "hero_cta"
+campaign: "spring-sale"
+content: "hero-cta"
 ```
 
 **Product Context (E-commerce):**

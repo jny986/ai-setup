@@ -1,7 +1,7 @@
 ---
 metadata:
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: ads
 ---
 
@@ -102,6 +102,8 @@ Add groups in ROI order, funding each before the next: **1. Product value** (dir
 ## Retargeting setup (non-retroactive!)
 
 **LinkedIn retargeting audiences only start collecting from the moment you create them.** Create every retargeting audience you might ever want (site visitors, video viewers, ad engagers, lead-form openers, company page visitors) **before launch** — data you didn't capture is gone permanently.
+
+**Sequence by behavior**, so each audience sees the next step instead of the same ad again: saw a founder or creator ad → customer proof; visited the site → the use case that matches the page they read; watched most of a video → a stronger call to action (trial, demo, or Lead Gen Form). Exclude anyone who already converted.
 
 Cross-channel: tag paid-search traffic with UTMs and build LinkedIn (and Meta) retargeting audiences from it — see the [ABM playbook](abm-playbook.md) for the mechanic.
 

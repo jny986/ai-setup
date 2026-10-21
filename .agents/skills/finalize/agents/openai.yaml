@@ -1,0 +1,5 @@
+interface:
+  display_name: "Finalize"
+  short_description: "Review a branch, skills-check skills/, run checks and open a PR"
+policy:
+  allow_implicit_invocation: false

@@ -2,7 +2,7 @@
 name: rendering-strategies
 description: When the user wants to choose or optimize rendering strategy for SEO. Also use when the user mentions "SSR," "SSG," "CSR," "ISR," "static rendering," "dynamic rendering," "server-side rendering," "client-side rendering," "JavaScript rendering," "pre-rendering," "prerender," "content in initial HTML," or "crawler visibility." For crawl issues, use site-crawlability.
 metadata:
-  version: 1.0.2
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: rendering-strategies

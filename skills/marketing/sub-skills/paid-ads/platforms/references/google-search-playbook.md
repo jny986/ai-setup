@@ -1,7 +1,7 @@
 ---
 metadata:
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: ads
 ---
 
@@ -115,6 +115,8 @@ QS (1–10, per keyword) = expected CTR + ad relevance + landing page experience
 Value ranking: **brand Search > high-intent non-brand Search > remarketing > PMax > broad demand-gen.** PMax earns budget only after the cheaper, clearer wins are maxed. Never run it as the first campaign, on weak tracking, or on tiny budgets.
 
 Guardrails when you do run it: account-level **brand exclusions** (or it cannibalizes brand Search and claims the credit); audience signals from first-party data; negative keywords from day one; offline conversions imported *before* scaling it; check the CRM quality of PMax leads by campaign — if they convert to pipeline at half the rate of Search leads, PMax is cheap-looking and expensive-in-reality. Google auto-generates a bad video if you don't supply one.
+
+Check for overlap with Search as a matter of course. In a February 2025 study of 503 accounts it manages, Optmyzr (a PPC tool vendor) found 91% had exact keyword overlap between Search and PMax, touching 56% of 5,768 Search campaigns. That measures how common overlap is; it says nothing about how much spend the overlap costs. To size it for your account, compare the PMax search-terms insights against your Search keywords, and look for brand and high-intent terms that Search would win more cheaply.
 
 ## Benchmarks and the weekly scorecard
 

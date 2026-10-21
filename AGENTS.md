@@ -14,6 +14,10 @@ Default canonical labels: `needs-triage`, `needs-info`, `ready-for-agent`, `read
 
 Single-context: one root `GLOSSARY.md` plus `docs/adr/`; ignore the upstream submodules in `source-skills/`. See `docs/agents/domain.md`.
 
+### Agent Docs
+
+Adding or modifying a skill, its frontmatter or `based_on_*` provenance: `docs/agents/skills.md`. Building a router and its sub-skills: `docs/agents/router-skills.md`. Regenerating `skills.html` and `SKILLS.md`: `docs/agents/skills-html.md`.
+
 ## Shell commands
 
 - Run one command per call. Chains (`&&`, `;`, `|`) can be rejected as a whole.

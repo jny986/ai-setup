@@ -4,7 +4,9 @@ metadata:
   version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: kostja94/marketing-skills@8dd89c5 (MIT)
+  based_on_repo: kostja94/marketing-skills
+  based_on_version: v1.0.0(8dd89c5)
+  based_on_skill: favicon-generator
 ---
 
 # Favicon and app icons

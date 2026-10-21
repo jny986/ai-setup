@@ -43,3 +43,9 @@
 [submodule "source-skills/blader-humanizer"]
 	path = source-skills/blader-humanizer
 	url = https://github.com/blader/humanizer.git
+[submodule "source-skills/UseAI-pro-openclaw-skills-security"]
+	path = source-skills/UseAI-pro-openclaw-skills-security
+	url = https://github.com/UseAI-pro/openclaw-skills-security.git
+[submodule "source-skills/OWASP-www-project-agentic-skills-top-10"]
+	path = source-skills/OWASP-www-project-agentic-skills-top-10
+	url = https://github.com/OWASP/www-project-agentic-skills-top-10

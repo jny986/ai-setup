@@ -2,7 +2,7 @@
 name: indie-hacker-strategy
 description: When the user wants indie hacker or bootstrapping founder strategy—growth, channels, Build in Public, or solo founder tactics. Also use when the user mentions "indie hacker," "indie developer," "bootstrapping," "bootstrapped founder," "solo founder," "Build in Public," "scratch your own itch," "Micro-SaaS," "first 100 users," or "solo company." For cold start, use cold-start-strategy.
 metadata:
-  version: 1.1.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: indie-hacker-strategy

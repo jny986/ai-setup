@@ -2,7 +2,7 @@
 name: translation
 description: Translate, transcreate, review, or maintain multilingual product and marketing content, including source locking, glossary decisions, language style, machine-assisted workflows, legal-content safeguards, QA, and source-change synchronization. Use localization-strategy for market scope, locale architecture, rollout, and production release planning.
 metadata:
-  version: 2.0.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: translation

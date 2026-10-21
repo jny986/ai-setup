@@ -1,7 +1,7 @@
 ---
 metadata:
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: marketing-loops
 ---
 
@@ -72,3 +72,24 @@ Log at minimum: timestamp, how many items checked, how many acted on, and a shor
 - To **reset** a loop, clear its `cursor`/`handled` — but keep `cooldowns` so a reset doesn't spam people who were recently contacted.
 - On **first run** (no state yet), set the watermark to "now" rather than processing all history, or you'll blast every historical item. If you genuinely want a backfill, do a dry run first (log what it *would* do, act on nothing) and respect cooldowns.
 - Log IDs or hashes in state and run logs, never raw PII (see [loop-guardrails.md](loop-guardrails.md)).
+
+## Session end: decisions and learnings
+
+The state file stops a loop from repeating itself. It doesn't help the rest of the team, or the next drafting session, learn from what the loop found. Close every run that acted, and every manual working session on a loop, with a short session-end step:
+
+1. **Write 1–3 decisions to the run log.** A decision is something that changes what happens next: "paused the competitor-term ad group pending a new landing page," "kept variant B as control," "dropped Reddit from the listening sources." Routine runs that changed nothing get no decision line; "no action" in the log is enough.
+2. **Note open items** that carry to the next run (a test still collecting data, an approval still pending) in the state file's `in_flight`, so the next run picks them up instead of starting over.
+3. **Propose learnings that will still hold next quarter.** If the run produced a lesson that should change future drafts or plans, propose a row for the **Learnings** table in `docs/marketing/product-marketing.md` (format and promotion rules are in [product-marketing](../../brand/product-marketing.md)). Promote only lessons backed by a finished test or a pattern seen in two or more runs or campaigns. One-off results stay in the run log.
+4. **Show proposals to the user.** Learnings are shared context every skill reads, so they're added on approval, never written silently by a scheduled run.
+5. **Retire what the run contradicted.** If a run's result contradicts an active learning, propose marking it `retired` with the reason.
+
+Example run-log line with decisions:
+
+```
+2026-10-15T09:00Z  checked=42  acted=3  note="2 fatigued ads refreshed; 1 learning proposed"
+  decision: kept UGC testimonial as control (CTR 1.9% vs 1.1%, 6,800 impressions each)
+  decision: paused static carousel concept (3 rounds, no winner)
+  learning-proposed: "Testimonial hooks beat feature demos on Meta cold audiences" (2 campaigns)
+```
+
+The run log stays the full record. The Learnings table holds the short list of lessons that should shape the next piece of work.
