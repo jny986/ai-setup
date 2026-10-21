@@ -1,11 +1,11 @@
 # Router skills
 
-A router skill is one `SKILL.md` that picks among a group of related sub-skills, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `code-review`, `review-prs` and `resolving-merge-conflicts`.
+A router skill is one `SKILL.md` that picks among a group of related sub-skills, so the model (or user) needs one entry point instead of remembering many skill names. The `git` skill is the worked example: it routes `commit`, `create-pr`, `code-review`, `review-prs`, `pr-fixes` and `resolving-merge-conflicts`.
 
 ## When to build one
 
 - The group has 5+ members, or members nest. In `git`, `create-pr` commits via `commit`.
-- Members become plain Markdown files read by the router. Keep user-only workflows as standalone skills with `disable-model-invocation: true` and `allow_implicit_invocation: false`; an implicitly invoked router must not invoke them.
+- Members become plain Markdown files read by the router. Keep user-only workflows as standalone skills with `disable-model-invocation: true` and `allow_implicit_invocation: false`; an implicitly invoked router must not invoke them. The explicit exception is `git pr-fixes`, which delegates branch finalisation to `finalise` before asking for approval to reply to review threads.
 - Skip it when each skill already has a sharp trigger description. A router adds nothing then.
 
 ## Layout
@@ -16,7 +16,7 @@ skills/git/
   agents/openai.yaml               # router metadata
   sub-skills/
     commit.md                      # the former SKILL.md
-    create-pr.md code-review.md review-prs.md resolving-merge-conflicts.md
+    create-pr.md code-review.md review-prs.md pr-fixes.md resolving-merge-conflicts.md
 ```
 
 A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `references/` or `assets/` folder beside it, shared with the other sub-skills in that folder, so relative links still resolve. References can nest (`security` has `references/languages/` and `references/infrastructure/`).

@@ -74,6 +74,32 @@ Payload: `body`, `commit_id`, `path`, `line`, `side` (all required for a single-
 - Reviews and top-level comments: `gh pr view <n> --json comments,reviews`
 - Inline comments: `gh api repos/{owner}/{repo}/pulls/<n>/comments --jq '.[] | {id, path, line, user: .user.login, body}'`
 
+## Read review threads
+
+For unresolved-thread workflows, use GraphQL `repository.pullRequest.reviewThreads`; the REST comments list alone does not supply resolution state. Get the authenticated login with `gh api user --jq .login`.
+
+Write a GraphQL JSON request to a temp file and run `gh api graphql --input /tmp/threads-<n>.json`. Query `reviewThreads(first: 100, after: $cursor)` for:
+
+- `id`, `isResolved`, `isOutdated`, `path`, `line`, `originalLine`, `viewerCanResolve`.
+- `comments(first: 100)` with each comment's `id`, `databaseId`, `url`, `body`, `createdAt`, `author { login }` and `replyTo { id }`.
+- `pageInfo { hasNextPage endCursor }` on both connections.
+
+Advance the thread cursor until exhausted. Independently exhaust each thread's comments using `node(id: $threadId) { ... on PullRequestReviewThread { comments(first: 100, after: $commentCursor) { ... } } }`. Paginating the outer connection does not paginate nested comments. Use the root comment's URL and REST `databaseId` for linking and replying; keep the thread's GraphQL `id` for resolution. Handle GraphQL `errors` and missing data as failed reads even if the HTTP status is successful.
+
+## Resolve an approved thread
+
+After the calling workflow's approval step, check `viewerCanResolve` and send this mutation through `gh api graphql` using a JSON request file:
+
+```graphql
+mutation($threadId: ID!) {
+  resolveReviewThread(input: {threadId: $threadId}) {
+    thread { id isResolved }
+  }
+}
+```
+
+Confirm the returned `isResolved` is true. A permission failure leaves the thread open and must be reported. Thread fields and mutations are documented in the [GitHub GraphQL pull request reference](https://docs.github.com/en/enterprise-cloud%40latest/graphql/reference/pulls).
+
 ## Check out a PR in its own worktree
 
 Run each as its own call:
