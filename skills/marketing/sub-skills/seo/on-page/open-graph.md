@@ -2,7 +2,7 @@
 name: open-graph
 description: When the user wants to add, audit, implement, or optimize Open Graph metadata for social sharing, including og:title, og:description, og:image, og:url, Facebook previews, LinkedIn previews, or social share previews. For a full metadata lifecycle use page-metadata; for X-specific previews use twitter-cards.
 metadata:
-  version: 2.0.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: open-graph

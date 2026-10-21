@@ -4,7 +4,9 @@ metadata:
   version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: kostja94/pagina@239cb67 (MIT)
+  based_on_repo: kostja94/pagina
+  based_on_version: main(239cb67)
+  based_on_skill: page-builder
 ---
 
 # Page reference catalog

@@ -1,13 +1,13 @@
 ---
 name: product-marketing
-description: "When the user wants to create or update the product marketing context: positioning, ICP, audience, objections, brand voice. Also use when the user mentions \"product marketing context,\" \"positioning,\" \"ICP,\" \"target audience,\" \"customer language,\" \"set up marketing context,\" or \"define our positioning.\" Every other marketing guide reads this document."
+description: "When the user wants to create or update the product marketing context: positioning, ICP, audience, objections, brand voice. Also use when the user mentions \"product marketing context,\" \"positioning,\" \"ICP,\" \"target audience,\" \"customer language,\" \"set up marketing context,\" \"define our positioning,\" \"brand voice,\" \"tone of voice,\" \"brand guidelines,\" \"what have we learned,\" or \"log this learning.\" Every other marketing guide reads this document."
 license: MIT
 metadata:
   version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: product-marketing
 ---
 
@@ -68,7 +68,7 @@ Push for verbatim customer language — exact phrases are more valuable than pol
 
 ## Sections to Capture
 
-Skip sections that don't apply (e.g., Personas for B2C).
+Skip sections that don't apply (e.g., Personas for B2C, Paid Ads if they don't run ads).
 
 ### 1. Product Overview
 - One-line description
@@ -126,9 +126,11 @@ The JTBD Four Forces:
 - Glossary of product-specific terms
 
 ### 10. Brand Voice
-- Tone (professional, casual, playful, etc.)
-- Communication style (direct, conversational, technical)
-- Brand personality (3-5 adjectives)
+- 3-5 voice attributes, each with what it means, what it doesn't mean, and a real line from existing copy
+- Tone by context: how the voice shifts for support, launches, errors, sales, and social
+- Brand words: terms you own, words you never use (with the reason)
+
+Build this from copy that already performed and from the founder's own writing, rather than from adjectives picked in a meeting. See [references/brand-voice.md](references/brand-voice.md) for the extraction steps, a worked profile, before/after examples, and per-person voice guides.
 
 ### 11. Proof Points
 - Key metrics or results to cite
@@ -140,6 +142,17 @@ The JTBD Four Forces:
 - Primary business goal
 - Key conversion action (what you want people to do)
 - Current metrics (if known)
+
+### 13. Paid Ads (optional, only if they run ads)
+The **paid-ads-strategy** guide reads this so the user doesn't re-explain the account every session.
+- Margin reality: the target CPA or ROAS that keeps the business profitable, and the hard floor (the ROAS below which, or CPA above which, to flag immediately)
+- Budget and pacing: monthly budget and acceptable daily variance
+- Conversion truth: which conversion actions count and what each is worth, known tracking weaknesses (lag, double counting, offline gaps), and what separates a good lead from a form fill
+- Campaign naming convention and what each campaign is for, one line each
+- What the agent may do (read, compare, flag, draft, recommend) and may not do without approval (change budgets or bids, pause or launch, edit tracking, publish ads)
+
+### 14. Learnings
+Start this empty. It fills up as work ships (see "Maintaining Learnings" below).
 
 ---
 
@@ -219,9 +232,18 @@ After gathering information, create `docs/marketing/product-marketing.md` with t
 | | |
 
 ## Brand Voice
-**Tone:**
-**Style:**
-**Personality:**
+| Attribute | Means | Doesn't mean | Example line |
+|-----------|-------|--------------|--------------|
+| | | | |
+
+**Tone by context:**
+- Support:
+- Launch:
+- Errors:
+- Sales:
+- Social:
+**Terms we own:**
+**Never use (and why):**
 
 ## Proof Points
 **Metrics:**
@@ -237,6 +259,26 @@ After gathering information, create `docs/marketing/product-marketing.md` with t
 **Business goal:**
 **Conversion action:**
 **Current metrics:**
+
+## Paid Ads (optional)
+**Target CPA / ROAS:**
+**Hard floor:**
+**Monthly budget and daily variance:**
+**Conversions that count:**
+| Action | Means | Value | Feeds bidding? |
+|--------|-------|-------|----------------|
+| | | | |
+**Known tracking weaknesses:**
+**Good lead vs. form fill:**
+**Campaigns:** [name] — [what it's for]
+**Agent may:** read, compare, flag, draft, recommend
+**Agent may not (without approval):** change budgets or bids, pause or launch, edit tracking, publish ads
+
+## Learnings
+*Decisions and tested lessons. Newest first. Keep it to about 20 active entries.*
+| Date | Learning | Evidence | Applies to | Status |
+|------|----------|----------|------------|--------|
+| | | | | |
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
@@ -259,6 +301,27 @@ After gathering information, create `docs/marketing/product-marketing.md` with t
   - **Pure typo-only fix:** save the correction with no version bump or entry. Every other change bumps the version and gets an entry. When the change is a real repositioning, say so plainly — downstream skills will now generate against the new context.
 - Save to `docs/marketing/product-marketing.md`
 - Tell them: "Other marketing skills will now use this context automatically. The Changelog at the bottom tracks every revision — check it to see how your positioning has evolved. Run `/marketing product-marketing` anytime to update it."
+
+## Maintaining Learnings
+
+The Changelog records how the document changed. **Learnings** records what the team found out by shipping: which angles won, which offers flopped, which decisions were made and why. Drafting guides (copywriting, email-marketing, paid-ads-strategy, ad-creative, social) read it before writing so the next brief starts from what's already known.
+
+**Entry format:** one row per learning.
+- **Learning:** one sentence, specific enough to change a draft. "Price-anchored headlines beat outcome headlines on the pricing page" works. "Be clearer" doesn't.
+- **Evidence:** the test, campaign, or source, with the number and sample size. "Variant B +18% trial starts, 2,400 visitors per arm, 3 weeks."
+- **Applies to:** the channels, segments, or guides it affects.
+- **Status:** `active`, `watch` (one data point, worth retesting), or `retired`.
+
+**What earns a place:**
+- A test result that reached its planned sample, or the same pattern seen in two or more campaigns
+- A decision the user made with a reason (positioning, pricing, a channel cut) that future drafts must respect
+- A correction the user gave more than once ("never call it a platform")
+
+**What doesn't:** single-run anecdotes (log those as `watch` or leave them out), task notes, and anything that belongs in another section. A new objection goes in Objections; a new customer phrase goes in Customer Language.
+
+**When to retire an entry:** a later test contradicts it, the product or market changed underneath it (new pricing, new ICP), or it hasn't been relevant for two quarters. Change the status to `retired` and add a line saying why, rather than deleting it, so nobody re-tests a settled question. Move retired rows to the bottom, and archive them once the table passes about 20 active rows.
+
+**Who writes it:** any guide that finishes a test, campaign, or postmortem may propose a row. Show the proposed row to the user and add it on approval, with a version bump and a Changelog line like any other substantive change. Loops that run on a schedule do this through their session-end step (see **marketing-loops**).
 
 ## Related Skills
 

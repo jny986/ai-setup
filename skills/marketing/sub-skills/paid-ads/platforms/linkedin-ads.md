@@ -2,9 +2,9 @@
 name: linkedin-ads
 description: When the user wants to set up, optimize, or manage LinkedIn Ads. Also use when the user mentions "LinkedIn Ads," "LinkedIn Campaign Manager," "Sponsored Content," "Lead Gen Forms," "Sponsored Messaging," "Message Ads," "Conversation Ads," "Accelerate," "Classic ad set," "Audience Network," "objective-based pricing," "Insight Tag," "job title targeting," "company targeting," "Matched Audiences," or "B2B paid ads." For organic posts, use social.
 metadata:
-  version: 1.2.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: linkedin-ads, ads
 ---
 
@@ -133,7 +133,7 @@ Aligns with **organic** shapes in **social** (image, video, document, etc.) as *
 
 | Task | Load |
 |------|------|
-| Bidding progression, audience sizing, penetration scaling, funnel benchmarks, document/conversation ads, TLAs, audit shortlist | [linkedin-b2b-playbook.md](references/linkedin-b2b-playbook.md) |
+| Bidding progression, audience sizing, penetration scaling, behavior-sequenced retargeting, funnel benchmarks, document/conversation ads, TLAs, audit shortlist | [linkedin-b2b-playbook.md](references/linkedin-b2b-playbook.md) |
 | Named-account targeting, pipeline acceleration, cross-channel retargeting, ABM measurement | [abm-playbook.md](references/abm-playbook.md) |
 
 ### Audience knowledge: creative vs targeting

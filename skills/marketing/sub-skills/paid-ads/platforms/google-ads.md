@@ -2,9 +2,9 @@
 name: google-ads
 description: When the user wants to set up, optimize, or manage Google Ads campaigns. Also use when the user mentions "Google Ads," "Google Search Ads," "PPC," "SEM," "PMF testing with ads," "test product-market fit," "Responsive Search Ads," "RSA," "Performance Max," "Quality Score," "keyword bidding," or "Google Display/YouTube ads." For paid mix, use paid-ads-strategy.
 metadata:
-  version: 1.4.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: google-ads, ads
 ---
 
@@ -131,7 +131,7 @@ Deeper operating rules for live accounts; load the one that fits the task.
 | Where to spend first, account structure, match-type gates, negatives, bidding by volume, PMax guardrails | [google-search-playbook.md](references/google-search-playbook.md) |
 | Generating RSAs (mandatory output spec: limits, sidecars, template, self-check) | [rsa-output-spec.md](references/rsa-output-spec.md) |
 | Auditing or grading a live account, quoting benchmarks, recommending changes | [audit-guardrails.md](references/audit-guardrails.md) |
-| Itemised Search + Shopping + PMax + GMC + Demand Gen audit (32 checks) | [google-ads-audit-checklist.md](references/google-ads-audit-checklist.md) |
+| Itemised Search + Shopping + PMax + GMC + Demand Gen audit (32 checks, plus deep dives for conversion signals and wasted-spend negatives) | [google-ads-audit-checklist.md](references/google-ads-audit-checklist.md) |
 | Reading Google Ads data: withheld search terms, conversions vs all_conversions, attribution dates, zero-in-N table | [reading-google-ads-data.md](references/reading-google-ads-data.md) |
 
 ### Audience knowledge: creative vs targeting
@@ -159,4 +159,5 @@ Split brand from non-brand before evaluating or optimising anything. Branded que
 - **keyword-research**: Keyword list, clusters, intent; support terms for negative keywords; PPC data feeds back SEO priority
 - **traffic-analysis**: UTM for attribution; paid–organic cannibalization audit
 - **implement/sub-skills/references/pages/marketing/landing-page.md**: LP structure for paid traffic; PAA → FAQ
-- **analytics-tracking**: Conversion tracking; ROAS measurement
+- **conversion-tracking**: Pixel and conversion tag setup, CAPI, tracking audits
+- **analytics-tracking**: ROAS measurement

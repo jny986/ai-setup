@@ -15,6 +15,7 @@ Paths are relative to this skill's folder; each is a sub-skill file.
 | `seo-analytics` | `sub-skills/analytics/seo.md` | kostja `google-search-console` + `seo-monitoring`, as `references/` | `google-search-console`, `seo-monitoring` |
 | `ab-testing` | `sub-skills/analytics/ab-testing.md` | ours `ab-testing` | `ab-testing` |
 | `attribution` | `sub-skills/analytics/attribution.md` | ours `attribution` | `attribution` |
+| `conversion-tracking` | `sub-skills/analytics/conversion-tracking.md` | ours `conversion-tracking`, with its references, GTM assets and scripts | `conversion-tracking` |
 | `community-forum` | `sub-skills/channels/community/community-forum.md` | kostja | |
 | `community-building` | `sub-skills/channels/community/community-building.md` | ours `community-marketing` | `community-marketing` |
 | `directory-submission` | `sub-skills/channels/community/directory-submission.md` | both: kostja, ours `directory-submissions` | `directory-submissions` |
@@ -66,7 +67,7 @@ Paths are relative to this skill's folder; each is a sub-skill file.
 | `entity-seo` | `sub-skills/seo/entity-seo.md` | kostja | |
 | `local-seo` | `sub-skills/seo/local.md` | kostja | |
 | `backlink-analysis` | `sub-skills/seo/off-page/backlink-analysis.md` | kostja | |
-| `link-building` | `sub-skills/seo/off-page/link-building.md` | kostja | |
+| `link-building` | `sub-skills/seo/off-page/link-building.md` | both: kostja, ours `link-building` | `link-building` |
 | `meta-description` | `sub-skills/seo/on-page/description.md` | kostja | |
 | `featured-snippet` | `sub-skills/seo/on-page/featured-snippet.md` | kostja | |
 | `heading-structure` | `sub-skills/seo/on-page/heading.md` | kostja | |

@@ -1,3 +1,11 @@
+---
+metadata:
+  version: "1.0.0"
+  based_on_repo: kostja94/bricks
+  based_on_version: main(fa7e1e0)
+  based_on_skill: component-builder
+---
+
 # Component quality gates
 
 Acceptance criteria apply to the component’s reachable states and actual responsibilities. Interaction-heavy navigation or an agent workspace requires different evidence from a static badge.

@@ -6,7 +6,9 @@ metadata:
   version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
-  based_on: kostja94/pagina@239cb67 (MIT)
+  based_on_repo: kostja94/pagina
+  based_on_version: main(239cb67)
+  based_on_skill: page-builder
 ---
 
 Build or change a page within the coordinating workflow's requirements. For an existing page, preserve its established responsibilities outside the requested change; the page contract defines coverage, not a requirement to replace the page.

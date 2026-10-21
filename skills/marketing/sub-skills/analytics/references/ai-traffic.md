@@ -1,7 +1,7 @@
 ---
 metadata:
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: ai-traffic, ai-seo
 ---
 
@@ -84,10 +84,10 @@ Referral traffic is the smallest part of the AI touch. Pair the GA4 setup above 
 |--------|-----------------|-------------|
 | AI Overview presence | Do AI Overviews appear for your queries? | Manual check or Semrush/Ahrefs |
 | Brand citation rate | How often you're cited in AI answers | AI visibility tools (below) |
-| Share of AI voice | Your citations vs. competitors | Peec AI, Otterly, ZipTie |
+| Share of AI voice | Your citations vs. competitors | Peec AI, Otterly, ZipTie, Omnia |
 | Citation sentiment | How AI describes your brand | Manual review + monitoring tools |
 | Recommendation rate | Whether you're on the shortlist, not just cited | Prompt tracking + mention framing |
-| Source attribution | Which of your pages get cited | Referral traffic from AI sources (GA4 setup above) |
+| Source attribution | Which pages get cited, and what AI exposure does downstream | AI referrals (GA4 setup above) plus delayed branded and direct visits ([ai-attribution.md](../../strategies/commercial/references/ai-attribution.md)) |
 
 ### AI Visibility Monitoring Tools
 
@@ -97,14 +97,15 @@ Referral traffic is the smallest part of the AI touch. Pair the GA4 setup above 
 | **Peec AI** | ChatGPT, Gemini, Perplexity, Claude, Copilot+ | Multi-platform monitoring at scale |
 | **ZipTie** | Google AI Overviews, ChatGPT, Perplexity | Brand mention + sentiment tracking |
 | **LLMrefs** | ChatGPT, Perplexity, AI Overviews, Gemini | SEO keyword → AI visibility mapping |
+| **Profound, Ahrefs Brand Radar, Semrush** | Major assistants and Google AI surfaces | Larger programs: cited sources, answer text, prompt demand (Profound's studies are cited in the references as vendor research) |
+| **Omnia** | Google AI Mode, Google AI Overviews, ChatGPT, Perplexity, Gemini, Claude, Copilot | AI visibility monitoring |
 
 ### DIY Monitoring (No Tools)
 
 Monthly manual check:
 1. Pick your top 20 queries
 2. Run each through ChatGPT, Perplexity, and Google
-3. Record: Are you cited? Who is? What page?
-4. Log in a spreadsheet, track month-over-month
+3. Record: Are you cited? Who is? What page? Log it in a spreadsheet and track month-over-month
 
 AI answers are **non-deterministic**: one run is an anecdote, not a measurement. Run each query 3-5 times per platform and track the mention *rate* with its sample size ("cited 3/5, n=5"), comparing rates over time rather than single runs. Keep the list to prompts that would change revenue.
 

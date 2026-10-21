@@ -32,6 +32,7 @@ A hand-off written as `implement/sub-skills/references/...` identifies a page or
 |---|---|---|
 | `ab-testing` | `sub-skills/analytics/ab-testing.md` | Designing A/B tests or running an experimentation program |
 | `attribution` | `sub-skills/analytics/attribution.md` | Which channels drive revenue, attribution models, MMM, incrementality, first-party attribution |
+| `conversion-tracking` | `sub-skills/analytics/conversion-tracking.md` | Setting up, auditing or fixing conversion tracking: form, booking, call, signup or purchase events reaching Google Ads, Meta, GA4, LinkedIn, TikTok or Microsoft via GTM, pixels, CAPI, Enhanced Conversions or server-side; or conversions stopped, double-count or don't match |
 | `seo-analytics` | `sub-skills/analytics/seo.md` | Search Console analysis and API; SEO data system: benchmarks, article database, indexing, traffic, keywords, backlinks |
 | `traffic-analysis` | `sub-skills/analytics/traffic.md` | Traffic sources, dark traffic, UTM conventions, channel reporting, AI search traffic in GA4 |
 | `analytics-tracking` | `sub-skills/analytics/tracking.md` | Tracking setup: GA4, GTM, events, tracking plans, conversion tracking |

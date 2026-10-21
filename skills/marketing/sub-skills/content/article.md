@@ -2,7 +2,7 @@
 name: article-content
 description: When the user wants to write, generate, or create article body content—blog post body, long-form content, how-to guide, listicle. Also use when the user mentions "write article," "article content," "blog post content," "article body," "long-form content creation," "generate article," "article draft," "how-to guide content," "listicle content," "information gain," or "content density." For single post page structure, schema, and SEO metadata, use `implement/sub-skills/references/pages/content/article.md`. For blog index/listing page, use `implement/sub-skills/references/pages/content/blog.md`. For short ad, landing, or email copy, use copywriting.
 metadata:
-  version: 1.1.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: article-content

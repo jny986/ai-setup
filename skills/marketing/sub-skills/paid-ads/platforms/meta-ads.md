@@ -2,9 +2,9 @@
 name: meta-ads
 description: When the user wants to set up, optimize, or manage Meta (Facebook/Instagram) Ads. Also use when the user mentions "Meta Ads," "Facebook Ads," "Instagram Ads," "Meta Pixel," "Conversions API," "Advantage+," "lookalike audience," or "Meta retargeting." For landing pages, use implement/sub-skills/references/pages/marketing/landing-page.md.
 metadata:
-  version: 1.1.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: meta-ads, ads
 ---
 
@@ -92,7 +92,7 @@ Provide diverse creative assets to enable multiple ad formats; algorithm perform
 | Task | Load |
 |------|------|
 | When to kill, graduate or scale an ad; fatigue bands; testing structure; lead forms; Advantage+ transition; partnership ads; rolling reach | [meta-decision-system.md](references/meta-decision-system.md) |
-| Andromeda-era creative volume, creative as targeting, identity keywords, AI variants, native-looking ads | [meta-andromeda-playbook.md](references/meta-andromeda-playbook.md) |
+| Andromeda-era creative volume, creative as targeting, identity keywords, AI variants, native-looking ads, creator ads at volume with a quality optimization event | [meta-andromeda-playbook.md](references/meta-andromeda-playbook.md) |
 | Choosing which creative format to make next (S-F tier taxonomy) | [meta-creative-formats](../references/meta-creative-formats.md) |
 
 ### Audience knowledge: creative vs targeting

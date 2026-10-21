@@ -2,7 +2,7 @@
 name: site-crawlability
 description: When the user wants to improve crawlability, fix orphan pages, or optimize site structure for search engines. Also use when the user mentions "crawlability," "crawl budget," "orphan pages," "internal links," "site structure," "site crawlability," "infinite scroll," "pagination," "masonry SEO," "AI crawler optimization," "GPTBot crawlability," "ClaudeBot crawlability," or "content not indexed." For internal links, use internal-links.
 metadata:
-  version: 1.2.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: site-crawlability

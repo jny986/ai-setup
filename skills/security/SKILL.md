@@ -1,6 +1,6 @@
 ---
 name: security
-description: "Router for security work. Use to review code for vulnerabilities, build a feature securely, harden Docker, CI/CD, cloud or dependencies, or gate a release. Sub-skills: review-code, build-securely, harden-deployment, release-gate."
+description: "Router for security work. Use to review code for vulnerabilities, build a feature securely, harden Docker, CI/CD, cloud or dependencies, or gate a release, or vet a skill before installing. Sub-skills: review-code, build-securely, harden-deployment, release-gate, skills-check."
 argument-hint: "[sub-skill] [task]"
 license: MIT
 metadata:
@@ -28,6 +28,7 @@ Start here. Pick by situation.
 | Design or write a feature that handles input, auth, data, external calls, LLMs or personal data | [`build-securely`](sub-skills/build-securely.md) |
 | Secure Dockerfiles, CI/CD, cloud, secrets or dependencies | [`harden-deployment`](sub-skills/harden-deployment.md) |
 | Final check before merging or deploying | [`release-gate`](sub-skills/release-gate.md) |
+| Vet an agent skill before installing it | [`skills-check`](sub-skills/skills-check.md) |
 
 ## How they nest
 

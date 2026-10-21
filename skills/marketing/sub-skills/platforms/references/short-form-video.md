@@ -1,7 +1,7 @@
 ---
 metadata:
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: social
 ---
 
@@ -143,6 +143,16 @@ Tools: CapCut (free), Descript, Captions.ai, Premiere Pro
 - "[Common advice] is actually wrong"
 - "I'm going to get hate for this, but..."
 - "Most [audience] get this completely wrong"
+
+### Contrast Hooks (Best for educational content and decisions)
+
+- "Should you [option A] or [option B]?"
+- "We used to [old way]. Now everyone [new way]. Which one actually works?"
+- "Most [audience] do [X]. The ones who [result] do [Y]."
+- "You can cancel [thing they think they need]." (challenges a false assumption)
+- "You need [common belief]. Or do you?"
+
+Both sides of the contrast must be real options the viewer weighs, and the video has to pick one. See the **ad-creative** skill's [hook system](../../paid-ads/references/hook-system.md) for when each works.
 
 ---
 

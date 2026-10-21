@@ -2,9 +2,9 @@
 name: generative-engine-optimization
 description: When the user wants to optimize for AI search visibility (ChatGPT, Claude, Perplexity, AI Overviews). Also use when the user mentions "GEO," "AEO," "generative engine optimization," "AI search visibility," "LLM optimization," "GitHub GEO," "Grokipedia," "optimize for ChatGPT," "AI Overviews," "Bing Copilot," "Yandex AI," "Perplexity optimization," "GEO strategy," or "AI search optimization." For third-party publishing strategy (which platforms to use), use parasite-seo. For GitHub repos, README, and Awesome lists, use social (GitHub reference). For Medium.com only, use social (Medium reference). For Grokipedia edits, use social (Grokipedia reference). For traditional Google SERP strategy, use seo-strategy.
 metadata:
-  version: 1.4.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: generative-engine-optimization, ai-seo
 ---
 
@@ -128,17 +128,22 @@ Start with this skill's core workflow. Open a reference when the user's question
 | User questions | Local reference |
 |---|---|
 | Why can an agent not read our site? Are bot access, discovery files, or HTML blocking it? | [Agent readiness](references/agent-readiness.md) |
+| AI barely shows up in referrals. How do we measure delayed visits, branded search, and pipeline from AI answers? | [AI attribution](references/ai-attribution.md) |
+| Is AI saying something wrong about our price, features, or limits? How do we find and fix the source? | [Answer accuracy](references/answer-accuracy.md) |
+| Which vendor does Claude Code or Cursor pick when a user says "deploy this"? How do we become the tool an agent installs mid-task? | [Agent defaults](references/agent-defaults.md) |
 | Why are we cited but absent from the shortlist? Can our own buyer's guide help competitors? How should we measure recommendations? | [Citations vs. recommendations](references/citations-vs-recommendations.md) |
 | How should we structure a definition, comparison, or FAQ? What makes an answer block useful on its own? | [Content patterns](references/content-patterns.md) |
 | How does the approach differ for product pages, docs, local businesses, or ecommerce? Which content type should we improve? | [Content types](references/content-types.md) |
 | Did an engine change which page formats it cites? Should we still invest in listicles or comparison pages? How do we separate a shift from noisy measurements? | [Format volatility](references/format-volatility.md) |
 | Should we publish LinkedIn posts, articles, or company-page content? What makes that content discoverable and citable? | [LinkedIn citations](references/linkedin-ai-citations.md) |
+| How do we run AEO in other languages and countries? Is ChatGPT Shopping worth it for our product? | [Multilingual and commerce](references/multilingual-and-commerce.md) |
 | What belongs in an OKF bundle? Is it an established AI-search requirement or an emerging experiment? | [Open Knowledge Format](references/okf.md) |
+| Which prompts should we track, how often, and how do we test multi-turn buying conversations? | [Prompt portfolio](references/prompt-portfolio.md) |
 | Where should we start for a particular AI engine? Which search and training crawlers should we distinguish? | [Platform ranking factors](references/platform-ranking-factors.md) |
 | Why does AI describe our positioning incorrectly? How can third-party consensus reinforce a specific use case? | [Positioning and consensus](references/positioning-and-consensus.md) |
 | How should a video's title, captions, chapters, or description support citations? What should we check before publishing? | [YouTube citations](references/youtube-ai-citations.md) |
 
-Read these bundled files from this guide's folder; do not substitute a remote repository URL for a local reference. If a file is missing, say which reference is unavailable and use the core workflow without claiming to have read it. For time-sensitive statistics, platform behavior, or tool claims in any reference, check the source date and current primary documentation before making a recommendation.
+Read these bundled files from this guide's folder; do not substitute a remote repository URL for a local reference. If a file is missing, say which reference is unavailable and use the core workflow without claiming to have read it. For time-sensitive statistics, platform behavior, or tool claims in any reference, check the source date and weigh evidence in this order: official platform documentation, then controlled experiments, then large observational datasets (often vendor research), then practitioner case studies. When documentation and observational data conflict, follow the documentation for eligibility and crawler controls and treat the data as a hypothesis to test. Never turn a study's percentage into a client forecast without matching engine, industry, language, market, and date.
 
 ## Before Starting (AI Visibility Context)
 
@@ -187,7 +192,7 @@ Traditional SEO gets you ranked. AI SEO gets you **cited**.
 In traditional search, you need to rank on page 1. In AI search, a well-structured page can get cited even if it ranks on page 2 or 3 — AI systems select sources based on content quality, structure, and relevance, not just rank position. Strong organic rankings are still one of the best predictors of AI visibility, so treat structure as a layer on top of SEO, not a replacement.
 
 **Critical stats** (they drift; re-check before quoting to a client, and distrust vendor stats with no source or date):
-- AI Overviews appeared on ~45% of the keywords BrightEdge tracks, and position-one desktop CTR fell ~58% when one was present (Ahrefs, Dec 2025 data). Both are sample-specific, so don't forecast a site's traffic loss from them
+- AI Overviews appeared on ~48% of the queries BrightEdge tracks (BrightEdge, Feb 2026), and position-one desktop CTR fell ~58% when one was present (Ahrefs, Dec 2025 data). Both are sample-specific, so don't forecast a site's traffic loss from them
 - Adding statistics and citations raised visibility by roughly 30–40% in the original GEO study (Aggarwal et al., 2023)
 
 ### Google's Official Stance vs. Multi-Platform Reality
@@ -205,14 +210,12 @@ Google explicitly says:
 **Other AI engines (ChatGPT, Claude, Perplexity, Copilot) behave differently:**
 - They actively reward extractable structure — passages, FAQs, comparison tables, definition blocks
 - They parse `llms.txt`, structured pricing pages, and machine-readable files when present
-- They cite third-party sources (Reddit, Wikipedia, review sites) more heavily than top-ranked pages
+- They cite beyond top-ranked pages, including Reddit, Wikipedia, and review sites, in a mix that varies by engine
 
 **What this means for the work:**
 - The structural patterns in this skill (40–60 word answer blocks, FAQ schema, comparison tables) help **non-Google AI engines** materially. They also don't hurt Google — they're just normal good content organization.
 - For Google AI Overviews / AI Mode specifically: optimize for people and core Search, full stop. Strong E-E-A-T, original information, semantic HTML, clean indexability.
-- For ChatGPT/Claude/Perplexity: layer on the extractable structure + llms.txt + machine-readable files.
-
-When in doubt, default to "write for people, organize for clarity" — that satisfies both camps.
+- For ChatGPT/Claude/Perplexity: layer on the extractable structure + llms.txt + machine-readable files. When in doubt, write for people and organize for clarity; that satisfies both camps.
 
 ### Query Fan-Out (Google AI Search)
 
@@ -225,7 +228,7 @@ Google's own example: a user asking "how to fix lawns" triggers fan-out queries 
 - Long-tail intent matters less than topical authority — Google's AI systems understand synonyms and semantic equivalence.
 - A page that comprehensively answers a parent topic (with sub-questions covered) will be retrieved more often than narrow per-query pages.
 
-**Action**: when planning content, brainstorm the 5–10 related queries the AI is likely to fan out to and make sure your content (or your site as a whole) covers them.
+**Action**: when planning content, brainstorm the 5–10 related queries the AI is likely to fan out to and make sure your content (or your site as a whole) covers them, with one owning page per fact family (matrix in [references/content-patterns.md](references/content-patterns.md)).
 
 ChatGPT fans out too — and you can extract its *literal* background queries for your niche via DevTools (method in [references/format-volatility.md](references/format-volatility.md)). Post-5.6, ChatGPT's fan-outs shifted away from "best/vs/top" modifiers toward `site:` and "official" searches — use the extraction to see where your category's fan-outs stand today.
 
@@ -282,14 +285,12 @@ For each priority page, verify:
 
 Audit AI user agents by purpose. Search-discovery, user-triggered retrieval, model-training, and product-control tokens are not interchangeable:
 
-- **Search discovery:** `OAI-SearchBot` (ChatGPT), `PerplexityBot`, `Claude-SearchBot`, and the conventional search crawlers that feed an answer product
-- **User-triggered retrieval:** `ChatGPT-User`, `Claude-User`, and `Perplexity-User`; vendor handling can differ from automatic crawlers, so verify the current documentation
-- **Potential model training:** `GPTBot` and `ClaudeBot`
+- **Search discovery:** `OAI-SearchBot` (ChatGPT), `PerplexityBot`, `Claude-SearchBot`, `meta-webindexer` (Meta AI), and the conventional search crawlers that feed an answer product
+- **User-triggered retrieval:** `ChatGPT-User`, `Claude-User`, `Perplexity-User`, and `meta-externalfetcher`; vendor handling can differ from automatic crawlers, so verify the current documentation
+- **Potential model training:** `GPTBot`, `ClaudeBot`, and `meta-externalagent`
 - **Google product control:** `Google-Extended` controls certain Gemini training and grounding uses of content Google already crawls; it does not affect Google Search inclusion or ranking
 
-Check each relevant user-agent group and any WAF or CDN rules separately. A publisher can allow search discovery while disallowing model-development crawlers; do not infer that blocking a training crawler necessarily blocks citations.
-
-See [references/platform-ranking-factors.md](references/platform-ranking-factors.md) for the full robots.txt configuration.
+Check each relevant user-agent group and any WAF or CDN rules separately. A publisher can allow search discovery while disallowing model-development crawlers; do not infer that blocking a training crawler necessarily blocks citations. See [references/platform-ranking-factors.md](references/platform-ranking-factors.md) for the full robots.txt configuration.
 
 ## Optimization Strategy
 
@@ -369,11 +370,11 @@ AI systems prefer sources they can trust. Build citation-worthiness.
 
 ### Pillar 3: Presence — Be Where AI Looks
 
-AI systems don't just cite your website — they cite where you appear.
+AI systems cite your own site and the places that talk about you, in proportions that vary by engine and category. In one large dataset, company sites took about 57% of citations (ChatGPT 47%, Gemini 69%; Profound, July 2026), while shortlist recommendations lean on third-party consensus. Measure your category's citation mix before choosing channels; see [references/citations-vs-recommendations.md](references/citations-vs-recommendations.md).
 
-**Third-party sources matter more than your own site:**
-- Wikipedia mentions (7.8% of all ChatGPT citations)
-- Reddit discussions (volatile: ~1.8% of ChatGPT citations historically, but nearly wiped from ChatGPT by Aug 2026 retrieval changes — still retrieved elsewhere; see the volatility section in [references/agent-readiness.md](references/agent-readiness.md))
+**Third-party surfaces to cover:**
+- Wikipedia (7.8% of ChatGPT citations in Profound's Aug 2024–Jun 2025 data)
+- Reddit (1.8% in the same data, then nearly wiped from ChatGPT by Aug 2026 retrieval changes; still retrieved elsewhere; see the volatility section in [references/agent-readiness.md](references/agent-readiness.md))
 - Industry publications and guest posts
 - LinkedIn — among the most-cited domains for professional queries, but which surface gets cited depends on the engine (ChatGPT now favors posts over articles; Gemini barely cites LinkedIn). Front-load the target phrase, since a post's first words become its URL slug. See [references/linkedin-ai-citations.md](references/linkedin-ai-citations.md)
 - Review sites (G2, Capterra, TrustRadius for B2B SaaS)
@@ -458,7 +459,7 @@ Structured data helps AI systems understand your content. Key schemas:
 | Reviews | `Review`, `AggregateRating` | Trust signals |
 | Organization | `Organization` | Entity recognition |
 
-Content with proper schema shows 30-40% higher AI visibility on non-Google AI engines. **Google's note**: structured data is "not required for generative AI search" but is recommended for overall SEO strategy. For implementation, use **schema-markup**.
+No well-documented study isolates a schema lift on AI citations, so treat schema as context that helps engines parse your pages and expect no fixed lift from it. **Google's note**: structured data is "not required for generative AI search" but is recommended for overall SEO strategy. For implementation, use **schema-markup**.
 
 ## Agentic Experiences
 
@@ -474,7 +475,8 @@ Beyond AI search engines summarizing content, autonomous agents are starting to 
 - **Semantic HTML** — use `<main>`, `<nav>`, `<article>`, `<button>`, proper heading hierarchy, `alt` text on images
 - **Clean accessibility tree** — every interactive element labelled; ARIA used correctly (or not at all when native HTML suffices)
 - **Stable selectors / predictable layouts** — agents struggle with sites that re-render every interaction
-- **Visible pricing, specs, contact info** — anything an agent would need to make a buying recommendation should be on a public, indexable page (this is where `/pricing.md` and similar files help)
+- **Visible pricing, specs, contact info** — anything an agent would need to make a buying recommendation should be on a public, indexable page (this is where `/pricing.md` and similar files help). Date the facts that change ("4.7 on G2 as of October 2026") so an agent can judge freshness
+- **Proof as text** — testimonials, ratings, and named customer logos in the HTML as text, not baked into images or injected by a widget script. If you can't select it with the mouse, an agent may not read it
 
 **Emerging — Universal Commerce Protocol (UCP):**
 Google references UCP as a forthcoming protocol that will give agents standardized hooks for commerce interactions (catalog discovery, pricing, checkout). Watch for adoption; for now, the structural recommendations above are the precursor.
@@ -541,6 +543,7 @@ ChatGPT traffic converts at significantly higher rates than Google search—stud
 - `implement/sub-skills/references/components/content/howto-section.md`: HowTo step sections; citable ordered procedures; HowTo JSON-LD
 - **traffic-analysis**: AI referral and citation measurement
 - **seo-audit**: Traditional technical and on-page SEO audits
+- **link-building**: Earning links and mentions on the third-party pages AI engines cite
 - **schema-markup**: Structured data that helps AI understand your content
 - **content-strategy**: Planning what content to create
 - **comparison-pages**: Comparison pages that get cited

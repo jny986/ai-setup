@@ -2,9 +2,9 @@
 name: affiliate-marketing
 description: When the user wants to plan, implement, or optimize affiliate marketing strategy. Also use when the user mentions "affiliate marketing," "affiliate program strategy," "CPS model," "affiliate recruitment," "commission structure," "affiliate partners," "affiliate network," "affiliate tracking," "affiliate commission," or "partner marketing." Also use when the user mentions "affiliate program design," "cookie duration," "recurring commissions," "super affiliates," "buyout clause," "affiliate reconciliation," "affiliate incrementality," "Rewardful," "Tolt," "PartnerStack," or "partner program." For customer referral programs, use referral-program. For affiliate page, use `implement/sub-skills/references/pages/marketing/program.md`.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: affiliate-marketing, referrals
 ---
 

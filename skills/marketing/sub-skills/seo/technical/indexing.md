@@ -2,7 +2,7 @@
 name: indexing
 description: When the user wants to fix indexing issues from Search Console, use noindex, or implement Google Indexing API. Also use when the user mentions "fix indexing," "not indexed," "Crawled - currently not indexed," "discovered - currently not indexed," "index coverage," "noindex," "noindex tag," "pages not indexed," "why not indexed," "request indexing," or "Google Indexing API." For sitemap, use xml-sitemap.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: indexing

@@ -2,9 +2,9 @@
 name: content-strategy
 description: When the user wants to plan content for SEO, create content calendar, or build topic clusters. Also use when the user mentions "content strategy," "content plan," "topic clusters," "pillar content," "pillar page," "cluster articles," "editorial calendar," "content hub," "content planning," "content clusters," "topic cluster strategy," "content strategy for SEO," or "content calendar." For editorial mix, use content-marketing.
 metadata:
-  version: 1.1.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: content-strategy, content-strategy
 ---
 
@@ -310,6 +310,8 @@ When the goal of a piece is backlinks specifically, format choice matters more t
 
 The counterintuitive read: **curating statistics earns ~5x the links of producing original research.** Writers link to whatever makes citation easiest — a maintained stat-roundup page is citation infrastructure, while original research often gets cited *via* the roundups that aggregate it. Implications: (1) publish a stats page for your category and keep it fresh — it's cheap and compounds, and citable one-line stats are also what LLMs lift, making it an AI-visibility play (see **generative-engine-optimization**); (2) when you do run original research, pair it with your own stat-roundup page that presents the findings as citable one-liners, so you capture the links your data generates. The formats at the bottom aren't dead — guides, templates, and thought leadership earn their keep on rankings, conversions, and brand. Judge each piece by the job it's for, and don't expect links from formats that don't earn them.
 
+To get those assets in front of the people who link, and to point their authority at the pages that need it, see **link-building**.
+
 ## Output Format
 
 - **Topic cluster** map (pillar + 6-12 clusters)
@@ -332,7 +334,7 @@ Choosing, modelling and wiring a headless CMS for marketing content: [references
 - **programmatic-seo**: Programmatic SEO for scaling pages with template + data; complements topic clusters
 - **content-optimization**: Word count, H2 keywords, keyword density, multimedia, lists -> on-page content optimization
 - **internal-links**: Clusters need internal linking
-- **link-building**: Content strategy creates linkable assets
+- **link-building**: Content strategy creates linkable assets; earning links to the content and the pages it supports
 - **heading-structure**: Content structure uses headings
 - **generative-engine-optimization**: Optimizing content for AI search and LLM citations
 - **seo-audit**: Technical SEO and on-page optimization

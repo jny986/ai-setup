@@ -2,9 +2,9 @@
 name: email-marketing
 description: When the user wants to plan email marketing, EDM, newsletter strategy, email deliverability, or lifecycle email sequences. Also use when the user mentions "email marketing," "EDM," "newsletter," "SPF," "DKIM," "DMARC," "email deliverability," "email content strategy," "email campaigns," "newsletter strategy," "email automation," "cold email," "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome sequence," "re-engagement emails," "lifecycle emails," "trigger-based emails," "email cadence," or "what emails should I send." For signup UI, use `implement/sub-skills/references/components/conversion/newsletter-signup.md`.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: email-marketing, emails
 ---
 
@@ -15,6 +15,7 @@ Guides email marketing strategy for AI/SaaS products. Email ROI ~$36 per dollar 
 ## Initial Assessment
 
 **Project context:** Read the product marketing context when present and load only what is relevant to this task. Otherwise use available project material or user-provided facts and ask for missing information.
+Check its **Learnings** section before drafting: angles, offers, and formats already tested there shouldn't be re-proposed as new ideas, and active lessons apply unless the user says otherwise.
 
 Identify:
 1. **Goal**: Retention, conversion, brand reach, or SEO synergy

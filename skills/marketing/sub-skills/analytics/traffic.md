@@ -2,9 +2,9 @@
 name: traffic-analysis
 description: When the user wants to analyze website traffic sources, attribution, or dark traffic. Also use when the user mentions "traffic sources," "dark traffic," "direct traffic," "UTM parameters," "traffic attribution," "channel attribution," "attribution optimization," "channel analysis," "traffic analysis," "traffic diversification," "natural traffic benchmark," or "organic vs paid traffic," "AI traffic," "ChatGPT referral," "Perplexity traffic," "AI Overviews," "GA4 AI sources," "track AI referrals," or "Claude traffic." For GA4 setup, use analytics-tracking.
 metadata:
-  version: 1.2.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: traffic-analysis, analytics, ai-traffic-tracking, ai-seo
 ---
 
@@ -106,9 +106,9 @@ Ads, growth channels, and medium can be optimized by viewing **attribution data*
 |-----------|-----|---------|
 | `utm_source` | Origin | `newsletter`, `facebook`, `google` |
 | `utm_medium` | Channel type | `email`, `cpc`, `social` |
-| `utm_campaign` | Campaign name | `summer_sale`, `product_launch` |
-| `utm_content` | Variant (optional) | `banner_a`, `cta_button` |
-| `utm_term` | Paid keyword (optional) | `running_shoes` |
+| `utm_campaign` | Campaign name | `summer-sale`, `product-launch` |
+| `utm_content` | Variant (optional) | `banner-a`, `cta-button` |
+| `utm_term` | Paid keyword (optional) | `running-shoes` |
 
 **GA4 alignment** (avoid Unassigned):
 
@@ -123,17 +123,50 @@ Ads, growth channels, and medium can be optimized by viewing **attribution data*
 | Display / Banner | `display`, `cpc` | Publisher or network name |
 | Directory ads | `paid`, `cpc` | `taaft`, `shopify`, `g2`, `capterra` |
 
-- **Consistent naming**: Lowercase, hyphens; document conventions; never tag internal links (overwrites session attribution)
+- **Never tag internal links** (overwrites session attribution)
 - **Apply everywhere**: Every link in emails, social posts, ads
 - **Avoid**: Typos, inconsistent values; causes fragmentation
-- **Descriptive values**: `blog_footer_cta`, not `cta1`; use `utm_content` to tell versions of the same placement apart (`hero_cta`)
-- **Log every UTM** in one shared sheet so tags stay unique and reusable
+- **Use `utm_content`** to tell versions of the same placement apart (`hero-cta`)
 
-> **Source conflicts (kostja wins, ours flagged):** our copy allows underscores or hyphens as long as the choice is consistent. kostja specifies lowercase with hyphens. Use hyphens for new tags and keep the same separator within a campaign.
+### Naming Conventions
+
+- **Lowercase everything.** GA4 treats `LinkedIn` and `linkedin` as two sources, and the split never merges back.
+- **Hyphens between words.** No spaces, underscores, or `+`. Pick one separator for the whole company; this skill uses hyphens.
+- **One spelling per source.** `linkedin`, never also `li` or `linkedin.com`. Keep the allowed values in a shared sheet and build links from it.
+- **No personal data.** Never put emails, names, phone numbers, or user IDs in a UTM. They land in analytics reports and in referrer logs, and Google's terms prohibit sending PII to GA4.
+- **Specific but short:** `blog-footer-cta`, not `cta1`.
+- **Test the final URL.** Shorteners and redirects can drop or double parameters. Click the live link and check the landing URL before the campaign ships.
+
+### UTM Patterns by Partner Type
+
+Partner links break most often because each deal gets named on the spot. Fix the pattern per partner type once: `utm_medium` names the kind of deal, `utm_source` names who sent the traffic.
+
+| Partner type | utm_source | utm_medium | utm_campaign | utm_content |
+|---|---|---|---|---|
+| Newsletter | `{partner}` (one per partner, across all their publications) | `newsletter` | `{partner}-{publication}-{yyyy}-{mm}` | `{placement}-{yyyy-mm-dd}` |
+| Creator (YouTube, LinkedIn, TikTok) | `{platform}` | `creator` | `{creator}` | `{post-date}` or the video ID |
+| Podcast | `{podcast}` | `podcast` | `{podcast}-{yyyy}-{mm}` | `{spot}-{yyyy-mm-dd}` (pre-roll, mid-roll) |
+| Affiliate | `{partner}` | `affiliate` | `{partner}-affiliate` | placement, if they have several |
+| Community | `{community}` | `community` | `{community}-{program}` | the channel or post, if known |
+
+- **Use `creator` as the medium for paid creator deals**, not `social` (which mixes them with your organic posts) or `video` (which mixes them with paid video ads). The platform goes in `utm_source`.
+- **One link per placement.** A newsletter that runs you on two dates gets two links, so each date's clicks stay separate. The monthly `utm_campaign` rolls them up.
+- **Add a custom channel group in GA4.** GA4's default grouping sends mediums like `newsletter`, `creator`, `podcast`, and `community` to Unassigned (only `affiliate` and `email` map to a default channel). Create a channel group with a rule per medium so partner traffic shows up as its own channels.
+- Podcast and video links often aren't clickable, so pair the UTM link with a promo code or vanity URL. See **influencer-marketing** for the rest of partner measurement.
+
+*The partner-type pattern is adapted from Wispr Flow's link-creator skill (MIT), published in the skills.marketing library.*
 
 ## AI Traffic
 
 For AI search referrals (ChatGPT, Perplexity, Claude), AI Overviews and AI visibility monitoring, see [references/ai-traffic.md](references/ai-traffic.md).
+
+### Traffic From AI Assistants
+
+You can't tag links that ChatGPT, Claude, Perplexity, Gemini, or Copilot put in their answers. Some of those visits arrive with a referrer (`chatgpt.com`, `perplexity.ai`) or an assistant-added `utm_source`; many arrive as direct, or come later through a branded search.
+
+- Add a GA4 channel group rule that matches known assistant referrers and sources into an "AI assistants" channel, and update the list as new assistants appear.
+- Treat that channel as the floor. Assistant-driven visits that show up as direct or branded search can be most of the effect, and they won't carry the referrer.
+- For measuring the full effect (exposure, delayed visits, and longer attribution windows), see **generative-engine-optimization**. For reconciling it with other sources, see **attribution**.
 
 ## Traffic Diversification
 

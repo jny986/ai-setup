@@ -7,13 +7,13 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: copy-editing
 ---
 
 # Content: Copy Editing
 
-Guides systematic editing of existing marketing copy through focused passes that preserve the core message. Use it to polish, proofread, remove AI tells or refresh copy that already exists. For writing new copy, see **copywriting**.
+Guides systematic editing of existing marketing copy through focused passes that preserve the core message. Use it to polish, proofread, remove AI tells or refresh copy that already exists. A request to fix one line gets a point edit that changes only that line. For writing new copy, see **copywriting**.
 
 ## Initial Assessment
 
@@ -35,6 +35,8 @@ Each pass focuses on one dimension, catching issues that get missed when you try
 - Preserve the core message and the author's voice; enhance them
 - Multiple focused passes beat one unfocused review
 - Each edit should have a clear reason
+
+**Pick the mode before editing.** Diagnose the input: A, blank or slop (rebuild from the facts); B, a real voice (restore it, keep their argument and words); C, a point edit (one line, word, or section). **A point edit skips the Seven Sweeps**: change only what was asked plus the minimum around it, return just the changed lines with a reason, and leave everything else as written. Run the full sweeps for A and B. See [references/checklist.md](references/checklist.md#pick-the-edit-mode).
 
 ---
 

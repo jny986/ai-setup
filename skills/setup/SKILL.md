@@ -3,7 +3,7 @@ name: setup
 description: "Set up a project to use jny986/ai-setup skills. Use to prepare AGENTS.md or CLAUDE.md, configure engineering workflows, migrate domain glossaries, or check project readiness."
 license: MIT
 metadata:
-  version: "1.0.1"
+  version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
   based_on_repo: mattpocock/skills

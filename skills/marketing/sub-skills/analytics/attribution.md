@@ -1,10 +1,10 @@
 ---
 name: attribution
-description: When the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools. Also use when the user mentions "attribution," "attribution model," "first-touch vs last-touch," "multi-touch," "which channel drives revenue," "what's my real CAC," "my dashboards disagree," "Google/Meta says X but GA says Y," "media mix model," "MMM," "incrementality," "geo lift," "holdout test," "how did you hear about us," "self-reported attribution," "dark social," or wants to instrument attribution themselves ("stitch my bookings to their source," "SavvyCal/Calendly attribution," "close the identify gap," "first-party attribution"). For event tracking setup and UTMs, use analytics-tracking and traffic-analysis. For ad-platform pixels and CAPI, use paid-ads-strategy. For pipeline and CRM revenue reporting, use revops. For the AI-search attribution blind spot, use traffic-analysis.
+description: When the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools. Also use when the user mentions "attribution," "attribution model," "first-touch vs last-touch," "multi-touch," "which channel drives revenue," "what's my real CAC," "my dashboards disagree," "Google/Meta says X but GA says Y," "media mix model," "MMM," "incrementality," "geo lift," "holdout test," "how did you hear about us," "self-reported attribution," "dark social," or wants to instrument attribution themselves ("stitch my bookings to their source," "SavvyCal/Calendly attribution," "close the identify gap," "first-party attribution"). For event tracking setup and UTMs, use analytics-tracking and traffic-analysis. For ad-platform pixels/CAPI and conversion tracking, use conversion-tracking. For pipeline and CRM revenue reporting, use revops. For the AI-search attribution blind spot, use traffic-analysis.
 metadata:
   version: 1.0.0
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: attribution
 ---
 
@@ -30,7 +30,7 @@ Most requests start with (A). Reach for (B) only when they control the surface a
 Hand these to the named guide:
 
 - **General event tracking, tracking plans, GA4/GTM** → **analytics-tracking**; **UTM setup** → **traffic-analysis**. Attribution *assumes tracking exists*. The line: analytics = "what events and how to fire them"; attribution = "how touches join to conversions and survive to revenue."
-- **Ad-platform pixels, CAPI, server-side conversion tracking** → **paid-ads-strategy** ([conversion-tracking.md](../strategies/commercial/references/conversion-tracking.md)). Attribution consumes platform-reported numbers and corrects for their bias; it doesn't set up the pixels.
+- **Ad-platform pixels, CAPI, server-side conversion tracking** → **conversion-tracking** ([conversion-tracking.md](conversion-tracking.md)). Attribution consumes platform-reported numbers and corrects for their bias; it does not set up the pixels.
 - **Pipeline stages, lead lifecycle, CRM revenue dashboards** → **revops**. Attribution feeds pipeline data; it doesn't define stages.
 - **Showing up in / measuring AI search** → **generative-engine-optimization**; tracking AI referrals → **traffic-analysis**. Attribution names AI traffic as a blind spot only.
 
@@ -208,5 +208,5 @@ For implementation, see the [tools registry](https://github.com/coreyhaines31/ma
 
 ## Related Skills
 
-- **analytics-tracking**, **traffic-analysis**, **paid-ads-strategy**, **revops**, **generative-engine-optimization**: see Boundaries above.
+- **analytics-tracking**, **traffic-analysis**, **conversion-tracking**, **revops**, **generative-engine-optimization**: see Boundaries above.
 - **ab-testing**: Controlled experiments; the incrementality mindset applied to on-site changes.

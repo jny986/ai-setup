@@ -2,7 +2,7 @@
 name: meta-description
 description: When the user wants to write, audit, or optimize a meta description, SEO description, SERP snippet candidate, duplicate description, description length, or description rewrite issue. For a sitewide metadata lifecycle including implementation and production validation, use page-metadata.
 metadata:
-  version: 2.0.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: meta-description

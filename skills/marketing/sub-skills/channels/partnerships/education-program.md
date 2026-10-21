@@ -2,7 +2,7 @@
 name: education-program
 description: When the user wants to plan, implement, or optimize student and education discount programs. Also use when the user mentions "student discount," "education discount," "student plan," "for students," ".edu discount," "academic pricing," "student verification," "SheerID," "UNiDAYS," or "education program." For startup pricing page, use `implement/sub-skills/references/pages/marketing/program.md`.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: education-program

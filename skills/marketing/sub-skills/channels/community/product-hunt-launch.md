@@ -2,9 +2,9 @@
 name: product-hunt-launch
 description: When the user wants to launch on Product Hunt, prepare a PH submission, or plan launch day (hunter, first comment, timing, upvotes). Also use when the user mentions "Product Hunt," "launch on Product Hunt," "PH launch," "Product Hunt submission," "hunter," "Product of the Day," "upvotes," "Product Hunt first comment," "PH prep," "launch day on Product Hunt," "Upcoming page," or "launch recap." For broader launch planning (ORB framework, phased launches), use launch. For multi-platform directory listings and paste-ready copy beyond PH, use directory-submission.
 metadata:
-  version: 1.1.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: product-hunt-launch, launch
 ---
 

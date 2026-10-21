@@ -1,10 +1,10 @@
 ---
 name: influencer-marketing
-description: When the user wants to plan, implement, or optimize influencer marketing strategy. Also use when the user mentions "influencer marketing," "KOL," "creator partnership," "brand ambassador," "sponsored content," "influencer campaign," "micro-influencer," "influencer outreach," "creator collaboration," or "influencer deal." Also use when the user mentions "sponsorships," "YouTube sponsorships," "podcast sponsorships," "ambassador program," "UGC creators," "tech UGC," "creator network," "B2B influencers," "thought leader ads," "gifting," "product seeding," "whitelisting creator content," "how much to pay an influencer," "FTC disclosure," or "Telegram channel ads." For creator programs, use creator-program.
+description: When the user wants to plan, implement, or optimize influencer marketing strategy. Also use when the user mentions "influencer marketing," "KOL," "creator partnership," "brand ambassador," "sponsored content," "influencer campaign," "micro-influencer," "influencer outreach," "creator collaboration," or "influencer deal." Also use when the user mentions "sponsorships," "YouTube sponsorships," "podcast sponsorships," "newsletter sponsorship," "newsletter ad," "sponsor a newsletter," "ambassador program," "UGC creators," "tech UGC," "creator network," "B2B influencers," "thought leader ads," "gifting," "product seeding," "whitelisting creator content," "how much to pay an influencer," "FTC disclosure," or "Telegram channel ads." For creator programs, use creator-program.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: influencer-marketing, influencer-marketing
 ---
 
@@ -55,6 +55,10 @@ Influencer marketing and ambassador programs are points on one spectrum, from a 
 | **Organic advocate** | None | Cheapest trust (**community-building**) |
 
 **Volume UGC creator program ("tech UGC"):** an in-house network of creators posting disclosed native short-form from dedicated brand-affiliated accounts at test volume (e.g. 10 creators x 3 posts/day). Content volume, not audience, is the asset. See [references/ugc-creator-program.md](references/ugc-creator-program.md) for formats, trial-week vetting, account warming, the review loop, and the compliance rewrite.
+
+**Performance-paid creator program:** creators make videos for your ad accounts and earn a share of the spend (or revenue) behind them, usually with a monthly minimum for hitting a video quota. A small, coached cohort (start at 4–5, cap around 40–60) beats hundreds of mercenary creators, because near-identical videos get clustered and suppressed on Meta. See [references/paid-ads-creator-program.md](references/paid-ads-creator-program.md) for rate-setting math, the guaranteed-minimum mechanic, recruiting, briefing, and keeping creators from copying the leaderboard.
+
+**Newsletter sponsorships** buy a placement in someone else's newsletter, with one tracked link per send. Before booking a newsletter again, read what its earlier placements did and skip angles run on that list in the last 30 days. See [references/newsletter-sponsorships.md](references/newsletter-sponsorships.md) for vetting, the past-results table, placement specs, writing to the list, and reporting.
 
 ## Discovery & Screening
 
@@ -152,7 +156,7 @@ Brief rather than script word-for-word; scripted reads convert worst. Provide:
 
 Fix attribution gaps before the campaign runs:
 - **Unique promo codes**: easiest direct tracker; essential for podcasts and video
-- **UTM links**: one per creator per placement
+- **UTM links**: one per creator per placement; use the fixed pattern for each partner type (newsletter, creator, podcast, affiliate, community) in **traffic-analysis** (UTM Patterns by Partner Type), so every deal rolls up the same way
 - **Vanity landing pages** (`yourdomain.com/creatorname`): lift conversion and attribute cleanly
 - **Post-purchase survey** ("How did you hear about us?"): catches the branded-search and direct halo that codes and last-click miss (see **attribution**; **generative-engine-optimization** when discovery was AI search)
 - **Whitelisted-ad metrics**: a clean read on the creative's real pull

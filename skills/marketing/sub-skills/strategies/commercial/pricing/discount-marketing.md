@@ -2,7 +2,7 @@
 name: discount-marketing-strategy
 description: When the user wants to plan, implement, or optimize discount and promotional pricing strategy. Also use when the user mentions "discount strategy," "promo code," "coupon," "redeem code," "lifetime deal," "LTD," "AppSumo," "Black Friday," "Cyber Monday," "BFCM," "seasonal sale," or "promotional pricing." For pricing page, use `implement/sub-skills/references/pages/marketing/pricing.md`.
 metadata:
-  version: 1.1.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: discount-marketing-strategy

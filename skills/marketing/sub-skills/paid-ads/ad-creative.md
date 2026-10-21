@@ -7,7 +7,7 @@ metadata:
   author: jny986
   author-url: https://jny986.com
   based_on_repo: coreyhaines31/marketingskills
-  based_on_version: v2.11.29(c7d7dfb)
+  based_on_version: v2.13.0(e85f3cb)
   based_on_skill: ad-creative
 ---
 
@@ -18,6 +18,8 @@ Guides generating high-performing ad creative at scale (headlines, descriptions,
 ## Initial Assessment
 
 **Project context:** Read the product marketing context when present. Without it, use available project material or user-provided facts and ask for missing information.
+
+Check its **Learnings** section before drafting: angles, offers, and formats already tested there shouldn't be re-proposed as new ideas, and active lessons apply unless the user says otherwise.
 
 Take the product, audience and brand voice from the product marketing context. Gather the rest (ask only for what's missing):
 

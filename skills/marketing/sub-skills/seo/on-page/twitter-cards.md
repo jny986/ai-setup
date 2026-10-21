@@ -2,7 +2,7 @@
 name: twitter-cards
 description: When the user wants to add, audit, implement, or optimize Twitter Card metadata for X link previews, including twitter:card, twitter:title, twitter:description, twitter:image, or X previews. For a full metadata lifecycle use page-metadata; for broader social previews use open-graph.
 metadata:
-  version: 2.0.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: twitter-cards

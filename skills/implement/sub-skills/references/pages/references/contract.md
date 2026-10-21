@@ -1,3 +1,11 @@
+---
+metadata:
+  version: "1.0.0"
+  based_on_repo: kostja94/pagina
+  based_on_version: main(239cb67)
+  based_on_skill: page-builder
+---
+
 # Page contract
 
 A page owns one route's user task and its content composition. Whole-site navigation, publishing architecture, and product planning remain project-level decisions.

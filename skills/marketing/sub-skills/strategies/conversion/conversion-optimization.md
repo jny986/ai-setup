@@ -2,9 +2,9 @@
 name: conversion-optimization
 description: When the user wants to improve conversion rates, run A/B tests, optimize funnels, or reduce friction. Also use when the user mentions "CRO," "conversion rate optimization," "A/B test," "split test," "funnel optimization," "checkout optimization," "form optimization," or "conversion funnel." For pricing psychology, use pricing-strategy.
 metadata:
-  version: 1.1.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: conversion-optimization, cro
 ---
 

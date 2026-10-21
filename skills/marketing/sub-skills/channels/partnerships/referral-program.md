@@ -2,9 +2,9 @@
 name: referral-program
 description: When the user wants to plan, implement, or optimize referral program strategy. Also use when the user mentions "referral program," "referral marketing," "user referral," "refer-a-friend," "word-of-mouth growth," "referral rewards," "referral tracking," "referral code," "referral incentives," or "viral loop." Also use when the user mentions "viral coefficient," "K-factor," "powered by badge," "product-led virality," "exposure loop," "review program," "G2 reviews," "Capterra reviews," "Trustpilot," "review requests," or "testimonials." For affiliate programs, use affiliate-marketing. For referral landing copy, use `implement/sub-skills/references/pages/marketing/landing-page.md`.
 metadata:
-  version: 1.0.1
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: referral-program, referrals
 ---
 

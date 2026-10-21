@@ -3,7 +3,7 @@ name: branding
 description: When the user wants to define, audit, or apply brand strategy—purpose, values, positioning, storytelling, voice, narrative (not only visuals). Also use when the user mentions "brand strategy," "brand story," "brand storytelling," "brand voice," "brand identity," "brand guidelines," "brand purpose," "brand values," "origin story," "brand narrative," "brand personality," "brand archetype," "slide deck branding," "PPT brand colors," or "document style guide." For typography, colors, design tokens, and frontend visuals, use brand-visual.
 license: MIT
 metadata:
-  version: 1.2.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills
   based_on_version: v1.0.0(8dd89c5)
   based_on_skill: branding

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Update from source"
+  short_description: "Pull upstream changes from source-skills into adapted skills"
+policy:
+  allow_implicit_invocation: false

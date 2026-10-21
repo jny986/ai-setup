@@ -13,6 +13,7 @@ metadata:
   based_on_repo: blader/humanizer
   based_on_version: v3.1.0(8c307f3)
   based_on_skill: humanizer
+  based_on_url: https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing (2026-10-21)
 ---
 
 # Humanizer: remove AI writing patterns
@@ -438,9 +439,3 @@ Keep the details that carry the writer's voice unless they hurt the meaning:
 Plain human habits are not tells: simple *is* and *has* ("there is a", "it has a"), plain verbs over stiff synonyms (wrote, used, died instead of authored, utilized, passed away), flat superlatives and definite claims ("one of the best", "was the first"), qualifiers and intensifiers (very, perhaps, tends to), and wordy constructions (as a result of, in order to, the fact that). Leave them.
 
 These are also unreliable signs on their own: perfect grammar, a mix of casual and formal registers, bland or very ornate prose, a transition word such as *Additionally* or *Notably*, unsourced text, odd formatting, and correct formatting. A writer who can explain their own choices is showing ordinary human behavior. Do not label text as AI-written on the strength of any of these.
-
-## Source
-
-The patterns come from Wikipedia's ["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup, and from reviews of AI-generated text on Wikipedia and elsewhere.
-
-This skill was developed with the help of [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).

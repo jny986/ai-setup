@@ -2,9 +2,9 @@
 name: directory-submission
 description: When the user wants to submit a product or app to directories, curated lists, launch platforms, or app stores—and needs ready-to-paste copy per platform. Also use when the user mentions "directory submission," "get listed," "app store listing," "submit to directories," "curated list," "best tools list," "Taaft," "Product Hunt," "directory ads," "newsletter feature," "directory campaign," "tailor description per platform," "Shopify App Store," "Chrome Web Store," "navigation site," "product directory," "backlinks from directories," "list my product," "BetaList," "Futurepedia," "AlternativeTo," "SaaSHub," "G2 listing," "Capterra listing," "AI directories," "MCP registry," "agent directory," "dofollow backlinks," or "directory tracker." For Product Hunt launch day tactics (hunter, first comment, timing), use product-hunt-launch. For full 0→1 channel planning, use cold-start-strategy.
 metadata:
-  version: 1.2.0
+  version: 1.0.0
   based_on_repo: kostja94/marketing-skills, coreyhaines31/marketingskills
-  based_on_version: v1.0.0(8dd89c5), v2.11.29(c7d7dfb)
+  based_on_version: v1.0.0(8dd89c5), v2.13.0(e85f3cb)
   based_on_skill: directory-submission, directory-submissions
 ---
 
@@ -457,7 +457,7 @@ One self-reported 2026 case (MCP server plus micro SaaS, ~35 directories) went f
 
 - **branding**: Reusable brand strategy and voice method; use the product marketing context for project-specific truth
 - `implement/sub-skills/references/pages/marketing/press.md`: Press kit, screenshots, assets for launch; required for Product Hunt and directory submissions
-- **link-building**: Directory and curated list backlinks contribute to link profile; this skill handles the submission workflow—see **link-building** for broader outreach, guest posting, broken link building
+- **link-building**: Directory and curated list backlinks contribute to link profile; this skill handles the submission workflow—see **link-building** for broader outreach, guest posting, broken link building, and the rest of the link program once the directory foundation is in place
 - **github**: GitHub awesome lists as curated lists; create or submit to awesome-* repos
 - **open-source-strategy**: Open source commercialization; DevHunt, GitHub, Awesome lists for OSS projects
 - **grokipedia-recommendations**: Same output pattern--platform context first (Introduction, Importance, Methods, Rules, Avoid), then Action; high-authority placement for GEO; directories for human discovery--complementary
