@@ -93,7 +93,7 @@ If the spec is missing, skip the Spec sub-agent and note this in the final repor
 
 ### 5. Check user comments
 
-Look for review comments the user left on the PR (read commands in `docs/agents/gh-review.md`) or in the issue. Skip resolved threads and bot comments. If none exist, say so and move on.
+Look for review comments the user left on the PR (read commands in [references/gh-review.md](references/gh-review.md)) or in the issue. Skip resolved threads and bot comments. If none exist, say so and move on.
 
 For each comment, check the current diff: has the issue it raises actually been fixed? Report each as fixed, not fixed, or partially fixed, quoting the comment and citing the file/lines that show it. Don't take a "done" reply or a resolved thread as proof.
 
@@ -135,7 +135,7 @@ Once the user has selected the review result in step 9, generate and show a shor
 
 ### 11. Submit the review
 
-Once the user has answered each question, submit one review on the PR with the chosen result, review comment (if any), and inline comments selected in step 8 (`event` set to `APPROVE` or `REQUEST_CHANGES`). Follow `docs/agents/gh-review.md` for the payload file and the single `gh api` call. The same doc covers replying to existing review threads.
+Once the user has answered each question, submit one review on the PR with the chosen result, review comment (if any), and inline comments selected in step 8 (`event` set to `APPROVE` or `REQUEST_CHANGES`). For any GitHub review write-up (submitting the review, inline comments, replying to threads), refer to [references/gh-review.md](references/gh-review.md) for the payload file and the single `gh api` call.
 
 ## Why separate axes
 
