@@ -29,7 +29,7 @@ The issue tracker should have been provided to you. If `docs/agents/issue-tracke
 
 **Target.** Name what's under review:
 
-- **A branch or PR** the user named: check it out and bring it up to date with its remote (`gh pr checkout <n>` for a PR, otherwise `git checkout <branch>`; then `git fetch` and `git pull --ff-only`). Review is of the *current* branch at its latest commit. Stop and tell the user if the tree is dirty or the pull can't fast-forward.
+- **A branch or PR** the user named: check it out and bring it up to date with its remote (`gh pr checkout <n>` for a PR, otherwise `git checkout <branch>`; then `git fetch`, then `git pull --ff-only`, each its own call). Review is of the *current* branch at its latest commit. Stop and tell the user if the tree is dirty or the pull can't fast-forward.
 - **Nothing named**: review the local branch as it stands, with no checkout or pull.
 
 **Fixed point.** Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, default to the target branch of the PR (`gh pr view --json baseRefName -q .baseRefName`, then compare against `origin/<base>`). With no PR, default to the branch the review target was cut from, else the repo's default branch. Ask only if none of these resolves.
@@ -93,7 +93,7 @@ If the spec is missing, skip the Spec sub-agent and note this in the final repor
 
 ### 5. Check user comments
 
-Look for review comments the user left on the PR (`gh pr view --json comments,reviews` and `gh api repos/{owner}/{repo}/pulls/<n>/comments` for inline ones) or in the issue. Skip resolved threads and bot comments. If none exist, say so and move on.
+Look for review comments the user left on the PR (read commands in `docs/agents/gh-review.md`) or in the issue. Skip resolved threads and bot comments. If none exist, say so and move on.
 
 For each comment, check the current diff: has the issue it raises actually been fixed? Report each as fixed, not fixed, or partially fixed, quoting the comment and citing the file/lines that show it. Don't take a "done" reply or a resolved thread as proof.
 
@@ -135,7 +135,7 @@ Once the user has selected the review result in step 9, generate and show a shor
 
 ### 11. Submit the review
 
-Once the user has answered each question, submit one review on the PR with the chosen result, review comment (if any), and inline comments selected in step 8 (e.g. `gh api repos/{owner}/{repo}/pulls/{n}/reviews` with `event` set to `APPROVE` or `REQUEST_CHANGES`).
+Once the user has answered each question, submit one review on the PR with the chosen result, review comment (if any), and inline comments selected in step 8 (`event` set to `APPROVE` or `REQUEST_CHANGES`). Follow `docs/agents/gh-review.md` for the payload file and the single `gh api` call. The same doc covers replying to existing review threads.
 
 ## Why separate axes
 

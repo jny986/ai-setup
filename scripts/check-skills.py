@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Check every skills/**/SKILL.md has valid frontmatter and every relative Markdown link under skills/ resolves.
+Also fails any `gh`/`git` command in skill Markdown that chains with `&&`, `;` or `|`.
 
 Frontmatter: required and known keys, boolean flags, description length, and all-or-none `based_on_*` provenance
 with aligned comma-separated lists. A description without a "use when"-style trigger only warns.
@@ -18,6 +19,9 @@ VERSION = re.compile(r"^v?\d+(\.\d+)*(\([0-9a-f]{7,40}\))?$")
 REPO = re.compile(r"^[\w.-]+/[\w.-]+$")
 MAX_DESCRIPTION = 1024  # agentskills.io limit
 TRIGGER = re.compile(r"\b(use|invoke|trigger|when|for)\b", re.I)
+CODE_SPAN = re.compile(r"```.*?```|`[^`\n]+`", re.S)
+QUOTED = re.compile(r"\"[^\"]*\"|'[^']*'")  # jq filters and message bodies may hold `|` or `;`
+CHAIN = re.compile(r"&&|\|\||;|\|")
 
 
 def check_frontmatter(skill, rel, report):
@@ -78,12 +82,24 @@ def check_links(skills, report):
     return links
 
 
+def check_chains(skills, report):
+    """Fail on a `gh`/`git` command that chains with `&&`, `;` or `|`; agents run one command per call."""
+    for md in sorted(skills.rglob("*.md")):
+        for span in CODE_SPAN.findall(md.read_text()):
+            span = span.strip("`").strip()
+            if not span.startswith(("gh ", "git ")):
+                continue
+            if CHAIN.search(QUOTED.sub("''", span)):
+                report.fail(f"{md.relative_to(skills)}: chained command `{span}`, split into one command per call")
+
+
 def check(root):
     report = Report()
     skills = Path(root) / "skills"
     for skill in sorted(skills.rglob("SKILL.md")):
         check_frontmatter(skill, skill.relative_to(skills), report)
     check_links(skills, report)
+    check_chains(skills, report)
     return report
 
 
