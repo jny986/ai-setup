@@ -1,6 +1,6 @@
 ---
 name: git
-description: "Router for git and PR workflows. Use for any commit, push, pull request, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, code-review, review-prs, resolving-merge-conflicts."
+description: "Router for git and PR workflows. Use for any commit, push, pull request, PR review fixes, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, code-review, review-prs, pr-fixes, resolving-merge-conflicts."
 argument-hint: "[sub-skill] [task]"
 license: MIT
 metadata:
@@ -9,7 +9,7 @@ metadata:
   author-url: https://jny986.com
 ---
 
-A router over five git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in this skill's folder.
+A router over git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in this skill's folder.
 
 ## Steps
 
@@ -26,6 +26,7 @@ A router over five git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in 
 | [`create-pr`](sub-skills/create-pr.md) | Open a GitHub PR from the current branch (commits and pushes first if needed) |
 | [`code-review`](sub-skills/code-review.md) | Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security |
 | [`review-prs`](sub-skills/review-prs.md) | Review the open PRs awaiting the user's review, asking continue or skip for each |
+| [`pr-fixes`](sub-skills/pr-fixes.md) | Address unresolved PR review comments the user has not replied to, with user decisions and one fix sub-agent per issue |
 | [`resolving-merge-conflicts`](sub-skills/resolving-merge-conflicts.md) | A merge or rebase is in progress with conflicts |
 
 ## How they nest

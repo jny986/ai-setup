@@ -9,7 +9,7 @@
 | [diagnosing-bugs](skills/diagnosing-bugs) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
 | [docs](skills/docs) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Sharpen ideas through grilling, maintain planning docs, synthesize specs, and draft dependency-linked tickets. Sub-skills: me, docs, spec, tickets. |
 | [finalise](skills/finalise) | — | No | 1.0.0 | jny986 | Finalise a branch's dev work — run code and security reviews, fix findings, then create the PR. |
-| [git](skills/git) | — | Yes | 1.0.0 | jny986 | Router for git and PR workflows. Use for any commit, push, pull request, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, code-review, review-prs, resolving-merge-conflicts. |
+| [git](skills/git) | — | Yes | 1.0.0 | jny986 | Router for git and PR workflows. Use for any commit, push, pull request, PR review fixes, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, code-review, review-prs, pr-fixes, resolving-merge-conflicts. |
 | [handoff](skills/handoff) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | 1.0.0 | jny986 | Compact the current conversation into a handoff document for another agent to pick up. |
 | [humanizer](skills/humanizer) | [blader/humanizer](https://github.com/blader/humanizer) | Yes | 1.0.0 | jny986 | Rewrite AI-sounding text so it reads like the writer without changing what it says. Use when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line closers, staged openers, forced triads, dashes everywhere, inflated claims, sales language, stock AI words, bold labels, or filler. Based on Wikipedia's "Signs of AI writing." |
 | [implement](skills/implement) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Implement features, changes, specs and tickets with automatic context and page/component workflow selection. |
@@ -195,6 +195,7 @@
 - [code-review](skills/git/sub-skills/code-review.md) (v1.0.0, jny986): Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security
 - [commit](skills/git/sub-skills/commit.md) (v1.0.0, jny986): Commit and push the current work, on the branch its ticket calls for
 - [create-pr](skills/git/sub-skills/create-pr.md) (v1.0.0, jny986): Open a GitHub PR from the current branch (commits and pushes first if needed)
+- [pr-fixes](skills/git/sub-skills/pr-fixes.md) (v1.0.0, jny986): Address unresolved PR review comments the user has not replied to, with user decisions and one fix sub-agent per issue
 - [resolving-merge-conflicts](skills/git/sub-skills/resolving-merge-conflicts.md) (v1.0.0, jny986): A merge or rebase is in progress with conflicts
 - [review-prs](skills/git/sub-skills/review-prs.md) (v1.0.0, jny986): Review the open PRs awaiting the user's review, asking continue or skip for each
 <!-- git-sub-skills:end -->
