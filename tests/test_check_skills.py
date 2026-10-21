@@ -56,3 +56,18 @@ def test_invalid_flag_value(repo):
 def test_broken_link(repo):
     (repo / "skills" / "alpha" / "doc.md").write_text("[x](missing.md)\n")
     assert "broken link missing.md" in errors(check(repo))
+
+
+def test_chained_command_fails(repo):
+    (repo / "skills" / "alpha" / "doc.md").write_text("Run `git add . && git commit`.\n")
+    assert "chained command" in errors(check(repo))
+
+
+def test_chained_command_in_fenced_block_fails(repo):
+    (repo / "skills" / "alpha" / "doc.md").write_text("```bash\ngit diff | grep x\n```\n")
+    assert "chained command" in errors(check(repo))
+
+
+def test_pipe_inside_quotes_passes(repo):
+    (repo / "skills" / "alpha" / "doc.md").write_text("Run `gh api x --jq '.[] | .id'`.\n")
+    assert check(repo).errors == []

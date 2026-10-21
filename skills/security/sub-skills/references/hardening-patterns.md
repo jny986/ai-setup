@@ -297,7 +297,7 @@ if (!success) return res.status(429).end();
 **Always check before committing:**
 ```bash
 # Check for accidentally staged secrets
-git diff --cached | grep -i "password\|secret\|api_key\|token"
+git grep --cached -n -i -E "password|secret|api_key|token"
 ```
 
 **If a secret is ever committed, rotate it.** Deleting the line or rewriting history is not enough — assume it's compromised the moment it reaches a remote. Revoke and reissue the key first, then purge it from history.
