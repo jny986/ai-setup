@@ -63,6 +63,7 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
     ├── jamditis-claude-skills-journalism/
     ├── CosmoBlk-email-design/
     ├── vercel-labs-web-interface-guidelines/
+    ├── blader-humanizer/
     ├── SKILLS.md      # Index of every upstream skill
     └── skills.html    # The same index, grouped by repo
 ```

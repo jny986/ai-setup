@@ -40,3 +40,6 @@
 [submodule "source-skills/vercel-labs-web-interface-guidelines"]
 	path = source-skills/vercel-labs-web-interface-guidelines
 	url = https://github.com/vercel-labs/web-interface-guidelines.git
+[submodule "source-skills/blader-humanizer"]
+	path = source-skills/blader-humanizer
+	url = https://github.com/blader/humanizer.git
