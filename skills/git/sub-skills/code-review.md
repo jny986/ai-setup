@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Reviews Standards and Spec in parallel, verifies security remediation, checks prior comments, and optionally submits a user-approved PR review."
+description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Reviews Standards and Spec in parallel, runs the full security review on the current diff with a fix/review loop, checks prior comments, and optionally submits a user-approved PR review."
 license: MIT
 metadata:
   version: "1.0.0"
@@ -67,19 +67,21 @@ When a comment matches a pattern that recurs across the PR's comments, record it
 
 ### 6. Security review
 
-Follow `security review-code` on `git diff <fixed-point>...HEAD`. If the skill is unavailable, report the missing dependency and stop before completing the review.
+Run the full `security review-code` workflow on the complete change set established for this review, including reviews invoked through `git review-prs` or `finalise`. Use the captured diff from step 1; when the invoking workflow includes pending changes (as `finalise` does), use `git diff <fixed-point>` and read intended untracked files so security covers the same changes as Standards and Spec. Read the security router and its `sub-skills/review-code.md`, then execute every applicable step: scope the actual current diff, load the matching guides, trace suspect patterns through the surrounding code, classify them and produce the security report. A PR overview, prior security report or verification of earlier fixes cannot substitute for this run. If the skill or a required guide is unavailable, or the workflow cannot be completed, report the missing dependency or coverage gap and stop before completing the code review or recommending a PR verdict.
+
+Record the resolved base and head commit SHAs, diff command, any reviewed working-tree changes and untracked files, changed files covered, guides applied and any coverage limitations. Account for every changed file, explaining any exclusions. A clean result requires this completed review even when there are no prior security findings.
 
 - On a PR, before making fixes in a detached worktree, create a local branch to retain the commits. After committing fixes, push them to the PR's head branch in its head repository when permitted, then confirm the PR's remote head includes them. Until that confirmation, keep the findings open, retain the local branch, and ask the user how to deliver the fixes if publication is blocked. Re-review the published diff before treating the PR's vulnerabilities as resolved.
 - Fix confirmed vulnerabilities when remediation is clear and within scope. Run relevant checks, commit each pass in a new commit and re-review against the same fixed point.
 - Investigate needs-verification items before confirming them. When a product, architecture or compatibility decision is needed, or a fix makes no progress, show severity, evidence, impact and options; ask the user and wait. Apply their instructions and re-review fixes. Record explicit decisions to ignore items; reopen them if later changes invalidate the decision.
-- Repeat for new findings. Continue only when every finding and needs-verification item is verified resolved or explicitly ignored by the user; an instruction to attempt a fix leaves the item open.
+- After each fix pass, rerun the full security workflow on the refreshed diff against the same fixed point, including checks for new vulnerabilities introduced by the fixes. Update the coverage record to the reviewed head. Continue only when every finding and needs-verification item is verified resolved or explicitly ignored by the user; an instruction to attempt a fix leaves the item open.
 
 ### 7. Aggregate
 
 After security fixes, refresh the diff and repeat Standards, Spec and comment checks for affected hunks. Present:
 
 - `## Standards` and `## Spec`: reviewer reports, verbatim or lightly cleaned.
-- `## Security`: vulnerabilities found, fixes verified, and findings or needs-verification items explicitly ignored, with the user's decisions.
+- `## Security`: the coverage record from step 6, vulnerabilities found, fixes verified, and findings or needs-verification items explicitly ignored, with the user's decisions. When none qualify, report the completed review's clean result; distinguish it from an incomplete or blocked review.
 - `## Comments`: a table with `Author | Comment | Status | Evidence`, one row per step 5 comment: `@username`, quote, fixed/not fixed/partially fixed, and file/line citations. Say when there are none.
 - `## Notes`: standards that were vague, contradictory or stale, plus recurring comment patterns. Suggest standards or automated checks to add, clarify or remove. Notes are not findings.
 
