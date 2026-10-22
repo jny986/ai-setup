@@ -87,4 +87,4 @@ End with one line: finding counts and worst issue within each axis, distinguishi
 
 ### 8. PR review
 
-For a PR, follow [selection, overall comment and submission](references/code-review-pr.md): select inline comments, choose the result, approve the draft, then submit. For a local review, finish after step 7.
+For a PR, follow [selection, overall comment and submission](references/code-review-pr.md): ask which findings to include and which result to use, then submit with the generated overall comment unless the user supplies their own. For a local review, finish after step 7.

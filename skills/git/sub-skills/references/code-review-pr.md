@@ -8,7 +8,7 @@ metadata:
 
 # PR review selection and submission
 
-After steps 1–7 of [code-review](../code-review.md), follow these steps for a PR. Step numbers and report references refer to that workflow. Each selection requires a separate user answer before continuing.
+After steps 1–7 of [code-review](../code-review.md), follow these steps for a PR. Step numbers and report references refer to that workflow. Ask the user which findings to include and which review result to use, waiting for each answer. Use the generated overall comment unless they supply their own.
 
 ## 8. Select PR inline comments
 
@@ -29,7 +29,7 @@ After the inline-comment selection, repeat the suggested review result prominent
 
 Wait for their answer before step 10.
 
-## 10. Choose the review comment
+## 10. Prepare the review comment
 
 Once the user has selected the review result in step 9, draft the overall comment using the template below and show it under `## Suggested review comment`. Generate it only after their selection, including when it differs from the recommended result.
 
@@ -43,8 +43,8 @@ Once the user has selected the review result in step 9, draft the overall commen
 
 Aim for 1–2 sentences, grounded in steps 1–7. Refer to important concerns in plain text, without links or repeated details. Include only context needed to understand the verdict; omit repeated assessments, test summaries and issue lists. Flag a material review limitation or accepted risk briefly when it affects merge readiness. Omit the second sentence when there is nothing important to highlight. The draft is ready when its status matches the user's choice and it accurately reflects outstanding concerns, including when the chosen result differs from the recommendation.
 
-Ask whether to use the draft, edit it, or omit the review-level comment. Wait for their answer before step 11. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to approve a short summary or supply their own text.
+Use this generated comment as the review body and continue to step 11. If the user supplied replacement text, use it instead. Their inline-comment and review-result answers complete the required selections; the generated body needs no separate confirmation. If they explicitly request no overall comment, omit it for **Approve**. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to use the generated summary or supply their own text.
 
 ## 11. Submit the review
 
-After all selections, submit one review with the chosen result (`APPROVE` or `REQUEST_CHANGES`), approved body if any, and selected inline comments. Follow [GitHub review operations](gh-review.md) for the payload file and single `gh api` call, including any thread replies or other review writes.
+After both selections, submit one review with the chosen result (`APPROVE` or `REQUEST_CHANGES`), the body from step 10, and selected inline comments. Follow [GitHub review operations](gh-review.md) for the payload file and single `gh api` call, including any thread replies or other review writes.
