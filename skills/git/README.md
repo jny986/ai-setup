@@ -17,7 +17,7 @@ npx skills add jny986/ai-setup --skill git
 - `/git commit`: commit and push the current work.
 - `/git create-pr draft, base develop`: open a draft PR against `develop`.
 - `/git code-review since main`: review everything since `main`.
-- `/git pr-fixes 123`: list unanswered unresolved review threads, choose a resolution for each, and delegate each approved fix to its own sub-agent. Run `finalise` on the branch, then ask for separate approval before replies and thread resolution.
+- `/git pr-fixes 123`: list unanswered unresolved review threads, including those you created, choose a resolution for each, and delegate each approved fix to its own sub-agent. Run `finalise` on the branch, then ask for separate approval before replies and thread resolution.
 - `/git resolving-merge-conflicts`: finish an in-progress merge or rebase.
 
 `commit-it` still works as the old name for `git commit`. Without a sub-skill name, the router picks one from the task ("commit this", "open a PR", "review my branch"). Because the skill allows implicit invocation, asking in plain language also works without typing `/git`.
@@ -30,7 +30,7 @@ npx skills add jny986/ai-setup --skill git
 | [`sub-skills/commit.md`](sub-skills/commit.md) | Resolves the ticket in context, switches to the branch it calls for (a Kanopi `branch_name` is used verbatim), makes one conventional commit and pushes. Never force-pushes. |
 | [`sub-skills/create-pr.md`](sub-skills/create-pr.md) | Commits and pushes via `git commit`, opens a GitHub PR with `gh` (using the repo's PR template if one exists), then watches CI and fixes failures. Hints: draft, base, title, reviewers, "verify" to run tests, lint and typecheck first. |
 | [`sub-skills/code-review.md`](sub-skills/code-review.md) | Reviews the diff since a fixed point on three axes: repo standards and the originating spec using parallel sub-agents, plus security through `security review-code`. Security repeats fixes and reviews until every item is resolved or explicitly ignored by the user, asking for instructions when a decision is needed or progress stalls. It also checks whether your existing PR comments were addressed. On a PR, it can submit a review with the inline comments you pick, after you confirm the verdict. |
-| [`sub-skills/pr-fixes.md`](sub-skills/pr-fixes.md) | Inventories unresolved review threads without a user reply, proposes resolutions and waits for per-issue decisions. Uses one sub-agent per approved fix, verifies the combined result and runs `finalise` on the branch, then asks before posting replies or resolving eligible threads. |
+| [`sub-skills/pr-fixes.md`](sub-skills/pr-fixes.md) | Inventories unresolved review threads without a user reply, including threads the user created, proposes resolutions and waits for per-issue decisions. Uses one sub-agent per approved fix, verifies the combined result and runs `finalise` on the branch, then asks before posting replies or resolving eligible threads. |
 | [`sub-skills/resolving-merge-conflicts.md`](sub-skills/resolving-merge-conflicts.md) | Resolves each conflict hunk from the intent of both sides, runs the project's checks and completes the merge or rebase. |
 | [`agents/openai.yaml`](agents/openai.yaml) | Display metadata for OpenAI and Codex agents. |
 

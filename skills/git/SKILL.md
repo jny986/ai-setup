@@ -26,7 +26,7 @@ A router over git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in this 
 | [`create-pr`](sub-skills/create-pr.md) | Open a GitHub PR from the current branch (commits and pushes first if needed) |
 | [`code-review`](sub-skills/code-review.md) | Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security |
 | [`review-prs`](sub-skills/review-prs.md) | Review the open PRs awaiting the user's review, asking continue or skip for each |
-| [`pr-fixes`](sub-skills/pr-fixes.md) | Address unresolved PR review comments the user has not replied to, with user decisions and one fix sub-agent per issue |
+| [`pr-fixes`](sub-skills/pr-fixes.md) | Address unresolved PR review threads without a user reply, including threads the user created, with user decisions and one fix sub-agent per issue |
 | [`resolving-merge-conflicts`](sub-skills/resolving-merge-conflicts.md) | A merge or rebase is in progress with conflicts |
 
 ## How they nest

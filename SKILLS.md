@@ -195,7 +195,7 @@
 - [code-review](skills/git/sub-skills/code-review.md) (v1.0.0, jny986): Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security
 - [commit](skills/git/sub-skills/commit.md) (v1.0.0, jny986): Commit and push the current work, on the branch its ticket calls for
 - [create-pr](skills/git/sub-skills/create-pr.md) (v1.0.0, jny986): Open a GitHub PR from the current branch (commits and pushes first if needed)
-- [pr-fixes](skills/git/sub-skills/pr-fixes.md) (v1.0.0, jny986): Address unresolved PR review comments the user has not replied to, with user decisions and one fix sub-agent per issue
+- [pr-fixes](skills/git/sub-skills/pr-fixes.md) (v1.0.0, jny986): Address unresolved PR review threads without a user reply, including threads the user created, with user decisions and one fix sub-agent per issue
 - [resolving-merge-conflicts](skills/git/sub-skills/resolving-merge-conflicts.md) (v1.0.0, jny986): A merge or rebase is in progress with conflicts
 - [review-prs](skills/git/sub-skills/review-prs.md) (v1.0.0, jny986): Review the open PRs awaiting the user's review, asking continue or skip for each
 <!-- git-sub-skills:end -->
