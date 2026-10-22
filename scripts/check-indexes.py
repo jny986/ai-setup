@@ -12,7 +12,23 @@ from skilllib import Report, frontmatter, run, skill_dirs
 
 MD_ROW = re.compile(r"^\| \[([^\]]+)\]\(skills/([^)]+)\) \| (.*?) \| (Yes|No) \| .* \|$", re.M)
 HTML_ROW = re.compile(r'<tr><td><a href="skills/([^"]+)">([^<]+)</a></td><td class="inv-(yes|no)">(Yes|No)</td>')
-HTML_GROUP = re.compile(r"<details>\s*<summary>(.*?)</summary>(.*?)</details>", re.S)
+HTML_SKILL = re.compile(r'<article class="skill" id="skill-([^"]+)" data-skill="([^"]+)" data-invokable="(yes|no)"')
+HTML_GROUP = re.compile(r"<details>\s*<summary>(.*?)</summary>(.*)</details>", re.S)
+
+
+def html_groups(text):
+    """Yield upstream summaries and bodies, keeping nested sub-skill details intact."""
+    depth = 0
+    start = 0
+    for tag in re.finditer(r"<details>|</details>", text):
+        if tag.group() == "<details>":
+            if depth == 0:
+                start = tag.start()
+            depth += 1
+        else:
+            depth -= 1
+            if depth == 0:
+                yield HTML_GROUP.fullmatch(text[start:tag.end()]).groups()
 
 
 def sorted_runs(rows, key_of_group):
@@ -56,6 +72,18 @@ def check(root):
         if (cls == "yes") != (label == "Yes"):
             report.fail(f"skills.html: {name} class and label disagree")
         html_rows.append((name, None, label == "Yes"))
+    catalogue = HTML_SKILL.findall(html_text)
+    for anchor, name, invokable_label in catalogue:
+        if anchor != name:
+            report.fail(f"skills.html: skill '{name}' has mismatched anchor '{anchor}'")
+        html_rows.append((name, None, invokable_label == "yes"))
+    if catalogue:
+        names = [row[1] for row in catalogue]
+        if names != sorted(names):
+            report.fail("skills.html: catalogue skills are not sorted alphabetically")
+        total = re.search(r'data-skill-count="(\d+)"', html_text)
+        if not total or int(total[1]) != len(catalogue):
+            report.fail("skills.html: catalogue count does not match listed skills")
 
     md_names, html_names = [r[0] for r in md_rows], [r[0] for r in html_rows]
     for label, names in (("SKILLS.md", md_names), ("skills.html", html_names)):
@@ -76,7 +104,7 @@ def check(root):
     for group, names in sorted_runs(md_rows, lambda r: r[1]):
         if names != sorted(names):
             report.fail(f"SKILLS.md: rows for '{group}' are not sorted alphabetically")
-    for summary, body in HTML_GROUP.findall(html_text):
+    for summary, body in html_groups(html_text):
         names = [m[0] for m in HTML_ROW.findall(body)]
         label = re.sub(r"<[^>]+>.*", "", summary).strip()
         if names != sorted(names):

@@ -42,7 +42,7 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
 │   ├── security/      # Router skill: four sub-skills (review-code, build-securely, harden-deployment, release-gate) over sub-skills/references/
 │   └── implement/     # Router: direct changes, tickets, specs, plus page and component build guides
 ├── SKILLS.md          # Index of my skills
-├── skills.html        # The same index, grouped by upstream source
+├── skills.html        # Package skills guide: descriptions, usage and nested sub-skills
 ├── GLOSSARY.md         # Glossary of this repo's terms
 ├── docs/              # Agent config docs (agents/) and the router-skill guide
 ├── scripts/           # Repo checks run in CI; `scripts/check-all.sh` runs them all locally
