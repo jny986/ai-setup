@@ -1,5 +1,6 @@
 interface:
   display_name: "Git"
-  short_description: "Commit, PR, review and conflict workflows"
+  short_description: "Commit, PR, review, CI repair and merge conflict workflows"
+  default_prompt: "Use $git ci-fix to repair CI failures and merge conflicts on the referenced PR, then monitor until its latest head passes."
 policy:
   allow_implicit_invocation: true
