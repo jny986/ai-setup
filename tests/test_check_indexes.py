@@ -1,6 +1,43 @@
+import pytest
+
 from conftest import errors, load
 
 check = load("check-indexes").check
+
+
+@pytest.fixture
+def catalogue(repo):
+    (repo / "skills.html").write_text(
+        '<main data-skill-count="2">'
+        '<article class="skill" id="skill-alpha" data-skill="alpha" data-invokable="yes"></article>'
+        '<article class="skill" id="skill-beta" data-skill="beta" data-invokable="no"></article>'
+        '</main>'
+    )
+    return repo
+
+
+def test_usage_catalogue_passes(catalogue):
+    assert check(catalogue).errors == []
+
+
+def test_usage_catalogue_invocation_policy(catalogue):
+    path = catalogue / "skills.html"
+    path.write_text(path.read_text().replace('data-invokable="no"', 'data-invokable="yes"'))
+    assert "agent-invokable column disagrees" in errors(check(catalogue))
+
+
+def test_usage_catalogue_count(catalogue):
+    path = catalogue / "skills.html"
+    path.write_text(path.read_text().replace('data-skill-count="2"', 'data-skill-count="3"'))
+    assert "catalogue count does not match" in errors(check(catalogue))
+
+
+def test_usage_catalogue_order(catalogue):
+    path = catalogue / "skills.html"
+    text = path.read_text().replace('alpha', 'temporary').replace('beta', 'alpha').replace('temporary', 'beta')
+    text = text.replace('data-invokable="yes"', 'data-invokable="temporary"').replace('data-invokable="no"', 'data-invokable="yes"').replace('data-invokable="temporary"', 'data-invokable="no"')
+    path.write_text(text)
+    assert "not sorted alphabetically" in errors(check(catalogue))
 
 
 def test_valid_repo_passes(repo):
@@ -36,6 +73,21 @@ def test_invokable_column_must_match_frontmatter(repo):
 def test_html_group_count(repo):
     path = repo / "skills.html"
     path.write_text(path.read_text().replace("(2)", "(5)"))
+    assert "says 5 but lists 2" in errors(check(repo))
+
+
+def test_nested_sub_skills_preserve_group_checks(repo):
+    path = repo / "skills.html"
+    nested = (
+        '<tr><td colspan="5"><details><summary>Alpha sub-skills <span class="count">(1)</span></summary>'
+        '<details><summary>Category</summary><table><tbody>'
+        '<tr><td><a href="skills/alpha/sub-skills/example.md">example</a></td></tr>'
+        '</tbody></table></details></details></td></tr>\n'
+    )
+    text = path.read_text().replace('<tr><td><a href="skills/beta">', nested + '<tr><td><a href="skills/beta">')
+    path.write_text(text)
+    assert check(repo).errors == []
+    path.write_text(text.replace("<span>(2)</span>", "<span>(5)</span>"))
     assert "says 5 but lists 2" in errors(check(repo))
 
 
