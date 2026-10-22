@@ -40,10 +40,12 @@ Continue only when the fixed point resolves (`git rev-parse <fixed-point>`) and 
 
 Look for the originating spec, in this order:
 
-1. Issue references or spec URLs in the commit messages, branch name, and PR description (`#123`, `Closes #45`, GitLab `!67`, ticket/wiki/doc links, etc.). Fetch issues via the workflow in `docs/agents/issue-tracker.md`. Fetch URLs and ticket references via an available MCP server where one fits (e.g. Kanopi for tickets and wikis), falling back to a plain web fetch.
+1. Issue references or spec URLs in the commit messages, branch name, and PR description (`#123`, `Closes #45`, GitLab `!67`, ticket/wiki/doc links, etc.). Collect every linked ticket, even when several are referenced. Fetch issues via the workflow in `docs/agents/issue-tracker.md`. Fetch URLs and ticket references via an available MCP server where one fits (e.g. Kanopi for tickets and wikis), falling back to a plain web fetch. Read each ticket's full description and comments, and follow further ticket links that supply requirements, acceptance criteria or decisions relevant to the diff.
 2. A path the user passed as an argument.
 3. A spec file in the project's configured documentation or local-tracker location, or under `docs/` or `specs/`, matching the branch name or feature.
 4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+
+Continue only when every discovered relevant ticket has been read or recorded as inaccessible with its reference and access failure. Include all fetched ticket context in the Spec review sources; use it to assess the implementation against the combined requirements and flag conflicting requirements. Report inaccessible tickets as review limitations.
 
 ### 3. Identify the standards sources
 
