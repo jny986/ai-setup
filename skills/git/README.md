@@ -1,6 +1,6 @@
 # Git
 
-A router skill for git and pull request workflows. `SKILL.md` picks a sub-skill from the task, or from a sub-skill name you pass, and the agent follows that sub-skill as if it were the skill. The sub-skills cover committing, opening PRs, reviewing diffs and PRs, addressing review feedback, and resolving merge conflicts.
+A router skill for git and pull request workflows. `SKILL.md` picks a sub-skill from the task, or from a sub-skill name you pass, and the agent follows that sub-skill as if it were the skill. The sub-skills cover committing, opening PRs, reviewing diffs and PRs, addressing review feedback, repairing CI, and resolving merge conflicts.
 
 ## Install
 
@@ -19,6 +19,7 @@ npx skills add jny986/ai-setup --skill git
 - `/git code-review since main`: review everything since `main`.
 - `/git pr-fixes 123`: list unanswered unresolved review threads, including those you created, choose a resolution for each, and delegate each approved fix to its own sub-agent. Run `finalise` on the branch, then ask for separate approval before replies and thread resolution.
 - `/git resolving-merge-conflicts`: finish an in-progress merge or rebase.
+- `/git ci-fix 123`: fix CI failures and merge conflicts on PR #123, push repairs to its existing branch, and keep monitoring until the latest head passes or a concrete blocker needs intervention. A PR URL also works.
 
 `commit-it` still works as the old name for `git commit`. Without a sub-skill name, the router picks one from the task ("commit this", "open a PR", "review my branch"). Because the skill allows implicit invocation, asking in plain language also works without typing `/git`.
 
@@ -32,13 +33,15 @@ npx skills add jny986/ai-setup --skill git
 | [`sub-skills/code-review.md`](sub-skills/code-review.md) | Reviews the diff since a fixed point on three axes: repo standards and the originating spec using parallel sub-agents, plus security through `security review-code`. Security repeats fixes and reviews until every item is resolved or explicitly ignored by the user, asking for instructions when a decision is needed or progress stalls. It also checks whether your existing PR comments were addressed. On a PR, it can submit a review with the inline comments you pick, after you confirm the verdict. |
 | [`sub-skills/pr-fixes.md`](sub-skills/pr-fixes.md) | Inventories unresolved review threads without a user reply, including threads the user created, proposes resolutions and waits for per-issue decisions. Uses one sub-agent per approved fix, verifies the combined result and runs `finalise` on the branch, then asks before posting replies or resolving eligible threads. |
 | [`sub-skills/resolving-merge-conflicts.md`](sub-skills/resolving-merge-conflicts.md) | Resolves each conflict hunk from the intent of both sides, runs the project's checks and completes the merge or rebase. |
+| [`sub-skills/ci-fix.md`](sub-skills/ci-fix.md) | Diagnoses failing checks and merge conflicts on an existing PR, verifies and pushes repairs, and repeats monitoring against the latest head until CI passes and conflicts are resolved. Reports external blockers explicitly. |
 | [`agents/openai.yaml`](agents/openai.yaml) | Display metadata for OpenAI and Codex agents. |
 
 ## How the sub-skills nest
 
 ```
 code-review ─▶ security review-code ─▶ (fix/review loop or user instructions)
-create-pr ─▶ commit
+create-pr ─▶ commit, ci-fix
+ci-fix ─▶ resolving-merge-conflicts (when needed)
 pr-fixes ─▶ finalise ─▶ (code-review, create-pr) ─▶ reply approval
 ```
 
@@ -48,6 +51,7 @@ Pick the outermost sub-skill that matches what you want. To review a branch, fix
 
 - `git` with an `origin` remote.
 - `gh`, authenticated, for `git create-pr` and the PR side of `git code-review`.
+- `git ci-fix` requires authenticated GitHub access to check diagnostics and push access to the PR head repository; external CI may need its provider's tools or credentials.
 - `git pr-fixes` requires authenticated GitHub access, sub-agent support for fixes, and the [finalise](../finalise/SKILL.md) and [security](../security/README.md) skills; resolving threads also requires permission on the PR.
 - `git code-review` reads `docs/agents/issue-tracker.md` to fetch specs. Run `/setup` to create it if missing.
 - `git code-review` (including when called by `finalise` or `git review-prs`) requires the [security skill](../security/README.md) for its vulnerability review. Install it with `npx skills add jny986/ai-setup --skill security`.

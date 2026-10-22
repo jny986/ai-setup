@@ -34,7 +34,7 @@ Take the current work to an open GitHub PR. GitHub and `gh` only. Read the invoc
 
 8. **Report.** Print the PR URL and a one-line status. No browser. No reviewers or labels unless the invocation asked or a template or CODEOWNERS dictates.
 
-9. **Monitor CI.** `gh pr checks <PR> --watch` until all checks complete. Any failure: pull the failing job's log (`gh run view <run-id> --log-failed`), fix the root cause, commit, push, then re-watch. Repeat until every check passes or a failure isn't fixable from the diff (e.g. flaky infra, missing external secret) — stop and report that one to the user instead of looping indefinitely.
+9. **Monitor and repair CI.** Follow [ci-fix.md](ci-fix.md) for this PR, retaining its head branch and base. Return only when its completion criteria are met or a concrete blocker is reported.
 
 ## Reference
 

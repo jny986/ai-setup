@@ -192,6 +192,7 @@
 <!-- git-sub-skills:start -->
 ## Git sub-skills
 
+- [ci-fix](skills/git/sub-skills/ci-fix.md) (v1.0.0, jny986): Fix failing CI and merge conflicts on an existing PR, then monitor and repair until its latest head passes
 - [code-review](skills/git/sub-skills/code-review.md) (v1.0.0, jny986): Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security
 - [commit](skills/git/sub-skills/commit.md) (v1.0.0, jny986): Commit and push the current work, on the branch its ticket calls for
 - [create-pr](skills/git/sub-skills/create-pr.md) (v1.0.0, jny986): Open a GitHub PR from the current branch (commits and pushes first if needed)
