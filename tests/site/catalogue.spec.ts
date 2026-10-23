@@ -57,7 +57,7 @@ test('code copy buttons have readable labels and stay inside the code block on m
   await page.screenshot({ path: 'test-results/mobile-code-copy.png', fullPage: true });
 });
 
-test('all five routes and shared navigation work under the project base', async ({ page }) => {
+test('all five routes and shared navigation work at the domain root', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('./');
@@ -110,15 +110,15 @@ test('anchors reveal items on direct loads, client navigation and browser histor
   await expect(page.locator('.entry-details[open]')).toHaveCount(1);
 });
 
-test('all content is available with JavaScript disabled', async ({ browser }) => {
+test('all content is available with JavaScript disabled', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto('http://127.0.0.1:4173/ai-setup/skills.html');
+  await page.goto(new URL('skills.html', baseURL).href);
   await expect(page.locator('.entry')).toHaveCount(skillCount);
   await expect(page.getByRole('searchbox')).toHaveCount(0);
   await page.locator('#skill-tdd > details > summary').click();
   await expect(page.locator('#skill-tdd .prose')).toBeVisible();
-  await page.goto('http://127.0.0.1:4173/ai-setup/');
+  await page.goto(baseURL!);
   await expect(page.locator('button.copy').first()).toBeHidden();
   await context.close();
 });

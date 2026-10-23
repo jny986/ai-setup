@@ -7,8 +7,9 @@ const data = JSON.parse(readFileSync('site/.vitepress/catalogue.json', 'utf8'));
 const dist = 'site/.vitepress/dist/';
 for (const name of ['index', 'skills', 'agents', 'templates', 'sources']) {
   const html = readFileSync(dist + name + '.html', 'utf8');
-  assert(html.includes('/ai-setup/assets/'), `${name}: assets need the production base`);
-  for (const route of ['skills', 'agents', 'templates', 'sources']) assert(html.includes(`/ai-setup/${route}.html`));
+  assert(html.includes('/assets/'), `${name}: assets need the domain-root base`);
+  assert(!/(?:href|src)="\/ai-setup\//.test(html), `${name}: legacy project paths must be absent`);
+  for (const route of ['skills', 'agents', 'templates', 'sources']) assert(html.includes(`href="/${route}.html`));
   assert(html.includes('Skip to content'));
   if (name === 'index') continue;
   for (const item of data[name]) {
@@ -25,6 +26,6 @@ const escaped = renderBody(md, { path: 'skills/tdd/SKILL.md', body: '<script>ale
 assert(!escaped.includes('<script>'));
 assert(escaped.includes('{{ dangerous() }}'));
 assert(escaped.includes('https://github.com/jny986/ai-setup/blob/main/skills/tdd/references/foo.md'));
-assert.equal(resolveLink('../git/SKILL.md', 'skills/tdd/SKILL.md', data), '/ai-setup/skills.html#skill-git');
+assert.equal(resolveLink('../git/SKILL.md', 'skills/tdd/SKILL.md', data), '/skills.html#skill-git');
 assert.equal(resolveLink('https://example.com', 'skills/tdd/SKILL.md', data), 'https://example.com');
 console.log('Static routes, catalogue coverage, production paths and inert Markdown checks passed.');
