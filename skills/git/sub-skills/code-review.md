@@ -36,6 +36,12 @@ Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so th
 
 Continue only when the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty.
 
+**Past reviews (PRs).** Before starting a fresh review, read the PR's conversation comments, review bodies, inline threads and replies from every author using [GitHub review operations](references/gh-review.md), exhausting pagination. Verify actionable findings from past reviews against the current code and relevant checks. Record each finding's author, URL, status (fixed, not fixed, partially fixed or unable to verify) and supporting evidence. Thread resolution, an outdated anchor or a "done" reply alone is not proof of a fix; distinguish findings explicitly withdrawn or accepted by the user from outstanding work.
+
+If any prior findings remain not fixed or partially fixed, show them with links and evidence, recommend waiting for those issues to be addressed before reviewing again, and offer **Wait for fixes (recommended)** or **Continue review now**. Wait for the user's choice before step 2. Honour an explicit instruction already given to continue despite outstanding findings without asking again. If they choose to wait, end with the outstanding list and resume from this check when fixes are ready. If they choose to continue, carry the outstanding findings into the review; continuing does not mark them fixed or accepted.
+
+Proceed automatically when no prior findings remain outstanding. Report any inaccessible history or findings that cannot be verified as limitations, rather than claiming they are fixed. Reuse this history and status evidence in step 5 and refresh it for step 8's duplicate check.
+
 ### 2. Identify the spec source
 
 Look for the originating spec, in this order:
@@ -93,7 +99,11 @@ For a PR, complete steps 8–11 below. For a local review, finish after step 7.
 
 Start with `## Suggested review result: APPROVE` or `## Suggested review result: REQUEST CHANGES`, using step 9's criteria. Follow with one sentence explaining the recommendation, then `### Suggested inline comments`. Show the verdict even when there are no suggested comments.
 
-Recommend inline comments only for findings still present in the current diff, excluding Notes, verified fixes and issues already raised in any PR comment. Check all authors, bots and resolved threads for duplicates; step 5's filters apply only to status reporting. Show the recommendations in the review response as a numbered list, each with its file, changed line and full proposed comment text; say when there are none. After showing the verdict and list, ask which numbers, if any, to add and wait before step 9. Keep only the selected comments, anchored to changed lines.
+Recommend inline comments only for findings still present in the current diff, excluding Notes and verified fixes.
+
+**Duplicate check.** Before proposing comments, read all PR conversation comments, review bodies, inline threads and replies using [GitHub review operations](references/gh-review.md), exhausting pagination. Include every author (the user, other reviewers, the PR author and bots), resolved threads and outdated comments; step 5's filters apply only to status reporting. Compare each candidate's underlying concern and requested change with this history, even when wording or line anchors differ. Suppress candidates already raised, retaining the existing comment's author and URL as evidence. A related comment counts as a duplicate only when it covers the same concern; keep distinct issues. Continue only when every candidate has been checked; if a source is inaccessible, report the gap and complete the check before proposing inline comments.
+
+Show the recommendations in the review response as a numbered list, each with its file, changed line and full proposed comment text; say when there are none. Briefly list suppressed duplicates with links to the existing comments so the user can see where they were already raised. After showing the verdict and list, ask which numbers, if any, to add and wait before step 9. Keep only the selected comments, anchored to changed lines.
 
 Start every proposed and submitted inline comment with `[Severity][Issue type]`, followed by the concern, impact and suggested change. Use `Security`, `Code smell`, `Standard violation` or `Spec mismatch` to match the finding. For example: `[Low][Code smell] Possible Duplicated Code: ...`. Keep code smells framed as judgement calls.
 
@@ -126,4 +136,6 @@ Use this generated comment as the review body and continue to step 11. If the us
 
 ### 11. Submit the review
 
-After both selections, submit one review with the chosen result (`APPROVE` or `REQUEST_CHANGES`), the body from step 10, and selected inline comments. Follow [GitHub review operations](references/gh-review.md) for the payload file and single `gh api` call, including any thread replies or other review writes.
+After both selections, refresh the PR comment history and repeat step 8's duplicate check for the selected inline comments. Remove any newly duplicated comments and report their existing links; submit the remaining selection with the chosen result even when no inline comments remain.
+
+Submit one review with the chosen result (`APPROVE` or `REQUEST_CHANGES`), the body from step 10, and remaining selected inline comments. Follow [GitHub review operations](references/gh-review.md) for the payload file and single `gh api` call, including any thread replies or other review writes.

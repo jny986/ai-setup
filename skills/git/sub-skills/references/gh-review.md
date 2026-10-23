@@ -72,7 +72,9 @@ Payload: `body`, `commit_id`, `path`, `line`, `side` (all required for a single-
 ## Read comments
 
 - Reviews and top-level comments: `gh pr view <n> --json comments,reviews`
-- Inline comments: `gh api repos/{owner}/{repo}/pulls/<n>/comments --jq '.[] | {id, path, line, user: .user.login, body}'`
+- Inline comments: `gh api --paginate repos/{owner}/{repo}/pulls/<n>/comments --jq '.[] | {id, html_url, path, line, user: .user.login, body}'`
+
+For a complete duplicate check, also read every conversation comment with `gh api --paginate repos/{owner}/{repo}/issues/<n>/comments` and every review body with `gh api --paginate repos/{owner}/{repo}/pulls/<n>/reviews`. Retain authors and comment URLs. Read threads and replies below for resolution state and full discussion context.
 
 ## Read review threads
 
