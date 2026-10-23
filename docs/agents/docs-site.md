@@ -7,7 +7,7 @@ Vue theme and compiled Tailwind CSS. Vite+ runs the project tasks. Internal
 
 ## Develop and verify
 
-Use Node.js 24.11+ and npm 11 (the lockfile was created with npm 11.20), Python 3,
+Use Node.js LTS and pnpm (pinned in `package.json`), Python 3,
 and a checkout of this repository.
 Upstream submodules are unnecessary for building the site.
 
@@ -17,17 +17,17 @@ dependencies. Vite+ runs the tasks; each build calls VitePress's own build
 command. Production builds and browser tests verify the combined toolchain.
 
 ```sh
-npm ci
-npm exec -- vp run site:dev
+pnpm install --frozen-lockfile
+pnpm exec vp run site:dev
 ```
 
 For a production build and preview:
 
 ```sh
-npm exec -- vp run site:build
-npm exec -- vp run site:check
-npm exec -- vp run site:lint
-npm exec -- vp run site:preview
+pnpm exec vp run site:build
+pnpm exec vp run site:check
+pnpm exec vp run site:lint
+pnpm exec vp run site:preview
 ```
 
 Open the development or preview server URL at `/`. The production base is `/`
@@ -37,13 +37,13 @@ asset requests and internal links at the root when changing routes or assets.
 Browser acceptance tests require Chromium:
 
 ```sh
-npm exec -- playwright install chromium
-npm exec -- vp run site:test
+pnpm exec playwright install chromium
+pnpm exec vp run site:test
 ```
 
 CI installs Chromium with its Linux system dependencies. Run the existing
 repository checks too when changing source files or catalogue generation; see
-`scripts/check-all.sh` and `.github/workflows/ci.yml`. Commit `package-lock.json`
+`scripts/check-all.sh` and `.github/workflows/ci.yml`. Commit `pnpm-lock.yaml`
 when changing dependencies. Generated catalogue data, caches and build output
 are ignored.
 

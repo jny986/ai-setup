@@ -48,22 +48,24 @@ jobs:
       pages: read
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: npm
+          node-version: 'lts/*'
+          check-latest: true
+          cache: pnpm
       - name: Install locked site dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build documentation
-        run: npm exec -- vp run site:build
+        run: pnpm exec vp run site:build
       - name: Check documentation
-        run: npm exec -- vp run site:check
+        run: pnpm exec vp run site:check
       - name: Lint site code
-        run: npm exec -- vp run site:lint
+        run: pnpm exec vp run site:lint
       - name: Install browser
-        run: npm exec -- playwright install --with-deps chromium
+        run: pnpm exec playwright install --with-deps chromium
       - name: Browser acceptance tests
-        run: npm exec -- vp run site:test
+        run: pnpm exec vp run site:test
       - name: Configure Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v5
