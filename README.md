@@ -2,6 +2,8 @@
 
 My personal setup for AI coding agents. It's mostly [Agent Skills](https://agentskills.io) for now, and will grow to include mods, rules and other agent configuration. It's built for my own use, but you're welcome to use any of it.
 
+Read the [documentation site](https://jny986.github.io/ai-setup/) for setup guidance and searchable references for skills, agents, templates and their sources. Maintainers can [build and preview the site locally](docs/agents/docs-site.md).
+
 ## Install
 
 Install the skills with [`npx skills`](https://github.com/vercel-labs/skills):
@@ -43,6 +45,7 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
 │   └── implement/     # Router: direct changes, tickets, specs, plus page and component build guides
 ├── SKILLS.md          # Index of my skills
 ├── skills.html        # Package skills guide: descriptions, usage and nested sub-skills
+├── site/              # Public documentation source; VitePress custom theme and generated catalogues
 ├── GLOSSARY.md         # Glossary of this repo's terms
 ├── docs/              # Agent config docs (agents/) and the router-skill guide
 ├── scripts/           # Repo checks run in CI; `scripts/check-all.sh` runs them all locally

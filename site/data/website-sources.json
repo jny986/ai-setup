@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Wikipedia: Signs of AI writing",
+    "url": "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
+    "skills": ["humanizer"]
+  },
+  {
+    "title": "OWASP Cheat Sheet Series",
+    "url": "https://cheatsheetseries.owasp.org/",
+    "skills": ["security"]
+  },
+  {
+    "title": "Google Page Experience",
+    "url": "https://developers.google.com/search/docs/appearance/page-experience",
+    "skills": ["marketing"]
+  },
+  {
+    "title": "Google Play preview asset guidelines",
+    "url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+    "skills": ["marketing"]
+  },
+  {
+    "title": "UTM.io: utm_medium, utm_campaign and utm_source optimization",
+    "url": "https://web.utm.io/blog/utm_medium-utm_campaign-utm_source/",
+    "skills": ["marketing"]
+  },
+  {
+    "title": "UTM.io: UTMs for marketing attribution",
+    "url": "https://web.utm.io/blog/utms-for-marketing-attribution/",
+    "skills": ["marketing"]
+  },
+  {
+    "title": "Marketing Cactus: Using Google Ads to test product-market fit",
+    "url": "https://mktcactus.com/en/using-google-ads-to-test-product-market-fit-before-launching/",
+    "skills": ["marketing"]
+  },
+  {
+    "title": "Backlinko: SEO and PPC alignment",
+    "url": "https://backlinko.com/seo-and-ppc",
+    "skills": ["marketing"]
+  },
+  {
+    "title": "Alignify directory submission guide",
+    "url": "https://alignify.co/zh/insights/directory-submission-sites",
+    "skills": ["marketing"]
+  }
+]
