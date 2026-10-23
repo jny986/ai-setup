@@ -2,3 +2,12 @@ __pycache__/
 .pytest_cache/
 graphify-out
 **/graphify-out
+node_modules/
+site/.vitepress/cache/
+site/.vitepress/dist/
+site/.vitepress/catalogue.json
+site/.vitepress/content.json
+test-results/
+playwright-report/
+.vite-hooks/
+.vite-task/

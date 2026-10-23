@@ -1,0 +1,76 @@
+@import "tailwindcss" source(none);
+@source "./**/*.vue";
+
+:root { color-scheme: light; --ink: #213830; --muted: #53665e; --line: #d6ddd5; --paper: #fafbf7; --accent: #285c46; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 system-ui, sans-serif; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.wrap { max-width: 1120px; margin: auto; padding: 0 24px; }
+.topbar { padding-block: 22px; border-bottom: 1px solid var(--line); font-size: .85rem; }
+.brand { font-weight: 700; letter-spacing: .04em; text-decoration: none; }
+[aria-current="page"] { font-weight: 750; text-decoration-thickness: 2px; }
+header { padding: 56px 0 24px; max-width: 780px; }
+.eyebrow { color: var(--accent); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); letter-spacing: -.045em; line-height: 1.1; margin: 12px 0 20px; }
+header p { font-size: 1.1rem; color: var(--muted); }
+h2 { font-size: 1.4rem; letter-spacing: -.025em; font-weight: 650; overflow-wrap: anywhere; }
+h3 { font-size: 1.08rem; font-weight: 650; }
+h4, h5, h6 { font-size: 1rem; font-weight: 650; }
+.page-copy { max-width: 850px; margin-bottom: 36px; border-left: 3px solid var(--accent); padding-left: 24px; }
+.prose { overflow-wrap: anywhere; }
+.prose h2, .prose h3, .prose h4 { margin: 24px 0 8px; }
+.prose p, .prose ul, .prose ol, .prose pre, .prose table { margin: 12px 0 20px; }
+.prose ul, .entry-body > ul { list-style: disc; padding-left: 24px; }
+.prose ol { list-style: decimal; padding-left: 24px; }
+.prose li { margin: 6px 0; }
+.prose blockquote { border-left: 3px solid var(--line); padding-left: 16px; margin: 20px 0; color: var(--muted); }
+code { font: .85rem/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
+:not(pre) > code { background: #eef2eb; padding: 3px 6px; border-radius: 4px; }
+pre { background: #eef2eb; padding: 16px; border-radius: 6px; max-width: 100%; overflow-x: auto; white-space: pre-wrap; word-break: break-word; }
+.prose div[class*="language-"] { position: relative; background: #eef2eb; border: 1px solid var(--line); border-radius: 6px; margin: 12px 0 20px; padding-top: 56px; }
+.prose div[class*="language-"] > pre { margin: 0; padding-top: 8px; }
+.prose div[class*="language-"] > .lang { position: absolute; top: 20px; left: 16px; color: var(--muted); font: .75rem/1.5 ui-monospace, monospace; }
+.prose div[class*="language-"] > button.copy { position: absolute; top: 8px; right: 8px; min-width: 82px; min-height: 40px; padding: 7px 12px; font-size: .85rem; line-height: 1.5; font-weight: 600; }
+.prose div[class*="language-"] > button.copy:empty { visibility: hidden; }
+.prose div[class*="language-"] > button.copy.copied { background: var(--accent); border-color: var(--accent); color: white; }
+table { display: block; overflow-x: auto; max-width: 100%; border-collapse: collapse; font-size: .85rem; }
+td, th { padding: 8px 12px; border: 1px solid var(--line); text-align: left; min-width: 100px; }
+img { max-width: 100%; height: auto; }
+.search { padding: 24px 0; border-block: 1px solid var(--line); margin-bottom: 28px; }
+label { display: block; font-weight: 650; margin-bottom: 8px; }
+input { flex: 1; min-width: 0; padding: 13px 16px; border: 1px solid #74857a; border-radius: 6px; font: inherit; background: white; color: var(--ink); }
+input::placeholder { color: var(--muted); }
+button { font: inherit; border: 1px solid #74857a; background: white; color: var(--ink); padding: 10px 18px; border-radius: 6px; cursor: pointer; }
+button:hover { background: #eef2eb; }
+.result-count { color: var(--muted); margin: 10px 0 0; font-size: .9rem; }
+.catalogue-layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 40px; align-items: start; }
+.item-nav { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding-bottom: 20px; }
+.item-nav p { margin: 0 0 12px; font-weight: 650; }
+.item-nav a { display: block; font-size: .82rem; padding: 4px 0; text-decoration: none; }
+.item-nav a:hover { text-decoration: underline; }
+.entry { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 24px; scroll-margin-top: 24px; min-width: 0; }
+details { border: 1px solid var(--line); border-radius: 6px; background: white; min-width: 0; }
+summary { cursor: pointer; padding: 16px; font-weight: 650; }
+summary h2 { display: inline; margin-right: 14px; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 600; padding: 3px 9px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); vertical-align: middle; }
+.description { display: block; font-weight: 400; margin: 14px 0 0; }
+.entry-body { padding: 0 20px 24px; min-width: 0; }
+.entry-body > p { margin: 16px 0; }
+.entry-body > h3 { margin: 24px 0 12px; }
+.invoke { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; font-size: .85rem; }
+.workflow-tree details { margin: 12px 0; }
+.workflow-tree .workflow-tree { padding: 0 16px; }
+.sub-skills { list-style: none; padding: 0; }
+.sub-skill { padding: 16px 0; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.sub-skill p { font-size: .9rem; margin: 6px 0 10px; }
+.sub-skill code { color: var(--muted); }
+.count { color: var(--muted); font-weight: 400; margin-left: 6px; }
+.empty, .notice { padding: 20px; background: #eef2eb; border-radius: 6px; }
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 24px 0 40px; color: var(--muted); font-size: .85rem; }
+.skip { position: absolute; top: -100px; left: 16px; padding: 12px; background: white; z-index: 10; }
+.skip:focus { top: 12px; }
+@media (max-width: 760px) { .catalogue-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; } .item-nav { position: static; max-height: 160px; border-bottom: 1px solid var(--line); } header { padding-top: 32px; } .wrap { padding-inline: 18px; } .page-copy { padding-left: 16px; } .entry-body { padding-inline: 14px; } }
+@media print { .search, .item-nav, .skip { display: none; } .catalogue-layout { display: block; } }
