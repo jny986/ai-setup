@@ -1,7 +1,7 @@
 # Documentation site
 
 The public reference site lives in `site/` and is published at
-<https://jny986.github.io/ai-setup/>. VitePress renders five pages with a custom
+<https://ai.jny986.com/>. VitePress renders five pages with a custom
 Vue theme and compiled Tailwind CSS. Vite+ runs the project tasks. Internal
 `docs/` files and upstream `source-skills/` checkouts are outside the site input.
 
@@ -30,9 +30,9 @@ npm exec -- vp run site:lint
 npm exec -- vp run site:preview
 ```
 
-Open the development or preview server URL with `/ai-setup/` appended. The
-production base is `/ai-setup/`; check direct page loads and links under that
-prefix when changing routes or assets.
+Open the development or preview server URL at `/`. The production base is `/`
+because Pages serves the custom domain at its root. Check direct page loads,
+asset requests and internal links at the root when changing routes or assets.
 
 Browser acceptance tests require Chromium:
 
@@ -80,7 +80,7 @@ passing `main` content.
 Repository Settings → Pages → Build and deployment must select **GitHub
 Actions** as the source. The Pages API was checked during implementation on
 2026-10-23: `build_type` was already `workflow`, HTTPS was enabled, the URL was
-`https://jny986.github.io/ai-setup/`, and no custom domain was configured. No
+`https://ai.jny986.com/`, and the custom domain was `ai.jny986.com`. No
 settings change is currently needed. If environment protection rules require
 approval, complete that approval in the workflow's deployment job.
 

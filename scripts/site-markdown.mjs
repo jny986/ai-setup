@@ -16,7 +16,7 @@ export function resolveLink(href, source, data) {
   const target = path.posix.normalize(path.posix.join(path.posix.dirname(source), file));
   for (const section of ['skills', 'agents', 'templates']) {
     const item = data[section].find(item => item.path === target || item.formats?.some(format => format.path === target));
-    if (item && !fragment) return `/ai-setup/${section}.html#${item.id}`;
+    if (item && !fragment) return `/${section}.html#${item.id}`;
   }
   return repo + target + (fragment ? '#' + fragment : '');
 }
