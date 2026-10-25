@@ -1,5 +1,5 @@
 ---
-name: docs
+name: plan
 description: "Sharpen an idea, plan, or decision through grilling; maintain planning docs; synthesize a spec; or split work into dependency-linked tickets. Use for the journey from an unclear idea to an implementation-ready plan. Sub-skills: me, docs, spec, tickets. Implementation uses implement."
 license: MIT
 metadata:

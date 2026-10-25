@@ -59,7 +59,7 @@ def router_tree(index, name):
     path = index.ROOT / "skills" / name / "SKILL.md"
     if name == "marketing":
         rows = index.sub_skills()
-    elif name in ("git", "implement", "docs"):
+    elif name in ("git", "implement", "plan"):
         rows = index.linked_sub_skills(path)
     elif name in ("security", "design"):
         rows = index.situation_sub_skills(path)
