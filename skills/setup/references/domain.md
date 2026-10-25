@@ -8,7 +8,7 @@ How the engineering skills should consume this repo's domain documentation when 
 - **`GLOSSARY-MAP.md`** at the repo root if it exists: it points at one `GLOSSARY.md` per context. Read each one relevant to the topic.
 - **`docs/adr/`**: read ADRs that touch the area you're about to work in. In multi-context repos, also check `src/<context>/docs/adr/` for context-scoped decisions.
 
-If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. `/plan docs` uses setup's active modeling reference to create them lazily when terms or decisions are resolved. If that reference is unavailable, it reports the modeling dependency while continuing the plan and interview.
+If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. `/grill docs` uses setup's active modeling reference to create them lazily when terms or decisions are resolved. If that reference is unavailable, it reports the modeling dependency while continuing the plan and interview.
 
 ## File structure
 

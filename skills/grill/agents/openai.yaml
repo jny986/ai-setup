@@ -1,5 +1,5 @@
 interface:
-  display_name: "Plan"
+  display_name: "Grill"
   short_description: "Interview, planning docs, specs and ticket breakdowns"
 policy:
   allow_implicit_invocation: true
