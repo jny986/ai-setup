@@ -6,25 +6,16 @@ Only the website source registry is editorial; repository sources come from all
 Markdown provenance under each shipped package, including reference documents.
 """
 import hashlib
-import importlib.util
 import json
 import re
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
 from skilllib import FRONTMATTER, frontmatter, skill_dirs
+from skilltree import rows_for, tree
 
 ROOT = Path(__file__).resolve().parent.parent
 GITHUB = "https://github.com/jny986/ai-setup/blob/main/"
-
-
-def load_index(root):
-    spec = importlib.util.spec_from_file_location("site_index", ROOT / "scripts/build-index.py")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    module.ROOT = root
-    module.ROUTER = root / "skills/marketing/SKILL.md"
-    return module
 
 
 def body(path):
@@ -55,16 +46,8 @@ def normalize_website(value):
     return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path.rstrip("/"), parts.query, parts.fragment))
 
 
-def router_tree(index, name):
-    path = index.ROOT / "skills" / name / "SKILL.md"
-    if name == "marketing":
-        rows = index.sub_skills()
-    elif name in ("git", "implement", "plan"):
-        rows = index.linked_sub_skills(path)
-    elif name in ("security", "design"):
-        rows = index.situation_sub_skills(path)
-    else:
-        rows = []
+def router_tree(root, name):
+    rows = rows_for(root, name)
 
     def convert(node):
         return {
@@ -76,7 +59,7 @@ def router_tree(index, name):
                 for child_name, path, description, version, author in sorted(node["sub_skills"])
             ],
         }
-    return convert(index.tree(rows, name))
+    return convert(tree(root, rows, name))
 
 
 def sources(root, skills):
@@ -112,21 +95,16 @@ def sources(root, skills):
 
 def build(root=ROOT):
     root = Path(root)
-    index = load_index(root)
-    rows = {row[0]: row for row in index.skills(update=False)}
     skills = []
     for folder_name, folder in skill_dirs(root).items():
         path = folder / "SKILL.md"
         meta = frontmatter(path) or {}
         name = meta.get("name", folder_name)
-        if name not in rows:
-            raise ValueError(f"Skill {name!r} is missing from SKILLS.md")
-        invocation = rows[name][3]
         skills.append({
             "id": "skill-" + name, "name": name, "description": meta.get("description", ""),
-            "invocationLabel": "Automatic or explicit" if invocation == "Yes" else "Explicit request",
+            "invocationLabel": "Explicit request" if meta.get("disable-model-invocation") == "true" else "Automatic or explicit",
             "invocation": f"/{name} <task>", "metadata": meta.get("metadata", {}),
-            "tree": router_tree(index, folder_name), **file_fields(path, root),
+            "tree": router_tree(root, folder_name), **file_fields(path, root),
         })
     skills.sort(key=lambda skill: skill["name"])
     agents = []

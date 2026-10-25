@@ -24,24 +24,6 @@ YAML = """interface:
   short_description: "Does a thing"
 {policy}"""
 
-SKILLS_MD = """# Skills
-
-| Name | Based on | Agent invokable | Description |
-|---|---|---|---|
-| [alpha](skills/alpha) | Original | Yes | Does a thing. |
-| [beta](skills/beta) | Original | No | Does a thing. |
-"""
-
-SKILLS_HTML = """<details>
-<summary>Original <span>(2)</span></summary>
-<table><tbody>
-<tr><td><a href="skills/alpha">alpha</a></td><td class="inv-yes">Yes</td><td>Does a thing.</td></tr>
-<tr><td><a href="skills/beta">beta</a></td><td class="inv-no">No</td><td>Does a thing.</td></tr>
-</tbody></table>
-</details>
-"""
-
-
 def load(script):
     """Import scripts/<script>.py (names contain hyphens, so plain import will not do)."""
     spec = importlib.util.spec_from_file_location(script.replace("-", "_"), SCRIPTS / f"{script}.py")
@@ -61,8 +43,6 @@ def repo(tmp_path):
         (folder / "agents").mkdir(parents=True)
         (folder / "SKILL.md").write_text(SKILL.format(name=name, extra=extra))
         (folder / "agents" / "openai.yaml").write_text(YAML.format(name=name, policy=policy))
-    (tmp_path / "SKILLS.md").write_text(SKILLS_MD)
-    (tmp_path / "skills.html").write_text(SKILLS_HTML)
     (tmp_path / "docs" / "agents").mkdir(parents=True)
     (tmp_path / "docs" / "agents" / "issue-tracker.md").write_text("# Tracker\n")
     return tmp_path

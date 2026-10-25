@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+import skilltree
 from conftest import load
 from skilllib import FRONTMATTER, frontmatter, skill_dirs
 
@@ -30,20 +31,19 @@ def test_catalogue_covers_shipped_items_and_preserves_bodies():
     }
 
 
-def test_router_trees_reuse_existing_index_contract():
-    index = site_data.load_index(ROOT)
+def test_router_trees_match_router_tables():
     items = {item["name"]: item for item in site_data.build(ROOT)["skills"]}
 
     def flatten(node):
         return node["subSkills"] + [item for child in node["dirs"].values() for item in flatten(child)]
 
     for name, rows in (
-        ("marketing", index.sub_skills()),
-        ("git", index.linked_sub_skills(ROOT / "skills/git/SKILL.md")),
-        ("security", index.situation_sub_skills(ROOT / "skills/security/SKILL.md")),
-        ("design", index.situation_sub_skills(ROOT / "skills/design/SKILL.md")),
-        ("implement", index.linked_sub_skills(ROOT / "skills/implement/SKILL.md")),
-        ("plan", index.linked_sub_skills(ROOT / "skills/plan/SKILL.md")),
+        ("marketing", skilltree.sub_skills(ROOT / "skills/marketing/SKILL.md")),
+        ("git", skilltree.linked_sub_skills(ROOT / "skills/git/SKILL.md")),
+        ("security", skilltree.situation_sub_skills(ROOT / "skills/security/SKILL.md")),
+        ("design", skilltree.situation_sub_skills(ROOT / "skills/design/SKILL.md")),
+        ("implement", skilltree.linked_sub_skills(ROOT / "skills/implement/SKILL.md")),
+        ("plan", skilltree.linked_sub_skills(ROOT / "skills/plan/SKILL.md")),
     ):
         actual = flatten(items[name]["tree"])
         assert {(item["name"], item["path"], item["description"]) for item in actual} == {
@@ -87,10 +87,23 @@ def test_unknown_website_skill_fails(tmp_path):
 
 
 def test_generation_is_read_only_and_deterministic():
-    watched = [ROOT / "SKILLS.md", ROOT / "skills.html"]
+    watched = sorted((ROOT / "skills").rglob("*.md"))
     before = [path.read_bytes() for path in watched]
     first = site_data.build(ROOT)
     assert first == site_data.build(ROOT)
     assert before == [path.read_bytes() for path in watched]
     for section in first.values():
         assert len({item["id"] for item in section}) == len(section)
+
+
+def test_invocation_label_follows_disable_model_invocation(tmp_path):
+    for name, extra in (("open", ""), ("closed", "disable-model-invocation: true\n")):
+        folder = tmp_path / "skills" / name
+        folder.mkdir(parents=True)
+        (folder / "SKILL.md").write_text(f"---\nname: {name}\ndescription: Does a thing.\n{extra}---\n")
+    (tmp_path / "agents").mkdir()
+    (tmp_path / "templates").mkdir()
+    (tmp_path / "site/data").mkdir(parents=True)
+    (tmp_path / "site/data/website-sources.json").write_text("[]")
+    labels = {item["name"]: item["invocationLabel"] for item in site_data.build(tmp_path)["skills"]}
+    assert labels == {"open": "Automatic or explicit", "closed": "Explicit request"}

@@ -17,8 +17,8 @@ jobs:
         run: python3 scripts/check-marketing-structure.py
       - name: Skill frontmatter and links
         run: python3 scripts/check-skills.py
-      - name: Index sync
-        run: python3 scripts/check-indexes.py
+      - name: README submodules
+        run: python3 scripts/check-readme.py
       - name: Agent yaml
         run: python3 scripts/check-agent-yaml.py
       - name: References

@@ -16,7 +16,7 @@ Single-context: one root `GLOSSARY.md` plus `docs/adr/`; ignore the upstream sub
 
 ### Agent Docs
 
-Adding or modifying a skill, its frontmatter or `based_on_*` provenance: `docs/agents/skills.md`. Building a router and its sub-skills: `docs/agents/router-skills.md`. Regenerating `skills.html` and `SKILLS.md`: `docs/agents/skills-html.md`.
+Adding or modifying a skill, its frontmatter or `based_on_*` provenance: `docs/agents/skills.md`. Building a router and its sub-skills: `docs/agents/router-skills.md`. The docs site is the public skills reference and must stay current with any skill change: `docs/agents/docs-site.md`.
 
 ## Shell commands
 
