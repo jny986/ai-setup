@@ -1,6 +1,6 @@
 ---
 name: harden-deployment
-description: Secure how code ships and runs: Dockerfiles, CI/CD pipelines, cloud and IAM config, secrets in the environment, dependencies and supply chain.
+description: "Secure how code ships and runs: Dockerfiles, CI/CD pipelines, cloud and IAM config, secrets in the environment, dependencies and supply chain."
 license: MIT
 metadata:
   version: "1.0.0"
