@@ -7,7 +7,7 @@
 | [codebase-design](skills/codebase-design) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary. |
 | [design](skills/design) | [ArnavPuri/designskills](https://github.com/ArnavPuri/designskills), [CosmoBlk/email-design](https://github.com/CosmoBlk/email-design), [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Yes | 1.0.0 | jny986 | Router for visual design work. Use to capture product context in PRODUCT.md, document a visual system in DESIGN.md, create brand kits, plan a UI, improve task flows, consolidate UI patterns, design or build UI and graphics, implement visual references, adapt interfaces, generate variants, or audit and refine an interface. Sub-skills: product, shape, document, brandkit, audit, flow, systematize, refine; plus reference guides per surface. |
 | [diagnosing-bugs](skills/diagnosing-bugs) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
-| [docs](skills/docs) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Sharpen ideas through grilling, maintain planning docs, synthesize specs, and draft dependency-linked tickets. Sub-skills: me, docs, spec, tickets. |
+| [plan](skills/plan) | [mattpocock/skills](https://github.com/mattpocock/skills) | Yes | 1.0.0 | jny986 | Sharpen ideas through grilling, maintain planning docs, synthesize specs, and draft dependency-linked tickets. Sub-skills: me, docs, spec, tickets. |
 | [finalise](skills/finalise) | — | No | 1.0.0 | jny986 | Finalise a branch's dev work — run code and security reviews, fix findings, then create the PR. |
 | [git](skills/git) | — | Yes | 1.0.0 | jny986 | Router for git and PR workflows. Use for any commit, push, pull request, PR review fixes, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, code-review, review-prs, pr-fixes, resolving-merge-conflicts. |
 | [handoff](skills/handoff) | [mattpocock/skills](https://github.com/mattpocock/skills) | No | 1.0.0 | jny986 | Compact the current conversation into a handoff document for another agent to pick up. |
@@ -233,11 +233,11 @@
 - [ticket](skills/implement/sub-skills/ticket.md) (v1.0.0, jny986): Resolve and implement one ticket against its acceptance criteria and parent-spec constraints
 <!-- implement-sub-skills:end -->
 
-<!-- docs-sub-skills:start -->
-## Docs sub-skills
+<!-- plan-sub-skills:start -->
+## Plan sub-skills
 
-- [docs](skills/docs/sub-skills/docs.md) (v1.0.0, jny986): Interview while maintaining a plan, terminology, and decisions
-- [me](skills/docs/sub-skills/me.md) (v1.0.0, jny986): Interview and stress-test an idea without writing documents
-- [spec](skills/docs/sub-skills/spec.md) (v1.0.0, jny986): Synthesize existing context into a spec for the configured tracker
-- [tickets](skills/docs/sub-skills/tickets.md) (v1.0.0, jny986): Break a plan, spec, or conversation into dependency-linked tickets
-<!-- docs-sub-skills:end -->
+- [docs](skills/plan/sub-skills/docs.md) (v1.0.0, jny986): Interview while maintaining a plan, terminology, and decisions
+- [me](skills/plan/sub-skills/me.md) (v1.0.0, jny986): Interview and stress-test an idea without writing documents
+- [spec](skills/plan/sub-skills/spec.md) (v1.0.0, jny986): Synthesize existing context into a spec for the configured tracker
+- [tickets](skills/plan/sub-skills/tickets.md) (v1.0.0, jny986): Break a plan, spec, or conversation into dependency-linked tickets
+<!-- plan-sub-skills:end -->

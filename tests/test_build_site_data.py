@@ -43,7 +43,7 @@ def test_router_trees_reuse_existing_index_contract():
         ("security", index.situation_sub_skills(ROOT / "skills/security/SKILL.md")),
         ("design", index.situation_sub_skills(ROOT / "skills/design/SKILL.md")),
         ("implement", index.linked_sub_skills(ROOT / "skills/implement/SKILL.md")),
-        ("docs", index.linked_sub_skills(ROOT / "skills/docs/SKILL.md")),
+        ("plan", index.linked_sub_skills(ROOT / "skills/plan/SKILL.md")),
     ):
         actual = flatten(items[name]["tree"])
         assert {(item["name"], item["path"], item["description"]) for item in actual} == {

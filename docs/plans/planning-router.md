@@ -1,14 +1,14 @@
-# Docs router
+# Plan router
 
-Status: router implemented; setup's active modeling reference remains an external dependency. Implementation requested via `/implement spec docs/plans/planning-router.md`.
+Status: router implemented; setup's modeling reference restored. Implementation requested via `/implement spec docs/plans/planning-router.md`.
 
 ## Agreed scope
 
 - One router covers the journey from an unclear idea to an implementation-ready plan.
 - Absorb `grill-me`, `grill-with-docs`, `grilling`, `to-spec`, and `to-tickets` into the router.
-- Name the root skill `docs`; keep the shared grilling procedure in its `SKILL.md`, applying it to interview routes.
+- Name the root skill `plan`; keep the shared grilling procedure in its `SKILL.md`, applying it to interview routes.
 - Provide sub-skills `me`, `docs`, `spec`, and `tickets`.
-- Domain-modeling guidance is moving into `setup` under its modeling reference; the `docs` route must use that reference rather than absorb a standalone domain-modeling skill.
+- Domain-modeling guidance is moving into `setup` under its modeling reference; the `docs` sub-skill must use that reference rather than absorb a standalone domain-modeling skill.
 - Grilling is the shared interview foundation. The router also produces specs and ticket breakdowns without requiring users to repeat an interview.
 - Users can enter any route directly without repeating earlier work.
 - A root invocation without an explicit sub-skill starts the `grill-me` interview behavior and asks once whether the user wants to create docs as they go, like `grill-with-docs`.
@@ -25,7 +25,7 @@ Status: router implemented; setup's active modeling reference remains an externa
 - `grill-me` invokes `grilling`; `grill-with-docs` also invokes `domain-modeling`.
 - `to-spec` synthesizes existing context instead of repeating the interview.
 - `to-tickets` drafts dependency-linked slices and gets approval of the breakdown before publishing.
-- Setup's modeling reference is a planned dependency: it does not exist in this checkout yet. Its current `references/domain.md` contains consumer rules, not the active modeling procedure.
+- Setup's modeling reference (`skills/setup/references/modeling.md`, with `glossary-format.md` and `adr-format.md`) holds the active modeling procedure; `references/domain.md` holds consumer rules only.
 - Repo router conventions: [router-skills.md](../agents/router-skills.md).
 
 ## Implementation choices
@@ -36,8 +36,6 @@ Status: router implemented; setup's active modeling reference remains an externa
 - Migration: replace the five standalone skills with the four plain sub-skills; update callers and generated indexes. Former names remain only as source tracking or historical context, without standalone compatibility wrappers.
 - Validation: repository structural checks, YAML and Markdown lint, skill validation, and 39 checker tests pass. Standards and spec reviews found modeling-pointer inconsistencies that were corrected. A read-only interview trial followed configured references outside `docs/`, surfaced a source conflict, and wrote no files.
 
-## Remaining dependency
+## Modeling dependency
 
-The docs route expects the installed setup skill's `references/modeling.md` (repository source: `skills/setup/references/modeling.md`). It is still absent. The route reports that dependency, records unresolved modeling questions in the plan, and continues the interview and planning work; glossary and ADR work remains blocked. It uses neither the consumer-only `references/domain.md` nor a standalone domain-modeling fallback.
-
-The standalone domain-modeling skill has been removed. Restoring its procedure in setup remains a separate migration; the former implementation is available in git history. The router handles its absence explicitly.
+The docs route reads the installed setup skill's `references/modeling.md` (repository source: `skills/setup/references/modeling.md`), restored from the removed standalone domain-modeling skill along with its glossary and ADR format files. If setup or the reference is unavailable, the route reports the dependency, records modeling questions in the plan, and blocks glossary and ADR work. It uses neither the consumer-only `references/domain.md` nor a standalone fallback.

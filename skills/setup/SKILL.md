@@ -75,7 +75,7 @@ Done when the proposal lists every glossary rename, merge and active reference u
 
 For new configuration, default to one root GLOSSARY.md plus `docs/adr/`. Offer a multi-context layout only when inspection finds genuine multi-package boundaries and the user chooses it.
 
-Use the [domain documentation template](references/domain.md) to draft `docs/agents/domain.md` for the selected layout. GLOSSARY.md and ADRs are created lazily as terms and decisions are resolved; setup writes the consumer rules rather than inventing domain content.
+Use the [domain documentation template](references/domain.md) to draft `docs/agents/domain.md` for the selected layout. GLOSSARY.md and ADRs are created lazily as terms and decisions are resolved, following [the modeling procedure](references/modeling.md); setup writes the consumer rules rather than inventing domain content.
 
 ### Instruction pointers
 

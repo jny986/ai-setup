@@ -1,5 +1,5 @@
 interface:
-  display_name: "Docs"
+  display_name: "Plan"
   short_description: "Interview, planning docs, specs and ticket breakdowns"
 policy:
   allow_implicit_invocation: true

@@ -7,7 +7,7 @@ How the engineering skills should consume this repo's domain documentation when 
 - **`GLOSSARY.md`** at the repo root.
 - **`docs/adr/`**: read ADRs that touch the area you're about to work in.
 
-If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. `/docs docs` uses setup's active modeling reference to create them lazily when terms or decisions are resolved. If that reference is unavailable, it reports the modeling dependency while continuing the plan and interview.
+If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. `/plan docs` uses setup's active modeling reference to create them lazily when terms or decisions are resolved. If that reference is unavailable, it reports the modeling dependency while continuing the plan and interview.
 
 Ignore the submodules under `source-skills/` (named `<owner>-<repo>/`; see `.gitmodules`). They're upstream repos, not part of this repo's domain: don't read their docs as this repo's context, and don't edit them. The index files beside them (`source-skills/SKILLS.md`, `source-skills/skills.html`) belong to this repo.
 

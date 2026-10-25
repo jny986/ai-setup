@@ -13,7 +13,7 @@ metadata:
   based_on_skill: loop-me
 ---
 
-Use the shared Grilling procedure in `/docs` for a stateful session whose only output is **workflow** specs. Use the grilling discipline (relentless, a round of questions at a time, a recommended answer attached to each) aimed at the vocabulary and goal below. Create, edit, and delete specs as the grilling resolves things.
+Use the shared Grilling procedure in `/plan` for a stateful session whose only output is **workflow** specs. Use the grilling discipline (relentless, a round of questions at a time, a recommended answer attached to each) aimed at the vocabulary and goal below. Create, edit, and delete specs as the grilling resolves things.
 
 ## The loop lens
 
