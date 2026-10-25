@@ -6,7 +6,7 @@ Status: router implemented; setup's modeling reference restored. Implementation 
 
 - One router covers the journey from an unclear idea to an implementation-ready plan.
 - Absorb `grill-me`, `grill-with-docs`, `grilling`, `to-spec`, and `to-tickets` into the router.
-- Name the root skill `plan`; keep the shared grilling procedure in its `SKILL.md`, applying it to interview routes.
+- Name the root skill `grill`; keep the shared grilling procedure in its `SKILL.md`, applying it to interview routes.
 - Provide sub-skills `me`, `docs`, `spec`, and `tickets`.
 - Domain-modeling guidance is moving into `setup` under its modeling reference; the `docs` sub-skill must use that reference rather than absorb a standalone domain-modeling skill.
 - Grilling is the shared interview foundation. The router also produces specs and ticket breakdowns without requiring users to repeat an interview.
