@@ -1,6 +1,6 @@
 ---
 name: finalize
-description: Finalize a branch of this repo's skill work: review, skills-check every skill in skills/, rebuild indexes, run check-all.sh, then create the PR.
+description: "Finalize a branch of this repo's skill work: review, skills-check every skill in skills/, rebuild indexes, run check-all.sh, then create the PR."
 disable-model-invocation: true
 ---
 
