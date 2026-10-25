@@ -31,7 +31,7 @@ A sub-skill with supporting files (`references/`, `assets/`) keeps them in a `re
 4. **Description** names the task types and lists the sub-skill names, so the model triggers on any of them.
 5. **Cross-references rewritten.** Sub-skills that called each other with the Skill tool now say "follow `code-review.md`". Mentions elsewhere (`what-to-use`, `ticket`, `tdd`) became `/git <sub-skill>`.
 6. **Agents metadata.** The router has `agents/openai.yaml` with `allow_implicit_invocation: true`. Sub-skills carry no yaml: they aren't skills, so nothing reads it.
-7. **Indexes.** The five former skills were removed from `SKILLS.md` and `skills.html`, and one `git` row added.
+7. **Docs site.** The skills page generates from the router table, so the five former skills drop out and the `git` sub-skills appear on rebuild.
 8. **Frontmatter:** `license`, `metadata.version`, `author`, `author-url`. Sub-skills adapted from upstream also carry `based_on_repo`, `based_on_version` and `based_on_skill`.
 
 ## Reference-only trees
@@ -45,4 +45,4 @@ The former dev reference tree now lives at `skills/implement/sub-skills/referenc
 - [ ] No leftover Skill tool calls or `/<old-name>` mentions (`grep` the repo)
 - [ ] Router table links resolve
 - [ ] `agents/openai.yaml` on the router
-- [ ] `SKILLS.md` and `skills.html` updated
+- [ ] Docs site builds and the skills page shows the router and its sub-skills

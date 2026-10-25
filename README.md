@@ -43,8 +43,6 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
 │   ├── design/        # Router skill: eight design workflows plus references by surface
 │   ├── security/      # Router skill: four sub-skills (review-code, build-securely, harden-deployment, release-gate) over sub-skills/references/
 │   └── implement/     # Router: direct changes, tickets, specs, plus page and component build guides
-├── SKILLS.md          # Index of my skills
-├── skills.html        # Package skills guide: descriptions, usage and nested sub-skills
 ├── site/              # Public documentation source; VitePress custom theme and generated catalogues
 ├── GLOSSARY.md         # Glossary of this repo's terms
 ├── docs/              # Agent config docs (agents/) and the router-skill guide
@@ -97,7 +95,7 @@ metadata:
 
 `skills/security/SKILL.md` routes to four sub-skills by situation: `review-code`, `build-securely`, `harden-deployment` and `release-gate`. Their depth lives in `sub-skills/references/` (topic guides, `languages/`, `infrastructure/`, review rules and report template, hardening controls, privacy, LLM, dependency and Solana guides). The content is adapted from [getsentry/skills](https://github.com/getsentry/skills) (Apache-2.0), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) and [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT); each adapted file's `based_on_*` metadata records its source, and nothing in `skills/security/` links into `source-skills/`.
 
-Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat sub-skills, unlisted sub-skills, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint. After adding, moving or renaming a marketing sub-skill, run `python3 scripts/build-index.py` to rebuild `skills.html` from the `SKILLS.md` table and refresh the marketing, git, security, design, implement and docs sub-skill lists in `SKILLS.md`.
+Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat sub-skills, unlisted sub-skills, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint. After adding, moving or renaming a marketing sub-skill, rebuild the docs site (`pnpm exec vp run site:build`): its skills page at <https://ai.jny986.com/skills.html> is the public reference and generates from `skills/`.
 
 #### Design router
 

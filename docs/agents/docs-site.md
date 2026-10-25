@@ -60,9 +60,12 @@ are ignored.
   or websites explicitly used as source material; ordinary outbound links and
   author homepages are not evidence of provenance. Repository provenance comes
   from `based_on_repo` across shipped skills and their nested documents.
-- Keep the root `skills.html` guide working. Follow
-  [its generator contract](skills-html.md) and regenerate it with
-  `python3 scripts/build-index.py`; change its site link in the generator.
+- The skills page (`/skills.html`) is the public reference for skills, their
+  sub-skills and how to invoke them. It generates from `skills/` frontmatter
+  and each router's sub-skill table (`scripts/skilltree.py`); agent invocability
+  comes from `disable-model-invocation`. Update the site whenever a skill or
+  sub-skill is added, moved, renamed, re-described or re-versioned, and
+  rebuild to confirm the change renders.
 
 Rebuild and check that modified items, source mappings and repository links
 appear correctly. The catalogue checks validate generated content and mappings;

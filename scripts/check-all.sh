@@ -11,7 +11,7 @@ step() {
 
 step "Marketing router structure" python3 scripts/check-marketing-structure.py
 step "Skill frontmatter and links" python3 scripts/check-skills.py
-step "Index sync" python3 scripts/check-indexes.py
+step "README submodules" python3 scripts/check-readme.py
 step "Agent yaml" python3 scripts/check-agent-yaml.py
 step "References" python3 scripts/check-references.py
 step "Assets" python3 scripts/check-assets.py

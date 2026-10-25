@@ -22,11 +22,11 @@ Take a branch from "dev work done" to "PR open" in this repo. Read `docs/agents/
 
 4. **Fix findings.** Fix every Standards, Spec and skills-check finding directly. Keep the list of what was fixed. A finding you judge a false positive goes to the user with the quoted evidence instead of being fixed.
 
-5. **Rebuild indexes.** Run `python3 scripts/build-index.py` when the branch added, moved, renamed or re-described a skill or sub-skill, or bumped `metadata.version`. Review `git diff skills.html SKILLS.md`; both are generated, so edit the source and rebuild.
+5. **Docs site.** The site is the public skills reference. When the branch added, moved, renamed or re-described a skill or sub-skill, or bumped `metadata.version`, run `pnpm exec vp run site:build` and `site:check`, and update any `site/*.md` copy that is now stale. The catalogue is generated, so edit the source in `skills/`, not the output.
 
 6. **Check.** Run `scripts/check-all.sh`. Done when it exits 0; fix each failing step and rerun.
 
-7. **Commit.** If steps 4 to 6 changed files, make one new commit, e.g. `fix: address review findings`, with regenerated `skills.html` and `SKILLS.md` included. Amending or folding into existing commits is out; add a new commit.
+7. **Commit.** If steps 4 to 6 changed files, make one new commit, e.g. `fix: address review findings`, with any `site/` copy changes included. Amending or folding into existing commits is out; add a new commit.
 
 8. **Re-review.** Skip when every change in step 4 was cosmetic (formatting, naming, comments, dead-code removal). Otherwise repeat steps 2 and 3 once against the same fixed point, then step 6, and report anything remaining.
 

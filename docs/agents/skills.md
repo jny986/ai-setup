@@ -1,6 +1,6 @@
 # Skills
 
-What a skill in `skills/` contains, and how to add, modify or re-sync one. For routers and their sub-skills, see [router-skills.md](router-skills.md). For the generated indexes, see [skills-html.md](skills-html.md).
+What a skill in `skills/` contains, and how to add, modify or re-sync one. For routers and their sub-skills, see [router-skills.md](router-skills.md). The skills page of the docs site is generated from `skills/`; see [docs-site.md](docs-site.md).
 
 ## Anatomy
 
@@ -51,7 +51,7 @@ Rules:
 3. **Provenance.** Fill in `based_on_*` from the pinned submodule.
 4. **Agent metadata.** Add `agents/openai.yaml` with `interface.display_name`, `interface.short_description` and `policy.allow_implicit_invocation`.
 5. **Router entry.** For a sub-skill, add a row to the router's table and its description, plus a line in the router's `README.md`.
-6. **Rebuild indexes.** `python3 scripts/build-index.py`, then review `git diff skills.html SKILLS.md`.
+6. **Docs site.** The public skills page generates from `skills/`. Run `pnpm exec vp run site:build` and `pnpm exec vp run site:check`, then confirm the skill, its description and sub-skills render on the skills page. Update `site/*.md` copy if the change affects setup or usage guidance.
 7. **Check.** `scripts/check-all.sh` exits 0.
 
 ## Modify a skill
@@ -76,6 +76,6 @@ Rules:
 | `scripts/check-skills.py` | `SKILL.md` and sub-skill frontmatter, `based_on_*` format, relative links, chained `git`/`gh` commands in code |
 | `scripts/check-provenance.py` | `based_on_repo` has a submodule; `--fail-on-drift` hash matches the pin |
 | `scripts/check-agent-yaml.py` | `openai.yaml` keys and invocation policy agree with the skill |
-| `scripts/check-indexes.py` | `SKILLS.md` and `skills.html` list the same skills |
+| `scripts/check-readme.py` | Every submodule in `.gitmodules` appears in the README structure tree |
 | `scripts/check-references.py`, `check-assets.py`, `check-marketing-structure.py` | References, assets and router layout |
 | `scripts/check-all.sh` | All of the above in CI order, plus lint and tests |
