@@ -2,7 +2,7 @@
 
 My personal setup for AI coding agents. It's mostly [Agent Skills](https://agentskills.io) for now, and will grow to include mods, rules and other agent configuration. It's built for my own use, but you're welcome to use any of it.
 
-Read the [documentation site](https://jny986.github.io/ai-setup/) for setup guidance and searchable references for skills, agents, templates and their sources. Maintainers can [build and preview the site locally](docs/agents/docs-site.md).
+Read the [documentation site](https://ai.jny986.com/) for setup guidance and searchable references for skills, agents, templates and their sources. Maintainers can [build and preview the site locally](docs/agents/docs-site.md).
 
 ## Install
 
@@ -41,7 +41,9 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
 ├── skills/            # My skills — one folder per skill, each with a SKILL.md
 │   ├── marketing/     # Router skill: nested sub-skills by category under sub-skills/, plus sub-skills/name-table.md
 │   ├── design/        # Router skill: eight design workflows plus references by surface
-│   ├── security/      # Router skill: four sub-skills (review-code, build-securely, harden-deployment, release-gate) over sub-skills/references/
+│   ├── security/      # Router skill: five sub-skills (review-code, build-securely, harden-deployment, release-gate, skills-check) over sub-skills/references/
+│   ├── git/           # Router: commit, create-pr, code-review, review-prs, pr-fixes, ci-fix, resolving-merge-conflicts
+│   ├── plan/          # Router: me, docs, spec, tickets
 │   └── implement/     # Router: direct changes, tickets, specs, plus page and component build guides
 ├── site/              # Public documentation source; VitePress custom theme and generated catalogues
 ├── GLOSSARY.md         # Glossary of this repo's terms
@@ -93,7 +95,7 @@ metadata:
 
 #### Security router
 
-`skills/security/SKILL.md` routes to four sub-skills by situation: `review-code`, `build-securely`, `harden-deployment` and `release-gate`. Their depth lives in `sub-skills/references/` (topic guides, `languages/`, `infrastructure/`, review rules and report template, hardening controls, privacy, LLM, dependency and Solana guides). The content is adapted from [getsentry/skills](https://github.com/getsentry/skills) (Apache-2.0), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) and [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT); each adapted file's `based_on_*` metadata records its source, and nothing in `skills/security/` links into `source-skills/`.
+`skills/security/SKILL.md` routes to five sub-skills by situation: `review-code`, `build-securely`, `harden-deployment`, `release-gate` and `skills-check`. Their depth lives in `sub-skills/references/` (topic guides, `languages/`, `infrastructure/`, review rules and report template, hardening controls, privacy, LLM, dependency and Solana guides). The content is adapted from [getsentry/skills](https://github.com/getsentry/skills) (Apache-2.0), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) and [affaan-m/ECC](https://github.com/affaan-m/ECC) (MIT); each adapted file's `based_on_*` metadata records its source, and nothing in `skills/security/` links into `source-skills/`.
 
 Check the layout with `python3 scripts/check-marketing-structure.py`: it fails on flat sub-skills, unlisted sub-skills, broken links and unresolved dev hand-offs. `python3 scripts/check-skills.py` validates every `SKILL.md`'s frontmatter and relative links. CI runs both plus markdownlint. After adding, moving or renaming a marketing sub-skill, rebuild the docs site (`pnpm exec vp run site:build`): its skills page at <https://ai.jny986.com/skills.html> is the public reference and generates from `skills/`.
 
@@ -121,6 +123,9 @@ The upstream repos my skills are based on or sit alongside. They're kept as subm
 | `jamditis-claude-skills-journalism` | [jamditis/claude-skills-journalism](https://github.com/jamditis/claude-skills-journalism) | Joe Amditis |
 | `CosmoBlk-email-design` | [CosmoBlk/email-design](https://github.com/CosmoBlk/email-design) | George Hartley |
 | `vercel-labs-web-interface-guidelines` | [vercel-labs/web-interface-guidelines](https://github.com/vercel-labs/web-interface-guidelines) | Vercel |
+| `blader-humanizer` | [blader/humanizer](https://github.com/blader/humanizer) | blader |
+| `UseAI-pro-openclaw-skills-security` | [UseAI-pro/openclaw-skills-security](https://github.com/UseAI-pro/openclaw-skills-security) | UseAI-pro |
+| `OWASP-www-project-agentic-skills-top-10` | [OWASP/www-project-agentic-skills-top-10](https://github.com/OWASP/www-project-agentic-skills-top-10) | OWASP |
 
 Fetch or update the submodules:
 
