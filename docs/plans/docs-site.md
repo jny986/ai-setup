@@ -296,7 +296,4 @@ steps, not published GitHub tickets.
 
 ## Modeling dependency
 
-Setup's active `references/modeling.md` is unavailable in the installed skill;
-the repository's existing docs-router plan records the same missing dependency.
-Planning can proceed, but glossary and ADR changes are blocked until that
-procedure is available. No glossary or ADR changes have been made.
+Setup's `references/modeling.md` is restored in the repository. Installed copies of the setup skill may still lack it until updated.
