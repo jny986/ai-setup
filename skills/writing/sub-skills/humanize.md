@@ -1,5 +1,5 @@
 ---
-name: humanizer
+name: humanize
 description: |
   Rewrite AI-sounding text so it reads like the writer without changing what it says.
   Use when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line

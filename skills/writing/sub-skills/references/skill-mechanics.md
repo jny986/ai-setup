@@ -1,6 +1,14 @@
+---
+metadata:
+  version: "1.0.0"
+  based_on_repo: mattpocock/skills
+  based_on_version: v1.3.1(49dd158)
+  based_on_skill: writing-for-agents
+---
+
 # Skill mechanics
 
-The skill-specific branch of [`writing-for-agents`](SKILL.md): what changes when the document is a skill (frontmatter, the invocation choice, and router skills). Everything else about writing it is the universal reference in `SKILL.md`.
+The skill-specific branch of [writing agents](../agents.md): what changes when the document is a skill (frontmatter, the invocation choice, and router skills). The linked agents guide carries the universal writing reference.
 
 ## Invocation
 
@@ -19,4 +27,4 @@ The invocation cut of splitting (the sequence cut lives in `SKILL.md`): split of
 
 ## Router skills
 
-When user-invoked skills multiply past what you can remember, that piled-up cognitive load is cured by a **router skill**: one user-invoked skill that names the others and when to reach for each, so the human has one skill to remember instead of many. It can only hint, never fire them: user-invoked skills have no description, so nothing but the human can reach them.
+When related workflows multiply past what you can remember, a **router skill** gives them one entry point. Keep its routing table thin and move each workflow into a plain sub-skill document loaded only when selected. Sub-skills are documents, so the router reads them directly; they have no independent invocation policy. Preserve explicit invocation for interactive workflows by making their router user-invoked. Other workflows may link directly to shared reference documents, such as the agents writing guide, without starting an interactive writing session.

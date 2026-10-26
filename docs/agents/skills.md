@@ -47,7 +47,7 @@ Rules:
 ## Add a skill
 
 1. **Upstream source.** When adapting, add the repo as a submodule at `source-skills/<owner>-<repo>`: `git submodule add <url> source-skills/<owner>-<repo>`. Then add it to the `source-skills/` tree in `README.md`.
-2. **Write the skill.** Follow `writing-for-agents`. Create `SKILL.md` (or `sub-skills/<name>.md` under a router) with frontmatter as above.
+2. **Write the skill.** Read the [writing agents guide](../../skills/writing/sub-skills/agents.md). Create `SKILL.md` (or `sub-skills/<name>.md` under a router) with frontmatter as above.
 3. **Provenance.** Fill in `based_on_*` from the pinned submodule.
 4. **Agent metadata.** Add `agents/openai.yaml` with `interface.display_name`, `interface.short_description` and `policy.allow_implicit_invocation`.
 5. **Router entry.** For a sub-skill, add a row to the router's table and its description, plus a line in the router's `README.md`.

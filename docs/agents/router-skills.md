@@ -5,8 +5,10 @@ A router skill is one `SKILL.md` that picks among a group of related sub-skills,
 ## When to build one
 
 - The group has 5+ members, or members nest. In `git`, `create-pr` commits via `commit`.
-- Members become plain Markdown files read by the router. Keep user-only workflows as standalone skills with `disable-model-invocation: true` and `allow_implicit_invocation: false`; an implicitly invoked router must not invoke them. The explicit exception is `git pr-fixes`, which delegates branch finalisation to `finalise` before asking for approval to reply to review threads.
+- Members become plain Markdown files read by the router. Keep user-only workflows as standalone skills with `disable-model-invocation: true` and `allow_implicit_invocation: false`, or consolidate them under a router with the same explicit invocation policy. An implicitly invoked router must not invoke user-only workflows. The explicit exception is `git pr-fixes`, which delegates branch finalisation to `finalise` before asking for approval to reply to review threads.
 - Skip it when each skill already has a sharp trigger description. A router adds nothing then.
+
+The `writing` router consolidates user-invoked interactive workflows under an explicitly invoked router. Its shared `agents` and `humanize` documents can also be read directly by other workflows; these links load guidance without starting an interactive session.
 
 ## Layout
 

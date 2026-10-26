@@ -96,7 +96,7 @@ Off the main flow entirely.
 - **`/wizard`** is for the steps only a **human** can take: provisioning infrastructure, setting up credentials or CI secrets, clicking through an unfamiliar third-party dashboard, running a one-off migration or cutover. It generates an interactive bash script that opens each URL, captures each value, and writes it into `.env` and GitHub secrets, so the procedure stops being something you re-explain to an agent every time. Model-invoked, so the agent reaches for it the moment it hits a wall only you can pass. If the agent could just do it itself, it should; this is for where a human is genuinely in the loop.
 - **`/wait-what`** is the corrective for a message that didn't land. Use it mid-conversation, inside any other skill, and the agent re-pitches what it just said with the context you were missing, in plain English, using the `GLOSSARY.md` vocabulary. It works after the fact; `/grill docs` is the upfront cure, because a shared language agreed early is what stops the jargon arriving at all.
 - **`/teach`**: learn a concept over multiple sessions, using the current directory as a stateful workspace.
-- **`/writing-for-agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs.
+- **`/writing agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs.
 
 ## Beyond the map
 
@@ -108,9 +108,9 @@ When the situation fits no flow above (marketing, writing, a repo-config chore, 
 
 Three shapes to know:
 
-- **Routers** (`/git`, `/marketing`, `/implement`, `/grill`) hold sub-skills, not skills. Recommend `/git <sub-skill>` or `/marketing <sub-skill>`, picking the sub-skill from the router's table.
+- **Routers** (`/git`, `/marketing`, `/implement`, `/grill`, `/writing`) hold sub-skills, not skills. Recommend `/git <sub-skill>` or `/marketing <sub-skill>`, picking the sub-skill from the router's table.
 - **Page and component builds** use `/implement page`, `/implement component`, or a build-guide name from the implement name table. Marketing hands off to the same guides.
-- **Writing** is a sequence, not three alternatives: `/writing-fragments` (explore), then `/writing-shape` (an article) or `/writing-beats` (a journey of beats).
+- **Writing** starts at `/writing`: `fragments` explores raw material; `shape` and `beats` are alternative interactive drafting approaches. Use `edit` for an existing draft, `humanize` for AI writing patterns, and `agents` for agent-consumed documents. Recommend only the stage the user needs.
 
 ## Precondition
 

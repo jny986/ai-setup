@@ -57,7 +57,7 @@ def rows_for(root, skill):
     router = root / "skills" / skill / "SKILL.md"
     if skill == "marketing":
         return sub_skills(router)
-    if skill in ("git", "implement", "grill"):
+    if skill in ("git", "implement", "grill", "writing"):
         return linked_sub_skills(router)
     if skill in ("security", "design"):
         return situation_sub_skills(router)
