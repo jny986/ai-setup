@@ -8,7 +8,7 @@ metadata:
 
 # Code-review reviewer briefs
 
-The coordinator supplies the reviewed diff command, commit list and sources from steps 1–3 of [code-review](../code-review.md). Both reviewers assess changed lines only; surrounding code supplies context.
+The coordinator supplies the reviewed diff command, commit list and sources from steps 1–3 of [code-review](../code-review.md). Every reviewer assesses changed lines only; surrounding code supplies context.
 
 ## Reviewer prompts
 
@@ -23,6 +23,14 @@ The coordinator supplies the reviewed diff command, commit list and sources from
 - The diff command and commit list, with the instruction to judge only what the diff changes.
 - The path or fetched contents of the spec.
 - The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
+
+**UI/UX sub-agent prompt**, dispatched only when the diff changes user-facing UI (templates, components, styles, copy, front-end assets), should include:
+
+- The diff command and commit list, with the instruction to judge only the UI the diff adds or changes.
+- The spec source from step 2 (its user task and acceptance criteria), plus `PRODUCT.md`, `DESIGN.md` and the brand kit when they exist.
+- The instruction to read the **Review lenses** table in `design audit` and treat each lens as a checklist of what to look for. Apply the lenses the diff touches; skip the rest.
+- When the coordinator's browser pre-flight passed: the URL, the browser tool and the states to exercise from the spec's acceptance criteria. Brief it to use its own browser session, stay on local or staging, use test data and read-only actions, and take a snapshot after each navigation. It captures desktop and narrow widths, walks the primary flow, does a keyboard-only pass, reads console errors, and cites the screenshot or element per finding.
+- The brief: "Review the changed UI against the design audit lenses. Walk the affected user task step by step and name the step that fails or slows the user. Judge from the diff and source, and confirm in the browser when one is provided. Under Limits, list what you could not verify and separate what you verified in the browser from what you inferred from source. Report each finding as `[P0-P3] problem — file:line or state; evidence; user impact; specific fix`, using the design audit priorities. Report supported defects only, and say when the diff has no UI/UX issues. Skip anything the listed automated checks enforce. Under 400 words."
 
 ## Standards smell baseline
 

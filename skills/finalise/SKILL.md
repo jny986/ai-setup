@@ -21,13 +21,13 @@ Take a branch from "dev work done" to "PR open" by running `git code-review` (in
    - Else fall back to the repo's default branch (`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`) merge-base with `HEAD`.
    - If none of these resolve confidently, ask the user which fixed point to use.
 
-2. **Code review.** Follow `git code-review`, passing the fixed point from step 1. Include pending branch changes in every review axis: use `git diff <fixed-point>` for tracked changes and read untracked files intended for this change, rather than reviewing only committed changes with `git diff <fixed-point>...HEAD`. Preserve unrelated user work. Once code-review completes its security loop, if there are no Standards or Spec findings, skip straight to step 6.
+2. **Code review.** Follow `git code-review`, passing the fixed point from step 1. Include pending branch changes in every review axis: use `git diff <fixed-point>` for tracked changes and read untracked files intended for this change, rather than reviewing only committed changes with `git diff <fixed-point>...HEAD`. Preserve unrelated user work. Once code-review completes its security loop, if there are no Standards, Spec or UI/UX findings, skip straight to step 6.
 
-3. **Fix code review findings.** Fix every Standards and Spec finding directly. Keep the list of what was fixed.
+3. **Fix code review findings.** Fix every Standards, Spec and UI/UX finding directly. Keep the list of what was fixed.
 
 4. **Commit the fixes.** If step 3 changed files, make one new commit for everything fixed, e.g. `fix: address review findings`. Never amend or fold into existing commits.
 
-5. **Re-review code.** If every fix in step 3 was purely cosmetic (formatting, naming, comments, dead-code removal — no behavioral change), skip re-review. Otherwise follow `git code-review` again against the same fixed point, once, to check the fixes and confirm nothing new was introduced. Continue to step 6 after code-review completes its security loop; report any remaining Standards or Spec findings.
+5. **Re-review code.** If every fix in step 3 was purely cosmetic (formatting, naming, comments, dead-code removal — no behavioral change), skip re-review. Otherwise follow `git code-review` again against the same fixed point, once, to check the fixes and confirm nothing new was introduced. Continue to step 6 after code-review completes its security loop; report any remaining Standards, Spec or UI/UX findings.
 
 6. **Summarise.** Tell the user what was fixed (or "no issues found"), including the security review result and any findings or unverified items explicitly ignored by the user, with their decisions, then proceed to step 7 without waiting for a response.
 

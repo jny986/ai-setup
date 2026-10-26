@@ -24,7 +24,7 @@ A router over git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in this 
 |---|---|
 | [`commit`](sub-skills/commit.md) | Commit and push the current work, on the branch its ticket calls for |
 | [`create-pr`](sub-skills/create-pr.md) | Open a GitHub PR from the current branch (commits and pushes first if needed) |
-| [`code-review`](sub-skills/code-review.md) | Review changes since a commit, branch, tag or merge-base, against repo standards, the spec and security |
+| [`code-review`](sub-skills/code-review.md) | Review changes since a commit, branch, tag or merge-base, against repo standards, the spec, UI/UX and security |
 | [`review-prs`](sub-skills/review-prs.md) | Review the open PRs awaiting the user's review, asking continue or skip for each |
 | [`pr-fixes`](sub-skills/pr-fixes.md) | Address unresolved PR review threads without a user reply, including threads the user created, with user decisions and one fix sub-agent per issue |
 | [`ci-fix`](sub-skills/ci-fix.md) | Fix failing CI and merge conflicts on an existing PR, then monitor and repair until its latest head passes |
