@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check every skills/**/SKILL.md and sub-skill file has valid frontmatter and every relative Markdown link under skills/ resolves.
 Sub-skills are the Markdown files under skills/*/sub-skills/ outside `references/` folders, apart from name-table.md.
-Files inside `references/` folders must carry `based_on_*` so they can be re-synced, unless listed in ORIGINAL_REFERENCES.
+Files inside `references/` folders must carry repository or website provenance so they can be re-synced, unless listed in ORIGINAL_REFERENCES.
 Also fails any `gh`/`git` command in skill Markdown that chains with `&&`, `;` or `|`.
 
 Frontmatter: required and known keys, boolean flags, description length, and all-or-none `based_on_*` provenance
@@ -99,13 +99,15 @@ def check_provenance(meta, rel, report, sub):
 
 
 def check_reference(ref, rel, report):
-    """A reference must record its upstream in `based_on_*` so it can be re-synced, unless it is listed as original."""
+    """A reference must record repository or website provenance, unless listed as original."""
     m = FRONTMATTER.match(ref.read_text())
     fm = parse_mapping(m.group(1)) if m else {}
     meta = fm.get("metadata") if isinstance(fm.get("metadata"), dict) else {}
     for key in sorted(set(fm) - SUB_TOP_KEYS):
         report.fail(f"{rel}: unknown key '{key}'")
-    if check_provenance(meta, rel, report, sub=True):
+    has_repo = check_provenance(meta, rel, report, sub=True)
+    has_website = any(url.strip() for url in meta.get("based_on_url", "").split(","))
+    if has_repo or has_website:
         if rel.as_posix() in ORIGINAL_REFERENCES:
             report.fail(f"{rel}: listed in ORIGINAL_REFERENCES but has based_on_*, remove it from the list")
     elif rel.as_posix() not in ORIGINAL_REFERENCES and not any(k in meta for k in BASED_ON):

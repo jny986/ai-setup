@@ -1,5 +1,0 @@
-interface:
-  display_name: "Agents Review"
-  short_description: "Review AGENTS.md/CLAUDE.md for progressive disclosure"
-policy:
-  allow_implicit_invocation: false

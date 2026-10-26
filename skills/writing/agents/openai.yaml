@@ -1,5 +1,5 @@
 interface:
   display_name: "Writing"
-  short_description: "Explore, draft and edit prose or agent documents"
+  short_description: "Write prose, technical docs and agent instructions"
 policy:
   allow_implicit_invocation: false

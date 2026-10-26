@@ -44,7 +44,7 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
 │   ├── security/      # Router skill: five sub-skills (review-code, build-securely, harden-deployment, release-gate, skills-check) over sub-skills/references/
 │   ├── git/           # Router: commit, create-pr, code-review, review-prs, pr-fixes, ci-fix, resolving-merge-conflicts
 │   ├── grill/         # Router: me, docs, spec, tickets
-│   ├── writing/       # Router: fragments, shape, beats, edit, humanize, agents
+│   ├── writing/       # Router: fragments, shape, beats, edit, humanize, technical, agents, review
 │   └── implement/     # Router: direct changes, tickets, specs, plus page and component build guides
 ├── site/              # Public documentation source; VitePress custom theme and generated catalogues
 ├── GLOSSARY.md         # Glossary of this repo's terms

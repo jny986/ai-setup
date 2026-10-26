@@ -97,6 +97,8 @@ Off the main flow entirely.
 - **`/wait-what`** is the corrective for a message that didn't land. Use it mid-conversation, inside any other skill, and the agent re-pitches what it just said with the context you were missing, in plain English, using the `GLOSSARY.md` vocabulary. It works after the fact; `/grill docs` is the upfront cure, because a shared language agreed early is what stops the jargon arriving at all.
 - **`/teach`**: learn a concept over multiple sessions, using the current directory as a stateful workspace.
 - **`/writing agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs.
+- **`/writing review`** reviews or improves existing agent-facing documents, including skills, routers, references and project instructions.
+- **`/writing technical`** writes or revises technical documentation using ASD-STE100 Simplified Technical English rules and vocabulary.
 
 ## Beyond the map
 

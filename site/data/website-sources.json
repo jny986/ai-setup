@@ -1,5 +1,25 @@
 [
   {
+    "title": "ISO 24495-1:2023 Plain language — published preview",
+    "url": "https://cdn.standards.iteh.ai/samples/78907/d194fac21d6a45f38bfcfec9657f7498/ISO-24495-1-2023.pdf",
+    "skills": ["writing"]
+  },
+  {
+    "title": "ASD-STE100 Simplified Technical English, Issue 9",
+    "url": "https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf",
+    "skills": ["writing"]
+  },
+  {
+    "title": "ASD-STE100 official FAQ",
+    "url": "https://asd-ste100.org/STE_faq.html",
+    "skills": ["writing"]
+  },
+  {
+    "title": "ASD-STE100 tools and validation guidance",
+    "url": "https://asd-ste100.org/STEsoftware.html",
+    "skills": ["writing"]
+  },
+  {
     "title": "Wikipedia: Signs of AI writing",
     "url": "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
     "skills": ["writing"]
