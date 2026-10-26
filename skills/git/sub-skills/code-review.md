@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Reviews Standards and Spec in parallel, runs the full security review on the current diff with a fix/review loop, checks prior comments, and optionally submits a user-approved PR review."
+description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Reviews Standards, Spec and UI/UX (for UI changes) in parallel, runs the full security review on the current diff with a fix/review loop, checks prior comments, and optionally submits a user-approved PR review."
 license: MIT
 metadata:
   version: "1.0.0"
@@ -11,10 +11,11 @@ metadata:
   based_on_skill: code-review, retro
 ---
 
-Review the diff between `HEAD` and a fixed point on three separate axes:
+Review the diff between `HEAD` and a fixed point on four separate axes:
 
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
+- **UI/UX**: does changed UI hold up against the `design audit` lenses? Applies only when the diff changes user-facing UI.
 - **Security**: does the diff introduce exploitable vulnerabilities?
 
 Report issues introduced by the diff; read surrounding code for context. Keep findings separate by axis so a pass on one cannot mask a failure on another.
@@ -59,9 +60,18 @@ Search the repo for every file that documents how code should be written. When `
 
 List lint, typecheck and test scripts, CI workflows and pre-commit hooks. Identify which rules tooling already enforces. If neither hooks nor CI run these checks, report the missing automated guardrail under Standards.
 
-### 4. Review Standards and Spec
+### 4. Review Standards, Spec and UI/UX
 
-Read [reviewer briefs and smell baseline](references/code-review-briefs.md). Dispatch Standards and Spec reviewers in parallel with the diff command, commit list, their respective sources from steps 1–3 and their respective briefs. Paste the full baseline into the Standards prompt. Wait for both reports; skip Spec only when the user confirms no spec exists, and report "no spec available".
+Read [reviewer briefs and smell baseline](references/code-review-briefs.md). Dispatch Standards, Spec and UI/UX reviewers in parallel with the diff command, commit list, their respective sources from steps 1–3 and their respective briefs. Paste the full baseline into the Standards prompt. Dispatch UI/UX only when the changed files include user-facing UI; otherwise report "no UI changes".
+
+**Browser pre-flight (UI/UX only).** Give the UI/UX reviewer a live browser when all hold, else tell it to review statically:
+
+- A browser tool is available (an MCP browser server, Playwright or the host's embedded browser).
+- A target URL exists: one the user gave, a running dev server, or a start command found in the repo's scripts or docs. With none, ask the user once for the URL, start command and any test login, and wait.
+- The server serves the reviewed code: start it from the review checkout (the PR worktree when one is used).
+- Code from another author (a PR) runs only after the user confirms the exact install and start commands, and the reviewer signs in with a test login only. Without that confirmation, review statically.
+
+Wait for every dispatched report; skip Spec only when the user confirms no spec exists, and report "no spec available".
 
 ### 5. Check user comments
 
@@ -73,7 +83,7 @@ When a comment matches a pattern that recurs across the PR's comments, record it
 
 ### 6. Security review
 
-Run the full `security review-code` workflow on the complete change set established for this review, including reviews invoked through `git review-prs` or `finalise`. Use the captured diff from step 1; when the invoking workflow includes pending changes (as `finalise` does), use `git diff <fixed-point>` and read intended untracked files so security covers the same changes as Standards and Spec. Read the security router and its `sub-skills/review-code.md`, then execute every applicable step: scope the actual current diff, load the matching guides, trace suspect patterns through the surrounding code, classify them and produce the security report. A PR overview, prior security report or verification of earlier fixes cannot substitute for this run. If the skill or a required guide is unavailable, or the workflow cannot be completed, report the missing dependency or coverage gap and stop before completing the code review or recommending a PR verdict.
+Run the full `security review-code` workflow on the complete change set established for this review, including reviews invoked through `git review-prs` or `finalise`. Use the captured diff from step 1; when the invoking workflow includes pending changes (as `finalise` does), use `git diff <fixed-point>` and read intended untracked files so security covers the same changes as Standards, Spec and UI/UX. Read the security router and its `sub-skills/review-code.md`, then execute every applicable step: scope the actual current diff, load the matching guides, trace suspect patterns through the surrounding code, classify them and produce the security report. A PR overview, prior security report or verification of earlier fixes cannot substitute for this run. If the skill or a required guide is unavailable, or the workflow cannot be completed, report the missing dependency or coverage gap and stop before completing the code review or recommending a PR verdict.
 
 Record the resolved base and head commit SHAs, diff command, any reviewed working-tree changes and untracked files, changed files covered, guides applied and any coverage limitations. Account for every changed file, explaining any exclusions. A clean result requires this completed review even when there are no prior security findings.
 
@@ -84,9 +94,9 @@ Record the resolved base and head commit SHAs, diff command, any reviewed workin
 
 ### 7. Aggregate
 
-After security fixes, refresh the diff and repeat Standards, Spec and comment checks for affected hunks. Present:
+After security fixes, refresh the diff and repeat Standards, Spec, UI/UX and comment checks for affected hunks. Present:
 
-- `## Standards` and `## Spec`: reviewer reports, verbatim or lightly cleaned.
+- `## Standards`, `## Spec` and `## UI/UX`: reviewer reports, verbatim or lightly cleaned. Keep UI/UX findings' P0–P3 priorities and limits; say "no UI changes" when UI/UX was skipped.
 - `## Security`: the coverage record from step 6, vulnerabilities found, fixes verified, and findings or needs-verification items explicitly ignored, with the user's decisions. When none qualify, report the completed review's clean result; distinguish it from an incomplete or blocked review.
 - `## Comments`: a table with `Author | Comment | Status | Evidence`, one row per step 5 comment: `@username`, quote, fixed/not fixed/partially fixed, and file/line citations. Say when there are none.
 - `## Notes`: standards that were vague, contradictory or stale, plus recurring comment patterns. Suggest standards or automated checks to add, clarify or remove. Notes are not findings.
@@ -105,9 +115,9 @@ Recommend inline comments only for findings still present in the current diff, e
 
 Show the recommendations in the review response as a numbered list, each with its file, changed line and full proposed comment text; say when there are none. Briefly list suppressed duplicates with links to the existing comments so the user can see where they were already raised. After showing the verdict and list, ask which numbers, if any, to add and wait before step 9. Keep only the selected comments, anchored to changed lines.
 
-Start every proposed and submitted inline comment with `[Severity][Issue type]`, followed by the concern, impact and suggested change. Use `Security`, `Code smell`, `Standard violation` or `Spec mismatch` to match the finding. For example: `[Low][Code smell] Possible Duplicated Code: ...`. Keep code smells framed as judgement calls.
+Start every proposed and submitted inline comment with `[Severity][Issue type]`, followed by the concern, impact and suggested change. Use `Security`, `Code smell`, `Standard violation`, `Spec mismatch` or `UI/UX` to match the finding. A UI/UX comment names the affected state or step and the audit lens. For example: `[Low][Code smell] Possible Duplicated Code: ...`. Keep code smells framed as judgement calls.
 
-Preserve the security review's severity. For other findings, use `Critical` for severe failures such as data loss, `High` for major functional or design impact, `Medium` for a meaningful localized issue, and `Low` for a minor improvement. Base severity on demonstrated impact, not issue type. These labels describe individual findings; retain the separate review axes and use step 9 to choose the verdict.
+Preserve the security review's severity. For other findings, use `Critical` for severe failures such as data loss, `High` for major functional or design impact, `Medium` for a meaningful localized issue, and `Low` for a minor improvement. Map UI/UX P0 to `Critical`, P1 to `High`, P2 to `Medium` and P3 to `Low`. Base severity on demonstrated impact, not issue type. These labels describe individual findings; retain the separate review axes and use step 9 to choose the verdict.
 
 ### 9. Choose the review result
 
