@@ -44,6 +44,7 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
 │   ├── security/      # Router skill: five sub-skills (review-code, build-securely, harden-deployment, release-gate, skills-check) over sub-skills/references/
 │   ├── git/           # Router: commit, create-pr, code-review, review-prs, pr-fixes, ci-fix, resolving-merge-conflicts
 │   ├── grill/         # Router: me, docs, spec, tickets
+│   ├── writing/       # Router: fragments, shape, beats, edit, humanize, agents
 │   └── implement/     # Router: direct changes, tickets, specs, plus page and component build guides
 ├── site/              # Public documentation source; VitePress custom theme and generated catalogues
 ├── GLOSSARY.md         # Glossary of this repo's terms
@@ -102,6 +103,10 @@ Check the layout with `python3 scripts/check-marketing-structure.py`: it fails o
 #### Design router
 
 `skills/design/SKILL.md` routes product context, design briefs, visual-system documentation, brand kits, interface audits, task flows, UI consolidation, and refinement through eight sub-skills. Its 37 references cover design surfaces, native platforms, adaptation, visual-reference implementation, and verification. Content is adapted from [ArnavPuri/designskills](https://github.com/ArnavPuri/designskills), [CosmoBlk/email-design](https://github.com/CosmoBlk/email-design), [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (MIT), and [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (Apache-2.0). Each adapted document records its source in frontmatter.
+
+#### Writing router
+
+[`skills/writing/SKILL.md`](skills/writing/SKILL.md) routes six writing workflows: `fragments`, `shape`, `beats`, `edit`, `humanize` and `agents`. Invoke `/writing <sub-skill>` explicitly. It consolidates the former standalone writing workflows and their supporting guidance; `edit` adds structural and prose editing. See the [writing usage guide](skills/writing/README.md) for installation and examples.
 
 ### `source-skills/`
 

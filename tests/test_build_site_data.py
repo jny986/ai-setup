@@ -44,6 +44,7 @@ def test_router_trees_match_router_tables():
         ("design", skilltree.situation_sub_skills(ROOT / "skills/design/SKILL.md")),
         ("implement", skilltree.linked_sub_skills(ROOT / "skills/implement/SKILL.md")),
         ("grill", skilltree.linked_sub_skills(ROOT / "skills/grill/SKILL.md")),
+        ("writing", skilltree.linked_sub_skills(ROOT / "skills/writing/SKILL.md")),
     ):
         actual = flatten(items[name]["tree"])
         assert {(item["name"], item["path"], item["description"]) for item in actual} == {

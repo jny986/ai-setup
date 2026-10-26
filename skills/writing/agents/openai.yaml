@@ -1,0 +1,5 @@
+interface:
+  display_name: "Writing"
+  short_description: "Explore, draft and edit prose or agent documents"
+policy:
+  allow_implicit_invocation: false

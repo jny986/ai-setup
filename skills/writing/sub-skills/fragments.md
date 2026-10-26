@@ -1,7 +1,6 @@
 ---
-name: writing-fragments
+name: fragments
 description: "Writing, explore: mine raw fragments, no structure yet."
-disable-model-invocation: true
 license: MIT
 metadata:
   version: "1.0.0"
