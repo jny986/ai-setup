@@ -10,6 +10,8 @@ metadata:
 
 Edit the supplied draft to serve its reader. Scale the intervention to the request: a copyedit keeps the structure; a substantive edit may reorder, combine or cut passages.
 
+For an ISO 24495-1 plain-language review, consult the [plain-language reference](references/iso-24495-plain-language.md) for the governing principles, available guidelines and preview coverage limits.
+
 ## Steps
 
 1. **Read the whole draft.** Establish its audience, purpose, main claim and requested depth of edit from the material and conversation. Read any voice sample or style guide supplied. Ask only when a missing choice would materially change the edit.

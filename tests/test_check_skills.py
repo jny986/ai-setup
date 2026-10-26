@@ -128,6 +128,32 @@ def test_reference_without_based_on_fails(repo):
     assert "missing based_on_*" in errors(check(repo))
 
 
+def test_reference_with_website_provenance_passes(repo):
+    write_ref(repo, REF.format(extra="  based_on_url: https://example.com/standard.pdf (2026-10-26)\n"))
+    assert check(repo).errors == []
+
+
+def test_reference_with_invalid_website_provenance_fails(repo):
+    write_ref(repo, REF.format(extra="  based_on_url: https://example.com/standard.pdf\n"))
+    assert "not 'https://... (YYYY-MM-DD)'" in errors(check(repo))
+
+
+def test_reference_with_empty_website_list_fails(repo):
+    write_ref(repo, REF.format(extra='  based_on_url: " , , "\n'))
+    assert "missing based_on_*" in errors(check(repo))
+
+
+def test_reference_website_provenance_does_not_mask_partial_repo(repo):
+    write_ref(repo, REF.format(extra="  based_on_repo: a/b\n  based_on_url: https://example.com/standard.pdf (2026-10-26)\n"))
+    assert "all present or all absent" in errors(check(repo))
+
+
+def test_original_reference_with_website_provenance_fails(repo, monkeypatch):
+    monkeypatch.setattr(module, "ORIGINAL_REFERENCES", {"alpha/sub-skills/references/guide.md"})
+    write_ref(repo, REF.format(extra="  based_on_url: https://example.com/standard.pdf (2026-10-26)\n"))
+    assert "ORIGINAL_REFERENCES" in errors(check(repo))
+
+
 def test_reference_without_frontmatter_fails(repo):
     write_ref(repo, "# Guide\n")
     assert "missing based_on_*" in errors(check(repo))
