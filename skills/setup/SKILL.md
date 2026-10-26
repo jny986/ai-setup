@@ -6,9 +6,9 @@ metadata:
   version: "1.0.0"
   author: jny986
   author-url: https://jny986.com
-  based_on_repo: mattpocock/skills
-  based_on_version: v1.3.1(49dd158)
-  based_on_skill: setup-matt-pocock-skills
+  based_on_repo: mattpocock/skills, spatie/guidelines-skills
+  based_on_version: v1.3.1(49dd158), 1.1.0(eca8f60)
+  based_on_skill: setup-matt-pocock-skills, spatie-laravel-php, spatie-javascript, spatie-security
 ---
 
 Prepare the target project to use this collection. Resolve the project directory from the request, using the current directory when none is given. Configure the skills already available to the target agents. Resolve bundled references relative to this skill's directory.
@@ -77,11 +77,23 @@ For new configuration, default to one root GLOSSARY.md plus `docs/adr/`. Offer a
 
 Use the [domain documentation template](references/domain.md) to draft `docs/agents/domain.md` for the selected layout. GLOSSARY.md and ADRs are created lazily as terms and decisions are resolved, following [the modeling procedure](references/modeling.md); setup writes the consumer rules rather than inventing domain content.
 
+### Coding standards
+
+Draft a `coding-standards.md` guide beside the other agent docs unless one exists; preserve and merge into an existing file. Detect the project's languages from manifests and source (`composer.json`, `package.json`, lockfiles, file extensions) and select the matching references:
+
+- [Laravel and PHP](references/standards-laravel-php.md) when the project uses PHP or Laravel.
+- [JavaScript](references/standards-javascript.md) when it uses JavaScript or TypeScript.
+- [Security](references/standards-security.md), always.
+
+Distil the selected references into one concise guide, grouped by language, with security last. Respect existing linter, formatter and `.editorconfig` settings: where they conflict with a reference, keep the project's rule. Treat the security reference's device and workstation items (disk encryption, browser extensions, backups) as optional; include them only when the user confirms. For a language with no reference, say so and offer to record the project's own conventions instead.
+
+Before drafting the file, present the detected languages and the standards you propose to include, and ask the user to confirm or adjust them. Summarise rather than copy the references' full text, and cite each reference by name so the agent can read it.
+
 ### Instruction pointers
 
-Draft short issue tracker, conditional triage label and domain doc pointers to merge into the authoritative instructions' `## Agent skills` section. Each pointer names what the doc supplies and when to read it. Preserve surrounding instructions and update existing entries in place.
+Draft short issue tracker, conditional triage label, domain doc and coding standards pointers to merge into the authoritative instructions' `## Agent skills` section. Each pointer names what the doc supplies and when to read it. Preserve surrounding instructions and update existing entries in place.
 
-Done when the tracker, domain rules, conditional triage mapping, migrations and instruction pointers are ready for review, with pending remote work identified.
+Done when the tracker, domain rules, coding standards, conditional triage mapping, migrations and instruction pointers are ready for review, with pending remote work identified.
 
 ## 5. Review and approve changes
 
