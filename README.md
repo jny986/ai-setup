@@ -32,7 +32,7 @@ npx skills add jny986/ai-setup --skill setup
 
 In the target project, run `/setup` to configure project instructions and engineering workflows for the skills already available, migrate domain glossaries, and check readiness. Describe any narrower setup request in plain language, or ask for a read-only readiness check. Setup asks for unresolved project details and shows proposed file changes for approval before applying them. Existing conventions and configuration are preserved on repeat runs.
 
-The skill configures the issue tracker, optional triage labels and domain doc rules.
+The skill configures the issue tracker, optional triage labels, domain doc rules and a coding standards guide (Laravel/PHP, JavaScript and security, picked from the project's languages).
 
 ## Structure
 
@@ -70,6 +70,7 @@ The skill configures the issue tracker, optional triage labels and domain doc ru
     ├── blader-humanizer/
     ├── UseAI-pro-openclaw-skills-security/
     ├── OWASP-www-project-agentic-skills-top-10/
+    ├── spatie-guidelines-skills/
     ├── SKILLS.md      # Index of every upstream skill
     └── skills.html    # The same index, grouped by repo
 ```
@@ -131,6 +132,7 @@ The upstream repos my skills are based on or sit alongside. They're kept as subm
 | `blader-humanizer` | [blader/humanizer](https://github.com/blader/humanizer) | blader |
 | `UseAI-pro-openclaw-skills-security` | [UseAI-pro/openclaw-skills-security](https://github.com/UseAI-pro/openclaw-skills-security) | UseAI-pro |
 | `OWASP-www-project-agentic-skills-top-10` | [OWASP/www-project-agentic-skills-top-10](https://github.com/OWASP/www-project-agentic-skills-top-10) | OWASP |
+| `spatie-guidelines-skills` | [spatie/guidelines-skills](https://github.com/spatie/guidelines-skills) | Spatie |
 
 Fetch or update the submodules:
 
