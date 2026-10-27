@@ -45,7 +45,7 @@ Build the feature with its controls in place from the start. Threat model first:
    | Calls an LLM | [LLM features](references/llm-features.md): output is untrusted input; permissions are enforced in code; [prompt injection](references/modern-threats.md); [output handling code](references/hardening-patterns.md#llm-output-handling) |
    | Touches a Solana wallet or transaction | [Solana patterns](references/payments-solana.md) |
 
-   For stack-specific code, read [python](references/languages/python.md) or [javascript](references/languages/javascript.md). For worked examples of each control, see [code examples](references/code-examples.md).
+   For stack-specific code, read every matching reference: [python](references/languages/python.md), [javascript](references/languages/javascript.md), or [php for PHP and Laravel](references/languages/php.md). For worked examples of each control, see [code examples](references/code-examples.md).
 
 3. **Ask first.** Stop and get human approval before: a new auth flow or change to auth logic, a new category of sensitive data, a new external integration, a CORS change, a file-upload handler, a rate-limit change, elevated permissions.
 

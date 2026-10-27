@@ -1,5 +1,159 @@
 [
   {
+    "title": "PHP: PDO prepared statements",
+    "url": "https://www.php.net/manual/en/pdo.prepare.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Shell argument escaping",
+    "url": "https://www.php.net/manual/en/function.escapeshellarg.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: HTML output encoding",
+    "url": "https://www.php.net/manual/en/function.htmlspecialchars.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Unserialization",
+    "url": "https://www.php.net/manual/en/function.unserialize.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Stream wrappers",
+    "url": "https://www.php.net/manual/en/wrappers.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: File uploads",
+    "url": "https://www.php.net/manual/en/features.file-upload.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Session security settings",
+    "url": "https://www.php.net/manual/en/session.security.ini.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Password hashing",
+    "url": "https://www.php.net/manual/en/function.password-hash.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Password verification",
+    "url": "https://www.php.net/manual/en/function.password-verify.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Secure random bytes",
+    "url": "https://www.php.net/manual/en/function.random-bytes.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Comparison operators",
+    "url": "https://www.php.net/manual/en/language.operators.comparison.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "PHP: Timing-safe comparisons",
+    "url": "https://www.php.net/manual/en/function.hash-equals.php",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: queries",
+    "url": "https://laravel.com/docs/13.x/queries",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: blade",
+    "url": "https://laravel.com/docs/13.x/blade",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: eloquent",
+    "url": "https://laravel.com/docs/13.x/eloquent",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: validation",
+    "url": "https://laravel.com/docs/13.x/validation",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: authorization",
+    "url": "https://laravel.com/docs/13.x/authorization",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: sanctum",
+    "url": "https://laravel.com/docs/13.x/sanctum",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: authentication",
+    "url": "https://laravel.com/docs/13.x/authentication",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: csrf",
+    "url": "https://laravel.com/docs/13.x/csrf",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: filesystem",
+    "url": "https://laravel.com/docs/13.x/filesystem",
+    "skills": [
+      "security"
+    ]
+  },
+  {
+    "title": "Laravel 13: http-client",
+    "url": "https://laravel.com/docs/13.x/http-client",
+    "skills": [
+      "security"
+    ]
+  },
+  {
     "title": "ISO 24495-1:2023 Plain language — published preview",
     "url": "https://cdn.standards.iteh.ai/samples/78907/d194fac21d6a45f38bfcfec9657f7498/ISO-24495-1-2023.pdf",
     "skills": ["writing"]

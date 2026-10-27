@@ -52,3 +52,6 @@
 [submodule "source-skills/spatie-guidelines-skills"]
 	path = source-skills/spatie-guidelines-skills
 	url = https://github.com/spatie/guidelines-skills.git
+[submodule "source-skills/claude-dev-suite-claude-dev-suite"]
+	path = source-skills/claude-dev-suite-claude-dev-suite
+	url = https://github.com/claude-dev-suite/claude-dev-suite.git
