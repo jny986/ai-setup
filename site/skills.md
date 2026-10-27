@@ -8,6 +8,6 @@ section: skills
 
 Install with `npx skills add jny986/ai-setup`, then name a skill and describe your task. In clients that support slash commands, use `/skill-name <task>`. For a specific workflow, use `/git code-review <branch or commit>`, or ask the router to choose. [Shared setup instructions](./index.md#install-the-skills) cover selection and updates.
 
-`git code-review` requires the [Review agent](./agents.md#set-up-review). It delegates code, spec, UI/UX and security analysis to separate instances in parallel, then combines their findings. The coordinator handles fixes and any approved GitHub review.
+`git code-review` requires the [Review agent](./agents.md#set-up-review). It delegates code, spec, UI/UX and security analysis to separate instances in parallel, then combines their findings. The coordinator reuses shared context and check results, handles fixes, and loads publication instructions only for an approved GitHub review hand-off.
 
 **Automatic or explicit** means the agent may select the skill when your request fits. **Explicit request** means you must ask for it. Expand any skill for its complete primary instructions and nested sub-skill summaries. Reference documents remain linked on GitHub.

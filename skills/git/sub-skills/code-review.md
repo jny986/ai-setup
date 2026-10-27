@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Runs code, spec, UI/UX (for UI changes) and security reviews in parallel through separate review sub-agents, combines their reports, fixes security findings with a re-review loop, checks prior comments, and optionally submits a user-approved PR review."
+description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Runs parallel code, spec, UI/UX and security reviews through review sub-agents, combines findings and optionally submits a user-approved PR review."
 license: MIT
 metadata:
   version: "1.0.0"
@@ -33,9 +33,11 @@ The issue tracker should have been provided to you. If `docs/agents/issue-tracke
 
 **Fixed point.** Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, default to the target branch of the PR (`gh pr view --json baseRefName -q .baseRefName`, then compare against `origin/<base>`). With no PR, default to the branch the review target was cut from, else the repo's default branch. Ask only if none of these resolves.
 
-Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
+Capture the resolved base/head SHAs, diff command, changed-file list and commit list once. Normally use `git diff <fixed-point>...HEAD` and `git log <fixed-point>..HEAD --oneline`. When the invoking workflow includes pending changes, use its diff command (`git diff <fixed-point>` for `finalise`) and record intended working-tree and untracked files. Fingerprint pending file contents so changes can invalidate results even when HEAD stays the same.
 
-Continue only when the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty.
+Reuse this scope and fetched context throughout the run. Read independent local sources and remote metadata in parallel where possible; deduplicate linked tickets by identifier. Refresh only context that changed or that a later publication gate explicitly requires. Reuse unchanged specs and standards after fixes; analysis of the refreshed diff is still required.
+
+Continue only when the fixed point resolves (`git rev-parse <fixed-point>`) and the captured change set is non-empty, including intended untracked files when they are in scope.
 
 **Past reviews (PRs).** Before starting a fresh review, read the PR's conversation comments, review bodies, inline threads and replies from every author using [GitHub review operations](references/gh-review.md), exhausting pagination. Verify actionable findings from past reviews against the current code and relevant checks. Record each finding's author, URL, status (fixed, not fixed, partially fixed or unable to verify) and supporting evidence. Thread resolution, an outdated anchor or a "done" reply alone is not proof of a fix; distinguish findings explicitly withdrawn or accepted by the user from outstanding work.
 
@@ -56,7 +58,7 @@ Continue only when every discovered relevant ticket has been read or recorded as
 
 ### 3. Identify the standards sources
 
-Search the repo for every file that documents how code should be written. When `CODING_STANDARDS.md` or `CONTRIBUTING.md` exists, it must be on the list.
+Locate the repository standards and instructions applicable to the changed paths, including root rules and nested rules governing those paths. Include `CODING_STANDARDS.md` and `CONTRIBUTING.md` when present. Follow their relevant references; exclude dependency and upstream-source trees unless the reviewed change targets them.
 
 List lint, typecheck and test scripts, CI workflows and pre-commit hooks. Identify which rules tooling already enforces. If neither hooks nor CI run these checks, report the missing automated guardrail under Standards.
 
@@ -66,11 +68,7 @@ Use a separate instance of the installed `review` sub-agent for each applicable 
 
 Confirm the client can launch the `review` agent. If it is missing or delegation is unavailable, report the missing dependency and stop before claiming a completed review. Setup for both clients is documented on the [agents page](https://ai.jny986.com/agents.html#set-up-review).
 
-Capture the resolved base/head SHAs, diff command, commit list, intended working-tree changes and relevant untracked files once. Give every reviewer this same scope, the available prior-review history, and its sources from steps 1–3. Include the full smell baseline in the Standards prompt. Reviewers inspect and report only; the coordinator owns clarification, fixes, commits and publication.
-
-Launch as many applicable instances as client capacity permits before waiting for results, starting Security alongside the other axes. Queue any remaining instances and launch them as slots become available without changing the scope. Keep reviewed files unchanged while workers run. Each worker returns its axis, findings with evidence and severity, coverage, limitations and unresolved questions to the coordinator.
-
-Dispatch UI/UX only when changed files include user-facing UI; otherwise record "no UI changes". Skip Spec only when the user confirms no spec exists, and record "no spec available". Security is required for every review, including `finalise` and `git review-prs`.
+Give every reviewer the captured scope from step 1 plus only its relevant sources, prior findings and axis-specific brief. Supply fetched text or exact local source paths so workers can inspect context without repeating discovery. The shared dispatch and output contract lives in the briefs reference; keep the full smell baseline in the Standards prompt.
 
 **Browser pre-flight (UI/UX only).** Give the UI/UX reviewer a live browser when all hold, else tell it to review statically:
 
@@ -79,11 +77,15 @@ Dispatch UI/UX only when changed files include user-facing UI; otherwise record 
 - The server serves the reviewed code: start it from the review checkout (the PR worktree when one is used).
 - Code from another author (a PR) runs only after the user confirms the exact install and start commands, and the reviewer signs in with a test login only. Without that confirmation, review statically.
 
+
+Launch as many applicable instances as client capacity permits before waiting for results, starting Security alongside the other axes. Queue any remaining instances and launch them as slots become available without changing the scope. Keep reviewed files unchanged while workers run. During that wait, check user comments in step 5 from the fetched history. Coordinate shared checks once per reviewed state and pass results to workers that need them. Use checks that preserve reviewed files; the coordinator owns shared servers and output paths to avoid worker races.
+
+Dispatch UI/UX only when changed files include user-facing UI; otherwise record "no UI changes". Skip Spec only when the user confirms no spec exists, and record "no spec available". Security is required for every review, including `finalise` and `git review-prs`.
 Wait for every dispatched report before making fixes or aggregating. Resolve questions through the coordinator; a failed worker or incomplete report is a coverage gap, not a clean result. If the reviewed revisions or pending files change during dispatch, refresh the scope and rerun affected reviews before using their results.
 
 ### 5. Check user comments
 
-Look for review comments the user left on the PR (read commands in [references/gh-review.md](references/gh-review.md)) or in the issue. Skip resolved threads and bot comments. If none exist, say so and move on.
+Use the complete history fetched in steps 1–2 to check review comments the user left on the PR or issue; fetch only missing history. Skip resolved threads and bot comments. If none exist, say so and move on.
 
 For each comment, retain the author's GitHub username (`user.login`), quote the comment and verify its status against the current diff: fixed, not fixed or partially fixed, with file/line evidence. A "done" reply alone is not proof.
 
@@ -91,18 +93,24 @@ When a comment matches a pattern that recurs across the PR's comments, record it
 
 ### 6. Security review
 
-Use the Security report returned by the `review` instance from step 4. Its brief requires the full `security review-code` analysis on the complete captured change set, including pending changes and intended untracked files when the invoking workflow includes them. Confirm it loaded the security router, `sub-skills/review-code.md` and every matching guide, traced suspect patterns through surrounding code, classified them and produced the security report. A PR overview, prior security report or verification of earlier fixes cannot substitute for this run. If the skill or a required guide is unavailable, or analysis is incomplete, report the missing dependency or coverage gap and stop before completing the code review or recommending a PR verdict.
+Validate the returned Security report against the coverage contract in [its brief](references/code-review-briefs.md#reviewer-prompts). Confirm the scope, required guides, source-to-sink evidence, file accounting and limitations. Resolve unsupported findings against the code; do not repeat completed analysis solely to restate the worker's report. A missing skill or guide, failed worker or incomplete analysis blocks review completion and a PR verdict. A clean, complete report needs no second Security dispatch.
 
-Validate the report's coverage record: resolved base/head SHAs, diff command, reviewed working-tree changes and untracked files, changed files covered, guides applied and limitations. Account for every changed file, explaining exclusions. A clean result requires completed analysis even when there are no prior security findings. The worker reports vulnerabilities and needs-verification items; the coordinator owns the following remediation loop after all step 4 workers finish.
+After all workers finish, the coordinator handles confirmed findings and needs-verification items:
 
 - On a PR, before making fixes in a detached worktree, create a local branch to retain the commits. After committing fixes, push them to the PR's head branch in its head repository when permitted, then confirm the PR's remote head includes them. Until that confirmation, keep the findings open, retain the local branch, and ask the user how to deliver the fixes if publication is blocked. Re-review the published diff before treating the PR's vulnerabilities as resolved.
 - Fix confirmed vulnerabilities when remediation is clear and within scope. Run relevant checks, commit each pass in a new commit and re-review against the same fixed point.
 - Investigate needs-verification items before confirming them. When a product, architecture or compatibility decision is needed, or a fix makes no progress, show severity, evidence, impact and options; ask the user and wait. Apply their instructions and re-review fixes. Record explicit decisions to ignore items; reopen them if later changes invalidate the decision.
-- After each fix pass, dispatch a fresh `review` instance with the Security brief to rerun the full security analysis on the refreshed diff against the same fixed point, including checks for new vulnerabilities introduced by the fixes. Update the coverage record to the reviewed head. Continue only when every finding and needs-verification item is verified resolved or explicitly ignored by the user; an instruction to attempt a fix leaves the item open.
+- After each fix pass, use the re-review procedure in step 7. Repeat until every security finding and needs-verification item is verified resolved or explicitly ignored by the user; an instruction to attempt a fix leaves the item open.
 
 ### 7. Aggregate
 
-After security fixes, refresh the shared scope and repeat affected Standards, Spec and UI/UX reviews through separate `review` instances, in parallel where applicable. They may run alongside the required fresh Security review from step 6; wait for every report before further fixes or aggregation. Recheck user comments against the refreshed code. Combine the current reports into one review, retaining each axis, its severity ordering, evidence and limitations. Do not count stale pre-fix reports as verification. Present:
+If the reviewed state is unchanged, use the completed reports directly. After a fix pass or concurrent code change:
+
+1. Refresh the captured scope against the same fixed point and identify which earlier conclusions the changed code can affect, including callers and shared dependencies.
+2. Dispatch a fresh Security `review` instance for full analysis of the complete refreshed diff. In parallel, rerun affected Standards, Spec and UI/UX reviews. Carry unaffected reports forward only after recording why their reviewed paths and dependencies are unchanged; retain their original revisions and evidence. When impact is uncertain, rerun the axis. Supply earlier reports as context, never as a substitute for current analysis.
+3. Wait for every required report, recheck affected user comments, and return unresolved security items to step 6. Combine reports only when they cover the current state and step 6's security exit condition is satisfied.
+
+Combine the reports once, retaining each axis's severity, evidence and limitations. Merge duplicate findings within an axis; cross-reference overlapping findings across axes so their coverage and counts remain visible. Present:
 
 - `## Standards`, `## Spec` and `## UI/UX`: reviewer reports, verbatim or lightly cleaned, with findings ordered from highest to lowest severity (reorder if a reviewer did not). Keep UI/UX findings' P0–P3 priorities and limits; say "no UI changes" when UI/UX was skipped.
 - `## Security`: the coverage record from step 6, vulnerabilities found (highest severity first), fixes verified, and findings or needs-verification items explicitly ignored, with the user's decisions. When none qualify, report the completed review's clean result; distinguish it from an incomplete or blocked review.
@@ -111,49 +119,6 @@ After security fixes, refresh the shared scope and repeat affected Standards, Sp
 
 End with one line: finding counts and worst issue within each axis, distinguishing resolved and explicitly ignored security items, plus the number of user comments still not fixed or partially fixed. Exclude Notes; preserve each axis's findings without merging or ranking across axes.
 
-### 8. Select PR inline comments
+### 8. PR review hand-off
 
-For a PR, complete steps 8–11 below. For a local review, finish after step 7.
-
-Start with `## Suggested review result: APPROVE` or `## Suggested review result: REQUEST CHANGES`, using step 9's criteria. Follow with one sentence explaining the recommendation, then `### Suggested inline comments`. Show the verdict even when there are no suggested comments.
-
-Recommend inline comments only for findings still present in the current diff, excluding Notes and verified fixes.
-
-**Duplicate check.** Before proposing comments, read all PR conversation comments, review bodies, inline threads and replies using [GitHub review operations](references/gh-review.md), exhausting pagination. Include every author (the user, other reviewers, the PR author and bots), resolved threads and outdated comments; step 5's filters apply only to status reporting. Compare each candidate's underlying concern and requested change with this history, even when wording or line anchors differ. Suppress candidates already raised, retaining the existing comment's author and URL as evidence. A related comment counts as a duplicate only when it covers the same concern; keep distinct issues. Continue only when every candidate has been checked; if a source is inaccessible, report the gap and complete the check before proposing inline comments.
-
-Show the recommendations in the review response as a numbered list ordered from highest to lowest severity (severities as defined below, across all axes), each with its file, changed line and full proposed comment text; say when there are none. Briefly list suppressed duplicates with links to the existing comments so the user can see where they were already raised. After showing the verdict and list, ask which numbers, if any, to add and wait before step 9. Keep only the selected comments, anchored to changed lines.
-
-Start every proposed and submitted inline comment with `[Severity][Issue type]`, followed by the concern, impact and suggested change. Use `Security`, `Code smell`, `Standard violation`, `Spec mismatch` or `UI/UX` to match the finding. A UI/UX comment names the affected state or step and the audit lens. For example: `[Low][Code smell] Possible Duplicated Code: ...`. Keep code smells framed as judgement calls.
-
-Preserve the security review's severity. For other findings, use `Critical` for severe failures such as data loss, `High` for major functional or design impact, `Medium` for a meaningful localized issue, and `Low` for a minor improvement. Map UI/UX P0 to `Critical`, P1 to `High`, P2 to `Medium` and P3 to `Low`. Base severity on demonstrated impact, not issue type. These labels describe individual findings; retain the separate review axes and use step 9 to choose the verdict.
-
-### 9. Choose the review result
-
-After the inline-comment selection, repeat the suggested review result prominently and ask the user which result to apply. Use these criteria for the recommendation:
-
-- **Approve**: only minor issues, or none.
-- **Request changes**: issues that need to be looked at before merge.
-
-Wait for their answer before step 10.
-
-### 10. Prepare the review comment
-
-Once the user has selected the review result in step 9, draft the overall comment using the template below and show it under `## Suggested review comment`. Generate it only after their selection, including when it differs from the recommended result.
-
-#### Overall comment template
-
-```markdown
-[Approving / Requesting changes] — [one-sentence reason consistent with the chosen result].
-
-[If present: one short sentence highlighting security issues covered in a separate comment or high-severity issues raised elsewhere in the review.]
-```
-
-Aim for 1–2 sentences, grounded in steps 1–7. Refer to important concerns in plain text, without links or repeated details. Include only context needed to understand the verdict; omit repeated assessments, test summaries and issue lists. Flag a material review limitation or accepted risk briefly when it affects merge readiness. Omit the second sentence when there is nothing important to highlight. The draft is ready when its status matches the user's choice and it accurately reflects outstanding concerns, including when the chosen result differs from the recommendation.
-
-Use this generated comment as the review body and continue to step 11. If the user supplied replacement text, use it instead. Their inline-comment and review-result answers complete the required selections; the generated body needs no separate confirmation. If they explicitly request no overall comment, omit it for **Approve**. GitHub requires a review body for **Request changes**: if the user chooses that result and declines a comment, explain the requirement and ask them to use the generated summary or supply their own text.
-
-### 11. Submit the review
-
-After both selections, refresh the PR comment history and repeat step 8's duplicate check for the selected inline comments. Remove any newly duplicated comments and report their existing links; submit the remaining selection with the chosen result even when no inline comments remain.
-
-Submit one review with the chosen result (`APPROVE` or `REQUEST_CHANGES`), the body from step 10, and remaining selected inline comments. Follow [GitHub review operations](references/gh-review.md) for the payload file and single `gh api` call, including any thread replies or other review writes.
+For a local review, finish after step 7. For a PR, follow [PR review publication](references/code-review-publication.md) for inline-comment selection, verdict approval, body preparation and submission. Read it only when this hand-off applies; `finalise` skips it even when a PR exists.
