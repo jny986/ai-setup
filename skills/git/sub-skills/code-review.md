@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Reviews Standards, Spec and UI/UX (for UI changes) in parallel, runs the full security review on the current diff with a fix/review loop, checks prior comments, and optionally submits a user-approved PR review."
+description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Runs code, spec, UI/UX (for UI changes) and security reviews in parallel through separate review sub-agents, combines their reports, fixes security findings with a re-review loop, checks prior comments, and optionally submits a user-approved PR review."
 license: MIT
 metadata:
   version: "1.0.0"
@@ -13,7 +13,7 @@ metadata:
 
 Review the diff between `HEAD` and a fixed point on four separate axes:
 
-- **Standards**: does the code conform to this repo's documented coding standards?
+- **Standards (code review)**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
 - **UI/UX**: does changed UI hold up against the `design audit` lenses? Applies only when the diff changes user-facing UI.
 - **Security**: does the diff introduce exploitable vulnerabilities?
@@ -60,9 +60,17 @@ Search the repo for every file that documents how code should be written. When `
 
 List lint, typecheck and test scripts, CI workflows and pre-commit hooks. Identify which rules tooling already enforces. If neither hooks nor CI run these checks, report the missing automated guardrail under Standards.
 
-### 4. Review Standards, Spec and UI/UX
+### 4. Dispatch parallel reviews
 
-Read [reviewer briefs and smell baseline](references/code-review-briefs.md). Dispatch Standards, Spec and UI/UX reviewers in parallel with the diff command, commit list, their respective sources from steps 1–3 and their respective briefs. Paste the full baseline into the Standards prompt. Dispatch UI/UX only when the changed files include user-facing UI; otherwise report "no UI changes".
+Use a separate instance of the installed `review` sub-agent for each applicable axis: code review (Standards), Spec, UI/UX and Security. Read [reviewer briefs and smell baseline](references/code-review-briefs.md) and supply each instance with the shared context and its axis-specific prompt. The caller defines each review; do not ask an instance to run the whole `git code-review` workflow or recursively dispatch the four axes.
+
+Confirm the client can launch the `review` agent. If it is missing or delegation is unavailable, report the missing dependency and stop before claiming a completed review. Setup for both clients is documented on the [agents page](https://ai.jny986.com/agents.html#set-up-review).
+
+Capture the resolved base/head SHAs, diff command, commit list, intended working-tree changes and relevant untracked files once. Give every reviewer this same scope, the available prior-review history, and its sources from steps 1–3. Include the full smell baseline in the Standards prompt. Reviewers inspect and report only; the coordinator owns clarification, fixes, commits and publication.
+
+Launch as many applicable instances as client capacity permits before waiting for results, starting Security alongside the other axes. Queue any remaining instances and launch them as slots become available without changing the scope. Keep reviewed files unchanged while workers run. Each worker returns its axis, findings with evidence and severity, coverage, limitations and unresolved questions to the coordinator.
+
+Dispatch UI/UX only when changed files include user-facing UI; otherwise record "no UI changes". Skip Spec only when the user confirms no spec exists, and record "no spec available". Security is required for every review, including `finalise` and `git review-prs`.
 
 **Browser pre-flight (UI/UX only).** Give the UI/UX reviewer a live browser when all hold, else tell it to review statically:
 
@@ -71,7 +79,7 @@ Read [reviewer briefs and smell baseline](references/code-review-briefs.md). Dis
 - The server serves the reviewed code: start it from the review checkout (the PR worktree when one is used).
 - Code from another author (a PR) runs only after the user confirms the exact install and start commands, and the reviewer signs in with a test login only. Without that confirmation, review statically.
 
-Wait for every dispatched report; skip Spec only when the user confirms no spec exists, and report "no spec available".
+Wait for every dispatched report before making fixes or aggregating. Resolve questions through the coordinator; a failed worker or incomplete report is a coverage gap, not a clean result. If the reviewed revisions or pending files change during dispatch, refresh the scope and rerun affected reviews before using their results.
 
 ### 5. Check user comments
 
@@ -83,18 +91,18 @@ When a comment matches a pattern that recurs across the PR's comments, record it
 
 ### 6. Security review
 
-Run the full `security review-code` workflow on the complete change set established for this review, including reviews invoked through `git review-prs` or `finalise`. Use the captured diff from step 1; when the invoking workflow includes pending changes (as `finalise` does), use `git diff <fixed-point>` and read intended untracked files so security covers the same changes as Standards, Spec and UI/UX. Read the security router and its `sub-skills/review-code.md`, then execute every applicable step: scope the actual current diff, load the matching guides, trace suspect patterns through the surrounding code, classify them and produce the security report. A PR overview, prior security report or verification of earlier fixes cannot substitute for this run. If the skill or a required guide is unavailable, or the workflow cannot be completed, report the missing dependency or coverage gap and stop before completing the code review or recommending a PR verdict.
+Use the Security report returned by the `review` instance from step 4. Its brief requires the full `security review-code` analysis on the complete captured change set, including pending changes and intended untracked files when the invoking workflow includes them. Confirm it loaded the security router, `sub-skills/review-code.md` and every matching guide, traced suspect patterns through surrounding code, classified them and produced the security report. A PR overview, prior security report or verification of earlier fixes cannot substitute for this run. If the skill or a required guide is unavailable, or analysis is incomplete, report the missing dependency or coverage gap and stop before completing the code review or recommending a PR verdict.
 
-Record the resolved base and head commit SHAs, diff command, any reviewed working-tree changes and untracked files, changed files covered, guides applied and any coverage limitations. Account for every changed file, explaining any exclusions. A clean result requires this completed review even when there are no prior security findings.
+Validate the report's coverage record: resolved base/head SHAs, diff command, reviewed working-tree changes and untracked files, changed files covered, guides applied and limitations. Account for every changed file, explaining exclusions. A clean result requires completed analysis even when there are no prior security findings. The worker reports vulnerabilities and needs-verification items; the coordinator owns the following remediation loop after all step 4 workers finish.
 
 - On a PR, before making fixes in a detached worktree, create a local branch to retain the commits. After committing fixes, push them to the PR's head branch in its head repository when permitted, then confirm the PR's remote head includes them. Until that confirmation, keep the findings open, retain the local branch, and ask the user how to deliver the fixes if publication is blocked. Re-review the published diff before treating the PR's vulnerabilities as resolved.
 - Fix confirmed vulnerabilities when remediation is clear and within scope. Run relevant checks, commit each pass in a new commit and re-review against the same fixed point.
 - Investigate needs-verification items before confirming them. When a product, architecture or compatibility decision is needed, or a fix makes no progress, show severity, evidence, impact and options; ask the user and wait. Apply their instructions and re-review fixes. Record explicit decisions to ignore items; reopen them if later changes invalidate the decision.
-- After each fix pass, rerun the full security workflow on the refreshed diff against the same fixed point, including checks for new vulnerabilities introduced by the fixes. Update the coverage record to the reviewed head. Continue only when every finding and needs-verification item is verified resolved or explicitly ignored by the user; an instruction to attempt a fix leaves the item open.
+- After each fix pass, dispatch a fresh `review` instance with the Security brief to rerun the full security analysis on the refreshed diff against the same fixed point, including checks for new vulnerabilities introduced by the fixes. Update the coverage record to the reviewed head. Continue only when every finding and needs-verification item is verified resolved or explicitly ignored by the user; an instruction to attempt a fix leaves the item open.
 
 ### 7. Aggregate
 
-After security fixes, refresh the diff and repeat Standards, Spec, UI/UX and comment checks for affected hunks. Present:
+After security fixes, refresh the shared scope and repeat affected Standards, Spec and UI/UX reviews through separate `review` instances, in parallel where applicable. They may run alongside the required fresh Security review from step 6; wait for every report before further fixes or aggregation. Recheck user comments against the refreshed code. Combine the current reports into one review, retaining each axis, its severity ordering, evidence and limitations. Do not count stale pre-fix reports as verification. Present:
 
 - `## Standards`, `## Spec` and `## UI/UX`: reviewer reports, verbatim or lightly cleaned, with findings ordered from highest to lowest severity (reorder if a reviewer did not). Keep UI/UX findings' P0–P3 priorities and limits; say "no UI changes" when UI/UX was skipped.
 - `## Security`: the coverage record from step 6, vulnerabilities found (highest severity first), fixes verified, and findings or needs-verification items explicitly ignored, with the user's decisions. When none qualify, report the completed review's clean result; distinguish it from an incomplete or blocked review.

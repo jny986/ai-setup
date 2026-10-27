@@ -32,4 +32,4 @@ A router over git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in this 
 
 ## How they nest
 
-`git code-review` includes `security review-code` with a fix/review loop and user instructions for unresolved issues. `git create-pr` commits and pushes via `git commit`, then monitors and repairs CI via `git ci-fix`. Pick the outermost one that matches the intent.
+`git code-review` dispatches separate `review` agents for code, spec, UI/UX and security analysis in parallel, then combines their reports. Security uses `security review-code`; the coordinator handles its fix/review loop and user decisions for unresolved issues. `git create-pr` commits and pushes via `git commit`, then monitors and repairs CI via `git ci-fix`. Pick the outermost one that matches the intent.
