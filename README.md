@@ -22,6 +22,27 @@ npx skills add jny986/ai-setup -g --skill tdd --skill git
 npx skills update
 ```
 
+To install the included agent definitions and personal configuration templates,
+download and run the installer (requires Bash, curl and Git):
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/jny986/ai-setup/main/install.sh | bash
+```
+
+The downloaded script fetches the agents and templates from GitHub. From a
+repository checkout, run the local copy instead:
+
+```sh
+./install.sh
+```
+
+The installer detects `~/.agents`, `~/.claude` and `~/.codex`, offers each
+existing client, and lets you choose agents, configuration templates, or both.
+It asks before replacing changed files and saves numbered backups. Claude's
+settings template is optional: review its personal paths, hooks, permissions and
+plugins before applying it. The installer copies whole templates; it does not
+merge settings. Adjust agent models and installed configuration to suit your setup.
+
 ## Set up a project
 
 Install the setup skill for your agent:

@@ -4,6 +4,11 @@ description: The agent definitions shipped with this setup, grouped by logical a
 section: agents
 ---
 
+From a repository checkout, run `./install.sh` to choose installed
+clients and install or update their agent definitions. Existing changed files
+are replaced only with your permission and backed up. You can also copy the
+definitions manually as described below.
+
 ## Set up Explore
 
 Explore is a read-only search agent. Choose the format for your client and review its model and tools before use.

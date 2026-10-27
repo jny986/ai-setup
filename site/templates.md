@@ -4,6 +4,11 @@ description: Complete starter files for project instructions and Claude settings
 section: templates
 ---
 
+From a repository checkout, `./install.sh` can copy the instruction
+templates to existing Claude and Codex home directories. It asks before
+replacing changed files and saves backups. Claude settings are a separate,
+optional whole-file copy, not a merge; review the template before applying it.
+
 ## Place and customize
 
 Copy `templates/AGENTS.md` to the root of your project, then adapt the shell and planning conventions. `templates/CLAUDE.md` contains `@AGENTS.md`: put both files beside each other at the project root so Claude reads the shared instructions. Keep project-specific guidance in the shared file when it applies to both clients.
