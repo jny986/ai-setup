@@ -24,10 +24,15 @@ def test_catalogue_covers_shipped_items_and_preserves_bodies():
     assert {item["path"] for item in catalogue["templates"]} == {
         path.relative_to(ROOT).as_posix() for path in (ROOT / "templates").rglob("*") if path.is_file()
     }
-    explore = catalogue["agents"][0]
+    agents = {item["id"]: item for item in catalogue["agents"]}
+    explore = agents["agent-explore"]
     assert explore["name"] == "Explore"
     assert {item["path"] for item in explore["formats"]} == {
         "agents/explore/agent.md", "agents/explore/explore.toml"
+    }
+    review = agents["agent-code-review"]
+    assert {item["path"] for item in review["formats"]} == {
+        "agents/code-review/agent.md", "agents/code-review/code-review.toml"
     }
 
 
