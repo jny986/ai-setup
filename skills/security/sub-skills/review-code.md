@@ -34,6 +34,7 @@ Audit the code you were given. Report only what you can trace to an attacker.
    | Error handling, audit logs | [error-handling](references/error-handling.md), [logging](references/logging.md) |
    | Python | [python](references/languages/python.md) |
    | JavaScript, TypeScript | [javascript](references/languages/javascript.md) |
+   | PHP, Laravel | [php](references/languages/php.md) |
    | Dockerfile | [docker](references/infrastructure/docker.md) |
    | Cloud, CI/CD, IAM config | Switch to `security harden-deployment` |
 
