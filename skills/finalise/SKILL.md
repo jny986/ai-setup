@@ -9,7 +9,7 @@ metadata:
   author-url: https://jny986.com
 ---
 
-Run when the user explicitly invokes `/finalise` or `$finalise`, or as the required branch-finalisation step of `git pr-fixes`.
+Run when the user explicitly invokes `/finalise` or `$finalise`, or as the required branch-finalisation step of `git pr-fixes`, `implement ticket`, or `implement spec`.
 
 Take a branch from "dev work done" to "PR open" by running `git code-review` (including security), fixing its findings, and handing off to `git create-pr`. Requires the `git` and `security` skills. Read the `git` skill's `sub-skills/code-review.md`, `sub-skills/commit.md`, and `sub-skills/create-pr.md` when following those workflows. Work the steps in order. Use code-review as internal branch validation: complete its review and aggregation, skipping its PR review hand-off in step 8, including when a PR already exists.
 
@@ -31,4 +31,4 @@ Take a branch from "dev work done" to "PR open" by running `git code-review` (in
 
 6. **Summarise.** Tell the user what was fixed (or "no issues found"), including the security review result and any findings or unverified items explicitly ignored by the user, with their decisions, then proceed to step 7 without waiting for a response.
 
-7. **Create the PR.** Follow `git create-pr`. The `finalise` invocation or required hand-off from `git pr-fixes` is itself the user's go-ahead: commit, push, and PR creation (and anything `git create-pr` delegates to `git commit`) proceed without a separate confirmation step once `git code-review` completes, including its security loop. When called by `git pr-fixes`, update its existing PR on the same head branch and base, then return to that workflow for approval before replying to or resolving review threads.
+7. **Create the PR.** Follow `git create-pr`. The `finalise` invocation or required hand-off from `git pr-fixes`, `implement ticket`, or `implement spec` is itself the user's go-ahead: commit, push, and PR creation (and anything `git create-pr` delegates to `git commit`) proceed without a separate confirmation step once `git code-review` completes, including its security loop. When called by `implement ticket` or `implement spec`, keep the implementation branch through the commit and PR hand-offs; do not switch branches based on a ticket reference. When called by `git pr-fixes`, update its existing PR on the same head branch and base, then return to that workflow for approval before replying to or resolving review threads.
