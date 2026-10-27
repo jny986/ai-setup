@@ -7,7 +7,7 @@ eyebrow: jny986 / ai-setup
 ## Browse the package
 
 - [Skills](./skills.md) — what each skill does, how to invoke it, and its complete primary instructions.
-- [Agents](./agents.md) — Explore and Code Review definitions for Claude Code and Codex, with setup guidance.
+- [Agents](./agents.md) — Explore and Review definitions for Claude Code and Codex, with setup guidance.
 - [Templates](./templates.md) — project instructions and settings to review and customize.
 - [Sources](./sources.md) — the upstream repositories and recorded website sources behind the shipped skills.
 

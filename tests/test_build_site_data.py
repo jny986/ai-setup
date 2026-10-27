@@ -30,9 +30,9 @@ def test_catalogue_covers_shipped_items_and_preserves_bodies():
     assert {item["path"] for item in explore["formats"]} == {
         "agents/explore/agent.md", "agents/explore/explore.toml"
     }
-    review = agents["agent-code-review"]
+    review = agents["agent-review"]
     assert {item["path"] for item in review["formats"]} == {
-        "agents/code-review/agent.md", "agents/code-review/code-review.toml"
+        "agents/review/agent.md", "agents/review/review.toml"
     }
 
 
