@@ -2,7 +2,10 @@
 # Install the repository's agent definitions and personal configuration templates.
 set -eu
 
-root=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+root=''
+if [ -n "${BASH_SOURCE[0]:-}" ]; then
+  root=$(CDPATH='' cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+fi
 checkout=''
 
 cleanup() {
@@ -93,7 +96,7 @@ while :; do
   case "$choice" in 1|2|3) break ;; *) printf 'Please choose 1, 2 or 3.\n' ;; esac
 done
 
-if [ ! -d "$root/agents" ] || [ ! -d "$root/templates" ]; then
+if [ -z "$root" ] || [ ! -d "$root/agents" ] || [ ! -d "$root/templates" ]; then
   if ! command -v git >/dev/null 2>&1; then
     printf 'Git is required to download the agents and templates.\n' >&2
     exit 1
