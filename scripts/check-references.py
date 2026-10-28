@@ -45,7 +45,7 @@ def check(root):
     root = Path(root)
     names = known_names(root)
     docs_dir = root / "docs" / "agents"
-    files = sorted((root / "skills").rglob("*.md")) + sorted((root / "templates").glob("*.md")) + sorted(docs_dir.glob("*.md"))
+    files = sorted((root / "skills").rglob("*.md")) + sorted((root / "templates").rglob("*.md")) + sorted(docs_dir.glob("*.md"))
     for md in files:
         rel = md.relative_to(root)
         text = body(md)
