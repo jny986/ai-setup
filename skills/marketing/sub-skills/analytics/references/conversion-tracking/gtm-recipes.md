@@ -58,7 +58,7 @@ The detect listeners themselves stay `NOT_SET`: they only push a dataLayer event
 
 Base pixels fire on All Pages. When the visitor grants consent after the page has loaded, the base pixel does not retry by itself. Add a second firing trigger on your CMP's consent-update dataLayer event (for example `cookie_consent_update`) to the base tags so they load as soon as consent arrives.
 
-**To change it:** in GTM open the tag, then Advanced Settings, then Consent Settings, and choose "No additional consent required" or edit the listed types. To change it before import, edit the tag's `consentSettings` in the JSON: `{"consentStatus": "NOT_NEEDED"}`, or `NEEDED` with a `consentType` list of `{"type": "TEMPLATE", "value": "<consent type>"}` items. Google's own tags (Google Ads, Conversion Linker, GA4) also have built-in consent checks, so a site running Consent Mode in advanced mode (cookieless pings before consent) can switch those three to "No additional consent required" and let Consent Mode handle them.
+**To change it:** in GTM open the tag, then Advanced Settings, then Consent Settings, and edit the listed types. Before import, use `NEEDED` with a `consentType` list of `{"type": "TEMPLATE", "value": "<consent type>"}` items in the tag's `consentSettings`. Do not remove a consent gate or set `{"consentStatus": "NOT_NEEDED"}` unless you have verified that the tag's built-in checks provide the required equivalent consent enforcement for the site's configuration. Google's own tags (Google Ads, Conversion Linker, GA4) have built-in consent checks; verify their behavior and the site's Consent Mode configuration before relying on them. Keep the explicit checks for other tags unless equivalent enforcement is verified.
 
 ## What browser-side recipes cannot do
 

@@ -1,10 +1,12 @@
 ---
-name: finalize
-description: "Finalize a branch of this repo's skill work: review, skills-check every skill in skills/, rebuild indexes, run check-all.sh, then create the PR."
+name: finalise
+description: "Finalise a branch of this repo's skill work: review, skills-check every skill in skills/, rebuild indexes, run check-all.sh, then create the PR."
 disable-model-invocation: true
+metadata:
+  internal: true
 ---
 
-Run only when the user explicitly invokes `/finalize`.
+Run only when the user explicitly invokes `/finalise`.
 
 Take a branch from "dev work done" to "PR open" in this repo. Read `docs/agents/skills.md` for frontmatter, provenance and index rules, and the `git` skill's `sub-skills/code-review.md`, `sub-skills/commit.md` and `sub-skills/create-pr.md` for those workflows. Work the steps in order.
 
@@ -32,4 +34,4 @@ Take a branch from "dev work done" to "PR open" in this repo. Read `docs/agents/
 
 9. **Summarise.** Tell the user what was fixed (or "no issues found"): the code review and skills-check results, `check-all.sh` status, and any finding the user chose to ignore, with their decision. Proceed to step 10 without waiting.
 
-10. **Create the PR.** Follow `git create-pr`. The `finalize` invocation is the user's go-ahead: commit, push and PR creation proceed without a separate confirmation once steps 2 and 3 complete.
+10. **Create the PR.** Follow `git create-pr`. The `finalise` invocation is the user's go-ahead: commit, push and PR creation proceed without a separate confirmation once steps 2 and 3 complete.

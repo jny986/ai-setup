@@ -10,7 +10,7 @@ metadata:
 
 ## Shared dispatch contract
 
-Use one installed `review` instance per applicable axis. Each receives:
+Use one reviewer per applicable axis, following the custom-agent preference and fallback in the code-review workflow. Each reviewer receives or applies:
 
 - **Scope:** resolved base/head SHAs, captured diff command, changed-file and commit lists, and intended pending/untracked-file scope. Surrounding code supplies context; findings concern the captured change set.
 - **Axis context:** its brief below, relevant source text or exact paths, applicable prior findings, and available shared-check results. Inspect needed code directly; reuse supplied discovery and fetched history.

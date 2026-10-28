@@ -43,7 +43,7 @@ def safe_join(base_directory, user_path):
     target = (base / user_path).resolve()
 
     # Verify target is under base
-    if not str(target).startswith(str(base)):
+    if not target.is_relative_to(base):
         raise ValueError("Path traversal detected")
 
     return str(target)

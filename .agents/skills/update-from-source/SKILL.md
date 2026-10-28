@@ -2,6 +2,8 @@
 name: update-from-source
 description: Pull upstream changes from the source-skills submodules into the adapted skills in skills/.
 disable-model-invocation: true
+metadata:
+  internal: true
 ---
 
 # Update from source
