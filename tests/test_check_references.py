@@ -19,6 +19,11 @@ def test_unknown_slash_name(repo):
     assert "`/nope` is not a skill" in errors(check(repo))
 
 
+def test_nested_template_references_are_checked(repo):
+    write(repo, "templates/claude/AGENTS.md", "Try `/nope`.\n")
+    assert "templates/claude/AGENTS.md: `/nope` is not a skill" in errors(check(repo))
+
+
 def test_slash_paths_ignored_in_marketing(repo):
     write(repo, "skills/marketing/guide.md", "Link to `/blog` and `/pricing`.\n")
     assert check(repo).errors == []

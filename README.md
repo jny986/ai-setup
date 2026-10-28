@@ -23,7 +23,8 @@ npx skills update
 ```
 
 To install the included agent definitions and personal configuration templates,
-download and run the installer (requires Bash, curl and Git):
+download and run the installer (requires Bash, curl and Git; config templates
+also require Python 3):
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/jny986/ai-setup/main/install.sh | bash
@@ -38,10 +39,15 @@ repository checkout, run the local copy instead:
 
 The installer detects `~/.agents`, `~/.claude` and `~/.codex`, offers each
 existing client, and lets you choose agents, configuration templates, or both.
-It asks before replacing changed files and saves numbered backups. Claude's
+It asks before replacing changed agent definitions. Template updates preserve
+existing instructions outside a managed section and save numbered backups.
+Settings merge recursively: template values replace matching values, while
+lists retain unrelated entries and add template entries. A local template
+history tracks entries added by the installer for later updates. On the first
+merge, existing entries are retained because their origin is unknown. Claude's
 settings template is optional: review its personal paths, hooks, permissions and
-plugins before applying it. The installer copies whole templates; it does not
-merge settings. Adjust agent models and installed configuration to suit your setup.
+plugins before applying it. Adjust agent models and installed configuration to
+suit your setup.
 
 ## Set up a project
 
@@ -72,7 +78,7 @@ The skill configures the issue tracker, optional triage labels, domain doc rules
 ├── docs/              # Agent config docs (agents/) and the router-skill guide
 ├── scripts/           # Repo checks run in CI; `scripts/check-all.sh` runs them all locally
 ├── tests/             # pytest fixtures for the checks (`pip install -r tests/requirements.txt`)
-├── templates/         # Starter AGENTS.md and CLAUDE.md
+├── templates/         # Client-specific instruction and settings templates
 └── source-skills/     # Upstream skill repos, as git submodules
     ├── pbakaus-impeccable/
     ├── coreyhaines31-marketingskills/
