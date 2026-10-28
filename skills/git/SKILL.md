@@ -1,6 +1,6 @@
 ---
 name: git
-description: "Router for git and PR workflows. Use for any commit, push, pull request, PR review fixes, failing PR CI, diff review, or merge/rebase conflict task. Sub-skills: commit, create-pr, code-review, review-prs, pr-fixes, ci-fix, resolving-merge-conflicts."
+description: "Router for git and PR workflows. Use for commits, pushes, pull requests, code or repository review, PR review fixes, failing PR CI, or merge/rebase conflicts. Sub-skills: commit, create-pr, code-review, review-prs, pr-fixes, ci-fix, resolving-merge-conflicts."
 argument-hint: "[sub-skill] [task]"
 license: MIT
 metadata:
@@ -24,7 +24,7 @@ A router over git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in this 
 |---|---|
 | [`commit`](sub-skills/commit.md) | Commit and push the current work, on the branch its ticket calls for |
 | [`create-pr`](sub-skills/create-pr.md) | Open a GitHub PR from the current branch (commits and pushes first if needed) |
-| [`code-review`](sub-skills/code-review.md) | Review changes since a commit, branch, tag or merge-base, against repo standards, the spec, UI/UX and security |
+| [`code-review`](sub-skills/code-review.md) | Review development changes, a repository or a PR against standards, requirements, UI/UX and security |
 | [`review-prs`](sub-skills/review-prs.md) | Review the open PRs awaiting the user's review, asking continue or skip for each |
 | [`pr-fixes`](sub-skills/pr-fixes.md) | Address unresolved PR review threads without a user reply, including threads the user created, with user decisions and one fix sub-agent per issue |
 | [`ci-fix`](sub-skills/ci-fix.md) | Fix failing CI and merge conflicts on an existing PR, then monitor and repair until its latest head passes |
@@ -32,4 +32,4 @@ A router over git sub-skills. Each lives at `sub-skills/<sub-skill>.md` in this 
 
 ## How they nest
 
-`git code-review` uses the `review` custom agent for each applicable axis when it exists (stopping if it cannot launch), then combines the reports; if absent it uses available general-purpose agents or reviews directly. Security uses `security review-code`; the coordinator handles its fix/review loop and user decisions for unresolved issues. `git create-pr` commits and pushes via `git commit`, then monitors and repairs CI via `git ci-fix`. Pick the outermost one that matches the intent.
+`git code-review` prefers separate `review` agents for its axes, with a direct-review fallback. It reports findings without fixing them; Security uses `security review-code`. `git create-pr` commits and pushes via `git commit`, then monitors and repairs CI via `git ci-fix`. Pick the outermost one that matches the intent.
