@@ -80,3 +80,9 @@ def test_updates_templates_preserving_user_content_and_owned_list_entries(tmp_pa
     before = (claude / "settings.json").read_bytes()
     run_installer(repo, home)
     assert (claude / "settings.json").read_bytes() == before
+
+    del new_template["permissions"]["allow"]
+    settings_template.write_text(json.dumps(new_template))
+    run_installer(repo, home)
+    allow = json.loads((claude / "settings.json").read_text())["permissions"]["allow"]
+    assert allow == ["Bash(custom:*)", "Bash(git commit:*)"]

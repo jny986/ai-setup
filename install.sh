@@ -37,10 +37,21 @@ template = source.read_text(encoding="utf-8")
 existing = destination.read_text(encoding="utf-8") if destination.exists() else ""
 
 if source.suffix == ".json":
+    def remove_owned(old, previous):
+        if isinstance(old, dict) and isinstance(previous, dict):
+            return {key: remove_owned(value, previous.get(key)) for key, value in old.items()}
+        if isinstance(old, list) and isinstance(previous, list):
+            return [value for value in old if value not in previous]
+        return old
+
     def merge(old, new, previous):
         if isinstance(old, dict) and isinstance(new, dict):
             result = dict(old)
             owned = {}
+            if isinstance(previous, dict):
+                for key in previous.keys() - new.keys():
+                    if key in result:
+                        result[key] = remove_owned(result[key], previous[key])
             for key, value in new.items():
                 prior = previous.get(key) if isinstance(previous, dict) else None
                 result[key], owned[key] = merge(old.get(key), value, prior)
