@@ -1,12 +1,12 @@
 ---
-name: finalise
+name: finalise-skill
 description: "Finalise a branch of this repo's skill work: review, skills-check every skill in skills/, rebuild indexes, run check-all.sh, then create the PR."
 disable-model-invocation: true
 metadata:
   internal: true
 ---
 
-Run only when the user explicitly invokes `/finalise`.
+Run only when the user explicitly invokes `/finalise-skill`.
 
 Take a branch from "dev work done" to "PR open" in this repo. Read `docs/agents/skills.md` for frontmatter, provenance and index rules, and the `git` skill's `sub-skills/code-review.md`, `sub-skills/commit.md` and `sub-skills/create-pr.md` for those workflows. Work the steps in order.
 
@@ -18,11 +18,11 @@ Take a branch from "dev work done" to "PR open" in this repo. Read `docs/agents/
    - Else the merge-base of the default branch (`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`) with `HEAD`.
    - Unresolved: ask the user for the fixed point.
 
-2. **Code review.** Follow `git code-review` against the fixed point, including its security loop. Done when it reports.
+2. **Code review.** Follow `git code-review` against the fixed point, including intended pending and untracked changes and Security. Stop if essential coverage is incomplete; report the gap.
 
 3. **Skills-check.** Follow `security skills-check` with scope fixed to every skill folder under `skills/`, regardless of what the branch touched. Skip `source-skills/` and `.agents/skills/`. Done when each skill has a verdict. Treat each `BLOCK` or `DANGER` verdict and each Critical or Warning finding as a finding to fix in step 4; list Info findings in the summary.
 
-4. **Fix findings.** Fix every Standards, Spec and skills-check finding directly. Keep the list of what was fixed. A finding you judge a false positive goes to the user with the quoted evidence instead of being fixed.
+4. **Fix findings.** Fix every actionable Standards, Spec, UI/UX, Security and skills-check finding directly. Keep the list of what was fixed. A finding you judge a false positive goes to the user with the quoted evidence instead of being fixed.
 
 5. **Docs site.** The site is the public skills reference. When the branch added, moved, renamed or re-described a skill or sub-skill, or bumped `metadata.version`, run `pnpm exec vp run site:build` and `site:check`, and update any `site/*.md` copy that is now stale. The catalogue is generated, so edit the source in `skills/`, not the output.
 
@@ -34,4 +34,4 @@ Take a branch from "dev work done" to "PR open" in this repo. Read `docs/agents/
 
 9. **Summarise.** Tell the user what was fixed (or "no issues found"): the code review and skills-check results, `check-all.sh` status, and any finding the user chose to ignore, with their decision. Proceed to step 10 without waiting.
 
-10. **Create the PR.** Follow `git create-pr`. The `finalise` invocation is the user's go-ahead: commit, push and PR creation proceed without a separate confirmation once steps 2 and 3 complete.
+10. **Create the PR.** Follow `git create-pr`. The `finalise-skill` invocation is the user's go-ahead: commit, push and PR creation proceed without a separate confirmation once steps 2 and 3 complete.
