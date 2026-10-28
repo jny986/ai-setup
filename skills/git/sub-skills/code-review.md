@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Runs parallel code, spec, UI/UX and security reviews through review sub-agents, combines findings and optionally submits a user-approved PR review."
+description: "Use to review a branch, PR or changes since a commit, branch, tag or merge-base. Reviews code, spec, UI/UX and security using the review custom agent when present, combines findings and optionally submits a user-approved PR review."
 license: MIT
 metadata:
   version: "1.0.0"
@@ -52,7 +52,7 @@ Look for the originating spec, in this order:
 1. Issue references or spec URLs in the commit messages, branch name, and PR description (`#123`, `Closes #45`, GitLab `!67`, ticket/wiki/doc links, etc.). Collect every linked ticket, even when several are referenced. Fetch issues via the workflow in `docs/agents/issue-tracker.md`. Fetch URLs and ticket references via an available MCP server where one fits (e.g. Kanopi for tickets and wikis), falling back to a plain web fetch. Read each ticket's full description and comments, and follow further ticket links that supply requirements, acceptance criteria or decisions relevant to the diff.
 2. A path the user passed as an argument.
 3. A spec file in the project's configured documentation or local-tracker location, or under `docs/` or `specs/`, matching the branch name or feature.
-4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** reviewer will skip and report "no spec available".
 
 Continue only when every discovered relevant ticket has been read or recorded as inaccessible with its reference and access failure. Include all fetched ticket context in the Spec review sources; use it to assess the implementation against the combined requirements and flag conflicting requirements. Report inaccessible tickets as review limitations.
 
@@ -64,11 +64,11 @@ List lint, typecheck and test scripts, CI workflows and pre-commit hooks. Identi
 
 ### 4. Dispatch parallel reviews
 
-Use a separate instance of the installed `review` sub-agent for each applicable axis: code review (Standards), Spec, UI/UX and Security. Read [reviewer briefs and smell baseline](references/code-review-briefs.md) and supply each instance with the shared context and its axis-specific prompt. The caller defines each review; do not ask an instance to run the whole `git code-review` workflow or recursively dispatch the four axes.
+Check whether the `review` custom agent exists before dispatching. If it exists, you must use it: dispatch a separate instance for each applicable axis (Standards, Spec, UI/UX and Security), including re-reviews. Do not substitute another agent or review directly. If it exists but the client cannot launch it, report the blocker and stop; do not claim a completed review. Only if the custom agent does not exist, use available general-purpose review agents or, when delegation is unavailable, perform each applicable axis directly. Read [reviewer briefs and smell baseline](references/code-review-briefs.md) and apply the shared context and axis-specific brief to each review. The caller defines each review; do not ask any reviewer to run the whole `git code-review` workflow or recursively dispatch the four axes.
 
-Confirm the client can launch the `review` agent. If it is missing or delegation is unavailable, report the missing dependency and stop before claiming a completed review. Setup for both clients is documented on the [agents page](https://ai.jny986.com/agents.html#set-up-review).
+Report which review method was used and any resulting coverage limitations. Setup for the custom agent is documented on the [agents page](https://ai.jny986.com/agents.html#set-up-review).
 
-Give every reviewer the captured scope from step 1 plus only its relevant sources, prior findings and axis-specific brief. Supply fetched text or exact local source paths so workers can inspect context without repeating discovery. The shared dispatch and output contract lives in the briefs reference; keep the full smell baseline in the Standards prompt.
+Give every reviewer the captured scope from step 1 plus only its relevant sources, prior findings and axis-specific brief. Supply fetched text or exact local source paths so reviewers can inspect context without repeating discovery. The shared dispatch and output contract lives in the briefs reference; keep the full smell baseline in the Standards prompt.
 
 **Browser pre-flight (UI/UX only).** Give the UI/UX reviewer a live browser when all hold, else tell it to review statically:
 
@@ -78,10 +78,10 @@ Give every reviewer the captured scope from step 1 plus only its relevant source
 - Code from another author (a PR) runs only after the user confirms the exact install and start commands, and the reviewer signs in with a test login only. Without that confirmation, review statically.
 
 
-Launch as many applicable instances as client capacity permits before waiting for results, starting Security alongside the other axes. Queue any remaining instances and launch them as slots become available without changing the scope. Keep reviewed files unchanged while workers run. During that wait, check user comments in step 5 from the fetched history. Coordinate shared checks once per reviewed state and pass results to workers that need them. Use checks that preserve reviewed files; the coordinator owns shared servers and output paths to avoid worker races.
+When delegating, launch as many applicable reviewers as client capacity permits before waiting for results, starting Security alongside the other axes. Queue any remaining reviewers and launch them as slots become available without changing the scope. In direct review, work the axes in turn, Security included. Keep reviewed files unchanged while reviews run. When delegating, check user comments in step 5 from the fetched history during the wait. Coordinate shared checks once per reviewed state and pass results to reviewers that need them. Use checks that preserve reviewed files; the coordinator owns shared servers and output paths to avoid races.
 
 Dispatch UI/UX only when changed files include user-facing UI; otherwise record "no UI changes". Skip Spec only when the user confirms no spec exists, and record "no spec available". Security is required for every review, including `finalise` and `git review-prs`.
-Wait for every dispatched report before making fixes or aggregating. Resolve questions through the coordinator; a failed worker or incomplete report is a coverage gap, not a clean result. If the reviewed revisions or pending files change during dispatch, refresh the scope and rerun affected reviews before using their results.
+Wait for every dispatched report before making fixes or aggregating. Resolve questions through the coordinator; a failed reviewer or incomplete report is a coverage gap, not a clean result. If the reviewed revisions or pending files change during dispatch, refresh the scope and rerun affected reviews before using their results.
 
 ### 5. Check user comments
 
@@ -93,9 +93,9 @@ When a comment matches a pattern that recurs across the PR's comments, record it
 
 ### 6. Security review
 
-Validate the returned Security report against the coverage contract in [its brief](references/code-review-briefs.md#reviewer-prompts). Confirm the scope, required guides, source-to-sink evidence, file accounting and limitations. Resolve unsupported findings against the code; do not repeat completed analysis solely to restate the worker's report. A missing skill or guide, failed worker or incomplete analysis blocks review completion and a PR verdict. A clean, complete report needs no second Security dispatch.
+Validate the returned Security report against the coverage contract in [its brief](references/code-review-briefs.md#reviewer-prompts). Confirm the scope, required guides, source-to-sink evidence, file accounting and limitations. Resolve unsupported findings against the code; do not repeat completed analysis solely to restate the reviewer's report. A missing skill or guide, failed reviewer or incomplete analysis blocks review completion and a PR verdict. A clean, complete report needs no second Security dispatch.
 
-After all workers finish, the coordinator handles confirmed findings and needs-verification items:
+After all reviews finish, the coordinator handles confirmed findings and needs-verification items:
 
 - On a PR, before making fixes in a detached worktree, create a local branch to retain the commits. After committing fixes, push them to the PR's head branch in its head repository when permitted, then confirm the PR's remote head includes them. Until that confirmation, keep the findings open, retain the local branch, and ask the user how to deliver the fixes if publication is blocked. Re-review the published diff before treating the PR's vulnerabilities as resolved.
 - Fix confirmed vulnerabilities when remediation is clear and within scope. Run relevant checks, commit each pass in a new commit and re-review against the same fixed point.
@@ -107,7 +107,7 @@ After all workers finish, the coordinator handles confirmed findings and needs-v
 If the reviewed state is unchanged, use the completed reports directly. After a fix pass or concurrent code change:
 
 1. Refresh the captured scope against the same fixed point and identify which earlier conclusions the changed code can affect, including callers and shared dependencies.
-2. Dispatch a fresh Security `review` instance for full analysis of the complete refreshed diff. In parallel, rerun affected Standards, Spec and UI/UX reviews. Carry unaffected reports forward only after recording why their reviewed paths and dependencies are unchanged; retain their original revisions and evidence. When impact is uncertain, rerun the axis. Supply earlier reports as context, never as a substitute for current analysis.
+2. Perform a fresh Security review of the complete refreshed diff using the same agent preference and fallback as step 4. In parallel when delegation is available, rerun affected Standards, Spec and UI/UX reviews. Carry unaffected reports forward only after recording why their reviewed paths and dependencies are unchanged; retain their original revisions and evidence. When impact is uncertain, rerun the axis. Supply earlier reports as context, never as a substitute for current analysis.
 3. Wait for every required report, recheck affected user comments, and return unresolved security items to step 6. Combine reports only when they cover the current state and step 6's security exit condition is satisfied.
 
 Combine the reports once, retaining each axis's severity, evidence and limitations. Merge duplicate findings within an axis; cross-reference overlapping findings across axes so their coverage and counts remain visible. Present:

@@ -195,11 +195,12 @@ jobs:
       contents: read  # Minimal permissions
 
     steps:
-      - uses: actions/checkout@v4
+      # Replace each placeholder with a verified full commit SHA for the chosen release.
+      - uses: actions/checkout@<verified-checkout-commit-sha>
 
       # Scan for secrets
       - name: Secret scanning
-        uses: trufflesecurity/trufflehog@main
+        uses: trufflesecurity/trufflehog@<verified-trufflehog-commit-sha>
 
       # Dependency audit
       - name: Audit dependencies
@@ -207,7 +208,7 @@ jobs:
 
       # Use OIDC, not long-lived tokens
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@<verified-aws-credentials-commit-sha>
         with:
           role-to-assume: arn:aws:iam::123456789:role/GitHubActionsRole
           aws-region: us-east-1

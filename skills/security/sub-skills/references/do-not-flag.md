@@ -17,7 +17,8 @@ https://cheatsheetseries.owasp.org/
 - Test files (unless explicitly reviewing test security)
 - Dead code, commented code, documentation strings
 - Patterns using **constants** or **server-controlled configuration**
-- Code paths that require prior authentication to reach (note the auth requirement instead)
+
+A code path that requires authentication stays in scope: note the authentication requirement in the finding rather than excluding it.
 
 ## Server-Controlled Values (NOT Attacker-Controlled)
 

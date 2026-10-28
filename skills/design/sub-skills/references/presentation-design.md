@@ -244,7 +244,7 @@ document.addEventListener('keydown', (e) => {
 goTo((parseInt(location.hash.slice(1), 10) || 1) - 1);
 ```
 
-For reveal.js, load from a CDN and customize with CSS variables (`--r-heading-font`, `--r-main-color`, `--r-link-color`).
+For reveal.js, prefer the project's locked dependency. If a CDN is needed, use a verified exact release and integrity-checked assets, then customize with CSS variables (`--r-heading-font`, `--r-main-color`, `--r-link-color`).
 
 ### Brand template
 
