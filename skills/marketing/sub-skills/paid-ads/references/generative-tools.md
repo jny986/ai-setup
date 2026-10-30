@@ -394,11 +394,7 @@ curl -X POST http://localhost:8000/generate \
   -d '{"text": "Stop wasting hours on manual reporting.", "profile_id": "abc123", "language": "en"}'
 ```
 
-**Install:** Desktop apps for macOS and Windows at [voicebox.sh](https://voicebox.sh), or build from source:
-```bash
-git clone https://github.com/jamiepine/voicebox.git
-cd voicebox && make setup && make dev
-```
+**Install:** Desktop apps for macOS and Windows at [voicebox.sh](https://voicebox.sh). For a source build, inspect the repository and setup scripts, verify an exact commit and dependencies, then pin that commit before running the verified build instructions.
 
 **Docs:** [GitHub](https://github.com/jamiepine/voicebox)
 
@@ -541,16 +537,7 @@ Render the same content across different aspect ratios:
 
 ### Getting Started
 
-```bash
-# Create a new Remotion project
-npx create-video@latest
-
-# Render a single video
-npx remotion render src/index.ts MyComposition out/video.mp4
-
-# Batch render from data
-npx remotion render src/index.ts MyComposition --props='{"data": [...]}'
-```
+Use the project's locked Remotion CLI to render `MyComposition` to `out/video.mp4`, passing props for batch data when needed. If scaffolding or rendering tooling is missing, inspect it and its dependencies, verify an exact release and pin it in the project before execution. Follow the verified release's setup and render instructions.
 
 ---
 

@@ -13,10 +13,10 @@ Two free scoring tools shipped in August 2026 and turned this into a measurable 
 
 | Tool | Run it | Method |
 |---|---|---|
-| **Is Agentic** (Vercel + Ora) | `npx is-agentic yourdomain.com` or [is-agentic.com](https://is-agentic.com) | 100+ checks; Essential checks carry most of the score; Recommended checks activate only when evidence shows you have that surface (API, MCP server, commerce); not-applicable checks are excluded, not failed; includes an observed agent journey showing where a real agent hit friction |
+| **Is Agentic** (Vercel + Ora) | Use the project-locked CLI, or [is-agentic.com](https://is-agentic.com) | 100+ checks; Essential checks carry most of the score; Recommended checks activate only when evidence shows you have that surface (API, MCP server, commerce); not-applicable checks are excluded, not failed; includes an observed agent journey showing where a real agent hit friction |
 | **Frase Agent Readiness Checker** | [frase.io/tools/agent-readiness](https://www.frase.io/tools/agent-readiness) | Access / Discovery / Parseability triad; 80+ = agents can reliably use the site, 60–79 = solid with gaps, <60 = real access problems |
 
-Run one before and after any agent-readiness work — the score is a shareable artifact and the failed checks are your worklist. (Both are vendor tools with a product behind them; the *checks* are the value, not the pitch.)
+Before running a CLI that is not project-locked, inspect the package and dependencies, verify an exact release and pin it. Run one before and after any agent-readiness work — the score is a shareable artifact and the failed checks are your worklist. (Both are vendor tools with a product behind them; the *checks* are the value, not the pitch.)
 
 ## The three questions
 

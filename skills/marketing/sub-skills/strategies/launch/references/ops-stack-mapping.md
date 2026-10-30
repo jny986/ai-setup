@@ -110,7 +110,7 @@ The plan's Section 11 makes this thesis explicit by:
 | **GitHub MCP** | Repo work: marketing site (`site-name-promo` patterns), content authoring | Standard `gh` CLI auth + MCP server |
 | **Typefully MCP** | Social posting (LinkedIn, X, Threads, Bluesky) | Typefully account + API key |
 | **Google Ads MCP** | Ad account management, campaign creation, performance pulls | Wired post-budget-unlock |
-| **agent-browser** | Browser automation (form fills, screenshots, scraping) | CLI install: `npm install -g agent-browser` |
+| **agent-browser** | Browser automation (form fills, screenshots, scraping) | Use a project-locked CLI; otherwise inspect the package and dependencies, verify an exact release and pin it before installation |
 | **dev-browser** | General-purpose browser automation | MCP server install |
 | **defuddle** | Clean markdown extraction from web pages | CLI install |
 | **Notion** | Internal knowledge directory access | Notion API key |

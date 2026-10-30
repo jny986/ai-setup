@@ -4,11 +4,11 @@ Every command is one call: no `&&`, `;`, `|`, heredoc or `$(...)`. Chains get re
 
 ## Payloads from files
 
-Write JSON or Markdown bodies to a temp file with the Write tool, then pass the file path. Use `--jq` instead of piping to `jq`.
+Create one private directory per run with `mktemp -d` and use its printed path as `<run-dir>` below; never use predictable names in shared `/tmp`. Name files with the PR number, as below. Write JSON or Markdown bodies there with the Write tool, then pass the file path. Re-read the review payload before submitting. Use `--jq` instead of piping to `jq`.
 
 ## Submit a review: result, comment and inline comments
 
-One `POST` creates and submits the review. Write `/tmp/review-<n>.json`:
+One `POST` creates and submits the review. Write `<run-dir>/review-<n>.json`:
 
 ```json
 {
@@ -24,7 +24,7 @@ One `POST` creates and submits the review. Write `/tmp/review-<n>.json`:
 
 Then:
 
-`gh api repos/{owner}/{repo}/pulls/<n>/reviews --input /tmp/review-<n>.json`
+`gh api repos/{owner}/{repo}/pulls/<n>/reviews --input <run-dir>/review-<n>.json`
 
 Top-level fields:
 
@@ -40,11 +40,11 @@ Each `comments[]` item:
 - `start_line` and `start_side`: first line of a multi-line range, same meaning as `line` and `side`. Both are required for multi-line.
 - Avoid `position` (legacy diff offset, being phased out).
 
-On a 422, fix the offending `line` or `path` and resubmit. Check `gh pr view <n> --json reviews` before retrying so a review isn't posted twice.
+On a 422, report the failure and the offending `line` or `path`, keep the full proposed review, and resubmit only with the user's agreement to any changed anchor. Check `gh pr view <n> --json reviews` before retrying so a review isn't posted twice.
 
 ## Review with no inline comments
 
-`gh pr review <n> --approve -F /tmp/review-body.md`
+`gh pr review <n> --approve -F <run-dir>/review-body.md`
 
 Use `--request-changes` or `--comment` for the other results. `--body-file`/`-F` reads the body from a file. `gh pr review` cannot attach inline comments.
 
@@ -52,12 +52,12 @@ Use `--request-changes` or `--comment` for the other results. `--body-file`/`-F`
 
 For a review built over several steps, create it without `event`, then submit:
 
-1. `gh api repos/{owner}/{repo}/pulls/<n>/reviews --input /tmp/review-<n>.json` (payload without `event`). Note the `id` in the response.
-2. `gh api repos/{owner}/{repo}/pulls/<n>/reviews/<review-id>/events --input /tmp/submit-<n>.json` with `{"event": "APPROVE", "body": "..."}`. `event` is required here.
+1. `gh api repos/{owner}/{repo}/pulls/<n>/reviews --input <run-dir>/review-<n>.json` (payload without `event`). Note the `id` in the response.
+2. `gh api repos/{owner}/{repo}/pulls/<n>/reviews/<review-id>/events --input <run-dir>/submit-<n>.json` with `{"event": "APPROVE", "body": "..."}`. `event` is required here.
 
 ## Reply to a review comment
 
-`gh api repos/{owner}/{repo}/pulls/<n>/comments/<comment-id>/replies -F body=@/tmp/reply-<id>.md`
+`gh api repos/{owner}/{repo}/pulls/<n>/comments/<comment-id>/replies -F body=@<run-dir>/reply-<id>.md`
 
 Short replies: `-f body="text"`. `<comment-id>` must be the thread's top-level comment; replies to replies are not supported.
 
@@ -65,7 +65,7 @@ Short replies: `-f body="text"`. `<comment-id>` must be the thread's top-level c
 
 Outside a review (a single immediate comment, notifying right away):
 
-`gh api repos/{owner}/{repo}/pulls/<n>/comments --input /tmp/comment-<n>.json`
+`gh api repos/{owner}/{repo}/pulls/<n>/comments --input <run-dir>/comment-<n>.json`
 
 Payload: `body`, `commit_id`, `path`, `line`, `side` (all required for a single-line comment), plus `start_line` and `start_side` for a range. For a file-level comment, set `"subject_type": "file"` and drop `line`. Prefer the review payload above so the comments land as one review.
 
@@ -78,9 +78,9 @@ For a complete duplicate check, also read every conversation comment with `gh ap
 
 ## Read review threads
 
-For unresolved-thread workflows, use GraphQL `repository.pullRequest.reviewThreads`; the REST comments list alone does not supply resolution state. Get the authenticated login with `gh api user --jq .login`.
+For resolution and outdated state (needed for prior-feedback and duplicate checks as well as unresolved-thread workflows), use GraphQL `repository.pullRequest.reviewThreads`; the REST comments list alone does not supply resolution state. Get the authenticated login with `gh api user --jq .login`.
 
-Write a GraphQL JSON request to a temp file and run `gh api graphql --input /tmp/threads-<n>.json`. Query `reviewThreads(first: 100, after: $cursor)` for:
+Write a GraphQL JSON request to a temp file and run `gh api graphql --input <run-dir>/threads-<n>.json`. Query `reviewThreads(first: 100, after: $cursor)` for:
 
 - `id`, `isResolved`, `isOutdated`, `path`, `line`, `originalLine`, `viewerCanResolve`.
 - `comments(first: 100)` with each comment's `id`, `databaseId`, `url`, `body`, `createdAt`, `author { login }` and `replyTo { id }`.
@@ -106,8 +106,7 @@ Confirm the returned `isResolved` is true. A permission failure leaves the threa
 
 Run each as its own call:
 
-1. `git worktree add ../pr-<n> --detach`
-2. `git -C ../pr-<n> fetch origin pull/<n>/head`
-3. `git -C ../pr-<n> checkout --detach FETCH_HEAD`
+1. `git fetch origin pull/<n>/head`
+2. `git -c core.hooksPath=/dev/null worktree add --detach ../pr-<n> FETCH_HEAD`
 
-Run later git commands with `git -C ../pr-<n>`.
+Hooks are disabled so the PR's own `post-checkout` or other tracked hooks do not run. Run later git commands with `git -C ../pr-<n> -c core.hooksPath=/dev/null`.

@@ -11,7 +11,7 @@ metadata:
 
 Run when the user explicitly invokes `/finalise` or `$finalise`, or as the required branch-finalisation step of `git pr-fixes`, `implement ticket`, or `implement spec`.
 
-Take a branch from "dev work done" to "PR open" by running `git code-review` (including security), fixing its findings, and handing off to `git create-pr`. Requires the `git` and `security` skills. Read the `git` skill's `sub-skills/code-review.md`, `sub-skills/commit.md`, and `sub-skills/create-pr.md` when following those workflows. Work the steps in order. Use code-review as internal branch validation, skipping its PR publication hand-off even when a PR already exists.
+Take a branch from "dev work done" to "PR open" by running `git code-review` (including security), fixing its findings, and handing off to `git create-pr`. Requires the `git` and `security` skills. Read the `git` skill's `sub-skills/code-review.md`, `sub-skills/commit.md`, and `sub-skills/create-pr.md` when following those workflows. Work the steps in order. Use code-review as internal branch validation even when a PR already exists.
 
 ## Steps
 
