@@ -22,7 +22,7 @@ metadata:
 
 ## Django
 
-### Server-Controlled Values (NEVER Flag)
+### Server-Controlled Values
 
 Django settings are **deployment configuration**, not attacker input:
 
@@ -31,7 +31,7 @@ Django settings are **deployment configuration**, not attacker input:
 from django.conf import settings
 
 requests.get(settings.EXTERNAL_API_URL)      # NOT SSRF - configured at deployment
-requests.get(f"{settings.SEER_URL}{path}")   # NOT SSRF - base URL is server-controlled
+requests.get(f"{settings.SEER_URL}{path}")   # CHECK: trace path and resulting destination
 open(settings.LOG_FILE_PATH)                 # NOT path traversal
 db.connect(settings.DATABASE_URL)            # NOT injection
 
@@ -45,9 +45,7 @@ ALLOWED_HOSTS = settings.ALLOWED_HOSTS
 SECRET_KEY = settings.SECRET_KEY  # (check it's not hardcoded in repo though)
 ```
 
-**Only flag settings-based code if:**
-- The setting value itself is hardcoded in committed code (secrets exposure)
-- The setting value is somehow derived from user input (rare, investigate)
+A server-controlled base does not make combined values safe. Trace `path` or any other appended input to its source and through URL construction, redirects and the destination policy. A user-controlled path may affect the destination or access unintended endpoints; report a vulnerability only when the source, behavior and impact are established. Also investigate settings derived from user input and committed hardcoded secrets.
 
 ### Auto-Escaped (Do Not Flag)
 

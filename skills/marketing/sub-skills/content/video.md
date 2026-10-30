@@ -105,11 +105,7 @@ Build videos with code. Best for repeatable, templated, or data-driven video at 
 
 Open-source, Apache 2.0, from HeyGen. Uses plain HTML/CSS/JS — no framework DSL to learn. LLM-native: AI models generate better HTML than React components.
 
-```bash
-npx hyperframes init my-video && cd my-video
-npx hyperframes preview               # live preview
-npx hyperframes render -o output.mp4  # render index.html
-```
+Use the project's locked Hyperframes CLI to initialize a composition, preview it and render `index.html` to `output.mp4`. If it is not installed, inspect the package and its dependencies, verify an exact release, and pin it in the project before running it. Follow the verified release's CLI instructions.
 
 **Key concept:** A composition is one HTML file. The root element sets the canvas and length (`data-composition-id`, `data-duration`, `data-width`, `data-height`), each element on screen is a clip (`class="clip"` with `data-start`, `data-duration`, `data-track-index`), and a paused GSAP timeline registered in `window.__timelines` drives the animation. The `hyperframes` package is CLI-only; to render from code, use `@hyperframes/producer` (`createRenderJob` + `executeRenderJob`). Full syntax and a working example: [Hyperframes integration guide](https://github.com/coreyhaines31/marketingskills/blob/main/tools/integrations/hyperframes.md).
 
@@ -121,9 +117,7 @@ npx hyperframes render -o output.mp4  # render index.html
 
 Mature open-source framework. More powerful than Hyperframes but requires React knowledge.
 
-```bash
-npx create-video@latest
-```
+Use the project's locked Remotion tooling to create the project. If scaffolding tooling is missing, inspect it and its dependencies, verify an exact release, and pin it before execution; follow that release's setup instructions.
 
 **Key concept:** React components are frames. Props drive content. Render locally or via Remotion Lambda (AWS) for scale.
 

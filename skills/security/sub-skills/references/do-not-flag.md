@@ -34,9 +34,11 @@ These are configured by operators, not controlled by attackers:
 
 **SSRF Example - NOT a vulnerability:**
 ```python
-# SAFE: URL comes from Django settings (server-controlled)
-response = requests.get(f"{settings.SEER_AUTOFIX_URL}{path}")
+# SAFE: URL comes from Django settings (server-controlled), no input appended
+response = requests.get(settings.SEER_AUTOFIX_URL)
 ```
+
+Appending input (`f"{settings.SEER_AUTOFIX_URL}{path}"`) is not covered: trace `path` through URL construction first (see [Python](languages/python.md)).
 
 **SSRF Example - IS a vulnerability:**
 ```python

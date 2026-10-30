@@ -37,7 +37,7 @@ The route most work travels. You have an idea and want it built.
      - **`/implement spec`** for the whole spec in one run. It reads the tickets as a **task graph**, runs implementer subagents across the ready **frontier** in parallel, and lands everything on one **integration branch**. Reach for it when you'd rather orchestrate the build than drive each ticket yourself.
    - **No** → **`/implement`** right here, in the same context window.
 
-   `/implement` uses **`/tdd`** for behavior suited to test-first development and verifies the acceptance criteria across affected layers. For a spec with tickets, **`/implement spec`** also runs **`/git code-review`**, a review across Standards, Spec, UI/UX and Security, over the integration branch. Reach for **`/tdd`** on its own when you want to build a concrete behavior test-first, and **`/git code-review`** whenever you want to review a branch or PR against a fixed point.
+   `/implement` uses **`/tdd`** for behavior suited to test-first development and verifies the acceptance criteria across affected layers. For a spec with tickets, **`/implement spec`** also runs **`/git code-review`**, a review across Standards, Spec, UI/UX and Security, over the integration branch. Reach for **`/tdd`** on its own when you want to build a concrete behavior test-first, **`/git code-review`** to review a branch against a fixed point, and **`/git pr-review`** to review a PR and its existing feedback.
 
 ### Context hygiene
 
