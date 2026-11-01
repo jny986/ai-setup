@@ -52,15 +52,15 @@ When domain relationships are being discussed, stress-test them with specific sc
 
 When the user states how something works, check whether the code agrees. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible. Which is right?"
 
-### Update GLOSSARY.md inline
+### Update GLOSSARY.md
 
-When a term is resolved, update `GLOSSARY.md` right there. Don't batch these up: capture them as they happen. Use the format in [glossary-format.md](glossary-format.md).
+When a term is resolved, propose the `GLOSSARY.md` change right there and write it once the user confirms. Use the format in [glossary-format.md](glossary-format.md).
 
 `GLOSSARY.md` should be totally devoid of implementation details. Do not treat `GLOSSARY.md` as a spec, a scratch pad, or a repository for implementation decisions. It is a glossary and nothing else.
 
 ### Offer ADRs sparingly
 
-Only offer to create an ADR when all three are true:
+Only propose an ADR, created or updated on the user's confirmation, when all three are true:
 
 1. **Hard to reverse**: the cost of changing your mind later is meaningful
 2. **Surprising without context**: a future reader will wonder "why did they do it this way?"
