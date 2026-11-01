@@ -23,8 +23,14 @@ The plan carries implementation details and open questions; the glossary carries
 
 ## Domain modeling
 
-Locate the installed setup skill and read `references/modeling.md` relative to its directory (repository source: `skills/setup/references/modeling.md`). Use its configured glossary layout and formats to sharpen terminology and capture resolved terms inline; offer ADRs according to that procedure. Setup's `references/domain.md` contains consumer rules and is not the active modeling procedure.
+Locate the installed setup skill and read `references/modeling.md` relative to its directory (repository source: `skills/setup/references/modeling.md`). Use its glossary layout, formats and ADR criteria to sharpen terminology and decide what to record. Setup's `references/domain.md` contains consumer rules and is not the active modeling procedure.
 
 If setup or its active modeling reference is unavailable, report the missing dependency and retain modeling questions in the plan. Continue the interview and plan maintenance, but mark glossary and ADR work as blocked. Do not substitute a standalone domain-modeling skill or invent a second modeling procedure here.
+
+## Confirm doc changes
+
+After each round settles decisions, judge which glossary and ADR changes they warrant: a new or revised term, an ADR meeting all three ADR criteria, a superseded ADR. Judge against the existing glossary and `docs/adr/`, so a change updates the entry it belongs to and a duplicate is never created. Settled decisions that miss the ADR criteria stay in the plan.
+
+Present every proposed change in one numbered list. Per item give the action (create or update), the path, and the content in one line, with your recommendation. Word each item so “yes” accepts it. Write only after the user confirms, applying just the confirmed items, then report the paths. Re-propose a declined item only if its decision changes. When nothing qualifies, say so in one line.
 
 At completion, report the updated plan and any glossary or ADR changes, remaining questions, and modeling work blocked by dependencies. A request for a spec or tickets continues through that route with these sources and the same context.
