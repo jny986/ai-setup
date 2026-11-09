@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Orb setup: install the toolchain and locked dependencies for the docs site, checkers and tests.
+# Must stay non-interactive and idempotent; see https://ampcode.com/docs/orbs.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+step() { echo "== $1 ($(date +%T))"; }
+
+step "Python test and lint tools"
+if ! python3 -c "import pytest" 2>/dev/null; then
+  python3 -m pip install --user --quiet -r tests/requirements.txt
+fi
+if ! command -v yamllint >/dev/null 2>&1; then
+  uv tool install --quiet yamllint
+fi
+
+step "Node dependencies (pnpm, locked)"
+pnpm install --frozen-lockfile
+
+step "Playwright Chromium"
+pnpm exec playwright install --with-deps chromium
+
+step "Done ($(date +%T))"
