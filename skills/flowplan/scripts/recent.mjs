@@ -6,7 +6,7 @@
 // --json prints one JSON object (flowplan/recent-result@1): the same facts as data, plus the text as "text".
 import fs from 'node:fs';
 import path from 'node:path';
-import { git, parseArgs, mapDir, unattendedMode, printJson, readJsonFile } from './lib/common.mjs';
+import { git, repoDirInside, parseArgs, mapDir, unattendedMode, printJson, readJsonFile } from './lib/common.mjs';
 
 const args = parseArgs(process.argv.slice(2));
 unattendedMode(args);
@@ -75,7 +75,8 @@ if (changes) {
 const since = changes?.since || current?.updatedAt || new Date(Date.now() - (Number(args.days) || 7) * 86400000).toISOString();
 data.since = since;
 for (const r of G.meta.repos || []) {
-  const abs = path.join(root, r.path);
+  const abs = repoDirInside(root, r.path); // graph.json may come from an untrusted clone
+  if (!abs) continue;
   const prefix = r.path === '.' ? '' : r.path + '/';
   const status = (git(abs, ['status', '--porcelain=v1', '-uall']) || '').split('\n').filter(Boolean);
   const log = (git(abs, ['log', `--since=${since}`, '--max-count=20', '--no-merges', '--name-only', '--date=short', '--format=@@%h %ad %s']) || '').trim();

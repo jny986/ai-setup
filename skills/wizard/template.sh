@@ -36,9 +36,21 @@ _clear() {
   printf '\033[2J\033[3J\033[H'
 }
 
+# env_file_unsafe succeeds when ENV_FILE is inside a git repo but not git-ignored,
+# i.e. when git would track the secrets write_env stores there.
+env_file_unsafe() {
+  local env_dir
+  env_dir=$(dirname "$ENV_FILE")
+  git -C "$env_dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 \
+    && ! git -C "$env_dir" check-ignore -q "$(basename "$ENV_FILE")"
+}
+
 # banner "Title" shows the opening frame: what this wizard does.
 banner() {
   _clear
+  if env_file_unsafe; then
+    printf '\n  %s! %s is not git-ignored; add it to .gitignore before saving values to it%s\n' "$YELLOW" "$ENV_FILE" "$RESET" >&2
+  fi
   printf '\n%s%s  %s%s\n' "$BOLD" "$BLUE" "$1" "$RESET"
   printf '%s  %s stages%s\n\n' "$DIM" "$TOTAL_STAGES" "$RESET"
   printf '%s  You drive the browser; this wizard tells you exactly what to do and\n' "$DIM"
@@ -138,22 +150,23 @@ ask_secret() {
 # line) and sets $KEY. Idempotent. Creates ENV_FILE at mode 0600; writes through
 # a symlink and keeps an existing file's mode.
 write_env() {
-  local key="$1" value="$2" sq="'\\''" env_dir
+  local key="$1" value="$2" sq="'\\''" prev_trap
   # Refuse to write secrets to a file git would track.
-  env_dir=$(dirname "$ENV_FILE")
-  if git -C "$env_dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 \
-    && ! git -C "$env_dir" check-ignore -q "$(basename "$ENV_FILE")"; then
+  if env_file_unsafe; then
     printf '  %s✗ %s is inside a git repo but not git-ignored; add it to .gitignore first%s\n' "$YELLOW" "$ENV_FILE" "$RESET" >&2
     exit 1
   fi
   [[ -e "$ENV_FILE" ]] || (umask 077 && : > "$ENV_FILE")
   _WIZ_TMP=$(mktemp)
-  trap 'rm -f "$_WIZ_TMP"' EXIT INT
+  # EXIT only: a trapped INT would let the script carry on after Ctrl-C. Bash runs the EXIT
+  # trap when Ctrl-C ends the script. Restore any EXIT trap the wizard already set.
+  prev_trap=$(trap -p EXIT)
+  trap 'rm -f "$_WIZ_TMP"' EXIT
   grep -vE "^${key}=" "$ENV_FILE" > "$_WIZ_TMP" || true
   printf "%s='%s'\n" "$key" "${value//\'/$sq}" >> "$_WIZ_TMP"
   cat "$_WIZ_TMP" > "$ENV_FILE"
   rm -f "$_WIZ_TMP"
-  trap - EXIT INT
+  if [[ -n "$prev_trap" ]]; then eval "$prev_trap"; else trap - EXIT; fi
   printf -v "$key" '%s' "$value"
   WRITTEN_ENV+=("$key")
   printf '  %s✓ wrote%s %s → %s\n' "$GREEN" "$RESET" "$key" "$ENV_FILE"

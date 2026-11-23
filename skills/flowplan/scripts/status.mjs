@@ -5,7 +5,7 @@
 // blueprint | map, plus the text as "text".
 import fs from 'node:fs';
 import path from 'node:path';
-import { git, mapDir, LEGACY_MAP_DIR, isMapDir, parseArgs, unattendedMode, printJson, readJsonFile } from './lib/common.mjs';
+import { git, repoDirInside, mapDir, LEGACY_MAP_DIR, isMapDir, parseArgs, unattendedMode, printJson, readJsonFile } from './lib/common.mjs';
 
 const args = parseArgs(process.argv.slice(2));
 unattendedMode(args);
@@ -37,10 +37,9 @@ try {
       for (const r of g.meta.repos || []) {
         // graph.json can come from an untrusted clone: keep repo paths inside the root and
         // accept only a full commit hash, so nothing in it reaches git as an option or outside path
-        const abs = path.resolve(root, String(r.path || '.'));
-        const inside = abs === root || abs.startsWith(root + path.sep);
+        const abs = repoDirInside(root, r.path);
         const validHead = typeof r.head === 'string' && /^[0-9a-f]{40,64}$/.test(r.head);
-        const head = inside ? git(abs, ['rev-parse', 'HEAD']) : null;
+        const head = abs ? git(abs, ['rev-parse', 'HEAD']) : null;
         // compared: false when there's no commit to compare (no git repo now, or none when the map was built)
         if (!head || !validHead) { lines.push(`  ${r.path}: not a git repo now`); data.repos.push({ path: r.path, compared: false }); continue; }
         const changed = head === r.head ? [] : (git(abs, ['diff', '--name-only', r.head, head, '--']) || '').split('\n').filter(Boolean);

@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { parseArgs, mapDir, unattendedMode, readJsonFile } from './lib/common.mjs';
 import { editorTemplate } from '../assets/page-safety.mjs';
@@ -30,13 +31,32 @@ if (!fs.existsSync(path.join(dir, 'index.html')) || !fs.existsSync(serveFile)) {
   process.exit(1);
 }
 
-// serve.mjs in the map folder is run as code. build.mjs copies it from this skill byte for byte, so refuse any
-// other file: a cloned repo could commit its own flowplan/serve.mjs.
-const skillServe = new URL('../assets/serve.mjs', import.meta.url);
-if (!fs.readFileSync(serveFile).equals(fs.readFileSync(skillServe))) {
-  console.error('✗ flowplan/serve.mjs is not the copy this skill builds, so it is not run. Run build.mjs to rewrite it, then open.mjs again.');
+// The server runs code from the map folder: serve.mjs, page-safety.mjs (imported) and query.mjs (evaluated).
+// build.mjs writes all three from this skill, so refuse any other content: a cloned repo could commit its own.
+const assetPath = (n) => new URL(`../assets/${n}`, import.meta.url);
+const sameBytes = (file, expected) => { try { return fs.readFileSync(file).equals(expected); } catch { return false; } };
+const expectedQuery = Buffer.from(`${fs.readFileSync(assetPath('graph-query.js'), 'utf8')}
+// ---- cli ----
+${fs.readFileSync(assetPath('query-cli.mjs'), 'utf8')}`);
+const modified = [
+  ['serve.mjs', fs.readFileSync(assetPath('serve.mjs'))],
+  ['page-safety.mjs', fs.readFileSync(assetPath('page-safety.mjs'))],
+  ['query.mjs', expectedQuery],
+].filter(([name, bytes]) => !sameBytes(path.join(dir, name), bytes)).map(([name]) => name);
+if (modified.length) {
+  console.error(`✗ ${rel}/${modified.join(', ')} is not the copy this skill builds, so the server is not run. Run build.mjs to rewrite it, then open.mjs again.`);
   process.exit(1);
 }
+// .cache/skill.json says where the skill's scripts are, for redrawing a blueprint from the map. Only the skill
+// itself may set it: drop whatever the folder came with.
+const skillJson = path.join(dir, '.cache', 'skill.json');
+fs.rmSync(skillJson, { force: true });
+try {
+  if (readJsonFile(path.join(dir, 'graph.json')).meta?.blueprint) {
+    fs.mkdirSync(path.dirname(skillJson), { recursive: true });
+    fs.writeFileSync(skillJson, JSON.stringify({ dir: path.resolve(fileURLToPath(new URL('..', import.meta.url))) }));
+  }
+} catch {}
 
 // --editor: checked here too, so a mistake is named now rather than in the server's log
 const editor = args.editor === undefined ? null : editorTemplate(args.editor === true ? '' : String(args.editor));

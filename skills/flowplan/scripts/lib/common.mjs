@@ -205,6 +205,18 @@ export function gitRun(cwd, args) {
   }
 }
 
+/**
+ * Resolves a repo path taken from graph.json (which a cloned repo can supply) against root, and returns it only
+ * when the real path, symlinks followed, is inside root's real path. Returns null otherwise.
+ */
+export function repoDirInside(root, rel) {
+  try {
+    const realRoot = fs.realpathSync(root);
+    const real = fs.realpathSync(path.resolve(root, String(rel || '.')));
+    return real === realRoot || real.startsWith(realRoot + path.sep) ? real : null;
+  } catch { return null; }
+}
+
 export function git(cwd, args) {
   return gitRun(cwd, args).out;
 }
