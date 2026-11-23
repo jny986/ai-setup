@@ -59,6 +59,8 @@ npx playwright install chromium --with-deps
 which ffmpeg || brew install ffmpeg   # or apt-get install ffmpeg
 ```
 
+Ask the user before running these: `--with-deps` can install system packages (and need sudo on Linux), as can the ffmpeg install. Use the project's pinned Playwright version (`npx playwright@<pinned>` or the local install), not latest.
+
 ### 3. Set up the browser context
 
 Create a context with:

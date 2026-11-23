@@ -1,0 +1,6 @@
+interface:
+  display_name: "Flowplan"
+  short_description: "Draw an interactive, plain-English map of this codebase"
+  default_prompt: "Use $flowplan to draw a flowplan of this codebase, or update the existing one, and open it."
+policy:
+  allow_implicit_invocation: false

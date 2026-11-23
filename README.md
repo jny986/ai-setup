@@ -99,6 +99,7 @@ The skill configures the issue tracker, optional triage labels, domain doc rules
     ├── OWASP-www-project-agentic-skills-top-10/
     ├── spatie-guidelines-skills/
     ├── claude-dev-suite-claude-dev-suite/
+    ├── haydenschmitty-floorplan/
     ├── SKILLS.md      # Index of every upstream skill
     └── skills.html    # The same index, grouped by repo
 ```
@@ -162,6 +163,7 @@ The upstream repos my skills are based on or sit alongside. They're kept as subm
 | `OWASP-www-project-agentic-skills-top-10` | [OWASP/www-project-agentic-skills-top-10](https://github.com/OWASP/www-project-agentic-skills-top-10) | OWASP |
 | `spatie-guidelines-skills` | [spatie/guidelines-skills](https://github.com/spatie/guidelines-skills) | Spatie |
 | `claude-dev-suite-claude-dev-suite` | [claude-dev-suite/claude-dev-suite](https://github.com/claude-dev-suite/claude-dev-suite) | claude-dev-suite |
+| `haydenschmitty-floorplan` | [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan) | Hayden Smith |
 
 Fetch or update the submodules:
 

@@ -55,3 +55,6 @@
 [submodule "source-skills/claude-dev-suite-claude-dev-suite"]
 	path = source-skills/claude-dev-suite-claude-dev-suite
 	url = https://github.com/claude-dev-suite/claude-dev-suite.git
+[submodule "source-skills/haydenschmitty-floorplan"]
+	path = source-skills/haydenschmitty-floorplan
+	url = https://github.com/haydenschmitty/floorplan.git

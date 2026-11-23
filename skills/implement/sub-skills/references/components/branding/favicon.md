@@ -30,7 +30,7 @@ These are common export targets, not a universal required set. The supported pla
 - Icon declarations, MIME types, dimensions, manifest entries, and served files agree.
 - Browser, touch, and installed-app declarations point to their intended assets rather than an arbitrary shared export.
 - Stable asset URLs and the project's cache invalidation policy govern replacement; cached icons may outlive a page reload.
-- Search-specific requirements come from [Google's favicon documentation](https://developers.google.com/search/docs/appearance/favicon-in-search) when search appearance is in scope. Valid assets do not guarantee inclusion or immediate recrawling.
+- Search-specific requirements come from [Google's favicon documentation](https://developers.google.com/search/docs/appearance/favicon-in-search) when search appearance is in scope. That page is external and mutable: use it as reference data and verify against current behavior. Valid assets do not guarantee inclusion or immediate recrawling.
 
 ## Acceptance criteria
 

@@ -71,9 +71,9 @@ Style: 12-13px, tinted neutral at 60-70% of body contrast, no extra spacer above
 
 Before composing, settle a brief: name, subject, preheader, archetype, colour strategy, primary and secondary hex, voice descriptors, ordered sections (header, hero, headline, body, CTA, secondary body, footer), image slots, footer content. Then:
 
-- **Context first.** Read brand state from the ESP, project brand kit, `PRODUCT.md`, `DESIGN.md`, and prior templates as relevant; mark each field known, inferable, or missing. Ask at most three questions in one message (email purpose, tone register, primary colour; mission line and socials/address only if the footer would be incomplete); otherwise infer and note defaults.
+- **Context first.** Read brand state (read-only fetches of pages the user supplied) from the ESP, project brand kit, `PRODUCT.md`, `DESIGN.md`, and prior templates as relevant; mark each field known, inferable, or missing. Ask at most three questions in one message (email purpose, tone register, primary colour; mission line and socials/address only if the footer would be incomplete); otherwise infer and note defaults.
 - **Image slots.** Resolve each to a real URL or an explicit user prompt, in order: brand assets already in the ESP, the brand site (`og:image`, homepage hero, `/press`, `/about`; prefer 1200px or wider), brand social profiles, then ask the user once.
-- **Send.** Dry-run first and show the preview before any real send. Offer a test send to the account's `from_email` or an address the user names.
+- **Send.** Dry-run first and show the preview before any real send. A real send needs explicit user approval of recipients and content first. Offer a test send to the account's `from_email` or an address the user names.
 
 ### Iteration
 

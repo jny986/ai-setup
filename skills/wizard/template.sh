@@ -138,13 +138,22 @@ ask_secret() {
 # line) and sets $KEY. Idempotent. Creates ENV_FILE at mode 0600; writes through
 # a symlink and keeps an existing file's mode.
 write_env() {
-  local key="$1" value="$2" tmp sq="'\\''"
+  local key="$1" value="$2" sq="'\\''" env_dir
+  # Refuse to write secrets to a file git would track.
+  env_dir=$(dirname "$ENV_FILE")
+  if git -C "$env_dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 \
+    && ! git -C "$env_dir" check-ignore -q "$(basename "$ENV_FILE")"; then
+    printf '  %s✗ %s is inside a git repo but not git-ignored; add it to .gitignore first%s\n' "$YELLOW" "$ENV_FILE" "$RESET" >&2
+    exit 1
+  fi
   [[ -e "$ENV_FILE" ]] || (umask 077 && : > "$ENV_FILE")
-  tmp=$(mktemp)
-  grep -vE "^${key}=" "$ENV_FILE" > "$tmp" || true
-  printf "%s='%s'\n" "$key" "${value//\'/$sq}" >> "$tmp"
-  cat "$tmp" > "$ENV_FILE"
-  rm -f "$tmp"
+  _WIZ_TMP=$(mktemp)
+  trap 'rm -f "$_WIZ_TMP"' EXIT INT
+  grep -vE "^${key}=" "$ENV_FILE" > "$_WIZ_TMP" || true
+  printf "%s='%s'\n" "$key" "${value//\'/$sq}" >> "$_WIZ_TMP"
+  cat "$_WIZ_TMP" > "$ENV_FILE"
+  rm -f "$_WIZ_TMP"
+  trap - EXIT INT
   printf -v "$key" '%s' "$value"
   WRITTEN_ENV+=("$key")
   printf '  %s✓ wrote%s %s → %s\n' "$GREEN" "$RESET" "$key" "$ENV_FILE"

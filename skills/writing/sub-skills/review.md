@@ -38,6 +38,6 @@ Review how an agent discovers, reads and follows the requested documents. Use [a
 
    Done when the requested report is delivered or the requested improvements are applied, with unresolved decisions identified.
 
-4. **Verify the reading path.** Check changed links, imports, router entries and caller references. For skills, run applicable package or repository validation and update public indexes or documentation when discovery or behavior changes. Use a realistic example when needed to assess ambiguous routing or instructions; structural checks alone do not establish behavioral correctness.
+4. **Verify the reading path.** Check changed links, imports, router entries and caller references. For skills, run the repository's documented lint, test or validate scripts only (no installs) and update public indexes or documentation when discovery or behavior changes. Use a realistic example when needed to assess ambiguous routing or instructions; structural checks alone do not establish behavioral correctness.
 
    Report what changed or was recommended, verification evidence and any remaining coverage gaps. If there are no actionable findings, say so.

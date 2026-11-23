@@ -186,6 +186,8 @@ LinkedIn and X don't expose useful public APIs, but you can drive a real browser
 4. Claude scores using the [rubric](#scoring-rubric) and drafts comments
 5. User reviews and posts manually (don't auto-post — high-stakes, bot detection risk)
 
+The user must approve each use of their logged-in session. Never copy, store or log credentials or cookies.
+
 **Useful URLs to feed dev-browser:**
 
 | URL pattern | What it shows |
