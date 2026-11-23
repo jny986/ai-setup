@@ -14,7 +14,7 @@ What a skill in `skills/` contains, and how to add, modify or re-sync one. For r
 
 ## Frontmatter
 
-Allowed top-level keys: `name`, `description`, `license`, `metadata`, `disable-model-invocation`, `argument-hint`. Any other key fails `check-skills.py`.
+Allowed top-level keys: `name`, `description`, `license`, `metadata`, `disable-model-invocation`, `argument-hint`, `allowed-tools`. Any other key fails `check-skills.py`. Keep `allowed-tools` when adapting an upstream skill that has it; never strip it. Each entry must be justified by the skill's purpose and scoped as narrowly as the skill allows: a `*` argument wildcard on a script lets the model pass any flag unprompted, so review those scripts' options at vetting time.
 
 - `description`: max 1024 chars. A model-invoked skill needs a trigger phrase (`use`, `when`, `for`); a user-only skill does not.
 - `disable-model-invocation: true` makes the skill user-only. Its `agents/openai.yaml` must set `policy.allow_implicit_invocation: false`; every other skill must set `true`.
@@ -37,6 +37,7 @@ Rules:
 - `based_on_url` is optional: a comma-separated list of web pages the skill draws on that have no repo to pin, such as a Wikipedia article. Write each as `https://… (YYYY-MM-DD)`, the date you last viewed the page. It does not replace the three keys above and is not checked against `.gitmodules`.
 - The hash is the commit the submodule in `source-skills/` is pinned at. Get it with `git -C source-skills/<owner>-<repo> rev-parse --short HEAD`, and the ref with `git -C source-skills/<owner>-<repo> describe --tags --always`.
 - Several sources: comma-separate each key. `based_on_repo` and `based_on_version` align by position, one version per repo; `based_on_skill` names at least one skill per repo and may name several from the same repo. `skills/security/sub-skills/release-gate.md` is the worked example.
+- When the upstream tag carries a prefix (such as `floorplan--v0.11.0`), strip it: write `v0.11.0(hash)`.
 - `check-skills.py` requires `based_on_version` in a `SKILL.md` to match `vX.Y.Z(hash)`. In a sub-skill it accepts `<ref>(hash)`, so a branch such as `main(d18b7aa)` passes. The hash is required in both.
 - The legacy single key `based_on: owner/repo@hash` is unknown and fails the check.
 - Every file in a `references/` folder records provenance so it can be re-synced on its own. For repository sources, use `metadata` frontmatter with `version` and the three `based_on_*` keys. For website-only sources, use `version` and dated `based_on_url` instead. A reference needs no `name` or `description`. Only a reference written here with no upstream may omit provenance, and it must be listed in `ORIGINAL_REFERENCES` in `scripts/check-skills.py` (today `git/sub-skills/references/gh-review.md`).

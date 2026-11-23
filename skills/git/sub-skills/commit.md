@@ -29,7 +29,7 @@ Get the current work committed and pushed to `origin`, on the branch its ticket 
    - Whichever name results: switch to it if it exists locally, switch with tracking if it exists only on `origin`, otherwise create it fresh.
    - Let `git switch` carry uncommitted changes over naturally — no stashing. If it refuses because of a conflicting tracked-file diff, stop and surface its error.
 
-4. **Commit.** Clean tree: skip. Else stage tracked and untracked files (`git add -A`), generate one conventional-commit message from the diff. Exactly one commit for the uncommitted work — never rewrite, squash, or split existing commits.
+4. **Commit.** Clean tree: skip. Else check pending files by filename and content for secrets (`.env`, keys, tokens, `*.pem`, `credentials.json`); if any untracked or modified file looks like one, stop and report instead of staging. Otherwise stage tracked and untracked files (`git add -A`), generate one conventional-commit message from the diff. Exactly one commit for the uncommitted work — never rewrite, squash, or split existing commits.
 
 5. **Push.** `git push -u origin HEAD` — do this even when step 4 was a no-op, as long as local is ahead of `origin`. If the branch has diverged so the push needs `--force`, stop and report. Never force-push.
 

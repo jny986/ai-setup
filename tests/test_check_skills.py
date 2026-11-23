@@ -23,6 +23,11 @@ def test_unknown_key_fails(repo):
     assert "unknown key 'licence'" in errors(check(repo))
 
 
+def test_allowed_tools_key_is_accepted(repo):
+    edit(repo, "alpha", "license: MIT", "license: MIT\nallowed-tools:\n  - Bash(node scripts/run.mjs *)")
+    assert check(repo).errors == []
+
+
 def test_description_too_long(repo):
     edit(repo, "alpha", "Does a thing. Use when", "x" * 1100 + " use when")
     assert "max 1024" in errors(check(repo))

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check every skills/**/SKILL.md and sub-skill file has valid frontmatter and every relative Markdown link under skills/ resolves.
 Sub-skills are the Markdown files under skills/*/sub-skills/ outside `references/` folders, apart from name-table.md.
-Files inside `references/` folders must carry repository or website provenance so they can be re-synced, unless listed in ORIGINAL_REFERENCES.
+Files inside a sub-skill's `references/` folders must carry repository or website provenance so they can be re-synced, unless listed in ORIGINAL_REFERENCES.
 Also fails any `gh`/`git` command in skill Markdown that chains with `&&`, `;` or `|`.
 
 Frontmatter: required and known keys, boolean flags, description length, and all-or-none `based_on_*` provenance
@@ -16,7 +16,7 @@ from pathlib import Path
 from skilllib import FENCE, FRONTMATTER, Report, parse_mapping, run
 
 LINK = re.compile(r"\]\(([^)\s]+)")
-TOP_KEYS = {"name", "description", "license", "metadata", "disable-model-invocation", "argument-hint"}
+TOP_KEYS = {"name", "description", "license", "metadata", "disable-model-invocation", "argument-hint", "allowed-tools"}
 META_KEYS = {"version", "author", "author-url", "based_on_repo", "based_on_version", "based_on_skill", "based_on_url"}
 BASED_ON = ("based_on_repo", "based_on_version", "based_on_skill")
 SUB_TOP_KEYS = TOP_KEYS - {"disable-model-invocation"}
